@@ -589,6 +589,25 @@ body.has-page-gl .stage-banner {
 }
 body.has-page-gl .stage-kicker,
 body.has-page-gl .stage-banner .gl-sprite { z-index: 1; }
+@media (min-width: 1101px) {
+  body.canon-world .v4-stage { display: block; }
+  body.canon-world .v4-toc {
+    position: fixed;
+    top: 84px;
+    right: 16px;
+    width: var(--toc-w);
+    z-index: 25;
+    max-height: calc(100vh - 100px);
+  }
+  body.canon-world .lab-links,
+  body.canon-world .uni-menu,
+  body.canon-world .topbar,
+  body.canon-world .stage-banner,
+  body.canon-world main,
+  body.canon-world .lab-footer {
+    margin-inline-end: calc(var(--toc-w) + 28px);
+  }
+}
 body.has-page-gl .stage-grid,
 body.has-page-gl .stage-orb { display: none; }
 body.has-page-gl .stage-kicker { text-shadow: 0 6px 18px rgba(0, 0, 0, 0.65); }

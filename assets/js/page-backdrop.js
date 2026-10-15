@@ -49,8 +49,22 @@ function material(hex, wire) {
   });
 }
 
+function wash(scene, palette, rig) {
+  for (var i = 0; i < 14; i += 1) {
+    var orb = new THREE.Mesh(
+      new THREE.SphereGeometry(0.22 + (i % 3) * 0.12, 12, 12),
+      material(palette[i % 4], false)
+    );
+    orb.position.set((i - 6.5) * 0.62, ((i % 4) - 1.5) * 0.42, -1.6 - (i % 3) * 0.35);
+    orb.userData.bob = i;
+    scene.add(orb);
+    rig.wash.push(orb);
+  }
+}
+
 function build(kind, scene, palette) {
-  var rig = { kind: kind, meshes: [], bars: [], gems: [], steps: [], packet: null };
+  var rig = { kind: kind, meshes: [], bars: [], gems: [], steps: [], packet: null, wash: [] };
+  wash(scene, palette, rig);
   scene.add(new THREE.AmbientLight(0xffffff, 0.55));
   var key = new THREE.PointLight(palette[0], 16, 30);
   key.position.set(3, 4, 5);
@@ -148,6 +162,9 @@ function build(kind, scene, palette) {
 
 function frame(rig, time) {
   var t = time * 0.001;
+  rig.wash.forEach(function (orb) {
+    orb.position.y += Math.sin(t * 1.2 + orb.userData.bob) * 0.004;
+  });
   if (rig.kind === "diagrams") {
     rig.meshes.forEach(function (mesh, index) {
       if (index < 2) {
@@ -216,15 +233,24 @@ function boot() {
     return;
   }
   renderer.setPixelRatio(1);
-  renderer.setClearColor(kind === "play" ? 0x14081a : kind === "rooms" ? 0x1a1020 : 0x070b16, 1);
+  var sky = {
+    diagrams: 0x0b1c3a,
+    flows: 0x07281f,
+    charts: 0x1a1030,
+    careers: 0x2a1608,
+    play: 0x1a0824,
+    rooms: 0x1a1028
+  };
+  var clear = sky[kind] || 0x0b1c3a;
+  renderer.setClearColor(clear, 1);
   var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 40);
-  if (kind === "rooms") camera.position.set(0.4, 0.8, 4.2);
-  else if (kind === "careers") camera.position.set(0, 0.6, 4.8);
-  else if (kind === "charts") camera.position.set(0.2, 0.4, 5.2);
-  else camera.position.set(0, 0.4, 6.2);
-  camera.lookAt(0, 0, 0);
-  scene.fog = new THREE.Fog(0x070b16, 8, 18);
+  var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 40);
+  if (kind === "rooms") camera.position.set(0.2, 0.55, 3.6);
+  else if (kind === "careers") camera.position.set(0, 0.35, 4.2);
+  else if (kind === "charts") camera.position.set(0.1, 0.25, 4.4);
+  else camera.position.set(0, 0.15, 4.4);
+  camera.lookAt(0, 0.1, 0);
+  scene.fog = new THREE.Fog(clear, 6, 14);
 
   var rig = build(kind, scene, colors());
   if (!rig || !rig.kind) {

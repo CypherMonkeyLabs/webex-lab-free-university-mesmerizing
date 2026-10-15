@@ -13,7 +13,7 @@ FOOTER = """
 <p class="lab-actions">
 <a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a>
 <a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a>
-<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
 <a href="https://dev.to/cyphermonkey">dev.to</a>
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
 <a href="https://x.com/Cypher0x9">X</a>
@@ -48,7 +48,7 @@ def page(title, body, depth=""):
 <nav class="lab-links" aria-label="CypherMonkey">
 <a href="https://cyphermonkeylabs.com">Labs home</a>
 <a href="https://linktr.ee/cyphermonkey">Linktree</a>
-<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
 <a href="https://dev.to/cyphermonkey">dev.to</a>
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
 <a href="https://x.com/Cypher0x9">X</a>
@@ -213,7 +213,7 @@ footer a {{ color: #0f766e; }}
 <nav aria-label="CypherMonkey">
 <a href="https://cyphermonkeylabs.com">Labs home</a> ·
 <a href="https://linktr.ee/cyphermonkey">Linktree</a> ·
-<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Repo</a> ·
+<a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Repo</a> ·
 <a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
 <a href="https://x.com/Cypher0x9">X</a>
@@ -225,7 +225,7 @@ footer a {{ color: #0f766e; }}
 <p>
 <a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> ·
 <a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a> ·
-<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">repo</a> ·
+<a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">repo</a> ·
 <a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
 <a href="https://x.com/Cypher0x9">X</a> ·
@@ -459,7 +459,7 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
 <footer>
 <p><strong>CypherMonkey · Webex Lab Free University</strong></p>
 <p>Independent educational project. Not affiliated with or endorsed by any vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>
-<p><a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> · <a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a> · <a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">repo</a> · <a href="https://dev.to/cyphermonkey">dev.to</a> · <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> · <a href="https://x.com/Cypher0x9">X</a> · <a href="https://cyphermonkeylabs.com">Report a concern</a> · <a href="https://cyphermonkeylabs.com">Work with us</a></p>
+<p><a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> · <a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a> · <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">repo</a> · <a href="https://dev.to/cyphermonkey">dev.to</a> · <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> · <a href="https://x.com/Cypher0x9">X</a> · <a href="https://cyphermonkeylabs.com">Report a concern</a> · <a href="https://cyphermonkeylabs.com">Work with us</a></p>
 </footer></body></html>""",
         encoding="utf-8",
     )

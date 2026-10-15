@@ -50,7 +50,7 @@ for (const name of sheets) {
   if (!existsSync(join(root, "downloads/sheets", stem + ".pdf"))) throw new Error("missing pdf " + stem);
   if (!existsSync(join(root, "downloads/sheets", stem + ".png"))) throw new Error("missing png " + stem);
   const sheet = readFileSync(join(root, "downloads/sheets", name), "utf8");
-  for (const bit of ["cyphermonkeylabs.com", "linktr.ee/cyphermonkey", "github.com/cipher0x9/webex-lab-free-university-mesmerizing", "CC BY-NC-SA"]) {
+  for (const bit of ["cyphermonkeylabs.com", "linktr.ee/cyphermonkey", "github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", "CC BY-NC-SA"]) {
     if (!sheet.includes(bit)) throw new Error(name + " missing " + bit);
   }
   if (/linkedin/i.test(sheet)) throw new Error(name + " linkedin");

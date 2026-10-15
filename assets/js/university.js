@@ -21,17 +21,17 @@
   }
 
   var LABS = [
-    ["UC Lab", "https://cipher0x9.github.io/uc-lab-free-university-mesmerizing/"],
-    ["AI Lab", "https://cipher0x9.github.io/ai-lab-free-university-mesmerizing/"],
-    ["SIP Universe", "https://cipher0x9.github.io/sip-universe-lab-free-university-mesmerizing/"],
-    ["Microsoft Voice", "https://cipher0x9.github.io/microsoft-voice-cc-lab-free-university-mesmerizing/"],
-    ["Amazon Connect", "https://cipher0x9.github.io/amazon-connect-lab-free-university-mesmerizing/"],
-    ["Genesys Cloud", "https://cipher0x9.github.io/genesys-cloud-lab-free-university-mesmerizing/"],
-    ["Five9", "https://cipher0x9.github.io/five9-lab-free-university-mesmerizing/"],
-    ["NICE CXone", "https://cipher0x9.github.io/nice-cxone-lab-free-university-mesmerizing/"]
+    ["UC Lab", "https://cyphermonkeylabs.com/uc-lab-free-university-mesmerizing/"],
+    ["AI Lab", "https://cyphermonkeylabs.com/ai-lab-free-university-mesmerizing/"],
+    ["SIP Universe", "https://cyphermonkeylabs.com/sip-universe-lab-free-university-mesmerizing/"],
+    ["Microsoft Voice", "https://cyphermonkeylabs.com/microsoft-voice-cc-lab-free-university-mesmerizing/"],
+    ["Amazon Connect", "https://cyphermonkeylabs.com/amazon-connect-lab-free-university-mesmerizing/"],
+    ["Genesys Cloud", "https://cyphermonkeylabs.com/genesys-cloud-lab-free-university-mesmerizing/"],
+    ["Five9", "https://cyphermonkeylabs.com/five9-lab-free-university-mesmerizing/"],
+    ["NICE CXone", "https://cyphermonkeylabs.com/nice-cxone-lab-free-university-mesmerizing/"]
   ];
   var CONTACT = "https://cyphermonkeylabs.com/#contact";
-  var REPO = "https://github.com/cipher0x9/webex-lab-free-university-mesmerizing";
+  var REPO = "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing";
 
   var stage = document.querySelector(".v4-stage");
   if (stage && !document.querySelector(".lab-links")) {

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T7-R01 · SIP Fundamentals for Webex">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T7-R01 · SIP Fundamentals for Webex · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T7" data-room="T7-R01" data-room-title="SIP Fundamentals for Webex" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T7</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T7/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T7 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+
+
+<p class="kicker">T7 · SIP, routing, and queues</p>
+<h1>SIP Fundamentals for Webex</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for SIP Fundamentals for Webex">
+<defs>
+<linearGradient id="T7R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T7R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">SIP and queues</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T7-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for SIP Fundamentals for Webex. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for SIP Fundamentals for Webex">
+<defs>
+<marker id="T7R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → CUBE → Control Hub → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T7R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T7R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T7R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T7R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → CUBE → Control Hub → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">The Local Gateway speaks SIP to Webex Calling over TLS, and media is SRTP. This room is the dial-peer and the debug, not another PSTN overview. Sample passwords from the configuration guide are not here.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T7-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>100–120 min</strong></span>
+<span class="meta-chip">Prereq <strong>T2-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>The trunk to Webex Calling is SIP over TLS. Media is SRTP. Commercial gateways offer AES_CM_128_HMAC_SHA1_80. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Registration trunks are CUBE only and stop at 250 calls. Certificate trunks go past 250 and need OPTIONS from the gateway FQDN. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The Webex dial-peer matches inbound calls with incoming uri request. BAD.BAD is a dummy destination-pattern, and max-conn 250 belongs on a registration trunk. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Inbound SIP matching checks URI headers before called number. Outbound hunt 0 prefers the longest match, then the lower preference number. <a class="cite" href="#cite-3">[cite:3]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+
+<ul>
+<li>The trunk to Webex Calling is SIP over TLS. Media is SRTP. Commercial gateways offer AES_CM_128_HMAC_SHA1_80. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Registration trunks are CUBE only and stop at 250 calls. Certificate trunks go past 250 and need OPTIONS from the gateway FQDN. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>The Webex dial-peer matches inbound calls with incoming uri request. BAD.BAD is a dummy destination-pattern, and max-conn 250 belongs on a registration trunk. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Inbound SIP matching checks URI headers before called number. Outbound hunt 0 prefers the longest match, then the lower preference number. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>The routing article prints debug voip ccapi inout. The Local Gateway article wants diagnostic signatures, and DS 64224 turns debugs off at 75 percent CPU. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> People fail this interview by reciting “incoming called-number first” on a SIP trunk that matched dtg= one step earlier, or by pasting the guide’s sample password.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two call legs</h2>
+
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T7-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Webex leg and the carrier leg">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Webex leg and the carrier leg">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">Webex leg and the carrier leg</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex Calling  ←SIP TLS / SRTP→  CUBE tenant and dial-peer 100</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Inbound: URI via, request, to, from, then called, then calling.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Outbound toward Webex can use a dummy BAD.BAD plus a dial-peer group.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Outbound toward the PSTN: longest match, then preference (hunt 0).</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">OPTIONS keepalive is what a certificate trunk uses to look online.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Config Validation sees the Webex leg on a registration trunk only.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Webex[Webex Calling] --> CUBE
+  CUBE --> PSTN
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Match rules that change the peer</h2>
+
+<div class="callout def"><span class="label">One criterion is enough</span><p>An inbound dial-peer does not need every command to match. IOS XE searches all peers for the first criterion, and only then moves on. The match is on the whole message, not digit by digit. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout note"><span class="label">Two ciphers, two clouds</span><p>SHA1_80 is the commercial block. AEAD_AES_256_GCM is the Government block, and the article says the SHA1 step is not applicable there. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Debugs are not the first page</span><p>jr1i3r spends its troubleshooting section on diagnostic signatures and tells you to install DS 64224 so a CPU spike uninstalls them. 211306 still names the show and debug commands that explain hunt. Use the commands with the safety the Local Gateway article wrote down. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout gotcha"><span class="label">No sample secrets</span><p>jr1i3r shows a registrar, a username, and a password in a tenant example. Those values are the guide’s illustration. Read the trunk in Control Hub and type those values on the gateway. Sample passwords in a tenant example are not your trunk, and they change per organization. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<h3>Inbound SIP order, document 211306</h3>
+<div class="table-wrap"><table><thead><tr><th>Order</th><th>What is compared</th><th>Dial-peer command</th></tr></thead><tbody><tr><td>1</td><td>URI</td><td>incoming uri via</td></tr><tr><td>2</td><td>URI</td><td>incoming uri request</td></tr><tr><td>3</td><td>URI</td><td>incoming uri to</td></tr><tr><td>4</td><td>URI</td><td>incoming uri from</td></tr><tr><td>5</td><td>Called number</td><td>incoming called-number or an e164 pattern map</td></tr><tr><td>6</td><td>Calling number</td><td>incoming calling e164-pattern-map or answer-address</td></tr><tr><td>7</td><td>ANI against destination-pattern</td><td>destination-pattern</td></tr><tr><td>8</td><td>Carrier</td><td>carrier-id source</td></tr></tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T7-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T7R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T7R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Local Gateway</dt><dd>The customer SBC that trunks to Webex Calling. SIP TLS secures the signaling. SRTP secures the media. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Registration trunk</dt><dd>Digest authentication, CUBE only, up to 250 concurrent calls. The sample dial-peer sets max-conn 250 and the article says that is the maximum for a registration trunk. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Certificate trunk</dt><dd>Certificate authentication and FQDN checks. Concurrent calls above 250. Every SIP transaction the gateway starts, including OPTIONS, needs a Contact header with the gateway FQDN or Control Hub will not show the gateway online. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Webex for Government</dt><dd>Certificate-based only, and CUBE is the only SBC the get-started article names for it. The commercial SHA1_80 step is marked not applicable. GCM is mandatory. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>voice class tenant</dt><dd>Groups the trunk’s registrar or sip-server, transport, and SRTP crypto so the dial-peer can inherit them. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>SRTP SHA1_80</dt><dd>Commercial Webex Calling: the article’s crypto class offers AES_CM_128_HMAC_SHA1_80 and says Webex Calling only supports SHA1_80. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>SRTP GCM</dt><dd>Webex for Government: AEAD_AES_256_GCM is mandatory. Do not paste the commercial cipher onto a Government gateway. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>incoming uri request</dt><dd>Matches the inbound INVITE to the Webex dial-peer. The article’s uri class looks for the trunk’s dtg= value from Control Hub. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>BAD.BAD</dt><dd>A dummy destination-pattern on the Webex dial-peer. The article says a dummy is required when outbound calls are routed with an inbound dial-peer group. It is not a number your users dial. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>session target sip-server</dt><dd>Sends the outbound leg to the SIP server inherited from the tenant. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>OPTIONS keepalive</dt><dd>A voice class sip-options-keepalive profile. Certificate trunks depend on OPTIONS for the Control Hub online state. The article’s sample uses transport tcp tls. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Inbound SIP order</dt><dd>IOS XE checks URI via, then URI request, then URI to, then URI from, then called number, then calling number, then destination-pattern against the ANI. The first criterion that matches wins. It is not digit-by-digit. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>dial-peer hunt 0</dt><dd>The default hunt: longest match, then explicit preference, then random. Preference 0 is better than preference 1. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>huntstop</dt><dd>Stops the gateway from trying the next outbound dial-peer after a failure. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>show dial-peer voice summary</dt><dd>The IOS routing article prints this command. The summary line includes the hunt scheme. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>debug voip ccapi inout</dt><dd>The same article prints this debug when a call fails on the first dial-peer and hunts. It is not the Local Gateway article’s first troubleshooting step. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Diagnostic signature</dt><dd>The Local Gateway article’s troubleshooting method. TAC-authored, signed XML. A high-CPU signature disables debugs. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>DS 64224</dt><dd>The article tells you to install this high-CPU signature so that at 75 percent CPU it disables all debugs and uninstalls diagnostic signatures. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Config Validation</dt><dd>A Control Hub check for registration-based Local Gateways only. It validates the Webex-facing dial-peers, tenant, and trustpoint. It does not validate the PSTN dial plan. <a class="cite" href="#cite-4">[cite:4]</a></dd></div><div class="term"><dt>ICE-Lite</dt><dd>stun usage ice lite on Webex-facing dial-peers so media can optimize. The article says recording and other cloud media services cannot be optimized. <a class="cite" href="#cite-1">[cite:1]</a></dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T7-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="SIP trunk and the systems beside it">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SIP trunk and the systems beside it">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">SIP trunk and the systems beside it</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex Calling registrar or sip-server</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">CUBE dial-peers, tenants, SRTP, OPTIONS</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">PSTN or Unified CM on the other leg</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Control Hub trunk status and Config Validation</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Certificates and the Cisco trustpool</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Diagnostic signatures when you debug</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Local Gateway SIP))
+    TLS
+    SRTP
+    Dial peers
+    OPTIONS
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Calling cloud</td><td>The registrar or sip-server named in the tenant.</td><td>TLS signaling, SRTP media.</td><td>Sample usernames and passwords in the article are not copied into this Canon.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>PSTN carrier</td><td>The other side of the SBC.</td><td>Outbound destination-patterns and preferences live here. Config Validation will not grade them.</td><td>Fixing a carrier peer because Control Hub said the Webex peer was valid.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>CUBE versus other SBCs</td><td>Registration trunks are CUBE only. Certificate trunks allow the device types in the get-started table.</td><td>Government is CUBE only even for certificates.</td><td>Registering a third-party SBC with a digest trunk.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Certificates</td><td>IdenTrust Commercial Root CA 1 is in the Cisco root bundle the article installs with crypto pki trustpool import.</td><td>The URL is the Cisco core p7b. Do not invent a private CA.</td><td>Skipping the trustpool and failing TLS.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>NAT</td><td>Certificate OPTIONS profiles in the article rewrite Contact and SDP when the SBC is behind static NAT.</td><td>Rules that mention the article’s sample addresses are examples, not this network.</td><td>Leaving the private address in Contact toward Webex.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Recording</td><td>Cloud recording is a media service.</td><td>The article says media optimization does not apply when recording needs the cloud.</td><td>Expecting ICE to keep a recorded call off the cloud path.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Firewall</td><td>Port reference is a separate document. Read the current port reference on help.webex.com article b2exve before you build an ACL. A 2024 slide is not that page, and the port table changes when Cisco revises the reference.</td><td>Ports, as of 2026-10-14, b2exve: TCP 5062 certificate, TCP 8934 registration, phone source TCP 5060–5280. Not the 2024 Cisco Live slide. <a class="cite" href="#cite-5">[cite:5]</a> until the current port reference is copied.</td><td>Using UDP ranges from an old deck.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Unified CM</td><td>A dial-peer to CUCM is the PSTN/PBX side of coexistence.</td><td>Class of service stays on CUCM. The gateway matches dial-peers, which is a different algorithm.</td><td>Expecting CSS order to apply on CUBE.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Calling</td><td>CUBE</td><td>SIP TLS</td><td>Signaling. Registration trunks also digest-authenticate.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>CUBE</td><td>Webex Calling</td><td>SRTP</td><td>Commercial cipher SHA1_80. Government cipher GCM.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>INVITE</td><td>Dial-peer</td><td>incoming uri request</td><td>dtg= value from Control Hub selects the Webex dial-peer.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>CUBE</td><td>Webex</td><td>OPTIONS</td><td>Certificate trunks need the FQDN in Contact so Control Hub shows online.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>CUBE</td><td>PSTN or CUCM</td><td>Outbound dial-peer</td><td>Longest match, then preference, under hunt 0.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>CUBE</td><td>Control Hub</td><td>Config Validation</td><td>Registration-based Webex-facing config only.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>High CPU</td><td>Debugs</td><td>DS 64224</td><td>Disables debugs at 75 percent CPU.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Phone media</td><td>Far end or cloud</td><td>ICE-Lite / STUN</td><td>Optimized when the call does not need a cloud media service.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Signaling and media edges">
+<svg viewBox="0 0 980 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Signaling and media edges">
+<rect width="980" height="326" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">Signaling and media edges</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  Webex Calling → CUBE</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  CUBE → Webex Calling</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  INVITE → Dial-peer</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  CUBE → Webex</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  CUBE → PSTN or CUCM</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  CUBE → Control Hub</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7  High CPU → Debugs</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8  Phone media → Far end or cloud</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>Webex behavior</th><th>CUCM habit</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>Dial-peer hunt 0</td><td>A CSS picks a closest pattern and uses partition order only to break ties. CUBE does not.</td><td>Read the hunt order in the SBC vendor’s own guide. This room only cites CUCM closest-match and CUBE preference, and those two engines already differ.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>dtg= on the Request-URI</td><td>A CUCM SIP trunk security profile is not this header.</td><td>Teams Phone media bypass is not ICE-Lite on CUBE.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Certificate FQDN in Contact</td><td>A CUCM SIP trunk can use a subject name too. Do not copy the profile.</td><td>No parity matrix.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: T7-R02 can go deeper on translation rules. This room already fixes the match order those notes must use.</li>
+<li>Firewall ports from the current port reference, as of 2026-10-14, b2exve: certificate-trunk destination TCP 5062, registration-trunk destination TCP 8934. Phone signaling source ports 5060–5280 sit under Call signaling to Webex Calling (SIP TLS). The parent protocol cell is TCP. The devices protocol cell is blank, so this room does not call that range TCP. The history line September 07, 2026 expanded 5060–5080 to 5060–5280. <a class="cite" href="#cite-5">[cite:5]</a> Do not revive BRKCOL-2812’s 2024 port list as an ACL.</li>
+<li>IOS-XE minimum for the trunk type is as of 2026-10-14, t9xctu header September 10, 2026: registration CUBE minimum Bengaluru 17.6.1a; certificate CUBE minimum Cupertino 17.9.1a; Secure Router rows in that table list IOS XE 26.2.1. <a class="cite" href="#cite-2">[cite:2]</a> per platform in the CUBE matrix.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>TLS fails after a new CUBE</td><td>The Cisco trustpool that contains IdenTrust Commercial Root CA 1 was not imported.</td><td>crypto pki trustpool import of the core p7b in the article.</td><td>Import the bundle the article names. Do not disable validation.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Media will not optimize on a recorded call</td><td>Recording is a cloud media service.</td><td>ICE-Lite note.</td><td>Stop treating that call as a direct-media proof.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Validation passed and callers still hit the wrong carrier</td><td>The PSTN peer is outside validation.</td><td>Carrier destination-pattern and preference.</td><td>Match it with hunt 0 rules.</td><td><a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Status flaps on a certificate trunk behind NAT</td><td>Contact or SDP still has the private address.</td><td>The article’s OPTIONS profile rewrites those only when you configure it.</td><td>Apply the keepalive profile with the FQDN, and the NAT rules only if you are actually behind static NAT.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>One inbound Webex call, then one outbound PSTN call</h2>
+
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T7-R01/seq.svg -->
+<div class="diagram" role="img" aria-label="What the gateway compares">
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What the gateway compares">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">What the gateway compares</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">INVITE arrives with a Request-URI that may contain dtg=.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">URI criteria run before incoming called-number.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">The Webex dial-peer inherits tenant 100 and turns on srtp.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">The outbound peer is the longest destination-pattern under hunt 0.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">A failure hunts unless huntstop is set. Debug only with DS 64224 in mind.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Webex Calling</td><td>CUBE</td><td>SIP TLS</td><td>Signaling hits the interface bound on the tenant.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>INVITE</td><td>voice class uri</td><td>incoming uri request</td><td>dtg= from Control Hub.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>If no URI matches</td><td>called-number peers</td><td>DNIS</td><td>Only after the URI criteria miss.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>4</td><td>Dial-peer</td><td>Tenant</td><td>Inheritance</td><td>srtp-crypto, sip-server, transport.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>5</td><td>CUBE</td><td>Webex</td><td>SRTP</td><td>SHA1_80 commercially. GCM for Government.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>6</td><td>CUBE</td><td>Webex</td><td>OPTIONS</td><td>Certificate status. up-interval 5 in the sample profile.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>7</td><td>CUBE</td><td>PSTN</td><td>destination-pattern</td><td>Longest match, then preference.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>8</td><td>Operator</td><td>Logs</td><td>show and debug</td><td>show dial-peer voice summary. debug voip ccapi inout only with the high-CPU signature in mind.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>The lines worth typing, without the sample password</h2>
+
+<ol>
+<li>In Control Hub, create the trunk and copy the registrar or sip-server, the OTG/DTG, and the credentials into a private store. Do not copy them from the guide’s example. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Install the Cisco core trust bundle the article names: <code>crypto pki trustpool import clean url https://www.cisco.com/security/pki/trs/ios_core.p7b</code>. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create the commercial SRTP class, the dtg= URI class, and dial-peer 100 as below. Set max-conn no higher than 250 on a registration trunk. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On a certificate trunk, add the OPTIONS keepalive profile and make sure Contact carries the gateway FQDN. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>On Webex for Government, skip the SHA1 class and configure AEAD_AES_256_GCM. Use CUBE and a certificate trunk. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Confirm hunt with <code>show dial-peer voice summary</code>. If a call hunts, <code>debug voip ccapi inout</code> is the command 211306 prints. Install DS 64224 first so 75 percent CPU disables debugs. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Run Config Validation only as a registration-trunk check. Then test the PSTN peer yourself. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ol>
+<!-- VISUAL:screenshot:trunk-status | Studio | assets/images/T7-R01/trunk.png -->
+<pre class="sim-out">Commercial Webex Calling, from jr1i3r. Passwords and sample user names omitted.
+
+voice class srtp-crypto 100
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+
+voice class uri 100 sip
+ pattern dtg=&lt;OTG/DTG from Control Hub&gt;
+
+dial-peer voice 100 voip
+ description Inbound/Outbound Webex Calling
+ max-conn 250
+ destination-pattern BAD.BAD
+ session protocol sipv2
+ session target sip-server
+ incoming uri request 100
+ voice-class stun-usage 100
+ no voice-class sip localhost
+ voice-class sip tenant 100
+ srtp
+ no vad
+
+voice class sip-options-keepalive 100
+ description Keepalive for Webex Calling
+ up-interval 5
+ transport tcp tls
+
+Webex for Government replaces the crypto line:
+ crypto 1 AEAD_AES_256_GCM</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers these articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Registration concurrent calls</td><td>Up to 250 per trunk</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>max-conn on a registration trunk</td><td>Should be at most 250</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Certificate concurrent calls</td><td>Getting-started wording is greater than 250 per trunk. Table 5 on the same page is a separate set of bands. Read Table 5 in the same article for the separate bands. T6-R01 quotes them. Flattening the table hides which band is registration and which is certificate, and the bands change when Cisco revises the page.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Sentence quoted. Bands not collapsed.</td></tr><tr><td>Commercial SRTP</td><td>AES_CM_128_HMAC_SHA1_80</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Government SRTP</td><td>AEAD_AES_256_GCM</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>OPTIONS up-interval in the sample</td><td>5 seconds</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Sample profile</td></tr><tr><td>DS 64224 CPU threshold</td><td>75 percent</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Default dial-peer hunt</td><td>0 — longest, then preference, then random</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Firewall ports</td><td>as of 2026-10-14, b2exve: TCP 5062 certificate, TCP 8934 registration, phone source TCP 5060–5280. Not the 2024 Cisco Live slide. <a class="cite" href="#cite-5">[cite:5]</a></td><td>Not copied from BRKCOL-2812</td><td>Open</td></tr><tr><td>Minimum IOS-XE</td><td>as of 2026-10-14, t9xctu header September 10, 2026: registration CUBE minimum Bengaluru 17.6.1a; certificate CUBE minimum Cupertino 17.9.1a; Secure Router rows in that table list IOS XE 26.2.1. <a class="cite" href="#cite-2">[cite:2]</a></td><td>Per platform matrix, not this page</td><td>Open</td></tr></tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Control Hub shows the certificate trunk offline</td><td>OPTIONS Contact is not the gateway FQDN.</td><td>t9xctu: OPTIONS are how status stays online.</td><td>Fix the Contact rewrite. Do not only ping the sip-server.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Registration trunk rejects a third-party SBC</td><td>Registration is CUBE only.</td><td>Device-type table.</td><td>Use a certificate trunk with a listed SBC, or CUBE.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>More than 250 calls on a registration trunk</td><td>The cap is 250 concurrent, and max-conn should not be set above 250.</td><td>Dial-peer and the get-started table.</td><td>Move the trunk to certificate-based if you need more.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Government gateway offers SHA1_80</td><td>That step is not applicable. GCM is mandatory.</td><td>The two crypto blocks in jr1i3r.</td><td>Configure AEAD_AES_256_GCM.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Users can dial BAD.BAD</td><td>You treated the dummy pattern as a route.</td><td>The article calls it a dummy for dial-peer groups.</td><td>Keep it off the numbers humans dial.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>The wrong inbound peer matches</td><td>A URI criterion matched before called-number.</td><td>211306 order: URI before digits.</td><td>Look at via, request, to, and from before you blame destination-pattern.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Outbound uses the shorter pattern</td><td>Hunt is not 0, or the longer pattern is a worse preference under a hunt that checks preference first.</td><td>show dial-peer voice summary shows the hunt.</td><td>Confirm hunt 0 unless you meant to change it.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Calls pause, then fail over</td><td>The first outbound peer fails and the gateway hunts.</td><td>debug voip ccapi inout is what the routing article uses to see the failure. Install DS 64224 before you leave debugs on.</td><td>Fix the first peer or set huntstop if failover is wrong.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Config Validation is green and the PSTN is broken</td><td>Validation ignores PSTN and PBX dial-peers.</td><td>2zx7fg says so.</td><td>Check the carrier peers yourself.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Recorded calls stay on a direct media path</td><td>Cloud media services cannot be optimized.</td><td>ICE-Lite note in jr1i3r.</td><td>Expect the recording path to use the cloud.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What secures the Local Gateway trunk to Webex Calling?</summary><p class="answer">SIP TLS for signaling and SRTP for media. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which cipher does commercial Webex Calling get in the article’s crypto class?</summary><p class="answer">AES_CM_128_HMAC_SHA1_80. The article says Webex Calling only supports SHA1_80. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is different for Webex for Government?</summary><p class="answer">Certificate-based, CUBE only, and GCM (AEAD_AES_256_GCM) instead of the SHA1_80 step. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Why is max-conn 250 on the sample Webex dial-peer?</summary><p class="answer">Registration trunks max out at 250 concurrent calls. The article says the configured maximum should be 250. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is BAD.BAD?</summary><p class="answer">A dummy destination-pattern required when an inbound dial-peer group routes the outbound leg. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why does a certificate trunk need OPTIONS?</summary><p class="answer">Control Hub uses those OPTIONS transactions, with the FQDN in Contact, to show the gateway online. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the inbound SIP match order?</summary><p class="answer">URI via, URI request, URI to, URI from, called number, calling number, then destination-pattern on the ANI. First matching criterion wins. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What does dial-peer hunt 0 do?</summary><p class="answer">Longest match, then the lower preference number, then random. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which debug does the routing article name for a hunting failure?</summary><p class="answer">debug voip ccapi inout. show dial-peer voice summary shows the hunt. debug voip uri is also printed for URI matches. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does the Local Gateway article want in place before debugs?</summary><p class="answer">Diagnostic signatures, including DS 64224, which disables debugs at 75 percent CPU. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What will Config Validation refuse to judge?</summary><p class="answer">The PSTN and on-prem PBX dial plan. It is registration-based Local Gateway config only. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why is a recorded call a bad ICE example?</summary><p class="answer">The article says media that needs a cloud service such as recording cannot be optimized. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper match, then the Labs page</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: match one inbound and one outbound call on paper, using the IOS XE order. The interactive version is the CUBE panel on the Labs page.</label></li>
+<li><label><input type="checkbox"> Prereq: no production gateway. Sample passwords in jr1i3r stay out of your notes.</label></li>
+<li><label><input type="checkbox"> Step 1. Write the inbound SIP order from URI via through destination-pattern.</label></li>
+<li><label><input type="checkbox"> Step 2. Give an INVITE a dtg= value and a called number. Expected: the URI peer wins.</label></li>
+<li><label><input type="checkbox"> Step 3. Give two outbound patterns for the same digits, lengths different, hunt 0. Expected: the longer pattern.</label></li>
+<li><label><input type="checkbox"> Step 4. Set huntstop on the first peer and fail it. Expected: the second peer is not tried.</label></li>
+<li><label><input type="checkbox"> Evidence: the peer id, the criterion that matched, and the hunt scheme.</label></li>
+<li><label><input type="checkbox"> Break it: turn on a debug in your notes without DS 64224. Recovery: write the 75 percent CPU stop next to the debug name.</label></li>
+<li><label><input type="checkbox"> Reflection: which cipher you would refuse to put on a Government gateway.</label></li>
+</ul><p>The zero-key matcher is the CUBE panel on <a href="../labs.html">Labs</a>. It follows the 211306 order for a fixed set of peers.</p>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Registration-based Local Gateway concurrent calls:</p><details><summary>Answer</summary><p class="answer">Registration-based Local Gateway concurrent calls: Up to 250 per trunk, CUBE only. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Certificate-based concurrent calls:</p><details><summary>Answer</summary><p class="answer">The getting-started sentence says greater than 250 per trunk. Table 5 on the same page is a separate set of bands, and T6-R01 quotes them. Do not collapse the bands into one number. OPTIONS with the FQDN in Contact keep Control Hub status honest. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Commercial SRTP cipher in jr1i3r:</p><details><summary>Answer</summary><p class="answer">Commercial SRTP cipher in jr1i3r: AES_CM_128_HMAC_SHA1_80. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Webex for Government SRTP cipher in the same article:</p><details><summary>Answer</summary><p class="answer">Webex for Government SRTP cipher in the same article: AEAD_AES_256_GCM. The SHA1 step does not apply. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>An INVITE has a dtg= that matches voice class uri, and also a called number that matches another peer. Which peer wins?</p><details><summary>Answer</summary><p class="answer">The URI request match. URI criteria are ahead of called-number. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>Two outbound peers match 2001. One is 2... and one is 200. Hunt is 0. Which wins?</p><details><summary>Answer</summary><p class="answer">The longer match, 200. Preference is the tie-break after length. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>BAD.BAD is:</p><details><summary>Answer</summary><p class="answer">BAD.BAD is: A dummy destination-pattern, not a user dial string. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Config Validation covers:</p><details><summary>Answer</summary><p class="answer">Registration-based Webex-facing config. Not the PSTN dial plan. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>CPU is high and debug voip ccapi inout is still running. What did the article tell you to install first?</p><details><summary>Answer</summary><p class="answer">DS 64224, which disables debugs at 75 percent CPU. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>show dial-peer voice summary is useful because:</p><details><summary>Answer</summary><p class="answer">It shows the active dial-peer hunt scheme, including hunt 0. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Write the commercial crypto class and the srtp line on the Webex dial-peer. Omit every password.</p><details><summary>Answer</summary><p class="answer">voice class srtp-crypto 100 / crypto 1 AES_CM_128_HMAC_SHA1_80, and srtp under the dial-peer that also has voice-class sip tenant. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>A partner pastes the article’s sample registrar password into a customer router. What does this Canon say?</p><details><summary>Answer</summary><p class="answer">Do not. The article’s credentials are an illustration. Replace them with the trunk’s own values and do not store the sample. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article></div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain TLS, SRTP, and why registration stops at 250 calls." | assets/audio/T7-R01/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the inbound SIP order, hunt 0, and the two debug disciplines." | assets/audio/T7-R01/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: SHA1_80, GCM, BAD.BAD, OPTIONS, DS 64224." | assets/audio/T7-R01/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Local Gateway is a SIP TLS trunk with SRTP. <a class="cite" href="#cite-1">[cite:1]</a> Registration is CUBE and up to 250 calls, and registration trunks digest-authenticate. <a class="cite" href="#cite-2">[cite:2]</a> Certificate trunks use the getting-started “greater than 250” sentence. Table 5 is not flattened into it. They send OPTIONS with their FQDN or Control Hub marks them down. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>2 minutes.</strong> Inbound SIP matching is URI via, request, to, from, then called number, then calling number, then destination-pattern on the ANI. <a class="cite" href="#cite-3">[cite:3]</a> The Webex sample peer matches incoming uri request on dtg= and uses BAD.BAD only as a dummy. <a class="cite" href="#cite-1">[cite:1]</a> Outbound, hunt 0 takes the longest pattern and then the lower preference. <a class="cite" href="#cite-3">[cite:3]</a> Read the hunt order in the SBC vendor’s own guide. This room only cites CUCM closest-match and CUBE preference, and those two engines already differ.</p>
+<p><strong>30 seconds, ciphers.</strong> Commercial is AES_CM_128_HMAC_SHA1_80. Webex for Government is AEAD_AES_256_GCM, certificate, CUBE only. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>2 minutes, debugs.</strong> show dial-peer voice summary shows the hunt. debug voip ccapi inout shows a failed leg that hunts. debug voip uri is for URI matching. Before those stay enabled, jr1i3r wants DS 64224 so 75 percent CPU shuts debugs off. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>What you will not say.</strong> You will not recite the sample password, and you will not build a firewall ACL from memory.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+
+<ol class="cite-list"><li id="cite-1">Configure Local Gateway on Cisco IOS XE for Webex Calling — help.webex — article jr1i3r — <a href="https://help.webex.com/article/jr1i3r">help.webex.com article jr1i3r</a> — retrieved 2026-10-14. SIP TLS and SRTP. Commercial crypto AES_CM_128_HMAC_SHA1_80. Government crypto AEAD_AES_256_GCM. Sample dial-peer with max-conn 250, destination-pattern BAD.BAD, incoming uri request, srtp. OPTIONS keepalive class. Diagnostic signatures and DS 64224 at 75 percent CPU. The article’s sample usernames and passwords are not reproduced here.</li><li id="cite-2">Get started with Local Gateway — help.webex — article t9xctu — <a href="https://help.webex.com/article/t9xctu">help.webex.com article t9xctu</a> — retrieved 2026-10-14. Registration trunks up to 250 and CUBE only. Certificate trunks above 250 in the getting-started wording. Table 5 is not flattened into that sentence. T6-R01 quotes the bands from the same article. OPTIONS and the FQDN in Contact for Control Hub status. Webex for Government is certificate-based and CUBE only.</li><li id="cite-3">Understand IOS and IOS XE Call Routing — Cisco — <a href="https://www.cisco.com/c/en/us/support/docs/voice/ip-telephony-voice-over-ip-voip/211306-In-Depth-Explanation-of-Cisco-IOS-and-IO.html">cisco.com document 211306</a> — retrieved 2026-10-14. Inbound SIP order from incoming uri via through destination-pattern. Default dial-peer hunt 0. huntstop. show dial-peer voice summary. debug voip ccapi inout. debug voip uri.</li><li id="cite-4">Validate Cisco Local Gateway configuration through Control Hub — help.webex — article 2zx7fg — <a href="https://help.webex.com/article/2zx7fg">help.webex.com article 2zx7fg</a> — retrieved 2026-10-14. Config Validation is for registration-based Local Gateways. It checks the Webex-facing tenant, sip profile, and dial-peers. It does not validate the PSTN or PBX dial plan.</li><li id="cite-5">Port Reference for Cisco Webex Calling — help.webex — article b2exve — <a href="https://help.webex.com/article/b2exve">help.webex.com article b2exve</a> — retrieved 2026-10-14. Revision history September 07, 2026. Certificate destination TCP 5062, registration destination TCP 8934, phone source TCP 5060–5280.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+
+
+<ul>
+<li>Open questions: which third-party SBCs are on the certificate device list this month; the current port reference.</li>
+<li>Firewall ports and IOS-XE minimums are cited as of 2026-10-14. Other-SBC match order stays marked in the sister row.</li>
+<li>Assets missing: a sanitized running-config with the password lines removed, audio, trunk screenshot.</li>
+<li>Ideas for v1.0: a side-by-side of registration tenant versus certificate tenant, still without secrets.</li>
+<li>Next review: <mark class="recheck">re-check</mark> jr1i3r if a cipher line changes.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T6-R04-ucce-pcce-to-wxcc.html"><span>Previous</span><strong>T6-R04</strong><em>UCCE and PCCE to Webex Contact Center</em></a><a class="next" href="T7-R07-sip-trace-reading-lab.html"><span>Next</span><strong>T7-R07</strong><em>SIP Trace Reading Lab</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

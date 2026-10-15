@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countries and residency · Webex Lab</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/university.css">
+<link rel="stylesheet" href="assets/css/wow.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="uni-menu" aria-label="University">
+<a href="diagrams.html">Diagrams</a>
+<a href="flows.html">Flows</a>
+<a href="charts.html">Charts</a>
+<a href="downloads.html">Cheat Codes</a>
+<a href="play.html">Play</a>
+<a href="ecosystem.html">Ecosystem</a>
+<a href="downloads.html">Downloads</a>
+<a href="careers.html">Careers</a>
+</nav>
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Webex Lab<small>University</small></span></a>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Choose a theme">◐</button>
+</div>
+</header>
+<main id="main"><div class="wrap">
+<p class="crumbs"><a href="index.html">Home</a> / Regions</p>
+<h1>Countries and residency</h1>
+<p class="lede">Flags mark regions named in the Canon room. This page does not invent carriers, dial plans, or a PSTN country matrix.</p>
+<div class="region-grid">
+<article id="eu">
+<h2><span class="flag" aria-hidden="true">🇪🇺</span> Europe</h2>
+<p>Messaging GEO named in the room: Europe, Frankfurt and Amsterdam, mapped to Continental Europe, the Middle East, and Africa. An EU city time zone puts Meetings data in Frankfurt.</p>
+</article>
+<article id="us">
+<h2><span class="flag" aria-hidden="true">🇺🇸</span> North America and rest of world</h2>
+<p>The same room names a second Messaging GEO: North America and the rest of the world, in United States data centers. A 1:1 chat that includes a North America or rest-of-world user is stored in that GEO.</p>
+</article>
+<article id="keys">
+<h2><span class="flag" aria-hidden="true">🔐</span> Country at provisioning</h2>
+<p>The country selected at provisioning permanently sets the GEO for users and encryption keys. The room says Webex does not currently support migrating between GEOs. Read the result at Account, Info, Data Locations.</p>
+</article>
+<article id="calling">
+<h2><span class="flag" aria-hidden="true">☎️</span> Calling and Meetings</h2>
+<p>Calling follows the principal place of business at order time. Meetings follow the site time zone. Other time zones use the data center closest to the selected city.</p>
+</article>
+<article id="cc">
+<h2><span class="flag" aria-hidden="true">🎧</span> Contact Center</h2>
+<p>Contact Center, Settings, Service Details, Country of Operation. The setup wizard creates the tenant in the closest data center from Data Locality. CountryCodeGEOMapping.xlsx maps the country in cell B3 to the region in cell B4. Article named in the room: wej14b.</p>
+</article>
+<article id="pick">
+<h2><span class="flag" aria-hidden="true">🔢</span> Which country to pick</h2>
+<p>If users are mostly in one country, select that country even when it differs from the business address. If they are spread out, select the country with the highest user count. Everyone in the org is stored in that GEO.</p>
+</article>
+</div>
+<p>Source: <a href="rooms/T1-R07-data-residency-security.html">T1-R07 Data Residency &amp; Security Basics</a>. The room also names eligible legacy moves dated 29 Aug 2025 (EU common application data, Saudi Arabia Meetings sites, UAE common application data). That header is older than twelve months, so re-check it. Meetings article WBX28754 is a data-center city list, not the Messaging GEO list: free accounts may be stored outside the account holder’s region; billing is named as Texas and North Carolina; analytics as California and Texas. Cities may change.</p>
+<p><a href="index.html">Home</a> · <a href="ecosystem.html">Ecosystem</a></p>
+</div></main>
+<footer class="site-footer lab-footer wrap"><p>CypherMonkey · Webex Lab Free University</p></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+</body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T2-R03 · Dial Plans, PSTN &amp; Routing">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T2-R03 · Dial Plans, PSTN &amp; Routing · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R03" data-room-title="Dial Plans, PSTN &amp; Routing" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Dial Plans, PSTN &amp; Routing</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Dial Plans, PSTN &amp;amp; Routing">
+<defs>
+<linearGradient id="T2R03sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R03sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R03</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Dial Plans, PSTN &amp;amp; Routing. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Dial Plans, PSTN &amp;amp; Routing">
+<defs>
+<marker id="T2R03arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R03arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R03arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R03arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R03lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Internal dialing is an organization length plus a per-location prefix. Enterprise dial plans are global, one routing choice, and a pattern language with two wildcards that are illegal in the middle. PSTN is chosen per location: Cisco Calling Plan, Cloud Connected PSTN, or premises-based PSTN through a local gateway. Cloud PSTN serves Webex Calling users. Calls that start on the premises do not use it.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T2-R03</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T1-R01, T2-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Internal extension length is 2–10 digits, default 4. Routing prefix length is 1–7 and includes the steering digit, so a length of 4 leaves 3 digits for the site. Lengthening extensions does not rewrite speed dials. <a class="cite" href="#cite-1">[cite:1]</a></li><li>If extensions repeat across locations, turn off extension dialing between locations. The caller then dials the Enterprise Significant Number: routing prefix plus extension. Directory Connector must not already contain the prefix, or Webex adds it again. User extensions should not start with the steering digit or the outbound dial digit. <a class="cite" href="#cite-1">[cite:1]</a></li><li>An enterprise dial plan is global for all users and has one routing choice, a trunk or a route group. Patterns are ESN/on-net, +E.164, or a SIP URI domain. <code>X</code> is one digit. <code>!</code> is only at the end of an E.164 pattern, once. <code>617495X3XX</code> and <code>1617495X3!</code> are illegal. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Same route-group priority means random distribution. If the highest-priority trunk is unavailable, a lower priority is tried. The worked example is trunks 1 and 2 at level 1, trunk 3 at level 2. A route group holds 1 to 10 trunks. <a class="cite" href="#cite-2">[cite:2]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Internal extension length is 2–10 digits, default 4. Routing prefix length is 1–7 and includes the steering digit, so a length of 4 leaves 3 digits for the site. Lengthening extensions does not rewrite speed dials. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If extensions repeat across locations, turn off extension dialing between locations. The caller then dials the Enterprise Significant Number: routing prefix plus extension. Directory Connector must not already contain the prefix, or Webex adds it again. User extensions should not start with the steering digit or the outbound dial digit. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>An enterprise dial plan is global for all users and has one routing choice, a trunk or a route group. Patterns are ESN/on-net, +E.164, or a SIP URI domain. <code>X</code> is one digit. <code>!</code> is only at the end of an E.164 pattern, once. <code>617495X3XX</code> and <code>1617495X3!</code> are illegal. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Same route-group priority means random distribution. If the highest-priority trunk is unavailable, a lower priority is tried. The worked example is trunks 1 and 2 at level 1, trunk 3 at level 2. A route group holds 1 to 10 trunks. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Three PSTN choices can differ by location. Cloud PSTN, Cisco or Cloud Connected, is only for Webex Calling users. Premises-originated calls cannot use it. Unknown extensions of 2–10 digits can be sent to a trunk as premises calls. Standard Behavior is the recommended unknown-number handling once dial plans exist. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A CUCM route pattern and a Webex dial plan share the word “pattern” and not the evaluation rule. CSS closest-match stays in T6-R02. This room is the Control Hub language.</div>
+</section>
+
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>From a digit string to a trunk</h2>
+<div class="diagram" role="img" aria-label="Digit string, dial plan, route group, trunk">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digit string, dial plan, route group, trunk">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Digit string, dial plan, route group, trunk</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Org internal dialing sets extension length, prefix length, and the steering digit.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Each location gets a unique prefix. Outbound dial digit defaults to None.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  An enterprise dial plan matches ESN, +E.164, or a SIP URI host.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  The plan’s one routing choice is a trunk or a route group.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  Equal priority in the group is random. A dead trunk falls to a lower priority.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  Unknown extensions of 2–10 digits can leave for the premises as internal calls.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Digits[Digits or URI] --> Plan[Dial plan]
+  Plan --> RG[Route group]
+  RG --> Trunk
+  Trunk --> LGW[Local gateway or PBX]
+</pre>
+</details>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Three PSTN choices, one pattern language</h2>
+<div class="callout def"><span class="label">Location first</span><p>After a location exists, PSTN is assigned there: Cisco PSTN, Cloud Connected PSTN, or premises-based PSTN. The path in the trunk article is Calling &gt; Locations, then Assign or Manage. Cloud PSTN does not carry calls that originate from premises users. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Steering digit is inside the length</span><p>Prefix length includes the steering digit. Length 4 means three digits identify the site. Every prefix starts with the steering digit you chose. The outbound dial digit should be a different number, and its default is None. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Headers must agree</span><p>A dial plan accepts From and To as E.164 or as extensions. A mix of the two is refused. The article’s example pair is 1-222-333-4444 to 1-555-666-7777, both the same kind of number. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<h3>PSTN choice</h3>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>When the article offers it</th><th>Who can use it</th><th>Cite</th></tr></thead><tbody><tr><td>Cisco PSTN / Cisco Calling Plan</td><td>Purchased Calling Plan, supported country, and for the FTSW wording a new location. Pre-existing locations that already had other PSTN may need a support case.</td><td>Webex Calling users at that location. Emergency, inbound, outbound domestic and international, order or port numbers.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Cloud Connected PSTN</td><td>A CCP partner, including where Cisco Calling Plan is not available in the location.</td><td>Webex Calling users. Premises-originated calls cannot use cloud PSTN.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Premises-based PSTN</td><td>Keep the current provider. The local gateway becomes a trunk.</td><td>Webex Calling users via the trunk, and the trunk can also reach a premises PBX.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Pattern language</h3>
+<div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Meaning</th><th>Legal?</th><th>Cite</th></tr></thead><tbody><tr><td>+1408555XXXX</td><td>11-digit +E.164 starting +1408555</td><td>Yes. X is one digit 0–9.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>+14085551234</td><td>That exact string</td><td>Yes</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>+496100!</td><td>Any dial string starting +496100</td><td>Yes. ! only once, at the end, E.164 only.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>84969XXX</td><td>8-digit ESN starting 84969</td><td>Yes</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>84969764</td><td>Exact 8-digit ESN</td><td>Yes</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>617495X3XX</td><td>X in the middle</td><td>Illegal</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>1617495X3!</td><td>X mixed with !</td><td>Illegal</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>*.example.com</td><td>Host is a subdomain of example.com</td><td>Yes. alice@example.com does not match.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>example.com</td><td>Host is exactly example.com</td><td>alice@example.com matches. The match is the host, not the user.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<pre class="sim-out">Legal (n0xb944)
+  +1408555XXXX
+  +14085551234
+  +496100!
+  84969XXX
+  84969764
+  example.com
+  *.example.com
+
+Illegal
+  617495X3XX
+  1617495X3!
+
+SIP URI
+  alice@example.com matches example.com
+  alice@example.com does not match *.example.com
+  alice@eu.example.com matches *.example.com</pre>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R03">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R03map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R03map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Internal extension length</dt><dd>Organization setting, 2–10 digits, default 4. Lengthening it does not rewrite existing speed dials to internal extensions. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Routing prefix</dt><dd>Digits in front of an extension so two locations can reuse the same extension. Length 1–7, unique per location. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Steering digit</dt><dd>The first digit of every routing prefix. It counts inside the prefix length. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Enterprise Significant Number</dt><dd>Location routing prefix plus extension. Required for cross-location extension calls when inter-location extension dialing is off. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Outbound dial digit</dt><dd>Optional digit users dial for an outside line. Default None. Use a different digit from the steering digit. E.164 calls ignore this prefix requirement. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Enterprise dial plan</dt><dd>Global. Applies to all users. One routing choice: a trunk or a route group. Patterns are ESN/on-net, +E.164, or SIP URI domains. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Route group</dt><dd>1 to 10 trunks. Same priority is random. An unavailable higher-priority trunk falls through to a lower priority. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Trunk</dt><dd>Webex Calling to the premises, ending on a local gateway or another supported device. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Unknown extension</dt><dd>2–10 digits, or inbound caller ID that matches no dial-plan pattern. Can be routed to a trunk or route group as a premises call. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Standard Behavior</dt><dd>Recommended unknown-number handling once dial plans exist. Path: Services &gt; PSTN &amp; Routing &gt; Services. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Legacy Behavior</dt><dd>Kept for old local-gateway behavior. The article says not to use it once dial plans are configured. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Caller ID format</dt><dd>+E.164 selects the external CLID. ESN selects the internal CLID. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Verify Call Routing</dt><dd>Simulates a call from a cloud user, workspace, virtual line, or premises trunk. Shows permissions, fraud prevention, digit patterns, intercept, and translation. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Emergency Service Address</dt><dd>Mandatory for U.S. and Canada Cisco Calling Plan locations. The same article later expands ESA as Enterprise Service Address in the validation paragraph. Quote the sentence you mean. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Cloud Connected PSTN</dt><dd>Partner cloud PSTN. No local PSTN hardware for that choice. Still only for Webex Calling users. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Cisco Calling Plan</dt><dd>Cisco’s cloud PSTN. Needs a committed outbound calling plan and a supported country. Read the country in the location wizard on the day you order. The supported-country list changes, so a copied list in this room would be wrong the next time Cisco adds a market. <a class="cite" href="#cite-1">[cite:1]</a></dd></div></dl>
+<h3>Mind map</h3>
+<div class="diagram" role="img" aria-label="What touches a Webex Calling dial plan">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What touches a Webex Calling dial plan">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">What touches a Webex Calling dial plan</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Org length and steering digit  ·  location prefix  ·  ESN</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Dial plan patterns  ·  one trunk or one route group</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Cisco PSTN, Cloud Connected PSTN, or local gateway</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Unknown extensions back to the PBX</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Verify Call Routing before you argue with a trace</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">CUCM CSS closest-match stays in T6-R02</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Dial plan))
+    Internal
+    Enterprise
+    PSTN
+    Unknown
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Local gateway</td><td>Premises SBC that terminates the trunk.</td><td>Premises PSTN and PBX reachability. T2-R02 is the trunk build.</td><td>Trunk, then route group, then dial plan.</td><td>A dial plan whose routing choice is a trunk that never registered.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Cisco Calling Plan</td><td>Cloud PSTN from Cisco.</td><td>Numbers, porting, and emergency on supported locations.</td><td>Location PSTN connection, committed OCP.</td><td>A location that already had another PSTN. The FTSW text says open a case.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Cloud Connected PSTN</td><td>Partner cloud PSTN.</td><td>Coverage where Cisco’s plan is not offered.</td><td>Location PSTN, choose the provider.</td><td>Expecting a premises phone to egress through it.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Directory Connector</td><td>AD sync into Webex.</td><td>Extensions in AD must not already include the routing prefix.</td><td>Directory Connector.</td><td>Doubled prefixes after sync.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Emergency address</td><td>ESA on U.S. and Canada Calling Plan locations.</td><td>Mandatory for that PSTN setup. A failed validation on premise or CCPP does not block the connection, and emergency handling can be delayed.</td><td>Locations, PSTN, Emergency Service Address.</td><td>Closing the ESA screen and assuming emergency is done.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Verify Call Routing</td><td>Control Hub simulator.</td><td>Reads the decision before a user reports it.</td><td>Services &gt; PSTN &amp; Routing &gt; Gateway configurations.</td><td>Debating a pattern that the tool already rejected.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Calling permissions</td><td>Outgoing calling permissions per location.</td><td>The dial-plan article points at them as a separate control.</td><td>Location calling permissions.</td><td>A pattern matches and the permission still blocks the call.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Unified CM CSS</td><td>On-premises partition search.</td><td>Closest match is a CUCM rule, documented in T6-R02. It is not this wildcard language.</td><td>CUCM, not Control Hub.</td><td>Explaining X and ! with partition order.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Calling user</td><td>Dial plan</td><td>Global plan, all users</td><td>ESN, +E.164, or SIP URI host</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Dial plan</td><td>Trunk or route group</td><td>Single routing choice</td><td>The call, if the pattern matches</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Route group</td><td>Trunks</td><td>Priority, then random among equals</td><td>Failover to a lower priority</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Location user</td><td>Premises PBX</td><td>Unknown-extension toggle, 2–10 digits</td><td>Abbreviated dialing during a partial migration</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Premises trunk</td><td>Webex Calling</td><td>Inbound caller ID with no pattern match</td><td>Treated as an unknown extension</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Webex Calling user</td><td>Cloud PSTN</td><td>Cisco PSTN or CCP on the location</td><td>PSTN access for cloud users</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Directory Connector</td><td>User extension</td><td>AD attribute</td><td>Extension. Prefix must not already be in AD.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Admin</td><td>Verify Call Routing</td><td>Control Hub simulation</td><td>Permissions, fraud, digits, intercept, translation</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> A Microsoft Teams dial plan is not this pattern language. Compare a Webex pattern in help.webex.com article n0xb944 with the normalization rule in the Teams admin center. The pattern languages differ, so a match in one console is not a match in the other.</div>
+<div class="table-wrap"><table><thead><tr><th>Webex Calling</th><th>Unified CM habit</th><th>What this room will say</th><th>Cite</th></tr></thead><tbody><tr><td>Enterprise dial plan</td><td>Route pattern plus CSS/partition</td><td>Different engines. CUCM closest-match is T6-R02.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Routing prefix + extension</td><td>On-net access code plus directory number</td><td>ESN is the Webex name when inter-location extension dialing is off.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Route group priority</td><td>Route list and route group</td><td>Webex: random among equal priority, then a lower priority. Do not import a CUCM distribution algorithm.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Cloud PSTN</td><td>PSTN route pattern to a SIP trunk</td><td>Cloud PSTN is for Webex Calling users at the location.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The supported-country list for Cisco Calling Plan changes. <mark class="recheck">re-check</mark> it in the location wizard rather than typing a country from memory. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open the Webex dial-plan pattern in Control Hub and the route pattern on the Unified CM that still owns the call. Closest-match versus Webex wildcards is why no help page freezes a field map.</li>
+<li>Canon planning: add a worked Verify Call Routing capture when a lab tenant exists. That is not a Cisco roadmap.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Every AD user has a doubled site code</td><td>Directory Connector extensions already included the prefix.</td><td>AD extension versus the location prefix.</td><td>Store the bare extension in AD.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Emergency setup was skipped after a validation error</td><td>The article lets you close ESA and continue. Handling can be delayed and extra charges can apply.</td><td>ESA state on a U.S. or Canada location.</td><td>Validate the address. Do not treat Close as success.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>A premises phone tries to leave through Cloud Connected PSTN</td><td>Cloud PSTN is for Webex Calling users.</td><td>Where the call originates.</td><td>Give that site premises PSTN or move the user.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>How a short extension leaves the cloud</h2>
+<div class="diagram" role="img" aria-label="Unknown extension during a partial move">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Unknown extension during a partial move">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Unknown extension during a partial move</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Inter-location extension dialing is off because 1000 exists in two stores.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  A same-site 1000 stays local. Another site needs the ESN.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  A 4-digit string with no Webex user can match unknown-extension routing.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  The location trunk or route group receives it as a premises call.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  Inbound caller ID with no dial-plan pattern is the same unknown case.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  Standard Behavior is the recommended handling once dial plans exist.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>What the article says</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Control Hub</td><td>Organization</td><td>Calling &gt; Settings &gt; Service &gt; Internal Dialing. Length, prefix length, steering digit, inter-location toggle.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Location</td><td>Dialing</td><td>Management &gt; Locations &gt; Calling &gt; Dialing. Unique prefix. Outbound digit, default None.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Admin</td><td>Route group</td><td>Add trunks first. Set a priority per trunk. 10 trunks maximum.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>4</td><td>Admin</td><td>Dial plan</td><td>Services &gt; PSTN &amp; Routing &gt; Gateway configurations &gt; Dial Plans. Cisco Calling Plan customers can use Services &gt; Calling &gt; Call Routing.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>5</td><td>Pattern</td><td>Routing choice</td><td>One trunk or one route group for the plan.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>6</td><td>Location</td><td>Unknown extensions</td><td>Calling tab, Internal dialing, route unknown extensions to the premises.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>7</td><td>Services</td><td>Unknown numbers</td><td>Standard Behavior, caller ID format, max unknown extension length 2–10.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>8</td><td>Verify Call Routing</td><td>Result</td><td>Source is a cloud user, workspace, virtual line, or premises trunk.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>Sign in to Control Hub. Calling &gt; Settings &gt; Service. Scroll to Internal Dialing. Set extension length (2–10, default 4), prefix length (1–7), and the steering digit. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Leave inter-location extension dialing on only when every extension is unique. Otherwise the caller dials prefix + extension for other sites. The toggle defaults to on. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open the location. Calling &gt; Dialing. Set a unique prefix whose length matches the org recommendation and is still 1–7. Set the outbound dial digit only if users expect an outside-line digit, and do not reuse the steering digit. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If an extension equals a national number, the extension wins. The article recommends an outbound dial digit in that case, and it recommends E.164 for PSTN in both directions. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create trunks, then a route group of 1–10 trunks with priorities. Confirm the group. You can jump to locations or to dial plans from that screen. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Services &gt; PSTN &amp; Routing &gt; Gateway configurations &gt; Dial Plans &gt; Create Dial Plan. Name it, pick the routing choice, add patterns. Cisco Calling Plan customers may use Services &gt; Calling &gt; Call Routing. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Bulk patterns: Actions, Import Dial Patterns CSV or Export Dial Patters CSV. The export label is printed with that spelling. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Per location, enable routing unknown extensions to the premises and pick the trunk or route group. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Services &gt; PSTN &amp; Routing &gt; Services. Prefer Standard Behavior once dial plans exist. Choose +E.164 or ESN caller ID. Set maximum unknown extension length. If you lengthen extensions and the PSTN is not E.164, incoming PSTN can be treated as local; enforce E.164 before the call reaches Webex Calling. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Run Verify Call Routing on the number you care about. For a U.S. or Canada Cisco Calling Plan location, set the Emergency Service Address. A failed validation does not block premise or CCPP setup, and it can delay emergency handling. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<!-- VISUAL:screenshot:dial-plan | Studio | assets/images/T2-R03/dial-plan.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Extension length</td><td>2–10, default 4</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Routing prefix length</td><td>1–7, including the steering digit</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Outbound dial digit default</td><td>None</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Trunks in a route group</td><td>At least 1, maximum 10</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Equal priority</td><td>Random among those trunks</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Unknown extension length</td><td>2–10</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>! wildcard</td><td>Once, at the end, E.164 pattern only</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>X in the middle</td><td>Rejected</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Cisco Calling Plan countries</td><td>Supported-country list, not copied here</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Open the location wizard on the day you order and read the country Cisco offers then. The list changes, so this room leaves it on the wizard.</td></tr><tr><td>CUCM field crosswalk</td><td>Not in these articles</td><td>T6-R02 covers CSS order only</td><td>Open the Webex pattern and the CUCM route pattern side by side. Closest-match and Webex wildcards are different engines, so the field names will not line up.</td></tr></tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>8881000 rings the wrong store</td><td>Prefix 888 was meant for one site and the extension 1000 is duplicated.</td><td>Location prefixes and the inter-location toggle.</td><td>Unique prefixes. ESN when the toggle is off.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Speed dials broke after a longer extension</td><td>Existing speed dials are not rewritten.</td><td>Extension length change.</td><td>Rebuild the speed dials.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Synced users show prefix+prefix+extension</td><td>AD already contained the prefix.</td><td>Directory Connector payload.</td><td>Remove the prefix from AD.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Users whose extension starts with 9 cannot dial</td><td>9 is the steering digit or the outbound dial digit.</td><td>Extension versus those two digits.</td><td>Renumber the extension.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Pattern 617495X3XX will not save</td><td>X in the middle is illegal.</td><td>The pattern string.</td><td>Use a run of X at the end, or an exact string.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>+496100X! will not save</td><td>X and ! together are illegal. ! is E.164-only, once, at the end.</td><td>The pattern string.</td><td>Use +496100! or a run of X without !.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>alice@example.com hits a *.example.com plan</td><td>It should not. The star is subdomains.</td><td>Host part only.</td><td>Add example.com if the apex must match.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>From is E.164 and To is an extension</td><td>The plan refuses a mix.</td><td>Both headers.</td><td>Send both as E.164 or both as extensions.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Two trunks at priority 1, and the call picks either</td><td>Equal priority is random.</td><td>Route group priorities.</td><td>That is the documented distribution.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Four-digit PSTN caller ID lands on the PBX</td><td>No dial-plan pattern matched, so it is an unknown extension. Non-E.164 PSTN after an extension-length increase can look local.</td><td>Unknown-extension toggle and number format.</td><td>Enforce E.164 on the way in, or add a pattern.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What is the default extension length?</summary><p class="answer">4 digits, and the allowed range is 2–10. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What three PSTN choices can a location have?</summary><p class="answer">Cisco PSTN, Cloud Connected PSTN, or premises-based PSTN. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Who can place a call through cloud PSTN?</summary><p class="answer">Webex Calling users. Premises-originated calls cannot. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is an ESN?</summary><p class="answer">Location routing prefix plus extension, used when inter-location extension dialing is disabled. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many trunks can a route group hold?</summary><p class="answer">1 to 10. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What does priority level 1 on two trunks mean?</summary><p class="answer">Calls are distributed randomly across them. Trunk 3 at level 2 is the fallback when a level-1 trunk is unavailable. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where may ! appear?</summary><p class="answer">Once, at the end, and only on an E.164 pattern. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Does *.example.com match alice@example.com?</summary><p class="answer">No. It matches hosts that are subdomains, such as eu.example.com. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why would incoming PSTN be treated as a local premises call?</summary><p class="answer">Extension length was increased and the provider is not sending E.164. Enforce E.164 first. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does Verify Call Routing show beyond the pattern?</summary><p class="answer">Outgoing permissions, fraud prevention, digit patterns, intercept, and translation. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Is partition order the tie-break here?</summary><p class="answer">No. That is the CUCM CSS rule in T6-R02. This room’s engine is the Webex pattern language. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which export label is misspelled in the article?</summary><p class="answer">Export Dial Patters CSV. Quote it that way. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Pattern desk, no tenant required</h2>
+<ul><li><label><input type="checkbox"> Goal: classify twelve patterns as legal E.164, legal ESN, legal SIP URI, or illegal, using only n0xb944.</label></li><li><label><input type="checkbox"> Prereq: this room. A calling lab is optional. Production dial plans are out of scope.</label></li><li><label><input type="checkbox"> Step 1. Copy +1408555XXXX, +496100!, 84969XXX, 84969764. Expected: all four are in the article’s example table.</label></li><li><label><input type="checkbox"> Step 2. Reject 617495X3XX and 1617495X3!. Expected: the article names both as illegal.</label></li><li><label><input type="checkbox"> Step 3. Decide alice@example.com against example.com and against *.example.com. Expected: the first host matches, the star does not.</label></li><li><label><input type="checkbox"> Step 4. Write the route-group example: trunks 1 and 2 at priority 1, trunk 3 at priority 2. Expected: random between 1 and 2, then 3.</label></li><li><label><input type="checkbox"> Step 5. If you have a lab, run Verify Call Routing from a cloud user. Expected: the result lists more than the matched digits.</label></li><li><label><input type="checkbox"> Evidence: the twelve-line sheet. Do not paste a production CSV.</label></li><li><label><input type="checkbox"> Break it: set the same extension in two locations and leave inter-location dialing on. Recovery: turn the toggle off and dial the ESN.</label></li><li><label><input type="checkbox"> Reflection: which of your old CUCM patterns used X in the middle, and how you would rewrite them.</label></li></ul>
+<p>The dial-plan translator on the <a href="../labs.html">Labs</a> page is a teaching model. The legal and illegal rows above are the article.</p>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Default internal extension length?</p><details><summary>Answer</summary><p class="answer">Default internal extension length: 4. Range 2–10. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Prefix length 4 leaves how many digits for the site?</p><details><summary>Answer</summary><p class="answer">Prefix length 4 leaves how many digits for the site: 3. The steering digit is included in the 4. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Two stores both use extension 1000. The caller dials 1000.</p><details><summary>Answer</summary><p class="answer">With inter-location dialing off, that reaches the match in the caller’s own location. The other store needs the ESN. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>What is the default outbound dial digit?</p><details><summary>Answer</summary><p class="answer">What is the default outbound dial digit: None. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Which pattern is illegal?</p><details><summary>Answer</summary><p class="answer">Which pattern is illegal: 617495X3XX, because X is in the middle. Also 1617495X3!. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Where can ! be used?</p><details><summary>Answer</summary><p class="answer">Once at the end of an E.164 pattern. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>Trunks 1 and 2 are priority 1. Trunk 1 is down.</p><details><summary>Answer</summary><p class="answer">A priority-1 trunk that is up still carries the call at random among available priority-1 trunks. Priority 2 is the next setting when the highest priority is unavailable. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>How many trunks in a route group?</p><details><summary>Answer</summary><p class="answer">How many trunks in a route group: 1 to 10. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>A premises phone needs Cloud Connected PSTN.</p><details><summary>Answer</summary><p class="answer">The article says calls originating from premises users cannot access cloud PSTN. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Recommended unknown-number handling after dial plans exist?</p><details><summary>Answer</summary><p class="answer">Standard Behavior. Legacy Behavior is not recommended then. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Write one legal ESN and one legal +E.164 wildcard from the article’s table.</p><details><summary>Answer</summary><p class="answer">Write one legal ESN and one legal +E.164 wildcard from the article’s table.: 84969XXX or 84969764, and +1408555XXXX or +496100! or +14085551234. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Does a longer extension rewrite speed dials?</p><details><summary>Answer</summary><p class="answer">Does a longer extension rewrite speed dials: No. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article></div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain location prefixes, the three PSTN choices, and why cloud PSTN is for Webex Calling users." | assets/audio/T2-R03/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk X and !, route-group priority, unknown extensions, and Standard versus Legacy behavior." | assets/audio/T2-R03/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: default length, prefix math, illegal patterns, 10 trunks." | assets/audio/T2-R03/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Internal length defaults to 4. A routing prefix of length 4 includes the steering digit, so three digits name the site. Duplicate extensions mean the caller dials prefix plus extension. PSTN is Cisco, Cloud Connected, or a local gateway, per location.</p>
+<p><strong>2 minutes.</strong> Enterprise dial plans are global and have one routing choice. I can defend +1408555XXXX, +496100!, and 84969XXX, and I will reject X in the middle and X mixed with !. SIP URI matching is the host only, and *.example.com does not match the apex. Route groups hold up to 10 trunks, random at the same priority. Unknown extensions from 2 to 10 digits go to the premises when that location toggle is on. Standard Behavior is the recommendation after dial plans exist.</p>
+<p><strong>30 seconds, cloud PSTN.</strong> Cisco Calling Plan needs the committed plan and a supported country. Cloud Connected PSTN is the partner path. Neither one takes a call that starts on the premises.</p>
+<p><strong>2 minutes, migration habit.</strong> I keep abbreviated dialing with the unknown-extension toggle while a site is only partly moved. I keep the prefix out of Active Directory. I enforce E.164 on the PSTN before I lengthen extensions. I run Verify Call Routing before I argue about a trace. I do not describe this as CUCM closest-match.</p>
+<p><strong>What you will not say.</strong> You will not claim a Teams dial plan is the same table. You will not invent the Cisco Calling Plan country list from memory.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list"><li id="cite-1">Configure Webex Calling for your organization — help.webex — article njvdjf2 — <a href="https://help.webex.com/article/njvdjf2">help.webex.com article njvdjf2</a> — retrieved 2026-10-14. Internal extension length 2–10, default 4. Routing prefix length 1–7 including the steering digit. ESN when inter-location extension dialing is off. Outbound dial digit default None. Directory Connector must not already hold the prefix. Speed dials are not rewritten. Cisco Calling Plan needs a committed OCP, a supported country, and the article’s note on pre-existing locations.</li><li id="cite-2">Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — <a href="https://help.webex.com/article/n0xb944">help.webex.com article n0xb944</a> — retrieved 2026-10-14. Three PSTN choices. Cloud PSTN only for Webex Calling users. Route group 1–10 trunks, random at equal priority. Dial-plan pattern language, illegal X examples, SIP URI host match, unknown extensions, Standard versus Legacy behavior, Verify Call Routing, ESA for U.S. and Canada. The export action is printed Export Dial Patters CSV.</li><li id="cite-3">Cisco CallManager System Guide, Release 4.0(1), Partitions and Calling Search Spaces — Cisco — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html">cisco.com CUCM 4.0(1) partitions and CSS</a> — cited only to keep CUCM closest-match in T6-R02. Read closest-match on the Unified CM that still owns the call. That engine is not the Webex pattern language in n0xb944, which is why the two consoles can pick different routes for the same digits.</li></ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the live country list for Cisco Calling Plan; whether a current tenant still shows the misspelled export label.</li>
+<li>Check the country in the location wizard, the route pattern on the remaining Unified CM, and the Teams normalization rule in its own admin center. Each list changes on its own product’s schedule.</li>
+<li>Assets missing: dial-plan screenshot, audio.</li>
+<li>Ideas for v1.0: a Verify Call Routing capture from a lab tenant, stored as text.</li>
+<li>Next review: <mark class="recheck">re-check</mark> n0xb944 if the wildcard rules change.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T2-R02-local-gateway-pstn.html"><span>Previous</span><strong>T2-R02</strong><em>Local Gateway and PSTN Options</em></a><a class="next" href="T2-R06-calling-security-compliance.html"><span>Next</span><strong>T2-R06</strong><em>Calling Security &amp; Compliance</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

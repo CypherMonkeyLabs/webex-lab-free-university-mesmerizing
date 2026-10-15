@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T6-R05 · Third-party PBX &amp; CC to Webex">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T6-R05 · Third-party PBX &amp; CC to Webex · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T6" data-room="T6-R05" data-room-title="Third-party PBX &amp; CC to Webex" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T6</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T6/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T6 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T6 · Migration</p>
+<h1>Third-party PBX &amp; CC to Webex</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Third-party PBX &amp;amp; CC to Webex">
+<defs>
+<linearGradient id="T6R05sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T6R05sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Migration</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T6-R05</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Plan</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Cutover</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Webex</text></g>
+</svg>
+<figcaption>Illustrated scene for Third-party PBX &amp;amp; CC to Webex. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Third-party PBX &amp;amp; CC to Webex">
+<defs>
+<marker id="T6R05arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Source PBX → Plan → Cutover → Webex</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Webex</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T6R05arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T6R05arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T6R05arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T6R05lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Source PBX → Plan → Cutover → Webex. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Cisco names a third-party PBX as a source the Dedicated Instance method has covered, and it names third-party phones as a provisioning case. It does not print an Avaya, Genesys, or Amazon Connect object crosswalk. What it does print is how Webex Contact Center reaches a premises PBX or Microsoft Teams, and how UCCX may sit beside Dedicated Instance.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T6-R05</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L4</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T6-R04</strong></span>
+<span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>The Dedicated Instance practice article lists third-party PBX among sources the method has been used for. It does not print the object map. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>DeviceEligibility.csv identifies third-party devices. Many non-phone devices have no enterprise-to-cloud firmware path, so you provision them in Control Hub. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Webex Contact Center can deliver to a premises PBX or to Microsoft Teams through a Local Gateway Direct SIP trunk. Cisco does not support connecting Webex Calling PSTN calls directly to Microsoft Teams endpoints. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>A dial number is free-form. +E.164 is typical and not mandatory. The number must be reachable. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>On-premises UCCX talking to Unified CM inside Dedicated Instance needs round-trip time under 60 ms. Dedicated Instance to Webex Contact Center uses certificate trunks. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Migration Insights reads a Unified CM tar. A third-party PBX export is not that tar. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>The implement article says to work with the third-party vendor for third-party devices and phones. <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>Local Gateways such as Cisco CUBE or approved third-party SBCs can be set for +E.164 so they interoperate with an on-premises PBX. Session border controller configuration is the administrator’s work. The voice-channel article does not include vendor-specific SBC steps. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Microsoft Teams agents use a registration or certificate Local Gateway, CUBE or a third-party SBC, +E.164 on the gateway, and presence sync between Agent Desktop and the Teams client. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>A customer story offers three contact-center approaches beside Dedicated Instance: Webex Contact Center, UCCX on Dedicated Instance IaaS, or UCCX left on premises if the 60 ms round-trip holds. <a class="cite" href="#cite-6">[cite:6]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> An interview that asks for an Avaya-to-Webex field map has to hear the gap. The cited pages name the source and the trunk. They do not name the object crosswalk.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Where a non-Cisco source actually lands</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T6-R05/arch.svg -->
+<div class="diagram" role="img" aria-label="Third-party PBX and contact center paths into Webex">
+<svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Third-party PBX and contact center paths into Webex">
+<rect width="980" height="300" fill="#0c121c"/>
+<text x="28" y="36" fill="#c6e27a" font-family="Georgia, serif" font-size="20">Named paths. No invented object map.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="64" width="210" height="150" rx="14" fill="#1a2214" stroke="#c6e27a"/>
+<text x="44" y="96">Premises PBX</text>
+<text x="44" y="122" fill="#b7ad9c">or PSTN DID / cellular</text>
+<text x="44" y="144" fill="#b7ad9c">agents via LGW or CCP</text>
+<text x="44" y="166" fill="#b7ad9c">+E.164 on the gateway</text>
+<text x="44" y="188" fill="#b7ad9c">SBC is the admin’s work</text>
+<rect x="268" y="64" width="220" height="150" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="284" y="96">Local Gateway</text>
+<text x="284" y="122" fill="#b7ad9c">CUBE or approved SBC</text>
+<text x="284" y="144" fill="#b7ad9c">registration or certificate</text>
+<text x="284" y="166" fill="#b7ad9c">Teams Direct SIP lives here</text>
+<text x="284" y="188" fill="#b7ad9c">not a direct PSTN-to-Teams hop</text>
+<rect x="518" y="64" width="210" height="150" rx="14" fill="#121a2a" stroke="#7eb6ff"/>
+<text x="534" y="96">Webex Calling</text>
+<text x="534" y="122" fill="#b7ad9c">numbers saved as +E.164</text>
+<text x="534" y="144" fill="#b7ad9c">third-party phones in Hub</text>
+<text x="534" y="166" fill="#b7ad9c">Insights tar is Unified CM</text>
+<text x="534" y="188" fill="#b7ad9c">eligibility CSV names them</text>
+<rect x="756" y="64" width="196" height="150" rx="14" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="772" y="96">Contact center</text>
+<text x="772" y="122" fill="#b7ad9c">WxCC or UCCX</text>
+<text x="772" y="144" fill="#b7ad9c">DI uses certificate trunks</text>
+<text x="772" y="166" fill="#b7ad9c">UCCX RTT under 60 ms</text>
+<text x="772" y="188" fill="#b7ad9c">JTAPI to Unified CM</text>
+</g>
+<text x="28" y="250" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Cisco does not support connecting Webex Calling PSTN-delivered calls directly to Microsoft Teams endpoints.</text>
+<text x="28" y="276" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Avaya, Genesys, and Amazon Connect field maps are not in these pages. That row stays TODO-verify.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Agent connectivity choices the voice-channel article names">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent connectivity choices the voice-channel article names">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#c6e27a" font-family="Georgia, serif" font-size="20">How an agent is connected</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="64" width="170" height="72" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="42" y="106">Webex PSTN</text>
+<rect x="214" y="64" width="170" height="72" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="228" y="96">Webex Calling</text><text x="228" y="116" fill="#b7ad9c">device or app</text>
+<rect x="400" y="64" width="170" height="72" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="414" y="106">Premise PBX</text>
+<rect x="586" y="64" width="170" height="72" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="600" y="96">Microsoft Teams</text><text x="600" y="116" fill="#b7ad9c">via LGW Direct SIP</text>
+<rect x="772" y="64" width="180" height="72" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="786" y="96">Dial number</text><text x="786" y="116" fill="#b7ad9c">reachable, often +E.164</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  PBX[Premises PBX] --> LGW[Local Gateway]
+  TEAMS[Microsoft Teams] --> LGW
+  LGW --> WXC[Webex Calling]
+  WXC --> WXCC[Webex Contact Center]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What Cisco printed, and what it left blank</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T6-R05/hero.png -->
+<div class="table-wrap"><table><thead><tr><th>Claim you can teach</th><th>What the page actually says</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Third-party PBX is in scope of a method</td><td>The Dedicated Instance practice article names BroadCloud, BroadWorks, Spark Calling, Unified CM, HCS, and third-party PBX as platforms the method has been used for.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>There is an object crosswalk</td><td>These pages do not print one. <mark class="todo-verify">TODO-verify</mark> any Avaya, Genesys, or Amazon Connect field map before you teach it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Insights ingests the PBX</td><td>Migration Insights and the user task take a Unified CM tar. Do not describe a third-party export as that tar.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Third-party phones convert like 8800 Enterprise</td><td>The deployment guide says many of these devices have no firmware upgrade path from enterprise to cloud firmware. Provision them in Control Hub. Some are replaced. The example is ATA 191/192. Others need manual reconfiguration or software changes.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="callout gotcha"><strong>Gotcha.</strong> DeviceEligibility.csv includes a Third-Party column of eligibility. That is not a statement that every third-party phone has an MPP conversion. The firmware article’s ineligible list (8821, 8831) is a Cisco phone list. Do not paste it onto a vendor phone. <a class="cite" href="#cite-2">[cite:2]</a></div>
+<h3>Contact center beside Dedicated Instance</h3>
+<div class="table-wrap"><table><thead><tr><th>Placement</th><th>Constraint the article prints</th><th>Cite</th></tr></thead><tbody>
+<tr><td>UCCX and Unified CM both on premises, with a SIP trunk toward Dedicated Instance</td><td>On-premises Unified CM is call control for agent and supervisor phones. Dedicated Instance serves back-office users. The story says this meets the 60 ms round-trip because UCCX and its Unified CM are together.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>UCCX on premises, Unified CM in Dedicated Instance</td><td>Round-trip time between UCCX and that Unified CM must be less than 60 ms. The interface is JTAPI. The article says it is unlikely a customer premises in AMER meets that from observed latency.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>UCCX on Dedicated Instance IaaS</td><td>The customer story says the customer purchases UCCX separately and deploys it in IaaS so the 60 ms requirement can be met. This room does not invent an IaaS SKU.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Webex Contact Center with Dedicated Instance agents</td><td>Certificate-based trunks. Registration-based trunks are no longer supported for that inter-op. Inbound may arrive on a Local Gateway into multi-tenant and then Webex Contact Center, or on Cloud Connected PSTN.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+<div class="callout note"><strong>Note.</strong> The queue patterns Longest Available, Circular, Top-down, and Best Available belong to Webex Contact Center queue articles. This room does not borrow the implement article’s “round robin, longest idle, or simultaneous ring” sentence and call it a Webex Contact Center pattern. That sentence is a Calling acceptance test. T6-R08. <a class="cite" href="#cite-5">[cite:5]</a></div>
+<h3>Teams and the premises PBX</h3>
+<div class="table-wrap"><table><thead><tr><th>Rule</th><th>Printed text</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Who may be an agent endpoint</td><td>Webex PSTN options, Webex Calling devices, Webex App, premise-based PBX devices, or Microsoft Teams-based agents.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Teams path</td><td>Local Gateway Direct SIP between the Webex Calling Local Gateway and the Microsoft Teams tenant. Registration or certificate Local Gateway. CUBE or third-party SBC. Presence sync is included.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Forbidden shortcut</td><td>Cisco does not support directly connecting Webex Calling PSTN-delivered calls directly to Microsoft Teams endpoints.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Dial number</td><td>Free-form. Typically +E.164. Not mandatory. Must be reachable through Webex PSTN and routing.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>CUBE guide</td><td>Microsoft Teams Direct SIP for Cisco CUBE points at the interoperability PDF. A third-party SBC uses the manufacturer’s guide.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T6-R05">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Webex</text>
+<circle cx="200" cy="132" r="36" fill="url(#T6R05map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T6R05map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Third-party PBX</dt><dd>A source the Dedicated Instance practice article names. The article does not list vendor objects. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>DeviceEligibility.csv</dt><dd>A Migration Insights report that identifies devices eligible to move, including third-party devices. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Dial number</dt><dd>The free-form agent destination in the voice-channel article. +E.164 is typical. Reachability is required. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Direct SIP</dt><dd>The Local Gateway trunk between Webex Calling and a Microsoft Teams tenant for Webex Contact Center agents. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>JTAPI</dt><dd>The UCCX call-control interface to Unified CM. The integration article says it is sensitive to latency and must be under 60 ms. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T6-R05/eco.svg -->
+<div class="diagram" role="img" aria-label="Sisters around a third-party source">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sisters around a third-party source">
+<rect width="980" height="240" fill="#0c121c"/>
+<circle cx="490" cy="120" r="54" fill="#14110c" stroke="#c6e27a"/>
+<text x="448" y="116" fill="#efe7d6" font-family="Georgia, serif" font-size="14">Third-party</text>
+<text x="468" y="136" fill="#efe7d6" font-family="Georgia, serif" font-size="14">source</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="36" y="28" width="180" height="40" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="48" y="53">App Hub calling</text>
+<rect x="36" y="100" width="180" height="40" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="48" y="125">CUBE / third-party SBC</text>
+<rect x="36" y="172" width="180" height="40" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="48" y="197">Control Hub devices</text>
+<rect x="760" y="28" width="190" height="40" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="772" y="53">WxCC voice channel</text>
+<rect x="760" y="100" width="190" height="40" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="772" y="125">UCCX and DI</text>
+<rect x="760" y="172" width="190" height="40" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="772" y="197">Certificate trunk</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Third-party source))
+    Calling
+      Insights CSV
+      Control Hub provision
+      App Hub
+    Contact center
+      WxCC agents
+      UCCX 60 ms
+      Certificate trunks
+</pre>
+</details>
+<h3>Sister technologies</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Webex App Hub</td><td>The catalog the deployment guide points at for third-party calling solutions.</td><td>SBCs, phones, intercom, pagers, ATAs, plus support, analytics, recording, and billing.</td><td>https://apphub.webex.com/calling</td><td>Treating the catalog as a migration crosswalk.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Local Gateway</td><td>CUBE or an approved third-party SBC.</td><td>The path for a premises PBX and for Teams agents.</td><td>Trunk, route group, unknown-extension routing.</td><td>A direct PSTN-to-Teams shortcut.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Cloud Connected PSTN</td><td>Numbers saved in Control Hub as +E.164.</td><td>CCP agents and DIDs are always entered that way.</td><td>Calling → Numbers shows the globalized form.</td><td>A national number that never matches the dial plan.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>UCCX</td><td>Contact Center Express beside Dedicated Instance.</td><td>JTAPI latency, not a Webex Contact Center queue pattern.</td><td>On-prem, split, or IaaS.</td><td>AMER premises RTT above 60 ms.</td><td><a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Webex Contact Center</td><td>The cloud contact center the voice-channel article configures.</td><td>Agents can stay on a PBX or move to Teams through the gateway.</td><td>Entry points, dial number, international format.</td><td>Dial number not reachable.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Identity</td><td>Webex users still have to exist before a Calling user migration.</td><td>A third-party directory export is not a substitute the user-tool article describes.</td><td>T6-R03. Provision users first.</td><td>A tar of people Control Hub does not know, or no tar at all.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Emergency</td><td>Basic emergency on Webex Calling wants a customer-owned +E.164 per location.</td><td>A PBX callback number is not automatically that location number.</td><td>T6-R07. Do not invent a RAY BAUM mapping for a vendor PBX.</td><td>A location with no customer-owned +E.164.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Recording and WFM</td><td>The deployment guide names third-party recording and support solutions on App Hub.</td><td>No SKU or connector parity is printed for Genesys or Amazon Connect.</td><td><mark class="todo-verify">TODO-verify</mark> a vendor recording bridge.</td><td>Assuming Unity Connection message migration covers a third-party voicemail store. The guide says there is no native move of Unity Connection messages or greetings either.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Premises PBX</td><td>Webex Contact Center</td><td>Local Gateway or Cloud Connected PSTN</td><td>Agent calls to DID, cellular, or on-premises PBX devices.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Microsoft Teams</td><td>Local Gateway</td><td>Direct SIP</td><td>Desktop, mobile, or web Teams clients. Presence sync.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>CUBE</td><td>Teams tenant</td><td>The interoperability PDF</td><td>Direct routing configuration the voice-channel article points at, and does not reprint.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Dedicated Instance</td><td>Webex Contact Center</td><td>Certificate trunk</td><td>Agent calls. Registration trunks are no longer supported on that path.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>UCCX</td><td>Unified CM in Dedicated Instance</td><td>JTAPI</td><td>Call control, only if round-trip time is under 60 ms.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Unified CM BAT</td><td>Migration Insights</td><td>Tar</td><td>Eligibility, including a third-party device column. Not a non-Cisco PBX export.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Edges from a premises PBX into Webex Contact Center">
+<svg viewBox="0 0 980 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Edges from a premises PBX into Webex Contact Center">
+<rect width="980" height="120" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="36" width="160" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="40" y="66">PBX or Teams</text>
+<rect x="280" y="36" width="160" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="300" y="66">Local Gateway</text>
+<rect x="536" y="36" width="180" height="48" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="552" y="66">Webex Calling</text>
+<rect x="800" y="36" width="156" height="48" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="832" y="66">WxCC</text>
+<path d="M184 60 H280" stroke="#c6e27a" fill="none"/><path d="M440 60 H536" stroke="#e0b07a" fill="none"/><path d="M716 60 H800" stroke="#7eb6ff" fill="none"/>
+</g>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Unified CM tar tools</td><td>BAT export is the documented input.</td><td>An Avaya or Genesys export is not that file. <mark class="todo-verify">TODO-verify</mark> a Control Hub ingest.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Microsoft Teams agents</td><td>Direct SIP through the Local Gateway.</td><td>This is not a statement that Teams Phone equals Webex Calling. The forbidden path is a direct PSTN handoff to Teams endpoints.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Amazon Connect or Genesys</td><td>Not named as a migration source with an object map in these pages.</td><td><mark class="todo-verify">TODO-verify</mark> parity before a design review treats them as equivalent.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Future hooks</h3>
+<p><strong>Canon plan.</strong> Keep the object-crosswalk row empty until a Cisco page prints vendor fields. <strong>Cisco.</strong> The practice article already says the method has been used from a third-party PBX. That sentence is historical scope, not a published runbook. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Teams endpoints never ring from Webex Calling PSTN</td><td>A direct connection was attempted.</td><td>Whether a Local Gateway Direct SIP trunk exists.</td><td>Use the gateway. Cisco does not support the direct path.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>UCCX features stall after Unified CM moves to Dedicated Instance</td><td>JTAPI round-trip is not under 60 ms.</td><td>Measured RTT from UCCX to the Dedicated Instance Unified CM.</td><td>The article says AMER customer premises often cannot meet it. IaaS colocation is the story’s other option.</td><td><a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>A third-party phone never appears in a user-migration task</td><td>The task consumes a Unified CM tar, and many third-party devices have no firmware conversion.</td><td>DeviceEligibility.csv and whether the device was provisioned in Control Hub.</td><td>Work with the vendor. Replace when the guide’s example class applies.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a premises agent to Webex Contact Center</h2>
+<!-- VISUAL:sequence | SVG | assets/diagrams/T6-R05/seq.svg -->
+<div class="diagram" role="img" aria-label="Sequence from PSTN through the Local Gateway to an agent">
+<svg viewBox="0 0 980 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sequence from PSTN through the Local Gateway to an agent">
+<rect width="980" height="160" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<text x="40" y="36">PSTN</text><text x="220" y="36">LGW</text><text x="420" y="36">Webex Calling</text><text x="680" y="36">WxCC agent</text>
+<path d="M60 48 V130" stroke="#8d8476"/><path d="M240 48 V130" stroke="#8d8476"/><path d="M460 48 V130" stroke="#8d8476"/><path d="M720 48 V130" stroke="#8d8476"/>
+<path d="M60 70 H240" stroke="#c6e27a" fill="none"/><text x="90" y="64" fill="#b7ad9c">+E.164 DID</text>
+<path d="M240 96 H460" stroke="#e0b07a" fill="none"/><text x="270" y="90" fill="#b7ad9c">trunk</text>
+<path d="M460 122 H720" stroke="#7eb6ff" fill="none"/><text x="500" y="116" fill="#b7ad9c">reachable dial number</text>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Control Hub</td><td>Numbers</td><td>CCP and premises PSTN DIDs are saved as +E.164.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>2</td><td>Local Gateway</td><td>Premises PBX</td><td>+E.164 dial plan</td><td>CUBE or an approved third-party SBC. The pattern must match the agent destination.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>3</td><td>Webex Contact Center</td><td>Agent</td><td>Dial number</td><td>Free-form, typically +E.164, and reachable. International format sends a globalized number.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>4</td><td>Teams client</td><td>Local Gateway</td><td>Direct SIP</td><td>Registration or certificate. Presence sync. Not a direct PSTN-to-Teams connection.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>5</td><td>Dedicated Instance</td><td>Webex Contact Center</td><td>Certificate trunk</td><td>Registration trunks are no longer supported on that inter-op.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths you can cite</h2>
+<ol>
+<li>Read DeviceEligibility.csv from Migration Insights before you schedule a third-party phone. The report names IP phones, Room OS, ATAs, and third-party devices. <!-- VISUAL:screenshot:insights --><a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For a device with no enterprise-to-cloud firmware path, add it in Control Hub. The guide’s replacement example is ATA 191/192. Work with the vendor when the implement article says to. <!-- VISUAL:screenshot:devices --><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>On the Local Gateway, build a dial plan that matches the premises agent destination in E.164 and +E.164 if agents will sign in either way. <!-- VISUAL:screenshot:lgw --><a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For Microsoft Teams agents, use a registration or certificate Local Gateway and the CUBE direct-routing PDF, or the SBC vendor’s guide. Include trunks, route groups, and unknown-extension routing. <!-- VISUAL:screenshot:teams --><a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For Dedicated Instance agents on Webex Contact Center, use the certificate inter-op trunk. Do not revive a registration trunk for that path. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>If UCCX stays on premises and Unified CM moves into Dedicated Instance, measure round-trip time and stop if it is not under 60 ms. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ol>
+<div class="callout warn"><strong>Warn.</strong> The voice-channel article says administrators configure the SBC from Control Hub parameters, and that detailed SBC steps are not in that article. Do not invent IOS lines here. <a class="cite" href="#cite-3">[cite:3]</a></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>UCCX to Dedicated Instance Unified CM</td><td>Round-trip under 60 ms</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. Header June 27, 2025. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>AMER premises UCCX</td><td>Article says the constraint is unlikely to be met for most customers from observed latency</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Dial number format</td><td>Typically +E.164, not mandatory</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. Retrieved markdown had no header date. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Direct PSTN to Teams endpoints</td><td>Not supported</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>DI to Webex Contact Center trunks</td><td>Certificate-based. Registration-based no longer supported</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Avaya / Genesys / Amazon object map</td><td>Not printed</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="todo-verify">TODO-verify</mark></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten misses</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Insights rejects a PBX spreadsheet</td><td>The tool expects a Unified CM tar.</td><td>Upload step of Migration Insights.</td><td>Do not rename the spreadsheet. Use the vendor path, which these pages do not specify. <mark class="todo-verify">TODO-verify</mark></td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A third-party phone has no MPP task</td><td>No enterprise-to-cloud firmware path.</td><td>Deployment guide device paragraph.</td><td>Provision in Control Hub or replace.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agent desktop accepts a national number and the PBX never rings</td><td>The gateway dial plan does not match that form.</td><td>International dialing format and the gateway patterns.</td><td>Match E.164 and +E.164 if both sign-in forms are allowed.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>CCP DID is stored without a plus</td><td>CCP numbers are saved as +E.164.</td><td>Calling → Numbers.</td><td>Enter the globalized form.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Teams client is the PSTN next hop</td><td>That connection is not supported.</td><td>Voice-channel Teams section.</td><td>Insert the Local Gateway.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Presence stays unknown on Teams</td><td>The integration includes presence sync when Direct SIP is in place.</td><td>Whether the trunk is registration or certificate, on CUBE or an approved SBC.</td><td>Follow the CUBE PDF or the SBC vendor guide. Do not invent the lines.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>DI agents use a registration trunk into Webex Contact Center</td><td>That trunk type is no longer supported for the inter-op.</td><td>Contact center integration article.</td><td>Certificate trunks.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>UCCX is slow after the move</td><td>RTT is not under 60 ms.</td><td>JTAPI path.</td><td>Do not leave UCCX on an AMER premises link that misses the number.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Someone teaches five WxCC queue names from the Calling test list</td><td>Round robin, longest idle, and simultaneous ring are the implement article’s Calling test language.</td><td>T6-R04 queue articles versus q0pgpb.</td><td>Keep the lists apart.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>A design review demands an Avaya station crosswalk</td><td>The practice article names the source and stops.</td><td>tf6kpq scope sentence.</td><td>Mark the crosswalk TODO-verify. Do not invent columns.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What does this room decide first?</summary><p class="answer">Whether Cisco printed a procedure, or only named the source. Third-party PBX is named. The object map is not. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What file does Migration Insights read?</summary><p class="answer">A Unified CM tar. DeviceEligibility.csv then flags third-party devices among others. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Who configures a third-party phone that has no firmware conversion?</summary><p class="answer">You provision it in Control Hub, and the implement article says to work with the vendor. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which agent endpoints does the voice-channel article list?</summary><p class="answer">Webex PSTN, Webex Calling devices, Webex App, a premises PBX, and Microsoft Teams. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Is +E.164 mandatory on a dial number?</summary><p class="answer">It is typical. It is not mandatory. The number must be reachable. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove a Teams agent design is the supported one?</summary><p class="answer">Show a registration or certificate Local Gateway, CUBE or a third-party SBC, +E.164 on that gateway, and no direct PSTN-to-Teams hop. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What evidence shows UCCX can stay on premises?</summary><p class="answer">Round-trip time under 60 ms to the Unified CM that owns call control. The article warns that AMER customer premises often miss it. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is this different from T6-R04?</summary><p class="answer">T6-R04 is UCCE and PCCE into Webex Contact Center. This room is the third-party and UCCX-beside-Dedicated-Instance path those pages actually print. Do not import a fifth queue name. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which trunk type does Dedicated Instance use toward Webex Contact Center?</summary><p class="answer">Certificate-based. Registration-based trunks are no longer supported for that inter-op. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why will you not draw an Avaya station-to-Webex user table?</summary><p class="answer">No cited page prints it. The cell stays TODO-verify. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What will you not copy from the CUBE PDF into this room?</summary><p class="answer">The voice-channel article points at the PDF and says detailed SBC steps are not in the article. This room stops at that pointer. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where do third-party calling products get catalogued?</summary><p class="answer">The deployment guide sends you to the Webex App Hub calling collection. That is a catalog, not a migration procedure. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not attach a production SBC to learn this.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: classify six designs as supported, unsupported, or TODO-verify using only the cited pages.</label></li>
+<li><label><input type="checkbox"> Prereq: articles 2dputx, nmhk7ve, tf6kpq, and the December 2025 deployment guide section on third-party devices. No customer org you do not administer.</label></li>
+<li><label><input type="checkbox"> Step 1. A spreadsheet of Avaya stations is renamed to a tar. Expected: Insights still expects a Unified CM export.</label></li>
+<li><label><input type="checkbox"> Step 2. PSTN delivers straight to a Teams client. Expected: not supported.</label></li>
+<li><label><input type="checkbox"> Step 3. UCCX in a US branch, Unified CM in Dedicated Instance, RTT 90 ms. Expected: outside the printed constraint.</label></li>
+<li><label><input type="checkbox"> Step 4. Write the dial-number rule. Expected: free-form, typically +E.164, reachable.</label></li>
+<li><label><input type="checkbox"> Evidence: the certificate-trunk sentence and the App Hub URL.</label></li>
+<li><label><input type="checkbox"> Break it: teach round robin as a Webex Contact Center queue pattern because the Calling test list says it. Recovery: put that sentence back on T6-R08.</label></li>
+<li><label><input type="checkbox"> Reflection: which vendor crosswalk you still cannot cite.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Which article names third-party PBX as a source the method has covered?</p><details><summary>Answer</summary><p class="answer">The Dedicated Instance preparation and migration practice article, tf6kpq. It does not print an object map. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>What does DeviceEligibility.csv include besides Cisco phones?</p><details><summary>Answer</summary><p class="answer">Room OS devices, ATAs, and third-party devices. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>An ATA 191 has no enterprise-to-MPP path. What does the deployment guide say?</p><details><summary>Answer</summary><p class="answer">Some devices cannot move and the equivalent Webex Calling model replaces them. ATA 191/192 is the printed example. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Can Webex Calling PSTN calls land directly on Microsoft Teams endpoints?</p><details><summary>Answer</summary><p class="answer">No. Cisco does not support that connection. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>What Local Gateway types does the Teams integration require?</p><details><summary>Answer</summary><p class="answer">Registration or certificate, on CUBE or a third-party SBC, with +E.164. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Draw</span></header><p>State the dial-number rule in one sentence.</p><details><summary>Answer</summary><p class="answer">Free-form, typically +E.164, not mandatory, and reachable through Webex PSTN and routing. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>What is the UCCX round-trip limit to Unified CM in Dedicated Instance?</p><details><summary>Answer</summary><p class="answer">Less than 60 ms, on the JTAPI interface. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>Dedicated Instance agents register a trunk into Webex Contact Center. Which trunk type is still supported?</p><details><summary>Answer</summary><p class="answer">Certificate-based. Registration-based trunks are no longer supported for that inter-op. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Where does the deployment guide send you for third-party calling solutions?</p><details><summary>Answer</summary><p class="answer">The Webex App Hub calling collection. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A colleague maps Genesys queues onto Webex Contact Center from memory. What do you mark?</p><details><summary>Answer</summary><p class="answer">TODO-verify. These pages do not print that crosswalk. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Who owns detailed SBC configuration in the voice-channel article?</p><details><summary>Answer</summary><p class="answer">The administrator, using Control Hub parameters. Vendor steps are outside that article. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Which three contact-center approaches does the Dedicated Instance customer story name?</p><details><summary>Answer</summary><p class="answer">Webex Contact Center, UCCX on Dedicated Instance IaaS, or UCCX left on premises when the 60 ms round-trip is met. <a class="cite" href="#cite-6">[cite:6]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain which third-party paths Cisco printed: Insights eligibility, Local Gateway to a PBX, Teams Direct SIP, and the UCCX 60 ms rule." | assets/audio/T6-R05/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk certificate trunks into Webex Contact Center, why a direct PSTN-to-Teams hop is unsupported, and why an Avaya crosswalk stays unverified." | assets/audio/T6-R05/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: no object map, 60 ms, certificate trunks, dial number reachable, no direct Teams PSTN." | assets/audio/T6-R05/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Cisco says the Dedicated Instance method has been used from a third-party PBX. The migration tools still eat a Unified CM tar. Third-party phones are provisioned in Control Hub when they have no firmware conversion. There is no Avaya field map in the pages this room cites.</p>
+<p><strong>2 minutes.</strong> Webex Contact Center can send an agent call to a premises PBX, a DID, or a cell, through Cloud Connected PSTN or a Local Gateway. The gateway is CUBE or an approved SBC, and the administrator owns the SBC lines. A dial number is free-form. Plus E.164 is the usual form and is not mandatory, but the number has to be reachable. Microsoft Teams agents use Direct SIP on that same gateway class, with presence sync. Cisco does not support handing Webex Calling PSTN calls straight to Teams endpoints.</p>
+<p><strong>30 seconds, UCCX.</strong> If UCCX stays on premises and Unified CM moves into Dedicated Instance, JTAPI round-trip must be under 60 milliseconds. The integration article says most AMER premises links will miss that. The customer story’s other choices are Webex Contact Center, or UCCX bought separately and placed on Dedicated Instance IaaS.</p>
+<p><strong>2 minutes, trunks.</strong> Dedicated Instance into Webex Contact Center uses certificate trunks. Registration trunks are no longer the supported inter-op. Inbound can arrive on a Local Gateway into multi-tenant and then the contact center, or on Cloud Connected PSTN. Do not reuse the Calling acceptance phrase “round robin, longest idle, or simultaneous ring” as if it were the Webex Contact Center queue catalog.</p>
+<p><strong>What you will not say.</strong> You will not invent an Avaya, Genesys, or Amazon Connect crosswalk. You will not paste IOS from the CUBE PDF into an answer you have not opened. You will not call App Hub a migration tool.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Best practices in preparation and migration process to Webex Calling - Dedicated Instance — help.webex — article tf6kpq — <a href="https://help.webex.com/article/tf6kpq/Best-practices-in-preparation-and-migration-process-to-Webex-Calling---DedicatedInstance">help.webex.com article tf6kpq</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. <mark class="recheck">re-check</mark> Source platforms include third-party PBX. No object crosswalk in that sentence.</li>
+<li id="cite-2">Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — <a href="https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf">cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf</a> — retrieved 2026-10-14. DeviceEligibility.csv includes third-party devices. No firmware path for many non-phone devices. ATA 191/192 example. App Hub calling catalog. No native migration of Unity Connection messages or greetings.</li>
+<li id="cite-3">Set up voice channels for Webex Contact Center — help.webex — article 2dputx — <a href="https://help.webex.com/en-us/article/2dputx">help.webex.com article 2dputx</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. <mark class="recheck">re-check</mark> Premise PBX and Microsoft Teams agents. Direct SIP. No direct PSTN-to-Teams connection. Dial number rules. CUBE PDF pointer. SBC configuration is the administrator’s.</li>
+<li id="cite-4">Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — <a href="https://help.webex.com/en-us/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-Integration">help.webex.com article nmhk7ve</a> — header June 27, 2025, retrieved 2026-10-14. <mark class="recheck">re-check</mark> UCCX placements. JTAPI under 60 ms. Certificate trunks for Dedicated Instance to Webex Contact Center. Registration trunks no longer supported on that inter-op.</li>
+<li id="cite-5">Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — <a href="https://help.webex.com/en-us/article/q0pgpb">help.webex.com article q0pgpb</a> — retrieved 2026-10-14. Third-party devices and phones: work with the vendor. User and feature tools consume Unified CM exports. Queue acceptance language is a Calling test, kept out of the Webex Contact Center pattern list.</li>
+<li id="cite-6">Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — <a href="https://help.webex.com/en-us/article/ny65x1bb">help.webex.com article ny65x1bb</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. <mark class="recheck">re-check</mark> Contact-center story: Webex Contact Center, UCCX on IaaS, or on-premises UCCX if 60 ms holds.</li>
+<li id="cite-7">Design to migrate from Unified CM to Webex Calling — help.webex — article nqojzwt — <a href="https://help.webex.com/en-us/article/nqojzwt">help.webex.com article nqojzwt</a> — retrieved 2026-10-14. Basic emergency calling wants at least one customer-owned +E.164 per Webex Calling location. Used here only as the boundary for a PBX callback number.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: header dates for tf6kpq, 2dputx, ny65x1bb, and nqojzwt. A Cisco page that prints Avaya, Genesys, or Amazon Connect objects.</li>
+<li>Facts still marked TODO-verify: vendor object crosswalks; a Control Hub ingest for a non-Cisco PBX export; a vendor recording bridge.</li>
+<li>Facts still marked re-check: the 60 ms sentence and the voice-channel numeric-free rules whose headers are old or missing.</li>
+<li>Assets missing: voice-channel diagram export, audio.</li>
+<li>Ideas for v1.0: a one-row card that says “named source” versus “printed procedure” for every PBX this track meets.</li>
+<li>Next review: <mark class="recheck">re-check</mark> nmhk7ve before teaching the 60 ms figure in a design review.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T6-R04-ucce-pcce-to-wxcc.html"><span>Previous</span><strong>T6-R04</strong><em>UCCE and PCCE to Webex Contact Center</em></a><a class="next" href="T6-R06-number-porting-cutover.html"><span>Next</span><strong>T6-R06</strong><em>Number Porting &amp; Cutover</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

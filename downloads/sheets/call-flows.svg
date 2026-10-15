@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 272" role="img" aria-label="Call flows">
+<rect width="980" height="272" fill="#0b1020"/>
+<text x="36" y="48" fill="#f8fafc" font-size="28" font-family="system-ui,sans-serif" font-weight="700">Call flows</text>
+<text x="36" y="78" fill="#94a3b8" font-size="14" font-family="system-ui,sans-serif">CypherMonkey · Webex Lab · not a vendor document</text>
+<text x="36" y="120" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">On-net app to app — Register to Calling. If ICE succeeds, media can go direct.</text><text x="36" y="148" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Outbound PSTN — Location routing choice, then Cisco Calling Plan, CCP, or the Local Gateway.</text><text x="36" y="176" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Contact center — Entry point, flow, queue, agent. Not a CUCM route pattern.</text><text x="36" y="204" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Emergency — Phone or app to RedSky on 443, then the emergency network. Test with 933.</text>
+</svg>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T4-R10 · Hybrid and Cloud-connected Features">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T4-R10 · Hybrid &amp; Cloud-connected Features · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T4" data-room="T4-R10" data-room-title="Hybrid &amp; Cloud-connected Features" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T4</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T4/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T4 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T4 · Webex Contact Center Enterprise</p>
+<h1>Hybrid &amp; Cloud-connected Features</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Hybrid &amp;amp; Cloud-connected Features">
+<defs>
+<linearGradient id="T4R10sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T4R10sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Enterprise</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T4-R10</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CVP</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Router</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Desktop</text></g>
+</svg>
+<figcaption>Illustrated scene for Hybrid &amp;amp; Cloud-connected Features. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Hybrid &amp;amp; Cloud-connected Features">
+<defs>
+<marker id="T4R10arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · PSTN → CVP → Router → Desktop</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Desktop</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T4R10arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T4R10arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T4R10arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T4R10lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: PSTN → CVP → Router → Desktop. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Webex Contact Center Enterprise’s what’s-new page names two hybrid models, then points their internals at a partner guide. Dated feature lines stay on the month Cisco printed them.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T4-R10</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T4-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>20 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>March 2022 names two hybrid models: SBC Peering Hybrid Model and Localized RTP Hybrid Model. The internals are deferred to the partner technical guide and a white paper. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></li>
+<li>July 2023 Hybrid IVR keeps some nodes on-premises, including an OTP example, and other nodes in Dialogflow CX. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>July 2024 regional media keeps customer and agent media local to the region. The example says only control signals go to a U.S. tenant home. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>January 2025 states 48,000 concurrent agents and 300 calls per second on a single tenant, and an early-access Edge Connect paragraph whose next sentence mentions Virtual Connect. The current Edge Connect article is a different page. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Equinix connectivity in the March 2022 note is a WAN to the Business Partner Network through ECX, in the U.S. and EMEA, with bandwidth from 200 MB to 10 GB. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></li>
+<li>VPN-less Finesse, same month, does not support FIPPA, and does not support multiple devices reaching the desktop through NAT. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>July 2023 lists email, chat, and SMS through Webex Connect, on request. January 2025 adds WhatsApp and Facebook Messenger to Email, Live Chat, and SMS. A later block on the same article also names Apple Messages for Business. Read the date on the paragraph you quote. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Windows 11 64-bit is listed for the Finesse desktop, Call Studio, and Reporting. FedRAMP is named for Webex CCE for Government. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>September 2022 states Kari’s Law and RAY BAUM’s Act compliance for 911 in the U.S., and points at the partner technical guide. It also names Cloud-Connected UC analytics and CSA STAR Level 1. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Hybrid, regional media, and Edge Connect are three different sentences on one long page. Mixing the March 2022 model names with the September 2026 Edge Connect definition produces a design that neither page describes.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Dates on one what’s-new page</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T4-R10/arch.svg -->
+<div class="diagram" role="img" aria-label="Dated hybrid and cloud-connected features">
+<svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Feature dates from nhy3hvdb">
+<rect width="980" height="360" fill="#0c121c"/>
+<text x="28" y="34" fill="#ff8b9a" font-family="Georgia, serif" font-size="20">Quote the month with the feature</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="56" width="300" height="110" rx="12" fill="#14110c" stroke="#ff8b9a"/>
+<text x="44" y="84" fill="#ff8b9a">1 · March 2022</text>
+<text x="44" y="108" fill="#b7ad9c">Two hybrid model names</text>
+<text x="44" y="130" fill="#b7ad9c">Equinix ECX, 200 MB–10 GB</text>
+<text x="44" y="152" fill="#b7ad9c">VPN-less: no FIPPA, no multi-NAT</text>
+<rect x="350" y="56" width="300" height="110" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="366" y="84" fill="#e0b07a">2 · July 2023 and July 2024</text>
+<text x="366" y="108" fill="#b7ad9c">Hybrid IVR and Dialogflow CX</text>
+<text x="366" y="130" fill="#b7ad9c">Windows 11, FedRAMP, Connect</text>
+<text x="366" y="152" fill="#b7ad9c">Regional media, control may leave</text>
+<rect x="672" y="56" width="280" height="110" rx="12" fill="#14110c" stroke="#c4b5fd"/>
+<text x="688" y="84" fill="#c4b5fd">3 · January 2025</text>
+<text x="688" y="108" fill="#b7ad9c">48,000 agents, 300 CPS</text>
+<text x="688" y="130" fill="#b7ad9c">Custom CVP hosting</text>
+<text x="688" y="152" fill="#b7ad9c">Edge Connect early-access wording</text>
+<rect x="180" y="200" width="620" height="70" rx="12" fill="#2a220c" stroke="#f0b429"/>
+<text x="196" y="228" fill="#f0b429">4 · Current Edge Connect article, September 17, 2026</text>
+<text x="196" y="252" fill="#b7ad9c">Private peering to Meetings, Calling, and Webex Contact Center Enterprise. Equinix or Megaport.</text>
+</g>
+<text x="28" y="320" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">nhy3hvdb sections above are older than 12 months. Mark re-check. n68tcpb header is current.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Model names only</li>
+<li><span class="num">2</span>IVR split and regional media</li>
+<li><span class="num">3</span>Scale and early-access peering sentence</li>
+<li><span class="num">4</span>Current peering definition</li>
+</ul>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T4-R10/seq.svg -->
+<div class="diagram" role="img" aria-label="Regional media example from July 2024">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Regional media control versus media">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="32" fill="#ff8b9a" font-family="Georgia, serif" font-size="18">July 2024 example: U.S. tenant, media stays regional</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<text x="36" y="70">5. U.S. calls stay in the U.S. European calls stay in Europe. Asian calls stay in Asia.</text>
+<text x="36" y="96">6. The article’s example says only control signals go from the media endpoint to the U.S. region.</text>
+<text x="36" y="122">7. No additional cost for Webex CCE and on-premises customers who opt for Cisco CCAI, if the tenant is enabled for the enhanced media platform.</text>
+<text x="36" y="148">8. Hybrid IVR is a different paragraph: OTP can stay on-premises while other tasks run in the cloud.</text>
+<text x="36" y="174" fill="#b7ad9c">SBC Peering and Localized RTP internals are not drawn here. The what’s-new page defers them.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  US[US media] --> C[Control to tenant home]
+  EU[EU media] --> C
+  AP[Asia media] --> C
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Names, then the page that owns the detail</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T4-R10/hero.png -->
+<div class="callout def"><span class="label">Two hybrid model names</span><p>March 2022 says Webex CCE supports the SBC Peering Hybrid Model and the Localized RTP Hybrid Model, so some contact-center and call-control appliances can stay in a premises data center while others move to the Webex CCE cloud. Further detail is the Customer Premise PSTN section of the Webex Contact Center Enterprise Partner Technical Guide and the Webex CCE Partner Managed Premise Business White Paper. Those internals are not copied here. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></p></div>
+<div class="callout note"><span class="label">Hybrid IVR is a 2023 sentence</span><p>You can keep traditional ASR, TTS, and CRM integrations and use cloud Dialogflow CX. Some nodes stay on-premises and some run in the cloud. The example is OTP generation on-premises and other tasks in the cloud. A CX bot can play a static message for up to 30 seconds while a webhook is still processing. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Early-access peering wording</span><p>The January 2025 early-access paragraph says Edge Connect is a managed QoS peering over Equinix Cloud Exchange or Megaport, and the next sentence says the connection insulates operations from the Internet by establishing a private circuit through Virtual Connect via VPN. That tension is in the article. The September 17, 2026 Edge Connect article defines Edge Connect as private peering that bypasses the public Internet and reaches Webex Meetings, Webex Calling, and Webex Contact Center Enterprise data centers, through Equinix or Megaport. Quote the page you are using. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">48,000 is a tenant sentence</span><p>January 2025 says Webex CCE supports 48,000 concurrent agents and 300 calls per second on a single tenant. That is not the Finesse 2,000-user cluster line in the design guide. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<h3>What each dated block is for</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Date on nhy3hvdb</th><th>Statement</th><th>Use it for</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>February 2022</td><td>Webex WFO with Workforce Management. CUIC lets non-administrative owners see the All Users group and assign permissions.</td><td>WFO and CUIC permission scope. Report design stays in T4-R07.</td><td><a href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>March 2022</td><td>Two hybrid model names. Equinix ECX to the BPN, U.S. and EMEA, 200 MB to 10 GB. VPN-less Finesse limitations.</td><td>Names and the two Finesse limitations. Not a hop-by-hop hybrid drawing.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>September 2022</td><td>Cloud-Connected UC analytics. CSA STAR Level 1. Kari’s Law and RAY BAUM’s Act for U.S. 911, with a pointer to the partner guide.</td><td>Compliance pointer. Not a RedSky trunk procedure.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>July 2023</td><td>Windows 11 64-bit for Finesse, Call Studio, and Reporting. FedRAMP for Webex CCE for Government. Email, chat, and SMS via Webex Connect, on request. Hybrid IVR. 30-second static CX message.</td><td>Client OS, digital channel list for that month, IVR split.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>August 2023</td><td>Standalone deployment can send and receive selected custom SIP headers on the initial INVITE only, not on re-INVITE, when the SIP trunk terminates on VVB.</td><td>Header scope. Call-flow models stay in T4-R05.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>July 2024</td><td>Regional media at all supported data-center locations. Media stays in region. Example: control signals to a U.S. tenant home. No additional cost when the tenant is enabled for the enhanced media platform and the customer opts for Cisco CCAI.</td><td>Media locality. Not the hybrid model internals.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>January 2025</td><td>48,000 agents and 300 CPS. Custom code and CVP applications hosted on Webex CCE. WhatsApp and Facebook Messenger in addition to Email, Live Chat, and SMS. Monitoring Dashboard lists Call Error, Call Detail, CDR, CMR, and agent device status. Early-access Edge Connect paragraph.</td><td>Scale and hosting. Peering design prefers the current Edge Connect article.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>What the what’s-new page actually touches</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T4-R10">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Desktop</text>
+<circle cx="200" cy="132" r="36" fill="url(#T4R10map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T4R10map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>SBC Peering Hybrid Model</dt><dd>One of two March 2022 model names. Internals are in the partner technical guide, not in this room. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Localized RTP Hybrid Model</dt><dd>The other March 2022 model name. Same deferral. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Hybrid IVR</dt><dd>July 2023. On-premises ASR, TTS, and CRM plus Dialogflow CX. OTP is the on-premises example. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Regional media</dt><dd>July 2024. Audio and SIP signaling stay in the geographic region. Control signals may go to the tenant home. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Enhanced media platform</dt><dd>The tenant capability the July 2024 note says must be enabled before the no-extra-cost regional media line applies. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>VPN-less Finesse</dt><dd>March 2022 internet access to the desktop. FIPPA unsupported. Multiple devices through NAT unsupported. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Webex Connect</dt><dd>Digital channels named on nhy3hvdb. The July 2023 list and the January 2025 list are not the same length. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Custom CVP hosting</dt><dd>January 2025. Custom code and CVP applications can be hosted on Webex CCE, using VXML and Call servers, without the article claiming calls are disrupted. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Monitoring Dashboard</dt><dd>January 2025. Call Error, Call Detail, CDR, CMR, and agent device status. User guide is linked from the article. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Edge Connect</dt><dd>Current article n68tcpb, September 17, 2026: private peering to Meetings, Calling, and Webex Contact Center Enterprise data centers. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>CSA STAR Level 1</dt><dd>September 2022 certification statement on the what’s-new page. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T4-R10/eco.svg -->
+<div class="diagram" role="img" aria-label="Hybrid feature mind map">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Neighbors of hybrid features">
+<rect width="980" height="240" fill="#0c121c"/>
+<rect x="370" y="88" width="240" height="60" rx="16" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="490" y="124" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">nhy3hvdb dates</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="20" y="30" width="200" height="44" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="34" y="56">Hybrid model names</text>
+<rect x="20" y="160" width="200" height="44" rx="10" fill="#14110c" stroke="#f0b429"/><text x="34" y="186">Hybrid IVR</text>
+<rect x="760" y="30" width="190" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="774" y="56">Regional media</text>
+<rect x="760" y="160" width="190" height="44" rx="10" fill="#14110c" stroke="#ff8b9a"/><text x="774" y="186">Edge Connect now</text>
+</g>
+<path d="M220 52 H370" stroke="#c4b5fd" fill="none"/>
+<path d="M220 182 H370" stroke="#f0b429" fill="none"/>
+<path d="M610 52 H760" stroke="#e0b07a" fill="none"/>
+<path d="M610 182 H760" stroke="#ff8b9a" fill="none"/>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Hybrid))
+    Model names
+    Hybrid IVR
+    Regional media
+    Edge Connect
+</pre>
+</details>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only.</strong> Each row is a pointer. None of them is a feature-parity claim against another vendor.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What the cited page says</th><th>Why it matters</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>February 2022 says Webex CCE supports Webex WFO with the new Webex WFM, and points at the WFO series page. py6u9h is the SKU article.</td><td>WFM support is a what’s-new line, not a sizing worksheet.</td><td>WFO series page, then py6u9h.</td><td>Counting WFM seats with the 48,000 agent line.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Quality management and recording</td><td>The January 2025 dashboard lists CDR and CMR among logs. It does not define recording retention.</td><td>A CMR on a dashboard is not a QM archive.</td><td>Monitoring Dashboard user guide linked from the article.</td><td>Using the dashboard as the recorder.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>September 2022 says Webex CCE complies with Kari’s Law and RAY BAUM’s Act for 911 on fixed and nonfixed interconnected devices in the U.S., and points at the partner technical guide.</td><td>The compliance claim and the configuration procedure are different documents.</td><td>The 9-1-1 section the article names.</td><td>Treating the what’s-new sentence as a trunk build.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analytics and reporting</td><td>September 2022 offers Cloud-Connected UC analytics for call-quality issues. February 2022 changes who can see the CUIC All Users group.</td><td>Call-quality analytics and CUIC permissions are different tools.</td><td>T4-R07 for CUIC reports.</td><td>Opening Analyzer because this page said CUIC.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce, Dynamics 365, ServiceNow</td><td>July 2023 Hybrid IVR names traditional CRM integrations beside ASR and TTS. It does not name those three products in the paragraph read here.</td><td>A CRM integration exists in the sentence. The product name needs its own guide.</td><td>The CRM guide for the desktop you deployed. <mark class="todo-verify">TODO-verify</mark> a specific connector from this paragraph alone.</td><td>Pasting a CRM brand into the hybrid model name.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agents</td><td>Dialogflow CX is the cloud side of Hybrid IVR. Static messages can run up to 30 seconds. A transcript gadget for virtual-agent conversations is on request.</td><td>The bot and the agent desktop transcript are separate bullets.</td><td>CCAI configuration, as the article says to enable it for the transcript gadget.</td><td>Expecting every call to show a transcript without the on-request step.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IVR and self-service</td><td>Hybrid IVR splits nodes. August 2023 custom SIP headers apply to the initial INVITE in standalone VVB termination. January 2025 allows custom CVP apps on Webex CCE.</td><td>Three IVR-related sentences, three dates.</td><td>T4-R05 for call-flow models.</td><td>Sending custom headers on a re-INVITE because hosting moved to the cloud.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital channels</td><td>July 2023: email, chat, and SMS, on request. January 2025: WhatsApp and Facebook Messenger added to Email, Live Chat, and SMS. A later section also names Apple Messages for Business together with ECE coexistence.</td><td>Quote the dated list you mean.</td><td>Manage Digital Channels gadget guide named in the article.</td><td>Saying every messenger product arrived in July 2023.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Identity and SSO</td><td>Not given an SSO flow in the sections read for this room.</td><td>VPN-less desktop access is not an identity design.</td><td>Finesse sign-in stays in T4-R06.</td><td>Using the NAT limitation as an IdP rule.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Premises appliances</td><td>Webex CCE cloud</td><td>Named hybrid models</td><td>Some appliances stay, some move. Internals deferred.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer WAN</td><td>Webex CCE BPN</td><td>Equinix ECX, March 2022</td><td>U.S. and EMEA. 200 MB to 10 GB.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>On-premises IVR node</td><td>Dialogflow CX</td><td>Hybrid IVR</td><td>Selected nodes. OTP example stays on-premises.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Regional media</td><td>Tenant home</td><td>July 2024 example</td><td>Control signals. Media stays in region.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer edge</td><td>Webex backbone</td><td>Edge Connect, current article</td><td>Private peering to Meetings, Calling, and Webex Contact Center Enterprise data centers.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex Connect</td><td>Finesse digital gadget</td><td>Channel list by date</td><td>Email, chat, SMS, then later messengers named on the page.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>This page</th><th>Neighbor</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>January 2025 Edge Connect early access</td><td>n68tcpb is the current Edge Connect definition, including Webex Contact Center Enterprise data centers.</td><td>Dedicated Instance peering rules stay in T5-R02 and T5-R03.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>48,000 agents</td><td>Design-guide Finesse maximum is a different number in T4-R08.</td><td>Quick deployment 500–24,000 is nyosarq, in T4-R01.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Partner technical guide pointers</td><td>Hybrid internals and 9-1-1 configuration are named, not reproduced.</td><td>A multi-tenant Flow Designer bridge is nhovcy4.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>When the partner technical guide section is read into the Canon, replace the deferred hybrid-model row with cited internals. Until then the model names are the whole fact.</li>
+<li>Re-read nhy3hvdb before teaching any line dated before October 2025. The header of that article moves; the section dates above are the ones retrieved on 2026-10-14.</li>
+<li>Prefer n68tcpb, updated September 17, 2026, for what Edge Connect is today.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>A design says Edge Connect is a VPN because of the January 2025 sentence</td><td>The early-access wording was treated as the current definition</td><td>n68tcpb’s opening sentence is private peering that bypasses the public Internet</td><td>Cite both sentences and design from the current article.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>FIPPA is enabled for internet agents</td><td>VPN-less was read as every Finesse client</td><td>March 2022 says FIPPA is not supported</td><td>Keep phone-agent users on a path the Finesse guide allows.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>European media is forced to a U.S. tenant</td><td>Tenant home was treated as the media path</td><td>July 2024 example keeps European calls in Europe</td><td>Confirm the tenant is enabled for the enhanced media platform.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>WhatsApp is documented as a July 2023 channel</td><td>Later channel names were backdated</td><td>July 2023 lists email, chat, and SMS. January 2025 adds WhatsApp and Facebook Messenger.</td><td>Quote the date.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a what’s-new line to the page you configure</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>What’s-new reader</td><td>Hybrid model names</td><td>March 2022 section</td><td>Stop at the names unless you open the partner guide.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>IVR designer</td><td>Dialogflow CX</td><td>Hybrid IVR</td><td>Choose which nodes stay on-premises. OTP is the published example.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>CX bot</td><td>Caller</td><td>Static partial response</td><td>Up to 30 seconds, then continue when the API response arrives.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Media endpoint</td><td>Region, then tenant home</td><td>Regional media</td><td>Media local. Control signals in the U.S.-tenant example.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Premises router</td><td>Webex backbone</td><td>Edge Connect</td><td>Use n68tcpb for the current path. ASN and two-link Dedicated Instance rules are T5.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>6</td><td>Digital customer</td><td>Agent gadget</td><td>Webex Connect</td><td>Match the channel to the dated list.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Settings the what’s-new page actually names</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Where it is named</th><th>Rule</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Hybrid model choice</td><td>Partner technical guide, Customer Premise PSTN section</td><td>The what’s-new page names the models and sends you there.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Equinix bandwidth</td><td>March 2022 Equinix note</td><td>200 MB to 10 GB, U.S. and EMEA, WAN to BPN via ECX.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>VPN-less desktop</td><td>March 2022 considerations</td><td>FIPPA not supported. Multiple devices via NAT not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Windows client</td><td>July 2023</td><td>Windows 11 64-bit for Finesse desktop, Call Studio, and Reporting.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CX partial response</td><td>July 2023 virtual agent voice</td><td>Static message up to 30 seconds.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Custom SIP headers</td><td>August 2023 standalone</td><td>Initial INVITE only. Not re-INVITE. Trunk terminates on VVB.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Enhanced media platform</td><td>July 2024</td><td>Tenant must be enabled before the no-extra-cost regional media statement applies.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Custom code hosting</td><td>January 2025</td><td>Host CVP applications on Webex CCE using VXML and Call servers. Separate custom code from the core VXML application.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Edge Connect link</td><td>n68tcpb ordering</td><td>Webex public BGP ASN is 13445. Peering subnet is a public /30 or /31. Dedicated Instance orders need the redundancy checkbox and two connections. Detail of communities is T5-R03.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What these paragraphs refuse to size</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Limit</th><th>Figure</th><th>Page</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Single-tenant agents and CPS</td><td>48,000 concurrent agents and 300 CPS</td><td>January 2025 what’s-new. Re-check.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Equinix bandwidth in the 2022 note</td><td>200 MB to 10 GB</td><td>U.S. and EMEA only in that paragraph.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CX static wait message</td><td>Up to 30 seconds</td><td>July 2023 partial response.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Finesse cluster users</td><td>2,000 across the two servers</td><td>Design guide, not this what’s-new page. See T4-R08.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Hybrid model internals</td><td>Not stated on nhy3hvdb beyond the names</td><td>Partner technical guide and the named white paper. <mark class="todo-verify">TODO-verify</mark> until those sections are read into a room.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital channels on request</td><td>July 2023 says the Connect feature is available on request after review</td><td>Do not treat the bullet as an automatic entitlement.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Rows that come from the dated notes</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>What to inspect</th><th>What the page implies</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Two agents behind one NAT both lose the desktop</td><td>VPN-less considerations</td><td>Multiple devices accessing Finesse through NAT are not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phone-agent users cannot sign in from the internet path</td><td>FIPPA support line</td><td>FIPPA is not supported on VPN-less access.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Custom header missing after a re-INVITE</td><td>August 2023 scope</td><td>Headers are only on the initial INVITE in that standalone case.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Caller hears silence during a long CX webhook</td><td>Partial response configuration</td><td>A static message can be configured for up to 30 seconds.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Regional media still hairpins to the tenant home</td><td>Enhanced media platform flag and the July 2024 example</td><td>Media should stay in region when that capability is enabled. Control signals are the part that may leave.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dashboard has no recording file</td><td>The log types named in January 2025</td><td>Call Error, Call Detail, CDR, CMR, agent device status. Not an audio store.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What are the two March 2022 hybrid model names?</summary><p class="answer">SBC Peering Hybrid Model and Localized RTP Hybrid Model. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Where do their internals live?</summary><p class="answer">The partner technical guide’s Customer Premise PSTN section and the named white paper. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What does VPN-less Finesse refuse?</summary><p class="answer">FIPPA, and multiple devices through NAT. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is the Hybrid IVR example?</summary><p class="answer">OTP generation on-premises, other tasks in the cloud, beside Dialogflow CX. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How long can the CX static partial response run?</summary><p class="answer">Up to 30 seconds. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>In the July 2024 U.S. tenant example, what stays in Europe?</summary><p class="answer">European calls. Control signals are what the example sends to the U.S. region. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which channels does July 2023 name, and which does January 2025 add?</summary><p class="answer">July 2023 names email, chat, and SMS. January 2025 adds WhatsApp and Facebook Messenger to Email, Live Chat, and SMS. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the 48,000 figure attached to?</summary><p class="answer">Concurrent agents on a single Webex CCE tenant, with 300 calls per second, January 2025. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When can custom SIP headers move in the August 2023 note?</summary><p class="answer">On the initial INVITE only, standalone, SIP trunk on VVB. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why is the January 2025 Edge Connect sentence not the current definition?</summary><p class="answer">It is an early-access paragraph that also says “through Virtual Connect via VPN.” The September 17, 2026 article defines private peering that bypasses the public Internet. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What must be true before the no-extra-cost regional media line applies?</summary><p class="answer">The customer opts for Cisco CCAI and the tenant is enabled for the enhanced media platform. The line covers Webex CCE and on-premises customers. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What would you need before you draw SBC peering hop by hop?</summary><p class="answer">The partner technical guide section the what’s-new page names. Until that section is read, the drawing is TODO-verify. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: date every bullet</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Goal: build a one-page feature list where every row has a month.</label></li>
+<li><label><input type="checkbox"> Prereq: nhy3hvdb retrieved 2026-10-14, plus n68tcpb. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></label></li>
+<li><label><input type="checkbox"> Step 1. Write the two hybrid model names and the words “internals deferred.”</label></li>
+<li><label><input type="checkbox"> Step 2. Separate Hybrid IVR from regional media.</label></li>
+<li><label><input type="checkbox"> Step 3. Put 48,000 on the January 2025 row and 2,000 on a pointer to T4-R08.</label></li>
+<li><label><input type="checkbox"> Step 4. Copy the early-access Edge Connect sentence and the current n68tcpb opening sentence on two lines.</label></li>
+<li><label><input type="checkbox"> Evidence: FIPPA and NAT lines, 30-second CX line, initial-INVITE line.</label></li>
+<li><label><input type="checkbox"> Break it: one diagram that makes Edge Connect, Virtual Connect, and Localized RTP the same tunnel. Recovery: split them.</label></li>
+<li><label><input type="checkbox"> Reflection: which rows are older than October 2025?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>The March 2022 hybrid models are:</p>
+<ol type="A"><li>SBC Peering and Localized RTP</li><li>Partner Connect and Virtual Connect</li><li>Flow Designer and Analyzer</li><li>Side A and Side B</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Internals are deferred. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>VPN-less Finesse does not support:</p>
+<ol type="A"><li>FIPPA, or multiple devices through NAT</li><li>Any browser</li><li>Supervisors</li><li>HTTPS</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Hybrid IVR’s published on-premises example is:</p>
+<ol type="A"><li>OTP generation</li><li>BGP</li><li>A CUIC grid</li><li>A private MDS link</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>The CX static partial response may run up to:</p>
+<ol type="A"><li>30 seconds</li><li>30 minutes</li><li>2 minutes</li><li>14 days</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>A U.S. CCAI tenant has a caller in Europe. Where does the July 2024 example keep that call’s media?</p>
+<details class="reveal"><summary>Reveal</summary><p>In Europe. Control signals go to the U.S. region in the example. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>48,000 and 300 CPS are:</p>
+<ol type="A"><li>A January 2025 single-tenant sentence</li><li>The Finesse cluster maximum</li><li>A BGP community</li><li>The CUIC subscriber count</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Custom SIP headers in the August 2023 note are allowed on:</p>
+<ol type="A"><li>The initial INVITE only</li><li>Every re-INVITE</li><li>BYE only</li><li>Any mid-call INFO</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>Someone quotes “private circuit through Virtual Connect via VPN” as today’s Edge Connect definition. What do you open?</p>
+<details class="reveal"><summary>Reveal</summary><p>n68tcpb, September 17, 2026, whose opening sentence is private peering that bypasses the public Internet. Keep the January 2025 sentence as early-access wording. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>July 2023 digital channels named in the Connect section are:</p>
+<ol type="A"><li>Email, chat, and SMS</li><li>WhatsApp only</li><li>Voice only</li><li>Apple Messages only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Later sections add more channels. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Windows 11 64-bit is listed for:</p>
+<ol type="A"><li>Finesse desktop, Call Studio, and Reporting</li><li>IOS gateways only</li><li>CUCM publishers only</li><li>Megaport routers</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw it</span></header><p>Draw regional media and control as two arrows.</p>
+<details class="reveal"><summary>Reveal</summary><p>Media stays in the caller’s region. Control may go to the tenant home, per the U.S. example. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>Kari’s Law is mentioned. Where does the article send you for the compliance section?</p>
+<details class="reveal"><summary>Reveal</summary><p>The Cisco Webex CCE 9-1-1 Compliance section in the Partner Technical Guide. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Name the two hybrid models and say their internals are deferred." | assets/audio/T4-R10/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Separate Hybrid IVR, regional media, and the two Edge Connect sentences." | assets/audio/T4-R10/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Dates: March 2022, July 2023, July 2024, January 2025, September 2026." | assets/audio/T4-R10/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Webex CCE names two hybrid models in March 2022: SBC Peering and Localized RTP. I do not invent their call flows. The what’s-new page sends that detail to the partner technical guide.</p>
+<p><strong>2 minutes.</strong> Hybrid IVR, July 2023, is a different idea: some IVR nodes stay on-premises, and the example is OTP, while other tasks use Dialogflow CX. A static CX message can cover up to 30 seconds. Regional media, July 2024, keeps audio in the caller’s region. In the U.S. tenant example, control signals are what travel home. VPN-less Finesse does not include FIPPA or several desktops behind one NAT. Custom SIP headers in the August 2023 standalone note ride the initial INVITE only.</p>
+<p><strong>30 seconds, scale.</strong> Forty-eight thousand concurrent agents and 300 calls per second is a January 2025 single-tenant sentence. Two thousand is the Finesse cluster line in another guide.</p>
+<p><strong>2 minutes, peering.</strong> The January 2025 early-access paragraph says Equinix Cloud Exchange or Megaport, and then says a private circuit through Virtual Connect via VPN. I leave that sentence intact and I design from the September 17, 2026 Edge Connect article, which calls it private peering to Meetings, Calling, and Webex Contact Center Enterprise data centers. Digital channels also need a date: email, chat, and SMS in July 2023; WhatsApp and Facebook Messenger in the January 2025 block. Every nhy3hvdb section I used is older than twelve months, so those rows stay re-check.</p>
+<p><strong>What you will not say.</strong> You will not draw Localized RTP as Virtual Connect, and you will not treat the partner-guide pointer as a configuration you have already read.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">What’s new for administrators in Webex Contact Center Enterprise — help.webex — article nhy3hvdb — <a href="https://help.webex.com/article/nhy3hvdb">help.webex.com article nhy3hvdb</a>. February 2022 WFO and All Users. March 2022 hybrid names, Equinix, VPN-less. September 2022 analytics, CSA STAR Level 1, Kari’s Law pointer. July 2023 Windows 11, FedRAMP, Connect channels, Hybrid IVR, 30-second partial response. August 2023 initial INVITE headers. July 2024 regional media. January 2025 scale, custom CVP hosting, messengers, Monitoring Dashboard, early-access Edge Connect wording. <mark class="recheck">re-check</mark></li>
+<li id="cite-2">Webex Edge Connect — help.webex — article n68tcpb — header September 17, 2026 — <a href="https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect">Webex Edge Connect</a>. Private peering to Meetings, Calling, and Webex Contact Center Enterprise data centers. Equinix or Megaport. Public BGP ASN 13445. Public /30 or /31. Dedicated Instance redundancy checkbox.</li>
+<li id="cite-3">Solution Design Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), High Availability and Network Design — cisco.com — updated March 15, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html">High availability</a>. Finesse 2,000-user cluster total. <mark class="recheck">re-check</mark></li>
+<li id="cite-4">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>. SKU scope beside the February 2022 WFO sentence.</li>
+<li id="cite-5">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a>. Multi-tenant flows. Not a Webex CCE hybrid model.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Open questions: SBC Peering and Localized RTP internals <mark class="todo-verify">TODO-verify</mark> until the partner technical guide sections are read. Specific CRM product connectors are <mark class="todo-verify">TODO-verify</mark> from the Hybrid IVR sentence alone.</li>
+<li>Facts still marked re-check: every nhy3hvdb section dated before October 2025, and the March 15, 2025 design-guide cross-reference.</li>
+<li>Assets missing: a dated timeline SVG export, audio, a redacted partner-guide excerpt after it is read.</li>
+<li>Ideas for v1.0: a two-column card that refuses to merge the January 2025 peering sentence with n68tcpb.</li>
+<li>Next review: re-read nhy3hvdb section dates, and keep n68tcpb if its header is still the current Edge Connect article.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R09-classroom-index.html"><span>Previous</span><strong>T4-R09</strong><em>Classroom index</em></a><a class="next" href="T5-R01-what-dedicated-instance-is.html"><span>Next</span><strong>T5-R01</strong><em>What Dedicated Instance is</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

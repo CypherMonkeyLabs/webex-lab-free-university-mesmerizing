@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T1-R07 · Data Residency &amp; Security Basics">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T1-R07 · Data Residency &amp; Security Basics · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T1" data-room="T1-R07" data-room-title="Data Residency &amp; Security Basics" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T1</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T1/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T1 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T1 · Control Hub &amp; Platform Foundations</p>
+<h1>Data Residency &amp; Security Basics</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Data Residency &amp;amp; Security Basics">
+<defs>
+<linearGradient id="T1R07sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T1R07sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T1-R07</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Admin</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Identity</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Services</text></g>
+</svg>
+<figcaption>Illustrated scene for Data Residency &amp;amp; Security Basics. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Data Residency &amp;amp; Security Basics">
+<defs>
+<marker id="T1R07arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Admin → Control Hub → Identity → Services</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Services</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T1R07arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T1R07arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T1R07arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T1R07lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Admin → Control Hub → Identity → Services. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">The country you select while provisioning permanently sets the GEO for the organization’s users and encryption keys. Webex does not currently support migrating between GEO locations. Meetings follow the site time zone. Calling follows the principal place of business given at order time. You read the result at Account &gt; Info &gt; Data Locations.</p>
+<div class="meta-row"><span class="meta-chip">Room <strong>T1-R07</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L2</strong></span><span class="meta-chip">Est. time <strong>70–90 min</strong></span><span class="meta-chip">Prereq <strong>T1-R01</strong></span><span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Identities, encryption keys, and encrypted user-generated content are stored in the organization’s geographic region. The Key Management Service in that region handles key requests for spaces, messages, and content in Webex App. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Messaging GEOs named in the article are Europe (Frankfurt and Amsterdam, mapped to Continental Europe, the Middle East, and Africa) and North America and the rest of the world (United States data centers). <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A European Union city time zone puts Meetings data in Frankfurt. Other time zones use the data center closest to the selected city. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Audit log retention is one year in most regions and three years in India. A search can include only the past year. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>AI-generated content for meetings and messages is stored in the same data center as the user-generated content. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Check Meetings, Messaging, and common application data at Account &gt; Info &gt; Data Locations. Check Contact Center at Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>CountryCodeGEOMapping.xlsx maps a country to a region. On the User page tab, cell B3 is the country and cell B4 is the region. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Space content is stored in the region of the organization that owns the space. A 1:1 chat that includes a North America or rest-of-world user is stored in that GEO. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Compliance officers keep visibility of user content regardless of where it is stored, including eDiscovery and CASB. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Eligible legacy moves named on August 29, 2025 are European Union common application data, Saudi Arabia Webex Meetings sites, and UAE common application data. That header is older than 12 months. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A design that picks the country after the org exists is already late. Calling, Meetings, and Messaging do not share one residency switch.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Three residency decisions, one Account page</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T1-R07/arch.svg -->
+<div class="diagram" role="img" aria-label="Country selector, meetings time zone, and calling order address">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three residency inputs">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">What sets a region</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Messaging GEO is permanent. Meetings follow the site time zone. Calling follows the order.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="100" width="280" height="140" rx="12" fill="#14262a" stroke="#3ecfb2"/><text x="52" y="140">1 · Country Selector</text><text x="52" y="166" fill="#b7ad9c" font-size="12">Users, keys, org identity</text><text x="52" y="188" fill="#b7ad9c" font-size="12">Encrypted messages and files</text><text x="52" y="210" fill="#b7ad9c" font-size="12">No later GEO move</text>
+<rect x="350" y="100" width="280" height="140" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="366" y="140">2 · Meetings time zone</text><text x="366" y="166" fill="#b7ad9c" font-size="12">EU city → Frankfurt</text><text x="366" y="188" fill="#b7ad9c" font-size="12">Else closest data center</text><text x="366" y="210" fill="#b7ad9c" font-size="12">Chosen at site provisioning</text>
+<rect x="664" y="100" width="280" height="140" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="680" y="140">3 · Calling order</text><text x="680" y="166" fill="#b7ad9c" font-size="12">Closest to principal place</text><text x="680" y="188" fill="#b7ad9c" font-size="12">of business</text><text x="680" y="210" fill="#b7ad9c" font-size="12">Partner provides it at order</text>
+<rect x="180" y="270" width="620" height="80" rx="12" fill="#14110c" stroke="#3ecfb2"/><text x="196" y="304">4 · Where you read it</text><text x="196" y="328" fill="#b7ad9c" font-size="12">Account &gt; Info &gt; Data Locations · Contact Center Country of Operation</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Space ownership decides the storage region">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Space ownership">
+<rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Who owns the space owns the region</text>
+<text x="36" y="76" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Group space: organization of the person who created it.</text>
+<text x="36" y="108" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Team space: organization of the person who created the team. A space moved in later keeps its original owner.</text>
+<text x="36" y="140" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  Two-person chat across orgs: each org owns what its user posts. A North America or RoW participant stores the conversation there.</text>
+<text x="36" y="172" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  Bot space: first non-bot participant’s organization.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>Country Selector</li><li><span class="num">2</span>Meetings time zone</li><li><span class="num">3</span>Calling order</li><li><span class="num">4</span>Account info</li></ul>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">flowchart LR
+  Country[Country Selector] --> Messaging
+  TZ[Meetings time zone] --> Meetings
+  Order[Principal place of business] --> Calling
+</pre></details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T1-R07/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Residency is per service</h2>
+<p>Data residency, formerly called data locality, stores user data in regional data centers corresponding to the customer’s location. The offering described in the overview is for new customers. The retrieved article is dated September 24, 2026. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="chips"><span class="chip">GEO</span><span class="chip">KMS</span><span class="chip">Country Selector</span><span class="chip">Data Locations</span><span class="chip">Country of Operation</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T1-R07/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T1-R07/hero.png</code> · Studio draws three doors: country, time zone, and order address.</div>
+<h3>Checkmarks in the September 24, 2026 table</h3>
+<p>The article’s table marks where a service is offered. An empty cell is not a city name this room will invent. Read the privacy data sheet the article names before you add a rest-of-world site.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Service</th><th>Regions the table marks</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Webex Meetings</td><td>US, EU, Canada, UK, Japan, Australia, Singapore, Saudi Arabia. India is unmarked in that row.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Messaging</td><td>US, EU, Japan, Australia.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Calling</td><td>US, EU, Canada, UK, Japan, Australia, Singapore, Saudi Arabia, India.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Common identity</td><td>US, EU, Canada, Japan, Australia, Singapore, India. UK and Saudi Arabia are unmarked in that row.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Encryption keys</td><td>US, EU, Japan, Australia.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Contact Center</td><td>US, EU, Canada, UK, Japan, Australia, Singapore, India. Saudi Arabia is unmarked in that row.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hybrid services</td><td>Data security, calling, calendar, directory, video mesh, and messages: US, EU, Canada, UK, Japan, Australia, Singapore. Saudi Arabia and India are unmarked in that row.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Rules that survive a design review</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Rule</th><th>Sentence to keep</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Permanent GEO</td><td>Selecting the country permanently sets the GEO for users and encryption keys. Migration between GEO locations is not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Which country</td><td>If users are mostly in one country, select that country even when it differs from the business address. If users are spread out, select the country with the highest user count. Everyone in the org is stored in that GEO.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Messaging map in the FAQ</td><td>EU, Middle East, and Africa customers are provisioned to EU data centers. US, Canada, APAC, and South America customers are provisioned to US data centers. Canada can store common application data and user profiles in Canadian data centers.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Calling</td><td>Stored in the data center closest to the principal place of business the partner provided during ordering.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact Center</td><td>Country of Operation in the setup wizard creates the tenant in the closest data center from the mapping in Data Locality in Contact Center.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>India admin activity</td><td>Administrator activities for Webex Calling and Contact Center events originating from India are stored in data centers in India. Customers cannot select or change where administrator activities are stored.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Partners</td><td>Webex Partners in one region can create customer organizations in any region where the services are offered.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Collaboration across regions</td><td>Users can meet, message, and call users in other organizations without separate accounts in foreign clusters.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Audit search</td><td>Retention is 12 months in most regions and three years in India. Search includes only the past year.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Download CountryCodeGEOMapping.xlsx and read cell B4 after you pick the country in B3. The file starts downloading when you open the link in article wej14b. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>Meetings data-center cities in article WBX28754 include a note that locations may change, and that free user accounts may be stored outside the account holder’s region. Billing data in that article is Texas and North Carolina. Analytics data in that article is California and Texas. That article is about Meetings data centers and iPOPs. It is not the Messaging GEO list. <a class="cite" href="#cite-4">[cite:4]</a></p></div>
+<div class="callout note"><span class="label">Security neighbor</span><p>This room is residency and the control that proves it. SSO claim names, role exclusivity, and Calling emergency calling stay in T1-R02, T1-R05, and T2-R06.</p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T1-R07">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Services</text>
+<circle cx="200" cy="132" r="36" fill="url(#T1R07map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T1R07map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Data residency</dt><dd>Storage of user data in regional data centers that correspond to the customer’s location. Formerly called data locality. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>GEO</dt><dd>The location set at provisioning for the organization’s users and encryption keys. A later move between GEOs is not supported. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>KMS</dt><dd>The Key Management Service in the organization’s region. It handles requests for keys that encrypt and decrypt spaces, messages, and content in Webex App. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Country Selector</dt><dd>The Control Hub drop-down during provisioning that maps a country to a data center. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Data Locations</dt><dd>Account &gt; Info &gt; Data Locations, where an admin verifies Meetings, Messaging, and common application data. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Country of Operation</dt><dd>The Contact Center setting that confirms that service’s residency. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Space owner</dt><dd>The organization whose region stores the content that appears in the space. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>iPOP</dt><dd>Internet Point of Presence. The Meetings article lists them separately from data centers. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T1-R07/eco.svg -->
+<div class="diagram" role="img" aria-label="Residency sisters"><svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Sisters of a GEO choice</text>
+<text x="36" y="74" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Identity and keys stay with the country choice</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Meetings time zone · Calling order address · Contact Center country</text>
+<text x="36" y="138" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Compliance visibility does not stop at the region boundary</text>
+<text x="36" y="170" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Hybrid services are listed as supported in the region, with the table’s checkmarks</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((Residency))
+    Country
+    Meetings
+    Calling
+    Contact Center
+    Compliance
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Identity</td><td>Email address and user ID stored in the geographic region. Authentication is processed locally in the region.</td><td>T1-R02 creates the people. This room says where those identities live.</td><td>Country Selector at create.</td><td>Planning a GEO move after sync.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Calling</td><td>Calling data near the principal place of business.</td><td>A different switch from the Messaging country.</td><td>Order-time address from the partner.</td><td>Assuming the Country Selector also places Calling media.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Contact Center</td><td>Tenant in the closest data center for Country of Operation.</td><td>Its own Control Hub path.</td><td>Contact Center &gt; Settings &gt; Service Details.</td><td>Reading only Account &gt; Info.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Meetings</td><td>Site time zone picks the data center. EU cities use Frankfurt.</td><td>Independent of the Messaging GEO.</td><td>Site provisioning time zone.</td><td>One country for every workload.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Compliance</td><td>eDiscovery and CASB still see content across regions.</td><td>The compliance officer role is T1-R05. Visibility is this article.</td><td>Compliance officer, external communication controls.</td><td>Assuming a foreign space is invisible.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hybrid services</td><td>Hybrid Directory, Calendar, Calling, Video Mesh, Data Security, Messages.</td><td>The overview says they are supported in the region. The table shows which columns are marked.</td><td>Hybrid service setup after the GEO exists.</td><td>Quoting a hybrid service in an unmarked column.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Audit log</td><td>Administrator activity retention.</td><td>One year to search, three years retained in India.</td><td>Administrator activity log.</td><td>A search older than one year.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analytics</td><td>T1-R06 windows, and the Meetings article’s analytics locations.</td><td>Do not merge a 13-month Pro Pack window with a data-center city.</td><td>Analytics in Control Hub.</td><td>Teaching California as the Messaging GEO.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Country Selector</td><td>Messaging GEO</td><td>Country-to-DC map</td><td>Org identity, user identities, keys, encrypted content</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Spreadsheet</td><td>Admin</td><td>CountryCodeGEOMapping.xlsx</td><td>B3 country, B4 region</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Meetings time zone</td><td>Meetings data center</td><td>Site provisioning</td><td>Meetings data. EU city maps to Frankfurt.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Partner order</td><td>Calling data center</td><td>Principal place of business</td><td>Calling data, closest data center</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact Center wizard</td><td>Contact Center tenant</td><td>Country of Operation</td><td>Tenant in the mapped data center</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>User content</td><td>Owner region</td><td>Space ownership rules</td><td>Messages, files, and metadata for that space</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>AI output</td><td>Same data center as user content</td><td>Storage rule</td><td>AI-generated meetings and messages content</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Admin</td><td>Account info</td><td>Control Hub read</td><td>Data Locations for Meetings, Messaging, common application data</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Residency edges"><svg viewBox="0 0 980 90" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="90" fill="#0c121c"/><text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="66" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Country → Messaging GEO. Time zone → Meetings. Order address → Calling.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> The residency article does not publish a Microsoft 365 or Amazon region crosswalk. Users can still collaborate across Webex regions with one identity. <a class="cite" href="#cite-1">[cite:1]</a></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The article says Messaging locations were introduced with the intention of expanding later. Treat new regions as a documentation change, not as a promise this room can schedule.</li>
+<li>Legacy customers eligible for a regional move are pointed at the data-center migration article. <mark class="recheck">re-check</mark> s0lk5g. Header August 29, 2025. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Canon planning: record Account &gt; Info &gt; Data Locations from a lab org next to the country that was selected. Study evidence only.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Messaging and Meetings show different regions</td><td>They are set by different inputs.</td><td>Country Selector versus the site time zone.</td><td>Read both. Frankfurt for an EU city is a Meetings rule.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A search of admin activity older than a year returns nothing</td><td>Search includes only the past year, even where retention is three years in India.</td><td>The search window.</td><td>Stay inside one year for the search. Retention and search are different sentences.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact Center region is missing on Account &gt; Info</td><td>That page is Meetings, Messaging, and common application data.</td><td>Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation.</td><td>Use that path.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From country selection to the Account page</h2>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Country Selector</td><td>Provisioning</td><td>The choice permanently sets the GEO for users and keys.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Country</td><td>Spreadsheet</td><td>CountryCodeGEOMapping.xlsx</td><td>B3 country, B4 region. Header April 14, 2026 on wej14b.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>3</td><td>Identity service</td><td>Regional data center</td><td>Local processing</td><td>Authentication requests are processed in the region.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>KMS</td><td>Webex App content</td><td>Key requests</td><td>Keys are created and stored in the region.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Meetings site</td><td>Meetings data center</td><td>Time zone</td><td>EU city to Frankfurt. Otherwise the closest data center.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Partner</td><td>Calling</td><td>Order</td><td>Principal place of business.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Contact Center wizard</td><td>Tenant</td><td>Country of Operation</td><td>Closest data center from the contact-center mapping.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Admin</td><td>Account &gt; Info</td><td>Read</td><td>Data Locations. Contact Center uses its own settings path.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>During organization provisioning, use the Country Selector. Prefer the country where most users are, even if the business address differs. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Before you commit, download CountryCodeGEOMapping.xlsx. On the User page tab, set B3 and read B4. Or browse the Country Code GEO mapping tab. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>After the org exists, sign in to Control Hub and open Account &gt; Info &gt; Data Locations for Meetings, Messaging, and common application data. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For Contact Center, open Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>When you create a Meetings site, the time zone selects the Meetings data center. An EU city time zone is Frankfurt in this article. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For Calling, confirm the principal place of business the partner submitted at order time. The article does not give a Control Hub control that moves that choice. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do not plan a later move between Messaging GEOs. The article says that migration is not supported. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the customer is in a legacy migration program, read the data-center migration article before you promise a move. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+<!-- VISUAL:screenshot:data-locations | Studio | assets/images/T1-R07/data-locations.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Values the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>GEO move</td><td>Not currently supported</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header September 24, 2026.</td></tr>
+<tr><td>Audit retention</td><td>12 months in most regions, 3 years in India</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Audit search window</td><td>Past year only</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>EU Meetings city</td><td>Frankfurt</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Messaging Europe hosts named</td><td>Frankfurt and Amsterdam</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Spreadsheet cells</td><td>B3 country, B4 region</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header April 14, 2026.</td></tr>
+<tr><td>Legacy migration eligibility</td><td>EU common application data, Saudi Arabia Meetings sites, UAE common application data</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td><mark class="recheck">re-check</mark> Header August 29, 2025.</td></tr>
+<tr><td>Meetings DC note</td><td>Locations may change. Free accounts may be stored outside the holder’s region.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. Header February 13, 2026.</td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Eight failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>The org cannot be moved to another Messaging GEO</td><td>Migration between GEO locations is not supported.</td><td>The country chosen at create.</td><td>The article’s recommendation is to choose the country before the org is created.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Users outside the chosen country still land in that GEO</td><td>All of the organization’s users are stored in the associated GEO.</td><td>User distribution versus the selected country.</td><td>That is the documented behavior. Pick the country with the highest user count when people are spread out.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A 1:1 chat is not in the European region</td><td>A participant is in the North America or rest-of-world GEO. The conversation content is stored there.</td><td>The participants’ organizations.</td><td>Read the ownership rule before you file a residency exception.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A space moved into a team kept its old region</td><td>Spaces created outside a team and then moved retain original ownership.</td><td>Whether the space was created inside the team.</td><td>Ownership follows the original owner, not the move.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Meetings data is in Frankfurt and Messaging is not</td><td>An EU city time zone selects Frankfurt for Meetings. Messaging follows the country map.</td><td>Site time zone versus Country Selector.</td><td>Treat them as two decisions.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Calling region does not match the Country Selector</td><td>Calling uses the principal place of business from the order.</td><td>The partner’s order data.</td><td>Read the Calling sentence separately.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>India audit events are not in the region the admin picked</td><td>Customers cannot select where administrator activities are stored. India-origin Calling and Contact Center admin events are stored in India.</td><td>The activity’s origin.</td><td>Use the article’s rule. There is no picker.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A free Meetings user appears outside the expected country</td><td>WBX28754 says free user accounts may be stored outside the account holder’s region, and data-center locations may change.</td><td>Whether the account is free.</td><td>Read that note before you treat the city list as a guarantee.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What does the Country Selector set?</summary><p class="answer">The GEO for the organization’s users and encryption keys, plus organization identity and encrypted user-generated content. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>Where do you read Meetings and Messaging residency?</summary><p class="answer">Account &gt; Info &gt; Data Locations. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Can you move the org to another GEO later?</summary><p class="answer">The article says Webex does not currently support migrating between GEO locations. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which Messaging regions does the FAQ name?</summary><p class="answer">Europe, hosted in Frankfurt and Amsterdam, and North America and the rest of the world, hosted in the United States. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Where do EU-city Meetings go?</summary><p class="answer">Frankfurt. Other time zones use the closest data center. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What sets Calling residency?</summary><p class="answer">The data center closest to the principal place of business the partner provided at order time. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Who owns a group space?</summary><p class="answer">The organization of the person who created it. Content is stored in that region. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where is a cross-org 1:1 stored if one user is in North America or RoW?</summary><p class="answer">In the North America or rest-of-world GEO. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How long can you search the audit log?</summary><p class="answer">The past year. Retention is 12 months in most regions and three years in India. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Where is AI-generated content stored?</summary><p class="answer">In the same data center as the user-generated content. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which spreadsheet cells answer the country question?</summary><p class="answer">B3 is the country. B4 is the region. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Does compliance stop at the region border?</summary><p class="answer">The article says compliance officers continue to have visibility of user content regardless of where it is stored. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Spreadsheet desk, no production org</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: for six paper orgs, name which input sets Messaging, Meetings, and Calling.</label></li>
+<li><label><input type="checkbox"> Prereq: this room. Do not create a production organization to test a GEO.</label></li>
+<li><label><input type="checkbox"> Step 1. Users are mostly in one country and the billing address is another. Expected: select the users’ country.</label></li>
+<li><label><input type="checkbox"> Step 2. Meetings time zone is an EU city. Expected: Frankfurt for Meetings data.</label></li>
+<li><label><input type="checkbox"> Step 3. Someone plans to move the Messaging GEO next year. Expected: not supported.</label></li>
+<li><label><input type="checkbox"> Step 4. A 1:1 includes a North America or RoW user. Expected: conversation content is stored in that GEO.</label></li>
+<li><label><input type="checkbox"> Step 5. An audit search asks for 18 months. Expected: the search window is the past year.</label></li>
+<li><label><input type="checkbox"> Evidence: the six answers with the cite.</label></li>
+<li><label><input type="checkbox"> Break it: read WBX28754’s California analytics line as the Messaging GEO. Recovery: that article is Meetings data centers and iPOPs. Messaging GEOs are in oybc4fb.</label></li>
+<li><label><input type="checkbox"> Reflection: which of your designs still has one region for every Webex service.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Can an organization move between Messaging GEOs?</p><details><summary>Answer</summary><p class="answer">Not currently. The country choice is permanent for users and encryption keys. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Where are Europe Messaging data centers named?</p><details><summary>Answer</summary><p class="answer">Frankfurt and Amsterdam. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>An EU city time zone stores Meetings data where?</p><details><summary>Answer</summary><p class="answer">Frankfurt. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>What sets Calling data placement?</p><details><summary>Answer</summary><p class="answer">The data center closest to the principal place of business provided at order time. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Where do you confirm Contact Center residency?</p><details><summary>Answer</summary><p class="answer">Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Audit log search window?</p><details><summary>Answer</summary><p class="answer">The past year. Retention is 12 months in most regions and three years in India. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>A 1:1 chat includes a North America or RoW user.</p><details><summary>Answer</summary><p class="answer">The conversation content is stored in the North America or rest-of-world GEO. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Which spreadsheet cells show country and region?</p><details><summary>Answer</summary><p class="answer">B3 and B4 on the User page tab. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Where is AI-generated message content stored?</p><details><summary>Answer</summary><p class="answer">In the same data center as the user-generated content. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Can a partner in one region create a customer org in another offered region?</p><details><summary>Answer</summary><p class="answer">Yes. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Does a compliance officer lose visibility when content is in another region?</p><details><summary>Answer</summary><p class="answer">The article says they continue to have visibility regardless of where the data is stored. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Name the three inputs and the service each one places.</p><details><summary>Answer</summary><p class="answer">Country Selector for Messaging identities and content. Meetings time zone for Meetings. Principal place of business at order time for Calling. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Explain the permanent country choice, Frankfurt for EU Meetings, and Calling’s order address." | assets/audio/T1-R07/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk space ownership, audit retention versus search, and the service checkmark table." | assets/audio/T1-R07/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: no GEO move, B3 and B4, past-year search, Country of Operation." | assets/audio/T1-R07/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> The Country Selector permanently sets the GEO for users and encryption keys. I cannot move that GEO later. I verify Meetings, Messaging, and common application data at Account, Info, Data Locations.</p>
+<p><strong>2 minutes.</strong> Messaging Europe is Frankfurt and Amsterdam for Continental Europe, the Middle East, and Africa. North America and the rest of the world is in the United States. If most users are in one country, I pick that country. If they are spread out, I pick the country with the most users, and everyone is stored there. Meetings use the site time zone, and an EU city is Frankfurt. Calling uses the principal place of business from the order. Contact Center uses Country of Operation. AI content stays with the user-generated content. Audit retention is a year in most regions and three years in India, and search is only the past year.</p>
+<p><strong>30 seconds, spaces.</strong> The creating organization owns a group space. A team owns spaces created in it. A space moved into a team later keeps its original owner. A 1:1 that includes North America or the rest of the world is stored in that GEO.</p>
+<p><strong>2 minutes, what I will not merge.</strong> I will not read the Meetings data-center list as the Messaging GEO. Free Meetings accounts may sit outside the holder’s region, and that list can change. I will not promise the August 29, 2025 migration regions without a re-check. Compliance visibility continues across regions. Partners can create customer orgs in any region where the service is offered.</p>
+<p><strong>What you will say about a later country change.</strong> The article says the organization stays in the GEO where it was created.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Data residency in Webex — help.webex — article oybc4fb — <a href="https://help.webex.com/article/oybc4fb">help.webex.com article oybc4fb</a> — header September 24, 2026 — retrieved 2026-10-14. Country Selector, permanent GEO, service table, space ownership, audit retention, AI content, Calling order address, Contact Center country, Account &gt; Info &gt; Data Locations.</li>
+<li id="cite-2">Find the Data Residency Region That Maps to a Country — help.webex — article wej14b — <a href="https://help.webex.com/article/wej14b">help.webex.com article wej14b</a> — header April 14, 2026 — retrieved 2026-10-14. CountryCodeGEOMapping.xlsx. Cell B3 country, cell B4 region.</li>
+<li id="cite-3">Data center migration plans for your organization’s data in Control Hub — help.webex — article s0lk5g — <a href="https://help.webex.com/article/s0lk5g">help.webex.com article s0lk5g</a> — header August 29, 2025 — retrieved 2026-10-14. <mark class="recheck">re-check</mark>. EU common application data, Saudi Arabia Meetings sites, UAE common application data.</li>
+<li id="cite-4">Where are the Webex Data Centers and iPOP Locations? — help.webex — article WBX28754 — <a href="https://help.webex.com/article/WBX28754">help.webex.com article WBX28754</a> — header February 13, 2026 — retrieved 2026-10-14. Meetings data centers and iPOPs. Locations may change. Free accounts may be stored outside the holder’s region. Billing in Texas and North Carolina. Analytics in California and Texas.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: whether s0lk5g’s eligible regions are unchanged since August 29, 2025.</li>
+<li>Facts still TODO-verify: 0. The legacy migration list is <mark class="recheck">re-check</mark>.</li>
+<li>Assets missing: Data Locations screenshot, audio.</li>
+<li>Ideas for v1.0: a three-column card for country, Meetings time zone, and Calling order address.</li>
+<li>Next review: when oybc4fb adds a Messaging region or changes the no-migration sentence.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R06-analytics-troubleshooting.html"><span>Previous</span><strong>T1-R06</strong><em>Analytics &amp; Troubleshooting</em></a><a class="next" href="T2-R01-calling-architecture.html"><span>Next</span><strong>T2-R01</strong><em>Calling Architecture Overview</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

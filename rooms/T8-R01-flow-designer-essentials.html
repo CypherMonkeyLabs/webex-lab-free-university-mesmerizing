@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T8-R01 · Flow Designer Essentials">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T8-R01 · Flow Designer Essentials · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T8" data-room="T8-R01" data-room-title="Flow Designer Essentials" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T8</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T8/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T8 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T8 · Flows, integrations, and the current product</p>
+<h1>Flow Designer Essentials</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Flow Designer Essentials">
+<defs>
+<linearGradient id="T8R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T8R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Flows and tools</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T8-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Customer</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Flow</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">API</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Flow Designer Essentials. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Flow Designer Essentials">
+<defs>
+<marker id="T8R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Customer → Flow → API → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T8R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T8R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T8R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T8R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Customer → Flow → API → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Flow Designer is how Webex Contact Center routes a live call: activities on a canvas, a main flow, and optional event flows. Publish stays dark until validation is on and the errors are gone. This room is the multi-tenant product. It is not the Enterprise script tool.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T8-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>14 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Flow Designer routes real-time calls. You choose activities, including how agents are assigned, from a drag-and-drop library. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Start Flow is already on the main canvas. You cannot delete it. It is the event that triggers the flow. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Validation is off by default, so errors stay hidden. With the toggle off, Publish stays disabled. After you turn validation on, Publish stays disabled until every error is fixed. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Get Queue Info returns position in queue and estimated wait time. Success needs both values positive. If skills are assigned in the flow on a team-assignment queue, EWT is always −1, and the Insufficient Information branch is the one that still has a valid PIQ. <a class="cite" href="#cite-1">[cite:1]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Flow Designer routes real-time calls. You choose activities, including how agents are assigned, from a drag-and-drop library. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Start Flow is already on the main canvas. You cannot delete it. It is the event that triggers the flow. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Validation is off by default, so errors stay hidden. With the toggle off, Publish stays disabled. After you turn validation on, Publish stays disabled until every error is fixed. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Get Queue Info returns position in queue and estimated wait time. Success needs both values positive. If skills are assigned in the flow on a team-assignment queue, EWT is always −1, and the Insufficient Information branch is the one that still has a valid PIQ. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The same article prints two ways to open flows: Services → Contact Center → Flows, and Contact Center → Customer Experience → Flows. Do not pick one and call the other wrong. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A flow that publishes nothing is often just the validation toggle. A flow that treats EWT −1 as “the queue is empty” will mis-route skill queues. The simulator on the Labs page copies these rules. It is not a tenant.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Main flow, then events</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T8-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Main flow and an event flow">
+<svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Main flow and an event flow">
+<rect width="980" height="360" fill="#0c121c"/>
+<text x="28" y="36" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">One main flow. Event flows are optional and asynchronous.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="40" y="70" width="150" height="64" rx="12" fill="#26101f" stroke="#f0a0ff"/><text x="54" y="106">Start Flow</text>
+<rect x="230" y="70" width="160" height="64" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="244" y="106">Play Message</text>
+<rect x="430" y="70" width="170" height="64" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="444" y="98">Get Queue Info</text><text x="444" y="118" fill="#b7ad9c" font-size="12">PIQ and EWT</text>
+<rect x="640" y="70" width="170" height="64" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="654" y="106">Queue Contact</text>
+<rect x="850" y="70" width="100" height="64" rx="12" fill="#14110c" stroke="#8d8476"/><text x="864" y="106">End</text>
+</g>
+<path d="M190 102 H230" stroke="#f0a0ff" fill="none"/>
+<path d="M390 102 H430" stroke="#f0a0ff" fill="none"/>
+<path d="M600 102 H640" stroke="#f0a0ff" fill="none"/>
+<path d="M810 102 H850" stroke="#f0a0ff" fill="none"/>
+<rect x="40" y="190" width="900" height="120" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="58" y="222" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">Get Queue Info branches</text>
+<text x="58" y="250" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">Success: EWT and PIQ both positive. Insufficient Information: PIQ is valid and EWT is −1.</text>
+<text x="58" y="274" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">Team-assignment queues with skills assigned in the flow always return EWT −1. That is not “zero wait.”</text>
+<text x="58" y="298" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">HTTP Request placed immediately after Queue Contact may not see the data. Put Play Message or Play Music between them.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Start[Start Flow] --> Play[Play Message]
+  Play --> GQI[Get Queue Info]
+  GQI --> QC[Queue Contact]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Rules that change what you click</h2>
+<div class="callout def"><span class="label">Start Flow</span><p>It is on the main canvas by default. You cannot delete it. It indicates the event that triggers the flow and controls how the flow can be used. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">Event flows</span><p>They are asynchronous to the main flow. You cannot predict when the system triggers one. They are optional extensions of the main flow. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">Validation and Publish</span><p>The validation toggle is off by default, so errors do not appear. If it is off, Publish stays disabled. After you enable validation, Publish remains disabled until you resolve all errors. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">DNIS on a transfer to an entry point</span><p>The destination number is presented as <code>NewPhoneContact.DNIS</code>. If the entry point is configured with an E.164 number only, national dialing is converted: the article’s example is 5550101234 presented as +15550101234. If the entry point has both an E.164 number and an extension, DNIS is always the E.164 number. Do not assume one format unless the entry point’s numbering guarantees it. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Not WxCCE scripting</span><p>This article is Webex Contact Center. T4 does not treat Flow Designer as the Enterprise script tool. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Activities and the systems beside them</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T8-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T8R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T8R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<dl class="glossary">
+<div class="term"><dt>Flow Designer</dt><dd>The drag-and-drop surface that routes real-time calls and decides what happens at each stage, including how agents are assigned. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Start Flow</dt><dd>Default activity on the main canvas. Cannot be deleted. Names the triggering event. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Event flow</dt><dd>Optional, asynchronous, not predictable from the main path. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Get Queue Info</dt><dd>Returns the caller’s position in queue (PIQ) and estimated wait time (EWT), plus other output variables. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>EWT −1</dt><dd>The value Get Queue Info always returns for queues with team assignment and skills assigned in the flow. EWT does not apply there. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Insufficient Information</dt><dd>The branch when PIQ is valid and EWT is −1. You can use PIQ. EWT was not calculated. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Success branch</dt><dd>Both EWT and PIQ come back positive. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Queue priority</dt><dd>An integer variable from 1 through 9. Outside that range, the default priority is 10. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Fallback queue</dt><dd>Used only when a queue variable fails to return a valid queue ID. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>NewPhoneContact.DNIS</dt><dd>The DNIS presented to the receiving entry-point flow after a transfer. Format depends on how that entry point is numbered. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>BRE Request</dt><dd>A Flow Designer utility activity. The Business Rules Engine guide says you can build a flow that invokes it. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>QueueToAgent</dt><dd>Named in the multi-tenant architecture article as voice, direct to an agent id. It is a different sentence from this room’s Queue Contact activity. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T8-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Flow Designer neighbors">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow Designer neighbors">
+<rect width="980" height="200" fill="#0c121c"/>
+<rect x="390" y="60" width="200" height="64" rx="14" fill="#26101f" stroke="#f0a0ff"/>
+<text x="490" y="98" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif">Flow Designer</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="30" y="30" width="160" height="40" rx="8" fill="#14110c" stroke="#f0a0ff"/><text x="42" y="55">Queues</text>
+<rect x="30" y="120" width="180" height="40" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="42" y="145">BRE Request</text>
+<rect x="760" y="30" width="180" height="40" rx="8" fill="#14110c" stroke="#f0b429"/><text x="772" y="55">Entry point DNIS</text>
+<rect x="760" y="120" width="190" height="40" rx="8" fill="#14110c" stroke="#ff8b9a"/><text x="772" y="145">Not WxCCE scripting</text>
+</g>
+</svg>
+</div>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>This is Webex Contact Center.</strong> Peer flow builders are labels. No parity matrix is published on help.webex.com.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Idea</th><th>What the flow article says</th><th>Why it matters</th><th>Where you touch it</th><th>What goes wrong</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>Not a flow activity in the sections used here.</td><td>Schedules are not the canvas.</td><td>WFO stays in T3 and T4.</td><td>Putting a schedule bot in the IVR. Check the subscription in Control Hub before using a WFO SKU. py6u9h’s list is Enterprise, CCE, and CCX, and a multi-tenant subscription shows a different set.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Quality and recording</td><td>The activity list includes Record and Recording Control. Retention numbers are not in this article.</td><td>A record activity is not a retention policy.</td><td>Voice activities.</td><td>Quoting Calling’s one-year retention as a flow setting.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911</td><td>Not a flow activity in this article.</td><td>Emergency calling is a phone path.</td><td>T2 and nvfbjts. No flow-level emergency activity is in the Flow Designer article. <a class="cite" href="#cite-6">[cite:6]</a></td><td>Testing 911 by reading the flow trace only.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Reporting</td><td>PIQ and EWT are activity outputs, not Analyzer history.</td><td>A positive EWT is a branch input.</td><td>Get Queue Info.</td><td>Using EWT −1 as a report of zero wait.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce</td><td>Screen Pop can take a URL. The article’s example is a website such as a Salesforce URL. That is not the CRM connector install.</td><td>Screen pop is a flow setting. The connector is another article.</td><td>Screen Pop activity.</td><td>Assuming the example URL provisions Salesforce.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dynamics connector</td><td>Not specified here.</td><td>Keep Microsoft’s product name off this canvas.</td><td>nhovcy4 does not name Dynamics. Do not draw it as an activity.</td><td>Drawing Dynamics 365 Contact Center as a Flow Designer node.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ServiceNow</td><td>Not named in nhovcy4.</td><td>Same boundary.</td><td>Absence is the cited fact. Do not invent an activity.</td><td>Inventing a ServiceNow activity.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agent</td><td>Virtual Agent and Virtual Agent V2 are activities in the library. The VAV setup guide is a separate article.</td><td>The activity name is not the whole setup.</td><td>Activity library, then the VAV guide.</td><td>Skipping the setup article.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>AI Assistant</td><td>Not this article’s activity list.</td><td>Control Hub AI Assistant is T3’s article.</td><td>No flow node in nhovcy4 is the AI Assistant. The desktop icon is nvvv1zb. Virtual Agent V2 is s0qro1. <a class="cite" href="#cite-8">[cite:8]</a></td><td>Renaming Virtual Agent to AI Assistant.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IVR</td><td>Voice activities include Menu, Collect Digits, Play Message, Play Music, Callback, and Schedule Callback.</td><td>Self-service is these activities, not CVP, on this product.</td><td>Voice group in the library.</td><td>Expecting a CVP application name to appear.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital</td><td>The article’s opening job is routing real-time calls. as of 2026-10-14, s0qro1 names six Connect channels. utqcm7 remains the architecture list. <a class="cite" href="#cite-7">[cite:7]</a></td><td>Do not stretch a voice rule onto a channel the page did not name.</td><td>Voice sections used here.</td><td>Claiming every digital channel uses EWT the same way.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Identity</td><td>You sign in to use the activity library. The article points at Control Hub.</td><td>SSO failures look like a missing flow.</td><td>Control Hub sign-in. The printed cascades differ; see config.</td><td>Debugging activities while the admin session is dead.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>What crosses</th><th>Rule</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Entry point transfer</td><td>Receiving flow</td><td>NewPhoneContact.DNIS</td><td>E.164-only entry points present E.164, including the article’s 5550101234 → +15550101234 example. E.164 plus extension always presents the E.164 number.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Get Queue Info</td><td>Success or Insufficient Information</td><td>PIQ and EWT</td><td>Success is both positive. Insufficient Information is valid PIQ and EWT −1.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Skill plus team assignment</td><td>EWT output</td><td>Always −1</td><td>EWT does not apply. Do not treat −1 as a measured wait.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Queue variable</td><td>Fallback queue</td><td>Queue ID</td><td>Fallback is used only when the variable does not return a valid queue ID.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Priority variable</td><td>Queue</td><td>Integer 1–9, else 10</td><td>Out of range does not reject the flow. It defaults to 10.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Queue Contact</td><td>HTTP Request</td><td>Data the request needs</td><td>An HTTP Request immediately after Queue Contact may not retrieve it. Insert Play Message or Play Music.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Flow</td><td>Business Rules Engine</td><td>BRE Request activity</td><td>The BRE guide: a flow can invoke the BRE activity.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Screen Pop</td><td>A URL</td><td>Variables as <code>{{variable}}</code></td><td>Example in the article uses <code>{{NewContact.ANI}}</code> and a website URL.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Flow Designer</th><th>Older habit</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Activities on a main flow</td><td>Trace the ICM node in Script Editor and the activity on the Flow Designer canvas. No help page prints a node-for-node map, and activity names change when Cisco updates the canvas.</td><td>No parity matrix is published on help.webex.com. Documented calling migrations are Unified CM and BroadWorks/BroadCloud, which are not flow editors. <a href="#cite-5">[cite:5]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Get Queue Info</td><td>A queue node that returned position. The −1 rule is specific.</td><td>Amazon Connect and Genesys queue blocks are orientation only.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BRE Request</td><td>An external database dip. BRE is in-platform in that user guide’s scope.</td><td>Do not rename it to a CRM connector.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>Open the activity on the Flow Designer canvas. Unquoted parameters are the fields on that node, and they change when Cisco updates the activity.</li>
+<li>Enterprise scripting is T4’s open item, not a second name for this canvas.</li>
+<li>When a help page retires one of the two menu cascades, update the config table. Until then, cite both.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Publish is grey and no errors show</td><td>Validation is still off</td><td>Footer toggle</td><td>Turn validation on, then fix what appears</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>EWT is −1 on a skilled team queue</td><td>Read as a failure of the queue</td><td>Team assignment with skills assigned in the flow</td><td>Use the Insufficient Information branch and PIQ</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>HTTP after Queue Contact is empty</td><td>The activities are adjacent</td><td>Article’s warning</td><td>Insert Play Message or Play Music</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>DNIS is +E.164 although the caller dialed an extension</td><td>The entry point has both formats</td><td>DNIS table</td><td>Expect the E.164 number</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>A queue treatment you can defend</h2>
+<ol>
+<li>Open flows with either printed cascade: Services → Contact Center → Flows, or Contact Center → Customer Experience → Flows. Functions are under Services → Contact Center → Customer Experience → Functions. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Leave Start Flow in place. Add Play Message or Menu only if the treatment needs them. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Add Get Queue Info before you promise a wait announcement. Branch Success only when EWT and PIQ are both positive. Branch Insufficient Information when PIQ is valid and EWT is −1. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the queue is team-based and the flow assigns skills, plan on EWT −1. Do not announce a calculated wait. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Queue Contact can use a static queue or a variable. If you use a variable, set a fallback queue for an invalid ID. Priority 1–9; anything else becomes 10. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If you need an HTTP Request after Queue Contact, put Play Message or Play Music between them. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Turn validation on. Fix every error. Only then does Publish leave the disabled state the article describes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths and switches</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Control</th><th>Article text</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Open flows</td><td>Services → Contact Center → Flows</td><td>Also printed: Contact Center → Customer Experience → Flows. The Flows page has Flows, Subflows, and Global Variables in one of those procedures.</td></tr>
+<tr><td>Functions</td><td>Services → Contact Center → Customer Experience → Functions</td><td>Custom code used across flows. Not the same page as Flows.</td></tr>
+<tr><td>Validation</td><td>Toggle on the right side of the footer. Off by default.</td><td>Errors appear only after it is on.</td></tr>
+<tr><td>Publish</td><td>Disabled while validation is off. After validation is on, disabled until all errors are resolved.</td><td>Both halves are required.</td></tr>
+<tr><td>Queue choice</td><td>Static queue, or a variable plus Fallback Queue.</td><td>Fallback applies when the variable returns an invalid queue ID.</td></tr>
+<tr><td>Priority</td><td>Flow variable, integer 1–9.</td><td>Otherwise the default is 10.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Open Flow Designer in the live tenant. nhovcy4 documents more than one menu cascade, and the highlighted cascade depends on what that tenant has enabled.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Bound</th><th>Value</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Priority range</td><td>1 through 9, otherwise 10</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>EWT on team assignment with skills in the flow</td><td>Always −1</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Success</td><td>EWT and PIQ both positive</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Insufficient Information</td><td>Valid PIQ and EWT of −1</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>DNIS when the entry point has E.164 and an extension</td><td>Always the E.164 number</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E.164-only example</td><td>5550101234 is presented as +15550101234</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Activity schemas not quoted here</td><td>Open the activity on the canvas and read the fields Cisco shows for that node. Parameters change when the activity is updated.</td><td>Do not invent parameters</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Next move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Publish never enables and the canvas looks clean</td><td>Validation is off, so errors are hidden and Publish stays disabled</td><td>Footer toggle</td><td>Enable validation and clear the errors that appear</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Publish still disabled after validation is on</td><td>Errors remain</td><td>The article’s second sentence on Publish</td><td>Fix all of them</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Wait announcement says the wait failed</td><td>EWT −1 on a skilled team-assignment queue</td><td>Always −1 for that case</td><td>Take Insufficient Information and use PIQ</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Both branches feel wrong</td><td>Success was used when a value was −1</td><td>Success requires both positive</td><td>Move the −1 case off Success</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Lookup after the queue returns nothing</td><td>HTTP Request is the next activity</td><td>The article’s delay warning</td><td>Insert Play Message or Play Music</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Variable queue dumps the call</td><td>No fallback</td><td>Fallback exists for an invalid queue ID</td><td>Set Fallback Queue</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Priority 0 or 15 was requested</td><td>Outside 1–9</td><td>Default becomes 10</td><td>Expect 10, or pass 1–9</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>DNIS is not the extension the caller dialed</td><td>Entry point has E.164 and an extension</td><td>DNIS table</td><td>Match on the E.164 value</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Start Flow is missing from a new main flow</td><td>Someone deleted it, or this is not the main canvas</td><td>You cannot delete Start Flow</td><td>Reopen the main flow</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<details class="qnode"><summary><span class="lvl">L1</span>What does Flow Designer route?</summary><p class="answer">Real-time calls, including how agents are assigned and what happens at each stage. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Can you delete Start Flow?</summary><p class="answer">No. It is on the main canvas by default. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is true while the validation toggle is off?</summary><p class="answer">Errors do not appear, and Publish stays disabled. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When does Success fire on Get Queue Info?</summary><p class="answer">When both EWT and PIQ are positive. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When does Insufficient Information fire?</summary><p class="answer">PIQ is valid and EWT is −1. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When is EWT always −1?</summary><p class="answer">Queues with team assignment and skills assigned in the flow. EWT does not apply. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What priority is used if the variable is 12?</summary><p class="answer">10. Only 1 through 9 are in range. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When is the fallback queue used?</summary><p class="answer">Only if the queue variable fails to return a valid queue ID. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What do you insert between Queue Contact and HTTP Request?</summary><p class="answer">A short delay such as Play Message or Play Music. Otherwise the request may not retrieve the data. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>A caller dials extension 1234 and the entry point also has an E.164 number. What DNIS should the flow expect?</summary><p class="answer">The E.164 number, not the extension. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Name both flow-opening cascades in the article.</summary><p class="answer">Services → Contact Center → Flows, and Contact Center → Customer Experience → Flows. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What is BRE Request?</summary><p class="answer">A utility activity. The Business Rules Engine user guide says a flow can invoke it. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Trace a queue treatment on paper, then in the simulator</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Write both menu cascades. Do not delete either.</label></li>
+<li><label><input type="checkbox"> Draw Start Flow → Play Message → Get Queue Info → Queue Contact. Mark Start Flow as not deletable.</label></li>
+<li><label><input type="checkbox"> For PIQ 4 and EWT 20000, name the branch. For PIQ 4 and EWT −1, name the branch.</label></li>
+<li><label><input type="checkbox"> Note the team-assignment skill case as “EWT does not apply.”</label></li>
+<li><label><input type="checkbox"> Set a priority of 15 and write the default you expect.</label></li>
+<li><label><input type="checkbox"> If the queue comes from a variable, name the fallback.</label></li>
+<li><label><input type="checkbox"> Open the flow simulator on the Labs page and run the same two Get Queue Info cases. Validation off must keep Publish disabled.</label></li>
+<li><label><input type="checkbox"> Reflection: which announcement would you refuse to play when EWT is −1?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>With validation off:</p>
+<ol type="A"><li>Publish is available and errors are hidden</li><li>Errors are hidden and Publish stays disabled</li><li>The flow auto-publishes</li><li>Start Flow is removed</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Start Flow:</p>
+<ol type="A"><li>Can be deleted after the first activity</li><li>Cannot be deleted</li><li>Exists only on event flows</li><li>Is a BRE rule</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>PIQ is 6 and EWT is −1. Which branch?</p>
+<details class="reveal"><summary>Reveal</summary><p>Insufficient Information. Success needs both values positive. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>EWT on a team-assignment queue with skills assigned in the flow:</p>
+<ol type="A"><li>Is the average of the last hour</li><li>Always returns −1</li><li>Is always 0</li><li>Disables the activity</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>A priority variable of 0 becomes:</p>
+<ol type="A"><li>0</li><li>1</li><li>10</li><li>A validation error that the article says blocks the activity</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>C. Out of range 1–9 defaults to 10. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>HTTP Request is the next box after Queue Contact and returns nothing. What does the article tell you to insert?</p>
+<details class="reveal"><summary>Reveal</summary><p>Play Message or Play Music, as a short delay, so the request can see the data. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Fallback queue is used when:</p>
+<ol type="A"><li>EWT is −1</li><li>The queue variable returns an invalid queue ID</li><li>Publish is off</li><li>DNIS is an extension</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Entry point has E.164 and an extension. DNIS presented to the receiving flow is:</p>
+<ol type="A"><li>Always the extension</li><li>Always the E.164 number</li><li>Whichever the caller dialed, unchanged</li><li>Empty</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>The article’s national-to-E.164 example is:</p>
+<ol type="A"><li>1234 → 1234</li><li>5550101234 → +15550101234</li><li>+1555 → 555</li><li>911 → 933</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. For an entry point configured with an E.164 number only. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A colleague says the only legal path is Services → Contact Center → Flows. What else does the same article print?</p>
+<details class="reveal"><summary>Reveal</summary><p>Contact Center → Customer Experience → Flows. Functions use Services → Contact Center → Customer Experience → Functions. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Event flows are:</p>
+<ol type="A"><li>Required and synchronous</li><li>Optional and asynchronous</li><li>A replacement for Start Flow</li><li>Partner Hub roles</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>BRE Request is:</p>
+<ol type="A"><li>A utility activity a flow can invoke</li><li>The Enterprise ICM script editor</li><li>A Calling dial plan</li><li>An emergency callback number</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<!-- AUDIO:overview | assets/audio/T8-R01/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> Validation off means Publish stays off. EWT −1 on a skilled team queue is Insufficient Information, not a zero wait.</p><p class="placeholder-asset">No mp3 shipped.</p></div>
+<!-- AUDIO:mistake | assets/audio/T8-R01/mistake.mp3 -->
+<div class="audio-slot"><p><strong>45 seconds.</strong> Do not put HTTP Request directly against Queue Contact.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<p>“Flow Designer is the Webex Contact Center canvas, not the Enterprise script tool. Start Flow stays. I do not publish until validation is on and the errors are gone, because Publish is disabled in both of those earlier states. Get Queue Info’s Success branch needs a positive wait and a positive position. If the queue is team-based and the flow assigns skills, estimated wait is always −1 and I use the Insufficient Information branch. Priority outside 1 to 9 becomes 10. A variable queue needs a fallback. I never chain HTTP Request directly onto Queue Contact. If an entry point has both an E.164 number and an extension, DNIS is the E.164 number. The help article itself prints two different menu paths, so I cite both.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a> — retrieved 2026-10-14. Validation, Publish, Start Flow, event flows, Get Queue Info branches, EWT −1, priority, fallback, DNIS, menu cascades, HTTP Request spacing.</li>
+<li id="cite-2">Webex Contact Center Business Rules Engine User Guide — help.webex — article nve6qddb — <a href="https://help.webex.com/article/nve6qddb">help.webex.com article nve6qddb</a>. Flow Designer can invoke the BRE Request activity. Page viewed 2026-10-14; the article header on that fetch said August 19, 2026.</li>
+<li id="cite-3">Webex Contact Center Architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a>. QueueToAgent is the architecture article’s voice activity, kept distinct from this room’s Queue Contact notes.</li>
+<li id="cite-4">Configure Virtual Agent-Voice in Webex Contact Center — help.webex — article n6gaghu — <a href="https://help.webex.com/article/n6gaghu">help.webex.com article n6gaghu</a>. Separate setup article from the activity name in the library.</li>
+<li id="cite-5">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a>. Cited only to mark that a calling migration is not a flow-editor parity matrix.</li>
+<li id="cite-6">Provision Emergency Calling in Webex Contact Center — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14. Emergency for WebRTC agents is Control Hub and RedSky, not a Flow Designer activity in nhovcy4.</li><li id="cite-7">Use AI agents for customer interactions — help.webex — article s0qro1 — <a href="https://help.webex.com/article/s0qro1">help.webex.com article s0qro1</a> — retrieved 2026-10-14. Header August 25, 2026. Six Connect channels. Virtual Agent V2 is the voice activity for scripted and autonomous agents.</li><li id="cite-8">Cisco AI Assistant for Webex Contact Center — help.webex — article nvvv1zb — <a href="https://help.webex.com/article/nvvv1zb">help.webex.com article nvvv1zb</a> — retrieved 2026-10-14. Header October 06, 2026. Paid add-on. Agent Desktop icon. Not described as a Flow Designer activity.</li><li id="cite-9">Set up digital channels in Webex Contact Center — help.webex — article nmzsthj — <a href="https://help.webex.com/article/nmzsthj">help.webex.com article nmzsthj</a> — retrieved 2026-10-14. Social, email, and chat queues. Skill routing is a Connect QueueTask node. The page does not print estimated wait time.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open each activity on the canvas for parameters this room did not quote. Those fields change when Cisco updates the activity.</li>
+<li>Open Flow Designer in the tenant you are configuring. The highlighted cascade follows the features that tenant has enabled.</li>
+<li>nhovcy4 describes Get Queue Info for a caller and for previous calls, and reports EWT in milliseconds. The digital setup article nmzsthj uses a Connect QueueTask node for social, email, and chat, and it does not print EWT. Do not teach the voice rules as the digital rule. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-9">[cite:9]</a></li>
+<li>ICM node parity stays marked in T6-R04.</li>
+<li>Enterprise script tool, still open in T4.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T7-R07-sip-trace-reading-lab.html"><span>Previous</span><strong>T7-R07</strong><em>SIP Trace Reading Lab</em></a><a class="next" href="T8-R02-flow-design-patterns.html"><span>Next</span><strong>T8-R02</strong><em>Flow Design Patterns</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

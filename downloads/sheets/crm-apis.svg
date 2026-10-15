@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" role="img" aria-label="CRM and APIs">
+<rect width="980" height="300" fill="#0b1020"/>
+<text x="36" y="48" fill="#f8fafc" font-size="28" font-family="system-ui,sans-serif" font-weight="700">CRM and APIs</text>
+<text x="36" y="78" fill="#94a3b8" font-size="14" font-family="system-ui,sans-serif">CypherMonkey · Webex Lab · not a vendor document</text>
+<text x="36" y="120" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Salesforce — Lightning connector. No chat or email on that article.</text><text x="36" y="148" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Dynamics — CIF 1 or CIF 2. Not Dynamics 365 Contact Center the product.</text><text x="36" y="176" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">ServiceNow — Desktop launches inside ServiceNow.</text><text x="36" y="204" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Recording webhooks — telephony_calls events and convergedRecordings. Scope spark-admin:calls_read.</text><text x="36" y="232" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Personal webhook cap — The Canon quotes 30,000 personal webhooks per user and an org-wide limit of 1. That is the Webhooks guide, not a WxCC task quota.</text>
+</svg>

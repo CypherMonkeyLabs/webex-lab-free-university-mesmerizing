@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T7-R02 · CUBE Deep Dive">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T7-R02 · CUBE Deep Dive · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T7" data-room="T7-R02" data-room-title="CUBE Deep Dive" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T7</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T7/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T7 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T7 · SIP, routing, and queues</p>
+<h1>CUBE deep dive</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for CUBE Deep Dive">
+<defs>
+<linearGradient id="T7R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T7R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">SIP and queues</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T7-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for CUBE Deep Dive. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for CUBE Deep Dive">
+<defs>
+<marker id="T7R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → CUBE → Control Hub → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T7R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T7R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T7R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T7R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → CUBE → Control Hub → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Dial-peer translation, the G.711 codec class, and the high-CPU signature. Sample passwords from jr1i3r are not here. Retrieved 2026-10-14.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T7-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L4</strong></span>
+<span class="meta-chip">Est. time <strong>110–140 min</strong></span>
+<span class="meta-chip">Prereq <strong>T7-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>jr1i3r’s voice class codec 100 allows G.711 only: preference 1 g711ulaw, preference 2 g711alaw. Add another codec only when both sides support it. DSP transcoding is supported and is not in that guide. <a class="cite" href="#cite-1">[cite:1]</a></li><li>A voice translation profile is applied on a dial-peer as translation-profile incoming or translation-profile outgoing. The profile can translate called, calling, and redirect-called. 64020 says redirect-called is the redirect DNIS, or the original called number. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Test with test voice translation-rule before the profile is on a live peer. The 64020 example is Router#test voice translation-rule 1 5551234. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The CUBE dial-peer guide matches a SIP inbound leg on URI classes before incoming called-number and answer-address. Document 211306 is the longer inbound list. This room does not merge the two lists. <a class="cite" href="#cite-3">[cite:3]</a></li><li>DS 64224 disables all debugs and uninstalls diagnostic signatures when CPU is at 75 percent or more. The article’s FTP URL contains a sample username and password. Those credentials are not copied here. <a class="cite" href="#cite-1">[cite:1]</a></li></ul></aside></section><section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Normalize on the dial-peer, then match</h2>
+<ul><li>jr1i3r’s voice class codec 100 allows G.711 only: preference 1 g711ulaw, preference 2 g711alaw. Add another codec only when both sides support it. DSP transcoding is supported and is not in that guide. <a class="cite" href="#cite-1">[cite:1]</a></li><li>A voice translation profile is applied on a dial-peer as translation-profile incoming or translation-profile outgoing. The profile can translate called, calling, and redirect-called. 64020 says redirect-called is the redirect DNIS, or the original called number. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Test with test voice translation-rule before the profile is on a live peer. The 64020 example is Router#test voice translation-rule 1 5551234. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The CUBE dial-peer guide matches a SIP inbound leg on URI classes before incoming called-number and answer-address. Document 211306 is the longer inbound list. This room does not merge the two lists. <a class="cite" href="#cite-3">[cite:3]</a></li><li>DS 64224 disables all debugs and uninstalls diagnostic signatures when CPU is at 75 percent or more. The article’s FTP URL contains a sample username and password. Those credentials are not copied here. <a class="cite" href="#cite-1">[cite:1]</a></li></ul>
+<div class="why"><strong>Why it matters.</strong> People fail this by translating on the wrong peer, or by pasting a sample password from the diagnostic-signature steps.</div>
+</section><section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Where a number changes</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T7-R02/arch.svg -->
+<div class="diagram" role="img" aria-label="Where a number changes">
+<svg viewBox="0 0 980 224" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where a number changes">
+<rect width="980" height="224" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">Where a number changes</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Rule, then test voice translation-rule.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Profile, then incoming or outgoing on a dial-peer.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex peer keeps codec class 100 and stun-usage 100.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">URI match is ahead of called-number in the CUBE chapter.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">211306 stays the long inbound list.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">DS 64224 is the CPU stop. No sample password.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Rule --> Test
+  Test --> Peer
+  Peer --> Webex</pre>
+</details>
+</section><section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Translation profiles and the codec class</h2>
+<div class="callout def"><span class="label">Called number changes on the outbound peer</span><p>64020 puts translation-profile outgoing on the dial-peer that sends the call. translation-profile incoming applies to the inbound VoIP call. <a class="cite" href="#cite-2">[cite:2]</a></p></div><div class="callout gotcha"><span class="label">Thirty-one characters</span><p>The same guide says the size of translation-profile incoming is thirty-one characters. A long profile name will not fit that field. <a class="cite" href="#cite-2">[cite:2]</a></p></div><div class="callout warn"><span class="label">Do not paste a carrier PDF into every router</span><p>Cisco’s Lumen Local Gateway PDF prints translation rules for that carrier example, including patterns aimed at Webex Calling and at the PSTN. Those rules are the example. Read them as an illustration of where a profile sits, not as this customer’s dial plan. <a class="cite" href="#cite-4">[cite:4]</a></p></div><div class="callout note"><span class="label">ICE is a stun class, not a codec</span><p>jr1i3r configures voice class stun-usage 100 to enable ICE on the Webex Calling trunk, separate from the codec class. <a class="cite" href="#cite-1">[cite:1]</a></p></div><h3>Two documents, two jobs</h3><div class="table-wrap"><table><thead><tr><th>Job</th><th>Command the guide shows</th><th>Where it sits</th><th>Cite</th></tr></thead><tbody><tr><td>Prefer G.711</td><td>voice class codec 100, then codec preference 1 g711ulaw and 2 g711alaw</td><td>On the Webex dial-peer as voice-class codec 100</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Translate</td><td>voice translation-rule, then voice translation-profile with translate called or translate calling</td><td>dial-peer voice … translation-profile incoming or outgoing</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Block</td><td>call-block translation-profile incoming</td><td>On the inbound peer, with a cause the guide sets separately</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Prove a rule</td><td>test voice translation-rule</td><td>Exec mode, before the peer is trusted</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Stop a debug storm</td><td>call-home diagnostic-signature load of DS 64224</td><td>On the Local Gateway, without the sample FTP password</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+
+<!-- VISUAL:concept-image | Studio | assets/images/T7-R02/hero.png -->
+</section><section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T7-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T7R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T7R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3><dl class="glossary"><div class="term"><dt>voice class codec 100</dt><dd>jr1i3r’s filter. Preference 1 is g711ulaw. Preference 2 is g711alaw. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Additional codec</dt><dd>The article allows more types when both the originating and terminating systems support them. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>DSP transcoding</dt><dd>Supported for more complex designs. Not included in the Local Gateway guide. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>voice translation-rule</dt><dd>Global rule set. 64020 defines it before the profile. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>voice translation-profile</dt><dd>Binds a translation rule with translate called, translate calling, or translate redirect-called. 64020 says redirect-called is the redirect DNIS, or the original called number. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>translation-profile incoming</dt><dd>Number translation for an incoming VoIP call. Name length in that table is thirty-one characters. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>translation-profile outgoing</dt><dd>Number translation for the outbound call. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>translate called</dt><dd>The profile command that selects the rule for the called number. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>translate calling</dt><dd>The profile command for the calling number. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>test voice translation-rule</dt><dd>The exec command 64020 prints. Example input 5551234 against rule 1. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>call-block translation-profile</dt><dd>A profile used to decide which inbound calls to reject. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>URI before called-number</dt><dd>The CUBE dial-peer chapter lists URI class matches ahead of incoming called-number. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>211306</dt><dd>The IOS call-routing support document. T7-R01 quotes its full inbound order. This room does not shorten that order to the CUBE chapter’s list. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>stun-usage 100</dt><dd>jr1i3r’s ICE class on the Webex trunk. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>DS 64224</dt><dd>High-CPU signature. At 75 percent it disables debugs and uninstalls diagnostic signatures. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Sample secret</dt><dd>The DS install steps show an FTP URL with a username and password. This Canon does not store that sample. <a class="cite" href="#cite-1">[cite:1]</a></dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T7-R02/eco.svg -->
+<div class="diagram" role="img" aria-label="Systems beside this room">
+<svg viewBox="0 0 980 224" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Systems beside this room">
+<rect width="980" height="224" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">Systems beside this room</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Codec class</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Translation profile</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Dial-peer direction</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">211306</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">DS 64224</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">No sample secrets</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((T7-R02))
+    Core
+    Sisters</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Calling trunk</td><td>The TLS and SRTP leg jr1i3r builds.</td><td>Codec class and stun class live on that peer.</td><td>voice-class codec and voice-class stun-usage.</td><td>Offering a codec the article did not list, without checking both sides.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>PSTN or Unified CM peer</td><td>The other dial-peer.</td><td>Outgoing translation belongs on the peer that faces that destination.</td><td>translation-profile outgoing.</td><td>Translating on the inbound peer and wondering why the outbound number is unchanged.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Carrier example</td><td>The Lumen PDF is one certificate-based Local Gateway example.</td><td>Its digit rules are not universal.</td><td>Read section 2.12 as an example.</td><td>Pasting +1 and 011 rules onto a non-US plan.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>IOS call routing</td><td>211306.</td><td>Inbound match order is longer than one chapter heading.</td><td>Read 211306 beside the CUBE chapter.</td><td>Teaching only called-number match.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Control Hub trunk</td><td>Source of the registrar, sip-server, and dtg value.</td><td>Normalization cannot invent the dtg.</td><td>Copy from the trunk, not from a guide’s sample user.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Certificates</td><td>TLS still depends on the trust bundle in jr1i3r.</td><td>A perfect translation does not fix a bad trustpoint.</td><td>crypto pki trustpool import of the bundle the article names.</td><td>Debugging digits during a TLS failure.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Recording</td><td>A cloud media service.</td><td>ICE optimization does not apply when recording needs the cloud. T7-R03 has the ICE article.</td><td>Do not use a recorded call to prove the stun class.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>CPU</td><td>DS 64224’s trigger.</td><td>Debugs without the signature can stay on.</td><td>Install 64224 before a long debug.</td><td>Copying the sample FTP password into a ticket.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>INVITE</td><td>Inbound dial-peer</td><td>URI class, then called number</td><td>The CUBE chapter’s order. 211306 remains the long list.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Inbound peer</td><td>Translation profile</td><td>translation-profile incoming</td><td>Calling and called numbers as the profile says.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Outbound peer</td><td>Next hop</td><td>translation-profile outgoing</td><td>The called number the far end must see.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Operator</td><td>Exec</td><td>test voice translation-rule</td><td>A sample number in, a rewritten number out.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Dial-peer</td><td>Webex</td><td>voice-class codec 100</td><td>g711ulaw then g711alaw unless you added a codec both sides support.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Dial-peer</td><td>Webex</td><td>stun-usage</td><td>ICE candidates. Media path detail is T7-R03.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>High CPU</td><td>Debugs</td><td>DS 64224</td><td>Disable and uninstall at 75 percent.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Guide</td><td>Router</td><td>Nothing</td><td>Sample passwords stay in the guide.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Edges">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Edges">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">Edges</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1 INVITE to dial-peer</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2 Inbound profile</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3 Outbound profile</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4 test command</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5 Codec class</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6 stun-usage</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7 DS 64224</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8 Secrets stay out</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>Webex behavior</th><th>Legacy habit</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>IOS translation-profile</td><td>A CUCM translation pattern is a different object. CSS order is not this profile.</td><td>Peer SBC translation syntax is <mark class="todo-verify">TODO-verify</mark>.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>G.711 preference on the Local Gateway</td><td>Webex App codec lists are not this voice class.</td><td>Do not claim the phone’s codec screen matches preference 1.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>211306 hunt</td><td>CUCM closest-match is a different engine. T7-R01 already separates them.</td><td>This room does not add an AudioCodes hunt order.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul><li>Canon plan: T7-R03 takes ICE, NAT, and the port table. This room stops at the dial-peer commands.</li><li>T7-R04 takes route groups and certificate FQDN checks.</li><li>If 211306 and the CUBE chapter ever disagree on a step, quote the page you are looking at. <a class="cite" href="#cite-3">[cite:3]</a></li></ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Outbound number is still untranslated</td><td>The profile is incoming, or it is on the wrong peer.</td><td>show run of the outbound dial-peer.</td><td>Move translation-profile outgoing onto the outbound peer.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>The profile name is rejected</td><td>It is longer than thirty-one characters.</td><td>The 64020 size note.</td><td>Shorten the name.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>CPU stays high after a debug</td><td>DS 64224 is not loaded.</td><td>show call-home diagnostic-signature.</td><td>Load DS 64224. Do not use the sample FTP password.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>A recorded call is the ICE test</td><td>Recording is a cloud media service.</td><td>jr1i3r ICE note, expanded in nt6eyxb.</td><td>Pick an unrecorded internal call.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section><section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>One rewritten called number</h2>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T7-R02/seq.svg -->
+<div class="diagram" role="img" aria-label="One rewritten called number">
+<svg viewBox="0 0 980 252" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One rewritten called number">
+<rect width="980" height="252" fill="#0c121c"/>
+<text x="28" y="40" fill="#ffb067" font-family="Georgia, serif" font-size="20">One rewritten called number</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Write the rule.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Test it.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Bind translate called.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Apply outgoing on the far peer.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Leave the Webex codec class on G.711.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Add ICE only with stun-usage.</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Load 64224 before debugs.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Operator</td><td>voice translation-rule</td><td>Global config</td><td>Write the match and the replace.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>2</td><td>Rule</td><td>test voice translation-rule</td><td>Exec</td><td>Prove one number.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>3</td><td>Profile</td><td>translate called or calling</td><td>voice translation-profile</td><td>Bind the rule.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>4</td><td>Inbound peer</td><td>translation-profile incoming</td><td>Dial-peer</td><td>Only if the inbound leg is what must change.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>5</td><td>Outbound peer</td><td>translation-profile outgoing</td><td>Dial-peer</td><td>Called-number changes the far end will see.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>6</td><td>Webex peer</td><td>voice class codec 100</td><td>Preference</td><td>g711ulaw, then g711alaw.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>7</td><td>Webex peer</td><td>stun-usage 100</td><td>ICE</td><td>Separate from the codec class.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>8</td><td>CPU</td><td>DS 64224</td><td>Signature</td><td>75 percent disables debugs.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section><section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Lines, without sample passwords</h2>
+<ol><li>Create voice class codec 100 exactly as jr1i3r prints it before you add codecs. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Create the translation rule and run test voice translation-rule. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Create the profile. Keep the name inside thirty-one characters. Apply incoming or outgoing on the peer that needs it. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Read the CUBE dial-peer inbound order, then read 211306 before you tell someone called-number is first. <a class="cite" href="#cite-3">[cite:3]</a></li><li>Install DS 64224 from the Diagnostic Signatures Lookup Tool steps in jr1i3r. Omit the sample FTP credentials. <a class="cite" href="#cite-1">[cite:1]</a></li></ol>
+<pre class="sim-out">From jr1i3r. No passwords.
+
+voice class codec 100
+ codec preference 1 g711ulaw
+ codec preference 2 g711alaw
+
+voice class stun-usage 100
+
+From 64020’s shape, with the guide’s own example numbers removed:
+
+voice translation-rule 1
+ ! rule lines are yours, then:
+voice translation-profile SHORTNAME
+ translate called 1
+
+dial-peer voice 200 voip
+ translation-profile outgoing SHORTNAME
+
+Router#test voice translation-rule 1 5551234</pre>
+<!-- VISUAL:screenshot:1 | Studio | assets/images/T7-R02/step.png -->
+</section><section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers these articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Codec class in the guide</td><td>g711ulaw then g711alaw</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Translation-profile incoming name</td><td>Thirty-one characters</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>DS 64224 threshold</td><td>75 percent CPU or more</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Inbound order</td><td>URI classes before incoming called-number in the CUBE chapter. 211306 is not collapsed into that sentence.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Both documents named</td></tr><tr><td>Sample FTP password</td><td>Not copied</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Omitted on purpose</td></tr><tr><td>Other-SBC translation syntax</td><td><mark class="todo-verify">TODO-verify</mark></td><td>Not in these Cisco pages</td><td>Open</td></tr></tbody></table></div>
+</section><section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Webex negotiates a codec you did not list</td><td>You added it, or the class is not on the peer.</td><td>voice-class codec on the peer.</td><td>Stay on the G.711 list unless both sides support the extra codec.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Translation test passes and live calls do not change</td><td>The profile is not on the peer that carries that leg.</td><td>dial-peer configuration.</td><td>incoming versus outgoing.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>CLI rejects the profile name</td><td>Longer than 31 characters.</td><td>64020 table.</td><td>Shorten it.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>You matched called-number first</td><td>A URI class matched earlier.</td><td>CUBE chapter order, then 211306.</td><td>Check URI via, request, to, and from before the digits.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Debugs survive a CPU spike</td><td>64224 is absent.</td><td>Signature table in jr1i3r. The row name is DS_LGW_CPU_MON75.</td><td>Load the signature.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>A ticket contains the guide’s FTP password</td><td>The copy command in the article includes a sample user and password.</td><td>The URL.</td><td>Remove it. Use the router’s own server.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>US +1 rules appear on a non-US trunk</td><td>The Lumen PDF was copied.</td><td>Section 2.12 of that PDF.</td><td>Write rules for this numbering plan.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>ICE “does nothing” on a recorded call</td><td>Cloud recording is outside optimization.</td><td>jr1i3r and nt6eyxb.</td><td>Test without recording.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Transcoding was assumed free</td><td>The guide says DSP transcoding is not included in the guide.</td><td>The sentence under the codec class.</td><td>Do not promise a transcoder from this page.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>huntstop and preference are taught from memory</td><td>They are 211306, quoted in T7-R01.</td><td>That document.</td><td>Open 211306 before you change hunt.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section><section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What two codecs does voice class codec 100 list first?</summary><p class="answer">g711ulaw, then g711alaw. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L1</span>Where do you put an outgoing translation?</summary><p class="answer">translation-profile outgoing on the outbound dial-peer. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>How long may the incoming translation-profile name be?</summary><p class="answer">Thirty-one characters. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>What command proves a rule?</summary><p class="answer">test voice translation-rule. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>What does DS 64224 do at 75 percent CPU?</summary><p class="answer">It disables all debugs and uninstalls diagnostic signatures. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Why is the CUBE chapter not the whole inbound order?</summary><p class="answer">211306 is the longer list. This room does not merge them. <a class="cite" href="#cite-3">[cite:3]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>When may you add a codec?</summary><p class="answer">When originating and terminating systems both support it. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Is DSP transcoding in the Local Gateway guide?</summary><p class="answer">It is supported and not included in that guide. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L4</span>What is stun-usage 100 for?</summary><p class="answer">ICE on the Webex Calling trunk. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L4</span>What is wrong with the FTP line in the DS steps?</summary><p class="answer">It contains a sample username and password. Do not copy them. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L5</span>What is the Lumen PDF for?</summary><p class="answer">One carrier example of translation rules. Not every dial plan. <a class="cite" href="#cite-4">[cite:4]</a></p></details><details class="qnode"><summary><span class="lvl">L5</span>What stays TODO-verify?</summary><p class="answer">Translation syntax on a non-Cisco SBC.</p></details>
+</section><section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab</h2>
+<ul><li><label><input type="checkbox"> Goal: rewrite one called number on paper and name the peer that must carry the profile.</label></li><li><label><input type="checkbox"> Prereq: no production router. No sample FTP password in the notes.</label></li><li><label><input type="checkbox"> Step 1. Write voice class codec 100 with the two G.711 lines.</label></li><li><label><input type="checkbox"> Step 2. Write a one-rule translation and the test command with 5551234.</label></li><li><label><input type="checkbox"> Step 3. Put translation-profile outgoing on the PSTN peer. Expected: the inbound Webex peer is unchanged.</label></li><li><label><input type="checkbox"> Step 4. Name the signature that stops debugs at 75 percent.</label></li><li><label><input type="checkbox"> Evidence: the peer number, the direction, and the test command.</label></li><li><label><input type="checkbox"> Break it: apply the profile as incoming on the outbound peer. Recovery: swap the direction and say which guide word you missed.</label></li><li><label><input type="checkbox"> Reflection: which PDF rules you refused to copy.</label></li></ul>
+
+</section><section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>voice class codec 100 preference 1 is:</p><details><summary>Answer</summary><p class="answer">g711ulaw. Preference 2 is g711alaw. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>translation-profile outgoing belongs on:</p><details><summary>Answer</summary><p class="answer">The outbound dial-peer. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>The incoming profile name length is:</p><details><summary>Answer</summary><p class="answer">Thirty-one characters. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>test voice translation-rule succeeds and the PSTN still sees the old number. Why?</p><details><summary>Answer</summary><p class="answer">The profile is missing or applied to the wrong direction. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>DS 64224 fires at:</p><details><summary>Answer</summary><p class="answer">75 percent CPU or more, and it disables debugs and uninstalls signatures. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>The FTP URL in that procedure:</p><details><summary>Answer</summary><p class="answer">Includes a sample username and password. Do not copy it. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>A colleague says inbound match is called-number first. What do you open?</p><details><summary>Answer</summary><p class="answer">The CUBE dial-peer chapter, which lists URI classes first, and 211306 for the long order. Do not merge them. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>DSP transcoding in jr1i3r is:</p><details><summary>Answer</summary><p class="answer">Supported, and not included in the guide. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>stun-usage 100 is:</p><details><summary>Answer</summary><p class="answer">The ICE class, not a codec. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">Draw</span></header><p>Write the two codec preference lines.</p><details><summary>Answer</summary><p class="answer">codec preference 1 g711ulaw and codec preference 2 g711alaw under voice class codec 100. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Scenario</span></header><p>The Lumen PDF’s +1 rule is on a trunk that does not use +1. What is that document?</p><details><summary>Answer</summary><p class="answer">A carrier example. It is not this dial plan. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Other-SBC translation commands in this room are:</p><details><summary>Answer</summary><p class="answer"><mark class="todo-verify">TODO-verify</mark>. These pages are IOS XE and the Local Gateway articles.</p></details></article></div>
+</section><section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain codec class 100 and why translation has a direction." | assets/audio/T7-R02/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the test command, the 31-character name, and why 211306 is not merged." | assets/audio/T7-R02/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: g711ulaw, outgoing, 31, 75 percent, no FTP password." | assets/audio/T7-R02/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section><section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> I keep jr1i3r’s codec class on G.711 unless both sides support more, and I put called-number translation on the outbound dial-peer. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p><p><strong>2 minutes.</strong> I test the rule with test voice translation-rule. The profile name stays inside 31 characters. <a class="cite" href="#cite-2">[cite:2]</a> I do not teach called-number as the first SIP match. The CUBE chapter puts URI classes ahead of it, and 211306 is the longer list. <a class="cite" href="#cite-3">[cite:3]</a> DS 64224 is the 75 percent stop, and I do not repeat the sample FTP password. <a class="cite" href="#cite-1">[cite:1]</a></p><p><strong>30 seconds, ICE.</strong> stun-usage is not a codec. Recording is a bad proof of media optimization. <a class="cite" href="#cite-1">[cite:1]</a></p><p><strong>2 minutes, examples.</strong> The Lumen PDF shows one carrier’s translation rules. I do not deploy those digit patterns on a different plan. <a class="cite" href="#cite-4">[cite:4]</a></p><p><strong>What you will not say.</strong> You will not claim an AudioCodes or Oracle translation syntax.</p>
+</section><section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T7-R02.md">cites/T7-R02.md</a>.</p>
+<ol class="cite-list"><li id="cite-1">Configure Local Gateway on Cisco IOS XE for Webex Calling — help.webex — article jr1i3r — <a href="https://help.webex.com/article/jr1i3r">help.webex.com article jr1i3r</a> — retrieved 2026-10-14. voice class codec 100 with g711ulaw then g711alaw. Additional codecs only when both sides support them. DSP transcoding supported and not in the guide. voice class stun-usage 100. DS 64224 at 75 percent CPU. Sample FTP credentials are not reproduced.</li><li id="cite-2">Configure Number Translation with Voice Translation Profiles — Cisco — <a href="https://www.cisco.com/c/en/us/support/docs/voice/call-routing-dial-plans/64020-number-voice-translation-profiles.html">cisco.com document 64020</a> — retrieved 2026-10-14. translation-profile incoming and outgoing. translate called. Thirty-one character profile name. test voice translation-rule. call-block translation-profile incoming.</li><li id="cite-3">Cisco Unified Border Element Configuration Guide, Cisco IOS XE 17.6 onwards, Configure Dial Peers — Cisco — <a href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/voice/cube/ios-xe/config/ios-xe-book/m_cube-dp.html">cisco.com CUBE dial-peer chapter</a> — retrieved 2026-10-14. SIP inbound match lists URI classes before incoming called-number and answer-address. Understand IOS and IOS XE Call Routing, document 211306, remains the longer order and is not merged into this sentence. <a href="https://www.cisco.com/c/en/us/support/docs/voice/ip-telephony-voice-over-ip-voip/211306-In-Depth-Explanation-of-Cisco-IOS-and-IO.html">document 211306</a>.</li><li id="cite-4">Connecting Cisco Webex Calling to Lumen SIP Trunk via a certificate-based Local Gateway on CUBE — Cisco PDF — <a href="https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise/unified-border-element-cube/connecting-cisco-webex-calling-to-lumen-sip-trunk-via-a-certificate-based-local-gateway-on-cisco-unified-border-element-cube-v14-5-ios-xe-17-8-1a.pdf">cisco.com Lumen Local Gateway PDF</a> — retrieved 2026-10-14. Section 2.12 is that carrier’s translation example. Digit patterns are not copied into this room.</li></ol>
+</section><section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Open</h2>
+<ul><li>Open questions: whether a later CUBE chapter adds URI via in the same sentence as 211306.</li><li>Facts still TODO-verify: 1. Non-Cisco SBC translation syntax.</li><li>Assets missing: a sanitized dial-peer with the password lines removed, audio.</li><li>Ideas for v1.0: a side-by-side of incoming and outgoing profiles using only 64020’s command names.</li><li>Next review: jr1i3r, 64020, the CUBE dial-peer chapter, 211306.</li></ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T7-R01-sip-fundamentals-webex.html"><span>Previous</span><strong>T7-R01</strong><em>SIP Fundamentals for Webex</em></a><a class="next" href="T7-R03-codecs-media-nat.html"><span>Next</span><strong>T7-R03</strong><em>Codecs, Media &amp; NAT</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

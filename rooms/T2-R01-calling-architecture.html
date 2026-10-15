@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T2-R01 · Calling Architecture Overview">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T2-R01 · Calling Architecture Overview · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R01" data-room-title="Calling Architecture Overview" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Calling Architecture Overview</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Calling Architecture Overview">
+<defs>
+<linearGradient id="T2R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Calling Architecture Overview. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Calling Architecture Overview">
+<defs>
+<marker id="T2R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">In the Unified CM migration guide, Webex Calling means the multi-tenant cloud call service. Endpoints register to that cloud. A local gateway is the bridge for PSTN and for calls between Unified CM-registered phones and cloud-registered phones. Cisco Calling Plan and Cloud Connect need no on-premises PSTN equipment. Control Hub is the portal at admin.webex.com.</p>
+<div class="meta-row"><span class="meta-chip">Room <strong>T2-R01</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L2</strong></span><span class="meta-chip">Est. time <strong>70–90 min</strong></span><span class="meta-chip">Prereq <strong>T1-R01, T1-R04</strong></span><span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>The migration guide’s “Webex Calling” is always the multi-tenant service. Components named there are Control Hub, directory and user provisioning, the Webex Calling platform, supported endpoints, PSTN options, dial plan and number management, and security and compliance. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A local gateway is a bridge between the on-premises UC network and the Webex Calling cloud. It can be on premises or partner-hosted. Platforms named in the migration guide are Cisco IOS-XE ISR 1100 and 4000, Catalyst 8200 and 8300, Catalyst 8000V, and certified third-party SBCs. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Cisco Calling Plan and Cloud Connect for Webex Calling are cloud PSTN options that do not require on-premises equipment. Cloud PSTN serves Webex Calling users. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Entra ID customers use the Entra ID Wizard instead of Directory Connector when the directory moves to Entra ID. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The configuration workflow article is dated March 20, 2025. Sentences taken from it stay marked for a fresh read. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Before the move, phones and Jabber register to Unified CM. Expressway-C and Expressway-E pairs serve MRA and business-to-business. CMS, CMM, and TMS are optional. Unity Connection is optional. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>After the move, Webex Calling is the cloud call service. Endpoint registration and call routing live there. Webex App on Windows, Mac, Android, and iOS registers directly to Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Control Hub assigns a local gateway to a location and then supplies the parameters you configure on CUBE. Those steps register the gateway with the cloud. PSTN for users in that location then comes through the gateway. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>A trunk terminates on a local gateway or another supported device. A route group holds trunks for distribution or redundancy. Dial plans are global for all users. Pattern language stays in T2-R03. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>The migration section lists collecting location details: emergency response address, number of users, internet access, and PSTN access. Help paths named in the guide are Webex migration tools in Control Hub, certified migration providers, and Webex Setup Assist. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A design that treats Webex Calling as a second Unified CM misses the registration change. The gateway is a bridge, and the cloud is the call service.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Cloud registration, premises bridge</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T2-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Webex Calling components from the migration guide">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Calling components">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">What the migration guide names</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Webex Calling in that guide means the multi-tenant service.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="88" width="210" height="120" rx="12" fill="#14262a" stroke="#7eb6ff"/><text x="52" y="124">1 · Control Hub</text><text x="52" y="150" fill="#b7ad9c" font-size="12">admin.webex.com</text><text x="52" y="172" fill="#b7ad9c" font-size="12">Users, numbers, features</text>
+<rect x="268" y="88" width="220" height="120" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="284" y="124">2 · Calling platform</text><text x="284" y="150" fill="#b7ad9c" font-size="12">Registration and routing</text><text x="284" y="172" fill="#b7ad9c" font-size="12">for cloud endpoints</text>
+<rect x="510" y="88" width="210" height="120" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="526" y="124">3 · Endpoints</text><text x="526" y="150" fill="#b7ad9c" font-size="12">Webex App, MPP, rooms</text><text x="526" y="172" fill="#b7ad9c" font-size="12">Register to the cloud</text>
+<rect x="742" y="88" width="200" height="120" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="758" y="124">4 · Local gateway</text><text x="758" y="150" fill="#b7ad9c" font-size="12">PSTN and PBX bridge</text><text x="758" y="172" fill="#b7ad9c" font-size="12">IOS-XE or certified SBC</text>
+<rect x="120" y="250" width="340" height="100" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="136" y="290">5 · Cloud PSTN</text><text x="136" y="316" fill="#b7ad9c" font-size="12">Cisco Calling Plan or Cloud Connect</text>
+<rect x="500" y="250" width="360" height="100" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="516" y="290">6 · Survivability Gateway</text><text x="516" y="316" fill="#b7ad9c" font-size="12">Local IOS-XE fallback during an outage</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Before and after registration">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Registration change">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Where the phone registers</text>
+<text x="36" y="80" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Before: Desk, Room, Board, IP phones, and Jabber register to Unified CM.</text>
+<text x="36" y="112" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Expressway-C and Expressway-E pairs serve mobile and remote access and business-to-business.</text>
+<text x="36" y="144" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  After: Webex App registers directly to Webex Calling. The local gateway still bridges Unified CM phones.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>Control Hub</li><li><span class="num">2</span>Calling platform</li><li><span class="num">3</span>Endpoints</li><li><span class="num">4</span>Local gateway</li><li><span class="num">5</span>Cloud PSTN</li><li><span class="num">6</span>Survivability</li></ul>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">flowchart LR
+  Hub[Control Hub] --> Cloud[Webex Calling]
+  App[Webex App] --> Cloud
+  Cloud --> LGW[Local Gateway]
+  LGW --> PSTN
+  LGW --> CUCM[Unified CM]
+</pre></details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R01/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>The pieces the guide actually lists</h2>
+<p>The introduction to migrating Unified CM to Webex Calling is dated January 14, 2026. It points at the Cisco Preferred Architecture for Webex Calling for the fuller design. This room quotes the guide’s component list and the before-and-after tables. It does not invent Preferred Architecture diagrams. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="chips"><span class="chip">Multi-tenant</span><span class="chip">Local gateway</span><span class="chip">Cloud PSTN</span><span class="chip">PPDIO</span><span class="chip">Directory</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T2-R01/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T2-R01/hero.png</code> · Studio draws cloud registration beside a premises gateway.</div>
+<h3>Before and after</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Side</th><th>What the guide says</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Call control before</td><td>Unified CM. Expressway-C and Expressway-E pairs for mobile and remote access and business-to-business.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Optional before</td><td>Cisco Meeting Server, Cisco Meeting Management, and TelePresence Management Suite. Unity Connection is optional.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Endpoints before</td><td>Desk, Room, and Board devices, IP phones, and Jabber, registered to Unified CM.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>After</td><td>Webex Calling is the cloud call service. It handles endpoint registration and call routing.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Directory</td><td>Directory Connector is Windows software on a domain-joined machine. Customers on Microsoft Entra ID use the Entra ID Wizard instead.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Survivability</td><td>A Survivability Gateway is a local IOS-XE fallback during an outage. The site design is T2-R07.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>PSTN choices at architecture level</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Choice</th><th>What it is</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Local gateway</td><td>Bridge, on premises or partner-hosted. PSTN for cloud-registered endpoints, and calling between Unified CM-registered and cloud-registered endpoints.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cisco Calling Plan</td><td>Cloud PSTN. The migration guide says it does not require on-premises equipment.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud Connect</td><td>Cloud PSTN for Webex Calling, named alongside Cisco Calling Plan as requiring no on-premises equipment.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Trunk</td><td>The connection from Webex Calling to the premises. It terminates on a local gateway or another supported device.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Route group</td><td>A set of trunks used for distribution or redundancy.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Who cloud PSTN serves</td><td>Cisco PSTN or Cloud Connected PSTN is for Webex Calling users. Calls that start on the premises do not use that cloud PSTN path. The pattern rules are T2-R03.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>PPDIO, as the guide defines it</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Phase</th><th>The guide’s job for that phase</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Prepare</td><td>Assess the current environment, gather requirements, and align stakeholders.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Plan</td><td>Develop project plans, including timelines, resources, and risk mitigation.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Design</td><td>Architect the target solution for the business and technical needs.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Implement</td><td>Execute the migration according to the design, and validate function and performance.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Optimize</td><td>Improve the solution after implementation by monitoring, refining configuration, and using automation.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location facts in the migration section</td><td>The section lists collecting the emergency response address, the number of users, internet access, and PSTN access. Those bullets sit with the transition tasks, ahead of the Plan subsection.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Read “Webex Calling” in nbedetf as multi-tenant. Dedicated Instance is a different architecture and lives in T5-R02. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>The configuration workflow’s feature catalog (auto attendant, hunt group, call queue, and the user feature list) is dated March 20, 2025. Use it as a map of objects, then confirm each object in its own article. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">Stay-on-premises list</span><p>The guide says customers with these requirements should consider keeping call control on premises: phone models Webex Calling does not support, complex on-premises integrations, a complex dial plan or highly granular classes of service, restrictive or unreliable internet, stringent data-privacy policies, a compliance need for on-premises or in-country recording, third-party integrations without a Webex Calling alternative, and contact-center integrations that are not moving to the cloud yet. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Webex Calling (in nbedetf)</dt><dd>The multi-tenant cloud call service. Endpoint registration and call routing live in that cloud. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Control Hub</dt><dd>The management portal for the bundled offer, reached at admin.webex.com. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Local gateway</dt><dd>Enterprise or partner edge that provides PSTN and connects a legacy PBX, including Unified CM. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Trunk</dt><dd>The Webex Calling connection to the premises. It terminates on a local gateway or a supported device. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Route group</dt><dd>Trunks grouped for distribution or redundancy. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Cloud PSTN</dt><dd>Cisco Calling Plan or Cloud Connected PSTN for Webex Calling users. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Survivability Gateway</dt><dd>Local IOS-XE gateway that endpoints use when the cloud path is down. Detail is T2-R07. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>PPDIO</dt><dd>Prepare, Plan, Design, Implement, Optimize, as the migration guide uses those phases. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T2-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Calling architecture sisters"><svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Sisters of the call service</text>
+<text x="36" y="74" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Directory Connector or Entra ID Wizard · locations · numbers</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Local gateway, trunks, route groups · cloud PSTN</text>
+<text x="36" y="138" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Webex App registration · survivability · security in T2-R06</text>
+<text x="36" y="170" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Emergency address is in the location details the migration section collects</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((Calling))
+    Control Hub
+    Local gateway
+    Cloud PSTN
+    Directory
+    Survivability
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Directory</td><td>Directory Connector on a domain-joined Windows machine, or the Entra ID Wizard.</td><td>Users have to exist before lines do. T1-R02 is the identity room.</td><td>The wizard replaces the connector when the directory is Entra ID.</td><td>Keeping Directory Connector after the directory moved.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Locations</td><td>The container that receives a gateway and a PSTN choice.</td><td>T1-R04 creates the location. This room places calling on it.</td><td>Plan-phase emergency address, users, internet, PSTN.</td><td>A location with no PSTN decision.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Local gateway / CUBE</td><td>IOS-XE or a certified third-party SBC.</td><td>Premises PSTN and Unified CM interworking.</td><td>Control Hub assigns the gateway, then you apply the parameters on CUBE.</td><td>Expecting cloud PSTN to serve premises-originated calls.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Dial plan</td><td>Global for all users.</td><td>Patterns and prefixes are T2-R03.</td><td>Trunks and route groups.</td><td>Teaching illegal patterns in this room.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Emergency</td><td>The migration section lists the emergency response address among location details.</td><td>E911 design is a sister of the location, not a feature code.</td><td>Location data gathered with users, internet, and PSTN.</td><td>Cutting over without that address in the worksheet.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App</td><td>Windows, Mac, Android, and iOS, registered to Webex Calling.</td><td>The soft client is an endpoint of the cloud, not a Jabber CTI client.</td><td>User license and registration.</td><td>Leaving Jabber as the only client in the after picture.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Recording and contact center</td><td>On-premises recording and a contact center that is not moving are named reasons to stay on Unified CM.</td><td>Those workloads can block a full move.</td><td>Design phase, stay-versus-move.</td><td>Assuming every UC app moves because calling did.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Partner support</td><td>The workflow says tier 1 partner support, then Cisco.</td><td>The operating model is part of the architecture.</td><td>Partner, then Cisco TAC.</td><td>Opening a Cisco case before the partner path the article names.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Webex App</td><td>Webex Calling</td><td>Direct registration</td><td>The soft client on Windows, Mac, Android, iOS</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Control Hub</td><td>Location</td><td>Gateway assignment</td><td>Local gateway parameters later applied on CUBE</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex Calling</td><td>Premises</td><td>Trunk</td><td>Calls toward a local gateway or supported device</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Local gateway</td><td>PSTN or PBX</td><td>Interconnect</td><td>Premises PSTN and Unified CM calling</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Route group</td><td>Trunks</td><td>Distribution or redundancy</td><td>Which trunk carries the call</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Directory</td><td>Control Hub</td><td>Directory Connector or Entra ID Wizard</td><td>Users</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud PSTN</td><td>Webex Calling users</td><td>Cisco Calling Plan or Cloud Connect</td><td>PSTN without on-premises equipment</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Outage</td><td>Survivability Gateway</td><td>Local IOS-XE fallback</td><td>Basic calling while the cloud path is down</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Architecture edges"><svg viewBox="0 0 980 80" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="80" fill="#0c121c"/><text x="28" y="32" fill="#7eb6ff" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="58" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">App registers to the cloud. The trunk lands on the gateway. The gateway faces PSTN or Unified CM.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Unified CM remains the before-state call control, and a local gateway can still connect phones that stay registered there. The guide does not publish a Microsoft Teams Phone feature matrix. A peer name is not a capability match. <a class="cite" href="#cite-1">[cite:1]</a></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The guide names three help paths: Webex migration tools in Control Hub (self-service), certified migration providers, and Webex Setup Assist (Cisco-led). <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Preferred Architecture details stay in Cisco’s Preferred Architecture document. Diagrams that were not in the retrieved help article stay out of this room.</li>
+<li>Canon planning: keep a one-page before/after for each site: registration target, PSTN choice, and whether the contact center moves.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Premises users expect Cisco Calling Plan to place their calls</td><td>Cloud PSTN is for Webex Calling users.</td><td>Where the call starts.</td><td>Premises-originated PSTN uses the local gateway path. T2-R03 holds the routing sentences.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Entra ID users are still planned on Directory Connector</td><td>The guide says Entra ID customers use the Entra ID Wizard instead.</td><td>Which directory the org uses.</td><td>Follow the wizard path in T1-R02.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A site with a contact center is drawn as a full move</td><td>A contact center that is not moving is a named reason to keep Unified CM.</td><td>The design-phase stay list.</td><td>Split calling users from the contact-center decision.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From plan data to a registered gateway</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Current UC</td><td>Inventory</td><td>Prepare</td><td>Unified CM, Expressway pairs, optional CMS/CMM/TMS, optional Unity Connection.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Location</td><td>Migration worksheet</td><td>Listed details</td><td>Emergency response address, number of users, internet access, PSTN access.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Directory</td><td>Control Hub</td><td>Connector or wizard</td><td>Entra ID uses the wizard.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Admin</td><td>Control Hub</td><td>HTTPS admin.webex.com</td><td>First-time calling setup, users, numbers, services. <mark class="recheck">re-check</mark></td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>Control Hub</td><td>Location</td><td>Gateway assignment</td><td>Parameters are then configured on CUBE. <mark class="recheck">re-check</mark></td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>6</td><td>CUBE</td><td>Webex Calling</td><td>Registration from those steps</td><td>The workflow says those steps register the local gateway with the cloud. <mark class="recheck">re-check</mark></td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>7</td><td>Webex App</td><td>Webex Calling</td><td>Direct registration</td><td>Windows, Mac, Android, iOS.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Cloud</td><td>PSTN or Unified CM</td><td>Trunk to local gateway</td><td>Route groups when more than one trunk is used.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths and the order around them</h2>
+<ol>
+<li>Sign in at admin.webex.com. The workflow calls Control Hub the management portal for the bundled calling offer. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Complete first-time calling setup: users, numbers, and services. The same article says you can cross-launch to the Calling Admin Portal. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Choose PSTN per location: premises through a local gateway, Cisco Calling Plan, or Cloud Connect. Cloud options in the migration guide need no on-premises equipment. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a local gateway, assign it to the location in Control Hub, then configure the parameters Control Hub provides on CUBE. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Build trunks and route groups when the premises connection needs distribution or redundancy. Dial-plan patterns stay in T2-R03. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Register Webex App directly to Webex Calling on the platforms the guide names. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the directory is Entra ID, use the Entra ID Wizard rather than Directory Connector. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Record the location details the migration section names: emergency response address, number of users, internet access, and PSTN access. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<!-- VISUAL:screenshot:calling-setup | Studio | assets/images/T2-R01/calling-setup.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Values the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Meaning of Webex Calling in the migration guide</td><td>Always the multi-tenant service</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header January 14, 2026.</td></tr>
+<tr><td>Local gateway platforms named</td><td>IOS-XE ISR 1100 and 4000, Catalyst 8200 and 8300, Catalyst 8000V, certified third-party SBCs</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Webex App platforms</td><td>Windows, Mac, Android, iOS</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Cloud PSTN equipment</td><td>Cisco Calling Plan and Cloud Connect require no on-premises equipment</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Who cloud PSTN serves</td><td>Webex Calling users</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted from the trunks article. Header date not restated in this pass. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Workflow header</td><td>March 20, 2025</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td><mark class="recheck">re-check</mark> Older than 12 months.</td></tr>
+<tr><td>Help paths</td><td>Control Hub migration tools, certified providers, Webex Setup Assist</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Eight architecture mismatches</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>The design treats Dedicated Instance as the guide’s Webex Calling</td><td>nbedetf uses Webex Calling for the multi-tenant service.</td><td>The guide’s opening definition.</td><td>Put Dedicated Instance in the T5 track.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Jabber is still the after-state client</td><td>The before table registers Jabber to Unified CM. The after state registers Webex App to Webex Calling.</td><td>Which client the design names.</td><td>Draw Webex App on the cloud side.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>No gateway and no cloud PSTN</td><td>PSTN is either a local gateway or a cloud option.</td><td>The location’s PSTN choice.</td><td>Pick one of the named options.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CUBE is configured before Control Hub assigns it</td><td>Control Hub assigns the gateway to a location and then provides the parameters.</td><td>Whether the location assignment exists.</td><td>Assign first, then apply the parameters. <mark class="recheck">re-check</mark></td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A single trunk is called a route group</td><td>A route group is trunks used together for distribution or redundancy.</td><td>How many trunks exist.</td><td>Use the trunk until a second path is required.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Directory Connector is specified for an Entra ID org</td><td>The guide points those customers at the Entra ID Wizard.</td><td>The directory product.</td><td>Use the wizard.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phones Webex Calling does not support are in the move list</td><td>Phone models not supported by Webex Calling are a named reason to consider keeping call control on premises.</td><td>The endpoint inventory.</td><td>Keep those phones on Unified CM or replace them. The guide does not list model numbers in that bullet.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>The worksheet has users and no emergency address</td><td>The migration section lists the emergency response address with the number of users, internet access, and PSTN access.</td><td>The location worksheet.</td><td>Add the address to those location details.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What does Webex Calling mean in the migration guide?</summary><p class="answer">The multi-tenant cloud call service. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>Where do you administer the bundled offer?</summary><p class="answer">Control Hub at admin.webex.com. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What registers to Unified CM in the before picture?</summary><p class="answer">Desk, Room, and Board devices, IP phones, and Jabber. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What do the Expressway pairs do in that picture?</summary><p class="answer">Mobile and remote access, and business-to-business. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does the local gateway bridge?</summary><p class="answer">PSTN for cloud-registered endpoints, and calls between Unified CM-registered and cloud-registered endpoints. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which cloud PSTN options need no on-premises equipment?</summary><p class="answer">Cisco Calling Plan and Cloud Connect for Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where does a trunk terminate?</summary><p class="answer">On a local gateway or another supported device. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Who does cloud PSTN serve?</summary><p class="answer">Webex Calling users. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which directory tool does the guide name for Entra ID?</summary><p class="answer">The Entra ID Wizard, instead of Directory Connector. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which location details does the migration section list?</summary><p class="answer">Emergency response address, number of users, internet access, and PSTN access. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Name one reason the guide gives for keeping call control on premises.</summary><p class="answer">Phone models Webex Calling does not support, complex on-premises integrations, a complex dial plan or highly granular class of service, restrictive or unreliable internet, stringent data privacy, on-premises or in-country recording, a third-party integration without a Webex Calling alternative, or a contact-center integration that is not moving yet. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why is the March 20, 2025 workflow marked?</summary><p class="answer">That header is older than 12 months, so its feature list is re-check until the article is read again. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper architecture, no production trunk</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: for one site, name the registration target, the PSTN choice, and whether a local gateway exists.</label></li>
+<li><label><input type="checkbox"> Prereq: T1-R01 and this room. Do not build a trunk in production.</label></li>
+<li><label><input type="checkbox"> Step 1. List the before-state components the guide names. Expected: Unified CM, Expressway-C/E, optional CMS/CMM/TMS, optional Unity Connection.</label></li>
+<li><label><input type="checkbox"> Step 2. Place Webex App. Expected: direct registration to Webex Calling on Windows, Mac, Android, or iOS.</label></li>
+<li><label><input type="checkbox"> Step 3. Choose Cisco Calling Plan. Expected: no on-premises PSTN equipment for that choice.</label></li>
+<li><label><input type="checkbox"> Step 4. Choose premises PSTN. Expected: a local gateway, then a trunk.</label></li>
+<li><label><input type="checkbox"> Step 5. Write the four location details the migration section lists: emergency address, number of users, internet access, PSTN access.</label></li>
+<li><label><input type="checkbox"> Evidence: the one-page drawing with cites.</label></li>
+<li><label><input type="checkbox"> Break it: draw cloud PSTN serving a call that starts on Unified CM. Recovery: cloud PSTN serves Webex Calling users.</label></li>
+<li><label><input type="checkbox"> Reflection: which of your sites still have a contact center that the guide would leave on premises.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>In nbedetf, Webex Calling means which service?</p><details><summary>Answer</summary><p class="answer">The multi-tenant cloud call service. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>What does the local gateway connect besides PSTN?</p><details><summary>Answer</summary><p class="answer">Calls between Unified CM-registered endpoints and cloud-registered endpoints. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Which IOS-XE platforms does the guide name for a local gateway?</p><details><summary>Answer</summary><p class="answer">ISR 1100 and 4000, Catalyst 8200 and 8300, and Catalyst 8000V, plus certified third-party SBCs. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Where does Webex App register?</p><details><summary>Answer</summary><p class="answer">Directly to Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>What is a route group?</p><details><summary>Answer</summary><p class="answer">Trunks used for distribution or redundancy. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Who is cloud PSTN for?</p><details><summary>Answer</summary><p class="answer">Webex Calling users. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>The customer directory is Microsoft Entra ID.</p><details><summary>Answer</summary><p class="answer">Use the Entra ID Wizard instead of Directory Connector. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>What does Control Hub hand you for CUBE?</p><details><summary>Answer</summary><p class="answer">Parameters to configure on the gateway after it is assigned to a location. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Name the three migration help paths.</p><details><summary>Answer</summary><p class="answer">Webex migration tools in Control Hub, certified migration providers, and Webex Setup Assist. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>What does a Survivability Gateway do at this altitude?</p><details><summary>Answer</summary><p class="answer">It is a local IOS-XE fallback during an outage. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Why is 0xvuwab marked re-check?</p><details><summary>Answer</summary><p class="answer">Its header is March 20, 2025. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Draw registration before and after, and the PSTN bridge.</p><details><summary>Answer</summary><p class="answer">Before: phones and Jabber on Unified CM, Expressway for MRA and B2B. After: Webex App on Webex Calling. Local gateway for PSTN and for calls that still touch Unified CM. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Explain multi-tenant Webex Calling, direct Webex App registration, and the local gateway as a bridge." | assets/audio/T2-R01/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk PPDIO, cloud PSTN versus premises PSTN, trunks, and the stay-on-premises list." | assets/audio/T2-R01/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: multi-tenant, Entra ID Wizard, cloud PSTN users only, March 2025 re-check." | assets/audio/T2-R01/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Webex Calling in the migration guide is the multi-tenant cloud. Phones register there. A local gateway is the bridge for PSTN and for calls that still involve Unified CM. Cisco Calling Plan and Cloud Connect need no gateway.</p>
+<p><strong>2 minutes.</strong> Before the move I inventory Unified CM, the Expressway-C and Expressway-E pair, and optional meeting servers and Unity Connection. Desk, Room, Board, IP phones, and Jabber are on Unified CM. After the move, Webex App on Windows, Mac, Android, and iOS registers to the cloud. Control Hub at admin.webex.com assigns a local gateway to a location and hands me CUBE parameters. A trunk terminates on that gateway. A route group is how I put trunks together. Dial plans are global, and the pattern rules live in the dial-plan room. If the directory is moving to Entra ID, I use the wizard. The migration section also lists the emergency address, the number of users, internet access, and PSTN access.</p>
+<p><strong>30 seconds, what stays.</strong> Phone models Webex Calling does not support, a complex dial plan, unreliable internet, on-premises recording requirements, and a contact center that is not moving yet are reasons the guide gives for considering on-premises call control.</p>
+<p><strong>2 minutes, what I will not merge.</strong> I will not teach Dedicated Instance from this guide. I will not let cloud PSTN serve a call that starts on the premises. I will not quote the March 20, 2025 feature catalog as current without a re-check. Preferred Architecture drawings stay in Cisco’s document until I have read them.</p>
+<p><strong>What you will say about help.</strong> The three paths are self-service migration tools in Control Hub, a certified migration provider, and Cisco-led Webex Setup Assist.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a> — header January 14, 2026 — retrieved 2026-10-14. Multi-tenant meaning, component list, before-and-after, local gateway platforms, cloud PSTN without on-premises equipment, Entra ID Wizard, Survivability Gateway, PPDIO definitions, location details in the migration section, reasons to consider keeping call control on premises, three help paths.</li>
+<li id="cite-2">Webex Calling Configuration Workflow — help.webex — article 0xvuwab — <a href="https://help.webex.com/article/0xvuwab">help.webex.com article 0xvuwab</a> — header March 20, 2025 — retrieved 2026-10-14. <mark class="recheck">re-check</mark>. admin.webex.com, first-time setup, local gateway assignment and CUBE parameters, tier 1 partner support then Cisco.</li>
+<li id="cite-3">Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — <a href="https://help.webex.com/article/n0xb944">help.webex.com article n0xb944</a> — retrieved 2026-10-14. Header date not restated in this pass. <mark class="recheck">re-check</mark>. Trunk terminates on a local gateway or supported device. Route group for distribution or redundancy. Cloud PSTN for Webex Calling users. Dial plans are global. Pattern language is taught in T2-R03.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the current header on 0xvuwab, and the header date on n0xb944.</li>
+<li>Facts still TODO-verify: 0. Workflow sentences and the trunks header are <mark class="recheck">re-check</mark>.</li>
+<li>Assets missing: architecture screenshot, audio, Preferred Architecture plates after that document is read.</li>
+<li>Ideas for v1.0: a before/after registration card next to the PSTN choice.</li>
+<li>Next review: when nbedetf changes the multi-tenant sentence or the gateway platform list.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R07-data-residency-security.html"><span>Previous</span><strong>T1-R07</strong><em>Data Residency &amp; Security Basics</em></a><a class="next" href="T2-R02-local-gateway-pstn.html"><span>Next</span><strong>T2-R02</strong><em>Local Gateway &amp; PSTN</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T8-R04 · CRM Integrations">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T8-R04 · CRM Integrations · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T8" data-room="T8-R04" data-room-title="CRM Integrations" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T8</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T8/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T8 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T8 · Flows, integrations, and the current product</p>
+<h1>CRM Integrations</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for CRM Integrations">
+<defs>
+<linearGradient id="T8R04sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T8R04sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Flows and tools</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T8-R04</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Customer</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Flow</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">API</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for CRM Integrations. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for CRM Integrations">
+<defs>
+<marker id="T8R04arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Customer → Flow → API → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T8R04arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T8R04arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T8R04arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T8R04lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Customer → Flow → API → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Salesforce, Dynamics 365, and ServiceNow each get a Version 2 connector that launches the Webex Contact Center desktop inside that CRM. The three articles share the chat-and-email exclusion, the dial-plan DN gap, and the tenant-timeout gap. They do not share a browser list, a CIF version, or a campaign-field pair.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T8-R04</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R04, T8-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>23 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Digital channels such as chat and email are not supported with CRM connectors. That sentence applies to all CRM integrations using these connectors. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Salesforce is Lightning only, and only on Development, Enterprise, and Ultimate editions. WebRTC there is Firefox and Chrome. Microsoft Edge is not supported. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Dynamics uses CIF 1 for a single-session app and CIF 2 for a multi-session app. On-premises Dynamics is not supported. WebRTC there is Edge and Chrome. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>The gadget does not enforce Validate using Dial Plans. The tenant Desktop Inactivity Timeout does not log the connector out. Use the Desktop Profile Desktop Timeout. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Each connector launches Desktop inside the CRM. You do not create a new Webex App for the install. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Chat and email stay on Connect and the digital desktop. The connector articles say those channels are unsupported here, for every CRM that uses these connectors. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Salesforce screen pop is for inbound calls. Internal and outbound calls search and show data in the connector, and no screen pops. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A Dynamics screen pop of a CRM record needs a relative URL. If recordType and crmId are both present, the defined URL is ignored. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Campaign modes named on these pages are Predictive and Progressive. Salesforce’s required business field is CAMPAIGN_CRM_ID. Dynamics and ServiceNow also require CAMPAIGN_CRM_TABLE. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviewers say “CRM integration” as if one gadget fits three consoles. The honest answer names the edition, the CIF version, the browser, and the field that is missing on Salesforce. T3-R04 already has the desktop. T8-R03 already has Connect. This room is the install that sits between them.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Map</p>
+<h2>Three consoles, one exclusion</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Console</th><th>Article</th><th>What must already be true</th><th>WebRTC browsers the article names</th></tr></thead>
+<tbody>
+<tr><td>Salesforce</td><td>dyidod, Version 2-New</td><td>Lightning. Development, Enterprise, or Ultimate. Access profile allows Wrapup Options.</td><td>Firefox and Google Chrome. Edge is not supported.</td></tr>
+<tr><td>Dynamics 365</td><td>n1lsqvu, header September 15, 2026</td><td>CIF installed first. CIF 1 or CIF 2 matches the app. Online instance. *.dynamics.com on the content-security allow list.</td><td>Microsoft Edge and Google Chrome.</td></tr>
+<tr><td>ServiceNow</td><td>ny83tx0, Version 2-New</td><td>System administrator. Modern Agent Workspace. Openframe plugin. Do not mix the enterprise app with a developer sandbox.</td><td>Firefox and Google Chrome. Edge is not supported.</td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Three CRM connectors and the shared exclusions">
+<svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Salesforce, Dynamics, and ServiceNow connectors">
+<rect width="980" height="420" fill="#0c121c"/>
+<text x="28" y="36" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Same family. Different browsers and prerequisites.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="64" width="290" height="200" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="44" y="96" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">Salesforce</text>
+<text x="44" y="124">Lightning only</text>
+<text x="44" y="148">Development, Enterprise, Ultimate</text>
+<text x="44" y="172">WebRTC: Firefox, Chrome</text>
+<text x="44" y="196">Edge: not supported</text>
+<text x="44" y="220">One active tab answers WebRTC</text>
+<text x="44" y="244" fill="#b7ad9c">Softphone default 400 × 550</text>
+<rect x="344" y="64" width="290" height="200" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="360" y="96" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">Dynamics 365</text>
+<text x="360" y="124">CIF 1 single-session</text>
+<text x="360" y="148">CIF 2 multi-session</text>
+<text x="360" y="172">On-premises: not supported</text>
+<text x="360" y="196">WebRTC: Edge, Chrome</text>
+<text x="360" y="220">Device pick: Options menu</text>
+<text x="360" y="244" fill="#b7ad9c">Host: wxcc-crmconnectors</text>
+<rect x="660" y="64" width="292" height="200" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="676" y="96" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">ServiceNow</text>
+<text x="676" y="124">Modern Agent Workspace</text>
+<text x="676" y="148">Legacy ends at Xanadu</text>
+<text x="676" y="172">WebRTC: Firefox, Chrome</text>
+<text x="676" y="196">Edge: not supported</text>
+<text x="676" y="220">Openframe example 300 × 500</text>
+<text x="676" y="244" fill="#b7ad9c">URL: gadget.do</text>
+</g>
+<rect x="28" y="288" width="924" height="104" rx="14" fill="#14110c" stroke="#8d8476"/>
+<text x="48" y="322" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Shared: chat and email unsupported. Validate using Dial Plans does nothing in the gadget.</text>
+<text x="48" y="348" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Shared: tenant Desktop Inactivity Timeout does not log the connector out. Multiparty conference is unsupported.</text>
+<text x="48" y="374" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">Campaign modes named here: Predictive and Progressive. Salesforce stops at CAMPAIGN_CRM_ID.</text>
+</svg>
+</div>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Rules that change the drawing</h2>
+<div class="callout def"><span class="label">CRM connector</span><p>Integrating Webex Contact Center with Salesforce, Dynamics, or ServiceNow launches Desktop from inside that console. The articles say you do not need to create a new Webex App. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout warn"><span class="label">Chat and email</span><p>Digital channels such as chat and email are not supported with CRM connectors. The Salesforce article says this applies to all CRM integrations using these connectors. Dynamics and ServiceNow print the same sentence. Read the digital conversation in Connect or on the desktop. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout def"><span class="label">Salesforce editions and UI</span><p>Classic mode is not supported. Use a Lightning app from App Manager. The connector is available exclusively for Development, Enterprise, and Ultimate editions. It is not available in Group and Professional editions. Agents need an Access Profile that allows Wrapup Options. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">CIF</span><p>Dynamics uses Microsoft’s Channel Integration Framework. A single-session Dynamics app requires CIF version 1. Multi-session apps require CIF version 2. Omnichannel for Customer Service and Customer Service Workspace are the multi-session examples. Customer Service Hub is the single-session example. On-premises Dynamics is not supported. Install the framework before the connector. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">ServiceNow workspace</span><p>The legacy Agent Workspace is no longer supported starting with the Xanadu edition. The connector is designed for the modern Agent Workspace. The article tells customers to migrate so they keep the integration on Yokohama, Xanadu, or newer. Update sets are only for developer instances. Enterprise-licensed instances install Cisco Webex Contact Center from the ServiceNow store. Mixing the enterprise-licensed app with a developer sandbox is not recommended. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout note"><span class="label">Screen pop is not one behavior</span><p>On Salesforce, screen pop is only for inbound calls. A softphone layout without the Name field shows an unknown error instead of the record name. On Dynamics, a Screen Pop node in the flow can open a record when the URL is relative. recordType is the table name, such as incident. crmId is the record identifier. If both keys are present, the defined URL is ignored. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Two timeouts</span><p>Automatic logout uses a custom value on the Desktop Profile Desktop Timeout. The global Tenant Settings Desktop Inactivity Timeout does not affect the CRM connector and will not log the agent out when that inactive duration is reached. All three articles print that limitation. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T8-R04">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T8R04map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T8R04map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3 class="eco-sub">Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>CRM connector</dt><dd>The Version 2 package that launches Desktop inside Salesforce, Dynamics 365, or ServiceNow. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Lightning</dt><dd>The Salesforce UI these articles support. Classic mode is not supported. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>CIF</dt><dd>Channel Integration Framework. Version 1 for a single-session Dynamics app. Version 2 for a multi-session app. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Channel URL</dt><dd>The Dynamics article’s provider URL on wxcc-crmconnectors.ciscoccservice.com, with a base query for the Dynamics host. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Openframe</dt><dd>The ServiceNow plugin and configuration that hosts the gadget. The article’s minimum example is width 300, height 500, and URL x_caci_crm_wxcc_gadget.do. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>webRtcDomain</dt><dd>The Desktop-mode domain for the tenant’s region. Salesforce and ServiceNow list a Singapore value. The Dynamics customize table does not. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>CAMPAIGN_CRM_ID</dt><dd>The campaign identifier all three articles require. Salesforce stops there. Dynamics and ServiceNow also require CAMPAIGN_CRM_TABLE. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Desktop Profile timeout</dt><dd>The timeout that can log the connector out. The tenant inactivity timeout does not. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3 class="eco-sub">Mind map</h3>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((CRM connectors))
+    Salesforce
+      Lightning
+      Firefox Chrome
+    Dynamics
+      CIF 1 and 2
+      Edge Chrome
+    ServiceNow
+      Openframe
+      Modern workspace
+    Shared
+      No chat or email
+      Profile timeout
+</pre>
+</details>
+<div class="diagram" role="img" aria-label="Desktop launched from each CRM into the regional desktop">
+<svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CRM console to connector host to regional desktop">
+<rect width="980" height="300" fill="#0c121c"/>
+<text x="28" y="36" fill="#f0a0ff" font-family="Georgia, serif" font-size="18">Voice desktop moves into the CRM. Chat stays outside it.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="70" width="180" height="64" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="40" y="108">CRM console</text>
+<rect x="280" y="70" width="280" height="64" rx="12" fill="#26101f" stroke="#f0a0ff"/><text x="296" y="98">Salesforce and Dynamics host</text><text x="296" y="118" fill="#b7ad9c">wxcc-crmconnectors.ciscoccservice.com</text>
+<rect x="640" y="70" width="300" height="64" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="656" y="98">Dynamics desktop URL</text><text x="656" y="118" fill="#b7ad9c">us1, eu1, eu2, anz1, jp1, sg1</text>
+<rect x="24" y="190" width="420" height="70" rx="12" fill="#14110c" stroke="#8d8476"/><text x="40" y="220">Voice and screen pop</text><text x="40" y="242" fill="#b7ad9c">Inbound pop on Salesforce. Relative URL on Dynamics.</text>
+<rect x="480" y="190" width="460" height="70" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="496" y="220">Chat and email</text><text x="496" y="242" fill="#b7ad9c">Connect and the digital desktop. Not this gadget.</text>
+</g>
+<path d="M204 102 H280" stroke="#f0a0ff" fill="none"/>
+<path d="M560 102 H640" stroke="#f0a0ff" fill="none"/>
+</svg>
+</div>
+<h3 class="eco-sub">Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Salesforce</td><td>Lightning connector. Development, Enterprise, Ultimate.</td><td>Classic, Group, and Professional are outside the article.</td><td>Setup, Call Centers, then the utility bar. Install for Admins Only.</td><td>The Phone never appears because users were not added to the call center.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dynamics 365 connector</td><td>Cisco’s CIF gadget. Not Microsoft’s product Dynamics 365 Contact Center.</td><td>CIF version follows the app type. On-premises is unsupported.</td><td>Channel provider URL on wxcc-crmconnectors.ciscoccservice.com. API version 2.</td><td>CIF 1 on Omnichannel, or an on-premises instance.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>ServiceNow</td><td>Openframe gadget on the modern Agent Workspace.</td><td>Xanadu drops the legacy workspace. Developer update sets are not the enterprise store path.</td><td>All, Openframe, Configurations. Roles sn_openframe_user, interaction_agent, and CC Agent.</td><td>The phone icon is missing because the user group lacks the CC Agent role.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Digital channels</td><td>Chat and email on Connect.</td><td>The connector sentence excludes them for every CRM using these connectors.</td><td>T8-R03 for the Connect build. The gadget is the wrong window.</td><td>Testing WhatsApp by opening Salesforce.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Workforce</td><td>Schedules sit outside these install articles.</td><td>None of the three pages prints a WFM shift step.</td><td>Read the workforce article for the subscription you bought. These connector pages do not print a SKU.</td><td>Looking for a shift on the softphone layout.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Recording and quality</td><td>These pages do not print a retention number.</td><td>A screen pop is not a recording export.</td><td>Read recording retention on the Calling or quality article for that feature.</td><td>Quoting a Calling retention number as the gadget’s policy.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency calling</td><td>These pages do not print 911 or 933.</td><td>The agent’s phone path is still the Calling or WebRTC emergency design in T2-R06.</td><td>Desktop profile must allow Desktop before WebRTC works in the gadget.</td><td>Proving 911 by watching a screen pop.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Identity</td><td>The install uses the CRM administrator and an existing contact-center agent.</td><td>You do not create a new Webex App. The agent still needs desktop access.</td><td>Salesforce administrator, Dynamics administrator, or ServiceNow system administrator.</td><td>A package installed by a user who cannot assign the call center or the CC Agent role.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>IVR and virtual agent</td><td>The flow still runs before the agent.</td><td>Screen pop is a flow node on the Dynamics article, after the caller is being offered.</td><td>Flow Designer Screen Pop, then the connector. T8-R01 keeps the activity separate from this install.</td><td>Expecting the IVR prompt to render inside the CRM utility bar.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>AI Assistant</td><td>Not named on these three install pages.</td><td>Summaries and the Assistant icon stay on T8-R05.</td><td>Control Hub add-on, not the call-center XML.</td><td>Looking for Auto CSAT in the softphone layout.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3 class="eco-sub">Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Salesforce Setup</td><td>Call center</td><td>Import OpenCTI.callCenter-meta.xml, set WxCC Region, add users</td><td>The utility-bar phone</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce adapter</td><td>Connector host</td><td>Default CTI Adapter URL</td><td>https://wxcc-crmconnectors.ciscoccservice.com/salesforce/connector/v1/index.html</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dynamics channel provider</td><td>Connector host</td><td>CIF channel URL, API version 2, channel order 1</td><td>The article’s URL includes base=https://.crm.dynamics.com</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Dynamics agent</td><td>Regional desktop</td><td>Desktop URL by region</td><td>us1, eu1, eu2, anz1, jp1, and sg1. The Singapore URL in the list ends with a slash.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>ServiceNow Openframe</td><td>Gadget</td><td>URL x_caci_crm_wxcc_gadget.do and a region key</td><td>The phone icon for the user group that holds CC Agent</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Desktop profile</td><td>WebRTC</td><td>Profile allows Desktop, and webRtcDomain matches the tenant</td><td>The media path. Browser list depends on the CRM.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Control Hub campaign</td><td>CRM record</td><td>Global variables marked agent-visible</td><td>CAMPAIGN_CRM_ID. Dynamics and ServiceNow also map CAMPAIGN_CRM_TABLE.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Flow Screen Pop</td><td>Dynamics record</td><td>Relative URL, or recordType plus crmId</td><td>The record. Both keys present means the defined URL is ignored.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3 class="eco-sub">Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Microsoft Dynamics 365 Contact Center is a different product from Cisco’s Dynamics CRM connector. Finesse gadgets, an Amazon Connect workspace, and a Genesys desktop are different editors. Open each product in its own admin tool. No help page cited here prints a field-for-field map.</div>
+<h3 class="eco-sub">Future hooks</h3>
+<p>Canon planning, not a Cisco roadmap: when a connector article adds chat, replace the exclusion sentence with the click-path that article then prints. The Salesforce WebRTC section says device selection is coming in the next release. Until that sentence changes, keep the current limitation. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3 class="eco-sub">Sister-system trouble</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Chat is missing inside the CRM</td><td>The connector excludes chat and email.</td><td>Which window the agent opened.</td><td>Open Connect or the digital desktop.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A Dynamics multi-session app has no gadget</td><td>CIF 1 was used on a multi-session app.</td><td>Customer Service admin center, agent experience profile.</td><td>Use CIF 2 for Omnichannel or Customer Service Workspace.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>ServiceNow Xanadu shows the old workspace</td><td>The legacy Agent Workspace is unsupported from that edition.</td><td>The workspace the agent actually opens.</td><td>Move the agent to the modern Agent Workspace.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Order of operations</h2>
+<ol>
+<li>Confirm the CRM edition and UI before you download a package. Salesforce must be Lightning and one of Development, Enterprise, or Ultimate. Dynamics must be online. ServiceNow must be the modern workspace. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Install the framework that console requires. Dynamics needs Channel Integration Framework first. ServiceNow needs the Openframe plugin. Salesforce imports the call-center XML after the package. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Set the region. The shared names are us1, ca1, eu1, eu2, anz1, jp1, and sg1. Put that value in the call center, the channel custom parameter, or the Openframe key the article shows. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Give the agent the role or call-center membership the article names, then confirm the phone icon. Salesforce hides the phone until call-center settings are saved and users are added. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Allow Desktop on the desktop profile and set webRtcDomain for that tenant before you test WebRTC. Use the browser list for that CRM. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Place a test call through the connector and confirm sign-in and call handling. The articles’ verification step is that test, not a chat transcript. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Clicks the articles print</h2>
+<ul>
+<li>Salesforce package: Install for Admins Only. Sandbox uses the sandbox login URL, then you install again in production with Install in Production. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Softphone layout: Feature Settings, Service, Call Center, Softphone Layouts. Check Is Default Layout. Choose the objects that trigger lookup and screen pop. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Call center file: download OpenCTI.callCenter-meta.xml from the webex-contact-center-crm-connectors repository the article links. Import under Setup, Call Center, Call Centers. Set WxCC Region and save. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Salesforce compatibility mode defaults to Lightning. The table says not to change it. Softphone defaults are height 550 and width 400, and the table allows any height and any width. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Subject template placeholders that are replaced are {direction} and {activityDatetime}. CAD variables are not supported in that template. Object field mappings allow a single CAD variable per field. Combinations and fixed text mixed into one value are not supported. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Dynamics CIF 2: Customer Service admin center, Workspaces, Agent experience profiles. Name Webex Contact Center. Unique name wxcc_appprofile. Channel provider unique name wxcc_channelProvider_Dynamics. Enable outbound Yes. Channel order 1. API version 2. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Dynamics desktop URLs: desktop.wxcc-us1.cisco.com, desktop.wxcc-eu1.cisco.com, desktop.wxcc-eu2.cisco.com, desktop.wxcc-anz1.cisco.com, desktop.wxcc-jp1.cisco.com, and desktop.wxcc-sg1.cisco.com with the trailing slash the article prints on Singapore. Add *.dynamics.com to the content-security allow list. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>ServiceNow developer path: All, System Definition, Plugins, install Openframe. Import updateSet.xml, preview, commit. Assign x_caci_crm_wxcc.CC Agent, sn_openframe_user, and interaction_agent. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>ServiceNow enterprise path: install Cisco Webex Contact Center from store.servicenow.com. The article also names a legacy package on that store. Update sets stay on developer instances. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>ServiceNow WebRTC also needs the property sn_openframe.cross.origin.access set to microphone *;autoplay;speaker-selection. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>DN options in Control Hub, Desktop Profiles, Voice Channel Options: Unrestricted, Provisioned DN, or Validate using Dial Plans. The gadget does not enforce the dial-plan option. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Agent-state sync with the Webex App is enabled in desktop tenant settings or in the desktop profile collaboration settings. Agents already signed in refresh the browser to apply it. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers and exclusions the articles print</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Salesforce editions</td><td>Development, Enterprise, Ultimate. Not Group or Professional.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Salesforce UI</td><td>Lightning. Classic is not supported.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Salesforce WebRTC browsers</td><td>Firefox and Google Chrome. Edge is not supported.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Dynamics WebRTC browsers</td><td>Microsoft Edge and Google Chrome.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header September 15, 2026</td></tr>
+<tr><td>ServiceNow WebRTC browsers</td><td>Firefox and Google Chrome. Edge is not supported.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr>
+<tr><td>CIF</td><td>Version 1 single-session. Version 2 multi-session.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Salesforce softphone default</td><td>Width 400, height 550. The table says any width and any height.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as defaults</td></tr>
+<tr><td>ServiceNow Openframe example</td><td>Width 300, height 500, listed as minimum values for that configuration.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted as the article’s example</td></tr>
+<tr><td>Campaign modes</td><td>Predictive and Progressive. Other modes are not supported on the Dynamics and ServiceNow pages. Salesforce says those two only.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Dial-plan DN check</td><td>No effect in the current gadget.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Multiparty conference</td><td>Not supported on the Salesforce, Dynamics, or ServiceNow connector.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr>
+<tr><td>Digital channels</td><td>Chat and email unsupported on these connectors.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted, and applied to all three</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Trouble</p>
+<h2>What the connector usually broke</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Wrong story</th><th>What you can cite</th><th>Do this</th><th>Cite</th></tr></thead><tbody>
+<tr><td>No phone in the Salesforce utility bar</td><td>The package failed.</td><td>Users see the phone only after call-center settings are saved and users are added to the call center.</td><td>Edit the call center, set the region, then Manage Call Center Users.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Classic Salesforce has no gadget</td><td>Lightning is a theme.</td><td>Classic mode is not supported.</td><td>Open a Lightning app from App Manager.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Group edition will not install</td><td>Any paid Salesforce org qualifies.</td><td>The connector is Development, Enterprise, and Ultimate only.</td><td>Confirm the edition before you retry the package.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce WebRTC fails in Edge</td><td>Edge is Chromium, so it matches Chrome.</td><td>The Salesforce article says Edge is not supported. Answer from the active tab in Firefox or Chrome.</td><td>Close the extra Salesforce tabs. WebRTC answers from the active tab only.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dynamics WebRTC was tested only in Firefox</td><td>The browser list is the same on every connector.</td><td>The Dynamics article names Edge and Chrome.</td><td>Retest in a named browser. A single-session app also rejects multitab.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>On-premises Dynamics</td><td>CIF is a protocol, so the server edition does not matter.</td><td>The article says on-premises versions are not supported.</td><td>Use a Dynamics 365 service or instance.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agents stay signed in past the tenant idle timer</td><td>Tenant Desktop Inactivity Timeout covers the gadget.</td><td>That tenant setting does not affect the connector. The profile Desktop Timeout does, when it has a custom value.</td><td>Set the profile timeout. Leave the tenant timer out of the design story.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Dial-plan DN list is ignored</td><td>The gadget enforces every Control Hub voice option.</td><td>Validate using Dial Plans has no effect in the current gadget. Unrestricted and Provisioned DN are the other two options.</td><td>Use Provisioned DN when the agent must not type a number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Outbound call does not pop a Salesforce record</td><td>Screen pop covers every direction.</td><td>Screen pop is for inbound calls. Internal and outbound calls search and display data, and no screen pops.</td><td>Read the connector search results. Add the Name field if the label is an unknown error.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ServiceNow phone icon missing</td><td>Openframe is optional.</td><td>The icon shows for the user group selected on the Openframe configuration, and that group needs the CC Agent role.</td><td>Assign the three roles, then set the user group on the configuration.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Campaign record never opens</td><td>Any CRM id field will do.</td><td>Salesforce requires CAMPAIGN_CRM_ID. Dynamics and ServiceNow require CAMPAIGN_CRM_ID and CAMPAIGN_CRM_TABLE. Modes are Predictive and Progressive.</td><td>Mark the variables agent-visible and map them on the campaign.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Conference button does nothing useful</td><td>The desktop conference control is inside the gadget.</td><td>Multiparty conference is not supported on these connectors.</td><td>Tell the agent the limitation before the design review.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<details class="qnode"><summary><span class="lvl">L1</span>What does the connector launch?</summary><p class="answer">Desktop, from inside Salesforce, Dynamics, or ServiceNow. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which channels are excluded?</summary><p class="answer">Chat and email, on every CRM integration that uses these connectors. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which Salesforce editions qualify?</summary><p class="answer">Development, Enterprise, and Ultimate. Group and Professional do not. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Is Salesforce Classic supported?</summary><p class="answer">No. Lightning from App Manager. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which browsers does Salesforce name for WebRTC?</summary><p class="answer">Firefox and Google Chrome. Edge is not supported. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which browsers does Dynamics name for WebRTC?</summary><p class="answer">Microsoft Edge and Google Chrome. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When is CIF 2 required?</summary><p class="answer">Multi-session apps, such as Omnichannel for Customer Service or Customer Service Workspace. A single-session app such as Customer Service Hub uses CIF 1. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Is on-premises Dynamics supported?</summary><p class="answer">No. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What does Validate using Dial Plans do inside the gadget?</summary><p class="answer">Nothing in the current gadget. The article says the setting has no effect. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which timeout logs the connector out?</summary><p class="answer">A custom Desktop Profile Desktop Timeout. The tenant Desktop Inactivity Timeout does not. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which campaign fields does Salesforce require?</summary><p class="answer">CAMPAIGN_CRM_ID. FirstName and LastName are optional. The modes are Predictive and Progressive. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What extra campaign field do Dynamics and ServiceNow require?</summary><p class="answer">CAMPAIGN_CRM_TABLE, along with CAMPAIGN_CRM_ID. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What happens when a Dynamics screen pop sends both recordType and crmId?</summary><p class="answer">The defined URL is ignored. The URL must be relative to open a Dynamics record. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why can the same agent fail WebRTC in Edge on one CRM and succeed on another?</summary><p class="answer">Salesforce and ServiceNow say Edge is not supported. Dynamics names Edge and Chrome. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Three columns, then one test call</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Prereq: a lab CRM you are allowed to change. Production call centers are out of scope.</label></li>
+<li><label><input type="checkbox"> Write the edition and UI for the console in front of you. Stop if it is Classic, Group, Professional, on-premises Dynamics, or the legacy ServiceNow workspace on Xanadu.</label></li>
+<li><label><input type="checkbox"> Write the browser you will use. Match it to that CRM’s list before you enable WebRTC.</label></li>
+<li><label><input type="checkbox"> Find the region value and the connector host. Salesforce’s default adapter URL and Dynamics’ channel URL are both on wxcc-crmconnectors.ciscoccservice.com.</label></li>
+<li><label><input type="checkbox"> In Control Hub, read Voice Channel Options. If it says Validate using Dial Plans, write “no effect in the gadget” beside it.</label></li>
+<li><label><input type="checkbox"> Find Desktop Profile Desktop Timeout and the tenant inactivity timeout. Mark which one the article says the connector ignores.</label></li>
+<li><label><input type="checkbox"> Sign in as a test agent through the connector and place a test call. Confirm sign-in and call handling. Do not use a real customer number.</label></li>
+<li><label><input type="checkbox"> Break it: open a second Salesforce tab and try to answer a WebRTC call from the inactive tab. Recovery: answer from the active tab.</label></li>
+<li><label><input type="checkbox"> Reflection: which field would you have copied from Dynamics onto a Salesforce campaign, and which article stops you?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Ten checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Chat inside the Salesforce gadget is:</p>
+<ol type="A"><li>Supported on Lightning</li><li>Unsupported on these connectors, including every CRM that uses them</li><li>A CIF 2 feature</li><li>The Openframe default</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Salesforce Classic is:</p>
+<ol type="A"><li>The required UI</li><li>Not supported</li><li>Required for Group edition</li><li>The Dynamics single-session app</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Salesforce WebRTC in Microsoft Edge is:</p>
+<ol type="A"><li>The primary browser</li><li>Not supported</li><li>Required for CIF 2</li><li>The ServiceNow store path</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Firefox and Chrome are the named browsers. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Dynamics WebRTC names:</p>
+<ol type="A"><li>Firefox only</li><li>Edge and Chrome</li><li>Edge as unsupported</li><li>No browsers</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>Omnichannel for Customer Service is the app. Which CIF version does the article require?</p>
+<details class="reveal"><summary>Reveal</summary><p>CIF 2. CIF 1 is the single-session app, such as Customer Service Hub. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>On-premises Dynamics is:</p>
+<ol type="A"><li>Supported with CIF 1</li><li>Not supported</li><li>The ServiceNow Xanadu path</li><li>Required for WebRTC</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>Validate using Dial Plans is selected in Control Hub. What does the gadget do with that list?</p>
+<details class="reveal"><summary>Reveal</summary><p>Nothing. The current gadget does not check or restrict the DN from that list. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>The tenant Desktop Inactivity Timeout is set. What does that setting do to the connector?</p>
+<details class="reveal"><summary>Reveal</summary><p>It does not log the connector out. Configure a custom Desktop Profile Desktop Timeout when you want that logout. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Salesforce campaign identification requires:</p>
+<ol type="A"><li>CAMPAIGN_CRM_ID</li><li>CAMPAIGN_CRM_ID and CAMPAIGN_CRM_TABLE</li><li>A Classic layout</li><li>Edge</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Dynamics and ServiceNow add CAMPAIGN_CRM_TABLE. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A Dynamics screen pop includes both recordType and crmId. What happens to the URL?</p>
+<details class="reveal"><summary>Reveal</summary><p>The defined URL is ignored. The URL that opens a Dynamics record is relative. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<!-- AUDIO:overview | assets/audio/T8-R04/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> Three connectors launch Desktop inside the CRM. Chat and email are out. Salesforce is Lightning, Firefox and Chrome. Dynamics is CIF 1 or CIF 2, Edge and Chrome, and not on-premises. ServiceNow is the modern workspace. The dial-plan DN list and the tenant idle timer do not drive the gadget.</p><p class="placeholder-asset">No mp3 shipped.</p></div>
+<!-- AUDIO:mistake | assets/audio/T8-R04/mistake.mp3 -->
+<div class="audio-slot"><p><strong>45 seconds.</strong> Do not copy CAMPAIGN_CRM_TABLE onto Salesforce, and do not test Salesforce WebRTC in Edge.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<p>“The Version 2 connectors launch the contact-center desktop inside Salesforce, Dynamics 365, or ServiceNow. I do not create a new Webex App for that install. Chat and email are unsupported on these connectors, and the Salesforce article applies that sentence to every CRM that uses them. Salesforce is Lightning only, on Development, Enterprise, and Ultimate. Its WebRTC browsers are Firefox and Chrome, Edge is not supported, and a WebRTC call is answered from the active tab. Dynamics uses CIF 1 for a single-session app and CIF 2 for a multi-session app. On-premises Dynamics is not supported. Its WebRTC browsers are Edge and Chrome. ServiceNow uses Openframe on the modern Agent Workspace, and the legacy workspace is unsupported starting with Xanadu. Predictive and Progressive are the campaign modes these pages name. Salesforce’s required field is CAMPAIGN_CRM_ID. Dynamics and ServiceNow also require CAMPAIGN_CRM_TABLE. The gadget ignores Validate using Dial Plans, and the tenant Desktop Inactivity Timeout does not log it out. This connector is not Microsoft’s product Dynamics 365 Contact Center.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T8-R04.md">cites/T8-R04.md</a>.</p>
+<ol class="cite-list">
+<li id="cite-1">Integrate Webex Contact Center with Salesforce (Version 2-New) — help.webex — article dyidod — <a href="https://help.webex.com/article/dyidod">help.webex.com article dyidod</a> — retrieved 2026-10-14. Header date was not in the extract. The page’s release line is May 05, 2026. Lightning only. Development, Enterprise, and Ultimate. Chat and email unsupported on these connectors. WebRTC on Firefox and Chrome. Edge unsupported. Active-tab answer. Dial-plan DN validation has no effect in the gadget. Tenant inactivity timeout does not log the connector out. Campaign field CAMPAIGN_CRM_ID. Predictive and Progressive only.</li>
+<li id="cite-2">Integrate Webex Contact Center CRM Connector for Microsoft Dynamics 365 (Version 2-New) — help.webex — article n1lsqvu — <a href="https://help.webex.com/article/n1lsqvu">help.webex.com article n1lsqvu</a> — retrieved 2026-10-14. Header September 15, 2026. CIF 1 single-session. CIF 2 multi-session. On-premises Dynamics unsupported. Channel host wxcc-crmconnectors.ciscoccservice.com. WebRTC on Edge and Chrome. Desktop URLs for us1, eu1, eu2, anz1, jp1, and sg1. CAMPAIGN_CRM_ID and CAMPAIGN_CRM_TABLE.</li>
+<li id="cite-3">Integrate Webex Contact Center with ServiceNow (Version 2-New) — help.webex — article ny83tx0 — <a href="https://help.webex.com/article/ny83tx0">help.webex.com article ny83tx0</a> — retrieved 2026-10-14. Header date was not in the extract. The page’s release line is May 05, 2026. Modern Agent Workspace. Legacy workspace unsupported starting with Xanadu. Openframe. WebRTC on Firefox and Chrome. Edge unsupported. CAMPAIGN_CRM_ID and CAMPAIGN_CRM_TABLE.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Confirm the dyidod and ny83tx0 header dates. The extracts used on 2026-10-14 did not include them. Both pages carry a release line of May 05, 2026.</li>
+<li>The Dynamics region list includes sg1. The Dynamics webRtcDomain list on that page does not include a Singapore domain. Salesforce and ServiceNow do. Keep those tables apart.</li>
+<li>Salesforce’s WebRTC section says device selection is coming in the next release, and a later limitation says speaker and microphone selection is not possible in Firefox. Quote both until the page picks one.</li>
+<li>When the articles stop excluding chat and email, replace that sentence with the click-path they print.</li>
+<li>Microsoft’s product Dynamics 365 Contact Center stays outside this room. Read Microsoft’s docs for that product.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T8-R03-apis-webhooks-connect.html"><span>Previous</span><strong>T8-R03</strong><em>APIs, Webhooks &amp; Webex Connect</em></a><a class="next" href="T8-R05-ai-wxcc.html"><span>Next</span><strong>T8-R05</strong><em>AI in Webex Contact Center</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

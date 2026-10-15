@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canon-svg" viewBox="0 0 1100 320" role="img" aria-labelledby="T8R08explainer-title T8R08explainer-desc">
+<title id="T8R08explainer-title">Only the pages opened on October 14</title>
+<desc id="T8R08explainer-desc">A what's-new line without its restriction is half the sentence.</desc>
+<style>
+.canon-svg .pulse{animation:canon-pulse 4.8s ease-in-out infinite}
+.canon-svg .p0{animation-delay:0s}.canon-svg .p1{animation-delay:.7s}
+.canon-svg .p2{animation-delay:1.4s}.canon-svg .p3{animation-delay:2.1s}
+.canon-svg .p4{animation-delay:2.8s}.canon-svg .p5{animation-delay:3.5s}
+.canon-svg .p6{animation-delay:4.2s}
+.canon-svg .march{stroke-dasharray:7 9;animation:canon-march 1.15s linear infinite}
+.canon-svg .ex-step{opacity:.4;animation:canon-ex 12s ease-in-out infinite}
+.canon-svg .e0{animation-delay:0s}.canon-svg .e1{animation-delay:3s}
+.canon-svg .e2{animation-delay:6s}.canon-svg .e3{animation-delay:9s}
+.canon-svg .spin{transform-box:fill-box;transform-origin:center;animation:canon-spin 22s linear infinite}
+@keyframes canon-pulse{0%,100%{opacity:.42}35%,65%{opacity:1}}
+@keyframes canon-march{to{stroke-dashoffset:-32}}
+@keyframes canon-ex{0%,100%{opacity:.38}6%,20%{opacity:1}}
+@keyframes canon-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){
+  .canon-svg .pkt{display:none !important}
+  .canon-svg .pulse,.canon-svg .march,.canon-svg .ex-step,.canon-svg .spin{animation:none !important}
+  .canon-svg .pulse,.canon-svg .ex-step{opacity:1 !important}
+  .canon-svg .march{stroke-dasharray:none !important}
+}
+</style>
+
+<defs>
+<linearGradient id="T8R08explainer-bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#070b14"/>
+  <stop offset="0.55" stop-color="#0c1424"/>
+  <stop offset="1" stop-color="#10192b"/>
+</linearGradient>
+<radialGradient id="T8R08explainer-glow" cx="0.12" cy="0" r="0.9">
+  <stop offset="0" stop-color="#e879f9" stop-opacity="0.38"/>
+  <stop offset="1" stop-color="#e879f9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="T8R08explainer-glow2" cx="1" cy="1" r="0.8">
+  <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+  <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+</radialGradient>
+<pattern id="T8R08explainer-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.14"/>
+</pattern>
+<filter id="T8R08explainer-soft" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2.2" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<marker id="T8R08explainer-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+  <path d="M0 0 L8 4 L0 8 Z" fill="#e2e8f0"/>
+</marker>
+</defs>
+<rect width="1100" height="320" rx="22" fill="url(#T8R08explainer-bg)"/>
+<rect width="1100" height="320" rx="22" fill="url(#T8R08explainer-glow)"/>
+<rect width="1100" height="320" rx="22" fill="url(#T8R08explainer-glow2)"/>
+<rect width="1100" height="320" rx="22" fill="url(#T8R08explainer-dots)"/>
+<text x="1072" y="34" text-anchor="end" fill="#94a3b8" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">EXPLAINER · T8-R08</text><text x="28" y="40" fill="#f8fafc" font-size="22" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Only the pages opened on October 14</text><g class="ex-step e0"><rect x="36.0" y="108" width="243.5" height="120" rx="16" fill="#0b1220" stroke="#22d3ee" stroke-width="2"/><circle cx="64.0" cy="144" r="14" fill="#22d3ee"/><text x="64.0" y="149" text-anchor="middle" fill="#082033" font-size="13" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">1</text><text x="88.0" y="148" fill="#f8fafc" font-size="15" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Date</text><text x="56.0" y="182" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">On the page</text></g><g class="ex-step e1"><rect x="297.5" y="108" width="243.5" height="120" rx="16" fill="#0b1220" stroke="#a5b4fc" stroke-width="2"/><circle cx="325.5" cy="144" r="14" fill="#a5b4fc"/><text x="325.5" y="149" text-anchor="middle" fill="#082033" font-size="13" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">2</text><text x="349.5" y="148" fill="#f8fafc" font-size="15" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">DECT</text><text x="317.5" y="182" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">Standard or Debug</text></g><g class="ex-step e2"><rect x="559.0" y="108" width="243.5" height="120" rx="16" fill="#0b1220" stroke="#fbbf24" stroke-width="2"/><circle cx="587.0" cy="144" r="14" fill="#fbbf24"/><text x="587.0" y="149" text-anchor="middle" fill="#082033" font-size="13" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">3</text><text x="611.0" y="148" fill="#f8fafc" font-size="15" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Toll-free</text><text x="579.0" y="182" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">U.S. and Canada</text></g><g class="ex-step e3"><rect x="820.5" y="108" width="243.5" height="120" rx="16" fill="#0b1220" stroke="#fb7185" stroke-width="2"/><circle cx="848.5" cy="144" r="14" fill="#fb7185"/><text x="848.5" y="149" text-anchor="middle" fill="#082033" font-size="13" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">4</text><text x="872.5" y="148" fill="#f8fafc" font-size="15" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Stop</text><text x="840.5" y="182" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">Do not invent the next line</text></g><path class="march" d="M157.8 268 L419.2 268 L680.8 268 L942.2 268" fill="none" stroke="#e879f9" stroke-width="5" stroke-linecap="round"/><g class="pkt" filter="url(#T8R08explainer-soft)"><circle r="7" fill="#ffffff" stroke="#ffffff" stroke-width="2"><animateMotion dur="12s" begin="0s" repeatCount="indefinite" path="M157.8 268 L419.2 268 L680.8 268 L942.2 268"/></circle></g><text x="28" y="302" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">A what's-new line without its restriction is half the sentence.</text>
+</svg>

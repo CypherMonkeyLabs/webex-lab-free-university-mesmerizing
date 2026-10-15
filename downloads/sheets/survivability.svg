@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img">
+<rect width="800" height="320" fill="#f8fafc"/>
+<text x="24" y="36" fill="#0f172a" font-size="22" font-family="system-ui,sans-serif" font-weight="700">Survivability gateway</text>
+<text x="24" y="58" fill="#475569" font-size="12" font-family="system-ui,sans-serif">CypherMonkey · cyphermonkeylabs.com · not a vendor document</text>
+<text x="24" y="78" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">Where do endpoints register in Active mode?</text><text x="24" y="106" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">Where do they register in Survivability mode?</text><text x="24" y="134" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">How long must the cloud path be back?</text><text x="24" y="162" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">What IOS starts the feature set?</text><text x="24" y="190" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">What certificate types are refused?</text><text x="24" y="218" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">What hunt-group cap applies in this mode?</text><text x="24" y="246" fill="#0f172a" font-size="13" font-family="system-ui,sans-serif">What does Webex App support during the outage?</text>
+</svg>

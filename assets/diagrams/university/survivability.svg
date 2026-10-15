@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" data-layout="column-split" role="img" aria-label="Survivability">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#581c87"/><stop offset="0.55" stop-color="#7e22ce"/><stop offset="1" stop-color="#0e7490"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 12; 0 0" dur="12s" repeatCount="indefinite"/>
+<circle cx="225" cy="150" r="110" fill="#d8b4fe" opacity="0.22"/>
+<circle cx="995" cy="240" r="80" fill="#22d3ee" opacity="0.2"/>
+<circle cx="640" cy="780" r="130" fill="#fde68a" opacity="0.14"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; -16 10; 0 0" dur="18s" repeatCount="indefinite"/>
+<g opacity="0.3" fill="none" stroke="#e9d5ff" stroke-width="3"><path d="M600 180 L980 420 L820 780 L380 780 L220 420 Z"/><path d="M600 260 L860 430 L760 700 L440 700 L340 430 Z"/></g>
+</g>
+<text x="64" y="68" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">Survivability</text>
+<text x="64" y="104" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">Site survivability is a gateway mode. It is not a second Webex cloud.</text>
+<path d="M 600 240 L 360 480 L 840 480 L 600 720" fill="none" stroke="#a78bfa" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g class="hop"><rect x="483.0" y="204.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="475.0" y="192.0" width="250" height="96" rx="20" fill="#d8b4fe"/><rect x="475.0" y="192.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="600" y="246.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Cloud mode</text><text x="600" y="270.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="243.0" y="444.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="235.0" y="432.0" width="250" height="96" rx="20" fill="#22d3ee"/><rect x="235.0" y="432.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="360" y="486.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Outage</text><text x="360" y="510.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="723.0" y="444.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="715.0" y="432.0" width="250" height="96" rx="20" fill="#fde68a"/><rect x="715.0" y="432.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="840" y="486.0" text-anchor="middle" fill="#082f49" font-size="17" font-family="system-ui,sans-serif" font-weight="800">Survivability Gateway</text><text x="840" y="510.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="483.0" y="684.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="475.0" y="672.0" width="250" height="96" rx="20" fill="#a78bfa"/><rect x="475.0" y="672.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="600" y="726.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Return</text><text x="600" y="750.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="4.5s" repeatCount="indefinite" path="M 600 240 L 360 480 L 840 480 L 600 720"/>
+<circle r="16" fill="#a78bfa" opacity="0.55"/>
+<circle r="7" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
+</svg>

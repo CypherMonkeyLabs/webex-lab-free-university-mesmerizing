@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T8-R02 · Flow Design Patterns">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T8-R02 · Flow Design Patterns · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T8" data-room="T8-R02" data-room-title="Flow Design Patterns" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T8</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T8/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T8 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T8 · Flows, integrations, and the current product</p>
+<h1>Flow Design Patterns</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Flow Design Patterns">
+<defs>
+<linearGradient id="T8R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T8R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Flows and tools</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T8-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Customer</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Flow</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">API</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Flow Design Patterns. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Flow Design Patterns">
+<defs>
+<marker id="T8R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Customer → Flow → API → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T8R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T8R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T8R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T8R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Customer → Flow → API → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Callback, after-hours, a priority that people call VIP, and overflow are four Flow Designer patterns. None of them is a separate product object named VIP. Priority is P1–P9 on the activity, with 10 as the default when nothing in range is set. After-hours is the Business Hours activity reading schedules from Control Hub. Overflow on a team queue is call-distribution target expansion, not a number this room invents.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T8-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T8-R01, T3-R03</strong></span>
+<span class="meta-chip read-chip">Reading <strong>23 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Use Callback after Queue Contact or Queue To Agent. A different queue drops skills and priority and places the contact at the end. The original queue keeps position, skills, and priority. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Schedule Callback needs the Callback Default Entry Point under Channel Settings. For best results, the article recommends a Disconnect immediately after the activity so the current call ends. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Business Hours branches are Overrides, Holidays, Working Hours, then Default. Holiday lists and overrides take precedence over the shift when the times coincide. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Static priority is P1 (highest) through P9 (lowest). A variable outside 1–9 becomes 10. Queue ranking can still serve a lower-priority contact in a higher-ranked queue first. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Courtesy callback creates a queue task. Keep the original queue if the contact should hold its place. Move it only when you accept the end of the new queue, no skills, and default priority. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Scheduled callback is a future window. Configure the Callback Default Entry Point first. For best results, add the Disconnect the article recommends immediately after the activity. At the scheduled time a new interaction follows that entry point’s flow. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>After-hours belongs on Business Hours, fed by Control Hub working hours, holidays, and overrides. Existing customers can keep using Routing Strategy to connect an entry point to a flow until that feature is decommissioned. The routing-strategy article points you at Business Hours and does not delete existing strategies. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-10">[cite:10]</a></li>
+<li>“VIP” in a design review means Set Contact Priority or the priority on Queue Contact. P1 is highest. Unset or out-of-range priority is 10. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Team queues overflow by adding the next call-distribution group after the configured wait. Agent-assignment queues do not expand on a timer. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviewers ask these four patterns as if they were one checkbox. They are three activities plus a queue setting, and priority loses to queue ranking when the agent’s teams are ranked. T8-R01 already has publish and Get Queue Info. This room is what you draw after the contact is queued.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Map</p>
+<h2>Where each pattern lives</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Pattern</th><th>Object</th><th>Where to read it</th><th>Why it varies</th></tr></thead>
+<tbody>
+<tr><td>Courtesy callback</td><td>Callback activity after Queue Contact or Queue To Agent</td><td>Flow Designer canvas, then help.webex.com article np2fdx</td><td>Same queue versus a different queue changes skills and place in line</td></tr>
+<tr><td>Scheduled callback</td><td>Schedule Callback, plus Callback Default Entry Point</td><td>Control Hub Channel Settings, then the flow</td><td>The entry point’s flow is what runs later, and it is per organization</td></tr>
+<tr><td>After hours</td><td>Business Hours activity</td><td>Control Hub business hours, holidays, and overrides</td><td>Overrides and holidays win when they overlap the shift</td></tr>
+<tr><td>VIP</td><td>Set Contact Priority, or priority on the queue activity</td><td>The activity on the canvas. There is no VIP flag in these articles</td><td>P1–P9 if set; 10 if missing or out of range. A later queue activity can override an earlier one</td></tr>
+<tr><td>Overflow</td><td>Call distribution groups on a team queue</td><td>The queue in Control Hub</td><td>The wait before the next group is configured on that queue. Agent queues do not use it</td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Callback and after-hours on one flow">
+<svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Business Hours then queue, callback, and disconnect">
+<rect width="980" height="420" fill="#0c121c"/>
+<text x="28" y="36" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">After-hours first. Callback only after a queue activity.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="64" width="140" height="56" rx="12" fill="#26101f" stroke="#f0a0ff"/><text x="52" y="97">Start Flow</text>
+<rect x="210" y="64" width="180" height="56" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="226" y="97">Business Hours</text>
+<rect x="430" y="64" width="170" height="56" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="446" y="90">Queue Contact</text><text x="446" y="108" fill="#b7ad9c" font-size="12">priority P1–P9</text>
+<rect x="640" y="64" width="150" height="56" rx="12" fill="#14110c" stroke="#f0a0ff"/><text x="668" y="97">Callback</text>
+<rect x="820" y="64" width="130" height="56" rx="12" fill="#14110c" stroke="#8d8476"/><text x="842" y="97">Disconnect</text>
+</g>
+<path d="M176 92 H210" stroke="#f0a0ff" fill="none"/>
+<path d="M390 92 H430" stroke="#f0a0ff" fill="none"/>
+<path d="M600 92 H640" stroke="#f0a0ff" fill="none"/>
+<path d="M790 92 H820" stroke="#f0a0ff" fill="none"/>
+<rect x="36" y="160" width="910" height="230" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="56" y="194" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">Business Hours branches, in the order the activity evaluates</text>
+<text x="56" y="226" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1. Overrides — wins over the shift when the current time is an override.</text>
+<text x="56" y="252" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2. Holidays — the Holidays branch, regardless of shift, when today is on the holiday list.</text>
+<text x="56" y="278" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3. Working Hours — the shift on the chosen business hour.</text>
+<text x="56" y="304" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4. Default — none of the above.</text>
+<text x="56" y="340" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">The article recommends Disconnect immediately after Schedule Callback. Courtesy callback can stay on the live call.</text>
+<text x="56" y="366" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Closed treatment is the Holidays, Overrides, or Default branch. Do not invent a holiday-priority formula here.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Start[Start Flow] --> BH[Business Hours]
+  BH --> QC[Queue Contact]
+  QC --> CB[Callback]
+  CB --> Disc[Disconnect]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Rules that change the drawing</h2>
+<div class="callout def"><span class="label">Callback</span><p>The activity creates a task in a queue so an agent can call the customer back. Place it after Queue Contact or Queue To Agent. Chaining it with Queue To Agent is how the articles describe callback to the preferred agent the contact was queued to. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Same queue versus a different queue</span><p>If the callback stays in the original queue, the contact keeps its position, skills, priority, and contextual data. If you pick a different queue, the contact is pushed to the end of that queue with no skills and with default priority. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Schedule Callback</span><p>Any telephony queue, inbound or outbound. For best results, the article recommends a Disconnect immediately after Scheduled Callback so the current call ends once the callback is scheduled. At the requested time a new interaction follows the flow linked to the Callback Default Entry Point. CallbackFailed retries if that handler is configured. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Priority, which is the VIP pattern</span><p>Set Contact Priority is off by default on Queue Contact. With no priority, the default is 10. Higher priority is handled first. Equal priority uses the longest wait. Static priority is P1–P9, P1 highest and P9 lowest. A variable must be an integer from 1 through 9. Outside that range the default is 10. Queue To Agent uses the same P1–P9 list and the same default of 10. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Which priority wins</span><p>If Set Contact Priority sits before Queue Contact or Queue To Agent, a priority on that later activity overrides it. If the later activity sets no priority, the earlier Set Contact Priority remains. If Set Contact Priority sits after the queue activity, it overrides the queue activity. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">Queue ranking still sits above priority</span><p>np2fdx’s team example: a higher-ranked Billing queue is offered to Team A before Sales, even when Sales holds an older, higher-priority contact. Only when Billing has no waiting contacts do those agents take Sales. When queue ranking and contact priority are the same, the longest wait is the decider. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Business Hours</span><p>The activity uses working hours, holidays, and overrides defined in Control Hub. Assign the flow to an entry point. Static Business Hours picks a business hour from Control Hub. Variable Business Hours needs a variable that holds a valid Business Hour ID. An invalid ID takes the error path. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Strategies are not deleted by this activity</span><p>The routing-strategy article tells administrators to move toward Business Hours and does not delete existing strategies. What’s new says existing customers can still use Routing Strategy to connect an entry point to a flow until that feature is decommissioned. Read holiday treatment on the Business Hours activity and on the strategy page you still have. The arithmetic is not restated as a second formula in this room. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-10">[cite:10]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T8-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T8R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T8R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<dl class="glossary">
+<div class="term"><dt>Callback</dt><dd>A Flow Designer activity that creates a queue task so an agent returns the call. It is not a Calling callback number and not an emergency callback. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Callback Default Entry Point</dt><dd>The Control Hub entry point, under Channel Settings, that the new interaction follows when a scheduled callback fires. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Set Contact Priority</dt><dd>The activity and the toggle that assign P1–P9. People say VIP. The articles say priority. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Call distribution group</dt><dd>A team-queue expansion step. The contact waits the configured duration, then the next group’s teams are added. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Call Progress Analysis</dt><dd>Detects an answering system or a live voice on a callback. Placement depends on courtesy versus scheduled callback. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+</dl>
+<div class="diagram" role="img" aria-label="Priority, queue ranking, and overflow">
+<svg viewBox="0 0 980 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What is compared before an agent is offered a contact">
+<rect width="980" height="340" fill="#0c121c"/>
+<text x="28" y="36" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Overflow widens the team set. Ranking and priority choose the contact.</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<rect x="40" y="70" width="280" height="90" rx="12" fill="#26101f" stroke="#f0a0ff"/><text x="56" y="104">1. Queue ranking</text><text x="56" y="128" fill="#b7ad9c" font-size="12">Higher-ranked queue first</text>
+<rect x="350" y="70" width="280" height="90" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="366" y="104">2. Contact priority</text><text x="366" y="128" fill="#b7ad9c" font-size="12">P1 highest · unset is 10</text>
+<rect x="660" y="70" width="280" height="90" rx="12" fill="#14110c" stroke="#8d8476"/><text x="676" y="104">3. Longest wait</text><text x="676" y="128" fill="#b7ad9c" font-size="12">Only after ranking and priority tie</text>
+</g>
+<path d="M320 115 H350" stroke="#f0a0ff" fill="none"/>
+<path d="M630 115 H660" stroke="#f0a0ff" fill="none"/>
+<rect x="40" y="190" width="900" height="120" rx="14" fill="#14110c" stroke="#f0a0ff"/>
+<text x="58" y="224" fill="#f0a0ff" font-family="Georgia, serif" font-size="16">Team-queue overflow</text>
+<text x="58" y="254" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Search group 1. If nobody matches, park for the configured duration, then add group 2’s teams.</text>
+<text x="58" y="280" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">Agent-assignment queues have no timed expansion. Skill relaxation can run beside expansion on a skilled team queue.</text>
+</svg>
+</div>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Workforce management</td><td>Shift planning outside the canvas.</td><td>Business Hours reads a Control Hub schedule. It does not build a WFM shift.</td><td>Read the subscription before using a WFO SKU. py6u9h’s list is Enterprise, CCE, and CCX.</td><td>Putting a WFM SKU on a multi-tenant flow and calling it after-hours.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Quality and recording</td><td>Calling keeps its own recording store.</td><td>A callback task is not a recording policy.</td><td>Read nhvl4hw for Webex Calling and Dubber Go. Read the contact-center QM article for a queue.</td><td>Pasting one year or 30 days onto the callback flow.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Emergency calling</td><td>WebRTC agents use Control Hub and RedSky.</td><td>Callback is not that test.</td><td>Read nvfbjts for the agent path. The header on that article is September 08, 2024. <mark class="recheck">re-check</mark></td><td>Treating a courtesy callback as the 933 test.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Analyzer</td><td>Contact-center reporting.</td><td>Priority and callback outcomes show up as contacts, not as a VIP column these articles name.</td><td>Open Analyzer. Refresh intervals are the T3-R07 article, and they change when Cisco revises that page.</td><td>Expecting a VIP report from Set Contact Priority.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CRM connectors</td><td>Desktop launch inside Salesforce, Dynamics, or ServiceNow.</td><td>Callback reason is call-associated data on the desktop, not a screen pop by itself.</td><td>Surface the variable in Flow Designer if agents must see the reason. Digital chat and email stay off the CRM connectors.</td><td>Waiting for ServiceNow to schedule the callback.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Google CCAI and AI agents</td><td>Dialogflow and Virtual Agent V2.</td><td>A virtual agent can offer a callback. The Callback activity is still the queue task.</td><td>Configure the Google connector in Control Hub, then the CCAI feature. Voice agents use Virtual Agent V2.</td><td>Dragging Callback and expecting Dialogflow.</td><td><a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Amazon Connect</td><td>Not named in these flow articles.</td><td>A Connect routing profile is a different console.</td><td>Read that product’s own admin guide before copying a flow.</td><td>Renaming a Connect callback flow as this activity.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Control Hub business hours</td><td>Business Hours activity</td><td>Static pick, or a variable holding the Business Hour ID</td><td>Working hours, holidays, overrides</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Queue Contact or Queue To Agent</td><td>Callback</td><td>Activity order on the main flow or an event flow</td><td>Queue task, and preferred-agent callback when chained to Queue To Agent</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Schedule Callback</td><td>Callback Default Entry Point</td><td>A new interaction at the scheduled time</td><td>The flow linked to that entry point</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agent Desktop</td><td>Scheduled callback</td><td>Ellipsis, Schedule and manage callbacks</td><td>Date, Call between start and end, optional reason as CAD</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Team queue</td><td>Next call distribution group</td><td>Park for the configured duration, then add teams</td><td>A wider eligible set. Not a new priority</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>Sister-system trouble</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>VIP callers still wait behind a normal queue</td><td>Queue ranking on the agent’s teams outranks contact priority.</td><td>Queue ranking in Control Hub, then the priority on the activity.</td><td>Raise the queue’s rank or the contact’s priority, and say which one you changed.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Scheduled callback never starts</td><td>Callback Default Entry Point is missing, or its flow is not the one you tested.</td><td>Channel Settings in Control Hub.</td><td>Point the entry point at the callback flow before you publish.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agents cannot see why the customer asked for a callback</td><td>The reason is CAD and is hidden until an administrator surfaces the variable.</td><td>Flow Designer variables on the desktop layout.</td><td>Expose the variable. Do not expect the popover to show it by default.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>After-hours still follows an old strategy</td><td>Moving toward Business Hours does not delete existing strategies.</td><td>The entry point’s strategies and the Business Hours activity.</td><td>Decide which object is live. Read both pages.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Order of operations</h2>
+<ol>
+<li>Confirm the queue type in Control Hub. Team assignment can expand. Agent assignment cannot. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Put Business Hours near the start if closed, holiday, and override need their own treatment. Overrides and holidays beat the shift when times overlap. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Queue the contact. Set priority on that activity or with Set Contact Priority, and know which box is later, because the later explicit priority wins. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For courtesy callback, place Callback after that queue activity. Choose original queue or a different queue with your eyes open. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For a future callback, confirm Channel Settings, place Schedule Callback, then add the Disconnect the article recommends. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Call Progress Analysis can be placed after Callback on a courtesy flow, or after NewPhoneContact on a scheduled or personal scheduled callback flow. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>On the desktop, an agent on a live call uses the ellipsis, then Schedule and manage callbacks, then a date and a Call between window. <a class="cite" href="#cite-7">[cite:7]</a></li>
+</ol>
+<div class="orientation"><strong>Orientation only.</strong> An Amazon Connect callback flow, a Teams auto attendant, and an ICM script node are different editors. Open the legacy object in its own tool and this activity on the canvas. No help page cited here prints a node-for-node map.</div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Clicks the articles print</h2>
+<ul>
+<li>Business Hours: drag the activity, choose Static or Variable. Variable must hold a Business Hour ID from Control Hub. Empty ordered-list inputs fail validation, and you fix them before publish. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Branches to wire: Overrides, Holidays, Working Hours, Default. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Queue Contact: Set Contact Priority is off until you enable it. Static Priority Level is P1–P9. Variable priority reads an integer flow variable. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Queue To Agent: identify the agent by Webex Contact Center agent ID or email. You can chain another Queue To Agent, then a Queue Contact if no preferred agent is free, and you can chain Callback for the preferred agent. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Callback Failed: the Wait activity between retries is at least 10 seconds and at most 72 hours. The system supports up to 10 attempts across a span of 14 days. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Optional ANI on the callback is how the article describes a recognizable caller ID. Read the field on the activity. The value is the number you configure, and it changes per flow. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Desktop: during the call, ellipsis, Schedule and manage callbacks. Date and Call between are required. Assign to any available agent or to yourself. <a class="cite" href="#cite-7">[cite:7]</a></li>
+<li>Courtesy, web, and scheduled callback are the three types the desktop article names. Web callback is a request from the site or a virtual agent, with a name and a callback number. <a class="cite" href="#cite-7">[cite:7]</a></li>
+</ul>
+<div class="callout warn"><span class="label">Not a procedure yet</span><p>A what’s-new note describes scheduled callback for outbound campaigns as upcoming. Do not teach that campaign path as a current click-path. Use the Flow Designer and desktop articles above. <a class="cite" href="#cite-10">[cite:10]</a></p></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles print</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Static priority</td><td>P1 highest through P9 lowest</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Unset or out-of-range priority</td><td>10</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted for Queue Contact and Queue To Agent</td></tr>
+<tr><td>Variable priority range</td><td>Integer 1 through 9</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Callback retry wait</td><td>Minimum 10 seconds, maximum 72 hours</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header October 01, 2026</td></tr>
+<tr><td>Callback retries</td><td>Up to 10 attempts across 14 days</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Different-queue callback</td><td>End of that queue, no skills, default priority</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Expansion delay</td><td>The duration configured on the call distribution group</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>The article does not print one global number of seconds</td></tr>
+<tr><td>Outbound campaign scheduled callback</td><td>Described as upcoming</td><td><a class="cite" href="#cite-10">[cite:10]</a></td><td>Not used as a current procedure</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Trouble</p>
+<h2>What the pattern usually broke</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Wrong story</th><th>What you can cite</th><th>Do this</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Callback lost the caller’s skills</td><td>“Callback always resets the contact.”</td><td>Only a different queue drops skills and priority and sends the contact to the end.</td><td>Put the callback back on the original queue if place-in-line matters.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>The customer stays on the line after scheduling</td><td>Schedule Callback ends the call by itself.</td><td>For best results, the article recommends Disconnect immediately after Scheduled Callback so the current call ends.</td><td>Add the activity, then publish.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Priority 1 was set and the contact still sorts last</td><td>P1 means first in every queue the agent can see.</td><td>A higher queue ranking is served first. Out-of-range variables become 10.</td><td>Read ranking on the queues and the value in the variable.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Holiday audio plays during the shift</td><td>Working hours always win.</td><td>Holidays and overrides take their branches regardless of the shift when the times coincide.</td><td>Read the holiday list and the override list in Control Hub.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Variable business hours always errors</td><td>Any string name works.</td><td>The variable must hold the Business Hour ID. An invalid ID takes the error path.</td><td>Copy the ID from Control Hub into the variable.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>The team queue never widens</td><td>Overflow is a Flow Designer percent.</td><td>Expansion is the next call distribution group after the configured duration. Agent queues do not expand on a timer.</td><td>Open the queue type before you edit the flow.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Call Progress Analysis never runs</td><td>One placement works for every callback.</td><td>Courtesy: after Callback in the main flow. Scheduled or personal scheduled: after NewPhoneContact in the main flow.</td><td>Move the activity to the placement the article names.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<details class="qnode"><summary><span class="lvl">L1</span>Where do you place Callback?</summary><p class="answer">After Queue Contact or Queue To Agent. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What does a different callback queue do to skills?</summary><p class="answer">The contact goes to the end of that queue with no skills and with default priority. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What must exist before Schedule Callback is useful?</summary><p class="answer">The Callback Default Entry Point under Channel Settings in Control Hub. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which Business Hours branch wins over the shift?</summary><p class="answer">Overrides and holidays, when their times coincide with the shift. Default is the leftover. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is P1?</summary><p class="answer">The highest static priority. P9 is the lowest. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>A priority variable returns 15. What priority is used?</summary><p class="answer">10. Only 1 through 9 are in range. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Set Contact Priority is before Queue Contact, and Queue Contact also sets P5. Which one is used?</summary><p class="answer">The queue activity’s priority. A later explicit priority overrides the earlier activity. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why can a lower-priority Billing contact beat a higher-priority Sales contact?</summary><p class="answer">Queue ranking. Billing is offered first while it still has waiting contacts. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How many callback retries, and over what span?</summary><p class="answer">Up to 10 attempts across 14 days. Each Wait is between 10 seconds and 72 hours. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Where does Call Progress Analysis go on a scheduled callback?</summary><p class="answer">It can be placed after NewPhoneContact in the main flow. Courtesy callback can place it after Callback. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Draw one flow, then point at Control Hub</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Prereq: a lab tenant you are allowed to change. Production entry points are out of scope. Read licenses on the subscription. The flow articles do not name them.</label></li>
+<li><label><input type="checkbox"> On paper, draw Start Flow, Business Hours with four branches, Queue Contact, Callback, and Disconnect. Mark Disconnect as the scheduled-callback neighbor.</label></li>
+<li><label><input type="checkbox"> Write two callback rows: original queue, and a different queue. Fill skills, priority, and place in line for each.</label></li>
+<li><label><input type="checkbox"> Set a variable priority of 15 and write 10 next to it. Set P1 on a later Queue Contact and write which activity wins.</label></li>
+<li><label><input type="checkbox"> Open the queue. If it is team assignment, name the call distribution groups and the duration configured between them. If it is agent assignment, write “no timed expansion.”</label></li>
+<li><label><input type="checkbox"> In Control Hub, find Channel Settings and the Callback Default Entry Point. Write the flow name attached to it.</label></li>
+<li><label><input type="checkbox"> On a test call, open the ellipsis and find Schedule and manage callbacks. Do not save a callback against a real customer number.</label></li>
+<li><label><input type="checkbox"> Reflection: which pattern did you used to call VIP, and which article name will you use instead?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Eight checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Callback belongs:</p>
+<ol type="A"><li>Before any queue activity</li><li>After Queue Contact or Queue To Agent</li><li>Inside a WFM schedule</li><li>On the Calling E2EE toggle</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">Scenario</span></header><p>The callback is sent to a different queue. What happens to skills and place in line?</p>
+<details class="reveal"><summary>Reveal</summary><p>End of the selected queue, no skills, default priority. The original queue would have kept position, skills, and priority. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>For best results, immediately after Schedule Callback the article recommends:</p>
+<ol type="A"><li>Get Queue Info</li><li>Disconnect</li><li>A WFO SKU</li><li>Nothing, because the caller is already gone</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Static priority P9 is:</p>
+<ol type="A"><li>Highest</li><li>Lowest of the static list</li><li>The default when the toggle is off</li><li>A queue ranking</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. P1 is highest. Unset priority is 10, which is outside P1–P9. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>Billing is ranked above Sales. Sales holds an older P1 contact. Billing holds a P9 contact. Who does Team A get first?</p>
+<details class="reveal"><summary>Reveal</summary><p>The Billing contact, while Billing still has waiting contacts. Queue ranking is applied before that priority comparison. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>A holiday that falls inside the shift takes:</p>
+<ol type="A"><li>Working Hours</li><li>The Holidays branch</li><li>Whatever the old routing strategy still says, and Business Hours is ignored</li><li>The error path</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Holidays win regardless of the shift when today is on the holiday list. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Agent-assignment overflow on a timer:</p>
+<ol type="A"><li>Uses call distribution groups</li><li>Is not how those queues expand</li><li>Is the Callback activity</li><li>Is P1</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Timed target expansion is the team-queue call distribution group. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>Call Progress Analysis is after Callback on a personal scheduled callback. Where can the article place it instead?</p>
+<details class="reveal"><summary>Reveal</summary><p>It can be placed after NewPhoneContact in the main flow. After Callback is a placement the article names for courtesy callback. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<!-- AUDIO:overview | assets/audio/T8-R02/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> Callback after the queue activity. A different queue drops skills. Schedule Callback needs the default entry point. Disconnect immediately after is the article’s recommendation. VIP is P1 through P9, and 10 is the default. Queue ranking can still go first.</p><p class="placeholder-asset">No mp3 shipped.</p></div>
+<!-- AUDIO:mistake | assets/audio/T8-R02/mistake.mp3 -->
+<div class="audio-slot"><p><strong>45 seconds.</strong> Do not teach an outbound-campaign callback that the what’s-new page still calls upcoming.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<p>“Courtesy callback sits after Queue Contact or Queue To Agent. If I keep the original queue, the contact keeps position, skills, and priority. If I move queues, it goes to the end with no skills and default priority. Scheduled callback needs the Callback Default Entry Point under Channel Settings. The article recommends Disconnect immediately after so the current call ends, and the later call follows that entry point’s flow. After-hours is Business Hours: overrides and holidays beat the shift, then working hours, then default. I do not delete old routing strategies just because Business Hours exists. Existing customers can keep using Routing Strategy until that feature is decommissioned. What people call VIP is Set Contact Priority, P1 highest through P9, and 10 when the value is missing or outside 1 to 9. A later queue activity overrides an earlier priority. Queue ranking can still serve a higher-ranked queue before a higher-priority contact in a lower-ranked queue. Overflow on a team queue is the next call distribution group after the configured wait. Agent-assignment queues do not expand on a timer. I do not describe a VIP flag, a holiday formula, or an outbound-campaign callback the what’s-new page still marks as upcoming.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T8-R02.md">cites/T8-R02.md</a>.</p>
+<ol class="cite-list">
+<li id="cite-1">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a> — retrieved 2026-10-14. Callback after Queue Contact or Queue To Agent. Queue To Agent chaining. Set Contact Priority off by default, default 10, P1–P9, variable 1–9. Business Hours branches and Control Hub IDs.</li>
+<li id="cite-2">Understand Routing and Queueing in Webex Contact Center — help.webex — article np2fdx — <a href="https://help.webex.com/article/np2fdx">help.webex.com article np2fdx</a> — retrieved 2026-10-14. Header October 01, 2026. Same-queue versus different-queue callback. Schedule Callback. Callback Default Entry Point is the prerequisite. Disconnect immediately after is recommended for best results. CallbackFailed waits. Call Progress Analysis can be placed after Callback or after NewPhoneContact. Queue ranking example. Call distribution groups. Set Contact Priority override order.</li>
+<li id="cite-3">Set up routing strategies — help.webex — article nfrs2adb — <a href="https://help.webex.com/article/nfrs2adb">help.webex.com article nfrs2adb</a> — retrieved 2026-10-14. Move toward Business Hours. Existing strategies remain. Holiday-priority arithmetic stays on that article.</li>
+<li id="cite-4">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a> — retrieved 2026-10-14. Header June 09, 2026. Enterprise, Contact Center Enterprise, and Contact Center Express. Not a multi-tenant flow activity.</li>
+<li id="cite-5">Manage call recording for Webex Calling — help.webex — article nhvl4hw — <a href="https://help.webex.com/article/nhvl4hw">help.webex.com article nhvl4hw</a> — retrieved 2026-10-14. Calling retention. Not WxCC quality-management retention and not a callback setting.</li>
+<li id="cite-6">Provision Emergency Calling in Webex Contact Center for Agents — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14. Header September 08, 2024. <mark class="recheck">re-check</mark> WebRTC agents use Control Hub and RedSky. Not a Flow Designer callback.</li>
+<li id="cite-7">Manage your calls in Agent Desktop — help.webex — article mmcf7p — <a href="https://help.webex.com/article/mmcf7p">help.webex.com article mmcf7p</a> — retrieved 2026-10-14. Header date was not in the extract. <mark class="recheck">re-check</mark> Courtesy, web, and scheduled callback. Ellipsis path. Callback reason as CAD, hidden until Flow Designer surfaces it.</li>
+<li id="cite-8">Configure Virtual Agent-Voice in Webex Contact Center — help.webex — article n6gaghu — <a href="https://help.webex.com/article/n6gaghu">help.webex.com article n6gaghu</a> — retrieved 2026-10-14. Google CCAI connector in Control Hub, then the CCAI feature. Not the Callback activity.</li>
+<li id="cite-9">Use AI agents for customer interactions — help.webex — article s0qro1 — <a href="https://help.webex.com/article/s0qro1">help.webex.com article s0qro1</a> — retrieved 2026-10-14. Header August 25, 2026. Virtual Agent V2. Not a substitute for the Callback activity.</li>
+<li id="cite-10">What’s new for administrators in Webex Contact Center — help.webex — article a1gx3h — <a href="https://help.webex.com/article/a1gx3h">help.webex.com article a1gx3h</a> — retrieved 2026-10-14. Header October 08, 2026. Existing customers can still use Routing Strategy to connect an entry point to a flow until that feature is decommissioned. Scheduled Callback for outbound campaigns is announced as upcoming availability. Not a current procedure in this room.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open the Callback activity on the canvas for ANI and output variables this room did not quote. Those fields change when Cisco updates the activity.</li>
+<li>Read the configured duration on each call distribution group in the live queue. np2fdx does not print one global number of seconds.</li>
+<li>When a1gx3h stops calling outbound-campaign scheduled callback upcoming, replace the warning with the click-path that article then prints.</li>
+<li>Confirm the mmcf7p header date. The extract used on 2026-10-14 did not include it.</li>
+<li>ICM script parity stays in T6-R04. Enterprise scripting stays in T4.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T8-R01-flow-designer-essentials.html"><span>Previous</span><strong>T8-R01</strong><em>Flow Designer Essentials</em></a><a class="next" href="T8-R03-apis-webhooks-connect.html"><span>Next</span><strong>T8-R03</strong><em>APIs, Webhooks &amp; Webex Connect</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

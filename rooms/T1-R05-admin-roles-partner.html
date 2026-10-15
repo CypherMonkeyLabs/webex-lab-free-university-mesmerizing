@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T1-R05 · Admin Roles &amp; Partner Admin">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T1-R05 · Admin Roles &amp; Partner Admin · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T1" data-room="T1-R05" data-room-title="Admin Roles &amp; Partner Admin" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T1</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T1/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T1 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T1 · Control Hub &amp; Platform Foundations</p>
+<h1>Admin Roles &amp; Partner Admin</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Admin Roles &amp;amp; Partner Admin">
+<defs>
+<linearGradient id="T1R05sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T1R05sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T1-R05</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Admin</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Identity</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Services</text></g>
+</svg>
+<figcaption>Illustrated scene for Admin Roles &amp;amp; Partner Admin. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Admin Roles &amp;amp; Partner Admin">
+<defs>
+<marker id="T1R05arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Admin → Control Hub → Identity → Services</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Services</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T1R05arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T1R05arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T1R05arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T1R05lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Admin → Control Hub → Identity → Services. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">People you add start with no administrative privileges. A full administrator can assign roles, and it may take up to 10 minutes before the new role is usable. Location administrator is exclusive. User and device administrator, and device administrator, cannot administer Webex Calling. A Webex Calling administrator can be assigned up to 250 locations.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T1-R05</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L2</strong></span><span class="meta-chip">Est. time <strong>80–100 min</strong></span><span class="meta-chip">Prereq <strong>T1-R01</strong></span><span class="meta-chip read-chip">Reading <strong>22 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>On first setup, the administrator from the partner organization becomes the full administrator and can create more administrators. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Full administrators cannot simultaneously hold location administrator. The article prints that as “simultenously.” Read-only cannot be combined with a custom role or location administrator. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Organizations can have up to 100 groups with assigned administrator roles. One group can hold up to 20 different roles. You cannot manage administrator roles through the administrator CSV. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Full administrators cannot assign Advanced Troubleshooting Access to themselves. Another full administrator assigns it. The role can go to a full, read-only, or support administrator. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Location administrators cannot add or delete locations, cannot modify the PSTN connection, and cannot use bulk operations. Adding administrators to one location allows up to 5 users at a time. The delegation drop-down selects up to five locations. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Assign a person’s roles at Management &gt; Users &gt; the user &gt; Summary &gt; Administrator roles. Assign a group’s roles at Groups &gt; Webex groups &gt; the group &gt; Assignments &gt; Assign roles. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>User and device administrators can assign the location administrator role and cannot assign other administrator roles. Device administrators register devices, generate activation codes, and manage workspaces. Neither can administer Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Compliance officers are the role with access to user-generated content and legal hold. Security activity administrators are the other role, with full administrators, marked for the admin actions audit log. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The earlier Webex Calling Detailed Call History API access role is marked Obsolete and remains operational until December 31, 2026. New assignments use a custom role. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A location administrator can delete hunt-group agents from other locations and can add new hunt-group users only from assigned locations. For a Webex Calling call queue they can add users from other locations, and they can allow join or unjoin only for agents in assigned locations. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interview answers that say “admin” fail here. Partner launch, location scope, and the Calling restriction on device roles are three different keys.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Who can change the organization, and who is fenced to locations</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T1-R05/arch.svg -->
+<div class="diagram" role="img" aria-label="Full administrator, exclusive location administrator, and device roles that cannot run Calling">
+<svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Role map">
+<rect width="980" height="420" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Roles inside one customer organization</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Location administrator does not combine. Device-centric roles do not administer Webex Calling.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="90" width="280" height="110" rx="12" fill="#14262a" stroke="#3ecfb2"/><text x="52" y="128">1 · Full administrator</text><text x="52" y="152" fill="#b7ad9c" font-size="12">Users, licenses, policy, org settings</text><text x="52" y="174" fill="#b7ad9c" font-size="12">Cannot also be location admin</text>
+<rect x="350" y="90" width="280" height="110" rx="12" fill="#14262a" stroke="#3ecfb2"/><text x="366" y="128">2 · Read-only</text><text x="366" y="152" fill="#b7ad9c" font-size="12">View and monitor</text><text x="366" y="174" fill="#b7ad9c" font-size="12">No custom, no location admin</text>
+<rect x="664" y="90" width="280" height="110" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="680" y="128">3 · Support</text><text x="680" y="152" fill="#b7ad9c" font-size="12">Analytics, reports, troubleshooting</text><text x="680" y="174" fill="#b7ad9c" font-size="12">Organization support cases</text>
+<rect x="36" y="230" width="280" height="110" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="52" y="268">4 · User and device</text><text x="52" y="292" fill="#b7ad9c" font-size="12">Users, devices, location admin role</text><text x="52" y="314" fill="#b7ad9c" font-size="12">Cannot administer Webex Calling</text>
+<rect x="350" y="230" width="280" height="110" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="366" y="268">5 · Device</text><text x="366" y="292" fill="#b7ad9c" font-size="12">Activation codes, workspaces</text><text x="366" y="314" fill="#b7ad9c" font-size="12">Cannot administer Webex Calling</text>
+<rect x="664" y="230" width="280" height="110" rx="12" fill="#14110c" stroke="#3ecfb2"/><text x="680" y="268">6 · Location administrator</text><text x="680" y="292" fill="#b7ad9c" font-size="12">Exclusive. Up to 250 locations</text><text x="680" y="314" fill="#b7ad9c" font-size="12">for a Calling administrator</text>
+</g>
+<text x="28" y="380" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Partner Hub role names are a separate article. This map is the customer organization.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Assign a role and wait">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assign a role and wait">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Assignment path</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  A new user has no admin privileges.</text>
+<text x="36" y="110" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Full administrator assigns one or more roles. Changing an org role can affect an existing services role.</text>
+<text x="36" y="142" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  Access can take up to 10 minutes. A directly assigned read-only or location role will not inherit an incompatible group role.</text>
+<text x="36" y="174" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Remove the incompatible direct role, remove the user from the group, and add them again.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>Full</li><li><span class="num">2</span>Read-only</li><li><span class="num">3</span>Support</li><li><span class="num">4</span>User and device</li><li><span class="num">5</span>Device</li><li><span class="num">6</span>Location</li></ul>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart TB
+  Full[Full administrator] --> Roles
+  Roles --> Location[Location administrator exclusive]
+  Roles --> Device[Device roles without Calling admin]
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T1-R05/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>The matrix, then the location fence</h2>
+<p>The role article recommends more than one full administrator even in a small organization. Users you add have no administrative privileges at first. <a class="cite" href="#cite-1">[cite:1]</a> The retrieved body of fs78p5 did not print a header date. <mark class="recheck">re-check</mark> that page’s date before you treat the matrix as frozen. The delegation article is dated August 05, 2026. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<div class="chips"><span class="chip">full administrator</span><span class="chip">location administrator</span><span class="chip">read-only</span><span class="chip">compliance officer</span><span class="chip">10 minutes</span><span class="chip">250 locations</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T1-R05/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T1-R05/hero.png</code> · Studio draws one full-admin key and a separate location key that will not share a ring.</div>
+<h3>Prebuilt roles</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Role</th><th>What the article says</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Full administrator</td><td>Every aspect of how the organization is run: users, licenses, policy templates, organization settings. Cannot simultaneously hold location administrator. Has Webex site administrator and Meeting content administrator by default, and those cannot be modified or revoked.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Read-only administrator</td><td>View and monitor all areas. No organizational changes. Cannot also be a custom role or location administrator.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Support administrator</td><td>Analytics and reports, troubleshooting tools, and organization support cases.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>User and device administrator</td><td>Add and manage users, set up devices, assign location administrator. Cannot assign other administrator roles. Cannot administer Webex Calling.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Device administrator</td><td>Register or deregister devices and phone numbers, activation codes, workspaces. Cannot administer Webex Calling.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Compliance officer</td><td>Events API and eDiscovery for user-generated content. Legal hold overrides default retention.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Security activity administrator</td><td>Helps full administrators monitor organization-setting changes and troubleshoot Calling and meeting logs. Audit log access is marked for this role and full administrator.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Advanced troubleshooting access</td><td>Live Meeting page for full, read-only, and support administrators. Full administrators with it can join in-progress meetings. A full administrator cannot assign it to themselves.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Matrix cells that are easy to over-claim</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Access</th><th>Who the organization-role table marks</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Add or delete users and assign licenses</td><td>Full: yes. Read-only: read-only. User and device: yes.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Assign roles to users</td><td>Full: yes. Read-only: read-only. The other columns in that row are empty.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Admin actions audit log</td><td>Full administrator and security activity administrator.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>User-generated content and legal hold</td><td>Compliance officers.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Join in-progress meetings and live meetings</td><td>Advanced troubleshooting access.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex site roles on Site Administration-managed sites</td><td>Cannot be assigned in Control Hub. Control Hub site roles are for Control Hub-managed sites.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer read-only and Contact Center</td><td>A customer read-only administrator cannot access the Webex Contact Center administrative interfaces (Control Hub and Management Portal).</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Location administrator fence</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Area</th><th>Restricted action the delegation table names</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Users</td><td>Add, delete, and move users. Edit summary is also restricted.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Locations</td><td>Add and delete locations. Edit call recording settings. Modify PSTN connection.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Workspaces</td><td>Delete workspaces.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Devices</td><td>Alert center support. Cannot add a device from the devices screen. Can add devices for individual users and workspaces.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Calling features</td><td>Recordings are restricted on the feature list that includes auto attendant, call park, call pickup, call queue, and hunt group.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>PSTN and routing</td><td>Add, edit, delete, and export numbers.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Bulk</td><td>Bulk operations are not available.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Scale</td><td>Up to 5 users at a time on one location. Up to five locations in the delegation drop-down. A Webex Calling administrator can administer up to 250 assigned locations.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Changing the organizational role of a user who already has a services role can affect that services role. Review services roles first. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>A user with a directly assigned read-only or location administrator role will not inherit an incompatible role from a group. Remove the direct role, remove the user from the group, and add them to the group again. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Partner console</span><p>The customer role article points partner administrators who manage multiple organizations at Partner Hub, and it points delegated partner access at a separate external-administrator article. This room does not copy Partner Hub role names from a page it did not re-read. Article 16gmxfb is that pointer. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T1-R05">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Services</text>
+<circle cx="200" cy="132" r="36" fill="url(#T1R05map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T1R05map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Full administrator</dt><dd>Access to every aspect of how the organization is run. Exclusive of location administrator. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Location administrator</dt><dd>Delegated administration of certain services in assigned locations. Exclusive of other administrator roles. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Advanced troubleshooting access</dt><dd>Live Meeting access. A full administrator cannot assign it to themselves. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Compliance officer</dt><dd>The organization role marked for user-generated content and legal hold. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Services role</dt><dd>A role such as a Webex site role that can be affected when the organizational role changes. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Obsolete CDR role</dt><dd>Webex Calling Detailed Call History API access, marked Obsolete, operational until December 31, 2026. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Partner Hub</dt><dd>The console the role article names for administrators who manage multiple customer organizations. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Provisioning administrator</dt><dd>In the contact-center table, a partner-organization role that can perform contact-center administrative activities a partner full administrator can perform, and cannot perform user management. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T1-R05/eco.svg -->
+<div class="diagram" role="img" aria-label="Role sisters"><svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="240" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">What a role touches</text>
+<text x="36" y="76" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Identity: the person must already exist, with no admin rights at first</text>
+<text x="36" y="108" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Licenses: full and user-and-device can assign them. Read-only is read-only.</text>
+<text x="36" y="140" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Calling: device roles cannot administer it. Location admins cannot modify PSTN.</text>
+<text x="36" y="172" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Contact Center: customer read-only cannot open the admin interfaces</text>
+<text x="36" y="204" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Audit log: full administrator and security activity administrator</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((Roles))
+    Full
+    Location
+    Device
+    Compliance
+    Partner Hub
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Users</td><td>People who start with no admin rights.</td><td>Roles are assigned after the person exists.</td><td>Summary &gt; Administrator roles.</td><td>Expecting a synced user to be an admin.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Groups</td><td>Webex groups that can carry roles.</td><td>Up to 100 such groups, up to 20 roles on one group.</td><td>Groups &gt; Webex groups &gt; Assignments.</td><td>An incompatible direct role blocking inheritance.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Locations</td><td>The scope of a location administrator.</td><td>Up to 250 for a Calling administrator. Five at a time in the drop-down.</td><td>Location Admins pane, or Delegation.</td><td>Treating 250 as an org-wide location cap.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex Calling</td><td>The service device roles cannot administer.</td><td>Activation codes are still a device-admin action.</td><td>Device management versus Calling settings.</td><td>A device admin trying to change a dial plan.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>PSTN connection</td><td>Location-level trunk or cloud PSTN.</td><td>Location administrators cannot modify it.</td><td>Location PSTN.</td><td>A site admin retargeting the gateway.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Contact Center</td><td>A service with its own administrator table.</td><td>Customer read-only cannot open the interfaces.</td><td>Contact Center administrator role article, linked from the role page.</td><td>Giving read-only and expecting the Management Portal.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Meetings sites</td><td>Control Hub-managed versus Site Administration-managed.</td><td>Site roles in Control Hub apply to Control Hub-managed sites.</td><td>Webex site administrator roles.</td><td>Assigning a Control Hub site role to a Site Administration site.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Audit and compliance</td><td>Admin actions versus user content.</td><td>Different roles. Compliance is content. Security activity is the audit log.</td><td>Role matrix.</td><td>Calling a compliance officer a full admin.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Full administrator</td><td>User</td><td>Summary &gt; Administrator roles</td><td>One or more prebuilt roles. Up to 10 minutes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Full administrator</td><td>Webex group</td><td>Assignments &gt; Assign roles</td><td>Up to 20 roles. Members gain and lose them with membership.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Partner organization</td><td>New customer org</td><td>First setup</td><td>The partner administrator becomes the full administrator.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Full administrator</td><td>Location administrator</td><td>Delegation checkbox, up to five locations</td><td>The exclusive location role.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location</td><td>Admins pane</td><td>Add</td><td>Up to 5 users at a time.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location administrator</td><td>Hunt group</td><td>Agent edit</td><td>Delete any assigned agent. Add users only from assigned locations.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Full administrator</td><td>Custom CDR role</td><td>Custom role</td><td>Replacement for the obsolete Detailed Call History API role.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Administrator list</td><td>CSV download</td><td>Filter, then export</td><td>Names, email, roles. The file cannot manage roles.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Role edges"><svg viewBox="0 0 980 90" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="90" fill="#0c121c"/><text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="66" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Full admin → user or group → role. Location admin stays exclusive.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> The role article’s contact-center table distinguishes a customer organization, a partner organization, and any other organization. External administrators and the Contact Center Service Administrator are in that table. <a class="cite" href="#cite-1">[cite:1]</a> A CUCM role such as Standard CCM Admin is not in this article.</div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Move users off the obsolete Calling Detailed Call History API role before December 31, 2026. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Canon planning: a role worksheet that lists who holds full administrator, who holds location administrator, and which of those location admins are at the 250 assignment count. Study sheet, not a Cisco roadmap.</li>
+<li><mark class="recheck">re-check</mark> fs78p5 when a header date is visible. The body used here did not print one.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>A device admin cannot open Calling settings</td><td>The role cannot administer Webex Calling.</td><td>The assigned role.</td><td>Use a role the matrix allows for Calling administration.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A location admin cannot change the PSTN connection</td><td>Modify PSTN connection is a restricted action.</td><td>The delegation table.</td><td>A full administrator changes the PSTN connection.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Group role did not apply</td><td>A direct read-only or location role blocks an incompatible group role.</td><td>Direct assignment versus group membership.</td><td>Remove the direct role, remove the user from the group, add them again.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a person with no rights to a usable role</h2>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Partner admin</td><td>New organization</td><td>First setup</td><td>That administrator becomes the full administrator.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Full administrator</td><td>User summary</td><td>Control Hub</td><td>Management &gt; Users &gt; Summary &gt; Administrator roles.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Save</td><td>User session</td><td>Propagation</td><td>It may take up to 10 minutes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Full administrator</td><td>Group</td><td>Assignments</td><td>Groups &gt; Webex groups &gt; Assign roles. Up to 20 roles.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Full administrator</td><td>Location admin</td><td>Delegation</td><td>Check Location admin. Select up to five locations.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>6</td><td>Location</td><td>Admins pane</td><td>Add</td><td>Up to 5 users at a time.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>7</td><td>Another full administrator</td><td>Advanced troubleshooting</td><td>Role assign</td><td>Not a self-assignment.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Filter</td><td>CSV</td><td>Export</td><td>Wait for the download before changing the filter. The CSV cannot manage roles.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>Sign in to Control Hub. Management &gt; Users. Open the user. Summary tab, Administrator roles, select roles, Save. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If you are a partner, open the customer organization first, then that organization’s Users page. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Review services roles before you change the organizational role. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a group: Groups &gt; Webex groups &gt; the group &gt; Assignments &gt; Assign roles &gt; Save. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Find administrators: Management &gt; Users &gt; Filter, check the roles. Export from the top right. Do not change the filter until the CSV finishes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Location admin from the user: Summary &gt; Administrator roles &gt; Delegation &gt; Location admin &gt; up to five locations &gt; Done. The delegation article also shows the Profile tab path. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Location admin from the location: Management &gt; Locations &gt; the location &gt; Admins &gt; Add. Up to 5 users at a time. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Remove a location from an administrator by leaving Location admin checked and removing that location, or uncheck Location admin to remove the role. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Advanced troubleshooting access: another full administrator assigns it to a full, read-only, or support administrator. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For new Calling detailed-call-history API access, create the custom role and assign it from Users. The functional role stays operational until December 31, 2026. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<!-- VISUAL:screenshot:roles | Studio | assets/images/T1-R05/roles.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Role propagation</td><td>Up to 10 minutes</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark> header date on fs78p5.</td></tr>
+<tr><td>Groups with admin roles</td><td>Up to 100</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Roles on one group</td><td>Up to 20</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Locations in one delegation save</td><td>Up to five</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header August 05, 2026.</td></tr>
+<tr><td>Administrators added to one location at a time</td><td>Up to 5 users</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Locations for one Webex Calling administrator</td><td>Up to 250 assigned</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Not an organization-wide cap.</td></tr>
+<tr><td>Obsolete CDR role</td><td>Operational until December 31, 2026</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Location admin plus another admin role</td><td>Not allowed</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>New user cannot open Control Hub settings</td><td>New users have no administrative privileges.</td><td>Administrator roles on the summary.</td><td>A full administrator assigns a role.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Role was saved and access is still missing</td><td>Propagation can take up to 10 minutes.</td><td>Time since Save.</td><td>Wait, then sign in again.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location admin checkbox will not stick beside full admin</td><td>The roles are exclusive.</td><td>The other roles on the user.</td><td>Remove the other administrator roles first.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Read-only plus a custom role is refused</td><td>Read-only cannot be combined with a custom role or location administrator.</td><td>The role combination.</td><td>Create a custom role that includes the view you need, without read-only.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Device admin cannot change Calling</td><td>The article says they can’t administer Webex Calling.</td><td>Role name.</td><td>Assign a role that can.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Full admin cannot grant themselves Advanced Troubleshooting Access</td><td>Self-assignment is blocked.</td><td>Who is signed in.</td><td>Another full administrator assigns it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Group role never appeared</td><td>A direct read-only or location role blocks inheritance.</td><td>Direct roles.</td><td>Remove the direct role, leave the group, rejoin the group.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Exported admin CSV changed after a filter edit</td><td>Changing the filter before the download finishes writes the new filter into the current download.</td><td>Timing of the filter change.</td><td>Wait for the file.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location admin cannot add a location or change PSTN</td><td>Both actions are restricted.</td><td>The delegation table.</td><td>A full administrator performs them.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Sixth location will not save in one delegation</td><td>The drop-down selects up to five locations.</td><td>The picker.</td><td>Save five, then add more. The Calling administrator ceiling is 250 assigned locations.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What privileges does a new user have?</summary><p class="answer">None. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>Who becomes full administrator on first setup?</summary><p class="answer">The administrator from the partner organization. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why is location administrator exclusive?</summary><p class="answer">The role article says you can’t assign any other administrator role to a location administrator, and a full administrator can’t hold it at the same time. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How long can a new role take?</summary><p class="answer">Up to 10 minutes. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Who can assign roles to users?</summary><p class="answer">The matrix marks full administrator as yes, and read-only as read-only. User and device administrators can assign the location administrator role and cannot assign other administrator roles. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Who sees the admin actions audit log?</summary><p class="answer">Full administrator and security activity administrator. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How many groups can carry admin roles?</summary><p class="answer">Up to 100. One group can have up to 20 roles. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the location scale for a Calling administrator?</summary><p class="answer">Up to 250 assigned locations. The drop-down in one save is up to five. One location can receive up to 5 administrators at a time. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Can a location administrator add a hunt-group agent from another site?</summary><p class="answer">They can delete any assigned agent, including agents from other locations, and they can add new users only from their assigned locations. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Can a customer read-only administrator open Contact Center admin?</summary><p class="answer">No. The table says they cannot access the Webex Contact Center administrative interfaces. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What replaces the obsolete Calling CDR role?</summary><p class="answer">A custom role for the Detailed Call History CDR APIs, including stream and feed. The old role remains operational until December 31, 2026. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Can the administrator CSV change roles?</summary><p class="answer">No. You can’t manage administrator roles through the CSV file. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Role desk, no production org</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: mark twelve role combinations as allowed or refused using fs78p5 and 760wbi.</label></li>
+<li><label><input type="checkbox"> Prereq: this room. Do not change roles in a production org.</label></li>
+<li><label><input type="checkbox"> Step 1. Full administrator plus location administrator. Expected: refused.</label></li>
+<li><label><input type="checkbox"> Step 2. Device administrator opens Calling administration. Expected: the article says they can’t.</label></li>
+<li><label><input type="checkbox"> Step 3. A full administrator assigns Advanced Troubleshooting Access to themselves. Expected: refused.</label></li>
+<li><label><input type="checkbox"> Step 4. Six locations in one delegation drop-down. Expected: the article says up to five.</label></li>
+<li><label><input type="checkbox"> Step 5. A location administrator modifies the PSTN connection. Expected: restricted.</label></li>
+<li><label><input type="checkbox"> Evidence: the twelve marks and the table cell you used.</label></li>
+<li><label><input type="checkbox"> Break it: assign read-only directly, then add a group role that conflicts. Recovery: remove the direct role, remove the user from the group, add them again.</label></li>
+<li><label><input type="checkbox"> Reflection: how many full administrators your design has, given the article’s advice to have more than one.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>What admin rights does a new user start with?</p><details><summary>Answer</summary><p class="answer">None. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Can a full administrator also be a location administrator?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>How long can a new role take to apply?</p><details><summary>Answer</summary><p class="answer">Up to 10 minutes. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Can a device administrator administer Webex Calling?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Who assigns Advanced Troubleshooting Access to a full administrator?</p><details><summary>Answer</summary><p class="answer">Another full administrator. Self-assignment is blocked. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>How many groups can have administrator roles?</p><details><summary>Answer</summary><p class="answer">Up to 100. Up to 20 roles on one group. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>How many locations can one Webex Calling administrator be assigned?</p><details><summary>Answer</summary><p class="answer">Up to 250. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>How many locations does one delegation drop-down select?</p><details><summary>Answer</summary><p class="answer">Up to five. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>A location administrator tries to add a location and change its PSTN connection.</p><details><summary>Answer</summary><p class="answer">Both are restricted. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>When does the obsolete Calling detailed-call-history role stop being operational?</p><details><summary>Answer</summary><p class="answer">December 31, 2026. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Can the administrator CSV change roles?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Name the two roles marked for the admin actions audit log.</p><details><summary>Answer</summary><p class="answer">Full administrator and security activity administrator. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Explain no default admin rights, location exclusivity, and the Calling limit on device roles." | assets/audio/T1-R05/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the matrix, 250 locations, five-at-a-time, and the obsolete CDR role." | assets/audio/T1-R05/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 10 minutes, 100 groups, 20 roles, 250 locations." | assets/audio/T1-R05/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> New users have no admin rights. Full administrator runs the organization and cannot also be a location administrator. Device administrator and user-and-device administrator cannot administer Webex Calling. A new role can take up to 10 minutes.</p>
+<p><strong>2 minutes.</strong> I assign roles on the user summary or on a Webex group. One organization can have 100 groups with roles, and one group can hold 20 roles. Read-only does not combine with a custom role. A direct read-only or location role blocks an incompatible group role until I remove it and re-add the user to the group. Compliance officers get user content and legal hold. Security activity administrators share the audit log with full administrators. I cannot grant myself Advanced Troubleshooting Access.</p>
+<p><strong>30 seconds, locations.</strong> Location administrator is exclusive. I can pick up to five locations in the drop-down, add up to five people to one location at a time, and a Webex Calling administrator can hold up to 250 assigned locations. That 250 is not an organization-wide cap.</p>
+<p><strong>2 minutes, the fence.</strong> A location administrator cannot add or delete locations, cannot modify PSTN, cannot run bulk operations, and cannot add a device from the devices screen. They can add devices on a user or a workspace. On a hunt group they can delete any agent and add users only from their own locations. On a Calling call queue they can add users from other locations and can allow join or unjoin only inside their locations.</p>
+<p><strong>What you will say about the old CDR role.</strong> It is marked Obsolete and stays operational until December 31, 2026. New access is a custom role for the detailed call history APIs. Partner Hub role names stay in article 16gmxfb, which this pass did not re-read line by line.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Assign organization account roles in Control Hub — help.webex — article fs78p5 — <a href="https://help.webex.com/article/fs78p5">help.webex.com article fs78p5</a> — retrieved 2026-10-14. <mark class="recheck">re-check</mark> header date; the retrieved body did not print one. New users have no admin privileges. Role exclusivity. 10 minutes. 100 groups, 20 roles. Calling restriction on device roles. Audit log, compliance, advanced troubleshooting, obsolete CDR role until December 31, 2026. Contact Center read-only row. CSV cannot manage roles.</li>
+<li id="cite-2">Delegate location administration — help.webex — article 760wbi — <a href="https://help.webex.com/article/760wbi">help.webex.com article 760wbi</a> — header August 05, 2026 — retrieved 2026-10-14. Exclusive location role. Restricted actions including PSTN and bulk. Up to 5 users at a time. Up to five locations in the drop-down. Up to 250 assigned locations for a Webex Calling administrator. Hunt group and call queue agent rules.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the header date on fs78p5, and the current Partner Hub role list in 16gmxfb, which this pass did not re-fetch.</li>
+<li>Facts still TODO-verify: 0 in the body. Partner Hub role names are omitted rather than guessed. fs78p5 is <mark class="recheck">re-check</mark> for its missing header date.</li>
+<li>Assets missing: role screenshot, audio.</li>
+<li>Ideas for v1.0: a one-page matrix copied from the article’s checkmarks, reviewed when the header date appears.</li>
+<li>Next review: before December 31, 2026, for the obsolete CDR role, and whenever 760wbi changes the 250.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R04-locations-sites.html"><span>Previous</span><strong>T1-R04</strong><em>Locations &amp; Sites</em></a><a class="next" href="T1-R06-analytics-troubleshooting.html"><span>Next</span><strong>T1-R06</strong><em>Analytics &amp; Troubleshooting Views</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

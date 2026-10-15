@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T4-R01 · WxCC Enterprise Overview">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T4-R01 · WxCC Enterprise Overview · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T4" data-room="T4-R01" data-room-title="WxCC Enterprise Overview" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T4</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T4/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T4 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T4 · Webex Contact Center Enterprise</p>
+<h1>WxCC Enterprise Overview</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for WxCC Enterprise Overview">
+<defs>
+<linearGradient id="T4R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T4R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Enterprise</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T4-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CVP</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Router</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Desktop</text></g>
+</svg>
+<figcaption>Illustrated scene for WxCC Enterprise Overview. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for WxCC Enterprise Overview">
+<defs>
+<marker id="T4R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · PSTN → CVP → Router → Desktop</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Desktop</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T4R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T4R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T4R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T4R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: PSTN → CVP → Router → Desktop. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Webex Contact Center Enterprise is a cloud contact center for large enterprises. It is a different product from multi-tenant Webex Contact Center, and a different product from on-premises Unified CCE and Packaged CCE. This room keeps those names apart.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T4-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Dedicated Instance’s contact-center article calls Webex Contact Center Enterprise “a Cloud contact center for large enterprises” and points at a data sheet for details. <a class="cite" href="#cite-1">[cite:1]</a></li><li>The same article lists UCCX, UCCE, PCCE, Webex CCE, and WxCC as different deployment models. It sends UCCE and PCCE readers to Cisco Unified Contact Center Enterprise component documentation. <a class="cite" href="#cite-1">[cite:1]</a></li><li>The Quick Deployment Solution is one offer: 500 to 24,000 concurrent agents, initial solution in the U.S. only, with agents also in the U.S. <a class="cite" href="#cite-2">[cite:2]</a></li><li>That offer’s day-1 Standard license is inbound and outbound voice, a browser desktop, and web and voice callbacks. Premium adds email, web chat, multi-channel reporting, and supervisor monitoring and barge-in. <a class="cite" href="#cite-2">[cite:2]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Dedicated Instance’s contact-center article calls Webex Contact Center Enterprise “a Cloud contact center for large enterprises” and points at a data sheet for details. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The same article lists UCCX, UCCE, PCCE, Webex CCE, and WxCC as different deployment models. It sends UCCE and PCCE readers to Cisco Unified Contact Center Enterprise component documentation. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The Quick Deployment Solution is one offer: 500 to 24,000 concurrent agents, initial solution in the U.S. only, with agents also in the U.S. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>That offer’s day-1 Standard license is inbound and outbound voice, a browser desktop, and web and voice callbacks. Premium adds email, web chat, multi-channel reporting, and supervisor monitoring and barge-in. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Do not paste the multi-tenant architecture article onto this product. That article is Webex Contact Center, not Enterprise. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviews collapse when “Webex Contact Center” is used for both clouds. A design that quotes Kubernetes from the multi-tenant article, or Router and Logger as if they were named cloud components here, is guessing.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Five names, not one stack</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T4-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Five contact-center names kept separate">
+<svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five contact-center names kept separate">
+<rect width="980" height="420" fill="#0c121c"/>
+<text x="28" y="36" fill="#ff8b9a" font-family="Georgia, serif" font-size="20">Portfolio names from the Dedicated Instance article</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Boxes are product names. Arrows are “do not merge,” not a call flow.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="90" width="170" height="90" rx="12" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="42" y="124">UCCX</text><text x="42" y="146" fill="#b7ad9c" font-size="12">Express</text>
+<rect x="214" y="90" width="170" height="90" rx="12" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="228" y="124">UCCE</text><text x="228" y="146" fill="#b7ad9c" font-size="12">on-prem Enterprise</text>
+<rect x="400" y="90" width="170" height="90" rx="12" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="414" y="124">PCCE</text><text x="414" y="146" fill="#b7ad9c" font-size="12">packaged</text>
+<rect x="586" y="90" width="180" height="90" rx="12" fill="#2a1216" stroke="#e0b07a" stroke-width="2"/>
+<text x="600" y="124">Webex CCE</text><text x="600" y="146" fill="#b7ad9c" font-size="12">this room</text>
+<rect x="782" y="90" width="170" height="90" rx="12" fill="#2a220c" stroke="#f0b429"/>
+<text x="796" y="124">WxCC</text><text x="796" y="146" fill="#b7ad9c" font-size="12">multi-tenant · T3</text>
+</g>
+<rect x="28" y="220" width="440" height="150" rx="14" fill="#14110c" stroke="#ff8b9a"/>
+<text x="46" y="252" fill="#ff8b9a" font-family="Georgia, serif" font-size="16">Quick Deployment Solution</text>
+<text x="46" y="280" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">An offer inside the Enterprise story.</text>
+<text x="46" y="304" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">500–24,000 concurrent agents · U.S. only at first.</text>
+<text x="46" y="328" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">No on-prem interconnect in the initial deploy.</text>
+<rect x="490" y="220" width="462" height="150" rx="14" fill="#14110c" stroke="#c4b5fd"/>
+<text x="508" y="252" fill="#c4b5fd" font-family="Georgia, serif" font-size="16">One customer example, not a cap</text>
+<text x="508" y="280" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">Agents on WxCCE, back office on Dedicated Instance.</text>
+<text x="508" y="304" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">Both use LGW for PSTN. One Edge Connect peer.</text>
+<text x="508" y="328" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">20,000 users, 5,000 of them agents.</text>
+<text x="28" y="400" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Component names such as Router, Logger, CVP, and Finesse are not copied onto the cloud product from this article.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Five deployment-model names</li>
+<li><span class="num">2</span>Quick Deployment is an offer</li>
+<li><span class="num">3</span>Dedicated Instance coexistence is an example</li>
+</ul>
+<details>
+<summary>Mermaid source (not rendered; the SVG is the picture)</summary>
+<pre class="mermaid">flowchart LR
+  UCCX[UCCX] --- UCCE[UCCE]
+  UCCE --- PCCE[PCCE]
+  PCCE --- WCCE[Webex CCE]
+  WCCE --- WXCC[WxCC multi-tenant]
+  QDS[Quick Deployment offer] --- WCCE
+  DI[Dedicated Instance example] --- WCCE
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What the articles actually separate</h2>
+<div class="callout def"><span class="label">Webex CCE</span><p>In the Dedicated Instance contact-center article, Webex Contact Center Enterprise (Webex CCE) is the cloud contact center for large enterprises. The data sheet is the pointer for further detail. Read scale on the Enterprise data sheet Cisco links from the help article. This room leaves the figures on that sheet because they change when Cisco revises it. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">WxCC</span><p>Webex Contact Center (WxCC) is the separate SaaS name in that same list. Its architecture article describes the multi-tenant cloud: AWS, Kubernetes, entry points, flows, queues. That description is T3, not this room. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></p></div>
+<div class="callout def"><span class="label">UCCE and PCCE</span><p>Unified Contact Center Enterprise and Packaged Contact Center Enterprise are listed beside Webex CCE, not inside it. The article tells you to read Cisco Unified Contact Center Enterprise and component documentation for those products. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Do not inherit the node list</span><p>Router, Logger, CVP, and Finesse are the usual on-premises vocabulary. They are not restated as components of cloud Webex CCE in the help articles read for this room. Open the Enterprise data sheet and the component guide side by side. The help articles read for this room do not say the data sheet names Router, Logger, CVP, or Finesse, and the sheet changes on its own revision.</p></div>
+<div class="callout note"><span class="label">Cisco Live framing</span><p>PSOCCT-1014 (2024) and BRKCCT-2031 (2025) pair “Webex Contact Center Enterprise (Dedicated Instance Cloud)” with “Webex Contact Center (Multi-tenant Cloud).” Agent-count bands on the 2025 deck are not design limits until a current data sheet maps them. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-6">[cite:6]</a> <mark class="recheck">re-check</mark></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Sister systems around Enterprise</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T4-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Desktop</text>
+<circle cx="200" cy="132" r="36" fill="url(#T4R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T4R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>Webex CCE</dt><dd>The article’s short name for Webex Contact Center Enterprise, a cloud contact center for large enterprises. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>WxCC</dt><dd>Multi-tenant Webex Contact Center. A different row in the same deployment-model list. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>UCCE</dt><dd>Unified Contact Center Enterprise. The article points at component documentation rather than folding it into Webex CCE. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>PCCE</dt><dd>Packaged Contact Center Enterprise. Listed as its own deployment model. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Quick Deployment Solution</dt><dd>A packaged Enterprise offer: 500 to 24,000 concurrent agents, U.S. only at the start, a fixed day-1 feature set. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Standard agent</dt><dd>Day-1 license on that offer: inbound and outbound voice, browser-based desktop, web and voice callbacks. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Premium agent</dt><dd>Adds email and web chat, multi-channel reporting and analytics, and supervisor monitoring and barge-in. DTMF IVR, Virtual Assistant–Voice via Google Dialogflow, and nailed-up mobile agent are day-1 items on the same offer, not inside the Premium-only sentence. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>A2Q</dt><dd>Assurance to Quality review. Customizations are evaluated there and add time. They are not in the initial quick deployment. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Edge Connect 3.0</dt><dd>In the Dedicated Instance customer example, one peer can serve both Dedicated Instance and Webex Contact Center Enterprise. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>WFO SKU scope</dt><dd>Article py6u9h states its feature SKUs for Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express. <a class="cite" href="#cite-7">[cite:7]</a></dd></div>
+<div class="term"><dt>Flow Designer</dt><dd>The build-and-manage article is for Webex Contact Center flows. Open Flow Designer for multi-tenant flows and Script Editor for an Enterprise ICM script. The build-and-manage article is for Webex Contact Center flows, and the two editors change on different releases. <a class="cite" href="#cite-8">[cite:8]</a></dd></div>
+<div class="term"><dt>Data sheet</dt><dd>The pointer in the Dedicated Instance article for Enterprise details. Numbers on that sheet were not copied here. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T4-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Enterprise ecosystem mind map">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise ecosystem mind map">
+<rect width="980" height="280" fill="#0c121c"/>
+<rect x="390" y="100" width="200" height="70" rx="16" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="490" y="140" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Webex CCE</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="28" y="30" width="150" height="48" rx="10" fill="#14110c" stroke="#ff8b9a"/><text x="42" y="58">QDS offer</text>
+<rect x="28" y="180" width="170" height="48" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="42" y="208">Dedicated Instance</text>
+<rect x="760" y="30" width="190" height="48" rx="10" fill="#14110c" stroke="#f0b429"/><text x="774" y="58">WxCC · do not merge</text>
+<rect x="760" y="180" width="190" height="48" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="774" y="208">WFO SKUs · py6u9h</text>
+</g>
+<path d="M178 54 H390" stroke="#ff8b9a" fill="none"/>
+<path d="M198 204 H390" stroke="#c4b5fd" fill="none"/>
+<path d="M590 54 H760" stroke="#f0b429" fill="none"/>
+<path d="M590 204 H760" stroke="#e0b07a" fill="none"/>
+</svg>
+</div>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only</strong> Peer columns are labels. No parity matrix for Microsoft, Amazon Connect, or Genesys is published on help.webex.com.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Concept</th><th>What Enterprise articles say</th><th>Why it matters</th><th>Where it is configured</th><th>What breaks if you treat it as WxCC</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>py6u9h lists feature SKUs, including WFM Agent Assist, for Webex Contact Center Enterprise, CCE, and CCX.</td><td>This is one of the few WFO pages that names Enterprise on purpose.</td><td>The SKU table in that article. Order-level applicability still has to match the quote.</td><td>Copying a multi-tenant “what’s new” blurb as if it replaced the SKU scope.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Quality management and recording</td><td>The Quick Deployment page does not define QM retention. Calling’s one-year / 100 GB numbers are a Calling article.</td><td>Supervisors will ask for retention. This overview cannot answer with a Calling figure.</td><td>Read the Enterprise quality-management screen in that product’s admin guide. Calling retention figures are a different article, and the Enterprise screen changes on its own release.</td><td>Quoting Dubber Go or Webex Calling retention as Enterprise QM policy.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>Not specified in the Enterprise overview articles read here. Calling endpoints still follow the Calling emergency articles when they are Calling endpoints.</td><td>Agent phones and the contact-center script are different layers.</td><td>Calling: RedSky and the emergency-notification toggle. Read emergency calling in the Enterprise admin guide for that cluster. Calling’s RedSky path and the emergency-notification toggle are the multi-tenant pages, and the Enterprise menu is a different console.</td><td>Proving 911 by watching a contact script while the phone cannot reach RedSky.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analytics and reporting</td><td>Premium day-1 on the quick offer includes multi-channel reporting and analytics. The article does not name Analyzer or a retention window.</td><td>Reporting is part of the premium license story, not a guessed CUIC build.</td><td>The offer’s premium agent capability. Read the reporting console named in the Enterprise offer you deployed. CUIC and the premium agent capability are different statements, and the console follows the offer.</td><td>Promising Control Hub’s 3-month collaboration charts as contact-center history.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Salesforce</td><td>Not in the articles read for this room.</td><td>CRM screen-pop is a later integration room.</td><td>Read the Salesforce install guide for the Enterprise release you run. CRM screen-pop for multi-tenant is a later room, and the install steps change with that CRM release.</td><td>Assuming the multi-tenant Salesforce connector article is the Enterprise install guide.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Dynamics 365 CRM connector</td><td>Not in the articles read for this room. Cisco’s multi-tenant connector is not Microsoft’s product Dynamics 365 Contact Center.</td><td>The product-name collision still applies if a customer says “Dynamics.”</td><td>Read the Dynamics connector guide for the product on the subscription. Multi-tenant Dynamics and Microsoft’s own contact-center product are different articles, and an Enterprise install is a separate guide.</td><td>Installing the multi-tenant connector and calling that an Enterprise design.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ServiceNow</td><td>Not in the articles read for this room.</td><td>Same boundary as the other CRM rows.</td><td>Read the ServiceNow install guide for the Enterprise release you run. The multi-tenant launch path is a different article, and the click-path changes with the ServiceNow release.</td><td>Using the multi-tenant ServiceNow article as if it were signed for Enterprise.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agents</td><td>Day-1 on the quick offer includes Virtual Assistant–Voice via Google Dialogflow. That line is not inside the Premium-only sentence.</td><td>That sentence is offer-scoped. It is not a claim about every Enterprise tenant.</td><td>Named on the Quick Deployment page. Dialogflow project steps are not in that page.</td><td>Treating T3’s bring-your-own virtual agent contract as automatically true here.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>AI Assistant</td><td>The Control Hub AI Assistant article read for T3 is a Webex Contact Center article. It is not re-cited here as an Enterprise feature.</td><td>Assistants multiply. Name the article’s product.</td><td>Read the AI Assistant article and check whether that Enterprise subscription lists it. The multi-tenant article is a different product, so the toggle is not assumed here.</td><td>Turning on a multi-tenant Control Hub toggle and assuming Enterprise inherited it.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>IVR and self-service</td><td>Day-1 includes DTMF IVR and Virtual Assistant–Voice. Those lines are not inside the Premium-only sentence. The quick offer says no customizations in the initial deployment.</td><td>Self-service on day 1 is the packaged IVR, not a custom VXML project.</td><td>The offer. Open Script Editor for the ICM script and Flow Designer only for a multi-tenant flow. The offer’s packaged IVR is not a custom VXML project, and no cited page names a cloud script tool that imports ICM.</td><td>Booking a CVP/VXML build into the 10-business-day quick deployment.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Digital channels</td><td>Premium adds email and web chat. Standard does not, in the day-1 list.</td><td>License tier decides whether digital exists on that offer’s first day.</td><td>Premium agent functionality on the Quick Deployment page.</td><td>Promising chat on a Standard-only day-1 cut.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Identity and SSO</td><td>Not specified as an Enterprise-only identity stack in these articles. Control Hub remains the Webex admin console in the wider Canon.</td><td>Agents still need a Webex identity story. Read the identity provider on the Webex org in Control Hub. Agents still need a Webex identity story, and these articles do not add a second IdP.</td><td>Control Hub SSO is T1. Read identity for that Enterprise deployment in its admin guide and in Control Hub. The articles read here do not state an exception, and any exception would be on that guide.</td><td>Building a private IdP design from UCCE habit.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>What crosses</th><th>What you can prove</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Quick Deployment offer</td><td>Webex CCE</td><td>A sized, U.S.-only initial deployment</td><td>500 to 24,000 concurrent agents, agents in the U.S., no on-prem interconnect at first</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex CCE agents</td><td>Dedicated Instance back office</td><td>One U.S. customer story</td><td>20,000 users, 5,000 of them agents. Both use a Local Gateway for PSTN. Inbound media flows from the LGW to the agent. After transfer, media flows from the LGW to the back-office user.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Edge Connect 3.0</td><td>DI and Webex CCE</td><td>One peer in that example</td><td>The article describes a single peer to both. It is not a generic sizing guide.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>UCCE / PCCE</td><td>Component documentation</td><td>A documentation handoff</td><td>The DI article does not restate those products as cloud Webex CCE parts</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>WFO feature SKUs</td><td>Enterprise, CCE, CCX</td><td>SKU scope sentence</td><td>py6u9h names those three. It does not by itself prove a multi-tenant order.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Flow Designer article</td><td>Webex Contact Center</td><td>A product boundary</td><td>nhovcy4 builds flows for Webex Contact Center. Enterprise scripting stays open.</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Multi-tenant architecture</td><td>WxCC only</td><td>AWS, Kubernetes, flow, queue</td><td>utqcm7 is not the Enterprise architecture page</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Cisco PSTN</td><td>Quick Deployment</td><td>A paid PSTN option</td><td>The page calls Cisco PSTN a paid option for toll-free, toll/local, and toll/outbound, with two access patterns. Carrier design beyond that sentence is not copied here.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Webex CCE idea</th><th>On-premises habit</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Cloud contact center for large enterprises</td><td>UCCE or PCCE component builds. The help article sends you to that documentation instead of merging the names.</td><td>No parity matrix is published on help.webex.com. Cisco’s documented calling migrations are Unified CM and BroadWorks/BroadCloud. <a href="#cite-9">[cite:9]</a> <a href="#cite-10">[cite:10]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Quick Deployment day-1 package</td><td>A custom UCCE install with CVP applications is a different shape. Custom work waits for A2Q and is not in the initial offer.</td><td>Amazon Connect and Genesys flow tools are orientation labels only. No equivalence is claimed.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agents on WxCCE, users on Dedicated Instance</td><td>A single on-prem cluster that held both agents and back office.</td><td>Microsoft Teams as a peer PBX is not established by these articles.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>When the data sheet is read, replace the component-list TODO with the sheet’s own words. Do not back-fill Router, Logger, CVP, or Finesse before that.</li>
+<li>T4-R04 can take scripting only after a help article names the Enterprise script tool. Flow Designer stays in T8 for multi-tenant Webex Contact Center.</li>
+<li>CRM rows stay open until an Enterprise-scoped connector article is cited.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>A design quotes Kubernetes and QueueToAgent for “Enterprise”</td><td>utqcm7 was pasted onto Webex CCE</td><td>Does the sentence live in the multi-tenant architecture article?</td><td>Move it back to T3. Keep this room on nmhk7ve, nyosarq, and ny65x1bb.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>The proposal promises chat on day 1</td><td>Standard and Premium were merged</td><td>Is the license Premium on the quick offer?</td><td>Chat and email are in the premium day-1 list, not the standard list.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agents outside the U.S. are in the first quick-deployment plan</td><td>The offer’s geography was ignored</td><td>Initial solution text: U.S. only, agents in the U.S.</td><td>Treat later countries as future, which the article already flags.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Someone sizes the product at 5,000 agents</td><td>One customer’s agent count was read as a cap</td><td>That story is 20,000 users, 5,000 of them agents</td><td>Use 500–24,000 only as the quick-offer range, and only for that offer.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>On-prem CVP is in the week-one build</td><td>Initial interconnect was assumed</td><td>The quick offer says no interconnection to existing on-premises for the initial deployment</td><td>Interconnect can be added after go-live. It is not day 1.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>How a quick deployment is allowed to start</h2>
+<ol>
+<li>Name the product. If the paperwork says Webex Contact Center without “Enterprise,” stop and open T3. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the paperwork is the Quick Deployment Solution, check geography: initial solution in the U.S. only, agents in the U.S. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Check the agent license. Standard day 1 is voice, browser desktop, web and voice callbacks. Premium adds the digital and supervisor list. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Refuse add-ons in that initial cut. Custom work goes through A2Q and lengthens the timeline. The page’s “as little as 10 days” assumes no customizations. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Do not connect existing on-premises contact center in that initial deployment. The page says interconnection can come after go-live. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>If the story is the ny65x1bb customer, keep the counts: 20,000 users, 5,000 of them agents. Back office moves to Dedicated Instance. Agents move to WxCCE. Both use a Local Gateway for PSTN. Edge Connect 3.0 is a single peer to both. Inbound media flows from the LGW to the agent. After a transfer, media flows from the LGW to the back-office user. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>What you can configure from these pages</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Step</th><th>Action the article supports</th><th>Stop</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Classify the deployment model using the five names in nmhk7ve.</td><td>Do not pick UCCE components as the cloud bill of materials from this article.</td></tr>
+<tr><td>2</td><td>For a quick deployment, lock day-1 features to the Standard or Premium list.</td><td>Email and web chat are premium in that list.</td></tr>
+<tr><td>3</td><td>Send customization to A2Q instead of the initial build.</td><td>The page says no add-ons or customizations are included at the start.</td></tr>
+<tr><td>4</td><td>Plan Cisco PSTN only as the paired option the quick-deployment page names.</td><td>Carrier dial-plan detail is not in that page.</td></tr>
+<tr><td>5</td><td>For the DI coexistence example, draw LGW to the agent, then to the DI user on transfer.</td><td>Do not generalize one customer’s 5,000 agents.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Open the script in Script Editor on the Enterprise system you are studying. Click-paths change with the script build, which is why this overview stays on the offer. Flow Designer’s menus belong to T8.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers that have a home, and numbers that do not</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Limit</th><th>Value</th><th>Where it lives</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>Quick Deployment concurrent agents</td><td>500 to 24,000</td><td>nyosarq</td><td>That offer only. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Quick Deployment geography</td><td>Initial solution in the U.S. only; agents must be in the U.S.</td><td>nyosarq</td><td>Additional locations are “may be added,” not current. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Quick Deployment calendar</td><td>Typically live in 10 business days from order placement; “as little as 10 days” if there are no customizations. Commitment of 12 months is also on the page.</td><td>nyosarq</td><td>Custom work adds time. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Example estate on DI coexistence</td><td>20,000 users, of whom 5,000 are agents, in that U.S. story</td><td>ny65x1bb</td><td>Not a product cap. <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Data-sheet scale and cloud component list</td><td>Read scale and components on the Enterprise data sheet linked from the help article. Those figures change when Cisco revises the sheet.</td><td>nmhk7ve points at the data sheet and does not restate it</td><td>Do not fill from Cisco Live bands. <a href="#cite-1">[cite:1]</a> <a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Enterprise script tool</td><td>Open Script Editor on the Enterprise system. This overview does not rename Flow Designer into that tool, because the build-and-manage article is the multi-tenant canvas.</td><td>Not named in the pages read here</td><td>Flow Designer is cited for Webex Contact Center. <a href="#cite-8">[cite:8]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Wrong product, wrong offer, wrong number</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Next move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>The design says “just use Flow Designer”</td><td>T8’s article was borrowed</td><td>nhovcy4 title is Webex Contact Center flows</td><td>Leave scripting open until an Enterprise article names the tool</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Chat is missing for standard agents on day 1</td><td>Expected on the quick offer</td><td>Email and web chat are in the premium paragraph</td><td>Change the license or the promise</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>The build includes a custom gadget in week one</td><td>A2Q was skipped</td><td>No add-ons or customizations in the initial quick deployment</td><td>Put the customization through A2Q and expect a longer timeline</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>On-prem UCCE must be trunked before go-live</td><td>The initial-interconnect rule was missed</td><td>No interconnection to existing on-premises in the initial deployment</td><td>Go live first. Add interconnect after, as the page allows</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A diagram shows agents registering through the Local Gateway</td><td>Calling fact from T2 applied blindly, or the opposite mistake</td><td>The DI example uses LGW for the media path it describes. Endpoint registration through LGW is a Calling statement in T2, not a new Enterprise claim.</td><td>Draw only the path ny65x1bb describes</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>WFO SKUs from a multi-tenant spreadsheet</td><td>Scope sentence ignored</td><td>py6u9h names Enterprise, CCE, and CCX</td><td>Match the order to that scope. Do not invert it onto multi-tenant from this page either.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Someone quotes “48,000 agents” as Webex CCE</td><td>A Cisco Live band without a product map</td><td>BRKCCT-2031 extract does not prove the mapping</td><td>Leave it re-check. Use the quick-offer range only for that offer.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>The runbook says the cloud is UCCE with a new logo</td><td>The deployment-model list was collapsed</td><td>nmhk7ve lists UCCE, PCCE, Webex CCE, and WxCC separately</td><td>Split the names before any component design</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What one sentence defines Webex Contact Center Enterprise in the DI article?</summary><p class="answer">A cloud contact center for large enterprises. Details are deferred to the data sheet, which this room does not invent. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which names does that article refuse to merge?</summary><p class="answer">UCCX, UCCE, PCCE, Webex CCE, and WxCC. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Who is the Quick Deployment Solution for, geographically, at the start?</summary><p class="answer">The initial solution is available in the U.S. only, and agents must also be in the U.S. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does Standard include on day 1 of that offer?</summary><p class="answer">Inbound and outbound voice, a browser-based agent desktop, and web and voice callbacks. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does Premium add that Standard’s day-1 list does not?</summary><p class="answer">Email and web chat, multi-channel reporting and analytics, and supervisor monitoring and barge-in. DTMF IVR, Virtual Assistant–Voice, and nailed-up mobile agent are day-1 items for the offer, not Premium-only. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Where do customizations go?</summary><p class="answer">Assurance to Quality (A2Q). They are not part of the initial quick deployment, and they add time. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Can the first cut trunk to an existing on-premises contact center?</summary><p class="answer">Not in the initial deployment. The page says that interconnection can be added after go-live. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the 5,000-agent figure?</summary><p class="answer">Part of one U.S. customer story: 20,000 users, 5,000 of whom are call-center agents. Not a published product maximum. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What media path does that example describe?</summary><p class="answer">Both Dedicated Instance and WxCCE use a Local Gateway for PSTN. Inbound media flows from the LGW to the agent. After the agent transfers, media flows from the LGW to the Dedicated Instance back-office user. Edge Connect 3.0 can be a single peer to both. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why is utqcm7 the wrong architecture page?</summary><p class="answer">It is the Webex Contact Center architecture article used in T3. The DI article treats WxCC and Webex CCE as different models. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which WFO article names Enterprise on purpose?</summary><p class="answer">py6u9h, scoped to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express. <a class="cite" href="#cite-7">[cite:7]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What will you not claim about Router, Logger, CVP, or Finesse?</summary><p class="answer">That they are components of cloud Webex CCE. The articles read here do not say that. Read the component names on the Enterprise data sheet itself. The help articles read here do not say what that sheet lists, and the sheet changes on its own revision. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: keep the names apart</h2>
+<p>No Enterprise tenant is required. The pass condition is a one-page classification you can defend from the citations.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> Write the five deployment-model names from nmhk7ve on five lines. Do not draw arrows that mean “same product.”</label></li>
+<li><label><input type="checkbox"> Under Webex CCE, write the one-sentence definition and “data sheet not copied.”</label></li>
+<li><label><input type="checkbox"> On a second sheet, copy the Standard day-1 list and the Premium day-1 list. Mark chat as premium.</label></li>
+<li><label><input type="checkbox"> Write the geography rule: initial solution U.S. only, agents in the U.S.</label></li>
+<li><label><input type="checkbox"> Write “no on-prem interconnect in the initial deployment” and “A2Q for customization.”</label></li>
+<li><label><input type="checkbox"> Sketch the DI example: 20,000 users, 5,000 agents, LGW for PSTN on both sides, Edge Connect 3.0 as one peer. Inbound media LGW to agent. After transfer, LGW to the back-office user.</label></li>
+<li><label><input type="checkbox"> Cross out any Kubernetes, entry-point, or Flow Designer sentence you were about to reuse. Point those at T3 or T8.</label></li>
+<li><label><input type="checkbox"> Reflection: which number in your last design was an offer, which was an example, and which was a deck band?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Webex Contact Center Enterprise, in the DI contact-center article, is:</p>
+<ol type="A"><li>A synonym for multi-tenant WxCC</li><li>A cloud contact center for large enterprises</li><li>Packaged CCE with a cloud login</li><li>Unified CCX</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>The Quick Deployment range of 500 to 24,000 concurrent agents applies to:</p>
+<ol type="A"><li>Every Webex Contact Center product</li><li>That quick-deployment offer</li><li>The BRKCCT-2031 slide as a design limit</li><li>Dedicated Instance cores</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>A sponsor wants agents in London on the initial quick deployment. What does the article allow?</p>
+<details class="reveal"><summary>Reveal</summary><p>The initial solution is U.S. only, and agents must be in the U.S. Other locations are described as possible later, not as part of that initial solution. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Email and web chat on the quick offer’s day-1 list sit with:</p>
+<ol type="A"><li>Standard</li><li>Premium</li><li>Both</li><li>Neither</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>The customer wants a custom desktop gadget in the first 10 business days. Where does that request go?</p>
+<details class="reveal"><summary>Reveal</summary><p>A2Q. Customizations are not in the initial deployment and add time. The short calendar assumes no customizations. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>The 5,000-agent figure in the DI deployment article is:</p>
+<ol type="A"><li>The product maximum</li><li>A customer example</li><li>The quick-offer floor</li><li>A per-gateway cap</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. It is the agent count inside a 20,000-user U.S. customer story, not a product maximum. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Draw it</span></header><p>Draw five boxes: UCCX, UCCE, PCCE, Webex CCE, WxCC. Put the quick offer inside the Webex CCE story, not inside WxCC.</p>
+<details class="reveal"><summary>Reveal</summary><p>That is the separation nmhk7ve’s list supports, with nyosarq as an Enterprise offer. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>py6u9h’s WFO SKUs are stated for:</p>
+<ol type="A"><li>Multi-tenant WxCC only</li><li>Enterprise, CCE, and CCX</li><li>Webex Calling recording</li><li>Partner Hub</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-7">[cite:7]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>A colleague pastes “services in Kubernetes” into the Enterprise overview. Which article did they actually read?</p>
+<details class="reveal"><summary>Reveal</summary><p>The multi-tenant architecture article, utqcm7, which is T3’s source. It is not the Enterprise definition. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Initial interconnection to an existing on-premises deployment, on the quick offer, is:</p>
+<ol type="A"><li>Required</li><li>Not made; it can be added after go-live</li><li>Only via Flow Designer</li><li>Forbidden forever</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Scenario</span></header><p>You are asked to list Router, Logger, CVP, and Finesse as cloud Webex CCE components because “that is CCE.” What do you answer?</p>
+<details class="reveal"><summary>Reveal</summary><p>The help articles read for this room do not say that. UCCE and PCCE have their own component documentation. The data sheet was not copied. Read the component list on the Enterprise data sheet the day you design. It changes when Cisco revises the sheet, so this room points at the sheet instead of freezing a copy. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Edge Connect 3.0 in ny65x1bb is described as:</p>
+<ol type="A"><li>A Flow Designer activity</li><li>A single peer that can reach both Dedicated Instance and Webex CCE in that example</li><li>The RedSky host</li><li>A Partner Hub role</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Script only</h2>
+<!-- AUDIO:overview | assets/audio/T4-R01/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> Say the five product names. Say the quick offer is U.S.-only at the start, Standard versus Premium, and not a license to paste the multi-tenant architecture onto Enterprise.</p>
+<p class="placeholder-asset">No audio file is shipped. Studio adds the mp3 later.</p></div>
+<!-- AUDIO:mistake | assets/audio/T4-R01/mistake.mp3 -->
+<div class="audio-slot"><p><strong>60 seconds.</strong> The mistake to retire: treating 5,000, 24,000, and a Cisco Live band as the same kind of number.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>90-second answer</h2>
+<p>“Webex Contact Center Enterprise is Cisco’s cloud contact center for large enterprises. I do not use that name for multi-tenant Webex Contact Center, and I do not use it for on-premises UCCE or PCCE. Those are separate deployment models in the Dedicated Instance contact-center article. If the project is the Quick Deployment Solution, I stay inside that offer: 500 to 24,000 concurrent agents, U.S. only at the start, Standard voice versus Premium digital and supervisor tools, no custom gadgets and no on-prem interconnect in the initial cut. A story about 20,000 users and 5,000 agents, with back office on Dedicated Instance and agents on Enterprise, is one customer example: Local Gateway for PSTN on both sides, one Edge Connect peer, inbound media from the gateway to the agent, and after transfer from the gateway to the back-office user. It is not a cap. I will not invent Router, Logger, or Flow Designer as the cloud component list until a page I can cite says so.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14 unless noted. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — <a href="https://help.webex.com/article/nmhk7ve">help.webex.com article nmhk7ve</a>. Webex Contact Center Enterprise is a cloud contact center for large enterprises. UCCX, UCCE, PCCE, Webex CCE, and WxCC are listed as different models. Data-sheet numbers are not copied.</li>
+<li id="cite-2">Webex Contact Center Enterprise Quick Deployment Solution — help.webex — article nyosarq — <a href="https://help.webex.com/article/nyosarq">help.webex.com article nyosarq</a>. 500 to 24,000 concurrent agents. Initial solution U.S. only. Standard versus Premium day-1. A2Q. No initial on-premises interconnection.</li>
+<li id="cite-3">Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — <a href="https://help.webex.com/article/ny65x1bb">help.webex.com article ny65x1bb</a>. One U.S. story: 20,000 users, 5,000 agents. Back office on Dedicated Instance, agents on WxCCE. Both use a Local Gateway for PSTN. Edge Connect 3.0 can be one peer to both. Inbound media is LGW to agent; after transfer, LGW to the back-office user.</li>
+<li id="cite-4">Webex Contact Center Architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a>. Multi-tenant architecture. Not used as the Enterprise architecture.</li>
+<li id="cite-5">PSOCCT-1014 — Cisco Live 2024 — portfolio framing of multi-tenant versus Enterprise. <mark class="recheck">re-check</mark>.</li>
+<li id="cite-6">BRKCCT-2031 — Cisco Live 2025 — agent bands are not used as design limits. <mark class="recheck">re-check</mark>. Which band belongs to which product remains open, as in T3.</li>
+<li id="cite-7">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>. Scoped to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express.</li>
+<li id="cite-8">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a>. Cited here only as the Webex Contact Center flow article, not as an Enterprise script tool.</li>
+<li id="cite-9">Migrate Unified CM to Webex Calling — introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a>. Documented calling migration. Not a contact-center parity matrix.</li>
+<li id="cite-10">Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb — <a href="https://help.webex.com/article/n1ku0vfb">help.webex.com article n1ku0vfb</a>.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Read the component list and the scale numbers on the Enterprise data sheet. Both change when Cisco revises the sheet.</li>
+<li>Open Script Editor for Webex CCE scripting. No cited help page names a cloud script tool for that product, and Flow Designer stays the multi-tenant canvas.</li>
+<li>Enterprise CRM connectors, QM retention, and an Enterprise emergency menu stay open.</li>
+<li>Map BRKCCT-2031 bands only when a current sheet does. <mark class="recheck">re-check</mark></li>
+<li>This room still does not claim a data-sheet component list, an Enterprise script tool, a QM console, CRM connector scope, AI Assistant on Enterprise, or an identity exception.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T3-R07-analyzer-reporting.html"><span>Previous</span><strong>T3-R07</strong><em>Analyzer &amp; Reporting</em></a><a class="next" href="T5-R02-di-architecture-peering.html"><span>Next</span><strong>T5-R02</strong><em>DI Architecture &amp; Peering</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span><span class="noprint">Opens from the hub. No server is required to read.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="CypherWebex Canon preview card">
+<rect width="1200" height="630" fill="#0b0e14"/>
+<rect x="36" y="36" width="1128" height="558" rx="28" fill="#14110c" stroke="#e0b07a" stroke-width="3"/>
+<rect x="72" y="84" width="64" height="64" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<path d="M88 100h12v32H88z" fill="#e0b07a"/>
+<path d="M108 100h28v6h-28zm0 12h28v6h-28zm0 12h20v6h-20z" fill="#efe7d6"/>
+<text x="156" y="112" fill="#e0b07a" font-family="Georgia, serif" font-size="28">Study notes</text>
+<text x="156" y="142" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="18">noindex · offline · not for publication</text>
+<text x="72" y="250" fill="#efe7d6" font-family="Georgia, serif" font-size="72">CypherWebex Canon</text>
+<text x="72" y="320" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="28">Control Hub, Webex Calling, and both contact centers.</text>
+<g font-family="Segoe UI, sans-serif" font-size="20">
+<rect x="72" y="380" width="150" height="44" rx="10" fill="#14262a" stroke="#3ecfb2"/><text x="90" y="408" fill="#3ecfb2">T1 Hub</text>
+<rect x="238" y="380" width="170" height="44" rx="10" fill="#121a2a" stroke="#7eb6ff"/><text x="256" y="408" fill="#7eb6ff">T2 Calling</text>
+<rect x="424" y="380" width="150" height="44" rx="10" fill="#2a220c" stroke="#f0b429"/><text x="442" y="408" fill="#f0b429">T3 WxCC</text>
+<rect x="590" y="380" width="150" height="44" rx="10" fill="#2a1216" stroke="#ff8b9a"/><text x="608" y="408" fill="#ff8b9a">T4 WxCCE</text>
+<rect x="756" y="380" width="180" height="44" rx="10" fill="#1a220c" stroke="#c6e27a"/><text x="774" y="408" fill="#c6e27a">T6 Migration</text>
+<rect x="952" y="380" width="160" height="44" rx="10" fill="#26101f" stroke="#f0a0ff"/><text x="970" y="408" fill="#f0a0ff">T8 Flows</text>
+</g>
+<text x="72" y="500" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="20">Facts cite help.webex.com or developer.webex.com, or they stay marked to verify.</text>
+<text x="72" y="548" fill="#e0b07a" font-family="Georgia, serif" font-size="22">A local card. Not a share link.</text>
+</svg>

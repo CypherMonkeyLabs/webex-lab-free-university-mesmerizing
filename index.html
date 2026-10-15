@@ -1,15 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Webex Lab</title>
-  <meta name="description" content="Open the Webex Lab practice console.">
-  <link rel="canonical" href="campus/">
-  <meta http-equiv="refresh" content="0; url=campus/">
-  <script>location.replace("campus/");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="CypherWebex Canon">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="assets/og-card.svg">
+<title>Webex Lab Free University</title>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/wow.css">
+<link rel="icon" href="assets/mark.svg">
 </head>
-<body>
-  <p><a href="campus/">Enter the Webex Lab</a></p>
-</body>
-</html>
+<body class="v4 home-world">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>63 rooms</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="index.html" aria-current="page" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<section class="world-hero uni-fold" id="uni-fold" data-world aria-label="University front door">
+<canvas class="world-gl" data-world-canvas aria-hidden="true"></canvas>
+<div class="world-ui">
+<p class="world-kicker" data-i18n="kicker">Webex study · 8 tracks · offline</p>
+<p class="world-title"><span data-i18n="greeting">Learn the Canon in orbit.</span></p>
+<p class="world-lede" data-i18n="lede">Sixty-three rooms. Watch the call path, then open a track.</p>
+<nav class="uni-menu" aria-label="University">
+<a href="diagrams.html" data-i18n="diagrams">Diagrams</a>
+<a href="flows.html" data-i18n="flows">Flows</a>
+<a href="charts.html" data-i18n="charts">Charts</a>
+<a href="downloads.html" data-i18n="cheat">Cheat Codes</a>
+<a href="play.html" data-i18n="play">Play</a>
+<a href="ecosystem.html" data-i18n="ecosystem">Ecosystem</a>
+<a href="downloads.html" data-i18n="downloads">Downloads</a>
+<a href="careers.html" data-i18n="careers">Careers</a>
+</nav>
+</div>
+<div class="hud" data-hud>
+<button type="button" class="hud-sheet-toggle" aria-expanded="false" aria-controls="hud-sheet"><span data-i18n="sheet">Scene controls</span><span class="hud-sheet-chev" aria-hidden="true"></span></button>
+<div class="hud-sheet" id="hud-sheet">
+<section class="hud-panel hud-stats" data-depth="0.6">
+<div class="fold-counts" aria-label="Live counters">
+<span class="progress-ring" data-progress-ring style="--p:0"><span>0%</span></span>
+<span><b data-count="63">0</b> rooms</span>
+<span><b data-count="483">0</b> prompts</span>
+<span><b data-count="959">0</b> cards</span>
+<span><b data-count="28">0</b> diagrams</span>
+</div>
+</section>
+<section class="hud-panel hud-themes" data-depth="0.35">
+<div class="theme-switch" role="group" aria-label="Theme switcher">
+<button type="button" data-set-theme="aurora">Aurora</button>
+<button type="button" data-set-theme="neon">Neon</button>
+<button type="button" data-set-theme="holographic">Holographic</button>
+<button type="button" data-set-theme="cyberpunk">Cyberpunk</button>
+<button type="button" data-set-theme="sunset">Sunset</button>
+<button type="button" data-set-theme="paper">Light</button>
+</div>
+</section>
+<section class="hud-panel hud-lang" data-depth="0.5">
+<label class="lang-switch"><span data-i18n="langName">Language</span>
+<select data-lang aria-label="Language">
+<option value="en">English</option>
+<option value="es">Español</option>
+<option value="hi">हिन्दी</option>
+<option value="te">తెలుగు</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="ja">日本語</option>
+<option value="ar">العربية</option>
+</select></label>
+<a class="region-link" href="regions.html" data-i18n="regions">Countries and residency</a>
+</section>
+<section class="hud-panel hud-mascot" data-depth="0.8">
+<div class="mascot-row" aria-label="CypherMonkey">
+<svg class="mascot" viewBox="0 0 160 180" role="img" aria-label="CypherMonkey">
+<g class="mascot-var is-var" data-variant="wave">
+<ellipse cx="82" cy="150" rx="28" ry="10" fill="#020617" opacity=".35"/>
+<path class="tail" d="M118 112 q28 8 18 28" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<rect class="body" x="58" y="96" width="48" height="46" rx="20" fill="var(--mascot-fur,#fbbf24)"/>
+<path class="arm arm-left" d="M58 108 q-24 8 -16 28" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<path class="arm arm-wave" d="M106 104 q24 -28 18 -8" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<circle class="ear" cx="46" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/><circle class="ear" cx="114" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/>
+<circle class="head" cx="80" cy="70" r="36" fill="var(--mascot-fur,#fbbf24)"/>
+<ellipse cx="80" cy="78" rx="20" ry="16" fill="#fde68a"/>
+<g class="eye"><ellipse cx="68" cy="68" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="69" cy="69" r="3" fill="#1c1917"/></g>
+<g class="eye"><ellipse cx="92" cy="68" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="93" cy="69" r="3" fill="#1c1917"/></g>
+<path class="mouth" d="M68 86 Q80 98 92 86" fill="none" stroke="#1c1917" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<g class="mascot-var" data-variant="cheer">
+<ellipse cx="82" cy="150" rx="28" ry="10" fill="#020617" opacity=".35"/>
+<rect x="58" y="96" width="48" height="46" rx="20" fill="var(--mascot-fur,#fbbf24)"/>
+<path class="arm" d="M58 100 q-20 -30 4 -36" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<path class="arm arm-wave" d="M106 100 q20 -30 -2 -36" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<circle cx="46" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/><circle cx="114" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/>
+<circle cx="80" cy="70" r="36" fill="var(--mascot-fur,#fbbf24)"/>
+<ellipse cx="80" cy="78" rx="20" ry="16" fill="#fde68a"/>
+<g class="eye"><ellipse cx="68" cy="66" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="68" cy="65" r="3" fill="#1c1917"/></g>
+<g class="eye"><ellipse cx="92" cy="66" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="92" cy="65" r="3" fill="#1c1917"/></g>
+<path d="M66 84 Q80 100 94 84" fill="none" stroke="#1c1917" stroke-width="2.5"/>
+</g>
+<g class="mascot-var" data-variant="think">
+<ellipse cx="82" cy="150" rx="28" ry="10" fill="#020617" opacity=".35"/>
+<rect x="58" y="96" width="48" height="46" rx="20" fill="var(--mascot-fur,#fbbf24)"/>
+<path class="arm" d="M106 110 q16 6 8 20" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<path class="arm" d="M70 108 q-8 16 6 22" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<circle cx="46" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/><circle cx="114" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/>
+<circle cx="80" cy="70" r="36" fill="var(--mascot-fur,#fbbf24)"/>
+<ellipse cx="80" cy="78" rx="20" ry="16" fill="#fde68a"/>
+<g class="eye"><ellipse cx="68" cy="70" rx="6" ry="6" fill="#fff"/><circle class="pupil" cx="66" cy="70" r="3" fill="#1c1917"/></g>
+<g class="eye"><ellipse cx="92" cy="70" rx="6" ry="6" fill="#fff"/><circle class="pupil" cx="90" cy="70" r="3" fill="#1c1917"/></g>
+<path d="M70 90 H90" fill="none" stroke="#1c1917" stroke-width="2.5"/>
+</g>
+<g class="mascot-var" data-variant="idle">
+<ellipse cx="82" cy="150" rx="28" ry="10" fill="#020617" opacity=".35"/>
+<path class="tail" d="M118 118 q22 16 8 26" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<rect x="58" y="96" width="48" height="46" rx="20" fill="var(--mascot-fur,#fbbf24)"/>
+<path class="arm" d="M56 112 q-16 16 -4 24" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<path class="arm" d="M108 112 q16 16 4 24" fill="none" stroke="var(--mascot-fur,#fbbf24)" stroke-width="8" stroke-linecap="round"/>
+<circle cx="46" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/><circle cx="114" cy="62" r="12" fill="var(--mascot-fur,#fbbf24)"/>
+<circle cx="80" cy="70" r="36" fill="var(--mascot-fur,#fbbf24)"/>
+<ellipse cx="80" cy="78" rx="20" ry="16" fill="#fde68a"/>
+<g class="eye"><ellipse cx="68" cy="68" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="69" cy="69" r="3" fill="#1c1917"/></g>
+<g class="eye"><ellipse cx="92" cy="68" rx="6" ry="7" fill="#fff"/><circle class="pupil" cx="93" cy="69" r="3" fill="#1c1917"/></g>
+<path d="M70 88 Q80 94 90 88" fill="none" stroke="#1c1917" stroke-width="2.5"/>
+</g>
+</svg>
+</div>
+</section>
+<section class="hud-panel hud-audio lab-audio" data-audio-player data-depth="0.25">
+<p><span data-i18n="audioTitle">Architect desk</span></p>
+<audio data-audio controls preload="none"></audio>
+<div class="audio-rates"><button type="button" data-rate="0.85">0.85×</button><button type="button" data-rate="1">1×</button><button type="button" data-rate="1.15">1.15×</button></div>
+<p><a href="audio/scripts/how-to-use.md">Script</a> · <a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Share</a> · <a href="https://cyphermonkeylabs.com/#contact">Comment</a></p>
+</section>
+</div>
+</div>
+</section>
+
+<section class="hero-live" aria-label="Introduction">
+<canvas class="mesh-canvas" data-mesh aria-hidden="true"></canvas>
+<div class="hero-copy">
+<p class="kicker">💎 Webex study · 8 tracks</p>
+<h1>Learn the Canon <span class="grad-text">in color.</span></h1>
+<p class="lede">Sixty-three self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, and flows. Read offline. Product claims stay cited.</p>
+<p class="hero-actions"><a class="btn" href="start.html">🚀 Start Here</a> <a class="ghost" href="#rooms">🗂️ All Rooms</a> <a class="ghost" href="ecosystem.html">🌐 Ecosystem Map</a> <a class="ghost" href="mastery.html">🧭 Mastery</a> <a class="ghost" href="play.html">🎮 Play</a> <a class="ghost" href="downloads.html">⬇️ Cheat Codes</a></p>
+</div>
+<div class="hero-art tilt" data-parallax>
+<svg class="eco-svg" viewBox="0 0 640 460" role="img" aria-label="Illustrated Webex ecosystem: phone, Control Hub, gateway, and contact center">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".45" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<linearGradient id="hubg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#818cf8"/></linearGradient>
+</defs>
+<g data-depth="0.2">
+<rect width="640" height="460" rx="28" fill="#0b1020"/>
+<circle cx="520" cy="70" r="46" fill="url(#sky)" opacity=".85"/>
+<circle cx="90" cy="380" r="70" fill="#22d3ee" opacity=".25"/>
+<circle cx="560" cy="390" r="90" fill="#f472b6" opacity=".22"/>
+</g>
+<g data-depth="0.55">
+<rect x="210" y="150" width="210" height="150" rx="22" fill="url(#hubg)"/>
+<rect x="232" y="172" width="36" height="28" rx="6" fill="#0b1020" opacity=".35"/>
+<rect x="278" y="172" width="36" height="28" rx="6" fill="#0b1020" opacity=".35"/>
+<rect x="324" y="172" width="36" height="28" rx="6" fill="#0b1020" opacity=".35"/>
+<rect x="370" y="172" width="28" height="28" rx="6" fill="#0b1020" opacity=".35"/>
+<rect x="232" y="212" width="166" height="18" rx="9" fill="#fff" opacity=".8"/>
+<text x="315" y="268" text-anchor="middle" fill="#0b1020" font-family="system-ui,sans-serif" font-size="16" font-weight="800">Control Hub</text>
+<ellipse cx="120" cy="250" rx="70" ry="36" fill="#67e8f9"/>
+<text x="120" y="256" text-anchor="middle" fill="#083344" font-family="system-ui,sans-serif" font-size="13" font-weight="800">Calling</text>
+<rect x="470" y="210" width="120" height="78" rx="16" fill="#f9a8d4"/>
+<text x="530" y="255" text-anchor="middle" fill="#500724" font-family="system-ui,sans-serif" font-size="13" font-weight="800">Contact center</text>
+</g>
+<g data-depth="1">
+<rect x="48" y="300" width="54" height="96" rx="12" fill="#f8fafc"/>
+<rect x="56" y="312" width="38" height="58" rx="6" fill="#312e81"/>
+<circle cx="75" cy="382" r="5" fill="#22d3ee"/>
+<rect x="250" y="318" width="140" height="46" rx="12" fill="#fbbf24"/>
+<text x="320" y="346" text-anchor="middle" fill="#422006" font-family="system-ui,sans-serif" font-size="14" font-weight="800">CUBE</text>
+<path class="packet-lane" id="hero-lane" d="M102 330 C 160 300, 200 340, 250 340" fill="none" stroke="#22d3ee" stroke-width="4"/>
+<path d="M390 340 H 470" fill="none" stroke="#f472b6" stroke-width="4"/>
+</g>
+</svg>
+</div>
+</section>
+<div class="wrap">
+<section class="stat-row" aria-label="What you will learn">
+<div class="stat"><b data-count="63">0</b><span>rooms</span></div>
+<div class="stat"><b data-count="483">0</b><span>practice quiz questions</span></div>
+<div class="stat"><b data-count="842">0</b><span>flashcards</span></div>
+<div class="stat"><b data-count="63">0</b><span>written rooms of 63</span></div>
+</section>
+<section aria-labelledby="map-title">
+<p class="kicker">01 · Track map</p>
+<h2 id="map-title">🗺️ Eight colorful paths</h2>
+<p class="lede">Each tile is one track. The ring fills as you open rooms in this browser.</p>
+<div class="track-map"><a class="track-tile tilt" href="tracks/T1/index.html" style="--card:#3ecfb2">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#083344"/><rect x="16" y="18" width="40" height="36" rx="6" fill="#ecfeff"/><rect x="22" y="24" width="8" height="7" rx="1" fill="#0f9b8e"/><rect x="32" y="24" width="8" height="7" rx="1" fill="#22d3ee"/><rect x="42" y="24" width="8" height="7" rx="1" fill="#0f9b8e"/><rect x="22" y="36" width="28" height="5" rx="2" fill="#99f6e4"/><rect x="30" y="44" width="12" height="10" fill="#155e75"/></svg></span>
+<span class="tile-num">01</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T1"/></svg>
+<h3>🏢 Control Hub &amp; Platform</h3>
+<p>7 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T2/index.html" style="--card:#7eb6ff">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#082044"/><rect x="26" y="12" width="20" height="36" rx="6" fill="#e0f2fe"/><rect x="30" y="16" width="12" height="20" rx="2" fill="#1d4ed8"/><circle cx="36" cy="42" r="2" fill="#38bdf8"/><path d="M18 52h36M24 58h24" stroke="#7eb6ff" stroke-width="3" stroke-linecap="round"/><circle cx="52" cy="22" r="6" fill="#38bdf8"/></svg></span>
+<span class="tile-num">02</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T2"/></svg>
+<h3>☎️ Webex Calling</h3>
+<p>8 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T3/index.html" style="--card:#f0b429">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#3b2204"/><circle cx="36" cy="28" r="12" fill="#fde68a"/><path d="M20 50c4-8 28-8 32 0" fill="#fbbf24"/><rect x="14" y="40" width="10" height="16" rx="4" fill="#f59e0b"/><rect x="48" y="40" width="10" height="16" rx="4" fill="#f59e0b"/><circle cx="54" cy="18" r="5" fill="#fff"/></svg></span>
+<span class="tile-num">03</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T3"/></svg>
+<h3>🎧 WxCC Multi-tenant</h3>
+<p>9 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T4/index.html" style="--card:#ff8b9a">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#3f0614"/><path d="M36 12l16 8v14c0 10-7 16-16 20-9-4-16-10-16-20V20z" fill="#fecdd3"/><rect x="30" y="28" width="12" height="10" rx="2" fill="#e11d48"/><path d="M28 44h16" stroke="#fb7185" stroke-width="3" stroke-linecap="round"/></svg></span>
+<span class="tile-num">04</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T4"/></svg>
+<h3>🏛️ WxCC Enterprise</h3>
+<p>10 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T5/index.html" style="--card:#c4b5fd">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#2e1065"/><ellipse cx="36" cy="40" rx="18" ry="12" fill="#ddd6fe"/><rect x="28" y="22" width="16" height="14" rx="3" fill="#c4b5fd"/><path d="M14 36h10M48 36h10M22 54h28" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="36" r="3" fill="#f5f3ff"/><circle cx="54" cy="36" r="3" fill="#f5f3ff"/></svg></span>
+<span class="tile-num">05</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T5"/></svg>
+<h3>🔒 Dedicated Instance</h3>
+<p>6 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T6/index.html" style="--card:#c6e27a">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#1a2e05"/><rect x="12" y="30" width="28" height="18" rx="4" fill="#ecfccb"/><rect x="32" y="24" width="22" height="16" rx="3" fill="#bef264"/><circle cx="22" cy="52" r="4" fill="#365314"/><circle cx="48" cy="52" r="4" fill="#365314"/><path d="M40 32h8" stroke="#3f6212" stroke-width="2"/></svg></span>
+<span class="tile-num">06</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T6"/></svg>
+<h3>🚚 Migrations</h3>
+<p>8 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T7/index.html" style="--card:#ffb067">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#431407"/><circle cx="24" cy="36" r="10" fill="#ffedd5"/><circle cx="48" cy="24" r="8" fill="#fdba74"/><circle cx="50" cy="48" r="8" fill="#fb923c"/><path d="M32 32l10-6M32 40l12 6" stroke="#fff7ed" stroke-width="3" stroke-linecap="round"/></svg></span>
+<span class="tile-num">07</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T7"/></svg>
+<h3>📡 SIP, Routing &amp; Queues</h3>
+<p>7 rooms</p>
+</a><a class="track-tile tilt" href="tracks/T8/index.html" style="--card:#f0a0ff">
+<span class="tile-art" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" rx="16" fill="#4a044e"/><rect x="16" y="18" width="18" height="16" rx="4" fill="#fae8ff"/><rect x="38" y="18" width="18" height="16" rx="4" fill="#f0abfc"/><rect x="27" y="40" width="18" height="16" rx="4" fill="#e879f9"/><path d="M34 26h4M36 34v6M45 34l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span>
+<span class="tile-num">08</span>
+<svg class="tile-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="ring-track"/><circle cx="18" cy="18" r="15" class="ring-value" data-tile-ring="T8"/></svg>
+<h3>✨ Flows, Integrations &amp; Latest</h3>
+<p>8 rooms</p>
+</a></div>
+</section>
+<section aria-labelledby="plan-title">
+<p class="kicker">02 · First month</p>
+<h2 id="plan-title">📅 30-day plan</h2>
+<p class="lede">The first month from the study path: Control Hub, then calling. The 60- and 90-day rooms stay on <a href="start.html#path">Learning Paths</a>.</p>
+<ol class="timeline"><li class="plan-item"><span class="day">Day 1–6</span><div class="plan-card"><a href="rooms/T1-R01-control-hub-foundations.html"><b>01</b>Control Hub Foundations</a><p>Org, roles, navigation, and the admin mental model.</p></div></li><li class="plan-item"><span class="day">Day 7–12</span><div class="plan-card"><a href="rooms/T1-R06-analytics-troubleshooting.html"><b>02</b>Analytics &amp; Troubleshooting</a><p>Troubleshooting view, analytics clocks, and client logs.</p></div></li><li class="plan-item"><span class="day">Day 13–18</span><div class="plan-card"><a href="rooms/T2-R02-local-gateway-pstn.html"><b>03</b>Local Gateway &amp; PSTN</a><p>Local gateway, Cloud Connected PSTN, and Cisco PSTN.</p></div></li><li class="plan-item"><span class="day">Day 19–24</span><div class="plan-card"><a href="rooms/T2-R03-dial-plans-pstn-routing.html"><b>04</b>Dial Plans &amp; Routing</a><p>Location dialing, enterprise dial plans, and the three PSTN choices.</p></div></li><li class="plan-item"><span class="day">Day 25–30</span><div class="plan-card"><a href="rooms/T2-R06-calling-security-compliance.html"><b>05</b>Calling Security</a><p>TLS, SRTP, Calling encryption, recording, and RedSky.</p></div></li></ol>
+</section>
+<section class="tonight" aria-label="What changed tonight">
+<h2>What changed tonight</h2>
+<p class="kicker">redesign-v4 — 2026-10-14</p>
+<ul><li>A persistent track sidebar, an on-this-page list, and a search box that covers rooms, the glossary, flashcards, and the practice quiz.</li><li>Aurora, Neon, Sunset, and Paper themes. Motion stays off when the reader asks for less of it.</li><li>Room media appears when data/media.json lists an svg, flow, image, audio, or video for that room.</li></ul>
+
+</section>
+<section class="dash" data-dashboard aria-label="Progress desk">
+<div class="dash-copy">
+<p class="kicker">This browser only</p>
+<h2>Your progress</h2>
+<p data-dash-summary>Open a room and it counts. Lab checks and revealed quiz answers stay in localStorage. No account, no network.</p>
+<p><button type="button" class="ghost" data-cmdk-open>Search the Canon <kbd>Ctrl</kbd><kbd>K</kbd></button></p>
+</div>
+<article class="og-card">
+<img src="assets/og-card.svg" alt="" width="280" height="147">
+<div>
+<p class="kicker">Preview card</p>
+<h3>CypherWebex Canon</h3>
+<p>Offline study for Control Hub, Webex Calling, and both contact-center products. The card is a local SVG.</p>
+</div>
+</article>
+<div class="ring-wrap" data-ring>
+<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="ring-track"/><circle cx="60" cy="60" r="52" class="ring-value" data-ring-value/></svg>
+<div><b data-ring-label>0%</b><span>rooms opened</span></div>
+</div>
+<ol class="dash-bars" data-track-bars></ol>
+</section>
+<div class="cmdk" data-cmdk hidden>
+<div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command search">
+<input data-cmdk-input type="search" placeholder="Rooms and glossary terms" autocomplete="off">
+<ul data-cmdk-list></ul>
+<p class="cmdk-hint">Enter opens. Esc closes. Arrow keys move.</p>
+</div>
+</div>
+<div class="last-opened" data-last-opened hidden>
+<span>Last opened in this browser</span>
+<a href="index.html">—</a>
+</div>
+<div class="search-row" id="rooms">
+<label class="sr" for="q">Search room titles</label>
+<input id="q" data-canon-search type="search" placeholder="Search room titles — try Local Gateway, Control Hub, queue" autocomplete="off">
+<div class="search-meta" data-search-count>63 rooms</div>
+</div>
+<p class="empty-search" data-empty-search>No room title matches that search.</p>
+<div class="track-grid">
+<article class="track-card" style="--card:#3ecfb2">
+<header><div><p class="track-code">🏢 T1</p><h2><a href="tracks/T1/index.html">Control Hub &amp; Platform Foundations</a></h2></div></header>
+<p class="purpose">Organization, roles, navigation, and the admin mental model every other track sits on.</p>
+<ol class="room-list"><li class="room-row" data-title="Control Hub Foundations" data-code="T1-R01"><span class="room-code">T1-R01</span><a class="room-title" href="rooms/T1-R01-control-hub-foundations.html">Control Hub Foundations</a><span class="badge written">written</span></li><li class="room-row" data-title="Identity &amp; Directory Sync" data-code="T1-R02"><span class="room-code">T1-R02</span><a class="room-title" href="rooms/T1-R02-identity-directory-sync.html">Identity &amp; Directory Sync</a><span class="badge written">written</span></li><li class="room-row" data-title="Licensing &amp; Subscriptions" data-code="T1-R03"><span class="room-code">T1-R03</span><a class="room-title" href="rooms/T1-R03-licensing-subscriptions.html">Licensing &amp; Subscriptions</a><span class="badge written">written</span></li><li class="room-row" data-title="Locations &amp; Sites" data-code="T1-R04"><span class="room-code">T1-R04</span><a class="room-title" href="rooms/T1-R04-locations-sites.html">Locations &amp; Sites</a><span class="badge written">written</span></li><li class="room-row" data-title="Admin Roles &amp; Partner Admin" data-code="T1-R05"><span class="room-code">T1-R05</span><a class="room-title" href="rooms/T1-R05-admin-roles-partner.html">Admin Roles &amp; Partner Admin</a><span class="badge written">written</span></li><li class="room-row" data-title="Analytics &amp; Troubleshooting Views" data-code="T1-R06"><span class="room-code">T1-R06</span><a class="room-title" href="rooms/T1-R06-analytics-troubleshooting.html">Analytics &amp; Troubleshooting Views</a><span class="badge written">written</span></li><li class="room-row" data-title="Data Residency &amp; Security Basics" data-code="T1-R07"><span class="room-code">T1-R07</span><a class="room-title" href="rooms/T1-R07-data-residency-security.html">Data Residency &amp; Security Basics</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#7eb6ff">
+<header><div><p class="track-code">☎️ T2</p><h2><a href="tracks/T2/index.html">Webex Calling</a></h2></div></header>
+<p class="purpose">Cloud calling from architecture through PSTN, numbers, devices, features, and survivability.</p>
+<ol class="room-list"><li class="room-row" data-title="Calling Architecture Overview" data-code="T2-R01"><span class="room-code">T2-R01</span><a class="room-title" href="rooms/T2-R01-calling-architecture.html">Calling Architecture Overview</a><span class="badge written">written</span></li><li class="room-row" data-title="Local Gateway &amp; PSTN Options" data-code="T2-R02"><span class="room-code">T2-R02</span><a class="room-title" href="rooms/T2-R02-local-gateway-pstn.html">Local Gateway &amp; PSTN Options</a><span class="badge written">written</span></li><li class="room-row" data-title="Dial Plans, PSTN &amp; Routing" data-code="T2-R03"><span class="room-code">T2-R03</span><a class="room-title" href="rooms/T2-R03-dial-plans-pstn-routing.html">Dial Plans, PSTN &amp; Routing</a><span class="badge written">written</span></li><li class="room-row" data-title="Devices &amp; Provisioning" data-code="T2-R04"><span class="room-code">T2-R04</span><a class="room-title" href="rooms/T2-R04-devices-provisioning.html">Devices &amp; Provisioning</a><span class="badge written">written</span></li><li class="room-row" data-title="Call Features" data-code="T2-R05"><span class="room-code">T2-R05</span><a class="room-title" href="rooms/T2-R05-call-features.html">Call Features</a><span class="badge written">written</span></li><li class="room-row" data-title="Calling Security &amp; Compliance" data-code="T2-R06"><span class="room-code">T2-R06</span><a class="room-title" href="rooms/T2-R06-calling-security-compliance.html">Calling Security &amp; Compliance</a><span class="badge written">written</span></li><li class="room-row" data-title="Survivability Gateway" data-code="T2-R07"><span class="room-code">T2-R07</span><a class="room-title" href="rooms/T2-R07-survivability-gateway.html">Survivability Gateway</a><span class="badge written">written</span></li><li class="room-row" data-title="Calling Analytics &amp; CDR" data-code="T2-R08"><span class="room-code">T2-R08</span><a class="room-title" href="rooms/T2-R08-calling-analytics-cdr.html">Calling Analytics &amp; CDR</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#f0b429">
+<header><div><p class="track-code">🎧 T3</p><h2><a href="tracks/T3/index.html">Webex Contact Center (Multi-tenant)</a></h2></div></header>
+<p class="purpose">The cloud contact-center platform: tenants, entry points, queues, desktop, and reporting.</p>
+<ol class="room-list"><li class="room-row" data-title="WxCC Multi-tenant Overview" data-code="T3-R01"><span class="room-code">T3-R01</span><a class="room-title" href="rooms/T3-R01-wxcc-multitenant-overview.html">WxCC Multi-tenant Overview</a><span class="badge written">written</span></li><li class="room-row" data-title="Tenant Provisioning &amp; Setup" data-code="T3-R02"><span class="room-code">T3-R02</span><a class="room-title" href="rooms/T3-R02-tenant-provisioning-setup.html">Tenant Provisioning &amp; Setup</a><span class="badge written">written</span></li><li class="room-row" data-title="Entry Points, Queues &amp; Routing Strategies" data-code="T3-R03"><span class="room-code">T3-R03</span><a class="room-title" href="rooms/T3-R03-entry-points-queues-routing.html">Entry Points, Queues &amp; Routing Strategies</a><span class="badge written">written</span></li><li class="room-row" data-title="Agent Desktop &amp; Supervisor" data-code="T3-R04"><span class="room-code">T3-R04</span><a class="room-title" href="rooms/T3-R04-agent-desktop-supervisor.html">Agent Desktop &amp; Supervisor</a><span class="badge written">written</span></li><li class="room-row" data-title="Voice Options" data-code="T3-R05"><span class="room-code">T3-R05</span><a class="room-title" href="rooms/T3-R05-voice-options.html">Voice Options</a><span class="badge written">written</span></li><li class="room-row" data-title="Digital Channels" data-code="T3-R06"><span class="room-code">T3-R06</span><a class="room-title" href="rooms/T3-R06-digital-channels.html">Digital Channels</a><span class="badge written">written</span></li><li class="room-row" data-title="Analyzer &amp; Reporting" data-code="T3-R07"><span class="room-code">T3-R07</span><a class="room-title" href="rooms/T3-R07-analyzer-reporting.html">Analyzer &amp; Reporting</a><span class="badge written">written</span></li><li class="room-row" data-title="Supervisor Experience" data-code="T3-R08"><span class="room-code">T3-R08</span><a class="room-title" href="rooms/T3-R08-supervisor-experience.html">Supervisor Experience</a><span class="badge written">written</span></li><li class="room-row" data-title="WFO &amp; AI Features" data-code="T3-R09"><span class="room-code">T3-R09</span><a class="room-title" href="rooms/T3-R09-wfo-ai-features.html">WFO &amp; AI Features</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#ff8b9a">
+<header><div><p class="track-code">🏛️ T4</p><h2><a href="tracks/T4/index.html">Webex Contact Center Enterprise</a></h2></div></header>
+<p class="purpose">Enterprise contact center, including the classroom index and UCCE/PCCE heritage.</p>
+<ol class="room-list"><li class="room-row" data-title="WxCC Enterprise Overview" data-code="T4-R01"><span class="room-code">T4-R01</span><a class="room-title" href="rooms/T4-R01-wxcc-enterprise-overview.html">WxCC Enterprise Overview</a><span class="badge written">written</span></li><li class="room-row" data-title="Core Components" data-code="T4-R02"><span class="room-code">T4-R02</span><a class="room-title" href="rooms/T4-R02-core-components.html">Core Components</a><span class="badge written">written</span></li><li class="room-row" data-title="Call Flow Through WxCCE" data-code="T4-R03"><span class="room-code">T4-R03</span><a class="room-title" href="rooms/T4-R03-call-flow-wxcce.html">Call Flow Through WxCCE</a><span class="badge written">written</span></li><li class="room-row" data-title="Scripting &amp; ICM Routing" data-code="T4-R04"><span class="room-code">T4-R04</span><a class="room-title" href="rooms/T4-R04-scripting-icm-routing.html">Scripting &amp; ICM Routing</a><span class="badge written">written</span></li><li class="room-row" data-title="CVP &amp; VXML IVR" data-code="T4-R05"><span class="room-code">T4-R05</span><a class="room-title" href="rooms/T4-R05-cvp-vxml-ivr.html">CVP &amp; VXML IVR</a><span class="badge written">written</span></li><li class="room-row" data-title="Finesse Desktop &amp; Gadgets" data-code="T4-R06"><span class="room-code">T4-R06</span><a class="room-title" href="rooms/T4-R06-finesse-desktop-gadgets.html">Finesse Desktop &amp; Gadgets</a><span class="badge written">written</span></li><li class="room-row" data-title="Reporting with CUIC" data-code="T4-R07"><span class="room-code">T4-R07</span><a class="room-title" href="rooms/T4-R07-reporting-cuic.html">Reporting with CUIC</a><span class="badge written">written</span></li><li class="room-row" data-title="Sizing &amp; HA" data-code="T4-R08"><span class="room-code">T4-R08</span><a class="room-title" href="rooms/T4-R08-sizing-ha.html">Sizing &amp; HA</a><span class="badge written">written</span></li><li class="room-row" data-title="Faisal Khan Classroom Index" data-code="T4-R09"><span class="room-code">T4-R09</span><a class="room-title" href="rooms/T4-R09-classroom-index.html">Faisal Khan Classroom Index</a><span class="badge written">written</span></li><li class="room-row" data-title="Hybrid &amp; Cloud-connected Features" data-code="T4-R10"><span class="room-code">T4-R10</span><a class="room-title" href="rooms/T4-R10-hybrid-cloud-connected.html">Hybrid &amp; Cloud-connected Features</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#c4b5fd">
+<header><div><p class="track-code">🔒 T5</p><h2><a href="tracks/T5/index.html">Dedicated Instance</a></h2></div></header>
+<p class="purpose">Dedicated UC applications in the Webex cloud, and how they differ from multi-tenant Calling.</p>
+<ol class="room-list"><li class="room-row" data-title="What Dedicated Instance Is" data-code="T5-R01"><span class="room-code">T5-R01</span><a class="room-title" href="rooms/T5-R01-what-dedicated-instance-is.html">What Dedicated Instance Is</a><span class="badge written">written</span></li><li class="room-row" data-title="DI Architecture &amp; Peering" data-code="T5-R02"><span class="room-code">T5-R02</span><a class="room-title" href="rooms/T5-R02-di-architecture-peering.html">DI Architecture &amp; Peering</a><span class="badge written">written</span></li><li class="room-row" data-title="Connectivity Options" data-code="T5-R03"><span class="room-code">T5-R03</span><a class="room-title" href="rooms/T5-R03-connectivity-options.html">Connectivity Options</a><span class="badge written">written</span></li><li class="room-row" data-title="DI Admin &amp; Operations" data-code="T5-R04"><span class="room-code">T5-R04</span><a class="room-title" href="rooms/T5-R04-di-admin-operations.html">DI Admin &amp; Operations</a><span class="badge written">written</span></li><li class="room-row" data-title="DI + Webex Calling Coexistence" data-code="T5-R05"><span class="room-code">T5-R05</span><a class="room-title" href="rooms/T5-R05-di-webex-calling-coexistence.html">DI + Webex Calling Coexistence</a><span class="badge written">written</span></li><li class="room-row" data-title="DI Migration Path" data-code="T5-R06"><span class="room-code">T5-R06</span><a class="room-title" href="rooms/T5-R06-di-migration-path.html">DI Migration Path</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#c6e27a">
+<header><div><p class="track-code">🚚 T6</p><h2><a href="tracks/T6/index.html">Migrations</a></h2></div></header>
+<p class="purpose">Assess, design, migrate, and validate moves onto Calling and contact center.</p>
+<ol class="room-list"><li class="room-row" data-title="2,000-seat CUCM + UCCE Cutover" data-code="T6-R01"><span class="room-code">T6-R01</span><a class="room-title" href="rooms/T6-R01-enterprise-cutover-capstone.html">2,000-seat CUCM + UCCE Cutover</a><span class="badge written">written</span></li><li class="room-row" data-title="CUCM to Webex Calling" data-code="T6-R02"><span class="room-code">T6-R02</span><a class="room-title" href="rooms/T6-R02-cucm-to-webex-calling.html">CUCM to Webex Calling</a><span class="badge written">written</span></li><li class="room-row" data-title="Migration Tools" data-code="T6-R03"><span class="room-code">T6-R03</span><a class="room-title" href="rooms/T6-R03-migration-tools.html">Migration Tools</a><span class="badge written">written</span></li><li class="room-row" data-title="UCCE/PCCE to WxCC" data-code="T6-R04"><span class="room-code">T6-R04</span><a class="room-title" href="rooms/T6-R04-ucce-pcce-to-wxcc.html">UCCE/PCCE to WxCC</a><span class="badge written">written</span></li><li class="room-row" data-title="Third-party PBX &amp; CC to Webex" data-code="T6-R05"><span class="room-code">T6-R05</span><a class="room-title" href="rooms/T6-R05-third-party-pbx-cc.html">Third-party PBX &amp; CC to Webex</a><span class="badge written">written</span></li><li class="room-row" data-title="Number Porting &amp; Cutover" data-code="T6-R06"><span class="room-code">T6-R06</span><a class="room-title" href="rooms/T6-R06-number-porting-cutover.html">Number Porting &amp; Cutover</a><span class="badge written">written</span></li><li class="room-row" data-title="Coexistence &amp; Interop" data-code="T6-R07"><span class="room-code">T6-R07</span><a class="room-title" href="rooms/T6-R07-coexistence-interop.html">Coexistence &amp; Interop</a><span class="badge written">written</span></li><li class="room-row" data-title="Post-migration Validation" data-code="T6-R08"><span class="room-code">T6-R08</span><a class="room-title" href="rooms/T6-R08-post-migration-validation.html">Post-migration Validation</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#ffb067">
+<header><div><p class="track-code">📡 T7</p><h2><a href="tracks/T7/index.html">SIP, Routing &amp; Queues</a></h2></div></header>
+<p class="purpose">SIP, CUBE, media, trunks, and how queueing differs across Calling, WxCC, and WxCCE.</p>
+<ol class="room-list"><li class="room-row" data-title="SIP Fundamentals for Webex" data-code="T7-R01"><span class="room-code">T7-R01</span><a class="room-title" href="rooms/T7-R01-sip-fundamentals-webex.html">SIP Fundamentals for Webex</a><span class="badge written">written</span></li><li class="room-row" data-title="CUBE Deep Dive" data-code="T7-R02"><span class="room-code">T7-R02</span><a class="room-title" href="rooms/T7-R02-cube-deep-dive.html">CUBE Deep Dive</a><span class="badge written">written</span></li><li class="room-row" data-title="Codecs, Media &amp; NAT" data-code="T7-R03"><span class="room-code">T7-R03</span><a class="room-title" href="rooms/T7-R03-codecs-media-nat.html">Codecs, Media &amp; NAT</a><span class="badge written">written</span></li><li class="room-row" data-title="SIP Trunk Design" data-code="T7-R04"><span class="room-code">T7-R04</span><a class="room-title" href="rooms/T7-R04-sip-trunk-design.html">SIP Trunk Design</a><span class="badge written">written</span></li><li class="room-row" data-title="Queue Theory for Contact Center" data-code="T7-R05"><span class="room-code">T7-R05</span><a class="room-title" href="rooms/T7-R05-queue-theory-contact-center.html">Queue Theory for Contact Center</a><span class="badge written">written</span></li><li class="room-row" data-title="Routing Strategies Compared" data-code="T7-R06"><span class="room-code">T7-R06</span><a class="room-title" href="rooms/T7-R06-routing-strategies-compared.html">Routing Strategies Compared</a><span class="badge written">written</span></li><li class="room-row" data-title="SIP Trace Reading Lab" data-code="T7-R07"><span class="room-code">T7-R07</span><a class="room-title" href="rooms/T7-R07-sip-trace-reading-lab.html">SIP Trace Reading Lab</a><span class="badge written">written</span></li></ol>
+</article><article class="track-card" style="--card:#f0a0ff">
+<header><div><p class="track-code">✨ T8</p><h2><a href="tracks/T8/index.html">Flows, Integrations, Troubleshooting &amp; Latest</a></h2></div></header>
+<p class="purpose">Flow Designer, APIs, CRM patterns, triage method, and a versioned what's-new room.</p>
+<ol class="room-list"><li class="room-row" data-title="Flow Designer Essentials" data-code="T8-R01"><span class="room-code">T8-R01</span><a class="room-title" href="rooms/T8-R01-flow-designer-essentials.html">Flow Designer Essentials</a><span class="badge written">written</span></li><li class="room-row" data-title="Flow Design Patterns" data-code="T8-R02"><span class="room-code">T8-R02</span><a class="room-title" href="rooms/T8-R02-flow-design-patterns.html">Flow Design Patterns</a><span class="badge written">written</span></li><li class="room-row" data-title="APIs, Webhooks &amp; Webex Connect" data-code="T8-R03"><span class="room-code">T8-R03</span><a class="room-title" href="rooms/T8-R03-apis-webhooks-connect.html">APIs, Webhooks &amp; Webex Connect</a><span class="badge written">written</span></li><li class="room-row" data-title="CRM Integrations" data-code="T8-R04"><span class="room-code">T8-R04</span><a class="room-title" href="rooms/T8-R04-crm-integrations.html">CRM Integrations</a><span class="badge written">written</span></li><li class="room-row" data-title="AI in Webex Contact Center" data-code="T8-R05"><span class="room-code">T8-R05</span><a class="room-title" href="rooms/T8-R05-ai-wxcc.html">AI in Webex Contact Center</a><span class="badge written">written</span></li><li class="room-row" data-title="Troubleshooting Methodology" data-code="T8-R06"><span class="room-code">T8-R06</span><a class="room-title" href="rooms/T8-R06-troubleshooting-methodology.html">Troubleshooting Methodology</a><span class="badge written">written</span></li><li class="room-row" data-title="Logs &amp; Tools" data-code="T8-R07"><span class="room-code">T8-R07</span><a class="room-title" href="rooms/T8-R07-logs-and-tools.html">Logs &amp; Tools</a><span class="badge written">written</span></li><li class="room-row" data-title="Latest Features Radar" data-code="T8-R08"><span class="room-code">T8-R08</span><a class="room-title" href="rooms/T8-R08-latest-features-radar.html">Latest Features Radar</a><span class="badge written">written</span></li></ol>
+</article>
+</div>
+</div>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span><span class="noprint">Opens from <code>index.html</code>. No network required to read.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+<script type="module" src="assets/js/effects.js"></script>
+<script type="module" src="assets/js/hero-scene.js"></script>
+</body></html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T3-R01 · WxCC Multi-tenant Overview · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T3" data-room="T3-R01" data-room-title="WxCC Multi-tenant Overview" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T3</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T3/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T3 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T3 · Webex Contact Center (Multi-tenant)</p>
+<h1>WxCC Multi-tenant Overview</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for WxCC Multi-tenant Overview">
+<defs>
+<linearGradient id="T3R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T3R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Contact center</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T3-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Caller</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Entry point</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Queue</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for WxCC Multi-tenant Overview. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for WxCC Multi-tenant Overview">
+<defs>
+<marker id="T3R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Caller → Entry point → Queue → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T3R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T3R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T3R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T3R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Caller → Entry point → Queue → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">This track is the cloud contact center Cisco’s help center calls Webex Contact Center: a CCaaS platform, not the Enterprise product that inherits UCCE. The Canon nickname “multi-tenant” follows Cisco Live portfolio language. Confirm it against the contract before you say it to a customer.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T3-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.2</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>100–120 min</strong></span>
+<span class="meta-chip">Prereq <strong><a href="T1-R01-control-hub-foundations.html">T1-R01</a></strong></span>
+<span class="meta-chip read-chip">Reading <strong>38 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Cisco’s architecture article calls Webex Contact Center a contact center as a service, built cloud-native: independent services, event-driven messaging, stateless services on Kubernetes, deployed in AWS. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Cisco Live decks label that cloud product “Webex Contact Center (Multi-tenant Cloud)” and the other product “Webex Contact Center Enterprise (Dedicated Instance Cloud).” <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></li><li>Voice lands on an entry point (a phone number). A flow runs. A queue holds the contact. Teams at sites are the agent search space. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></li><li>Digital channels enter through Webex Connect. Control Hub is the onboarding console. Analyzer is the reporting surface fed by the event pipeline. <a class="cite" href="#cite-1">[cite:1]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Cisco’s architecture article calls Webex Contact Center a contact center as a service, built cloud-native: independent services, event-driven messaging, stateless services on Kubernetes, deployed in AWS. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Cisco Live decks label that cloud product “Webex Contact Center (Multi-tenant Cloud)” and the other product “Webex Contact Center Enterprise (Dedicated Instance Cloud).” <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></li>
+<li>Voice lands on an entry point (a phone number). A flow runs. A queue holds the contact. Teams at sites are the agent search space. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Digital channels enter through Webex Connect. Control Hub is the onboarding console. Analyzer is the reporting surface fed by the event pipeline. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>New Webex Contact Center subscriptions include Webex Calling PSTN services, and the architecture article says calls can be routed to the contact center without a separate Webex Calling subscription. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> People say “Webex contact center” and mean three different stacks: this cloud tenant, Webex Contact Center Enterprise, or on-prem UCCE/PCCE. This room is the fence. Interview answers that mention Router, Logger, or CVP belong in T4, not here.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>From a phone number to an agent, and where the data goes</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T3-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Webex Contact Center logical architecture">
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Webex Contact Center logical architecture">
+<rect width="1000" height="500" fill="#0c121c"/>
+<text x="24" y="32" fill="#f0b429" font-family="Georgia, serif" font-size="20">Cloud WxCC — one organization</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="60" width="180" height="70" rx="12" fill="#2a220f" stroke="#f0b429"/>
+<text x="40" y="90">1 · PSTN number</text>
+<text x="40" y="110" fill="#8d8476" font-size="12">via Calling PSTN edge</text>
+<rect x="24" y="160" width="180" height="70" rx="12" fill="#2a220f" stroke="#e0b07a"/>
+<text x="40" y="190">1b · Webex Connect</text>
+<text x="40" y="210" fill="#8d8476" font-size="12">email, chat, social</text>
+<rect x="250" y="70" width="200" height="86" rx="12" fill="#1c180f" stroke="#f0b429"/>
+<text x="266" y="102">2 · Entry point</text>
+<text x="266" y="124" fill="#8d8476" font-size="12">number or digital asset</text>
+<rect x="490" y="70" width="200" height="86" rx="12" fill="#1c180f" stroke="#f0b429"/>
+<text x="506" y="102">3 · Flow</text>
+<text x="506" y="124" fill="#8d8476" font-size="12">IVR, API, virtual agent</text>
+<rect x="730" y="70" width="230" height="86" rx="12" fill="#1c180f" stroke="#f0b429"/>
+<text x="746" y="102">4 · Queue</text>
+<text x="746" y="124" fill="#8d8476" font-size="12">distribution groups over time</text>
+<rect x="490" y="200" width="200" height="86" rx="12" fill="#1c180f" stroke="#efe7d6"/>
+<text x="506" y="232">5 · Team at a site</text>
+<text x="506" y="254" fill="#8d8476" font-size="12">agents belong to a site</text>
+<rect x="730" y="200" width="230" height="86" rx="12" fill="#1c180f" stroke="#efe7d6"/>
+<text x="746" y="232">6 · Agent Desktop</text>
+<text x="746" y="254" fill="#8d8476" font-size="12">CI login, WebSocket</text>
+<rect x="250" y="330" width="440" height="86" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="266" y="362">7 · Events → real-time datasets → Analyzer</text>
+<text x="266" y="386" fill="#8d8476" font-size="12">Control Hub provisions the org, then a workflow finishes contact-center setup</text>
+</g>
+<path d="M204 95 H250" stroke="#f0b429"/>
+<path d="M204 195 H270 V156" stroke="#e0b07a" fill="none"/>
+<path d="M450 113 H490" stroke="#f0b429"/>
+<path d="M690 113 H730" stroke="#f0b429"/>
+<path d="M845 156 V200" stroke="#efe7d6"/>
+<path d="M730 243 H690" stroke="#efe7d6"/>
+<path d="M590 286 V330" stroke="#e0b07a"/>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Voice ingress</li>
+<li><span class="num">2</span>Entry point</li>
+<li><span class="num">3</span>Flow</li>
+<li><span class="num">4</span>Queue</li>
+<li><span class="num">5</span>Site and team</li>
+<li><span class="num">6</span>Desktop</li>
+<li><span class="num">7</span>Analyzer pipeline</li>
+</ul>
+<details>
+<summary>Mermaid source (offline SVG above is the picture)</summary>
+<pre class="mermaid">flowchart LR
+  PSTN[PSTN or Connect] --> EP[Entry point]
+  EP --> FLOW[Flow]
+  FLOW --> Q[Queue]
+  Q --> TEAM[Team at site]
+  TEAM --> DESK[Agent Desktop]
+  Q --> AN[Analyzer events]
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T3-R01/arch.svg</code></p>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Name the product before you name the boxes</h2>
+<p>Help.webex’s architecture article does not use the phrase “multi-tenant” in the sections read for this room. It defines Webex Contact Center as CCaaS, cloud native, on AWS, with services in Kubernetes across availability zones. <a class="cite" href="#cite-1">[cite:1]</a> Cisco Live PSOCCT-1014 (2024) and BRKCCT-2031 (2025) do use “Webex Contact Center (Multi-tenant Cloud)” opposite “Webex Contact Center Enterprise (Dedicated Instance Cloud).” <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a> This Canon track follows that portfolio split. Agent-count slogans on those slides are not copied into the limits table: the extracted text does not prove which number sits on which product. Read agent capacity in the help article for the product you bought, not in a Cisco Live deck. The extracted decks do not prove which number sits on which product, and the bands move between releases.</p>
+<div class="chips">
+<span class="chip">entry point</span><span class="chip">queue</span><span class="chip">site</span><span class="chip">team</span><span class="chip">flow</span><span class="chip">Connect</span><span class="chip">Analyzer</span><span class="chip">Control Hub</span>
+</div>
+<!-- VISUAL:concept-image | Studio | assets/images/T3-R01/hero.png -->
+<div class="shot">VISUAL placeholder · concept image · <code>assets/images/T3-R01/hero.png</code> · Studio: two buildings. The left is a shared cloud campus labeled Webex Contact Center. The right is a fenced dedicated instance labeled Enterprise. Do not draw a Router/Logger pair on the left.</div>
+
+<h3>Configuration entities</h3>
+<p>The architecture article’s list, scoped to the organization: <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Entity</th><th>Role in the article</th><th>Easy to confuse with</th></tr></thead>
+<tbody>
+<tr><td>Site</td><td>Where one or more teams and users are located. Every user and team belongs to a site.</td><td>A Webex Calling location (T1/T2). Related idea, different object.</td></tr>
+<tr><td>Team</td><td>A group of users. Queues find agents through teams.</td><td>A Webex Calling hunt group. Not the same queue engine.</td></tr>
+<tr><td>Agent</td><td>A user who signs into Agent Desktop and handles the media types configured for them.</td><td>Any Webex user. This overview does not name a license or a desktop-profile click path.</td></tr>
+<tr><td>Supervisor</td><td>Assigned to teams; can monitor and coach and see team statistics for those teams.</td><td>A full Control Hub administrator. Different grant. See T1-R01 for the Contact Center Service Administrator role. <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Queue</td><td>Holds interactions until an agent is available. Teams are the search space and can be added as time passes (call distribution groups).</td><td>A Calling call queue. T7 compares them.</td></tr>
+<tr><td>Entry point</td><td>Ingress. For voice, the phone number. For email and messaging, it points at a Webex Connect asset.</td><td>A DID on a Local Gateway. The number may arrive through Calling PSTN services, then hit this entity. <a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Flow</td><td>The logic for the entry point (via routing strategy on voice). Digital flows are chosen in the Connect asset.</td><td>A UCCE ICM script. That is T4.</td></tr>
+</tbody>
+</table></div>
+<p>The older Setup and Administration Guide uses the same four words — sites, teams, entry points, queues — and adds a useful constraint: an agent may be assigned to more than one team but services only one team at a time. It also says only globalized +E.164 PSTN numbers map to entry points; extensions are not supported for that mapping. <a class="cite" href="#cite-4">[cite:4]</a> That guide opens by saying it is no longer updated because many portal entities moved to Control Hub. Treat those two sentences as still useful only after you <mark class="recheck">re-check</mark> them in a current help article. They are included because no newer article in this pass contradicted them, and they are easy to get wrong.</p>
+
+<h3>What the flow is allowed to do</h3>
+<p>The architecture article’s representative activities: play messages, collect user data, transfer, send to a virtual agent, and queue. It also names QueueToAgent (voice, direct to an agent id, with an agent-specific queue if that agent is busy), GetQueueInfo (position in queue, estimated wait time, agents available), Callback (caller disconnects and keeps place), and overflow using capacity-based teams with an external DN, usually as the last distribution cycle. <a class="cite" href="#cite-1">[cite:1]</a> The routing article adds the queue as a holding area for telephony, chat, email, or social, and names skill-based and non-skill-based queues. Its overview names Longest Available, Circular, and Best Available. The architecture article’s agent-selection section names Longest Available Agent routing and, under skill-based routing, LAA or BAA. <a class="cite" href="#cite-6">[cite:6]</a> <a class="cite" href="#cite-1">[cite:1]</a> The routing article’s agent-assignment section also names Linear/Top-down. That is the fourth name, and it is not offered on every queue type. T3-R03 keeps the four names in their lanes. Open the queue in Control Hub and read the patterns that queue type offers. A fifth name is not in these articles, and the list changes when Cisco adds a pattern.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Plane</th><th>Documented behavior</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Voice answer</td><td>A call to a number on an entry point is answered by Webex CC and the associated flow starts.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital ingress</td><td>Webex Connect provisions the asset and can treat the contact, including bots, before it queues into Webex CC.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Messaging channels named</td><td>Web app / mobile chat, WhatsApp, Facebook Messenger, SMS, Apple Messages for Business. Email: Gmail and Office 365.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Desktop</td><td>Agent specifies a phone number at login: PSTN, mobile, or an extension if the agent is a Webex Calling user. That number must be routable or the agent receives no calls. Desktop is a micro-frontend SPA; stock widgets use APIs and WebSocket push. Sign-in is Cisco Common Identity.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Provisioning</td><td>Control Hub is the primary partner/customer onboarding interface. After the org and contact-center features are provisioned, a BPM workflow finishes the contact-center setup.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Reporting</td><td>Services emit events. Stream processing builds real-time datasets. Aggregates are stored and read through APIs and Analyzer.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>APIs</td><td>External integrations use published APIs: REST, and server-side push via webhooks and WebSocket. Developer portal documents REST plus GraphQL and gRPC for the Customer Experience platform.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-7">[cite:7]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>Surfaces you will actually open</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Surface</th><th>Documented job</th><th>Not this surface</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Control Hub</td><td>Onboarding, subscription, contact-center features, and the admin roles from T1</td><td>The flow canvas</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Customer experience → Queues</td><td>Create inbound or outdial queues and skill versus non-skill routing</td><td>A Webex Calling call queue</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Flow / Flow Builder</td><td>Activities for the entry point: play, collect, transfer, virtual agent, queue</td><td>A UCCE script editor</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Connect</td><td>Digital assets and the flow that runs before a contact is queued to an agent</td><td>Voice PSTN ingress</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Agent Desktop</td><td>Where the agent sets a station number and handles the contact</td><td>Finesse gadgets (T4)</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analyzer</td><td>Real-time datasets and historical aggregates built from service events</td><td>The voice path itself</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Legacy Management Portal</td><td>Described in the setup guide, which says the guide is no longer updated</td><td>The default place to teach a new admin</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+</tbody>
+</table></div>
+<h3>Access control is not “all supervisors see all queues”</h3>
+<p>Administrators can build user profiles scoped to sites, teams, queues, and entry points. Sites and teams are hierarchical: site access narrows which teams you see. Queues and entry points are global at organization level, so a multi-country design creates separate entry points and queues and then grants them out. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="callout tip"><span class="label">Tip</span><p>When you draw a contact, write the entry point and the flow on the arrow into the queue. A queue with no flow in front of it is a Calling-queue habit. On this platform the flow decides to queue. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>The Setup and Administration Guide still describes a Management Portal with Provisioning, Routing Strategy, and Call Monitoring modules, and it tells you the guide is no longer updated. Do not teach a new admin to live in that portal until you confirm the task has not moved to Control Hub or Flow Designer. Queue create in a current article is Contact Center navigation → Customer experience → Queues. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-8">[cite:8]</a></p></div>
+<div class="callout note"><span class="label">Enterprise is a different room</span><p>PSOCCT-1014 describes the Enterprise cloud as multi-instance application services, high-end scale, highly customizable, a differentiated admin experience, and low disruption for Unified CCE and Packaged CCE customers. None of that is configured with the entry-point/flow/queue objects above. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T3-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T3R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T3R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p>Multi-tenant Webex Contact Center is the cloud platform: entry point, flow, queue, team, site, onboarding in Control Hub, and Analyzer fed by events. <a class="cite" href="#cite-1">[cite:1]</a> The sisters below are the systems that sit on that platform. Microsoft’s product Dynamics 365 Contact Center is a different name from Cisco’s CRM connector for Dynamics 365. Peer columns are orientation. <a href="../ecosystem.html">The hub ecosystem map</a> is the cross-lab picture.</p>
+
+<h3 class="eco-sub">Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Entry point</dt><dd>Where a contact enters. The architecture article pairs it with a flow. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Flow</dt><dd>The routing logic a contact runs before a queue. Virtual Agent activities live in the flow. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-15">[cite:15]</a></dd></div>
+<div class="term"><dt>Queue</dt><dd>The wait point that offers work to a team. Routing patterns are configured under Contact Center → Customer experience → Queues. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-6">[cite:6]</a></dd></div>
+<div class="term"><dt>Analyzer</dt><dd>Reporting built from contact-center events, as the architecture article describes it. Session behavior is tajemk, retrieved 2026-10-14, not this architecture sentence. <a class="cite" href="#cite-28">[cite:28]</a> <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Search API</dt><dd>Historical search. The developer page says the FROM parameter cannot be older than 36 months from the current time, and the duration between TO and FROM must not be more than 365 days. Scopes <code>cjp:config</code> or <code>cjp:config_read</code>. Roles: Administrator or Supervisor. <a class="cite" href="#cite-9">[cite:9]</a></dd></div>
+<div class="term"><dt>CRM connector</dt><dd>Cisco’s integration that launches the agent Desktop inside Salesforce, Dynamics 365, or ServiceNow. Digital channels such as chat and email are not supported on these connectors. <a class="cite" href="#cite-12">[cite:12]</a></dd></div>
+<div class="term"><dt>CIF</dt><dd>Microsoft’s Channel Integration Framework, as Cisco’s Dynamics article uses it. Single-session Dynamics apps require CIF version 1. Multi-session apps require CIF version 2. On-premises Dynamics is not supported. <a class="cite" href="#cite-13">[cite:13]</a></dd></div>
+<div class="term"><dt>Virtual Agent–Voice</dt><dd>Self-service that integrates the IVR with cloud AI through a Contact Center AI connector. Supported integrations named in the article: Google Dialogflow CX, Dialogflow ES, and bring-your-own virtual agent. <a class="cite" href="#cite-15">[cite:15]</a></dd></div>
+<div class="term"><dt>AGENT_TRANSFER</dt><dd>A mandatory bring-your-own virtual agent event. The call must be escalated to a queue of human agents with that event. <a class="cite" href="#cite-19">[cite:19]</a></dd></div>
+<div class="term"><dt>AI Assistant</dt><dd>A Control Hub add-on for Webex Contact Center. The enablement article includes AI-generated summaries (call drop and agent transfer), automated wellness breaks, Auto CSAT, real-time transcription, and Real-Time Assist. <a class="cite" href="#cite-16">[cite:16]</a></dd></div>
+<div class="term"><dt>WFO Agent Assist</dt><dd>Described on the agent what’s-new page as a GenAI assistant in Webex WFO for schedules, time off, and overtime, with responses in 59 languages checked against WFM rules. <a class="cite" href="#cite-17">[cite:17]</a></dd></div>
+<div class="term"><dt>Connect</dt><dd>The digital-channel path the architecture article names. Chat and email on that path are not the same thing as the CRM connectors, which exclude those channels. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-12">[cite:12]</a></dd></div>
+</dl>
+
+<h3 class="eco-sub">Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T3-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Mind map of Webex Contact Center and sister technologies">
+<svg viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of Webex Contact Center and sister technologies">
+<rect width="980" height="560" fill="#0c121c"/>
+<text x="28" y="34" fill="#f0b429" font-family="Georgia, serif" font-size="20">WxCC multi-tenant and its sisters</text>
+<text x="28" y="56" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">WFM, recording, emergency, CRM, AI, IVR, digital, identity. Dashed notes are not parity.</text>
+<rect x="360" y="230" width="260" height="78" rx="16" fill="#2a220c" stroke="#f0b429" stroke-width="2"/>
+<text x="490" y="262" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Webex Contact Center</text>
+<text x="490" y="284" text-anchor="middle" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">entry · flow · queue · team</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="24" y="88" width="200" height="72" rx="10" fill="#14110c" stroke="#f0b429"/><text x="36" y="116">WFO / WFM</text><text x="36" y="138" fill="#b7ad9c">Agent Assist, 59 languages</text>
+<rect x="244" y="88" width="200" height="72" rx="10" fill="#14110c" stroke="#f0b429"/><text x="256" y="116">QM / recording</text><text x="256" y="138" fill="#b7ad9c">Calling provider is nhvl4hw; QM screen stays open</text>
+<rect x="536" y="88" width="200" height="72" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="548" y="116">E911 / RedSky</text><text x="548" y="138" fill="#b7ad9c">Calling path, Kari email</text>
+<rect x="756" y="88" width="200" height="72" rx="10" fill="#14110c" stroke="#f0b429"/><text x="768" y="116">Analyzer</text><text x="768" y="138" fill="#b7ad9c">events, Search API</text>
+<rect x="24" y="400" width="200" height="86" rx="10" fill="#14110c" stroke="#f0b429"/><text x="36" y="428">Salesforce</text><text x="36" y="448" fill="#b7ad9c">Lightning only</text><text x="36" y="466" fill="#b7ad9c">no chat/email on connector</text>
+<rect x="244" y="400" width="200" height="86" rx="10" fill="#14110c" stroke="#f0b429"/><text x="256" y="428">Dynamics connector</text><text x="256" y="448" fill="#b7ad9c">CIF v1 / v2</text><text x="256" y="466" fill="#b7ad9c">not on-prem Dynamics</text>
+<rect x="464" y="400" width="200" height="86" rx="10" fill="#14110c" stroke="#f0b429"/><text x="476" y="428">ServiceNow</text><text x="476" y="448" fill="#b7ad9c">launch Desktop inside</text>
+<rect x="684" y="400" width="272" height="86" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="696" y="428">VAV · AI Assistant · SSO</text><text x="696" y="448" fill="#b7ad9c">Dialogflow, BYO, Control Hub add-on</text><text x="696" y="466" fill="#b7ad9c">identity stays in Control Hub</text>
+</g>
+<path d="M124 160 V230 H360" stroke="#f0b429" fill="none"/>
+<path d="M344 160 V210 H360" stroke="#f0b429" fill="none"/>
+<path d="M636 160 V210 H620" stroke="#e0b07a" fill="none"/>
+<path d="M856 160 V230 H620" stroke="#f0b429" fill="none"/>
+<path d="M124 400 V330 H360" stroke="#f0b429" fill="none"/>
+<path d="M344 400 V348 H400" stroke="#f0b429" fill="none"/>
+<path d="M564 400 V348 H560" stroke="#f0b429" fill="none"/>
+<path d="M800 400 V308 H620" stroke="#e0b07a" fill="none"/>
+<text x="28" y="530" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Cisco’s Dynamics CRM connector is not Microsoft Dynamics 365 Contact Center. That peer name is orientation only.</text>
+</svg>
+</div>
+<details>
+<summary>Mermaid mind map (no engine is loaded)</summary>
+<pre class="mermaid">mindmap
+  root((WxCC multi-tenant))
+    Routing
+      Entry point
+      Flow
+      Queue
+    People
+      Control Hub identity
+      SSO
+    Sisters
+      WFO WFM
+      Recording
+      RedSky
+      Analyzer
+      Salesforce
+      Dynamics connector
+      ServiceNow
+      Virtual agent
+      AI Assistant
+      Digital Connect
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T3-R01/eco.svg</code></p>
+
+<h3 class="eco-sub">Sister-technology matrix</h3>
+<p>Contact-center rooms have to cover this set. Rows stay on what the cited article actually says.</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>Webex WFO Agent Assist, on the agent what’s-new page: a GenAI assistant for schedules, time off, and overtime, in 59 languages, checked against WFM rules.</td><td>Agents will ask for “the schedule bot.” It is a WFO feature on that page, not a flow activity.</td><td>WFO, not the flow designer. SKU article py6u9h lists minimum SKUs such as <code>A-FLEX-WFO-NWFM2</code> for WFM Agent Assist, and it states those SKUs for Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express.</td><td>Applying an Enterprise/CCE/CCX SKU to this multi-tenant tenant. Read the subscription in Control Hub before you apply a WFO SKU. py6u9h’s list is Enterprise, CCE, and CCX, so a multi-tenant tenant shows a different set.</td><td><a href="#cite-17">[cite:17]</a> <a href="#cite-18">[cite:18]</a></td></tr>
+<tr><td>Quality management and call recording</td><td>The setup guide lists call recording as an optional module and says the guide is no longer updated. Webex Calling’s own recording (one year / 100 GB, or Dubber Go at 30 days) is a Calling article, not a contact-center queue policy.</td><td>Quality forms and contact-center recording are how supervisors review agents. This overview does not yet have a current UI citation.</td><td>This overview does not describe a current recording or quality-management screen. Do not configure from n5595zd’s module list.</td><td>Using the stale guide’s module checklist, or quoting Calling retention numbers as if they were WxCC QM retention.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-24">[cite:24]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari’s Law, RedSky</td><td>Enhanced emergency calling for Webex Calling: RedSky, HELD, port 443 to the RedSky hosts, RAY BAUM Phase 2 dispatch addresses, and Kari’s Law email (Public Law 115-127).</td><td>Agent stations that are Webex Calling endpoints use that Calling design. A separate WxCC emergency menu is not in the architecture article.</td><td>Calling: RedSky account, Control Hub Services → PSTN &amp; Routing → Settings for the email, then the location. WxCC WebRTC emergency configuration is as of 2026-10-14, nvfbjts: WebRTC Agent Desktop uses Webex Calling Control Hub and RedSky; test 933; then Calling → Emergency calling → Enhanced emergency calling (RedSky access to test, Emergency call routing to activate). Device User Id equals the agent email, then install myE911. <a class="cite" href="#cite-31">[cite:31]</a>.</td><td>Proving 911 by watching the contact flow while the phone cannot reach <code>api.wxc.e911cloud.com</code>.</td><td><a href="#cite-20">[cite:20]</a> <a href="#cite-21">[cite:21]</a></td></tr>
+<tr><td>Analytics and reporting</td><td>Analyzer consumes contact events. The Search API says FROM cannot be older than 36 months from the current time, and the span from FROM to TO must not exceed 365 days, for an administrator or supervisor, with scope <code>cjp:config</code> or <code>cjp:config_read</code>.</td><td>Historical proof for this platform is Analyzer or that API, not Control Hub’s 3-month collaboration charts.</td><td>Analyzer in the contact-center admin experience. API host example in the doc is <code>api.wxcc-us1.cisco.com</code>. Do not copy the sample org id.</td><td>Treating Control Hub analytics retention as Analyzer retention. Real-time lag: as of 2026-10-14, tajemk: real-time Analyzer reports stay up and refresh automatically (new reports default to 5 seconds, selectable 5–60). Historical Analyzer sessions stay active 8 hours. n6m0w9z: the Agent statistics widget updates historical data every 24 hours and real-time data every 60 seconds. <a class="cite" href="#cite-28">[cite:28]</a> <a class="cite" href="#cite-29">[cite:29]</a>.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Salesforce</td><td>CRM connector version 2. Launches the contact-center experience in Salesforce. Lightning only. Classic is not supported.</td><td>Screen pop and click-to-dial are why the desktop moves inside the CRM. Digital chat and email are out of scope for the connector.</td><td>Salesforce administrator, Lightning app, call-center XML from the connector repository the article links.</td><td>Classic org. WebRTC on Microsoft Edge. Answering a WebRTC call from more than one Salesforce tab.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Dynamics 365 CRM connector</td><td>Cisco’s connector for Microsoft Dynamics 365. CIF 1 for single-session apps. CIF 2 for multi-session apps such as Omnichannel for Customer Service. On-premises Dynamics is not supported.</td><td>This is a screen-pop connector. It is not Microsoft’s product Dynamics 365 Contact Center. Read Microsoft’s own docs for that product, and read Cisco’s connector article for the screen-pop. The two products change on different schedules.</td><td>Channel URL pattern <code>https://wxcc-crmconnectors.ciscoccservice.com/dynamics/connector/v1/index.html</code>. Desktop URL is regional (the article lists us1, eu1, eu2, anz).</td><td>An on-premises Dynamics instance, or CIF 1 on a multi-session app.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>ServiceNow</td><td>Connector version 2. Integrating Webex Contact Center with ServiceNow lets you launch Desktop from within ServiceNow.</td><td>Same CRM-connector family: voice desktop inside the ITSM console, not a second contact center.</td><td>System administrator on the ServiceNow instance, then the connector steps in ny83tx0. Build numbers are not copied here.</td><td>Expecting chat and email to pop through the connector. The Salesforce article says the digital-channel exclusion applies to all CRM integrations using these connectors.</td><td><a href="#cite-14">[cite:14]</a> <a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Virtual agents</td><td>Virtual Agent–Voice integrates IVR with cloud AI via the CCAI connector. Dialogflow CX, Dialogflow ES, or bring-your-own. Webex AI Agents are a separate article the VAV page points at.</td><td>Self-service before a human queue. The handoff event is part of the contract.</td><td>Control Hub CCAI connector, then the flow. BYO must escalate with <code>AGENT_TRANSFER</code>.</td><td>A bot that can talk and cannot emit <code>AGENT_TRANSFER</code>, so the caller never reaches a queue.</td><td><a href="#cite-15">[cite:15]</a> <a href="#cite-19">[cite:19]</a></td></tr>
+<tr><td>AI Assistant</td><td>Control Hub add-on: call-drop and agent-transfer summaries, wellness breaks, Auto CSAT, real-time transcription, Real-Time Assist.</td><td>Distinct from WFO Agent Assist (schedules) and from Virtual Agent–Voice (the caller-facing bot).</td><td>Enable AI Assistant features in Control Hub for Webex Contact Center. The article also has desktop-layout steps for transcription.</td><td>Looking for summaries in a tenant where the add-on was never enabled.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>IVR and self-service</td><td>The flow plus Virtual Agent–Voice. The VAV article includes IVR transcript and global variables on the agent desktop.</td><td>There is no CVP in this multi-tenant product. Self-service is the flow.</td><td>Flow designer activities, including the virtual-agent activity the VAV guide names.</td><td>Designing a CVP/VXML application and expecting it to appear as a component of this cloud tenant. The CCX workbook does not import a CVP application; that row stays marked in T6-R04. any claim that a specific CVP feature has a flow equivalent.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>Digital channels</td><td>The architecture article’s digital path is Connect. Chat and email are called out as unsupported on the CRM connectors, for every CRM integration that uses those connectors.</td><td>A digital contact can exist in the platform and still be invisible inside Salesforce.</td><td>Digital channel configuration is the planned room T3-R06. The dated Connect list beyond the architecture article is as of 2026-10-14, s0qro1 (header August 25, 2026) names six Connect channels: WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, and Live Chat. utqcm7 still names the architecture list, including Gmail and Office 365 email. Quote the list that matches the surface. <a class="cite" href="#cite-30">[cite:30]</a>.</td><td>Testing chat by opening the CRM gadget.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Identity and SSO</td><td>Agents and administrators are Control Hub people. Webex Contact Center administrator is a role in the Control Hub role article. Org SSO maps an attribute to <code>uid</code>, which must match one of the user’s email addresses.</td><td>A perfect queue does not help an agent who cannot sign in, or an admin who lacks the contact-center role.</td><td>Control Hub users and roles. SSO guides for Control Hub–managed services. Directory Connector is the on-prem AD path, downloaded from Control Hub.</td><td>SSO tested from the IdP. The ADFS guide says SP-initiated only, and to use the Control Hub SSO test.</td><td><a href="#cite-5">[cite:5]</a> <a href="#cite-22">[cite:22]</a> <a href="#cite-23">[cite:23]</a> <a href="#cite-25">[cite:25]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Integration map</h3>
+<div class="diagram" role="img" aria-label="Integration edges from PSTN and CRM into WxCC">
+<svg viewBox="0 0 980 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration edges from PSTN and CRM into WxCC">
+<rect width="980" height="320" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="20" y="36" width="150" height="56" rx="10" fill="#14110c" stroke="#f0b429"/><text x="32" y="70">PSTN / Calling</text>
+<rect x="20" y="130" width="150" height="56" rx="10" fill="#14110c" stroke="#f0b429"/><text x="32" y="164">Control Hub</text>
+<rect x="20" y="224" width="150" height="56" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="32" y="248">CRM</text><text x="32" y="266" fill="#8d8476" font-size="12">SF · Dyn · SN</text>
+<rect x="230" y="120" width="200" height="80" rx="12" fill="#2a220c" stroke="#f0b429"/><text x="244" y="152">Entry · Flow</text><text x="244" y="174" fill="#8d8476" font-size="12">VAV or IVR, then queue</text>
+<rect x="490" y="120" width="170" height="80" rx="12" fill="#2a220c" stroke="#f0b429"/><text x="504" y="152">Queue · Team</text><text x="504" y="174" fill="#8d8476" font-size="12">agent desktop</text>
+<rect x="720" y="28" width="230" height="56" rx="10" fill="#14110c" stroke="#f0b429"/><text x="732" y="62">Analyzer / Search API</text>
+<rect x="720" y="120" width="230" height="56" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="732" y="154">CCAI / BYO virtual agent</text>
+<rect x="720" y="214" width="230" height="56" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="732" y="248">AI Assistant add-on</text>
+</g>
+<path d="M170 64 H230 V140" stroke="#f0b429" fill="none"/>
+<path d="M170 158 H230" stroke="#f0b429" fill="none"/>
+<path d="M430 160 H490" stroke="#f0b429" fill="none"/>
+<path d="M575 120 V56 H720" stroke="#f0b429" fill="none"/>
+<path d="M430 150 H720" stroke="#e0b07a" fill="none"/>
+<path d="M170 252 H490 V200" stroke="#e0b07a" fill="none"/>
+<text x="20" y="306" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">CRM edges carry the voice desktop. The article excludes chat and email from those connectors.</text>
+</svg>
+</div>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Subscription / Control Hub</td><td>WxCC tenant</td><td>Onboarding in Control Hub, as the architecture article describes.</td><td>The tenant, sites, teams, and the administrator role. New subscriptions can include Webex Calling PSTN services. Read the PSTN services on the subscription in Control Hub. New subscriptions can include Webex Calling PSTN, and the SKU string follows that order.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>PSTN or Webex Calling</td><td>Entry point</td><td>Voice ingress. The architecture article is the source for the calling relationship.</td><td>The inbound call. Agent login number must be a routable number, per that article.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Flow</td><td>Queue</td><td>Flow logic, then queue routing. np2fdx names Longest Available, Circular, Top-down, and Best Available, on different queue types. Open the queue in Control Hub and read which of Longest Available, Circular, Top-down, and Best Available that queue type offers. The set varies by queue type.</td><td>The contact, after self-service.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Queue</td><td>Agent desktop</td><td>Team assignment and offer. QueueToAgent is voice-only in the architecture article.</td><td>The contact offered to an agent.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact events</td><td>Analyzer and Search API</td><td>Event-built reports. Search API: scopes <code>cjp:config</code> or <code>cjp:config_read</code>, Administrator or Supervisor. FROM cannot be older than 36 months. The span must not exceed 365 days.</td><td>Historical contact records. Example host <code>api.wxcc-us1.cisco.com</code>. Sample org id in the doc is not a Canon tenant.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Agent desktop</td><td>Salesforce</td><td>CRM connector inside Lightning. WebRTC is not supported on Edge. One Salesforce tab for a WebRTC answer.</td><td>Voice desktop and screen pop. Not chat or email.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Agent desktop</td><td>Dynamics 365</td><td>Channel provider. URL host <code>wxcc-crmconnectors.ciscoccservice.com</code>. CIF 1 or CIF 2 as the app type requires.</td><td>Voice session inside Dynamics. On-premises Dynamics is unsupported.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>ServiceNow</td><td>Agent desktop</td><td>Launch Desktop from within ServiceNow.</td><td>The same class of CRM connector. Digital channels remain excluded by the connector-wide sentence.</td><td><a href="#cite-14">[cite:14]</a> <a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Flow</td><td>Virtual agent</td><td>CCAI connector for Dialogflow, or bring-your-own. Escalation event <code>AGENT_TRANSFER</code> is mandatory in the BYO guide. <code>CALL_END</code> is also mandatory there. <code>BARGE_IN</code> is optional.</td><td>Utterances, then either a completed bot call or a transfer to a human queue.</td><td><a href="#cite-15">[cite:15]</a> <a href="#cite-19">[cite:19]</a></td></tr>
+<tr><td>Control Hub</td><td>AI Assistant</td><td>Add-on enablement for summaries, wellness breaks, Auto CSAT, real-time transcription, Real-Time Assist.</td><td>Agent-facing assistance after the human is on the contact. Not the caller-facing virtual agent.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Digital channel</td><td>Connect, not the CRM gadget</td><td>Architecture article’s digital path. CRM connector articles exclude chat and email.</td><td>Chat, email, and any later channel. as of 2026-10-14, s0qro1 (header August 25, 2026) names six Connect channels: WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, and Live Chat. utqcm7 still names the architecture list, including Gmail and Office 365 email. Quote the list that matches the surface. <a class="cite" href="#cite-30">[cite:30]</a></td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>IdP or directory</td><td>Control Hub user</td><td>SSO <code>uid</code> must match an email. Directory Connector is the Windows AD sync downloaded from Control Hub. SCIM is the Entra REST alternative.</td><td>The person who can hold the Webex Contact Center administrator role or sign in as an agent.</td><td><a href="#cite-22">[cite:22]</a> <a href="#cite-23">[cite:23]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only</strong> UCCE nouns are analogies for people who already know that product. They are not a claim that a script node equals a flow activity. Microsoft Dynamics 365 Contact Center, Amazon Connect, and Genesys are peer labels, not designs.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>WxCC multi-tenant</th><th>Legacy UCCE / PCCE</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Flow</td><td>An ICM script is the legacy habit. No ICM-node map is published. Those rows stay marked in T6-R04.</td><td>Amazon Connect “contact flow” and a Genesys flow are orientation labels. No parity matrix is published on help.webex.com. Cisco’s documented calling migrations are Unified CM and BroadWorks/BroadCloud. <a class="cite" href="#cite-26">[cite:26]</a> <a class="cite" href="#cite-27">[cite:27]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Entry point</td><td>A dialed number is the legacy habit. Whether every entry point is still +E.164 only is <mark class="recheck">re-check</mark> from the stale setup guide.</td><td>Read inbound addresses in the peer product’s own console. The stale setup guide is marked re-check, and those addresses are not this tenant’s entry points.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Team</td><td>A skill group is the legacy habit. Parity stays marked in T6-R04.</td><td>Open the skill profile on the queue in Control Hub, and open the peer product’s queue in that product’s console. T6-R04 keeps the parity marked because the object names differ.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Agent desktop in Control Hub’s cloud</td><td>Finesse is not a component of this multi-tenant product. Cisco Live pairs Enterprise with the dedicated-instance cloud and this product with multi-tenant cloud. <mark class="recheck">re-check</mark> those decks.</td><td>Dynamics 365 Contact Center (Microsoft’s product) is not Cisco’s Dynamics CRM connector. Read Microsoft’s docs for Dynamics 365 Contact Center and Cisco’s connector article for the screen-pop. They are different products and change on different schedules.</td><td><a href="#cite-2">[cite:2]</a> <a href="#cite-3">[cite:3]</a> <a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>CRM connector for Dynamics 365</td><td>A Finesse gadget that screen-pops an on-prem CRM is a different integration. On-prem Dynamics is explicitly unsupported here.</td><td>Do not design this row from a Teams Phone or Amazon Connect blog.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Future-integration hooks</h3>
+<div class="callout note"><span class="label">Canon plan, not a Cisco roadmap</span><p>Digital channels are planned room T3-R06. Analyzer is T3-R07. WFO and AI depth is T3-R09. Those HTML files do not exist yet.</p></div>
+<ul>
+<li>Read the subscription in Control Hub before you copy <code>A-FLEX-WFO-*</code> SKUs onto an order. py6u9h’s list is Enterprise, CCE, and CCX, so a multi-tenant order shows a different set. <a class="cite" href="#cite-18">[cite:18]</a></li>
+<li>Replace the QM and recording row when a current multi-tenant article supersedes the setup guide’s optional-module list.</li>
+<li>Keep three AI names apart in later rooms: Virtual Agent–Voice (caller), AI Assistant (agent add-on), WFO Agent Assist (schedule assistant).</li>
+<li>Webhook and API catalogs beyond Search API and the documented error page belong in T8 once the event names are cited. Calling recording names are cited in T2. Read event names on developer.webex.com for the API you are calling. This room stays on the Search API because a wider contact-center event catalog changes when Cisco adds an event.</li>
+<li>Dedicated Instance interop still requires the certificate-trunk statement in nmhk7ve when a later room draws that bridge. <a class="cite" href="#cite-11">[cite:11]</a></li>
+</ul>
+
+<h3 class="eco-sub">Ecosystem troubleshooting</h3>
+<p>These rows are sister-system causes. They do not replace the room’s routing trouble matrix.</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Chat arrives in the platform and never pops in Salesforce</td><td>Digital channels such as chat and email are not supported on the CRM connectors. The sentence applies to all of those connectors.</td><td>Is the test a digital contact inside the CRM gadget?</td><td>Test digital on the Connect path. Use the CRM connector for voice.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Salesforce agents cannot load the desktop</td><td>Classic mode, Edge WebRTC, or more than one Salesforce tab on a WebRTC answer.</td><td>Lightning app. Browser. How many tabs are offering the call.</td><td>Lightning, a supported browser, one tab for WebRTC answer.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>Dynamics connector refuses the instance</td><td>On-premises Dynamics, or the wrong CIF generation.</td><td>Cloud instance. Single-session app needs CIF 1. Multi-session app needs CIF 2.</td><td>Use a supported cloud instance and the CIF version the article pairs with that app.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>Virtual agent never reaches a human</td><td>BYO contract: escalation uses the <code>AGENT_TRANSFER</code> event, and that event is mandatory.</td><td>Flow debug for <code>AGENT_TRANSFER</code> versus only a spoken goodbye.</td><td>Emit <code>AGENT_TRANSFER</code> to a queue. <code>CALL_END</code> is the other mandatory end.</td><td><a href="#cite-19">[cite:19]</a></td></tr>
+<tr><td>No call summary and no wellness prompt</td><td>AI Assistant is a Control Hub add-on. WFO Agent Assist is a different feature and will not produce those summaries.</td><td>Which name the request used, and whether the add-on is enabled.</td><td>Enable the AI Assistant features the article lists, including summaries and wellness breaks.</td><td><a href="#cite-16">[cite:16]</a> <a href="#cite-17">[cite:17]</a></td></tr>
+<tr><td>WFO SKU from a spreadsheet does not appear on this tenant</td><td>py6u9h is written for Enterprise, CCE, and CCX.</td><td>Does the quote say multi-tenant Webex Contact Center, or Enterprise?</td><td>Stop. Do not force <code>A-FLEX-WFO-NWFM2</code> onto this product from that table.</td><td><a href="#cite-18">[cite:18]</a></td></tr>
+<tr><td>911 test from an agent phone does nothing in the flow trace</td><td>Emergency calling for Webex Calling endpoints is RedSky and the Kari email path, not a flow activity.</td><td>Port 443 to the RedSky hosts. Organization emergency-notification toggle. 933 in the US or Canada does not alert public safety.</td><td>Fix the Calling emergency path. The WxCC emergency page is nvfbjts. as of 2026-10-14, nvfbjts: WebRTC Agent Desktop uses Webex Calling Control Hub and RedSky; test 933; then Calling → Emergency calling → Enhanced emergency calling (RedSky access to test, Emergency call routing to activate). Device User Id equals the agent email, then install myE911. <a class="cite" href="#cite-31">[cite:31]</a>.</td><td><a href="#cite-20">[cite:20]</a> <a href="#cite-21">[cite:21]</a></td></tr>
+<tr><td>New agent cannot sign in; the queue is correct</td><td>Identity. <code>uid</code> does not match an email, or the person lacks the contact-center administrator or agent access the role article describes.</td><td>Control Hub user, SSO claim, role.</td><td>Fix the claim or the role. The ADFS guide says test SSO from Control Hub, not from the IdP.</td><td><a href="#cite-5">[cite:5]</a> <a href="#cite-22">[cite:22]</a> <a href="#cite-25">[cite:25]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>One inbound voice contact</h2>
+<!-- VISUAL:sequence -->
+<div class="diagram" role="img" aria-label="Inbound voice contact sequence">
+<svg viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inbound voice contact sequence">
+<rect width="980" height="260" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6" text-anchor="middle">
+<text x="70" y="28">Caller</text>
+<text x="230" y="28">PSTN edge</text>
+<text x="400" y="28">Entry / Flow</text>
+<text x="580" y="28">Queue</text>
+<text x="760" y="28">Agent</text>
+<line x1="70" y1="40" x2="70" y2="230" stroke="#e0b07a"/>
+<line x1="230" y1="40" x2="230" y2="230" stroke="#f0b429"/>
+<line x1="400" y1="40" x2="400" y2="230" stroke="#f0b429"/>
+<line x1="580" y1="40" x2="580" y2="230" stroke="#f0b429"/>
+<line x1="760" y1="40" x2="760" y2="230" stroke="#efe7d6"/>
+</g>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#d5ccbe">
+<text x="90" y="70">1 dial the entry-point number</text>
+<path d="M90 82 H210" stroke="#e0b07a"/>
+<text x="250" y="110">2 voice edge answers via the flow</text>
+<path d="M250 122 H380" stroke="#f0b429"/>
+<text x="420" y="155">3 Queue Contact if the flow says so</text>
+<path d="M420 168 H560" stroke="#f0b429"/>
+<text x="600" y="200">4 reserve an agent or park and keep treating</text>
+<path d="M600 212 H740" stroke="#efe7d6"/>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol / mechanism</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Caller</td><td>PSTN</td><td>PSTN</td><td>The entry point’s voice configuration is the phone number, typically from the chosen PSTN provider.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>PSTN</td><td>Webex Contact Center voice edge</td><td>SIP, third-party call control</td><td>The article says voice ingress uses Webex Calling PSTN services, including for contact-center orders that are not a full Calling subscription. New subscriptions include those PSTN services automatically.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Edge</td><td>Entry point</td><td>Number match</td><td>The call is associated to the entry point. +E.164 mapping is the rule in the setup guide. <mark class="recheck">re-check</mark></td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>4</td><td>Entry point</td><td>Flow</td><td>Flow execution instance</td><td>The flow is answered treatment. Each call gets an isolated flow instance until the call ends.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Flow</td><td>Queue</td><td>Queue Contact activity</td><td>If an agent is free, the agent is reserved. If not, the contact parks and the queue treatment continues until an agent is offered the contact.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Queue</td><td>Team</td><td>Distribution group, then LAA / skills</td><td>Search space expands as call distribution groups are added over time.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Platform</td><td>Agent phone</td><td>Call to the number the agent entered at login</td><td>PSTN, mobile, or Webex Calling extension. Unroutable number means no calls delivered.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Services</td><td>Analyzer</td><td>Events, stream processing, stored aggregates</td><td>Real-time clients subscribe to datasets. Historical reads go through the data APIs and Analyzer.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+<p>Digital skips steps 1–2 as PSTN. Connect receives the message or email, may run a bot, and queues into Webex Contact Center when its flow says to. <a class="cite" href="#cite-1">[cite:1]</a></p>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config path</p>
+<h2>Order of objects, not a full build</h2>
+<p>T3-R02 will be the provisioning room. This path is the overview order so you do not create a queue before you know which teams exist. Where the setup guide and a current article disagree, the current article wins and the guide step is marked.</p>
+<ol class="steps">
+<li><span class="path">Control Hub → confirm Contact Center is on the subscription</span>The architecture article says Control Hub provisioning triggers the contact-center workflow. The service-admin role model is in T1-R01. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a>
+<div class="shot"><!-- VISUAL:screenshot:1 -->Screenshot placeholder · step 1 · Contact Center present on the subscription.</div></li>
+<li><span class="path">Create a site</span>A site is the parent of teams and users. Name it for a real place in the lab (one city is enough). <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:2 -->Screenshot placeholder · step 2 · site create. Read the site-create label in Control Hub on the day you add a site. The on-screen words change, which is why the screenshot stays a placeholder.</div></li>
+<li><span class="path">Create a team on that site</span>The setup guide wanted idle codes, wrap-up codes, and desktop profiles before agents, and skills before teams if skill-based routing is on. <mark class="recheck">re-check</mark> that order in Control Hub. <a class="cite" href="#cite-4">[cite:4]</a>
+<div class="shot"><!-- VISUAL:screenshot:3 -->Screenshot placeholder · step 3 · team on the site.</div></li>
+<li><span class="path">Contact Center → Customer experience → Queues</span>Create an inbound telephony queue. Decide skill-based or not before you save. Map at least one team. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-6">[cite:6]</a>
+<div class="shot"><!-- VISUAL:screenshot:4 -->Screenshot placeholder · step 4 · queue routing settings.</div></li>
+<li><span class="path">Create an entry point and a minimal flow</span>Bind a lab DID in +E.164 if you have one. Point the flow at the queue with Queue Contact. Flow Designer detail is T8-R01. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:5 -->Screenshot placeholder · step 5 · entry point and flow assignment.</div></li>
+<li><span class="path">Add an agent user on the team</span>Sign into Agent Desktop with a phone number you can actually answer. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:6 -->Screenshot placeholder · step 6 · agent login station.</div></li>
+<li><span class="path">Place one call</span>Confirm the flow runs, the queue shows the contact, and the desktop offers it. Then open Analyzer or the real-time view and confirm the contact exists as data, not only as a ringing phone. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:7 -->Screenshot placeholder · step 7 · offered contact.</div></li>
+<li><span class="path">Optional read of the API</span>On developer.webex.com, open the Contact Center overview and note that Search is GraphQL with scopes <code>cjp:config</code> or <code>cjp:config_read</code>, Administrator or Supervisor. Do not call production search from this lab note. <a class="cite" href="#cite-7">[cite:7]</a> <a class="cite" href="#cite-9">[cite:9]</a>
+<div class="shot"><!-- VISUAL:screenshot:8 -->Screenshot placeholder · step 8 · developer portal page, no tokens visible.</div></li>
+</ol>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Separate “printed in an old guide” from “safe to design against”</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>Deployment model in this track</td><td>Cloud CCaaS. Cisco Live also calls it multi-tenant cloud.</td><td>utqcm7; PSOCCT-1014; BRKCCT-2031</td><td>Cited. Deck wording <mark class="recheck">re-check</mark>. <a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Entry point numbering</td><td>Setup guide: only globalized +E.164 PSTN numbers; extensions not supported for entry-point mapping</td><td>n5595zd</td><td><mark class="recheck">re-check</mark> Guide says it is no longer updated. <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Agent on multiple teams</td><td>Can be assigned to more than one; services one team at a time</td><td>n5595zd</td><td><mark class="recheck">re-check</mark> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Active sites</td><td>300</td><td>n7s6ed7 header August 18, 2026, retrieved 2026-10-14. The stale guide printed the same cell.</td><td>Quoted <a class="cite" href="#cite-34">[cite:34]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Active entry points</td><td>6000</td><td>n7s6ed7, same retrieval</td><td>Quoted <a class="cite" href="#cite-34">[cite:34]</a></td></tr>
+<tr><td>Queues, team-based routing type</td><td>10500</td><td>n7s6ed7. Inbound contact-service queues on that page are a different cell, 11000.</td><td>Quoted <a class="cite" href="#cite-34">[cite:34]</a></td></tr>
+<tr><td>Capacity-based teams</td><td>Table 3 prints “Maximum number for a Capacity-Based Team” 100, “Maximum Capacity-Based Teams for an organization” 50, and “Maximum number of concurrent calls for Capacity-Based Teams” 5000.</td><td>n7s6ed7 Table 3, header August 18, 2026</td><td>Those three labels, retrieved 2026-10-14. <a class="cite" href="#cite-34">[cite:34]</a></td></tr>
+<tr><td>Named agent scale “400” and “48,000”</td><td>Appear on BRKCCT-2031 portfolio text as Express and Enterprise bands</td><td>Cisco Live 2025</td><td>Read the capacity article for the product on the subscription. Cisco Live 2025 prints those bands, and this room leaves them unassigned until a help page says which product they belong to. n7s6ed7 says 20000 active users and unlimited concurrent agents at the organization level. <a class="cite" href="#cite-34">[cite:34]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Search API window</td><td>FROM cannot be older than 36 months. Span between FROM and TO must not exceed 365 days. Scopes <code>cjp:config</code> or <code>cjp:config_read</code>. Roles: Administrator or Supervisor.</td><td>developer.webex Search reference</td><td>Cited 2026-10-14 <a href="#cite-9">[cite:9]</a>. Example host in the doc is <code>api.wxcc-us1.cisco.com</code>. Read the API host in Control Hub or on the developer page for the region that tenant uses. The sample host api.wxcc-us1.cisco.com is one region, and the host changes with the data center.</td></tr>
+<tr><td>Channels named in the architecture article</td><td>Voice; chat; WhatsApp; Facebook Messenger; SMS; Apple Messages for Business; Gmail; Office 365 email</td><td>utqcm7</td><td>Cited <a href="#cite-1">[cite:1]</a>. as of 2026-10-14, s0qro1 (header August 25, 2026) names six Connect channels: WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, and Live Chat. utqcm7 still names the architecture list, including Gmail and Office 365 email. Quote the list that matches the surface. <a class="cite" href="#cite-30">[cite:30]</a></td></tr>
+<tr><td>Data residency</td><td>oybc4fb, header September 24, 2026: Contact Center checks US, EU, Canada, UK, Japan, Australia, Singapore, and India. Saudi Arabia is blank on that row. Confirm at Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation. n0p6xa1, header May 27, 2026: Country of Operation creates the tenant in the closest data center. Tables read 2026-10-14 name United States, Canada, United Kingdom, Australia, Japan, and India. Hosted there: tenant configuration, call data records, call recordings, reporting, digital channels.</td><td>The two pages do not print the same region set. EU and Singapore are on the oybc4fb row and were not headings in the n0p6xa1 tables this pass read.</td><td><mark class="recheck">re-check</mark> before a residency design. <a class="cite" href="#cite-32">[cite:32]</a> <a class="cite" href="#cite-33">[cite:33]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Overview-level triage</h2>
+<p>Deeper log work is T8. These rows stop you blaming the wrong product.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence / check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>DID rings a phone, never a flow</td><td>Number is not on an entry point, or it is still a Calling user/queue</td><td>Entry point number list versus the Calling number inventory</td><td>Map the +E.164 number to the entry point. Do not debug ICM. <mark class="recheck">re-check</mark> extension mapping.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Flow runs, nobody is offered the contact</td><td>Queue has no team, or agents are on a team that is not in the current distribution group</td><td>Queue’s teams and distribution groups. Agent state and team.</td><td>Put the team in the queue. Remember the search space grows only as groups are added over time.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Agent is Available and still receives nothing</td><td>Login station is not a routable number</td><td>The number typed at desktop login. A test call to that number from outside the contact center.</td><td>Use a PSTN, mobile, or real Webex Calling extension. <a href="#cite-1">[cite:1]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Skill queue never selects an obvious agent</td><td>Agent does not fully meet the contact’s skill requirement, or is outside the active distribution group</td><td>Skill requirements on the contact versus the agent. Team membership.</td><td>The architecture article: among agents who match skills and are on the queue’s teams, selection is LAA or BAA as configured.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Supervisor cannot see another site’s team</td><td>User profile is site-scoped</td><td>Profile’s sites and teams</td><td>Grant the site or the specific team. Do not make them a full admin to “see stats.”</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer read-only Control Hub admin cannot open contact center</td><td>Documented role behavior, not a down service</td><td>Role on the user</td><td>Use a full administrator or Contact Center Service Administrator. Partner read-only is a different row. See T1-R01.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Chat never reaches an agent</td><td>Connect flow never queues, or the entry point is not tied to the Connect asset</td><td>Connect flow logs versus the WxCC entry point</td><td>Digital ingress is Connect’s job until it explicitly queues. <a href="#cite-1">[cite:1]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analyzer is empty while phones are ringing</td><td>You are looking at the wrong dataset or the event path has not caught up. The clocks to quote are as of 2026-10-14, tajemk: real-time Analyzer reports stay up and refresh automatically (new reports default to 5 seconds, selectable 5–60). Historical Analyzer sessions stay active 8 hours. n6m0w9z: the Agent statistics widget updates historical data every 24 hours and real-time data every 60 seconds. <a class="cite" href="#cite-28">[cite:28]</a> <a class="cite" href="#cite-29">[cite:29]</a>.</td><td>Real-time dataset versus historical aggregate</td><td>Confirm you are on the real-time surface the article describes, then open a data-path investigation in T3-R07. Do not invent a refresh interval.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Desktop widgets freeze after a network blip</td><td>WebSocket dropped</td><td>Browser network log shows the socket close and a reconnect</td><td>The article says the desktop detects loss and attempts to reconnect and re-login. If it does not, capture that as a defect rather than rebuilding the queue.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>API search returns 401 or 403</td><td>Bearer token missing, expired, or missing <code>cjp:config</code> / <code>cjp:config_read</code>, or the user is not Administrator or Supervisor</td><td>HTTP status and the tracking id in the error body</td><td>Fix the token. Do not widen the query. The page lists 400 as Validation Error and does not name which code the FROM-age or 365-day span returns.</td><td><a href="#cite-9">[cite:9]</a> <a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>Design review starts drawing CVP and Finesse</td><td>Wrong product</td><td>Contract or quote says Webex Contact Center Enterprise, or the admin UI is not this flow model</td><td>Stop. Move the conversation to T4. PSOCCT-1014’s Enterprise column is a different admin experience. <a href="#cite-2">[cite:2]</a></td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Recursive self-question</p>
+<h2>Ladder</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is Webex Contact Center in this track?</summary>
+<p class="answer">Cisco’s cloud CCaaS contact center: entry points, flows, queues, teams, and Agent Desktop, provisioned from Control Hub. The Canon calls it multi-tenant because Cisco Live does. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p>
+<details class="qnode"><summary><span class="lvl">L1</span>Why is it a separate product from Webex Calling queues?</summary>
+<p class="answer">Calling queues are a calling feature. This platform answers the call in a flow, queues across sites, mixes digital channels through Connect, and builds Analyzer datasets from service events. <a class="cite" href="#cite-1">[cite:1]</a> A side-by-side of queue math is T7-R06, not a guess in this answer.</p>
+<details class="qnode"><summary><span class="lvl">L1a</span>What breaks if I design it as “UCCE in the cloud”?</summary>
+<p class="answer">You will look for Router, Logger, and CVP. Those names belong to the Enterprise / on-prem heritage track. This article’s nouns are entry point, flow, queue, team, site. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does a voice contact move?</summary>
+<p class="answer">Number → entry point → flow instance → queue → team → the phone number the agent registered at login. Events branch off to Analyzer. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L2a</span>What does the flow do if no agent is free?</summary>
+<p class="answer">The contact parks on the queue and the treatment attached to the queueing activity continues until an agent is offered the contact and the handler is interrupted. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2b</span>Where does chat enter?</summary>
+<p class="answer">Webex Connect, not the PSTN edge. Connect can bot-treat the thread and must explicitly queue it into Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do I prove a routing failure?</summary>
+<p class="answer">Check entry-point match, flow reached Queue Contact, team is in the active distribution group, agent skills if the queue is skill-based, and the login station is dialable. Profile scope explains “I cannot see it,” which is not the same as “it did not route.”</p>
+<details class="qnode"><summary><span class="lvl">L3a</span>How do I prove the login station?</summary>
+<p class="answer">Call the number the agent typed, from outside the queue. The article says an invalid number means the agent cannot receive incoming calls. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3b</span>How do I prove I am in the wrong admin UI?</summary>
+<p class="answer">If the task is “create a queue” and you are in a legacy portal module the setup guide itself retired, switch to Contact Center → Customer experience → Queues and re-check. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L4</span>How does this differ across Calling, WxCC, WxCCE, and Dedicated Instance?</summary>
+<p class="answer">Calling: location PSTN and calling features (T2). WxCC (this room): shared cloud CCaaS, flow and queue. WxCCE: Cisco Live’s dedicated-instance contact-center cloud for complex and CCE-heritage customers. <a class="cite" href="#cite-2">[cite:2]</a> Dedicated Instance for calling is a different UC-app deployment (T5); it can integrate with this contact center, and DI-to-multi-tenant contact-center support requires certificate-based trunks. <a class="cite" href="#cite-11">[cite:11]</a></p>
+<details class="qnode"><summary><span class="lvl">L4a</span>Do I need a Webex Calling subscription to land a PSTN call on WxCC?</summary>
+<p class="answer">The architecture article says calls route in using Webex Calling PSTN services and that this allows routing to the contact center without a Webex Calling subscription. It also says all new Webex Contact Center subscriptions include those PSTN services automatically. <a class="cite" href="#cite-1">[cite:1]</a> Read the PSTN choice on the subscription and on the location in Control Hub. The architecture article says new subscriptions can include Webex Calling PSTN, and the SKU follows the order.</p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L5</span>If I redesigned the object model, what would I change?</summary>
+<p class="answer">I would want queues to be site-scoped so a supervisor grant could not forget a global queue. The article’s constraint is that queues and entry points are global at organization level; site scoping is done with user profiles and by creating separate queues per geography. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L5a</span>What would I not copy into a sizing spreadsheet?</summary>
+<p class="answer">The 300 / 6000 / 10500 figures from the setup guide, and the 400 / 48,000 phrases from the 2025 deck, until each is verified against a current limit document. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</details>
+</details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Checklist</h2>
+<ul class="lab">
+<li><label><input type="checkbox"> Goal: place one voice contact through an entry point and a flow into a queue, and say which product you are <em>not</em> configuring.</label></li>
+<li><label><input type="checkbox"> Prereq: a lab org with Webex Contact Center. This lab does not assume a PSTN bundle or a named agent license. No production tenant.</label></li>
+<li><label><input type="checkbox"> Step 1. In Control Hub, record whether Contact Center is provisioned and which admin role you hold. Expected: you can open contact-center administration. If you are customer read-only, stop — that failure is documented. <a class="cite" href="#cite-5">[cite:5]</a></label></li>
+<li><label><input type="checkbox"> Step 2. Create one site and one team. Expected: the team cannot exist without a site. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 3. Create one inbound telephony queue and attach the team. Expected: the queue saves with a routing mode you can name (skill-based or not). <a class="cite" href="#cite-8">[cite:8]</a></label></li>
+<li><label><input type="checkbox"> Step 4. Create a one-activity flow that queues to that queue, and an entry point. Expected: a test call runs the flow. If you have no PSTN number, stop at “flow published” and record the gap. Do not invent a simulator result.</label></li>
+<li><label><input type="checkbox"> Step 5. Sign in to Agent Desktop with a routable number and take the contact. Expected: the desktop offers it and you can hold or end. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Evidence: site, team, queue, entry point, and a redacted desktop offer. Note the exact menu labels you saw.</label></li>
+<li><label><input type="checkbox"> Break-it: set the agent login number to a string that is not a real phone, and confirm calls are not delivered. Recovery: restore a routable number and take one contact. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Reflection: where did I almost use an Enterprise noun (script, CVP, Finesse), and what was the WxCC noun instead?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header>
+<p>In Cisco’s architecture article, Webex Contact Center is described as:</p>
+<ol type="A"><li>Packaged UCCE hosted by a partner</li><li>Contact center as a service, cloud native</li><li>A hunt group with reporting</li><li>Dedicated Instance only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. CCaaS, cloud native, services on Kubernetes in AWS. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header>
+<p>The Canon phrase “multi-tenant” for this track is anchored on:</p>
+<ol type="A"><li>A sentence in the architecture article’s introduction</li><li>Cisco Live portfolio wording that pairs multi-tenant cloud WxCC with dedicated-instance WxCCE</li><li>The Local Gateway guide</li><li>Guesswork</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. PSOCCT-1014 and BRKCCT-2031. <mark class="recheck">re-check</mark> the decks. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header>
+<p>Every team must belong to:</p>
+<ol type="A"><li>A queue</li><li>A site</li><li>A Local Gateway</li><li>An Analyzer dashboard</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A site. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header>
+<p>Chat is not reaching agents. Where do you look first?</p>
+<details class="reveal"><summary>Reveal</summary><p>Webex Connect: the asset, the Connect flow, and whether it queues into WxCC. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header>
+<p>QueueToAgent is documented for:</p>
+<ol type="A"><li>All digital channels</li><li>Voice / telephony</li><li>Email only</li><li>Enterprise scripts only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>Voice. The architecture article says agent-specific queue is supported only for telephony/voice. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header>
+<p>An agent is Available in the right team and the queue never offers. You call their login number and it fails. Diagnosis?</p>
+<details class="reveal"><summary>Reveal</summary><p>The station number is not routable, so the platform cannot deliver the call. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Draw it</span></header>
+<p>Draw PSTN and Connect as two doors into one entry-point/flow/queue building. Put Analyzer beside the building, fed by events, not in the voice path.</p>
+<details class="reveal"><summary>Reveal</summary><p>Match the map in this room. Analyzer is a data plane. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header>
+<p>The setup guide’s “300 active sites” figure should be used as:</p>
+<ol type="A"><li>The current contractual limit</li><li>A number from a guide that says it is no longer updated, unless a current limits article reprints it</li><li>A Cisco Live 2025 promise</li><li>A per-team cap</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header>
+<p>Search API scope for the documented GraphQL search is:</p>
+<ol type="A"><li><code>spark:all</code></li><li><code>cjp:config</code> or <code>cjp:config_read</code></li><li>No scope</li><li>Location administrator</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. And the role must be Administrator or Supervisor. <a class="cite" href="#cite-9">[cite:9]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header>
+<p>A colleague says new contact-center orders cannot receive PSTN calls unless the customer also buys Webex Calling. What does the architecture article actually say?</p>
+<details class="reveal"><summary>Reveal</summary><p>Calls route using Webex Calling PSTN services, which can land on the contact center without a Webex Calling subscription, and new WxCC subscriptions include those PSTN services automatically. Confirm the order’s SKU separately. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Oral</span></header>
+<p>Name three flow activities without opening the designer.</p>
+<details class="reveal"><summary>Reveal</summary><p>Any three from the article’s set: play messages, collect, transfer, virtual agent, queue, callback, GetQueueInfo, QueueToAgent. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header>
+<p>The whiteboard already has “Side A Router” and “CVP.” Which Canon track do you move to?</p>
+<details class="reveal"><summary>Reveal</summary><p>T4 Webex Contact Center Enterprise. This room’s model does not use those components. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio slots</p>
+<h2>Studio fills these</h2>
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Webex Contact Center to a senior engineer walking in from UCCE: cloud CCaaS, entry point, flow, queue, team, and why multi-tenant is a Cisco Live name you still re-check." | assets/audio/T3-R01/overview.mp3 -->
+<article class="audio-slot">
+<h3>Overview · 3–5 min</h3>
+<p class="prompt">“Explain Webex Contact Center to a senior engineer walking in from UCCE: cloud CCaaS, entry point, flow, queue, team, and why multi-tenant is a Cisco Live name you still re-check.”</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T3-R01/overview.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio.</p></details>
+</article>
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk a voice contact and a chat contact, then the desktop login number, distribution groups, and which limits you refuse to quote from the old setup guide." | assets/audio/T3-R01/deep-dive.mp3 -->
+<article class="audio-slot">
+<h3>Deep dive · 8–12 min</h3>
+<p class="prompt">“Walk a voice contact and a chat contact, then the desktop login number, distribution groups, and which limits you refuse to quote from the old setup guide.”</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T3-R01/deep-dive.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio.</p></details>
+</article>
+<!-- AUDIO:oral-drill | 2 min | prompt: rapid Q&A from quiz -->
+<article class="audio-slot">
+<h3>Oral drill · 2 min</h3>
+<p class="prompt">Rapid Q&amp;A from the quiz. Fail the drill if Router or CVP shows up as a WxCC component.</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T3-R01/oral-drill.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio.</p></details>
+</article>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral-ready</h2>
+<h3>1 · What is Webex Contact Center?</h3>
+<p><strong>30 seconds.</strong> Cloud contact-center as a service. Contacts hit an entry point, a flow treats them, a queue finds an agent on a team. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2 minutes.</strong> Add AWS/Kubernetes only as the article’s architecture, Control Hub as the onboarding door, Connect for digital, Analyzer for the event pipeline. Say “multi-tenant” only with the Cisco Live citation and a re-check. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<h3>2 · How is it different from Enterprise?</h3>
+<p><strong>30 seconds.</strong> Enterprise is the dedicated-instance cloud aimed at complex and CCE-heritage customers. Different admin model. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>2 minutes.</strong> Refuse the 48,000-agent number until you have opened the slide and a current datasheet. Offer the object model of this room as what you can operate today.</p>
+<h3>3 · Walk an inbound call.</h3>
+<p><strong>30 seconds.</strong> PSTN number, entry point, flow, queue, agent’s login number. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2 minutes.</strong> Add “no agent → park and keep treating,” distribution groups expanding over time, and the Calling-PSTN-services sentence about not requiring a separate Calling subscription. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>4 · Why can’t the supervisor see the other country?</h3>
+<p><strong>30 seconds.</strong> User profiles scope sites and teams. Queues are global, so you grant them explicitly. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2 minutes.</strong> Contrast that with a customer read-only Control Hub admin, who cannot open contact-center admin at all. <a class="cite" href="#cite-5">[cite:5]</a></p>
+<h3>5 · What do you refuse to size from memory?</h3>
+<p><strong>30 seconds.</strong> The setup guide’s tenant caps and any Cisco Live agent band.</p>
+<p><strong>2 minutes.</strong> Explain why the guide header (“no longer updated”) keeps those numbers off a design until a current limits article reprints them, and why the Search API’s FROM-age rule and 365-day span <em>are</em> safe to quote because you read it on developer.webex.com on a known date. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-9">[cite:9]</a></p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T3-R01.md">cites/T3-R01.md</a>.</p>
+<ol class="cite-list">
+<li id="cite-1">Webex Contact Center Architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a> — retrieved 2026-10-14.</li>
+<li id="cite-2">PSOCCT-1014 — portfolio framing: multi-tenant cloud with Webex Contact Center, and dedicated-instance cloud with Webex Contact Center Enterprise — Cisco Live 2024 — <a href="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/PSOCCT-1014.pdf">ciscolive.com global-event 2024 PDF</a>. <mark class="recheck">re-check</mark></li>
+<li id="cite-3">BRKCCT-2031 — portfolio slide text pairing Webex Contact Center (Multi-tenant Cloud) with Webex Contact Center Enterprise (Dedicated Instance Cloud); Express/Enterprise agent bands present in the extract — Cisco Live 2025 — <a href="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCCT-2031.pdf">ciscolive.com global-event 2025 PDF</a>. <mark class="recheck">re-check</mark> Do not treat agent bands as verified limits.</li>
+<li id="cite-4">Webex Contact Center Setup and Administration Guide — help.webex — article n5595zd — <a href="https://help.webex.com/en-us/article/n5595zd/Webex-Contact-Center-Setup-and-Administration-Guide">help.webex.com article n5595zd</a> — retrieved 2026-10-14. The guide states it is no longer updated. Numeric caps in that guide are not a design source by themselves. n7s6ed7, header August 18, 2026, reprints sites 300, entry points 6000, team-based queues 10500, and the capacity-based 100 / 50 / 5000 cells.</li>
+<li id="cite-5">Assign organization account roles in Control Hub, Webex Contact Center administrator section — help.webex — article fs78p5 — <a href="https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub">help.webex.com article fs78p5</a> — retrieved 2026-10-14. Shared with T1-R01.</li>
+<li id="cite-6">Understand Routing and Queueing in Webex Contact Center — help.webex — article np2fdx — <a href="https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center">help.webex.com article np2fdx</a> — retrieved 2026-10-14.</li>
+<li id="cite-7">Webex Contact Center developer overview — developer.webex — <a href="https://developer.webex.com/webex-contact-center/docs/webex-contact-center">developer.webex.com/webex-contact-center/docs/webex-contact-center</a> — retrieved 2026-10-14. Also the platform overview at <a href="https://developer.webex.com/docs/contact-center">developer.webex.com/docs/contact-center</a>.</li>
+<li id="cite-8">Create queues and configure routing patterns — help.webex — article ubg5qd — <a href="https://help.webex.com/en-us/article/ubg5qd/Create-queues-and-configure-routing-patterns">help.webex.com article ubg5qd</a> — retrieved 2026-10-14. Path used: Contact Center → Customer experience → Queues.</li>
+<li id="cite-9">Webex Contact Center Search API — developer.webex — <a href="https://developer.webex.com/webex-contact-center/docs/api/v1/search/search">developer.webex.com …/api/v1/search/search</a> — retrieved 2026-10-14. FROM cannot be older than 36 months from the current time. The duration between TO and FROM must not be more than 365 days. Scopes and roles are printed on the page. Example URL in the doc includes a sample org id; that id is not a Canon tenant and is not repeated here.</li>
+<li id="cite-10">Webex Contact Center API errors — developer.webex — <a href="https://developer.webex.com/webex-contact-center/docs/api/">developer.webex.com/webex-contact-center/docs/api/</a> — retrieved 2026-10-14. Bearer token, 401, and tracking id.</li>
+<li id="cite-11">Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — <a href="https://help.webex.com/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-integration">help.webex.com article nmhk7ve</a> — retrieved 2026-10-14. Used for the DI contrast only.</li>
+
+<li id="cite-12">Integrate Webex Contact Center with Salesforce (Version 2-New) — help.webex — article dyidod — <a href="https://help.webex.com/article/dyidod">help.webex.com article dyidod</a> — retrieved 2026-10-14. Lightning only. Digital channels such as chat and email are not supported with CRM connectors, for all CRM integrations using these connectors. WebRTC is not supported on Edge. Do not answer a WebRTC call from multiple Salesforce tabs.</li>
+<li id="cite-13">Integrate Webex Contact Center CRM Connector for Microsoft Dynamics 365 (Version 2-New) — help.webex — article n1lsqvu — <a href="https://help.webex.com/article/n1lsqvu">help.webex.com article n1lsqvu</a> — retrieved 2026-10-14. CIF 1 single-session, CIF 2 multi-session. On-premises Dynamics is not supported. Channel host wxcc-crmconnectors.ciscoccservice.com.</li>
+<li id="cite-14">Integrate Webex Contact Center with ServiceNow (Version 2-New) — help.webex — article ny83tx0 — <a href="https://help.webex.com/article/ny83tx0">help.webex.com article ny83tx0</a> — retrieved 2026-10-14. Launch Desktop from within ServiceNow.</li>
+<li id="cite-15">Configure Virtual Agent-Voice in Webex Contact Center — help.webex — article n6gaghu — <a href="https://help.webex.com/article/n6gaghu">help.webex.com article n6gaghu</a> — retrieved 2026-10-14. CCAI connector. Dialogflow CX, Dialogflow ES, bring-your-own. Webex AI Agents are a separate article.</li>
+<li id="cite-16">Enable AI Assistant features in Control Hub for Webex Contact Center — help.webex — article n9lk3t6 — <a href="https://help.webex.com/article/n9lk3t6">help.webex.com article n9lk3t6</a> — retrieved 2026-10-14. Summaries, wellness breaks, Auto CSAT, real-time transcription, Real-Time Assist.</li>
+<li id="cite-17">What’s new for agents in Webex Contact Center — help.webex — article n3v7ldh — <a href="https://help.webex.com/article/n3v7ldh">help.webex.com article n3v7ldh</a> — retrieved 2026-10-14. WFO Agent Assist note dated February 2, 2026: schedules, 59 languages, WFM rules.</li>
+<li id="cite-18">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a> — retrieved 2026-10-14. The article scopes the table to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express. Do not apply those SKUs to multi-tenant without a separate source.</li>
+<li id="cite-19">Bring your own virtual agent — developer.webex — <a href="https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent">developer.webex.com bring-your-own-virtual-agent</a> — retrieved 2026-10-14. <code>AGENT_TRANSFER</code> and <code>CALL_END</code> are mandatory. <code>BARGE_IN</code> is optional.</li>
+<li id="cite-20">Enhanced emergency calling for Webex Calling — help.webex — article av6oo3 — <a href="https://help.webex.com/article/av6oo3">help.webex.com article av6oo3</a> — retrieved 2026-10-14. Used here for agent-station emergency on the Calling path. A WxCC-only emergency menu was not in this article.</li>
+<li id="cite-21">Configure emergency call notifications in Control Hub — help.webex — article nj0abhbb — <a href="https://help.webex.com/article/nj0abhbb">help.webex.com article nj0abhbb</a> — retrieved 2026-10-14. Kari’s Law email. 933 test.</li>
+<li id="cite-22">Single Sign-On Integration in Control Hub — help.webex — article lfu88u — <a href="https://help.webex.com/article/lfu88u">help.webex.com article lfu88u</a> — retrieved 2026-10-14. Shared identity fact with T1-R01.</li>
+<li id="cite-23">Deployment Guide for Directory Connector — help.webex — article zqvufbb — <a href="https://help.webex.com/article/zqvufbb">help.webex.com article zqvufbb</a> — retrieved 2026-10-14. Shared identity fact with T1-R01.</li>
+<li id="cite-24">Manage call recording for Webex Calling — help.webex — article nhvl4hw — <a href="https://help.webex.com/article/nhvl4hw">help.webex.com article nhvl4hw</a> — retrieved 2026-10-14. Cited so Calling retention is not mistaken for WxCC quality-management retention.</li>
+<li id="cite-25">Configure single sign-on in Control Hub with ADFS — help.webex — article nyx7kubb — <a href="https://help.webex.com/article/nyx7kubb">help.webex.com article nyx7kubb</a> — retrieved 2026-10-14. SP-initiated test only.</li>
+<li id="cite-26">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a>. Not a contact-center parity matrix.</li>
+<li id="cite-27">Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb — <a href="https://help.webex.com/article/n1ku0vfb">help.webex.com article n1ku0vfb</a>.</li>
+
+<li id="cite-28">Cisco Webex Contact Center Analyzer User Guide — help.webex — article tajemk — <a href="https://help.webex.com/article/tajemk">help.webex.com article tajemk</a> — retrieved 2026-10-14. Real-time reports remain available indefinitely and refresh automatically. New real-time reports default to a 5-second refresh; the drop-down is 5 to 60 seconds in steps of 5. Historical reports stay active 8 hours. Stock reports are under Visualizations. Excel or CSV export is for historical visualizations; real-time and compound visualizations cannot be exported.</li><li id="cite-29">View and manage agent performance reports — help.webex — article n6m0w9z — <a href="https://help.webex.com/article/n6m0w9z">help.webex.com article n6m0w9z</a> — retrieved 2026-10-14. Agent statistics historical reports update every 24 hours. Real-time agent statistics update every 60 seconds. That clock is the desktop widget, not the Analyzer visualization refresh.</li><li id="cite-30">Use AI agents for customer interactions — help.webex — article s0qro1 — <a href="https://help.webex.com/article/s0qro1">help.webex.com article s0qro1</a> — retrieved 2026-10-14. Header August 25, 2026. Connect and Webex Contact Center integration currently support six channels: WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, and Live Chat.</li><li id="cite-31">Provision Emergency Calling in Webex Contact Center — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14. Header September 08, 2024.</li><li id="cite-32">Data residency in Webex — help.webex — article oybc4fb — <a href="https://help.webex.com/article/oybc4fb">help.webex.com article oybc4fb</a> — retrieved 2026-10-14. Header September 24, 2026. Contact Center row checks US, EU, Canada, UK, Japan, Australia, Singapore, and India. Saudi Arabia is blank on that row. Control Hub path: Contact Center &gt; Settings &gt; Service Details &gt; Country of Operation.</li><li id="cite-33">Data Locality in Webex Contact Center — help.webex — article n0p6xa1 — <a href="https://help.webex.com/article/n0p6xa1">help.webex.com article n0p6xa1</a> — retrieved 2026-10-14. Header May 27, 2026. Country of Operation maps to the closest data center. Data-center headings read that day: United States, Canada, United Kingdom, Australia, Japan, India. Hosted data named: tenant configuration, call data records, call recordings, reporting, digital channels.</li><li id="cite-34">System limits in Webex Contact Center — help.webex — article n7s6ed7 — <a href="https://help.webex.com/article/n7s6ed7">help.webex.com article n7s6ed7</a> — retrieved 2026-10-14. Header August 18, 2026. Active sites 300. Active entry points 6000. Queues, team-based routing type, 10500. Inbound contact-service queues 11000, a different cell. Table 3: capacity-based team 100, 50 teams per organization, 5000 concurrent calls. Active users 20000. Footnote: unlimited concurrent agents at the organization level.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Stub</h2>
+<ul>
+<li>Open questions: exact Control Hub menu labels for site and team; whether +E.164-only entry points survived the portal migration; which Cisco Live agent band maps to which product; tenant API host per region.</li>
+<li>Analyzer clocks and the Connect six-channel list are cited as of 2026-10-14. Site, entry-point, team-based queue, and capacity-based team cells are cited from n7s6ed7, header August 18, 2026. Read licenses and the PSTN choice on the subscription, the routing patterns on the queue in Control Hub, and peer objects in that peer’s own console. Those values follow the order and the queue type, which is why this room does not freeze them. Data residency stays a re-check because oybc4fb and n0p6xa1 do not print the same region set.</li>
+<li>Assets missing: <code>assets/diagrams/T3-R01/arch.svg</code>, <code>assets/diagrams/T3-R01/eco.svg</code>, <code>assets/images/T3-R01/hero.png</code>, screenshots 1–8, <code>assets/audio/T3-R01/*.mp3</code>. The ecosystem mind map is already an inline SVG.</li>
+<li>Ecosystem gaps: current multi-tenant QM and recording UI, WFO SKUs on multi-tenant, WxCC-specific emergency menu, digital channels newer than the architecture article, UCCE pairs that T6-R04 still marks, peer contact-center equivalence, webhook event names beyond T8-R03.</li>
+<li>Ideas for v1.0: T6-R04 is the noun-swap card. Drop a marked row only when a Cisco article names both sides.</li>
+<li>Next review date: 2027-01-15, sooner if the setup guide is replaced or BRKCCT-2031 is superseded.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T2-R06-calling-security-compliance.html"><span>Previous</span><strong>T2-R06</strong><em>Calling Security &amp; Compliance</em></a><a class="next" href="T3-R03-entry-points-queues-routing.html"><span>Next</span><strong>T3-R03</strong><em>Entry Points, Queues &amp; Routing Strategies</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>T3-R01 · v0.2 · private draft · not verified</span><a href="../index.html">Back to the hub</a></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

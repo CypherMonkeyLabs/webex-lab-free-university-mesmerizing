@@ -30,7 +30,7 @@
     ["Five9", "https://cipher0x9.github.io/five9-lab-free-university-mesmerizing/"],
     ["NICE CXone", "https://cipher0x9.github.io/nice-cxone-lab-free-university-mesmerizing/"]
   ];
-  var CONTACT = "https://cyphermonkeylabs.com";
+  var CONTACT = "https://cyphermonkeylabs.com/#contact";
   var REPO = "https://github.com/cipher0x9/webex-lab-free-university-mesmerizing";
 
   var stage = document.querySelector(".v4-stage");
@@ -171,7 +171,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v2").then(function (cache) {
+    return caches.open("webex-university-v3").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -239,6 +239,10 @@
       var theme = btn.getAttribute("data-set-theme");
       document.documentElement.dataset.theme = theme;
       try { localStorage.setItem("canon-theme", theme); } catch (err) { /* storage off */ }
+      document.querySelectorAll("[data-set-theme]").forEach(function (peer) {
+        peer.setAttribute("aria-checked", peer.getAttribute("data-set-theme") === theme ? "true" : "false");
+      });
+      document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: theme } }));
     });
   });
   var spark = document.querySelector(".track-spark, .uni-fold");
@@ -263,6 +267,15 @@
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     navigator.serviceWorker.register(fromRoot("sw.js")).catch(function () { /* pages still work */ });
   }
+
+  var wowCss = document.createElement("link");
+  wowCss.rel = "stylesheet";
+  wowCss.href = rootPrefix + "assets/css/wow.css";
+  document.head.appendChild(wowCss);
+  var wowJs = document.createElement("script");
+  wowJs.src = rootPrefix + "assets/js/wow.js";
+  wowJs.async = false;
+  document.body.appendChild(wowJs);
 
   document.dispatchEvent(new CustomEvent("university-ready"));
 })();

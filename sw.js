@@ -1,5 +1,5 @@
 /* Offline shell for the Webex university. Same-origin GET only. */
-var CACHE = "webex-university-v2";
+var CACHE = "webex-university-v3";
 var SHELL = [
   "./",
   "./index.html",
@@ -18,6 +18,11 @@ var SHELL = [
   "./assets/css/canon.css",
   "./assets/css/shell.css",
   "./assets/css/university.css",
+  "./assets/css/wow.css",
+  "./assets/js/wow.js",
+  "./assets/js/hero-scene.js",
+  "./regions.html",
+  "./vendor/three.module.min.js",
   "./assets/js/shell.js",
   "./assets/js/canon.js",
   "./assets/js/university.js",

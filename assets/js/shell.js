@@ -11,17 +11,20 @@
 
   var THEMES = [
     ["aurora", "Aurora", "Night"],
+    ["neon", "Neon", "Night"],
+    ["holographic", "Holographic", "Night"],
+    ["cyberpunk", "Cyberpunk", "Night"],
+    ["sunset", "Sunset", "Night"],
     ["futuristic", "Futuristic", "Night"],
     ["gaming", "Gaming", "Night"],
-    ["neon", "Neon", "Night"],
-    ["sunset", "Sunset", "Night"],
     ["paper", "Light", "Paper"]
   ];
+  var THEME_NAMES = THEMES.map(function (item) { return item[0]; });
 
   function canonTheme(next) {
     if (next === "dark") return "aurora";
     if (next === "light") return "paper";
-    if (next === "aurora" || next === "futuristic" || next === "gaming" || next === "neon" || next === "sunset" || next === "paper") return next;
+    if (THEME_NAMES.indexOf(next) !== -1) return next;
     return "aurora";
   }
   function applyTheme(next) {
@@ -31,6 +34,7 @@
     document.querySelectorAll("[data-set-theme]").forEach(function (btn) {
       btn.setAttribute("aria-checked", btn.getAttribute("data-set-theme") === next ? "true" : "false");
     });
+    document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: next } }));
   }
   applyTheme(root.dataset.theme || "aurora");
 
@@ -1079,7 +1083,7 @@
       }, { passive: true });
     }
     if ("IntersectionObserver" in window) {
-      var revealNodes = document.querySelectorAll("main section, .track-tile, .stat, .plan-item");
+      var revealNodes = document.querySelectorAll("main section:not(.world-hero), .track-tile, .stat, .plan-item");
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;

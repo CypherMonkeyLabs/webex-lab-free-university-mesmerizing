@@ -1,0 +1,185 @@
+{
+  "deck": "webex-university",
+  "cards": [
+    {
+      "front": "Certificate trunk destination",
+      "back": "TCP 5062 toward Webex Calling.",
+      "source": "help.webex.com article b2exve, retrieved 2026-10-15"
+    },
+    {
+      "front": "Registration trunk destination",
+      "back": "TCP 8934 toward Webex Calling.",
+      "source": "b2exve, retrieved 2026-10-15"
+    },
+    {
+      "front": "Phone SIP source ports",
+      "back": "5060\u20135280. Expanded from 5060\u20135080 on September 07, 2026.",
+      "source": "b2exve revision history"
+    },
+    {
+      "front": "Local gateway media source",
+      "back": "UDP 8000\u201348199 toward 5004, 9000, 8500\u20138699, and 19560\u201365535.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Optimized Webex App media",
+      "back": "Audio UDP 8500\u20138599. Video UDP 8600\u20138699, when ICE succeeds.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Optimized device media",
+      "back": "UDP 19560\u201319661 between devices when ICE succeeds.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Room Series media",
+      "back": "Audio UDP 52050\u201352099. Video UDP 52200\u201352299.",
+      "source": "b2exve"
+    },
+    {
+      "front": "VG400 ATA media",
+      "back": "UDP 19560\u201319849.",
+      "source": "b2exve"
+    },
+    {
+      "front": "RedSky hosts",
+      "back": "api.wxc.e911cloud.com and wxc.e911cloud.com, port 443.",
+      "source": "b2exve and the emergency calling article av6oo3"
+    },
+    {
+      "front": "933",
+      "back": "US and Canada test number. It does not alert public safety.",
+      "source": "Canon room T2-R06, citing the emergency articles"
+    },
+    {
+      "front": "SIP ALG",
+      "back": "Turn it off for Webex Calling.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Calling media transport",
+      "back": "UDP with SRTP. TCP and TLS media are not supported in production.",
+      "source": "b2exve"
+    },
+    {
+      "front": "DNS and NTP",
+      "back": "DNS UDP and TCP 53. Device NTP UDP 123 to the Calling subnets. App NTP UDP 123.",
+      "source": "b2exve"
+    },
+    {
+      "front": "App configuration ports",
+      "back": "TCP 443 and 8443. 8443 is for the Webex App on a Unified CM setup that also uses Calling.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Device firmware ports",
+      "back": "TCP 443, 6970, and 80. Port 80 is called out for older MPP MIC renewal on sudirenewal.cisco.com.",
+      "source": "b2exve"
+    },
+    {
+      "front": "CScan",
+      "back": "TCP 8934 and 443, plus UDP 19569\u201319760.",
+      "source": "b2exve"
+    },
+    {
+      "front": "QoS audio",
+      "back": "Webex App audio DSCP EF 46 on 8500\u20138599.",
+      "source": "b2exve"
+    },
+    {
+      "front": "QoS video",
+      "back": "Webex App video DSCP AF41 34 on 8600\u20138699.",
+      "source": "b2exve"
+    },
+    {
+      "front": "Three PSTN choices",
+      "back": "Cisco Calling Plan, Cloud Connected PSTN, or premises PSTN on a Local Gateway. Per location.",
+      "source": "help.webex.com article t9xctu, as used in the Canon"
+    },
+    {
+      "front": "Endpoints and the gateway",
+      "back": "Phones do not register through the Local Gateway.",
+      "source": "Canon T2-R02, citing the local-gateway getting-started article"
+    },
+    {
+      "front": "Calling E2EE",
+      "back": "Opportunistic and off by default. Recording disables it.",
+      "source": "help.webex.com article 5h5d8ab, as used in T2-R06"
+    },
+    {
+      "front": "SRTP suite named for Calling",
+      "back": "AES_CM_128_HMAC_SHA1_80 in the SIP security article.",
+      "source": "help.webex.com article jwkbt2"
+    },
+    {
+      "front": "Webex recording retention",
+      "back": "One year and 100 GB per organization in the Calling recording article.",
+      "source": "help.webex.com article nhvl4hw"
+    },
+    {
+      "front": "Dubber Go",
+      "back": "30 days, user access in the Dubber portal.",
+      "source": "nhvl4hw"
+    },
+    {
+      "front": "Edge SRV versus trunk",
+      "back": "The security article's SRV example uses 5061 for endpoint discovery. That is not trunk 5062 or 8934.",
+      "source": "jwkbt2 and b2exve"
+    },
+    {
+      "front": "Org SSO claim",
+      "back": "Map an attribute to uid, matching one of the user's emails.",
+      "source": "help.webex.com article lfu88u"
+    },
+    {
+      "front": "Partner SSO claim",
+      "back": "Uses mail, not uid.",
+      "source": "lfu88u, as recorded in the Canon"
+    },
+    {
+      "front": "New Control Hub user",
+      "back": "Starts with no administrative privileges.",
+      "source": "Control Hub article nuylwki, as recorded in T1-R01"
+    },
+    {
+      "front": "BYO virtual agent",
+      "back": "Escalate with AGENT_TRANSFER.",
+      "source": "developer.webex.com bring-your-own-virtual-agent"
+    },
+    {
+      "front": "Salesforce connector",
+      "back": "Lightning only. Chat and email are not supported on that connector.",
+      "source": "help.webex.com article dyidod"
+    },
+    {
+      "front": "Dynamics connector",
+      "back": "CIF 1 single-session, CIF 2 multi-session. On-premises Dynamics is unsupported.",
+      "source": "help.webex.com article n1lsqvu"
+    },
+    {
+      "front": "WFO SKU scope",
+      "back": "Article py6u9h is scoped to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express. Multi-tenant use is unverified.",
+      "source": "help.webex.com article py6u9h"
+    },
+    {
+      "front": "Troubleshooting history",
+      "back": "The Canon records 21 days for the Calling troubleshooting view.",
+      "source": "Room T1-R06. Re-check the live article before you quote a retention number in a design."
+    },
+    {
+      "front": "Start Flow",
+      "back": "Cannot be removed. Validation starts off.",
+      "source": "Flow Designer article nhovcy4, as taught in the labs"
+    },
+    {
+      "front": "MTU",
+      "back": "Keep the default 1500 bytes.",
+      "source": "b2exve"
+    },
+    {
+      "front": "IP filtering alone",
+      "back": "Not supported for Calling, because some pools change. Do not filter by region.",
+      "source": "b2exve"
+    }
+  ]
+}

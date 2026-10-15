@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canon-svg" viewBox="0 0 1100 380" role="img" aria-labelledby="T6R08hero-title T6R08hero-desc">
+<title id="T6R08hero-title">Post-migration Validation</title>
+<desc id="T6R08hero-desc">Original illustration of a pilot, a subset test, and only then an empty rack.</desc>
+<style>
+.canon-svg .pulse{animation:canon-pulse 4.8s ease-in-out infinite}
+.canon-svg .p0{animation-delay:0s}.canon-svg .p1{animation-delay:.7s}
+.canon-svg .p2{animation-delay:1.4s}.canon-svg .p3{animation-delay:2.1s}
+.canon-svg .p4{animation-delay:2.8s}.canon-svg .p5{animation-delay:3.5s}
+.canon-svg .p6{animation-delay:4.2s}
+.canon-svg .march{stroke-dasharray:7 9;animation:canon-march 1.15s linear infinite}
+.canon-svg .ex-step{opacity:.4;animation:canon-ex 12s ease-in-out infinite}
+.canon-svg .e0{animation-delay:0s}.canon-svg .e1{animation-delay:3s}
+.canon-svg .e2{animation-delay:6s}.canon-svg .e3{animation-delay:9s}
+.canon-svg .spin{transform-box:fill-box;transform-origin:center;animation:canon-spin 22s linear infinite}
+@keyframes canon-pulse{0%,100%{opacity:.42}35%,65%{opacity:1}}
+@keyframes canon-march{to{stroke-dashoffset:-32}}
+@keyframes canon-ex{0%,100%{opacity:.38}6%,20%{opacity:1}}
+@keyframes canon-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){
+  .canon-svg .pkt{display:none !important}
+  .canon-svg .pulse,.canon-svg .march,.canon-svg .ex-step,.canon-svg .spin{animation:none !important}
+  .canon-svg .pulse,.canon-svg .ex-step{opacity:1 !important}
+  .canon-svg .march{stroke-dasharray:none !important}
+}
+</style>
+
+<defs>
+<linearGradient id="T6R08hero-sky" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#1c1008"/>
+  <stop offset="0.5" stop-color="#9a3412"/>
+  <stop offset="1" stop-color="#020617"/>
+</linearGradient>
+<radialGradient id="T6R08hero-orb" cx="0.78" cy="0.25" r="0.45">
+  <stop offset="0" stop-color="#fb923c" stop-opacity="0.9"/>
+  <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="T6R08hero-orb2" cx="0.18" cy="0.85" r="0.4">
+  <stop offset="0" stop-color="#818cf8" stop-opacity="0.75"/>
+  <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+</radialGradient>
+<filter id="T6R08hero-soft" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect width="1100" height="380" rx="22" fill="url(#T6R08hero-sky)"/>
+<rect width="1100" height="380" rx="22" fill="url(#T6R08hero-orb)"/>
+<rect width="1100" height="380" rx="22" fill="url(#T6R08hero-orb2)"/>
+<g opacity="0.9"><path d="M520 318 L590 176 L660 318 Z" fill="#020617" opacity="0.35"/><rect x="600" y="156" width="110" height="168" rx="8" fill="#0b1220" opacity="0.72" stroke="#fb923c" stroke-width="2"/><rect x="730" y="118" width="78" height="206" rx="8" fill="#0b1220" opacity="0.55" stroke="#818cf8"/><g fill="#fb923c" opacity="0.85"><rect x="616" y="176" width="16" height="12" rx="2"/><rect x="644" y="176" width="16" height="12" rx="2"/><rect x="672" y="176" width="16" height="12" rx="2"/><rect x="616" y="202" width="16" height="12" rx="2"/><rect x="644" y="202" width="16" height="12" rx="2"/><rect x="672" y="202" width="16" height="12" rx="2"/><rect x="616" y="228" width="16" height="12" rx="2"/><rect x="644" y="228" width="16" height="12" rx="2"/><rect x="672" y="228" width="16" height="12" rx="2"/></g></g><g class="spin" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.8"><ellipse cx="860" cy="168" rx="130" ry="48"/><ellipse cx="860" cy="168" rx="86" ry="86" stroke="#818cf8" transform="rotate(-18 860 168)"/></g><line x1="760" y1="96" x2="960" y2="124" stroke="#ffffff" stroke-width="1.5" opacity="0.45"/><line x1="960" y1="124" x2="800" y2="210" stroke="#ffffff" stroke-width="1.5" opacity="0.45"/><line x1="800" y1="210" x2="980" y2="230" stroke="#ffffff" stroke-width="1.5" opacity="0.45"/><line x1="980" y1="230" x2="860" y2="168" stroke="#ffffff" stroke-width="1.5" opacity="0.45"/><circle cx="760" cy="96" r="5" fill="#fb923c"/><circle cx="960" cy="124" r="5" fill="#fb923c"/><circle cx="800" cy="210" r="5" fill="#fb923c"/><circle cx="980" cy="230" r="5" fill="#fb923c"/><circle cx="860" cy="168" r="5" fill="#fb923c"/><g class="pkt" filter="url(#T6R08hero-soft)"><circle r="7" fill="#ffffff" stroke="#ffffff" stroke-width="2"><animateMotion dur="8s" begin="0s" repeatCount="indefinite" path="M760 96 L960 124 L800 210 L980 230 L860 168 L760 96"/></circle></g><circle cx="860" cy="168" r="48" fill="#020617" stroke="#fb923c" stroke-width="3" filter="url(#T6R08hero-soft)"/><g transform="translate(834.0,142.0) scale(2.15)" fill="none" stroke="#fb923c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6 18.5 6v5.6c0 3.8-2.6 6.3-6.5 8.2-3.9-1.9-6.5-4.4-6.5-8.2V6z"/></g><text x="48" y="64" fill="#e2e8f0" font-size="13" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">T6-R08</text><text x="48" y="104" fill="#f8fafc" font-size="34" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">Post-migration Validation</text><g><rect x="48" y="312" width="148" height="34" rx="17" fill="#ffffff" opacity="0.94"/><text x="122" y="334" text-anchor="middle" fill="#0f172a" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Pilot</text></g><g><rect x="204" y="312" width="148" height="34" rx="17" fill="#ffffff" opacity="0.94"/><text x="278" y="334" text-anchor="middle" fill="#0f172a" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Subset</text></g><g><rect x="360" y="312" width="148" height="34" rx="17" fill="#ffffff" opacity="0.94"/><text x="434" y="334" text-anchor="middle" fill="#0f172a" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Then retire</text></g>
+</svg>

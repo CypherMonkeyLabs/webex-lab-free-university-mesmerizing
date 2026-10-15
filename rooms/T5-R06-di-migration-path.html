@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T5-R06 · DI Migration Path">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T5-R06 · DI Migration Path · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T5" data-room="T5-R06" data-room-title="DI Migration Path" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T5</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T5/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T5 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T5 · Dedicated Instance</p>
+<h1>DI Migration Path</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for DI Migration Path">
+<defs>
+<linearGradient id="T5R06sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T5R06sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Dedicated Instance</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T5-R06</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Site</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Peering</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Calling</text></g>
+</svg>
+<figcaption>Illustrated scene for DI Migration Path. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for DI Migration Path">
+<defs>
+<marker id="T5R06arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Site → Peering → Dedicated UC → Calling</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Calling</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T5R06arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T5R06arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T5R06arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T5R06lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Site → Peering → Dedicated UC → Calling. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">The Dedicated Instance move is seven gates, not a weekend copy. The Control Hub assistant assesses an on-premises Unified CM. It does not migrate the cluster. A certified provider tool does that work. Cutover in the assistant is capped at ten hours.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T5-R06</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T5-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Seven gates: Project Initiation, Discovery and Assessment, Planning, Implementation, Freeze, Go Live, Transfer to Day 2. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Production impact is none, then minimum, then limited to operations, then direct at Go Live. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The pre-migration assistant does not perform the migration. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Freeze is a recommended 2–3 weeks. MACD during freeze is done on both systems. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The assistant’s cutover window should not exceed ten hours. Rollback mirrors the cutover. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>The practice article says roughly 95 percent of engineering effort is preparation and 5 percent is the change. That sentence is the article’s framing, not a sizing formula. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The assistant tile is visible only when Setup Assist is enabled along with Dedicated Instance. Prerequisites are an active Dedicated Instance subscription, Cloud-Connected UC, and deployment insights. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Source readiness sheets cover assessment actions, phone and gateway upgrades, credential policy, and application users. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Go-live changes Option 150, resets phones, checks registration on Dedicated Instance, then bulk-updates partitions, home cluster, and advertisements. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The same framework names source platforms that include third-party PBX. It does not print an object crosswalk. That gap is T6-R05. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> People fail this move by treating the assistant as the migrator, by changing only one system during freeze, or by planning a cutover longer than ten hours in the scheduler.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Seven gates, one cutover</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T5-R06/arch.svg -->
+<div class="diagram" role="img" aria-label="Seven Dedicated Instance migration gates">
+<svg viewBox="0 0 980 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seven Dedicated Instance migration gates">
+<rect width="980" height="250" fill="#0c121c"/>
+<text x="28" y="34" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Impact rises only at the end</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="24" y="60" width="120" height="70" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="36" y="90">1 Initiate</text><text x="36" y="110" fill="#b7ad9c">no impact</text>
+<rect x="156" y="60" width="120" height="70" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="168" y="90">2 Discover</text><text x="168" y="110" fill="#b7ad9c">no impact</text>
+<rect x="288" y="60" width="120" height="70" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="300" y="90">3 Plan</text><text x="300" y="110" fill="#b7ad9c">no impact</text>
+<rect x="420" y="60" width="130" height="70" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="432" y="90">4 Implement</text><text x="432" y="110" fill="#b7ad9c">minimum</text>
+<rect x="562" y="60" width="120" height="70" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="574" y="90">5 Freeze</text><text x="574" y="110" fill="#b7ad9c">operations</text>
+<rect x="694" y="60" width="120" height="70" rx="10" fill="#2a1414" stroke="#e07070"/><text x="706" y="90">6 Go live</text><text x="706" y="110" fill="#b7ad9c">direct</text>
+<rect x="826" y="60" width="130" height="70" rx="10" fill="#121a2a" stroke="#7eb6ff"/><text x="838" y="90">7 Day 2</text><text x="838" y="110" fill="#b7ad9c">operate</text>
+<text x="28" y="170">Assistant: assess, compare, schedule. It does not move the phones.</text>
+<text x="28" y="196">Certified migration provider tool: the move the assistant article names.</text>
+<text x="28" y="222">Cutover: Option 150, reset, register, then partitions. Rollback mirrors that list.</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="What moves on cutover day">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What moves on cutover day">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Go-live, as the practice article lists it</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="76">Proactive TAC ticket, scheduled dispatch</text>
+<text x="36" y="104">Option 150 changes, phones reset on the on-premises call manager</text>
+<text x="36" y="132">Registration on Dedicated Instance is the progress count</text>
+<text x="36" y="160">Then partitions, home cluster, advertisements, gateways, SRST, and the test list</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  A[Initiate] --> B[Discover] --> C[Plan] --> D[Implement] --> E[Freeze] --> F[Go live] --> G[Day 2]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Gates, then the tool that only assesses</h2>
+<div class="callout def"><span class="label">Seven gates</span><p>Project Initiation, Discovery and Assessment, Planning, Implementation, Freeze, Go Live, and Transfer to Day 2. Each phase has entry and exit criteria in the practice article. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Impact table</span><p>No impact: initiation, discovery, planning. Minimum: implementation. Limited to operations processes: freeze. Direct: go live. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">The assistant is not the migrator</span><p>It gathers source data, checks prerequisites, and compares on-premises Unified CM with Dedicated Instance. Customers work with a partner who uses a Certified Migration Provider tool to complete the migration. The tile shows only if Setup Assist is enabled along with Dedicated Instance. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Two clocks</span><p>The practice article recommends 2–3 weeks of freeze. The assistant says the cutover window should not exceed ten hours. Those are different intervals. Do not call the freeze a ten-hour event. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<h3>What each gate is for</h3>
+<div class="table-wrap"><table><thead><tr><th>Gate</th><th>Production impact</th><th>What this pass can cite</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Project Initiation, Discovery and Assessment, Planning</td><td>No impact</td><td>The assistant’s readiness work sits in discovery. Configuration under Actions stays unavailable until Setup Assist approves the source readiness report.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Implementation</td><td>Minimum</td><td>The practice article points at activation, peering, directory sync, SSO, certificates, and intercluster integration in this phase. Peering rules stay in T5-R02.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Freeze</td><td>Limited to operations processes</td><td>Move data and validate. Recommended 2–3 weeks. MACD on both systems. Test Option 150, a test gateway, Webex App calling behavior, Jabber home cluster, on-net and VPN, MRA, PSTN, and 911.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Go Live</td><td>Direct</td><td>TAC ticket, Option 150, reset, registration check, bulk partition and home-cluster updates, gateway and SRST changes, then the test program. Rollback mirrors the method of procedure.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Transfer to Day 2</td><td>The article points at operations documents</td><td>Tier 1, the service-request list, the partner operations guide, and the RACI. Those are T5-R04.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Data-move tools the freeze section names</h3>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>What the article recommends</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Unified CM</td><td>Active and inactive partitions. BAT export and import. It names external tools for UCM migrations like Yarnlab. This room does not describe Yarnlab beyond that phrase.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Unity</td><td>Cisco Unity tools. The article recommends Cobras for Unity migrations.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency Responder</td><td>Manual, or bulk export and import.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Reports after the assistant’s schedule completes</h3>
+<div class="table-wrap"><table><thead><tr><th>Report</th><th>What it checks</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Source readiness</td><td>Assessment sheet, phone and gateway recommendation, credential policy, application users.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DI-readiness check</td><td>Data for the Dedicated Instance cluster.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Post-migration</td><td>Compared data between source and Dedicated Instance clusters.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Post-registration</td><td>Phones registered to the Dedicated Instance cluster.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Device IP connectivity</td><td>Devices that are not reachable from the selected Dedicated Instance cluster. The assessment article calls that a recommended action before migration.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T5-R06/hero.png -->
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T5-R06">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<circle cx="200" cy="132" r="36" fill="url(#T5R06map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T5R06map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Seven-gate framework</dt><dd>The self-service Dedicated Instance migration sequence in the practice article. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Pre-Migration Assistant</dt><dd>Control Hub discovery and readiness for Unified CM to Dedicated Instance. It does not migrate. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Certified Migration Provider tool</dt><dd>The tool class the assistant article says the partner uses to complete the migration. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Freeze</dt><dd>Data move and validation. Recommended 2–3 weeks. Changes during freeze go on both systems. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Cutover window</dt><dd>In the assistant scheduler, it should not exceed ten hours. Phones in the selected device pools register to Dedicated Instance during that window. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Option 150</dt><dd>The DHCP option the practice article changes so phones learn the Dedicated Instance TFTP. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Rollback</dt><dd>A mirror of the cutover method of procedure, inside the maintenance window. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T5-R06/eco.svg -->
+<div class="diagram" role="img" aria-label="Systems the Dedicated Instance migration touches">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Systems the Dedicated Instance migration touches">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Neighbors of the move</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="76">Cloud-Connected UC extracts the source. The assistant does not replace it.</text>
+<text x="36" y="104">Directory sync and SSO are implementation topics in the practice article.</text>
+<text x="36" y="132">911 is a freeze test and a go-live test. Emergency Responder data moves manually or in bulk.</text>
+<text x="36" y="160">Day 2 hands the RACI, TAC, and service requests to T5-R04.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((DI migration))
+    Seven gates
+    Assistant
+    Provider tool
+    Option 150
+    Day 2
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Cloud-Connected UC</td><td>The agent that extracts Unified CM data.</td><td>The assistant requires the org to be onboarded and deployment insights enabled.</td><td>Services → Updates and Migration → the Dedicated Instance assistant tile.</td><td>The tile is missing because Setup Assist or Dedicated Instance is not enabled.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Identity / SSO</td><td>Named in the practice article’s implementation topics.</td><td>User sync behavior for a mixed estate is T5-R05. This room does not restate that SSO rule as a new sentence.</td><td>Read the directory-sync section of tf6kpq before cutover.</td><td>Phones move and users do not.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency calling</td><td>911 is on both the freeze test list and the go-live test list.</td><td>CER data is manual or bulk. AMER-only CER deployment is T5-R02, not a new claim here.</td><td>Test 911 before you call the gate passed.</td><td>Option 150 succeeds and 911 was never in the test program.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>PSTN / gateways</td><td>Test gateway in freeze. Production gateway, SRST, and hardware media on go-live.</td><td>Templates are prepared during freeze.</td><td>Do not paste sample gateway passwords into the runbook.</td><td>SRST still points at the old call manager after reset.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App and Jabber</td><td>Freeze tests include a calling-behavior change for Webex App and a home-cluster change for Jabber.</td><td>Those are explicit moves, not a side effect of Option 150.</td><td>Control Hub calling behavior, and the Jabber login method the plan already defined.</td><td>Phones register and soft clients stay on the old cluster.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>TAC</td><td>Go-live starts with a proactive ticket, scheduled dispatch.</td><td>Day 2 support model is the Tier 1 article.</td><td>Open the ticket before the Option 150 change.</td><td>A failed reset with no case already open.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Recording and WFO</td><td>Not given a Dedicated Instance migration procedure in these three articles.</td><td>Do not invent a recorder cutover.</td><td>Read the recording vendor’s own guide. <mark class="todo-verify">TODO-verify</mark> a Cisco recorder step for this path.</td><td>Assuming Unity Cobras also moves the recorder.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Multi-tenant split</td><td>After Dedicated Instance, users can be divided.</td><td>That steady state is T5-R05.</td><td>Do not split hunt groups across platforms.</td><td>Using go-live night to also split the user base.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>On-premises UCM</td><td>Control Hub assistant</td><td>Cloud-Connected UC</td><td>Source inventory and readiness, not the live cut.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Setup Assist</td><td>Source report</td><td>Mapping approval</td><td>Assessment, phone and gateway, credential policy, application users.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Admin</td><td>Network questionnaire</td><td>Trunk purpose and peering choice</td><td>Trunks prepopulated from the readiness report.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Scheduler</td><td>Device pools</td><td>Freeze dates and a cutover of at most ten hours</td><td>Which pools register to Dedicated Instance.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DHCP</td><td>Phones</td><td>Option 150</td><td>TFTP of the Dedicated Instance cluster, after reset.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BAT</td><td>Dedicated Instance</td><td>Export and import</td><td>Unified CM configuration during freeze.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cobras</td><td>Unity Connection</td><td>The article’s Unity recommendation</td><td>Unity migrations. Not CER. CER is manual or bulk.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Go-live</td><td>On-premises UCM</td><td>Partition and home-cluster bulk update</td><td>Active versus null partitions, advertisements.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Migration edges">
+<svg viewBox="0 0 980 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Migration edges">
+<rect width="980" height="160" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Assess, then move, then prove registration</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="76">Cloud-Connected UC → assistant reports → schedule</text>
+<text x="36" y="104">BAT, Cobras, or CER bulk → Dedicated Instance during freeze</text>
+<text x="36" y="132">Option 150 → reset → registration count → tests → rollback mirror</text>
+</g>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Unified CM to Dedicated Instance</td><td>The source the assistant names. The practice article also lists BroadCloud, BroadWorks, Spark Calling, HCS, and third-party PBX as platforms the method has been used for.</td><td>No Avaya or Genesys object map in these pages. <mark class="todo-verify">TODO-verify</mark> any crosswalk. T6-R05 holds that gap.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Multi-tenant Webex Calling migration tools</td><td>A different Control Hub tile. T6-R03. The assistant article is Dedicated Instance.</td><td>Do not upload a multi-tenant task file and call it this assistant.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Teams Phone or Amazon Connect</td><td>Not a source system in the assistant steps.</td><td>Equivalence is <mark class="todo-verify">TODO-verify</mark>. The practice article does not print it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: T6-R03 is the Control Hub tool catalog for multi-tenant Unified CM migration. This room stays on the Dedicated Instance gates.</li>
+<li>Canon plan: T5-R04 is Day 2. The practice article’s last gate points at that RACI, Tier 1, and the service-request list.</li>
+<li>The practice article’s header date was not in the retrieved markdown. <mark class="recheck">re-check</mark> the 2–3 week freeze and the 95/5 sentence before you quote them in a proposal. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Assistant tile is absent</td><td>Setup Assist is not enabled with Dedicated Instance, or Cloud-Connected UC or deployment insights are off.</td><td>Prerequisites on step 1.</td><td>Complete those three, then Ready to migrate.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Configuration action is grey</td><td>Setup Assist has not approved the source readiness report.</td><td>Status is still In Progress.</td><td>Wait for approval. Download report, then approve.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Phones reset and stay on the old cluster</td><td>Option 150 or the reset did not reach those subnets.</td><td>Registration count on Dedicated Instance.</td><td>The practice article treats that count as the control. Roll back if you miss the window.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A device cannot be reached from the Dedicated Instance cluster before cutover</td><td>The assessment report’s device IP connectivity list.</td><td>That sheet.</td><td>Treat it as a customer action before migration.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From Ready to migrate to a mirrored rollback</h2>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T5-R06/seq.svg -->
+<div class="diagram" role="img" aria-label="Assistant schedule then cutover">
+<svg viewBox="0 0 980 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assistant schedule then cutover">
+<rect width="980" height="170" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Two procedures, one night</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="74">Assistant steps 1–4 end in a schedule: region, source cluster, freeze dates, cutover start and end.</text>
+<text x="36" y="102">Go-live steps are the practice article’s list, with a rollback deadline inside the window.</text>
+<text x="36" y="130">Post-migration and post-registration reports are how the assistant says you compare the result.</text>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Assistant</td><td>Prerequisites</td><td>Dedicated Instance subscription, Cloud-Connected UC, deployment insights. Check the box. Ready to migrate.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>2</td><td>Setup Assist</td><td>Report</td><td>Cluster mapping</td><td>Source status moves to In Progress, then Download report after approval.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>3</td><td>Admin</td><td>Questionnaire</td><td>Trunk purpose and peering</td><td>I agree, then submit. Status is In Review until Setup Assist approves.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>4</td><td>Admin</td><td>Schedule</td><td>Freeze and cutover</td><td>Destination region and source cluster. Cutover not more than ten hours.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>Data move</td><td>Dedicated Instance</td><td>BAT, Cobras, or CER bulk</td><td>During the recommended 2–3 week freeze. MACD on both systems.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>DHCP</td><td>Phones</td><td>Option 150 and reset</td><td>After a proactive TAC ticket.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Admin</td><td>Both clusters</td><td>Bulk update</td><td>Lines and route patterns, active versus null partitions, home cluster, advertisements. Gateways, SRST, hardware media.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Test program</td><td>Rollback decision</td><td>Listed calls</td><td>Intra-site, inter-site, PSTN, MRA, 911, voicemail, applicable features. Rollback mirrors the procedure.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Scheduler clicks, then the cutover list</h2>
+<ol>
+<li>Sign in to Control Hub. Open Services → Updates and Migration. Get Started on Pre-Migration Assistant for Dedicated Instance. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Confirm the subscription, Cloud-Connected UC, and deployment insights. Select the prerequisites checkbox. Click Ready to migrate. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>After Setup Assist approval, download the source readiness report and approve it. Open Configuration, agree, and submit trunk purpose plus the peering choice. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Add a schedule. Pick destination region and source cluster. Enter freeze start and end. Enter cutover start and end. Keep the cutover at or under ten hours. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>During freeze, move Unified CM with BAT, Unity with Cobras if you follow the recommendation, and CER manually or in bulk. Apply MACD on both systems. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On go-live, open the proactive TAC ticket, change Option 150, reset, count registrations, then bulk-update partitions and home cluster. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Run intra-site, inter-site, PSTN, MRA, 911, and voicemail tests. If you miss the window, roll back by reversing the same steps. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>When the assistant status is complete, open the DI-readiness, post-migration, and post-registration reports. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<!-- VISUAL:screenshot:di-assistant | Studio | assets/images/T5-R06/assistant.png -->
+<pre class="sim-out">DI migration card (tf6kpq / r1ueuw / 9jw4mab). No customer secrets.
+  gates:               initiate, discover, plan, implement, freeze, go live, day 2
+  assistant migrates:  no
+  tile:                Setup Assist enabled along with DI
+  freeze:              2–3 weeks recommended
+  cutover window:      not more than 10 hours
+  phone move:          Option 150, then reset
+  progress:            phones registered on DI
+  rollback:            mirror of the cutover
+  unity tool named:    Cobras
+  UCM tool class:      BAT; external example Yarnlab, no further claim</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Gates</td><td>7</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Named in the article. Header date not in the retrieved markdown. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Preparation versus change</td><td>Roughly 95 percent and 5 percent</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as the article’s framing. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Freeze</td><td>2–3 weeks recommended</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>A recommendation. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Cutover window in the assistant</td><td>Should not exceed ten hours</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header October 22, 2025.</td></tr>
+<tr><td>Scale the practice article claims</td><td>From single-seat to implementations exceeding 100,000 seats and hundreds of locations</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as the article’s scope sentence. Not a cluster sizing limit. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Assistant performs migration</td><td>No</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Source platforms named</td><td>BroadCloud, BroadWorks, Spark Calling, Unified CM, HCS, third-party PBX</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. No per-platform procedure in that sentence.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten migration failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>The team expects the assistant to move phones</td><td>The article says it does not perform the migration.</td><td>Overview paragraph.</td><td>Use the certified provider tool the partner brings.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Cutover is planned as a two-day window in the scheduler</td><td>The cutover window should not exceed ten hours.</td><td>Step 4 warning.</td><td>Shorten the window. Freeze is the multi-week phase.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A user change during freeze lands on one cluster</td><td>MACD during freeze should be completed on both systems.</td><td>Freeze section.</td><td>Apply the change on source and Dedicated Instance.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Go-live starts with the DHCP change and no case</td><td>The list starts with a proactive TAC ticket.</td><td>Cutover steps.</td><td>Open scheduled dispatch first.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Success is declared from the reset command</td><td>The control is registration on the new system.</td><td>Verification sentence.</td><td>Count registered phones before bulk partition edits.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Rollback is a DRS restore</td><td>The practice article says rollback mirrors the cutover. T5-R04 says DRS is not a change backout.</td><td>Both articles.</td><td>Reverse Option 150, resets, and partition edits.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Unity is moved with the CER bulk sheet</td><td>Cobras is the Unity recommendation. CER is separate.</td><td>Freeze tool list.</td><td>Use the tool named for that application.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Questionnaire submitted before the report is approved</td><td>Configuration stays disabled until approval.</td><td>Step 3.</td><td>Download and approve the source report first.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unreachable phones are discovered at reset</td><td>The assessment report already lists devices the Dedicated Instance cluster cannot reach.</td><td>Device IP connectivity.</td><td>Clear that list before migration.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>911 is skipped because registration looks good</td><td>911 is on the freeze list and the go-live list.</td><td>Test program.</td><td>Run it. A registration count does not replace it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is the Dedicated Instance migration sequence?</summary><p class="answer">Seven gates, ending in Transfer to Day 2. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why does the assistant exist if it does not migrate?</summary><p class="answer">It assesses readiness and compares clusters so a certified provider tool can do the move. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which gates have no production impact?</summary><p class="answer">Project Initiation, Discovery and Assessment, and Planning. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How long is freeze, and how long is cutover?</summary><p class="answer">Freeze is a recommended 2–3 weeks. The assistant cutover window should not exceed ten hours. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove phones moved?</summary><p class="answer">They are registered on Dedicated Instance. The assistant also has a post-registration report. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What DHCP change does the practice article name?</summary><p class="answer">Option 150, then a reset from the on-premises call manager. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is this different from the multi-tenant Unified CM tool?</summary><p class="answer">That tool imports a tar and builds Webex Calling users. This assistant compares clusters and schedules a Dedicated Instance cutover. T6-R03 is the other tool. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Does the seven-gate article migrate a third-party PBX by itself?</summary><p class="answer">It names third-party PBX as a source the method has covered. It does not print the object map. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why is rollback not a restore?</summary><p class="answer">The practice article says rollback mirrors the cutover steps and must finish inside the maintenance window. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What would you refuse to add to the test list?</summary><p class="answer">A recorder cutover step these articles do not print. That stays <mark class="todo-verify">TODO-verify</mark>. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which Unity tool does the freeze section recommend?</summary><p class="answer">Cobras. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>When can you open the network questionnaire?</summary><p class="answer">After Setup Assist approves the source readiness report and you agree. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not click Ready to migrate on a customer org.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: write a seven-gate plan that keeps freeze and the ten-hour window apart.</label></li>
+<li><label><input type="checkbox"> Prereq: tf6kpq and r1ueuw. No production DHCP change.</label></li>
+<li><label><input type="checkbox"> Step 1. List the seven gates and the impact of each. Expected: direct impact only at go live.</label></li>
+<li><label><input type="checkbox"> Step 2. State what the assistant does not do. Expected: it does not migrate.</label></li>
+<li><label><input type="checkbox"> Step 3. Draft freeze work: BAT, Cobras, CER, MACD on both sides, Option 150 test.</label></li>
+<li><label><input type="checkbox"> Step 4. Draft go-live through registration check, then the test list, then the rollback mirror.</label></li>
+<li><label><input type="checkbox"> Evidence: the three reports you would open after status complete.</label></li>
+<li><label><input type="checkbox"> Break it: schedule a 24-hour cutover. Recovery: bring it to ten hours or less.</label></li>
+<li><label><input type="checkbox"> Reflection: which sentence is a recommendation (2–3 weeks) and which is a scheduler rule (ten hours).</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>How many gates does the practice article walk?</p><details><summary>Answer</summary><p class="answer">Seven. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Which gate has direct production impact?</p><details><summary>Answer</summary><p class="answer">Go Live. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Does the pre-migration assistant migrate the cluster?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>When is the assistant tile visible?</p><details><summary>Answer</summary><p class="answer">When Setup Assist is enabled along with Dedicated Instance. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>What is the recommended freeze?</p><details><summary>Answer</summary><p class="answer">2–3 weeks. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>What is the assistant’s cutover limit?</p><details><summary>Answer</summary><p class="answer">The window should not exceed ten hours. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>A directory change is made only on the source during freeze. What does the article want?</p><details><summary>Answer</summary><p class="answer">Complete the required change on both systems. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Which DHCP option does go-live change?</p><details><summary>Answer</summary><p class="answer">Option 150, then a phone reset. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Which Unity tool does the freeze section recommend?</p><details><summary>Answer</summary><p class="answer">Cobras. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>Registration is partial and the window is ending. What is rollback?</p><details><summary>Answer</summary><p class="answer">The mirror of the cutover procedure, inside the maintenance window. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name the three reports available when the assistant status is complete.</p><details><summary>Answer</summary><p class="answer">DI-readiness check, post-migration comparison, and post-registration phones. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Which source platforms does the practice article’s scope sentence name?</p><details><summary>Answer</summary><p class="answer">BroadCloud, BroadWorks, Spark Calling, Unified CM, HCS, and third-party PBX. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain the seven Dedicated Instance gates and why the assistant does not migrate." | assets/audio/T5-R06/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk freeze versus the ten-hour cutover, Option 150, and a mirrored rollback." | assets/audio/T5-R06/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: seven gates, assistant does not migrate, ten hours, Cobras, Option 150." | assets/audio/T5-R06/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Dedicated Instance migration is seven gates. Most of them do not touch production. Go-live does. The Control Hub assistant checks an on-premises Unified CM and schedules the window. A certified provider tool performs the migration.</p>
+<p><strong>2 minutes.</strong> Freeze is the recommended two to three weeks where data moves and you test failover. Changes during freeze hit both systems. Unified CM uses BAT. The article recommends Cobras for Unity and manual or bulk for Emergency Responder. Go-live opens a TAC ticket, changes Option 150, resets phones, and uses registration on Dedicated Instance as the progress count. Then you fix partitions, home cluster, gateways, and SRST. Tests include intra-site, inter-site, PSTN, MRA, 911, and voicemail. Rollback repeats those steps backwards before the window ends.</p>
+<p><strong>30 seconds, the two clocks.</strong> Do not call freeze a ten-hour change. Ten hours is the assistant’s cap on the cutover window. Freeze is the longer data-move phase.</p>
+<p><strong>2 minutes, scope.</strong> The practice article says the method has been used from a single seat to estates it describes as exceeding 100,000 seats, and from Unified CM, HCS, BroadWorks, BroadCloud, Spark Calling, and third-party PBX. That sentence is not a per-platform runbook. The assistant’s own steps are Unified CM to Dedicated Instance. Day 2 points at Tier 1, service requests, and the RACI.</p>
+<p><strong>What you will not say.</strong> You will not say the assistant moves the phones. You will not describe Yarnlab beyond the article’s example phrase. You will not add a recorder step these pages do not print.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Best practices in preparation and migration process to Webex Calling - Dedicated Instance — help.webex — article tf6kpq — <a href="https://help.webex.com/article/tf6kpq/Best-practices-in-preparation-and-migration-process-to-Webex-Calling---DedicatedInstance">help.webex.com article tf6kpq</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. <mark class="recheck">re-check</mark> Seven gates and the impact table. Roughly 95 percent preparation. Freeze 2–3 weeks. BAT, Yarnlab as an example, Cobras, CER bulk. Option 150 cutover and mirrored rollback. Source platforms include third-party PBX.</li>
+<li id="cite-2">Pre-migration assistant for Dedicated Instance using Setup Assist — help.webex — article r1ueuw — <a href="https://help.webex.com/article/r1ueuw/Pre-migration-assistant-for-Dedicated-Instance-using-Setup-Assist">help.webex.com article r1ueuw</a> — header October 22, 2025, retrieved 2026-10-14. The assistant does not migrate. Tile visibility. Four steps. Cutover window should not exceed ten hours. Reports after completion.</li>
+<li id="cite-3">Generate Assessment reports for Dedicated Instance migrations — help.webex — article 9jw4mab — <a href="https://help.webex.com/en-us/article/9jw4mab">help.webex.com article 9jw4mab</a> — retrieved 2026-10-14. Source readiness, DI readiness, and post-migration validation. Device IP connectivity lists devices the selected Dedicated Instance cluster cannot reach.</li>
+<li id="cite-4">Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — <a href="https://help.webex.com/article/ny65x1bb">help.webex.com article ny65x1bb</a> — retrieved 2026-10-14. Customers may migrate to Dedicated Instance first and then divide users. Group features stay on one call control. Detail is T5-R05.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: tf6kpq header date. What Yarnlab does beyond the example phrase. A Cisco-documented recorder cutover for this path.</li>
+<li>Facts still marked TODO-verify: a recorder migration step; an Avaya, Genesys, or Amazon Connect crosswalk.</li>
+<li>Facts still marked re-check: the practice article’s numeric framing, because the retrieval showed no header date.</li>
+<li>Assets missing: assistant screenshot, gate SVG export, audio.</li>
+<li>Next review: <mark class="recheck">re-check</mark> the ten-hour sentence and the 2–3 week recommendation together so they are not merged.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T5-R05-di-webex-calling-coexistence.html"><span>Previous</span><strong>T5-R05</strong><em>DI + Webex Calling Coexistence</em></a><a class="next" href="T6-R03-migration-tools.html"><span>Next</span><strong>T6-R03</strong><em>Migration Tools</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

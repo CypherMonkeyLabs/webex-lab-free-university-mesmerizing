@@ -26,15 +26,21 @@ SOFTWARE.
 
 ## Content
 
-Lesson text, quiz items, diagrams, and other educational content are licensed
-under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+The university at the repository root (rooms, diagrams, cheat sheets, and play lab)
+is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0).
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+The archived practice console in archive/webex-lab-v1/ keeps the CC BY 4.0 grant
+it was published with.
 
 https://creativecommons.org/licenses/by/4.0/
 
 ## Vendored software
 
-campus/vendor/three is three.js r170, MIT License, copyright 2010-2024 three.js authors.
-See campus/vendor/three/LICENSE.
+archive/webex-lab-v1/campus/vendor/three is three.js r170, MIT License, copyright 2010-2024 three.js authors.
+See archive/webex-lab-v1/campus/vendor/three/LICENSE.
 
 Cisco, Webex, Control Hub, Unified CM, and related names are trademarks of their
 owners. This project is an independent study aid. It is not affiliated with Cisco.

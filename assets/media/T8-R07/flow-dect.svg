@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canon-svg" viewBox="0 0 1100 440" role="img" aria-labelledby="T8R07flowdectsvg-title T8R07flowdectsvg-desc" data-verify="The July 01, 2025 PRT page is marked for re-check in the room.">
+<title id="T8R07flowdectsvg-title">DECT is not the MPP button</title>
+<desc id="T8R07flowdectsvg-desc">DECT logs are SIP plus handset, stored under the base device ID. Network debug covers the whole network.</desc>
+<style>
+.canon-svg .pulse{animation:canon-pulse 4.8s ease-in-out infinite}
+.canon-svg .p0{animation-delay:0s}.canon-svg .p1{animation-delay:.7s}
+.canon-svg .p2{animation-delay:1.4s}.canon-svg .p3{animation-delay:2.1s}
+.canon-svg .p4{animation-delay:2.8s}.canon-svg .p5{animation-delay:3.5s}
+.canon-svg .p6{animation-delay:4.2s}
+.canon-svg .march{stroke-dasharray:7 9;animation:canon-march 1.15s linear infinite}
+.canon-svg .ex-step{opacity:.4;animation:canon-ex 12s ease-in-out infinite}
+.canon-svg .e0{animation-delay:0s}.canon-svg .e1{animation-delay:3s}
+.canon-svg .e2{animation-delay:6s}.canon-svg .e3{animation-delay:9s}
+.canon-svg .spin{transform-box:fill-box;transform-origin:center;animation:canon-spin 22s linear infinite}
+@keyframes canon-pulse{0%,100%{opacity:.42}35%,65%{opacity:1}}
+@keyframes canon-march{to{stroke-dashoffset:-32}}
+@keyframes canon-ex{0%,100%{opacity:.38}6%,20%{opacity:1}}
+@keyframes canon-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){
+  .canon-svg .pkt{display:none !important}
+  .canon-svg .pulse,.canon-svg .march,.canon-svg .ex-step,.canon-svg .spin{animation:none !important}
+  .canon-svg .pulse,.canon-svg .ex-step{opacity:1 !important}
+  .canon-svg .march{stroke-dasharray:none !important}
+}
+</style>
+
+<defs>
+<linearGradient id="T8R07flowdectsvg-bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#070b14"/>
+  <stop offset="0.55" stop-color="#0c1424"/>
+  <stop offset="1" stop-color="#10192b"/>
+</linearGradient>
+<radialGradient id="T8R07flowdectsvg-glow" cx="0.12" cy="0" r="0.9">
+  <stop offset="0" stop-color="#e879f9" stop-opacity="0.38"/>
+  <stop offset="1" stop-color="#e879f9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="T8R07flowdectsvg-glow2" cx="1" cy="1" r="0.8">
+  <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+  <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+</radialGradient>
+<pattern id="T8R07flowdectsvg-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.14"/>
+</pattern>
+<filter id="T8R07flowdectsvg-soft" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2.2" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<marker id="T8R07flowdectsvg-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+  <path d="M0 0 L8 4 L0 8 Z" fill="#e2e8f0"/>
+</marker>
+</defs>
+<rect width="1100" height="440" rx="22" fill="url(#T8R07flowdectsvg-bg)"/>
+<rect width="1100" height="440" rx="22" fill="url(#T8R07flowdectsvg-glow)"/>
+<rect width="1100" height="440" rx="22" fill="url(#T8R07flowdectsvg-glow2)"/>
+<rect width="1100" height="440" rx="22" fill="url(#T8R07flowdectsvg-dots)"/>
+<text x="1072" y="34" text-anchor="end" fill="#94a3b8" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">LIVE FLOW · T8-R07</text><text x="28" y="40" fill="#f8fafc" font-size="22" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">DECT is not the MPP button</text><g><rect x="48" y="150.0" width="250" height="130" rx="16" fill="#0b1220" stroke="#e879f9" stroke-width="2"/><rect x="48" y="150.0" width="250" height="7" rx="3" fill="#e879f9"/><g transform="translate(60.0,184.0) scale(1.0)" fill="none" stroke="#e879f9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3.2" width="8" height="17.6" rx="2"/><path d="M11 17.6h2"/></g><text x="94" y="186.0" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Device family</text><text x="94" y="204.0" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Which log</text><g class="pulse p0"><circle cx="282" cy="176.0" r="11" fill="#e879f9"/><text x="282" y="180.0" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">1</text></g></g><g><rect x="620" y="92.0" width="420" height="86" rx="16" fill="#0b1220" stroke="#a5b4fc" stroke-width="2"/><rect x="620" y="92.0" width="420" height="7" rx="3" fill="#a5b4fc"/><g transform="translate(632.0,126.0) scale(1.0)" fill="none" stroke="#a5b4fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.2h2.1l1.3 3.1-1.7 1a9 9 0 0 0 4.2 4.2l1-1.7 3.1 1.3V15a1.6 1.6 0 0 1-1.7 1.6A13.2 13.2 0 0 1 5.4 6.9 1.6 1.6 0 0 1 8 5.2z"/></g><text x="666" y="128.0" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">MPP</text><text x="666" y="146.0" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Report Problem while registered</text><g class="pulse p1"><circle cx="1024" cy="118.0" r="11" fill="#a5b4fc"/><text x="1024" y="122.0" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">2</text></g></g><path class="march" d="M298.0 215.0 C459.0 215.0 459.0 135.0 620.0 135.0" fill="none" stroke="#a5b4fc" stroke-width="5" stroke-linecap="round"/><text class="pulse p0" x="459.0" y="165.0" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">PRT</text><g class="pkt" filter="url(#T8R07flowdectsvg-soft)"><circle r="7" fill="#a5b4fc" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.0s" repeatCount="indefinite" path="M298.0 215.0 C459.0 215.0 459.0 135.0 620.0 135.0"/></circle></g><g><rect x="620" y="188.66666666666669" width="420" height="86" rx="16" fill="#0b1220" stroke="#fbbf24" stroke-width="2"/><rect x="620" y="188.66666666666669" width="420" height="7" rx="3" fill="#fbbf24"/><g transform="translate(632.0,222.7) scale(1.0)" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 13.5c1.6-3.4 2.6 3.2 4.4 0s2.8 3.4 4.4 0 2.8 3.4 4.4 0 2.2-3.2 4.4 0"/></g><text x="666" y="224.66666666666669" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">DECT</text><text x="666" y="242.66666666666669" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Manage logs on the base</text><g class="pulse p2"><circle cx="1024" cy="214.66666666666669" r="11" fill="#fbbf24"/><text x="1024" y="218.66666666666669" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">3</text></g></g><path class="march" d="M298.0 215.0 C459.0 215.0 459.0 231.7 620.0 231.7" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/><text class="pulse p1" x="459.0" y="213.3" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Base</text><g class="pkt" filter="url(#T8R07flowdectsvg-soft)"><circle r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.4s" repeatCount="indefinite" path="M298.0 215.0 C459.0 215.0 459.0 231.7 620.0 231.7"/></circle></g><g><rect x="620" y="285.33333333333337" width="420" height="86" rx="16" fill="#0b1220" stroke="#fb7185" stroke-width="2"/><rect x="620" y="285.33333333333337" width="420" height="7" rx="3" fill="#fb7185"/><g transform="translate(632.0,319.3) scale(1.0)" fill="none" stroke="#fb7185" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6 18.5 6v5.6c0 3.8-2.6 6.3-6.5 8.2-3.9-1.9-6.5-4.4-6.5-8.2V6z"/></g><text x="666" y="321.33333333333337" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Network debug</text><text x="666" y="339.33333333333337" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Whole network, only while diagnosing</text><g class="pulse p3"><circle cx="1024" cy="311.33333333333337" r="11" fill="#fb7185"/><text x="1024" y="315.33333333333337" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">4</text></g></g><path class="march" d="M298.0 215.0 C459.0 215.0 459.0 328.3 620.0 328.3" fill="none" stroke="#fb7185" stroke-width="5" stroke-linecap="round"/><text class="pulse p2" x="459.0" y="261.7" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Careful</text><g class="pkt" filter="url(#T8R07flowdectsvg-soft)"><circle r="7" fill="#fb7185" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.8s" repeatCount="indefinite" path="M298.0 215.0 C459.0 215.0 459.0 328.3 620.0 328.3"/></circle></g><text x="28" y="422" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">DECT logs are SIP plus handset, stored under the base device ID. Network debug covers the whole network.</text>
+</svg>

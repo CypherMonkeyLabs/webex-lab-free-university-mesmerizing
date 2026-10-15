@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T5-R02 · DI Architecture &amp; Peering">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T5-R02 · DI Architecture &amp; Peering · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T5" data-room="T5-R02" data-room-title="DI Architecture &amp; Peering" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T5</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T5/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T5 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+
+
+<p class="kicker">T5 · Dedicated Instance</p>
+<h1>DI Architecture &amp; Peering</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for DI Architecture &amp;amp; Peering">
+<defs>
+<linearGradient id="T5R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T5R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Dedicated Instance</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T5-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Site</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Peering</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Calling</text></g>
+</svg>
+<figcaption>Illustrated scene for DI Architecture &amp;amp; Peering. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for DI Architecture &amp;amp; Peering">
+<defs>
+<marker id="T5R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Site → Peering → Dedicated UC → Calling</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Calling</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T5R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T5R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T5R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T5R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Site → Peering → Dedicated UC → Calling. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Dedicated Instance is a regional Unified CM stack you activate on purpose. Peering is two Edge Connect links, not a diagram with one happy line. This room keeps both the two-link rule and the Edge Connect 3.0 sentence that talks about a consolidated path.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T5-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T2-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Dedicated Instance is an optional Webex Calling add-on. Activating a region is permanent, and the first voice service domain sticks. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Activation deploys Unified CM, Unity Connection, Expressway Core and Edge, and Emergency Responder only in AMER. The access article also names IM and Presence and optional SME. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li><li>There are no new EMEA deployments. Choose EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Edge Connect peers through Equinix or Megaport. Webex ASN 13445. Your peering subnet is a public /30 or /31. Dedicated Instance orders need two connections. <a class="cite" href="#cite-3">[cite:3]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+
+<ul>
+<li>Dedicated Instance is an optional Webex Calling add-on. Activating a region is permanent, and the first voice service domain sticks. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Activation deploys Unified CM, Unity Connection, Expressway Core and Edge, and Emergency Responder only in AMER. The access article also names IM and Presence and optional SME. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>There are no new EMEA deployments. Choose EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Edge Connect peers through Equinix or Megaport. Webex ASN 13445. Your peering subnet is a public /30 or /31. Dedicated Instance orders need two connections. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Do not steer every DI prefix at one link. Each data center advertises its own /25. Private ASN prepending is stripped. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A design review fails when someone orders one link, prepends a private ASN, or treats EMEA as still open. Those three are documented, not taste.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two data centers, two links</h2>
+
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T5-R02/arch.svg -->
+<div class="diagram" role="img" aria-label="Regional pair and the peering that reaches it">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Regional pair and the peering that reaches it">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Regional pair and the peering that reaches it</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Control Hub org  →  one or more DI regions. The first voice domain sticks.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Each region  →  two data centers. CM groups take a node from each.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Customer BGP  →  Equinix or Megaport  →  Webex ASN 13445.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Link subnet is a public /30 or /31. Each DC advertises its own /25.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">UC apps cross-launch before the links are up. Sync to the pane is 24 hours.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">CER is on the AMER deploy list. It is not implied for EU or UK.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  CE[Customer edge] --> EC[Edge Connect]
+  EC --> DC1[Data center A]
+  EC --> DC2[Data center B]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What is dedicated, and what is peered</h2>
+
+<div class="callout def"><span class="label">Not multi-tenant calling</span><p>Multi-tenant Webex Calling does not hand you a Unified CM publisher. Dedicated Instance does, inside the region you activated. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">Two lists of applications</span><p>Activation names four deploy items, with Emergency Responder only in AMER. The access article’s architecture list also includes IM and Presence and optional SME. Teach both lists. Do not merge them into one sentence. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Two links, and also a 3.0 sentence</span><p>Order and practice articles require two Dedicated Instance connections to two data centers. The deployment-model article says Edge Connect 3.0 can put multi-tenant, Dedicated Instance, and Meetings on one peering capability, and describes a customer who used one peer toward DI and WxCCE. Keep both. A single physical link is still the wrong order. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-5">[cite:5]</a></p></div>
+<div class="callout gotcha"><span class="label">Melbourne ASN cell</span><p>Most rows in the location table print Cisco ASN 13445, which matches the Edge Connect article. The Melbourne row prints 399937. Retrieved again on 2026-10-14. The Melbourne cell still prints 399937. Sydney still prints 13445. Edge Connect still states public BGP ASN 13445. Both prints stay. Do not type 399937 as the Edge Connect public ASN. <a class="cite" href="#cite-6">[cite:6]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<h3>Pairs the location article names</h3>
+<div class="table-wrap"><table><thead><tr><th>Region table</th><th>Locations printed</th><th>Note</th><th>Cite</th></tr></thead><tbody><tr><td>AMER</td><td>Los Angeles 011, Ashburn 021</td><td>LA UC network printed 69.168.17.0/24 and per-DC 69.168.17.0/25</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>APJC</td><td>Singapore 051, Tokyo 062</td><td>ASN cell 13445 on the Singapore row</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>AUS</td><td>Melbourne 071, Sydney 081</td><td>Retrieved again 2026-10-14. Melbourne ASN cell still prints 399937. Sydney still prints 13445. Both prints stay.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>EU</td><td>Frankfurt 141, Amsterdam 143</td><td>New EU pair. Not the frozen EMEA table.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>UK</td><td>London 133, Manchester 131</td><td>Separate from the EMEA London/Amsterdam rows.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>KSA</td><td>Jeddah 231, Riyadh 233</td><td>Jeddah IaaS cell prints Coming soon.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>EMEA</td><td>London 031/032, Amsterdam 041/042</td><td>Heading: no new customer deployments.</td><td><a class="cite" href="#cite-6">[cite:6]</a> <a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T5-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<circle cx="200" cy="132" r="36" fill="url(#T5R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T5R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Dedicated Instance</dt><dd>An optional add-on to Webex Calling. You purchase it before activation. It is a private-cloud UC stack for a region, not the multi-tenant calling service. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Region activation</dt><dd>Once a region is activated it cannot be reversed or moved. The voice service domain from the first region applies to later regions in the same Control Hub org. The UC applications domain cannot be changed after submit or activate. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>EMEA freeze</dt><dd>The activation article says there are no new Dedicated Instance deployments in the EMEA region. Choose EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Unified CM</dt><dd>Deployed and sized at activation from the professional, standard, and workspace counts you enter for that region. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Unity Connection</dt><dd>Deployed with the region. Listed again on the application-access article. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Expressway</dt><dd>Expressway Core and Edge are part of the activation set and of the application list. Expressway Edge is the node the access article ties to a public IP. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Emergency Responder</dt><dd>Deployed only in the AMER region. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>IM and Presence</dt><dd>Named in the application-access article as part of the architecture. The activation article’s numbered deploy list that this pass read is Unified CM, Unity Connection, Expressway, and Emergency Responder in AMER. Do not treat those two lists as the same sentence. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>SME</dt><dd>Session Management Edition is optional. The cluster can span regions. It is listed under the publisher’s region on Manage. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>UC application pane</dt><dd>Calling → Dedicated Instance → Manage → UC application. It shows datacenter, voice service domain, and the Expressway Edge public IP. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Over-the-top launch</dt><dd>You can cross-launch the UC apps from Control Hub before peering is finished, so onboarding of the apps can start. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Service list</dt><dd>The access article lists Provisioning (publisher only), Call Processing, CTI Manager, Music on Hold, and TFTP. Application changes sync on a 24-hour schedule. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Edge Connect</dt><dd>Private peering through Equinix or Megaport from the customer edge to the Webex backbone. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Webex BGP ASN</dt><dd>The Edge Connect article states the Webex public BGP ASN is 13445. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Peering subnet</dt><dd>Customer BGP peering link address space is a public IP with a /30 or /31 prefix. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Two DI links</dt><dd>The migration-practice article says two Dedicated Instance links are a must. Four links are an option in pairs, and crossing is not allowed. Do not prefer one link for DI traffic. Each data center advertises its own /25. <a class="cite" href="#cite-4">[cite:4]</a></dd></div><div class="term"><dt>Redundancy checkbox</dt><dd>For an Edge Connect for Dedicated Instance order, the redundancy option is mandatory so the second connection lands in a different Webex data center in the region. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Data-center pair</dt><dd>Primary and secondary Dedicated Instance data centers are grouped as a pair in each region. Either site in the pair can be primary. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Private ASN prepend</dt><dd>AS-PATH prepending is not supported with private ASNs, because Webex strips the ASN after ingress. The article points at link-priority communities instead. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Link-priority community</dt><dd>Edge Connect honors 13445:200, 13445:300, and 13445:400 as local preference 200, 300, and 400. <a class="cite" href="#cite-3">[cite:3]</a></dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T5-R02/eco.svg -->
+<div class="diagram" role="img" aria-label="Dedicated Instance and its neighbors">
+<svg viewBox="0 0 980 298" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dedicated Instance and its neighbors">
+<rect width="980" height="298" fill="#0c121c"/>
+<text x="28" y="40" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Dedicated Instance and its neighbors</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex Calling subscription  ·  DI is an add-on</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Unified CM, Unity Connection, Expressway, CER in AMER</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">IM and Presence and optional SME on the access article</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Edge Connect  ·  Equinix or Megaport  ·  ASN 13445</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Two links  ·  unique /25 per data center</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Meetings and multi-tenant can share the 3.0 peering capability</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">WxCCE in the customer story  ·  local gateway for PSTN</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Dedicated Instance))
+    UC apps
+    Edge Connect
+    Regions
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Multi-tenant Webex Calling</td><td>The shared calling cloud, not this private UC stack.</td><td>Users can exist in both designs. Compare Calling → Dedicated Instance → Manage with the multi-tenant locations. They are different objects, and the mixed dial plan is T5-R05 because the activation article does not print one.</td><td>Open Calling → Dedicated Instance → Manage for the private UC apps, and the multi-tenant location for the shared cloud. Coexistence dial-plan detail is T5-R05 because the two products keep separate objects.</td><td>Treating a DI region activation as a multi-tenant location.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Local Gateway</td><td>The customer SBC for PSTN in the deployment-model stories.</td><td>ny65x1bb uses a local gateway for PSTN on both DI and the contact-center side of one customer story.</td><td>Do not paste the sample LGW password from the IOS article into a DI trunk.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Webex Contact Center Enterprise</td><td>A different product from multi-tenant WxCC.</td><td>The same customer story says one Edge Connect 3.0 peer can reach DI and WxCCE. That sentence does not cancel the two-link DI rule.</td><td>Read both articles before you order one link.</td><td><a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Webex Meetings</td><td>Edge Connect also carries Meetings routes.</td><td>A DI order can include Meetings and Calling. Route filters belong in the Edge Connect article, not in a CUCM route pattern.</td><td>Filtering to a stale prefix list.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Survivability / WAN</td><td>Peering is the private path. It is not phone registration through a local gateway.</td><td>Calling endpoints still do not register through LGW. DI phones register to the dedicated Unified CM.</td><td>Pointing phones at the peering subnet as if it were TFTP for multi-tenant MPP.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Emergency calling</td><td>CER is in the AMER deploy list only.</td><td>Other regions are not given a CER node by the activation article.</td><td>Assuming CER exists in EU because the AMER cluster has it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Identity</td><td>Control Hub still owns the org. UC apps have their own admin pages.</td><td>Cross-launch is over the top. LDAP inside Unified CM is not Directory Connector.</td><td>Compare the SSO attribute in Control Hub with LDAP on the dedicated Unified CM. They are separate directories, so an attribute name in one does not fill a field in the other.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>BGP communities</td><td>How you influence return-path preference.</td><td>13445:200, :300, and :400.</td><td>Prepending a private ASN and expecting it to survive.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Customer router</td><td>Equinix or Megaport</td><td>Layer 1 and 802.1Q</td><td>Physical cross-connect, or a circuit to a facility that colocates with Webex, or a remote connection when your facility does not.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Cloud exchange</td><td>Webex backbone</td><td>BGP</td><td>Customer ASN, Webex ASN 13445, public /30 or /31 on the peering link.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Each DI data center</td><td>Customer</td><td>Advertised /25</td><td>The practice article says each side advertises its unique /25 and you must not prefer one link.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Control Hub</td><td>UC application</td><td>Cross-launch</td><td>Onboarding can start before peering is complete.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Publisher region</td><td>SME subscribers</td><td>Manage pane</td><td>The cluster is listed where the publisher lives. Subscribers in other regions show in the right pane.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Dedicated Instance</td><td>Webex Meetings and multi-tenant</td><td>Edge Connect 3.0</td><td>The deployment-model article says one peering path can carry those services. DI redundancy articles still require two connections.</td><td><a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Local gateway</td><td>PSTN</td><td>SIP</td><td>In the cited customer story both DI and WxCCE use a local gateway for PSTN.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>UC app change</td><td>Control Hub view</td><td>24-hour sync</td><td>The access article schedules the sync every 24 hours.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Peering and control edges">
+<svg viewBox="0 0 980 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peering and control edges">
+<rect width="980" height="326" fill="#0c121c"/>
+<text x="28" y="40" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Peering and control edges</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  Customer router → Equinix or Megaport</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  Cloud exchange → Webex backbone</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  Each DI data center → Customer</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  Control Hub → UC application</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  Publisher region → SME subscribers</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  Dedicated Instance → Webex Meetings and multi-tenant</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7  Local gateway → PSTN</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8  UC app change → Control Hub view</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>Dedicated Unified CM</td><td>On-premises CUCM is the familiar admin model. Open CSS on the dedicated Unified CM and LDAP on that same cluster. A help page does not print a field crosswalk because those screens change with the UC application version.</td><td>Teams Phone is not this private cluster. No parity matrix.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Edge Connect</td><td>An MPLS WAN into an on-prem publisher is a different design. Do not reuse its QoS numbers here.</td><td>A cloud-exchange provider is Equinix or Megaport in the article, not a generic VPN claim.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>CER in AMER</td><td>On-prem CER is a product you may already run. The cloud deploy statement is AMER-only.</td><td>Emergency vendors on other platforms stay unnamed.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: T5-R03 can go deeper on partner connect. This room already holds the peering rules those pages must not contradict.</li>
+<li>Prefix lists on the Edge Connect page change. The February 25, 2026 note on that article added Calling ranges. <mark class="recheck">re-check</mark> any copied prefix. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Check Calling → Dedicated Instance → Manage against the multi-tenant locations when a user exists in both. The mixed dial plan is T5-R05 because the activation article does not print coexistence patterns.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Meetings work on the peering and DI does not</td><td>DI still needs its two regional connections and its own /25s.</td><td>Order type versus a Meetings-only link.</td><td>Confirm the solution was Edge Connect for Dedicated Instance, with two data centers.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>WxCCE and DI were drawn as one cluster</td><td>They are different products that can share an Edge Connect 3.0 peer in the customer story.</td><td>ny65x1bb versus the UC application list.</td><td>Peer them. Do not merge the admin planes.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Firewall uses a prefix list from last year</td><td>Advertisements change. The article says not to filter on a prefix list.</td><td>Allow 500 routes. Prefix length ≤ /24 is the encouragement.</td><td>Rebuild policy from the current network requirements.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Publisher was made a call-processing subscriber</td><td>The guideline says not to start CallManager on the publisher.</td><td>CM group membership across both data centers.</td><td>Move call processing onto subscribers in both data centers.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From purchase to a routed call</h2>
+
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T5-R02/seq.svg -->
+<div class="diagram" role="img" aria-label="Activation, then peering, then a PSTN call">
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Activation, then peering, then a PSTN call">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Activation, then peering, then a PSTN call</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Purchase the add-on. Activate the region. The choice sticks.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">UC apps come up. Cross-launch does not wait for BGP.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Two Edge Connect links come up to the regional pair.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Each data center advertises its /25. Customer advertises routes.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">A PSTN call in the cited story uses the local gateway, not the peering as a phone registrar.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Subscription</td><td>Region</td><td>First Time Setup</td><td>Counts of professional, standard, and workspace devices size that region. The sum cannot exceed the subscription.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Cisco</td><td>UC apps</td><td>Deploy</td><td>Unified CM, Unity Connection, Expressway, CER in AMER.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Administrator</td><td>App UI</td><td>Cross-launch</td><td>Allowed before peering completes.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>4</td><td>Customer</td><td>Equinix or Megaport</td><td>Physical and 802.1Q</td><td>Cross-connect, building circuit, or remote connection.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>5</td><td>Customer BGP</td><td>Webex ASN 13445</td><td>eBGP</td><td>Public /30 or /31. Allow about 500 routes.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>6</td><td>Data center</td><td>Customer</td><td>Prefix advertisement</td><td>Unique /25 per data center. No single-link preference.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>7</td><td>Phone</td><td>Unified CM</td><td>Registration</td><td>To the dedicated call-processing nodes, in a CM group that spans both data centers.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr><tr><td>8</td><td>PSTN</td><td>Local gateway</td><td>SIP</td><td>The deployment-model story uses the local gateway for PSTN on the DI side.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Order and router facts you can cite</h2>
+
+<ol>
+<li>Purchase Dedicated Instance, then activate only the regions you will keep. Enter professional, standard, and workspace counts. Standard appears only if it was ordered. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do not plan an EMEA activation for a new customer. Choose EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open Calling → Dedicated Instance → Manage → UC application to see datacenter, voice service domain, and Expressway Edge public IP. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Order Edge Connect for Dedicated Instance with redundancy. Pick a primary and secondary data center in the regional pair. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>On the customer router, run BGP and 802.1Q. Peer with Webex ASN 13445. Use a public /30 or /31. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Accept Webex routes. The article asks you to allow 500 routes and discourages prefix-list filters. If you must influence return preference, use community 13445:200, 13445:300, or 13445:400. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Build CM groups with nodes from both data centers. Do not start the CallManager service on the publisher. <a class="cite" href="#cite-7">[cite:7]</a></li>
+</ol>
+<!-- VISUAL:screenshot:di-manage | Studio | assets/images/T5-R02/manage.png -->
+<pre class="sim-out">Edge Connect peering (n68tcpb / tf6kpq). No customer secrets.
+  provider:          Equinix | Megaport
+  webex asn:         13445
+  customer asn:      public or private (private prepend will be stripped)
+  link addresses:    public /30 or /31
+  di connections:    2, different data centers in the region
+  optional 4:        pairs only, no crossing
+  di prefixes:       unique /25 advertised by each data center
+  communities:       13445:200 | 13445:300 | 13445:400
+  route budget:      allow 500 from Webex</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Region move after activation</td><td>Cannot be reversed or moved</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>New EMEA</td><td>No new deployments</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>DI Edge Connect links</td><td>Two required</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr><tr><td>Webex public ASN</td><td>13445</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Peering link</td><td>Public /30 or /31</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Routes to allow</td><td>500 recommended</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted as a recommendation</td></tr><tr><td>DI prefix per data center</td><td>Unique /25</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr><tr><td>UC pane sync</td><td>Every 24 hours</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Melbourne ASN cell</td><td>Prints 399937. Sydney prints 13445. Retrieved again 2026-10-14. Both prints stay.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td><td>Quoted on retrieval</td></tr><tr><td>Jeddah IaaS</td><td>Coming soon, as printed</td><td><a class="cite" href="#cite-6">[cite:6]</a></td><td><mark class="recheck">re-check</mark></td></tr><tr><td>Max regions or users</td><td>Read the subscription and the region you activated under Calling → Dedicated Instance. The activation article prints no user or region cap, and the first region cannot be moved, so scale follows the order.</td><td>Not taken from a sizing calculator in this pass</td><td>Open</td></tr></tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten design failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Activation will not move to another region</td><td>The region choice is permanent.</td><td>Activation article: cannot be reversed or moved.</td><td>Activate the region you mean. Later regions keep the first voice service domain.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>A new customer asks for EMEA</td><td>No new EMEA deployments.</td><td>The activation article names EU or UK instead.</td><td>Pick EU or UK. The old EMEA rows in the location table are labeled no new deployments.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>Only one DI peering link was ordered</td><td>Redundancy is mandatory for Dedicated Instance Edge Connect.</td><td>Order guide: two connections, two data centers.</td><td>Order the pair. Do not select a single connection for that solution.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Return traffic ignores a private-ASN prepend</td><td>Webex strips a private ASN on ingress.</td><td>Edge Connect routing section.</td><td>Use link-priority communities 13445:200, :300, or :400.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>One link is preferred for all DI subnets</td><td>The practice article says that prioritization is not supported.</td><td>Each data center’s /25.</td><td>Accept both advertisements. Do not engineer all DI prefixes toward one link.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Four links were crossed between pairs</td><td>Four links are allowed only as pairs. Crossing is not allowed.</td><td>Practice article.</td><td>Keep each pair intact.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>CER is missing in EU</td><td>Emergency Responder is deployed for AMER only, in the articles read here.</td><td>Activation list and the access article.</td><td>Do not expect the AMER node list in EU.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Control Hub UC status looks empty on day one</td><td>Peering can still be in progress. Cross-launch is allowed before it finishes. Sync is every 24 hours.</td><td>Manage pane versus the app you cross-launched.</td><td>Use the app for onboarding. Wait for the documented sync before you call the pane wrong.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>A prefix filter blocked a new Webex route</td><td>The Edge Connect article says advertisements change and customers should not filter on a prefix list.</td><td>Allow 500 routes. Accept prefixes ≤ /24.</td><td>Build firewall policy from the network-requirements pages, not from a copied prefix list in this room.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Phones were aimed at the local gateway to register</td><td>Registration to Dedicated Instance Unified CM is not registration through the local gateway.</td><td>T2’s registration fact, plus this room’s UC apps.</td><td>Register to the dedicated call-processing node. Use the gateway for the PSTN role the deployment story describes.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What do you buy before you can activate Dedicated Instance?</summary><p class="answer">The optional add-on. Activation is not available as a substitute for the purchase. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which UC applications does the activation article say it deploys?</summary><p class="answer">Unified CM, Unity Connection, Expressway Core and Edge, and Emergency Responder only in AMER. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Can you move a live region to another region later?</summary><p class="answer">No. The activation article says it cannot be reversed or moved. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What happens to the voice service domain on the second region?</summary><p class="answer">The domain from the first activation applies to later regions in that org, and the UC applications domain cannot be edited after submit or activate. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Why is EMEA not a choice for a new customer?</summary><p class="answer">The activation article says there are no new Dedicated Instance deployments in EMEA. Choose EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where do you open the UC applications?</summary><p class="answer">Calling → Dedicated Instance → Manage → UC application. Cross-launch works before peering is done. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How many Edge Connect links does Dedicated Instance require?</summary><p class="answer">Two. The redundancy option is mandatory on that order, and the practice article calls two links a must. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What ASN does Edge Connect publish for Webex?</summary><p class="answer">13445. Retrieved again on 2026-10-14, the location table still prints 13445 on most rows and 399937 on Melbourne. Both prints stay. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-6">[cite:6]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What prefix do you use on the BGP peering link itself?</summary><p class="answer">A public /30 or /31. That is the link subnet, not the UC application /25. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why does a private ASN prepend fail?</summary><p class="answer">Webex strips the private ASN after ingress. Use the local-preference communities instead. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>How can one sentence say a single Edge Connect 3.0 path and another require two DI links?</summary><p class="answer">ny65x1bb describes consolidating services on the Edge Connect 3.0 capability, including a single peer used for DI and WxCCE in that customer story. n68tcpb and tf6kpq still require two Dedicated Instance connections to two data centers. Quote both. Do not delete either. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What must a CM group contain?</summary><p class="answer">The deployment guidelines say a CM group must include Unified CM nodes from both data centers in the region, and that you should not start the CallManager service on the publisher. <a class="cite" href="#cite-7">[cite:7]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not activate a region to learn this.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: read a DI order and a peering design without activating a production region.</label></li>
+<li><label><input type="checkbox"> Prereq: a design packet, not a customer org you do not own. Activation is permanent. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 1. Write the region. If the packet says EMEA for a new customer, stop. Expected: EU or UK.</label></li>
+<li><label><input type="checkbox"> Step 2. Count Dedicated Instance Edge Connect connections. Expected: two, in a regional pair, redundancy selected.</label></li>
+<li><label><input type="checkbox"> Step 3. Write the peering subnet size and Webex ASN. Expected: public /30 or /31, ASN 13445.</label></li>
+<li><label><input type="checkbox"> Step 4. Confirm you are not steering every DI /25 at one link.</label></li>
+<li><label><input type="checkbox"> Evidence: the pair of data-center names, the community you would use instead of a private prepend, and the CM-group note.</label></li>
+<li><label><input type="checkbox"> Break it: design a single link and a private-ASN prepend. Recovery: restore two links and a 13445 community.</label></li>
+<li><label><input type="checkbox"> Reflection: which sentence about “one peering path” you still have to keep beside the two-link rule.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Dedicated Instance activation is:</p><details><summary>Answer</summary><p class="answer">An optional add-on you purchase first. A region cannot be moved after activation. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Emergency Responder is deployed where?</p><details><summary>Answer</summary><p class="answer">Emergency Responder is deployed where: AMER only, in both the activation article and the application-access article. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>New customers who wanted EMEA are told to choose:</p><details><summary>Answer</summary><p class="answer">New customers who wanted EMEA are told to choose: EU or UK. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Webex public BGP ASN on the Edge Connect article is:</p><details><summary>Answer</summary><p class="answer">Webex public BGP ASN on the Edge Connect article is: 13445. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>The customer’s BGP peering addresses are:</p><details><summary>Answer</summary><p class="answer">The customer’s BGP peering addresses are: Public address space with a /30 or /31. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>Someone prepends a private ASN so Webex prefers link A. What does the article say happens?</p><details><summary>Answer</summary><p class="answer">Webex strips the private ASN. Use 13445:200, :300, or :400 instead. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>All DI prefixes are local-pref’d onto one of the two regional links. What is wrong?</p><details><summary>Answer</summary><p class="answer">All DI prefixes are local-pref’d onto one of the two regional links. What is wrong: The practice article says DI traffic prioritization toward one link is not supported, because each data center advertises its own /25. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>How often does the access article say UC application data syncs to the Control Hub view?</p><details><summary>Answer</summary><p class="answer">How often does the access article say UC application data syncs to the Control Hub view: Every 24 hours. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>Peering is not up and the partner wants to start Unity Connection. Is cross-launch allowed?</p><details><summary>Answer</summary><p class="answer">Yes. The access article says you can cross-launch over the top until peering is complete. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>SME is listed under which region?</p><details><summary>Answer</summary><p class="answer">The publisher’s region. Subscribers elsewhere are in the right pane. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name the AMER pair and one UC prefix the location article prints for Los Angeles.</p><details><summary>Answer</summary><p class="answer">Los Angeles (data center id 011) and Ashburn (021). Los Angeles UC application network is printed as 69.168.17.0/24, and the per-data-center prefix as 69.168.17.0/25. <mark class="recheck">re-check</mark> before you build a filter. <a class="cite" href="#cite-6">[cite:6]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>A design starts the CallManager service on the publisher to “use the node.” What does the deployment guideline say?</p><details><summary>Answer</summary><p class="answer">Do not. Additional services such as CallManager on the publisher can affect scale. CM groups must include nodes from both data centers. <a class="cite" href="#cite-7">[cite:7]</a></p></details></article></div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Dedicated Instance as a regional Unified CM add-on and why the region choice sticks." | assets/audio/T5-R02/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk two Edge Connect links, the /25 advertisements, and why a private ASN prepend dies." | assets/audio/T5-R02/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: ASN 13445, CER in AMER, no new EMEA, two links." | assets/audio/T5-R02/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Dedicated Instance is a purchased add-on that deploys a regional Unified CM, Unity Connection, and Expressway pair. Emergency Responder is in the AMER list. You do not get to move the region later.</p>
+<p><strong>2 minutes.</strong> Peering is Edge Connect on Equinix or Megaport. Webex ASN is 13445. You bring a public /30 or /31 and two connections to the two data centers. Each data center advertises its own /25, so preferring one link is unsupported. Private ASN prepending is stripped. Communities 13445:200, 300, and 400 set local preference.</p>
+<p><strong>30 seconds, the contradiction people hear.</strong> One article shows Edge Connect 3.0 carrying several services, including a single peer used toward DI and WxCCE. The order articles still require two DI connections. You quote both.</p>
+<p><strong>2 minutes, operations.</strong> Cross-launch the UC apps before BGP is up. The Control Hub pane syncs every 24 hours. CM groups include both data centers. You do not run CallManager on the publisher. SME, if you bought it, is listed in the publisher’s region.</p>
+<p><strong>What you will not say.</strong> You will not type 399937 as the Edge Connect public ASN. Retrieved 2026-10-14, Melbourne still prints 399937 and Sydney still prints 13445. You will not publish the location table as a firewall ACL.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+
+<ol class="cite-list"><li id="cite-1">Activate Dedicated Instance — help.webex — article nefkee9 — <a href="https://help.webex.com/article/nefkee9">help.webex.com article nefkee9</a> — retrieved 2026-10-14. Optional add-on. Region cannot be reversed or moved. First voice service domain sticks. No new EMEA deployments; choose EU or UK. Deploys Unified CM, Unity Connection, Expressway Core and Edge, and Emergency Responder only in AMER.</li><li id="cite-2">Access Dedicated Instance applications from Control Hub — help.webex — article n2hzeox — <a href="https://help.webex.com/article/n2hzeox">help.webex.com article n2hzeox</a> — retrieved 2026-10-14. Application list includes IM and Presence and optional SME. Path Calling → Dedicated Instance → Manage → UC application. Cross-launch before peering. Services include publisher-only provisioning. Sync every 24 hours.</li><li id="cite-3">Webex Edge Connect — help.webex — article n68tcpb — <a href="https://help.webex.com/article/n68tcpb">help.webex.com article n68tcpb</a> — retrieved 2026-10-14. Equinix or Megaport. Public or private customer ASN. Public /30 or /31 peering. Webex ASN 13445. Allow 500 routes. Private ASN prepend is stripped. Communities 13445:200, :300, :400. Dedicated Instance orders require two connections.</li><li id="cite-4">Best practices in preparation and migration to Webex Calling Dedicated Instance — help.webex — article tf6kpq — <a href="https://help.webex.com/article/tf6kpq">help.webex.com article tf6kpq</a> — retrieved 2026-10-14. Two DI links are a must. Four links only in pairs; crossing is not allowed. Do not prioritize DI traffic onto one link. Each data center advertises its own /25.</li><li id="cite-5">Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — <a href="https://help.webex.com/article/ny65x1bb">help.webex.com article ny65x1bb</a> — retrieved 2026-10-14. Edge Connect 3.0 can carry multi-tenant, Dedicated Instance, and Meetings. The same article describes one peer used for Dedicated Instance and Webex Contact Center Enterprise, and local gateways for PSTN.</li><li id="cite-6">Dedicated Instance data center locations — help.webex — article nx91ljh — <a href="https://help.webex.com/article/nx91ljh">help.webex.com article nx91ljh</a> — retrieved 2026-10-14. Pairs include Los Angeles/Ashburn, Singapore/Tokyo, Melbourne/Sydney, Frankfurt/Amsterdam, London/Manchester, Jeddah/Riyadh, plus an EMEA table marked no new customer deployments. Prefixes are in that table. Melbourne’s Cisco ASN cell prints 399937 beside 13445 on other rows.</li><li id="cite-7">Dedicated Instance deployment guidelines — help.webex — article 0ppivs — <a href="https://help.webex.com/article/0ppivs">help.webex.com article 0ppivs</a> — retrieved 2026-10-14. CM groups must include nodes from both data centers in the region. Do not start the CallManager service on the publisher.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+
+
+<ul>
+<li>Open questions: full IM and Presence deploy timing versus the activation list; KSA IaaS when “Coming soon” changes.</li>
+<li>Check the region under Calling → Dedicated Instance, the dial plan in T5-R05, and CSS plus LDAP on the dedicated Unified CM. Those values vary by subscription and by UC version, and these articles do not freeze them.</li>
+<li>Assets missing: Manage-pane screenshot, peering SVG export, audio.</li>
+<li>Ideas for v1.0: a one-page pair table generated from nx91ljh at review time, with the review date in the caption.</li>
+<li>Next review: <mark class="recheck">re-check</mark> prefixes. The Melbourne ASN cell was retrieved 2026-10-14 and still prints 399937 beside Sydney 13445.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R01-wxcc-enterprise-overview.html"><span>Previous</span><strong>T4-R01</strong><em>WxCC Enterprise Overview</em></a><a class="next" href="T6-R01-enterprise-cutover-capstone.html"><span>Next</span><strong>T6-R01</strong><em>2,000-seat CUCM + UCCE Cutover</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

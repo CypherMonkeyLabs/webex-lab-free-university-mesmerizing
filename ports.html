@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ports and protocols · Webex Lab</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/university.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="lab-links" aria-label="CypherMonkey">
+<a href="https://cyphermonkeylabs.com">Labs home</a>
+<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<button type="button" data-offline-save>Save for offline</button>
+<a href="downloads/webex-university-offline.zip">Offline bundle</a>
+</nav>
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Webex Lab<small>University</small></span></a>
+<nav class="nav-quick" aria-label="Primary">
+<a class="nav-icon" href="index.html" title="Home"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a>
+<a class="nav-icon" href="start.html" title="Start"><span aria-hidden="true">🚀</span><span class="sr">Start</span></a>
+<a class="nav-icon" href="mastery.html" title="Mastery"><span aria-hidden="true">🧭</span><span class="sr">Mastery</span></a>
+<a class="nav-icon" href="play.html" title="Play"><span aria-hidden="true">🎮</span><span class="sr">Play</span></a>
+<a class="nav-icon" href="downloads.html" title="Cheat Codes"><span aria-hidden="true">⬇️</span><span class="sr">Downloads</span></a>
+</nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Choose a theme">◐</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="ecosystem-atlas.html">Ecosystem atlas</a>
+<a href="ports.html">Ports and protocols</a>
+<a href="labs.html">Hands-on labs</a>
+<a href="certs.html">Certifications</a>
+<a href="glossary.html">Glossary</a>
+</nav>
+</div>
+</header>
+<main id="main"><div class="wrap">
+
+<p class="crumbs"><a href="index.html">Lab</a> / Ports</p>
+<h1>Ports and protocols</h1>
+<p class="lede">Taken from the Webex Calling port reference on 2026-10-15. The article's revision history shows the phone source range moving to 5060–5280 on September 07, 2026. IP subnets are intentionally not copied. They change, and the article says filtering by region can hurt the service.</p>
+<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/firewall-lanes.svg" aria-label="Firewall lanes"></object></div>
+<h2>Signaling</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Purpose</th><th>Source ports</th><th>Protocol</th><th>Destination ports</th></tr></thead>
+<tbody>
+<tr><td>Local gateway, devices, and the app toward Calling</td><td>Gateway 8000–65535. Phones 5060–5280. Room Series and the app are ephemeral.</td><td>TCP</td><td>5062 certificate trunk. 8934 registration trunk.</td></tr>
+<tr><td>Calling back to a certificate local gateway</td><td>8934</td><td>TCP</td><td>The port you chose on the gateway.</td></tr>
+<tr><td>Gateway toward your PSTN or Unified CM</td><td>8000–65535</td><td>TCP</td><td>Depends on that peer. The article's example is 5060 or 5061 for Unified CM.</td></tr>
+</tbody></table></div>
+<h2>Media</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Who</th><th>Source</th><th>Toward Calling</th></tr></thead>
+<tbody>
+<tr><td>Local gateway</td><td>UDP 8000–48199</td><td>5004, 9000, 8500–8699, 19560–65535</td></tr>
+<tr><td>Devices, optimized</td><td>UDP 19560–19661</td><td>Same cloud destinations, or direct if ICE succeeds</td></tr>
+<tr><td>Room Series</td><td>Audio 52050–52099. Video 52200–52299.</td><td>Cloud destinations</td></tr>
+<tr><td>VG400 ATA</td><td>UDP 19560–19849</td><td>Cloud destinations</td></tr>
+<tr><td>Webex App, optimized</td><td>Audio 8500–8599. Video 8600–8699.</td><td>Direct when ICE succeeds</td></tr>
+</tbody></table></div>
+<p>UDP with SRTP is the production media transport. The article says TCP and TLS media are not supported in production. The PSTN media row's example cell repeats 5060 and 5061. Those are signaling ports in the row above. <mark class="unverified">Do not open 5060 as RTP because that cell says so. Use the customer's media range and re-read the live row.</mark></p>
+<h2 id="e911">Emergency, DNS, time, readiness</h2>
+<ul>
+<li>RedSky: port 443 to api.wxc.e911cloud.com and wxc.e911cloud.com.</li>
+<li>DNS: UDP and TCP 53. NTP: UDP 123.</li>
+<li>CScan: TCP 8934 and 443, UDP 19569–19760.</li>
+<li>App configuration: TCP 443 and 8443. Device configuration and firmware: TCP 443, 6970, and 80.</li>
+</ul>
+<h2>Ladder</h2>
+<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/calling-registration.svg" aria-label="Registration ladder"></object></div>
+<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/e911-held.svg" aria-label="Emergency ladder"></object></div>
+<p>SIP ALG off. NAT must translate overlapping phone source ports in 5060–5280. Default MTU 1500. <a href="play.html">Practice the ports</a>. <a href="https://help.webex.com/article/b2exve">Open the live article</a>.</p>
+
+</div></main>
+
+<footer class="site-footer lab-footer wrap">
+<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>
+<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>
+<p class="lab-actions">
+<a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a>
+<a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<a href="https://cyphermonkeylabs.com">Report a concern / takedown</a>
+<a href="https://cyphermonkeylabs.com">Work with us</a>
+</p>
+</footer>
+
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+</body></html>

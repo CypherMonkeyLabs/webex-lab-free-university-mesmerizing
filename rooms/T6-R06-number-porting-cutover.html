@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T6-R06 · Number Porting &amp; Cutover">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T6-R06 · Number Porting &amp; Cutover · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T6" data-room="T6-R06" data-room-title="Number Porting &amp; Cutover" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T6</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T6/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T6 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T6 · Migration</p>
+<h1>Number Porting &amp; Cutover</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Number Porting &amp;amp; Cutover">
+<defs>
+<linearGradient id="T6R06sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T6R06sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Migration</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T6-R06</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Plan</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Cutover</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Webex</text></g>
+</svg>
+<figcaption>Illustrated scene for Number Porting &amp;amp; Cutover. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Number Porting &amp;amp; Cutover">
+<defs>
+<marker id="T6R06arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Source PBX → Plan → Cutover → Webex</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Webex</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T6R06arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T6R06arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T6R06arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T6R06lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Source PBX → Plan → Cutover → Webex. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">A port moves a number from the losing carrier to the winning carrier. For Cisco Calling Plans, Control Hub is where the order, the letter of agency, and the day-of checks live. The date is not real until the losing carrier returns a firm order commitment. Port-out uses a different menu than port-in.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T6-R06</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T6-R05</strong></span>
+<span class="meta-chip read-chip">Reading <strong>16 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>One license can port one number. Ports cannot exceed licenses purchased. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Bring a bill from the last 30 days and a letter of agency. Some countries use an eLOA that Control Hub fills. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do not disconnect the losing carrier until the port completes and you have verified it. After submit, numbers cannot be added or changed. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Before FOC you can change or cancel in Control Hub. After FOC you open PTS. Risk rises as the window shrinks. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A port-out request is auto-accepted after one business day. The menu is PSTN &amp; Routing → PSTN Orders, which is not the port-in path Calling → PSTN → Orders. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Slamming is forbidden. Cisco does not change a telephony provider without written consent of the authorized account holder. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Same-account numbers port together even across orders. Distinct account information means separate orders. Toll-free is a separate order from DID, and the guidelines say US or CA only. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Ask for at least five business days, or two to three weeks for a larger port. The earliest request can be 1–35 business days. The latest is 30 days from submission. Activation is requested between 9 a.m. and 4 p.m. on business days and is not guaranteed until FOC. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Wait at least 15 minutes after FOC, or 30 minutes for a project or complex port, before you call the port failed. Then check Control Hub, then open PTS. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>In the United States and Canada, porting a number ports Calling services. It does not port messaging. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Cutover day fails when someone disconnects the old carrier at submit, edits the order after FOC inside Control Hub, or treats a port-out menu as the port-in menu.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Losing carrier, Control Hub, winning carrier</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T6-R06/arch.svg -->
+<div class="diagram" role="img" aria-label="Port-in path from the losing carrier through Control Hub">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Port-in path from the losing carrier through Control Hub">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="36" fill="#c6e27a" font-family="Georgia, serif" font-size="20">FOC is the commitment. Submit is not.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="64" width="200" height="140" rx="14" fill="#1a2214" stroke="#c6e27a"/>
+<text x="44" y="96">Losing carrier</text>
+<text x="44" y="122" fill="#b7ad9c">Current bill, 30 days</text>
+<text x="44" y="144" fill="#b7ad9c">Keep numbers active</text>
+<text x="44" y="166" fill="#b7ad9c">Returns the FOC</text>
+<text x="44" y="188" fill="#b7ad9c">May reject one reason</text>
+<rect x="268" y="64" width="220" height="140" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="284" y="96">Control Hub</text>
+<text x="284" y="122" fill="#b7ad9c">Draft, then submit</text>
+<text x="284" y="144" fill="#b7ad9c">LOA or eLOA</text>
+<text x="284" y="166" fill="#b7ad9c">Change only before FOC</text>
+<text x="284" y="188" fill="#b7ad9c">Numbers stay inactive</text>
+<rect x="528" y="64" width="200" height="140" rx="14" fill="#121a2a" stroke="#7eb6ff"/>
+<text x="544" y="96">Cisco PSTN team</text>
+<text x="544" y="122" fill="#b7ad9c">Sends the request</text>
+<text x="544" y="144" fill="#b7ad9c">PTS 24/5</text>
+<text x="544" y="166" fill="#b7ad9c">Aim: 2 hour response</text>
+<text x="544" y="188" fill="#b7ad9c">Best effort</text>
+<rect x="760" y="64" width="190" height="140" rx="14" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="776" y="96">Winning carrier</text>
+<text x="776" y="122" fill="#b7ad9c">Activates at FOC</text>
+<text x="776" y="144" fill="#b7ad9c">Brief service loss</text>
+<text x="776" y="166" fill="#b7ad9c">Then verify</text>
+<text x="776" y="188" fill="#b7ad9c">Then disconnect old</text>
+</g>
+<text x="28" y="244" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Port-in support case: Calling → PSTN → Orders, then Open a Cisco Calling Plans support case.</text>
+<text x="28" y="268" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Port-out view: PSTN &amp; Routing → PSTN Orders. Auto-accept after one business day.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Order types the guidelines table prints">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Order types the guidelines table prints">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="32" fill="#c6e27a" font-family="Georgia, serif" font-size="18">Simple, Standard, Project, Complex. The Complex header is “Any of the following.”</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="56" width="220" height="100" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="44" y="88">Simple</text><text x="44" y="112" fill="#b7ad9c">1 TN, 1 BTN, 1 address</text><text x="44" y="134" fill="#b7ad9c">1 carrier, 1 rate center</text>
+<rect x="264" y="56" width="220" height="100" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="280" y="88">Standard</text><text x="280" y="112" fill="#b7ad9c">1–50 TNs, 1 BTN</text><text x="280" y="134" fill="#b7ad9c">1 address, 1 carrier</text>
+<rect x="500" y="56" width="220" height="100" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="516" y="88">Project</text><text x="516" y="112" fill="#b7ad9c">&gt; 50 TNs, CSR US/CA</text><text x="516" y="134" fill="#b7ad9c">10–35 business days</text>
+<rect x="736" y="56" width="216" height="100" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="752" y="84">Complex</text><text x="752" y="108" fill="#b7ad9c">Header: any of these</text><text x="752" y="130" fill="#b7ad9c">First cell is &gt; 1 TN</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  L[Losing carrier] --> H[Control Hub order]
+  H --> P[Cisco PSTN porting]
+  P --> F[FOC]
+  F --> W[Winning carrier]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>The guidelines, quoted as a table</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T6-R06/hero.png -->
+<div class="table-wrap"><table><thead><tr><th>Rule</th><th>What 01sijg prints</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Definition</td><td>Number porting transfers existing numbers from the losing carrier to the winning carrier. Country processes differ. The page is general.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>License</td><td>One license means you can port only one number. Ports cannot exceed licenses purchased.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Proof</td><td>Current bill or invoice, dated within 30 days, plus an LOA. Some LOAs are eLOAs autofilled in Control Hub. Others are completed, signed, and uploaded.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Account grouping</td><td>Numbers on the same account port simultaneously, even across orders. Distinct account information goes on separate orders.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Toll-free</td><td>Separate orders from DID. The guidelines say US or CA only.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Pending order</td><td>A pending order on the account blocks more numbers. If the BTN ports, a non-ported number becomes the replacement BTN.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Extra services</td><td>When the number ports, the original installation ceases, including broadband or alarms on that line. They may not come back.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout gotcha"><strong>Gotcha.</strong> The Complex column is headed “Any of the following,” and its first cell is “&gt; 1 TN.” Standard is “1–50 TNs.” This room does not invent which column wins when both could be read. Quote the header. <a class="cite" href="#cite-1">[cite:1]</a></div>
+<h3>Before FOC and after FOC</h3>
+<div class="table-wrap"><table><thead><tr><th>When</th><th>What you may do</th><th>Risk the article names</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Before FOC</td><td>Change or cancel in Control Hub.</td><td>The article says no risk of the numbers porting or of service impact.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>After FOC</td><td>You cannot modify the order in Control Hub. Open PTS.</td><td>72 hours minimal, 48–72 low, 24–48 moderate, under 24 hours high. May vary by country.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Snapback</td><td>Emergency restore back to the losing carrier. Open PTS immediately.</td><td>Window 1–48 hours depending on carrier and country. Includes slamming.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Day of FOC</td><td>Numbers should already be assigned to users or features. Hardware ready. Activation is automatic.</td><td>Allow 15 minutes, or 30 for project or complex, before you declare failure.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout note"><strong>Note.</strong> Get Started also says the FOC date can be two business days later from the submission date, and defines FOC as the date the losing carrier states it releases the number. Do not merge that sentence with the guidelines’ 1–35 day earliest range. Teach both. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></div>
+<h3>Port out is a different screen</h3>
+<div class="table-wrap"><table><thead><tr><th>Direction</th><th>Menu the article prints</th><th>Behavior</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Port in, support case</td><td>Calling → PSTN → Orders, then Open a Cisco Calling Plans support case. If you have no order, the article says you can start Order New Numbers and stop once the link appears. Email pstn-support@cisco.com is the alternate.</td><td>PTS is 24/5, aims to respond within 2 hours, best effort. Losing-provider support on the day is generally 9 a.m.–4 p.m.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Port out</td><td>PSTN &amp; Routing → PSTN Orders. Filter Order type Port out and status Pending.</td><td>Auto-accept after one business day. The number stays active until the gaining carrier finishes. Then it is deleted. If assigned, the article says it is unassigned and then deleted. Reject moves to Reject Pending, then Rejected.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location main number ports out</td><td>Same port-out article.</td><td>Assign a new main number to avoid calling disruption.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Plan cancelled</td><td>Service cancellation section.</td><td>You must port out to keep the numbers. Unported numbers are released after a reasonable period. Cisco cannot guarantee availability after release. The article does not print a day count.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T6-R06">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Webex</text>
+<circle cx="200" cy="132" r="36" fill="url(#T6R06map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T6R06map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Losing carrier</dt><dd>The current PSTN provider. The winning carrier is the provider that receives the number. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>FOC</dt><dd>Firm order commitment. The losing carrier’s date and time. Requested dates are not confirmed until FOC. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>LOA</dt><dd>Letter of agency authorizing Cisco to act for the customer. Some countries use an eLOA filled in Control Hub. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>BTN</dt><dd>Billing telephone number. If it ports, a non-ported number is designated as the replacement. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Snapback</dt><dd>Emergency restore of a number to the losing carrier, inside a 1–48 hour window. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>PTS</dt><dd>Cisco PSTN Technical Support for Calling Plan number orders, porting, and related questions. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T6-R06/eco.svg -->
+<div class="diagram" role="img" aria-label="Sisters around a Cisco Calling Plan port">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sisters around a Cisco Calling Plan port">
+<rect width="980" height="220" fill="#0c121c"/>
+<circle cx="490" cy="110" r="52" fill="#14110c" stroke="#c6e27a"/>
+<text x="462" y="106" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Port</text>
+<text x="456" y="128" fill="#efe7d6" font-family="Georgia, serif" font-size="16">order</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="28" y="24" width="170" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="40" y="47">License count</text>
+<rect x="28" y="92" width="170" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="40" y="115">LOA and bill</text>
+<rect x="28" y="160" width="170" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="40" y="183">PTS case</text>
+<rect x="780" y="24" width="172" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="792" y="47">Location main</text>
+<rect x="780" y="92" width="172" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="792" y="115">Messaging US/CA</text>
+<rect x="780" y="160" width="172" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="792" y="183">CCP or LGW numbers</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Port order))
+    Proof
+      Bill
+      LOA
+    Timing
+      FOC
+      Snapback
+    Neighbors
+      Licenses
+      Location main
+      Messaging
+</pre>
+</details>
+<h3>Sister technologies</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Cisco Calling Plan license</td><td>The count that caps how many numbers you can port.</td><td>One license, one number.</td><td>Purchase before the order.</td><td>A port list longer than the license count.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location</td><td>Where a Calling Plan is enabled before port-in.</td><td>Get Started says enable the plan for the site first. The deployment guide says ordering and porting for Cisco Calling Plans starts in Control Hub once the location exists, in countries where the plan is available.</td><td>Do not invent the country list.</td><td>A port started before the location exists.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>CCP or premises PSTN</td><td>Numbers added in Control Hub, and they can stay inactive until assigned.</td><td>That add is not the Cisco Calling Plan port wizard.</td><td>Implement article number step.</td><td>Treating an inactive add as a completed port.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Business texting</td><td>Separate from the Calling port in the US and Canada.</td><td>Get Started says only Calling services port, then points at Enable business texting.</td><td>After the Calling port succeeds.</td><td>Expecting SMS to move with the DID.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Reseller</td><td>A provider that bills you while an underlying carrier owns the number.</td><td>Port data must match the underlying carrier, not only the reseller bill.</td><td>Ask the reseller for the carrier record after a rejection.</td><td>Copying the reseller invoice fields and stopping.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency callback</td><td>Basic emergency wants a customer-owned +E.164 on the location.</td><td>If the main number ports out, assign a new one.</td><td>Port-out article, then the location.</td><td>A location whose main number has left.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Identity</td><td>The authorized account holder signs the LOA.</td><td>Get Started says only an authorized account holder with admin rights signs.</td><td>Name and job title in the wizard.</td><td>A signer the losing carrier does not recognize.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Trial</td><td>Get Started says ported numbers are not supported on trial accounts, and you cannot port numbers out of a trial.</td><td>Convert to paid before those features.</td><td>Subscription state.</td><td>A port order on a trial.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Customer</td><td>Control Hub draft</td><td>Port order</td><td>Numbers, account data, bill, LOA. The draft checks portability.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cisco PSTN team</td><td>Losing carrier</td><td>Port request</td><td>The order. The response is an FOC date and time.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>FOC</td><td>Control Hub</td><td>Provisioning</td><td>Status becomes provisioned. Numbers stay inactive until activation.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Gaining carrier</td><td>Control Hub</td><td>Port-out request</td><td>Accept, reject, or wait one business day for auto-accept.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Admin</td><td>PTS</td><td>Calling → PSTN → Orders</td><td>Rejections, snapback, post-FOC changes. Alternate email pstn-support@cisco.com.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cutover</td><td>Cloud Connect partner</td><td>Port all numbers on the Unified CM PSTN trunk together</td><td>The deployment guide’s optimize step, so inter-location reachability holds. Detail is T6-R08.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Port request edge from Control Hub to the losing carrier">
+<svg viewBox="0 0 980 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Port request edge from Control Hub to the losing carrier">
+<rect width="980" height="110" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="40" y="32" width="180" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="64" y="62">Control Hub</text>
+<rect x="400" y="32" width="180" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="430" y="62">PSTN team</text>
+<rect x="760" y="32" width="180" height="48" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="784" y="62">Losing carrier</text>
+<path d="M220 56 H400" stroke="#c6e27a" fill="none"/><path d="M580 56 H760" stroke="#e0b07a" fill="none"/>
+</g>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Cisco Calling Plan port</td><td>Losing-carrier LSR and CSR in the US or Canada.</td><td>A Microsoft Teams or other carrier port uses that carrier’s process. <mark class="todo-verify">TODO-verify</mark> any claim that this Control Hub wizard ports into a non-Cisco plan.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Mobile port</td><td>The guidelines say PSTN porting differs from mobile or cellular porting, and a wireless port may need a PIN.</td><td>Do not reuse the landline lead time as a cellular SLA.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Future hooks</h3>
+<p><strong>Canon plan.</strong> Keep the Cisco Calling Plan country list unmarked until a page you re-read prints it. <strong>Cisco.</strong> The guidelines say requirements vary by country and that the page is general. That is the published boundary. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Texting disappeared after a US port</td><td>Only Calling services port in the US and Canada.</td><td>Whether business texting was enabled after the port.</td><td>Follow Enable business texting. Do not expect the port to carry messaging.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Alarm line died with the DID</td><td>Additional services on the line cease when the installation ceases.</td><td>What else the losing carrier billed on that number.</td><td>Move those services before the port. The article says they may not be reestablished.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location cannot place calls after port-out</td><td>The main number left.</td><td>Location main number field.</td><td>Assign a new main number.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a draft to a verified port</h2>
+<!-- VISUAL:sequence | SVG | assets/diagrams/T6-R06/seq.svg -->
+<div class="diagram" role="img" aria-label="Port sequence through FOC">
+<svg viewBox="0 0 980 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Port sequence through FOC">
+<rect width="980" height="150" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="48" width="140" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="48" y="78">Verify</text>
+<rect x="188" y="48" width="140" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="220" y="78">Draft</text>
+<rect x="352" y="48" width="140" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="376" y="78">Request</text>
+<rect x="516" y="48" width="140" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="556" y="78">FOC</text>
+<rect x="680" y="48" width="140" height="48" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="700" y="78">Activate</text>
+<rect x="836" y="48" width="120" height="48" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="856" y="78">Verify</text>
+<path d="M164 72 H188" stroke="#c6e27a"/><path d="M328 72 H352" stroke="#c6e27a"/><path d="M492 72 H516" stroke="#e0b07a"/><path d="M656 72 H680" stroke="#e0b07a"/><path d="M820 72 H836" stroke="#7eb6ff"/>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Customer</td><td>Number</td><td>Verification</td><td>Active, no existing order, supported country, covered region.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Customer</td><td>Control Hub</td><td>Draft</td><td>Creating the draft checks portability. Issues go to PTS.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Cisco</td><td>Losing carrier</td><td>Port request</td><td>Response is FOC. Numbers then show provisioned and stay inactive.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>FOC time</td><td>Winning carrier</td><td>Activation</td><td>Temporary loss of service is possible. Wait 15 or 30 minutes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Customer</td><td>Losing carrier</td><td>Termination</td><td>Only after the port completes and is verified.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths you can cite</h2>
+<ol>
+<li>Enable the Cisco Calling Plan on the location before a port-in. <!-- VISUAL:screenshot:plan --><a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Create the draft in Control Hub. Upload a bill from the last 30 days. Sign the LOA, or use the eLOA when the country uses one. <!-- VISUAL:screenshot:loa --><a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Review every number. After submit, numbers cannot be added or changed. Toll-free is its own order. <!-- VISUAL:screenshot:numbers --><a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Assign the numbers to users or features before the FOC time. Leave them inactive until activation completes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On the day, wait 15 minutes, or 30 for project or complex. If they still fail, check orders and number status, then open PTS from Calling → PSTN → Orders. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>To port out, open PSTN &amp; Routing → PSTN Orders. Accept, or reject with a reason. If you do nothing, the request is accepted after one business day. <!-- VISUAL:screenshot:portout --><a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<div class="callout warn"><strong>Warn.</strong> Do not disconnect the losing carrier at submit time. The guidelines say the numbers stay active with that carrier until the port is complete and verified. <a class="cite" href="#cite-1">[cite:1]</a></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Ports versus licenses</td><td>Cannot exceed licenses. One license, one number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header May 21, 2025. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Bill age</td><td>Within 30 days</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Lead time</td><td>At least 5 business days, or 2–3 weeks for larger ports</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Earliest / latest request</td><td>1–35 business days, and up to 30 days from submission</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Activation window</td><td>9 a.m.–4 p.m. business days, not guaranteed until FOC</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Project and complex processing</td><td>10–35 business days</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Post-FOC risk bands</td><td>72 h minimal, 48–72 low, 24–48 moderate, under 24 high</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. May vary by country. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Snapback window</td><td>1–48 hours</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Failure wait</td><td>15 minutes, 30 for project or complex</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>PTS</td><td>24/5, aim 2 hours, best effort</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Port-out auto-accept</td><td>One business day</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header October 23, 2025.</td></tr>
+<tr><td>FOC minimum in Get Started</td><td>Can be two business days from submission</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. Header August 05, 2026. Teach beside the 1–35 range, not instead of it.</td></tr>
+<tr><td>Release after cancellation</td><td>“A reasonable period.” No day count printed.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Do not invent a number.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten port failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>The second number on a one-license subscription is rejected</td><td>Ports cannot exceed licenses.</td><td>License count versus the order.</td><td>Buy the license or drop the number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Account number mismatch</td><td>The field does not match the CSR. For some carriers the account number is the BTN.</td><td>Get Started rejection table.</td><td>Update the account number and resubmit.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A second order on the same account is rejected</td><td>A pending order blocks more numbers.</td><td>Guidelines pending-order bullet.</td><td>Finish or clear the pending order first.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BTN rejection after an inactive-number rejection</td><td>Losing carriers decline one reason at a time.</td><td>Rejection section.</td><td>Clear with the losing carrier, update Control Hub, resubmit. Rejections can reset the SLA.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Reseller invoice fields still fail</td><td>The underlying carrier record is the one that must match.</td><td>Resellers section.</td><td>Ask the reseller for the carrier’s data.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Control Hub will not edit the date</td><td>FOC has already been received.</td><td>Order status.</td><td>Open PTS. Changing a confirmed date is discouraged.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Numbers are silent 10 minutes after FOC</td><td>The wait is 15 minutes, or 30 for project or complex.</td><td>Clock versus order type.</td><td>Wait, then check configuration, then PTS.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A number ported without consent</td><td>Slamming.</td><td>No LOA from the authorized holder.</td><td>Open PTS immediately for snapback.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Port-out vanished overnight</td><td>Auto-accept after one business day.</td><td>PSTN &amp; Routing → PSTN Orders.</td><td>Reject before that day if the port should not proceed.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Calls break because the old carrier was cancelled at submit</td><td>Disconnect is step 7, after verification.</td><td>Losing-carrier account status.</td><td>Keep the numbers active until the port is verified.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is a port?</summary><p class="answer">A transfer from the losing carrier to the winning carrier. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What two documents prove you may port?</summary><p class="answer">A bill from the last 30 days and an LOA or eLOA. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How many numbers does one license allow?</summary><p class="answer">One. The port count cannot exceed purchased licenses. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When is the requested date real?</summary><p class="answer">When the losing carrier returns an FOC. Until then it is a request. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What happens to numbers on the same account?</summary><p class="answer">They port together, even if they were typed on different orders. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove you can still edit the order?</summary><p class="answer">FOC has not arrived. After FOC, Control Hub edits stop and PTS is the path. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What evidence shows a port-out was ignored?</summary><p class="answer">One business day passed on PSTN &amp; Routing → PSTN Orders. The article says the request is then accepted automatically. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why are there two menus?</summary><p class="answer">Port-in support is Calling → PSTN → Orders. Port-out processing is PSTN &amp; Routing → PSTN Orders. The articles print both. Do not collapse them. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does a US port not move?</summary><p class="answer">Messaging. Get Started says only Calling services port in the United States and Canada. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which order-type cell will you not “fix”?</summary><p class="answer">Complex is headed “Any of the following” and starts with “&gt; 1 TN,” while Standard is 1–50 TNs. Quote both. Do not invent precedence. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What day count will you not invent?</summary><p class="answer">How long “a reasonable period” is before unported numbers are released after Calling Plan cancellation. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When may you cancel the losing carrier?</summary><p class="answer">After the port completes and you have verified it. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not submit a port against a number you do not own.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: place eight events on the correct side of FOC, and name the menu.</label></li>
+<li><label><input type="checkbox"> Prereq: articles 01sijg, wsk3m9, and nousk9ab. No live order.</label></li>
+<li><label><input type="checkbox"> Step 1. One license, three DID. Expected: the guidelines allow one number.</label></li>
+<li><label><input type="checkbox"> Step 2. Edit the due date after FOC inside Control Hub. Expected: not allowed. Open PTS.</label></li>
+<li><label><input type="checkbox"> Step 3. Numbers fail 10 minutes after a simple FOC. Expected: the wait is 15 minutes.</label></li>
+<li><label><input type="checkbox"> Step 4. A port-out sits in Pending for a business day. Expected: auto-accept.</label></li>
+<li><label><input type="checkbox"> Evidence: the two menu strings, written side by side.</label></li>
+<li><label><input type="checkbox"> Break it: disconnect the losing carrier at draft time. Recovery: the article says keep service until verification.</label></li>
+<li><label><input type="checkbox"> Reflection: which Complex-versus-Standard cell you refused to merge.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Who is the losing carrier?</p><details><summary>Answer</summary><p class="answer">The current PSTN provider. The winning carrier receives the number. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>How many numbers can one license port?</p><details><summary>Answer</summary><p class="answer">One. Ports cannot exceed licenses purchased. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>How recent must the bill be?</p><details><summary>Answer</summary><p class="answer">Within the last 30 days. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>Two orders list numbers from the same losing-carrier account. What must happen?</p><details><summary>Answer</summary><p class="answer">Those numbers port simultaneously. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Where do toll-free numbers sit relative to DID orders?</p><details><summary>Answer</summary><p class="answer">On a separate order. The guidelines say US or CA only. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>When is a requested port time confirmed?</p><details><summary>Answer</summary><p class="answer">When FOC arrives. The request window is 9 a.m.–4 p.m. on business days and is not a guarantee. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>You need to move the date 10 hours after FOC. What is the risk band, and where do you go?</p><details><summary>Answer</summary><p class="answer">Under 24 hours is high risk. You cannot edit it in Control Hub. Open PTS. Bands may vary by country. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>How long do you wait before declaring a project port failed?</p><details><summary>Answer</summary><p class="answer">30 minutes. A non-project port is 15 minutes. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>What is the port-out menu?</p><details><summary>Answer</summary><p class="answer">PSTN &amp; Routing → PSTN Orders. Auto-accept is one business day. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>What does a United States port move?</p><details><summary>Answer</summary><p class="answer">Calling services. Not messaging. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name the Complex column header and its first cell. Do not reconcile it with Standard.</p><details><summary>Answer</summary><p class="answer">Header: Any of the following. First cell: &gt; 1 TN. Standard remains 1–50 TNs. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>The Calling Plan is cancelled and nobody ports the numbers. What does Cisco guarantee?</p><details><summary>Answer</summary><p class="answer">Nothing about availability after release. Release is after a reasonable period. No day count is printed. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain losing versus winning carrier, why FOC is the real date, and why you do not disconnect early." | assets/audio/T6-R06/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk license limits, order types without merging Complex and Standard, post-FOC risk, and the two menus." | assets/audio/T6-R06/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: one license, 30-day bill, 15 minutes, one business day, Calling not messaging." | assets/audio/T6-R06/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Porting moves a number from the losing carrier to the winning carrier. Cisco will not do it without the authorized holder’s written consent. You need a bill from the last 30 days and an LOA. The date you type is a request until the losing carrier sends an FOC.</p>
+<p><strong>2 minutes.</strong> One license ports one number. Numbers on the same account move together. Toll-free is a separate order, and the guidelines limit that sentence to the US or Canada. Keep the old service up until you have verified the port. Before FOC you can still change the order in Control Hub. After FOC you open PSTN technical support, and the risk bands run from 72 hours down to under 24 hours. Snapback is an emergency restore inside 1 to 48 hours. On the day, wait 15 minutes, or 30 if the order is project or complex.</p>
+<p><strong>30 seconds, menus.</strong> A port-in support case starts at Calling, PSTN, Orders. A port-out is under PSTN and Routing, PSTN Orders, and it auto-accepts after one business day. If the location main number leaves, assign a new one.</p>
+<p><strong>2 minutes, what else moves.</strong> In the United States and Canada the port moves Calling, not messaging. Broadband or an alarm on that line can cease with the installation. A reseller bill is not enough if an underlying carrier owns the number. When the Calling Plan itself is cancelled, you port out to keep the numbers. Cisco does not promise you can get a released number back, and it does not print how many days “reasonable” is.</p>
+<p><strong>What you will not say.</strong> You will not merge the Complex column with Standard. You will not invent a Cisco Calling Plan country list. You will not treat Get Started’s “two business days” as a replacement for the guidelines’ 1–35 day range.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Cisco Calling Plan number porting guidelines and policies — help.webex — article 01sijg — <a href="https://help.webex.com/en-us/article/01sijg/Cisco-Calling-Plan-number-porting-guidelines-and-policies">help.webex.com article 01sijg</a> — header May 21, 2025, retrieved 2026-10-14. <mark class="recheck">re-check</mark> Losing and winning carrier. Slamming. License cap. LOA and 30-day bill. Order types. FOC. Snapback. PTS hours. Calling → PSTN → Orders. Service cancellation.</li>
+<li id="cite-2">Porting out a PSTN number — help.webex — article wsk3m9 — <a href="https://help.webex.com/en-us/article/wsk3m9">help.webex.com article wsk3m9</a> — header October 23, 2025, retrieved 2026-10-14. PSTN &amp; Routing → PSTN Orders. Auto-accept after one business day. Number stays active until the gaining carrier finishes, then is deleted. Reject Pending then Rejected. New main number if the location main ports out.</li>
+<li id="cite-3">Get Started with the Cisco Calling Plans — help.webex — article nousk9ab — <a href="https://help.webex.com/article/nousk9ab">help.webex.com article nousk9ab</a> — header August 05, 2026, retrieved 2026-10-14. Enable the plan before port-in. LOA signer. US and Canada port Calling services, not messaging. FOC can be two business days from submission. Account-number rejection. Trials do not support ported numbers. Toll-free numbers for the plan are US and Canada.</li>
+<li id="cite-4">Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — <a href="https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf">cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf</a> — retrieved 2026-10-14. Cisco Calling Plan orders start in Control Hub once the location exists, in countries where the plan is available. Optimize step ports all numbers on the Unified CM PSTN trunk at the same time.</li>
+<li id="cite-5">Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — <a href="https://help.webex.com/en-us/article/q0pgpb">help.webex.com article q0pgpb</a> — retrieved 2026-10-14. For Cloud Connect or premises PSTN, add numbers, and they can be inactive until assigned. Number-assignment checks are the acceptance section, used here only to separate an add from a port.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the Cisco Calling Plan country list. How many days “a reasonable period” is. Which column applies when an order is both under 50 TNs and matches a Complex cell.</li>
+<li>Facts still marked TODO-verify: using this wizard to port into a non-Cisco plan.</li>
+<li>Facts still marked re-check: every number in 01sijg, header May 21, 2025.</li>
+<li>Assets missing: order-wizard screenshot, audio.</li>
+<li>Ideas for v1.0: a two-column card, port-in menu versus port-out menu, regenerated from the two articles at review time.</li>
+<li>Next review: <mark class="recheck">re-check</mark> 01sijg before a live cutover plan uses the hour bands.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T6-R05-third-party-pbx-cc.html"><span>Previous</span><strong>T6-R05</strong><em>Third-party PBX &amp; CC to Webex</em></a><a class="next" href="T6-R07-coexistence-interop.html"><span>Next</span><strong>T6-R07</strong><em>Coexistence &amp; Interop</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

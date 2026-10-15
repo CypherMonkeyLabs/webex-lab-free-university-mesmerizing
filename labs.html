@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Labs">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="assets/og-card.svg">
+<title>Hands-on Labs · CypherWebex Canon</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>63 rooms</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="labs.html" aria-current="page" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main"><div class="wrap">
+
+<p class="crumbs"><a href="index.html">Canon</a> / Hands-on Labs</p>
+<p class="kicker">No API key · no tenant</p>
+<h1>Hands-on Labs</h1>
+<p class="lede">Five study models in this browser. They cite the sentence they imitate. They are not Unified CM, not a contact-center tenant, and not a calling-search-space trace from a live cluster.</p>
+<div class="study-bar">
+<button type="button" class="ghost" data-lab-tab="dial" aria-pressed="true">Dial plan</button>
+<button type="button" class="ghost" data-lab-tab="flow" aria-pressed="false">Flow simulator</button>
+<button type="button" class="ghost" data-lab-tab="css" aria-pressed="false">CSS explorer</button>
+<button type="button" class="ghost" data-lab-tab="cube" aria-pressed="false">CUBE dial-peer</button>
+<button type="button" class="ghost" data-lab-tab="wxcc" aria-pressed="false">WxCC queue</button>
+</div>
+<section data-lab-panel="dial">
+<h2>Dial plan / route translator</h2>
+<p>Article 32gfts: the Unified CM dial plan normalizes numbers as +E.164, and Webex Calling sends unmatched calls to the Local Gateway. Type a national number or an extension.</p>
+<div class="sim">
+<div>
+<label>Digits<br><input data-digits value="5550101234"></label>
+<label>Country code<br><input data-cc value="1"></label>
+<label>National prefix to strip<br><input data-prefix value=""></label>
+<p><button type="button" class="ghost" data-dial-run>Translate</button></p>
+</div>
+<pre class="sim-out" data-dial-out>Run the translator.</pre>
+</div>
+</section>
+<section data-lab-panel="flow" hidden>
+<h2>Flow Designer simulator</h2>
+<p>Rules from nhovcy4. Start Flow cannot be removed. Validation starts off. Publish stays disabled until validation is on and this model’s checks are clear.</p>
+<div class="sim">
+<div class="sim-palette">
+<button type="button" data-add-node="Play Message">Add Play Message</button>
+<button type="button" data-add-node="Menu">Add Menu</button>
+<button type="button" data-add-node="Get Queue Info">Add Get Queue Info</button>
+<button type="button" data-add-node="Queue Contact">Add Queue Contact</button>
+<button type="button" data-add-node="Play Music">Add Play Music</button>
+<button type="button" data-add-node="HTTP Request">Add HTTP Request</button>
+<button type="button" data-add-node="Callback">Add Callback</button>
+<button type="button" data-add-node="Disconnect">Add Disconnect</button>
+<label>PIQ <input data-piq type="number" value="4"></label>
+<label>EWT <input data-ewt type="number" value="-1"></label>
+<label>Priority <input data-priority type="number" value="15"></label>
+<label><input data-skilled type="checkbox"> Team queue with skills in the flow</label>
+<label><input data-dnis type="checkbox"> Entry point has E.164 and an extension</label>
+<label><input data-validate type="checkbox"> Validation on</label>
+<p><button type="button" class="ghost" data-flow-run>Run trace</button>
+<button type="button" class="ghost" data-publish disabled>Publish</button></p>
+</div>
+<div>
+<div class="sim-canvas" data-flow-canvas></div>
+<pre class="sim-out" data-flow-out></pre>
+</div>
+</div>
+</section>
+<section data-lab-panel="css" hidden>
+<h2>CSS / routing-decision explorer</h2>
+<p>This walker follows the Cisco CallManager System Guide, Release 4.0(1): every partition in the calling search space is searched, the closest match wins, and partition order breaks a tie. The null partition is last. It is a study model of that chapter, not a live CUCM. nbedetf still says a complex dial plan is a reason to consider staying on premises.</p>
+<div class="sim">
+<div>
+<label>Calling search space<br>
+<select data-css>
+<option>CSS-Lobby</option>
+<option>CSS-Executive</option>
+<option>CSS-SRND</option>
+<option>CSS-OrderTrap</option>
+</select></label>
+<label>Dialed digits<br><input data-css-digits value="911"></label>
+<p><button type="button" class="ghost" data-css-run>Walk</button></p>
+<p class="placeholder-asset">Try 911 on CSS-OrderTrap (internal is listed first; 911 is still the closer match). Try 1234 on CSS-SRND (12XX beats 1XXX). Try 2345 on CSS-SRND (equal 23XX patterns, partition A wins). Try 0000 on any CSS (null partition, searched last).</p>
+</div>
+<pre class="sim-out" data-css-out>Walk a CSS.</pre>
+</div>
+</section>
+<section data-lab-panel="cube" hidden>
+<h2>CUBE dial-peer matcher</h2>
+<p>Study model of Cisco document 211306. Inbound SIP checks URI via, URI request, URI to, URI from, then called number, then calling number, then destination-pattern on the ANI. The first criterion that matches wins. Outbound uses hunt 0: longest match, then the lower preference number. This is not a router.</p>
+<div class="sim">
+<div>
+<label>Direction<br>
+<select data-cube-dir>
+<option value="in">Inbound SIP</option>
+<option value="out">Outbound</option>
+</select></label>
+<label>Called number<br><input data-cube-called value="95551212"></label>
+<label>Calling number<br><input data-cube-calling value="4085550100"></label>
+<label>Request-URI contains<br><input data-cube-uri value="dtg=webex"></label>
+<label><input data-cube-huntstop type="checkbox"> huntstop on the first outbound peer</label>
+<p><button type="button" class="ghost" data-cube-run>Match</button></p>
+</div>
+<pre class="sim-out" data-cube-out>Match a peer.</pre>
+</div>
+</section>
+<section data-lab-panel="wxcc" hidden>
+<h2>WxCC routing strategy and queue</h2>
+<p>Patterns follow np2fdx and ubg5qd. A pattern the queue type does not offer is refused. The wait number is an Erlang C study model. Webex Contact Center estimated wait is the Get Queue Info rule in nhovcy4, including −1 when wait does not apply. Do not quote this Erlang number as the product’s EWT.</p>
+<div class="sim">
+<div>
+<label>Queue type<br>
+<select data-q-type>
+<option value="team">Non-skill, team assignment</option>
+<option value="agent">Non-skill, agent assignment</option>
+<option value="skill">Skill-based</option>
+</select></label>
+<label>Pattern<br>
+<select data-q-pattern>
+<option>Longest Available</option>
+<option>Circular</option>
+<option>Top-down</option>
+<option>Best Available</option>
+</select></label>
+<label>Agents (N)<br><input data-q-agents type="number" value="8" min="1" max="40"></label>
+<label>Calls per hour<br><input data-q-cph type="number" value="120" min="0"></label>
+<label>Average handle seconds<br><input data-q-aht type="number" value="180" min="1"></label>
+<label>Strategy window covers now<br><input data-q-open type="checkbox" checked></label>
+<p><button type="button" class="ghost" data-q-run>Simulate</button></p>
+</div>
+<pre class="sim-out" data-q-out>Run the queue.</pre>
+</div>
+</section>
+
+</div></main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/labs.js"></script>
+</body></html>

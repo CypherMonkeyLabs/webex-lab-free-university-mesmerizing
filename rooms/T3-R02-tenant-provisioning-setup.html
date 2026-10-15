@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T3-R02 · Tenant Provisioning &amp; Setup">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T3-R02 · Tenant Provisioning &amp; Setup · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T3" data-room="T3-R02" data-room-title="Tenant Provisioning &amp; Setup" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T3</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T3/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T3 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr"><p class="sec-kicker">00 · Header</p><h1>Tenant Provisioning &amp; Setup</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Tenant Provisioning &amp;amp; Setup">
+<defs>
+<linearGradient id="T3R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T3R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Contact center</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T3-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Caller</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Entry point</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Queue</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Tenant Provisioning &amp;amp; Setup. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Tenant Provisioning &amp;amp; Setup">
+<defs>
+<marker id="T3R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Caller → Entry point → Queue → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T3R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T3R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T3R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T3R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Caller → Entry point → Queue → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">T3-R02. The Services setup wizard from a trial or subscription order through country of operation, Common Edge, and the handoff to voice and digital setup. nee1mb6 header February 28, 2025. Retrieved 2026-10-14.</p>
+<div class="meta-row"><span class="meta-chip read-chip">Reading <strong>13 min</strong></span><span class="meta-chip">v0.1</span><span class="meta-chip">last-verified: TODO</span><span class="meta-chip">L2</span><span class="meta-chip">Draft</span><span class="meta-chip">Study notes</span></div>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>The trial wizard and the subscription wizard use the same Services setup experience. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Country of operation cannot be changed after you confirm it. The tenant’s data center follows that country. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The telephony step shows Common Edge, a shared edge between Webex Calling and Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>After the wizard, the article points at entities, voice channels, and digital channels. <a class="cite" href="#cite-1">[cite:1]</a></li></ul></aside>
+<p class="meta-row">Prereq rooms: <a href="T3-R01-wxcc-multitenant-overview.html">T3-R01</a> for what a tenant is. Voice setup continues in T3-R05. Digital setup continues in T3-R06.</p>
+</section>
+<section id="tldr"><p class="sec-kicker">01 · TL;DR</p><h2>The country click is the one you cannot undo</h2><ul><li>Partners should finish setup before they hand the account to a customer administrator. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The customer path starts from the Welcome email’s Get Started link, then a password, then Terms of Service. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The wizard at https://admin.webex.com/ keeps appearing until setup completes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>You cannot change the country of operation after confirm. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The header on nee1mb6 is February 28, 2025. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-1">[cite:1]</a></li></ul>
+<div class="why"><strong>Why it matters.</strong> A tenant built in the wrong country is not a setting you edit later. This room is the order-to-tenant path interviews skip when they jump straight to queues.</div></section>
+<section id="map"><p class="sec-kicker">02 · Map</p><h2>What the wizard actually locks</h2>
+<div class="diagram" role="img" aria-label="Wizard locks">
+<!-- VISUAL:primary-arch | SVG | assets/diagrams/T3-R02/arch.svg -->
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wizard locks">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Wizard locks</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Trial and subscription use the same Services setup wizard.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">SIP address can be modified. Country of operation cannot, after confirm.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Data center follows the country. The map is the Data Locality article.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Telephony step names Common Edge, shared by Calling and Contact Center.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Then: entities, voice channels, digital channels.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Header February 28, 2025 stays re-check.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Order to tenant">
+<!-- VISUAL:sequence | SVG | inline flow -->
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Order to tenant">
+<rect width="980" height="220" fill="#0c121c"/><text x="28" y="36" fill="#f0b429" font-family="Georgia, serif" font-size="20">Order to tenant</text><rect x="28" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="97.5" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Order or trial</text><path d="M169 114 H181" stroke="#f0b429" stroke-width="1.5" fill="none"/><path d="M177 108 L183 114 L177 120" stroke="#f0b429" stroke-width="1.5" fill="none"/><rect x="185" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="254.5" y="90" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Welcome or</text><text x="254.5" y="108" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">partner</text><path d="M326 114 H338" stroke="#f0b429" stroke-width="1.5" fill="none"/><path d="M334 108 L340 114 L334 120" stroke="#f0b429" stroke-width="1.5" fill="none"/><rect x="342" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="411.5" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Summary</text><path d="M483 114 H495" stroke="#f0b429" stroke-width="1.5" fill="none"/><path d="M491 108 L497 114 L491 120" stroke="#f0b429" stroke-width="1.5" fill="none"/><rect x="499" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="568.5" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Country</text><path d="M640 114 H652" stroke="#f0b429" stroke-width="1.5" fill="none"/><path d="M648 108 L654 114 L648 120" stroke="#f0b429" stroke-width="1.5" fill="none"/><rect x="656" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="725.5" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Common Edge</text><path d="M797 114 H809" stroke="#f0b429" stroke-width="1.5" fill="none"/><path d="M805 108 L811 114 L805 120" stroke="#f0b429" stroke-width="1.5" fill="none"/><rect x="813" y="70" width="139" height="88" rx="10" fill="#141a28" stroke="#f0b429" stroke-width="1.5"/><text x="882.5" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13" text-anchor="middle">Submit</text><text x="28" y="190" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Inline study diagram. Numbers on the boxes match the flow table. Not a Cisco drawing.</text>
+</svg>
+</div>
+<p>Study diagram. The lock is the country of operation, not the SIP address. <a class="cite" href="#cite-1">[cite:1]</a></p>
+</section>
+<section id="core"><p class="sec-kicker">03 · Core</p><h2>Two entry doors, one wizard</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T3-R02/hero.png -->
+<p>nee1mb6, header February 28, 2025, says a partner or a customer administrator can set up services for trials and subscription orders, and the Services setup wizard experience is the same for both. Cisco recommends that partners complete the steps before handing the account to customer administrators. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p>For a trial, the final Start New Trial screen asks whether to set up services. For a subscription, the Order Set-Up wizard ends with “Thank you. The order has been mapped correctly,” and Next continues setup. The customer administrator gets a Welcome email, opens Get Started, sets a password, chooses Save &amp; Sign In, and accepts the Terms of Service. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="callout gotcha"><span class="label">Country does not move</span><p>On Contact Center set up, you choose the country of operation. You cannot change it after you click confirm. By default it matches the country chosen in the Order Mapping wizard. Webex Contact Center creates the tenant in the data center for that country. The country-to-data-center list is the Data Locality article. If an incompatible location message appears after Save, contact Cisco Solution Assurance. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout tip"><span class="label">SIP address is the editable one</span><p>On Calling Set up, review the SIP address name and click Next. You may modify the SIP address. You may also configure Webex Calling for the organization. Those are not the country lock. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<p>The telephony section shows the connection using Common Edge services, which the article calls a shared edge infrastructure between Webex Calling and Webex Contact Center. Click Next. On Review, Submit, then Download Order Summary, then Close. The Contact Center service is then available. The follow-up click path in the article is Contact Center &gt; Settings &gt; Set up Cisco Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p>What to do next, in the article’s words: set up entities, set up voice options with the voice-channels article, and set up digital channels with the digital-channels article. A later block in the same article says the Data Locality list also applies for On Premises and Webex Contact Center Enterprise, and that a premise-based deployment should select a country of operation which provides services closest to the deployment. That block also says to have an order for Webex Connect or Google Contact Center AI hybrid service before you begin. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="table-wrap"><table><thead><tr><th>Step the article names</th><th>Can you change it later on this page?</th><th>Cite</th></tr></thead><tbody><tr><td>SIP address name</td><td>Yes. The article says you can modify it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Country of operation</td><td>No, after confirm.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Time zone</td><td>Chosen on the wizard. Default follows the region.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Common Edge telephony</td><td>Shown, then Next. This page does not offer a second edge.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+<section id="eco"><p class="sec-kicker">04 · Ecosystem</p><h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T3-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T3R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T3R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p>Provisioning is the door. Voice, digital, identity, and emergency calling are the next rooms.</p>
+<dl class="glossary"><div class="term"><dt>Services setup wizard</dt><dd>The Control Hub wizard for a trial or a mapped subscription. It reappears until setup completes. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Country of operation</dt><dd>Chooses the data center. Not editable after confirm. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Data Locality</dt><dd>The article the wizard points at for country-to-data-center mapping. The same list is called out for on-premises and Webex Contact Center Enterprise in nee1mb6. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Common Edge</dt><dd>The telephony section’s name for the shared edge between Webex Calling and Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Welcome email</dt><dd>Sent to the address on the trial or order wizard. Get Started sets the password. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Order summary</dt><dd>Download Order Summary after Submit, then Close. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Solution Assurance</dt><dd>Who you contact if Save reports an incompatible location. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Webex Connect order</dt><dd>The later block says have a Connect or Google CCAI hybrid order before that begin-state. <a class="cite" href="#cite-1">[cite:1]</a></dd></div></dl>
+<details><summary>Mind map source</summary><pre class="mermaid-src">mindmap
+  Tenant setup
+    Trial
+    Subscription
+    Country lock
+    Common Edge
+    Next rooms
+      Voice
+      Digital
+      Entities</pre></details>
+<div class="diagram" role="img" aria-label="What this wizard does not configure">
+<!-- VISUAL:primary-arch | SVG | assets/diagrams/ROOM/arch.svg -->
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What this wizard does not configure">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">What this wizard does not configure</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Queues and flows are not this wizard.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">PSTN choice is the voice-channel article.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Digital assets are the digital-channel article.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Country lock is here. SIP address edit is here.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Enterprise data-center choice uses the same locality list, per this article.</text>
+</svg>
+</div>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Identity</td><td>Welcome email and Control Hub sign-in</td><td>The admin has to exist before the wizard is useful.</td><td>Get Started link</td><td>Skipping Terms of Service and wondering why Control Hub will not open.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Webex Calling</td><td>Optional on the Calling Set up page</td><td>SIP address and Calling configuration can be done here.</td><td>Calling Set up</td><td>Treating Calling configuration as the country lock.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Common Edge</td><td>Shared telephony edge</td><td>The wizard shows it and moves on.</td><td>Contact Center telephony section</td><td>Looking for a second edge on this page.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Voice channels</td><td>Next article the wizard names</td><td>PSTN and agents are not finished here.</td><td>Set up voice channels</td><td>Declaring the tenant live for calls because Submit succeeded.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Digital channels</td><td>Next article the wizard names</td><td>Connect or CCAI hybrid is a separate order in the later block.</td><td>Set up digital channels</td><td>Expecting chat because the tenant exists.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Data residency</td><td>Country maps to a data center</td><td>The list is Data Locality, including the Enterprise sentence in this article.</td><td>Country drop-down</td><td>Changing country after confirm.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>E911</td><td>Not a step in nee1mb6</td><td>Emergency calling is a later Calling and WebRTC path.</td><td>Do not invent a wizard toggle.</td><td>Promising 911 because the tenant submitted.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>SSO</td><td>Not printed as a wizard step</td><td>Users still need an identity that Webex knows.</td><td>Control Hub identity articles</td><td>Treating the Welcome email as SSO.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Partner</td><td>Customer org</td><td>Trial or order wizard</td><td>Same Services setup experience</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Order Mapping country</td><td>Contact Center country</td><td>Default copy</td><td>Editable until confirm, then locked</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Country</td><td>Data center</td><td>Data Locality mapping</td><td>Incompatible location goes to Solution Assurance</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Wizard</td><td>Common Edge</td><td>Telephony section</td><td>Shared Calling and Contact Center edge</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Submit</td><td>Contact Center service</td><td>Control Hub</td><td>Then Settings, Set up Cisco Webex Contact Center</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Tenant</td><td>Voice and digital articles</td><td>What to do next</td><td>Entities, voice, digital</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Cross-platform bridges</h3>
+<p>nee1mb6 says the Data Locality list applies for On Premises and Webex Contact Center Enterprise as well, and that a premise deployment should pick the country of operation closest to the deployment. That is not a statement that the multi-tenant wizard builds a Router. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p>Unified CM provisioning is a different console. This wizard does not print a CUCM publisher step.</p>
+<p>Peer contact-center account setup is not mapped on this page. No parity matrix.</p>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon planning: the next click after this room is T3-R05, then T3-R06.</li>
+<li>The February 28, 2025 header is older than 12 months. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Exact Data Locality country rows were not copied. Open that article before you name a data center. <mark class="todo-verify">TODO-verify</mark> the row for a specific country until you read it.</li>
+<li>Uncited commercial SKUs stay <mark class="todo-verify">TODO-verify</mark>.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Save says the location is incompatible</td><td>The country of operation does not match a supported mapping.</td><td>The message after Save.</td><td>Contact Cisco Solution Assurance. Do not click around hoping the country becomes editable.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Chat is missing after Submit</td><td>Digital channels are a later article, and Connect or CCAI hybrid needs its own order in the later block.</td><td>Whether that order exists.</td><td>Follow the digital article. Do not reopen the country.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>911 was assumed live</td><td>nee1mb6 does not configure emergency calling.</td><td>Whether RedSky or the Calling emergency path was done.</td><td>Use the Calling emergency articles, not this wizard.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+<section id="flow"><p class="sec-kicker">05 · Flow</p><h2>From the order to a tenant</h2>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol or mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Partner or email</td><td>Control Hub</td><td>Browser</td><td>https://admin.webex.com/ until setup completes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Summary</td><td>Set up now</td><td>Wizard</td><td>Review license information.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Calling Set up</td><td>Next</td><td>SIP address</td><td>Modify the SIP name if needed.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>4</td><td>Contact Center</td><td>Confirm</td><td>Country and time zone</td><td>Country locks. Time zone defaults from the region.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>5</td><td>Telephony</td><td>Next</td><td>Common Edge</td><td>Shared edge. No alternate edge on this step.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>6</td><td>Review</td><td>Submit</td><td>Order summary PDF</td><td>Then Settings and the voice and digital articles.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+<section id="config"><p class="sec-kicker">06 · Config</p><h2>Paths the articles name</h2>
+<ol><li>Partner trial: Start New Trial, then Yes on the services question. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Partner subscription: Order Set-Up wizard, then Next after the order is mapped. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Customer: Welcome email, Get Started, password, Save &amp; Sign In, accept Terms of Service. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Summary, Set up now. Calling Set up, SIP address, Next. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Country or region, time zone, Common Edge, Next, Review, Submit, Download Order Summary, Close. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Contact Center &gt; Settings &gt; Set up Cisco Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></li></ol>
+</section>
+<section id="limits"><p class="sec-kicker">07 · Limits</p><h2>Numbers worth memorizing</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Country of operation after confirm</td><td>Cannot be changed</td><td>nee1mb6, header February 28, 2025</td><td><mark class="recheck">re-check</mark> <a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Default country</td><td>The Order Mapping wizard’s country</td><td>nee1mb6</td><td>Quoted <a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Wizard URL</td><td>https://admin.webex.com/</td><td>nee1mb6</td><td>Quoted <a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Data-center row for one country</td><td>Not copied in this room</td><td>Data Locality article, not re-read here</td><td><mark class="todo-verify">TODO-verify</mark></td></tr><tr><td>Header age</td><td>February 28, 2025</td><td>nee1mb6</td><td><mark class="recheck">re-check</mark> <a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+<section id="trouble"><p class="sec-kicker">08 · Trouble</p><h2>Trouble</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Wrong story</th><th>What the source supports</th><th>Do this</th><th>Cite</th></tr></thead><tbody><tr><td>The wizard returns every sign-in</td><td>A loop bug.</td><td>The article says it appears until setup completes successfully.</td><td>Finish Submit.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Country needs to move after go-live</td><td>An edit was missed.</td><td>The article says you cannot change it after confirm.</td><td>Treat it as a new decision with Cisco, not a drop-down.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Incompatible location</td><td>The browser blocked Save.</td><td>The article sends that message to Cisco Solution Assurance.</td><td>Contact them.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>SIP address was treated as locked</td><td>It was confused with country.</td><td>The article says you can modify the SIP address name.</td><td>Edit that field, not the country.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>No calls after Submit</td><td>The tenant failed.</td><td>Voice channels are the next article.</td><td>Open T3-R05.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>No chat after Submit</td><td>Digital was assumed.</td><td>Digital channels are a named next article.</td><td>Open T3-R06.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Enterprise was given a different locality list</td><td>Someone split the lists.</td><td>nee1mb6 says this list also applies to on-premises and Webex Contact Center Enterprise.</td><td>Read Data Locality before you invent a second map.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Time zone looks arbitrary</td><td>It was left blank.</td><td>The article says a default is selected from the region.</td><td>Confirm the zone before Submit.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+<section id="selfq"><p class="sec-kicker">09 · Self-question</p><h2>Oral ladder</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>Who can run the wizard?</summary><p class="answer">A partner or a customer administrator. The experience is the same for trial and subscription. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>What does the customer click in email?</summary><p class="answer">Get Started, then password, Save & Sign In, then Terms of Service. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Which field locks?</summary><p class="answer">Country of operation, after confirm. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L4</span>What does that country decide?</summary><p class="answer">The data center, via the Data Locality article. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L5</span>What is Common Edge on this page?</summary><p class="answer">A shared edge between Webex Calling and Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L6</span>Can the SIP address change on the wizard?</summary><p class="answer">Yes. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L7</span>What do you download at the end?</summary><p class="answer">The order summary, then Close. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L8</span>Where is the follow-up button?</summary><p class="answer">Contact Center, Settings, Set up Cisco Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L9</span>What three follow-ups does the article name?</summary><p class="answer">Entities, voice channels, digital channels. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L10</span>Who handles an incompatible location?</summary><p class="answer">Cisco Solution Assurance. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L11</span>Does this article configure 911?</summary><p class="answer">No. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L12</span>Why is the header marked re-check?</summary><p class="answer">February 28, 2025 is older than 12 months on 2026-10-14. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+<section id="lab"><p class="sec-kicker">10 · Lab</p><h2>Walk the wizard without confirming a real country</h2>
+<ul class="lab"><li><label><input type="checkbox"> Goal: say which field locks before anyone clicks confirm.</label></li><li><label><input type="checkbox"> Prereq: a trial or lab subscription. Do not confirm a production country.</label></li><li><label><input type="checkbox"> Read the trial sentence and the subscription sentence and say they share one wizard.</label></li><li><label><input type="checkbox"> On a screenshot or the article, point at SIP address as editable and country as locked after confirm.</label></li><li><label><input type="checkbox"> Write Common Edge in your own words using the article’s shared-edge sentence.</label></li><li><label><input type="checkbox"> Break it: tell a teammate the data center can be edited next week. Recovery: read the confirm sentence again.</label></li><li><label><input type="checkbox"> Evidence: the header date February 28, 2025 next to a re-check mark.</label></li><li><label><input type="checkbox"> Reflection: which click an interviewer will rush.</label></li></ul>
+</section>
+<section id="quiz"><p class="sec-kicker">11 · Quiz</p><h2>Quiz</h2>
+<div class="qgrid"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Trial setup and subscription setup:</p><details><summary>Answer</summary><p class="answer">Use the same Services setup wizard experience. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>After you confirm country of operation:</p><details><summary>Answer</summary><p class="answer">You cannot change it. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Save reports an incompatible location.</p><details><summary>Answer</summary><p class="answer">Contact Cisco Solution Assurance. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Common Edge on this wizard is:</p><details><summary>Answer</summary><p class="answer">A shared edge between Webex Calling and Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>The customer email button is:</p><details><summary>Answer</summary><p class="answer">Get Started. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">Oral</span></header><p>Name the three follow-ups the article lists after the tenant exists.</p><details><summary>Answer</summary><p class="answer">Entities, voice channels, digital channels. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>The wizard URL is:</p><details><summary>Answer</summary><p class="answer">https://admin.webex.com/ and it returns until setup completes. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>The SIP address on Calling Set up:</p><details><summary>Answer</summary><p class="answer">Can be modified. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>Someone wants chat because Submit succeeded.</p><details><summary>Answer</summary><p class="answer">Digital channels are a later article. Connect or CCAI hybrid is a separate order in the later block. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>The Data Locality list in this article also applies to:</p><details><summary>Answer</summary><p class="answer">On Premises and Webex Contact Center Enterprise. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>The header date is:</p><details><summary>Answer</summary><p class="answer">February 28, 2025, so this room marks re-check. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">Draw it</span></header><p>Draw the lock and the editable field.</p><details><summary>Answer</summary><p class="answer">Country locks after confirm. SIP address can change. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article></div>
+</section>
+<section id="audio"><p class="sec-kicker">12 · Audio</p><h2>Studio fills these</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain the country lock and Common Edge to someone who has only built queues." | assets/audio/T3-R02/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk trial versus subscription into the same wizard, then the three follow-up articles." | assets/audio/T3-R02/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Fail the drill if the speaker says the data center is editable after confirm." | assets/audio/T3-R02/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+<section id="interview"><p class="sec-kicker">13 · Interview</p><h2>Oral-ready</h2>
+<p><strong>1. 30 seconds.</strong> Trial and subscription share the Services setup wizard. Country of operation locks after confirm and picks the data center. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>1. 2 minutes.</strong> The SIP address can still be edited on Calling Set up. Common Edge is the shared telephony edge the wizard shows. Then I leave this room for voice and digital articles. The header is February 28, 2025, so I re-check it. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2. 30 seconds.</strong> Customers start from the Welcome email’s Get Started link. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2. 2 minutes.</strong> Password, Save and Sign In, Terms of Service, then the wizard at admin.webex.com until it completes. Partners are recommended to finish before the handoff. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>3. 30 seconds.</strong> An incompatible location goes to Cisco Solution Assurance. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>3. 2 minutes.</strong> I do not keep clicking confirm hoping the country becomes editable. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>4. 30 seconds.</strong> Submit does not mean calls and chat exist. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>4. 2 minutes.</strong> The article’s next list is entities, voice channels, and digital channels. The later block also wants a Connect or Google CCAI hybrid order before that begin-state. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>5. 30 seconds.</strong> This wizard does not configure 911. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>5. 2 minutes.</strong> Emergency calling stays on the Calling and WebRTC articles. The Data Locality sentence in nee1mb6 also mentions on-premises and Enterprise, which is a country list, not a Router design. <a class="cite" href="#cite-1">[cite:1]</a></p>
+</section>
+<section id="cites"><p class="sec-kicker">14 · Citations</p><h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T3-R02.md">cites/T3-R02.md</a>. Facts older than 12 months, and pages whose header date was not in the extract, stay marked re-check.</p>
+<ol class="cite-list"><li id="cite-1">Get started with Webex Contact Center — help.webex — article nee1mb6 — <a href="https://help.webex.com/article/nee1mb6">help.webex.com article nee1mb6</a> — header February 28, 2025, retrieved 2026-10-14. Same wizard for trial and subscription, Welcome email, country lock, Data Locality pointer, Common Edge, Submit, Settings path, voice and digital follow-ups. <mark class="recheck">re-check</mark></li><li id="cite-2">Enhanced emergency calling for Webex Calling — help.webex — article av6oo3 — <a href="https://help.webex.com/article/av6oo3">help.webex.com article av6oo3</a> — boundary. Emergency calling is not a step in nee1mb6. Taught with T2-R06.</li></ol>
+</section>
+<section id="reeng"><p class="sec-kicker">15 · Re-engineer later</p><h2>Open</h2>
+<ul><li>Open questions: the live Data Locality row for each country.</li>
+<li>Facts still TODO-verify: specific country-to-data-center pairs, because that article was not re-read in this slice.</li>
+<li>Facts still re-check: the entire nee1mb6 page, header February 28, 2025.</li>
+<li>Assets missing: wizard screenshots with no customer data, audio, SVG export.</li>
+<li>Next review date: on the next read of nee1mb6.</li></ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T3-R01-wxcc-multitenant-overview.html"><span>Previous</span><strong>T3-R01</strong><em>WxCC Multi-tenant Overview</em></a><a class="next" href="T3-R03-entry-points-queues-routing.html"><span>Next</span><strong>T3-R03</strong><em>Entry Points, Queues &amp; Routing</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

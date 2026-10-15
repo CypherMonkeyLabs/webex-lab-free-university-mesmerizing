@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T2-R02 · Local Gateway &amp; PSTN Options · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R02" data-room-title="Local Gateway and PSTN Options" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Local Gateway &amp; PSTN Options</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Local Gateway and PSTN Options">
+<defs>
+<linearGradient id="T2R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Local Gateway and PSTN Options. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Local Gateway and PSTN Options">
+<defs>
+<marker id="T2R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Every location picks one PSTN path. Local Gateway is the premises session border controller that keeps your carrier. It is not the registrar for phones.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T2-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.2</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>100–120 min</strong></span>
+<span class="meta-chip">Prereq <strong><a href="T1-R01-control-hub-foundations.html">T1-R01</a></strong> · T2-R01 planned</span>
+<span class="meta-chip read-chip">Reading <strong>34 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Webex Calling documents three PSTN choices, selected per location: Cisco PSTN (Cisco Calling Plan), Cloud Connected PSTN, and premises-based PSTN (Local Gateway). You may mix them across locations. Each location has one. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Local Gateway terminates a trunk on a supported session border controller. Two trunk models exist: registration-based and certificate-based. They differ in scale and device support. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li><li>Registration-based trunks are up to 250 concurrent calls per trunk and support only CUBE. Certificate-based trunks are for more than 250 concurrent calls per trunk and a choice of device types. <a class="cite" href="#cite-3">[cite:3]</a></li><li>Signaling to Webex Calling uses SIP over TLS, and media uses SRTP. <a class="cite" href="#cite-4">[cite:4]</a> Phones do not register through the Local Gateway; Cisco Live states endpoints register to Webex Calling over the internet. <a class="cite" href="#cite-5">[cite:5]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Webex Calling documents three PSTN choices, selected per location: Cisco PSTN (Cisco Calling Plan), Cloud Connected PSTN, and premises-based PSTN (Local Gateway). You may mix them across locations. Each location has one. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Local Gateway terminates a trunk on a supported session border controller. Two trunk models exist: registration-based and certificate-based. They differ in scale and device support. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Registration-based trunks are up to 250 concurrent calls per trunk and support only CUBE. Certificate-based trunks are for more than 250 concurrent calls per trunk and a choice of device types. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Signaling to Webex Calling uses SIP over TLS, and media uses SRTP. <a class="cite" href="#cite-4">[cite:4]</a> Phones do not register through the Local Gateway; Cisco Live states endpoints register to Webex Calling over the internet. <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>Webex for Government uses the certificate-based trunk, and the getting-started article says CUBE is the only SBC that currently supports Webex for Government. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> PSTN choice is the first architecture decision on every calling migration. Interviewers listen for “per location, one option” and for the registration-versus-certificate split. Guessing ports or carrier lists is how this answer falls apart.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Three ways a call reaches the PSTN</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T2-R02/arch.svg -->
+<div class="diagram" role="img" aria-label="Webex Calling PSTN options and Local Gateway">
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Webex Calling PSTN options and Local Gateway">
+<rect width="1000" height="480" fill="#0c121c"/>
+<text x="24" y="32" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">One location, one PSTN option</text>
+<rect x="40" y="70" width="200" height="70" rx="12" fill="#142033" stroke="#7eb6ff"/>
+<text x="58" y="100" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex app / MPP</text>
+<text x="58" y="120" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">registers to the cloud</text>
+<rect x="340" y="60" width="280" height="200" rx="16" fill="#10192b" stroke="#7eb6ff"/>
+<text x="360" y="92" fill="#7eb6ff" font-family="Georgia, serif" font-size="16">Webex Calling</text>
+<text x="360" y="118" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">1 · Location in Control Hub</text>
+<text x="360" y="146" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">2 · Trunk + route group</text>
+<text x="360" y="174" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">3 · Dial plan toward PSTN</text>
+<text x="360" y="210" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">TLS + SRTP on the LGW path</text>
+<path d="M240 105 H340" stroke="#7eb6ff"/>
+<rect x="700" y="56" width="260" height="64" rx="12" fill="#1a2436" stroke="#e0b07a"/>
+<text x="716" y="84" fill="#e0b07a" font-family="Segoe UI, sans-serif" font-size="13">A · Cisco Calling Plan</text>
+<text x="716" y="104" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">cloud PSTN, Cisco</text>
+<rect x="700" y="136" width="260" height="64" rx="12" fill="#1a2436" stroke="#e0b07a"/>
+<text x="716" y="164" fill="#e0b07a" font-family="Segoe UI, sans-serif" font-size="13">B · Cloud Connected PSTN</text>
+<text x="716" y="184" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">certified provider</text>
+<rect x="700" y="250" width="260" height="90" rx="12" fill="#1a2436" stroke="#7eb6ff"/>
+<text x="716" y="278" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">C · Local Gateway</text>
+<text x="716" y="300" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">CUBE or supported SBC</text>
+<text x="716" y="320" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">then your carrier / PBX</text>
+<path d="M620 100 H700" stroke="#e0b07a"/>
+<path d="M620 160 H700" stroke="#e0b07a"/>
+<path d="M620 220 H700" stroke="#7eb6ff"/>
+<text x="24" y="400" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">4 · Registration trunk: digest, CUBE only, ≤250 calls</text>
+<text x="24" y="424" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">5 · Certificate trunk: FQDN + cert, &gt;250 calls, OPTIONS keeps status</text>
+<text x="24" y="456" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Endpoints are not proxied by the Local Gateway. BRKCOL-2312.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Location holds the PSTN choice</li>
+<li><span class="num">2</span>Trunk is the premises connection</li>
+<li><span class="num">3</span>Route group / dial plan</li>
+<li><span class="num">4</span>Registration model</li>
+<li><span class="num">5</span>Certificate model</li>
+</ul>
+<details>
+<summary>Mermaid source (offline SVG above is the picture)</summary>
+<pre class="mermaid">flowchart LR
+  EP[Endpoints] --> WX[Webex Calling]
+  WX --> CCPN[Cisco Calling Plan]
+  WX --> CCP[Cloud Connected PSTN]
+  WX --> LGW[Local Gateway]
+  LGW --> PSTN[Carrier or PBX]
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R02/arch.svg</code></p>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Choose the path before you touch dial peers</h2>
+<p>The calling setup article is blunt: the PSTN choice is at location level, each location has only one PSTN option, and you can mix options across a deployment. After you provision an option you can change it from Manage on the location’s PSTN properties, but some options — Cisco PSTN is the example — may not be available once another option was assigned. Open a support case for guidance rather than clicking until it works. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="chips">
+<span class="chip">location</span><span class="chip">Cisco Calling Plan</span><span class="chip">CCP</span><span class="chip">Local Gateway</span><span class="chip">trunk</span><span class="chip">CUBE</span><span class="chip">mTLS</span><span class="chip">SRTP</span>
+</div>
+<!-- VISUAL:concept-image | Studio | assets/images/T2-R02/hero.png -->
+<div class="shot">VISUAL placeholder · concept image · <code>assets/images/T2-R02/hero.png</code> · Studio: a location card with three cables, only one plugged in, and a phone registering upward to the cloud instead of sideways into the gateway.</div>
+
+<h3>The three PSTN options</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Option</th><th>What help says you are choosing</th><th>When the article says it fits</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Cisco PSTN / Cisco Calling Plan</td><td>A cloud PSTN replacement from Cisco: emergency calling, inbound and outbound domestic and international calling, order new numbers or port existing numbers to Cisco.</td><td>Visible only if you purchased at least one committed Outbound Calling Plan, the location’s country is supported, the location is eligible, and you are hosted in a supported Webex Calling data center.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Cloud Connected PSTN</td><td>Cloud PSTN from a CCP partner. Integrated CCP can order numbers inside Control Hub. Non-integrated CCP means you buy numbers from the partner outside Control Hub.</td><td>When you want a partner cloud PSTN, or Cisco Calling Plan is not available in the location. Only partners that support the location’s country are displayed.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Premises-based PSTN (Local Gateway)</td><td>Keep the current PSTN provider, or connect non-cloud sites with cloud sites. The premises end is a trunk on a supported SBC.</td><td>Existing carrier, existing SBC, or a need to hairpin between cloud and non-cloud sites.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+<p>A Cisco at-a-glance PDF (cm-5770) describes the same three families and names third-party SBC vendors (AudioCodes, Oracle, Ribbon) alongside CUBE for Local Gateway. The help article on trunks is stricter: third-party SBC integration is supported with certificate-based trunk, and only SBCs shown in the Control Hub device-type list are validated. Treat the PDF as marketing scope and the Control Hub list as the deployable list. <a class="cite" href="#cite-7">[cite:7]</a> <a class="cite" href="#cite-2">[cite:2]</a> Open the device-type list on the trunk in Control Hub. It changes when Cisco validates a new SBC, and the at-a-glance PDF is not that list.</p>
+
+<h3>Two Local Gateway trunk models</h3>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>Registration-based</th><th>Certificate-based</th></tr></thead>
+<tbody>
+<tr><td>Concurrent calls</td><td>Up to 250 per trunk</td><td>More than 250 per trunk</td></tr>
+<tr><td>Device</td><td>CUBE only</td><td>Device types in the certificate-trunk table; third-party only if listed in Control Hub</td></tr>
+<tr><td>Authentication</td><td>Digest: shared username and password for registration and calls</td><td>Certificate plus FQDN verification. Contact header on SIP the LGW sends must carry the LGW FQDN. OPTIONS matter for Control Hub status.</td></tr>
+<tr><td>Certificate</td><td>Upload the CA bundle that signed the Webex service certificate</td><td>That, plus an LGW certificate from a listed CA. Wildcard certificates are not supported. Server Authentication EKU alone is supported; Webex Calling does not require Client Authentication EKU.</td></tr>
+<tr><td>Webex for Government</td><td>Not the option the IOS-XE guide tells you to use</td><td>Required. CUBE is the only SBC the getting-started article says currently supports Webex for Government.</td></tr>
+</tbody>
+</table></div>
+<p>Rows above are compressed from Get started with Local Gateway and the trunk article. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-4">[cite:4]</a></p>
+<h3>Objects you configure, in dependency order</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Object</th><th>What it decides</th><th>If it is missing</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Location</td><td>Which one PSTN option applies, plus address, language, and time zone</td><td>There is nowhere to hang numbers or a trunk</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Trunk</td><td>Registration or certificate connection to the premises SBC</td><td>The CUBE has nothing in Control Hub to register or peer with</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Route group / dial plan</td><td>Which trunk Webex Calling uses for which calls</td><td>A registered trunk still does not carry the location’s PSTN calls</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Numbers on the location</td><td>What can be called and what the location can present</td><td>The calling article shows a caution and says you cannot make or receive calls</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Endpoint registration</td><td>Separate from the trunk. Phones register to Webex Calling</td><td>Users have no phone service even if the trunk is online</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>What the gateway is not</h3>
+<p>BRKCOL-2312 (Cisco Live 2025) states that endpoint registration is not proxied through the Local Gateway. Endpoints register directly to Webex Calling over the internet. The gateway’s job is premises PSTN or IP-PBX connectivity, and it can be part of a paced migration. <a class="cite" href="#cite-5">[cite:5]</a> Survivability Gateway is a different service: BRKCOL-2312 describes it as a site gateway managed from Control Hub that routes internal, external, and emergency calls during a network outage. Co-locating LGW and SGW has its own constraints in that deck, including an IOS-XE release note. Survivability is T2-R07; do not collapse the two names in this room.</p>
+<div class="callout tip"><span class="label">Tip</span><p>Write the location’s PSTN choice on the design in the same sentence as the trunk type. “LGW” alone does not tell you registration versus certificate, and that choice changes the certificate plan, the firewall, and the call budget. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>For registration trunks the IOS-XE guide says <code>max-conn</code> on the Webex dial peer should be 250 or lower. Setting it higher does not raise the documented trunk limit. <a class="cite" href="#cite-4">[cite:4]</a> Certificate trunks that share an IP and port across customers can lose capacity; the partner-hosted gateway article says separate TCP connections per trunk support the maximum concurrent call capacity. <a class="cite" href="#cite-8">[cite:8]</a></p></div>
+<div class="callout note"><span class="label">Ports</span><p>BRKCOL-2812 (2024) told viewers to permit TCP 8934 or 5062 and UDP 19560–65535, and to follow the updated Webex Calling port reference. That deck is more than 12 months old relative to 2026-10-14. <mark class="recheck">re-check</mark> Current firewall objects are as of 2026-10-14, b2exve (revision history September 07, 2026): certificate signaling destination TCP 5062, registration destination TCP 8934, phone signaling source ports 5060–5280 (the devices protocol cell is blank; this room does not call that range TCP). Local-gateway media source UDP 8000–48199 toward 5004, 9000, 8500–8699, and 19560–65535. Build the ACL from that article, not from BRKCOL-2812 (2024). <a class="cite" href="#cite-21">[cite:21]</a>. against the live port reference before any ACL is written. <a class="cite" href="#cite-9">[cite:9]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p>A Local Gateway is a trunk, not the whole calling system. Emergency calling, the carrier choice, the SBC, and call recording sit beside it and fail independently. This section names those sisters. Peer PBX and contact-center products are orientation labels. <a href="../ecosystem.html">The hub ecosystem map</a> holds the cross-vendor picture.</p>
+
+<h3 class="eco-sub">Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Local Gateway</dt><dd>The premises session border controller that terminates a Webex Calling trunk. Registration-based trunks are up to 250 concurrent calls and CUBE only. Certificate-based trunks are for more than 250 and a choice of device types. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>CUBE</dt><dd>Cisco’s IOS XE session border controller. It is the only device for a registration trunk, and the getting-started article says it is the only SBC that currently supports Webex for Government. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>Premises PSTN</dt><dd>One of the three PSTN families for a location, alongside Cisco Calling Plan and Cloud Connected PSTN. The trunk is how premises PSTN reaches Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-7">[cite:7]</a></dd></div>
+<div class="term"><dt>RedSky</dt><dd>The emergency provider in the enhanced emergency calling article. You get a RedSky account, set alert email addresses, and allow the phones and the Webex client to reach RedSky. <a class="cite" href="#cite-14">[cite:14]</a></dd></div>
+<div class="term"><dt>HELD / HELD+</dt><dd>HTTP Enabled Location Delivery. The article lists HELD+ as used by Webex App, with dynamic location via network discovery using a wiremap. Supported clients named there include Cisco MPP phones and Webex App. <a class="cite" href="#cite-14">[cite:14]</a></dd></div>
+<div class="term"><dt>Dispatchable location</dt><dd>RAY BAUM’S Act Phase 2, begun January 2022, requires a correct dispatch address for non-fixed devices and nomadic users, including a Webex App user who leaves the premises. <a class="cite" href="#cite-14">[cite:14]</a></dd></div>
+<div class="term"><dt>Kari’s Law</dt><dd>Public Law 115-127. A call from the organization to emergency services must generate an email notification. Control Hub can enable that for all locations or for selected locations. <a class="cite" href="#cite-15">[cite:15]</a> <a class="cite" href="#cite-14">[cite:14]</a></dd></div>
+<div class="term"><dt>933</dt><dd>A North American emergency test number for locations in the United States and Canada. It tests emergency-call email generation and does not alert public safety personnel. <a class="cite" href="#cite-15">[cite:15]</a></dd></div>
+<div class="term"><dt>ECBN</dt><dd>Emergency Callback Number. Extension-only users need an accurate ECBN: the location default, or another telephone number from that same location. <a class="cite" href="#cite-17">[cite:17]</a></dd></div>
+<div class="term"><dt>Call recording provider</dt><dd>The provider you select for the organization before anyone enables recording for users. Article nhvl4hw says both of these: “Webex is the default value,” and, later, “Dubber is chosen by default, as there is no additional cost to include Dubber Go.” This Canon cites both sentences. It does not claim a screenshot of which control paints first. <a class="cite" href="#cite-16">[cite:16]</a></dd></div>
+<div class="term"><dt>Dubber Go</dt><dd>Included with Webex Calling user entitlements at no additional cost. Unlimited recordings, each stored 30 days, and only the user manages them in the Dubber portal. <a class="cite" href="#cite-16">[cite:16]</a></dd></div>
+<div class="term"><dt>Survivability Gateway</dt><dd>A different service from Local Gateway. BRKCOL-2312 describes it as a site gateway, managed from Control Hub, that routes internal, external, and emergency calls during an outage. <a class="cite" href="#cite-5">[cite:5]</a></dd></div>
+</dl>
+
+<h3 class="eco-sub">Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T2-R02/eco.svg -->
+<div class="diagram" role="img" aria-label="Mind map of Local Gateway, carriers, emergency calling, and recording">
+<svg viewBox="0 0 980 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of Local Gateway, carriers, emergency calling, and recording">
+<rect width="980" height="540" fill="#0c121c"/>
+<text x="28" y="34" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">PSTN edge and its sisters</text>
+<text x="28" y="56" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Carrier, SBC, emergency, recording. Phones do not register through the gateway.</text>
+<rect x="370" y="200" width="240" height="80" rx="16" fill="#142033" stroke="#7eb6ff" stroke-width="2"/>
+<text x="490" y="234" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="18">Local Gateway</text>
+<text x="490" y="256" text-anchor="middle" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">one location’s premises PSTN</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="90" width="230" height="88" rx="12" fill="#14110c" stroke="#7eb6ff"/>
+<text x="42" y="120">Cisco Calling Plan</text>
+<text x="42" y="142" fill="#b7ad9c" font-size="12">cloud PSTN, no LGW</text>
+<text x="42" y="160" fill="#b7ad9c" font-size="12">country list re-check</text>
+<rect x="28" y="340" width="230" height="88" rx="12" fill="#14110c" stroke="#7eb6ff"/>
+<text x="42" y="370">Cloud Connected PSTN</text>
+<text x="42" y="392" fill="#b7ad9c" font-size="12">partner carrier</text>
+<text x="42" y="410" fill="#b7ad9c" font-size="12">not your CUBE</text>
+<rect x="722" y="90" width="230" height="100" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="736" y="120">RedSky / E911</text>
+<text x="736" y="142" fill="#b7ad9c" font-size="12">HELD, port 443</text>
+<text x="736" y="162" fill="#b7ad9c" font-size="12">RAY BAUM dispatch address</text>
+<text x="736" y="180" fill="#b7ad9c" font-size="12">Kari email</text>
+<rect x="722" y="340" width="230" height="88" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="736" y="370">Call recording</text>
+<text x="736" y="392" fill="#b7ad9c" font-size="12">Webex: 1 year, 100 GB</text>
+<text x="736" y="410" fill="#b7ad9c" font-size="12">Dubber Go: 30 days</text>
+<rect x="360" y="420" width="260" height="70" rx="12" fill="#14110c" stroke="#7eb6ff"/>
+<text x="376" y="450">CUBE or listed SBC</text>
+<text x="376" y="470" fill="#b7ad9c" font-size="12">registration ≤250 · certificate &gt;250</text>
+</g>
+<path d="M258 134 H370" stroke="#7eb6ff" fill="none"/>
+<path d="M258 384 H370" stroke="#7eb6ff" fill="none"/>
+<path d="M610 140 H722" stroke="#e0b07a" fill="none"/>
+<path d="M610 384 H722" stroke="#e0b07a" fill="none"/>
+<path d="M490 280 V420" stroke="#7eb6ff" fill="none"/>
+<text x="28" y="520" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Calling Plan and CCP are sisters that replace the gateway for that location. They are not trunks on the CUBE.</text>
+</svg>
+</div>
+<details>
+<summary>Mermaid mind map (no engine is loaded)</summary>
+<pre class="mermaid">mindmap
+  root((Local Gateway))
+    Carriers
+      Cisco Calling Plan
+      Cloud Connected PSTN
+      Premises PSTN
+    SBC
+      CUBE registration
+      Certificate trunk
+      Third-party SBC
+    Emergency
+      RedSky
+      RAY BAUM
+      Kari email
+      ECBN
+    Recording
+      Webex provider
+      Dubber Go
+      Webhooks
+    Neighbor
+      Survivability Gateway
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R02/eco.svg</code></p>
+
+<h3 class="eco-sub">Sister-technology matrix</h3>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>RedSky enhanced emergency</td><td>Emergency calling for hybrid and nomadic users. Phones and the Webex client use port 443 to <code>https://api.wxc.e911cloud.com</code> and <code>https://wxc.e911cloud.com</code>.</td><td>A trunk can be up and 911 can still fail if the client cannot reach RedSky or has no dispatch address.</td><td>Get a RedSky account. Allow those two hosts. Set alert email addresses.</td><td>Firewall allows SIP to Webex and blocks 443 to the RedSky hosts.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>RAY BAUM’S Act</td><td>Phase 2 began January 2022. Emergency calls must send a correct dispatch address for non-fixed devices and nomadic users.</td><td>A Webex App user who leaves the building is the example in the article. The site address is not automatically their dispatch address.</td><td>RedSky location and the HELD/HELD+ network discovery the article describes.</td><td>Off-premises soft client with no updated dispatch address.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>Kari’s Law notifications</td><td>Public Law 115-127. Emergency calls must generate an email notification. Notifications are disabled by default.</td><td>Legal notification is not the same feature as the carrier route. Both have to be true.</td><td>Services → PSTN &amp; Routing → Settings → Emergency call notification. Turn it on at the organization before a location can have its own address. Location path: Management → Locations, then Emergency Calling.</td><td>Location toggle changed while the organization setting is still off. The article says the location setting requires the organization setting first.</td><td><a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>ECBN</td><td>Callback number for users with no direct telephone number. Location default, or another number from that location.</td><td>Extension-only users cannot complete emergency calling setup without it. The API description also restates the Kari email requirement.</td><td>Emergency callback configuration at the organization, then the user’s or location’s number. Read the emergency callback fields in Control Hub under the organization and the user’s location. The API description names the behavior, and the on-screen labels can change.</td><td>Extension-only user left on a callback number from a different location.</td><td><a href="#cite-17">[cite:17]</a></td></tr>
+<tr><td>CUBE / registration trunk</td><td>Registration-based Local Gateway. Up to 250 concurrent calls. CUBE only. <code>max-conn</code> on the Webex dial peer should be 250 or lower.</td><td>This is the premises PSTN choice for smaller call budgets. It is not how phones register.</td><td>Control Hub trunk, digest credentials, IOS XE guide for that trunk type.</td><td>Raising <code>max-conn</code> above 250 and expecting the documented trunk limit to rise. It does not.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Certificate trunk and third-party SBC</td><td>More than 250 concurrent calls. Third-party SBC integration is supported on the certificate trunk, and only device types in the Control Hub list are validated. No wildcard certificates.</td><td>AudioCodes, Oracle, and Ribbon appear in the PSTN at-a-glance PDF. The help article is stricter than the PDF.</td><td>FQDN, public DNS, CN or SAN matches the FQDN, CA bundle. Partner-hosted certificate trunks can show a field range of 250–6500.</td><td>A vendor from the PDF that is absent from the live device-type list. Open the live device-type list on the trunk in Control Hub. A vendor in the at-a-glance PDF is deployable only when that list still shows it, and the list changes when Cisco validates an SBC.</td><td><a href="#cite-2">[cite:2]</a> <a href="#cite-7">[cite:7]</a> <a href="#cite-8">[cite:8]</a> <a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>Carriers</td><td>Cisco Calling Plan, Cloud Connected PSTN, or premises PSTN via Local Gateway. One location takes one of these families.</td><td>Choosing Calling Plan means you do not build this gateway for that location. Market counts in cm-5770 need re-check.</td><td>Location PSTN connection in Control Hub. Calling Plan article is nousk9ab.</td><td>Designing a CUBE for a location that is already on Cisco Calling Plan. Country lists are <mark class="recheck">re-check</mark>.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-6">[cite:6]</a> <a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Webex Call Recording</td><td>A provider every Webex Calling customer can use, at no additional cost for the base option. Retention one year. Storage 100 GB per organization. Compliance officers can access recordings for a selected storage location.</td><td>Recording is chosen per organization before users are enabled. It is not a dial-peer feature you infer from the trunk.</td><td>Control Hub provider dropdown. The article says Webex is the default value, and to select Webex if you only have the Calling service.</td><td>Users enabled before a provider is selected. The same article also says Dubber is chosen by default because Dubber Go is included. Both sentences are cited. The live pixel was not screenshotted.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Dubber Go</td><td>The no-extra-cost Dubber entitlement. Unlimited recordings, 30-day storage, user access only through the Dubber portal. Paid Dubber teams and premier licenses need a Dubber contract.</td><td>Compliance retention of a year is the Webex recording sentence, not the Dubber Go sentence.</td><td>Same provider selection. User self-service is the Dubber portal, not Control Hub.</td><td>A compliance officer looking in Control Hub for Dubber Go files that only the user can open in Dubber.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Survivability Gateway</td><td>Site survivability during a network outage, including emergency calls, managed from Control Hub. Not the PSTN trunk.</td><td>People collapse the names and then debug an outage on the registration trunk.</td><td>Its own Control Hub service. Co-location constraints, including an IOS-XE note, are in BRKCOL-2312. <mark class="recheck">re-check</mark> that deck.</td><td>Expecting phones to register through the Local Gateway during an outage. Endpoints register to Webex Calling over the internet. SGW is the other box.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Integration map</h3>
+<div class="diagram" role="img" aria-label="Edges among carrier, Local Gateway, RedSky, and recording">
+<svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Edges among carrier, Local Gateway, RedSky, and recording">
+<rect width="980" height="300" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="40" width="170" height="60" rx="10" fill="#14110c" stroke="#7eb6ff"/><text x="36" y="76">Carrier / PBX</text>
+<rect x="24" y="180" width="170" height="70" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="36" y="210">MPP / Webex App</text><text x="36" y="230" fill="#8d8476" font-size="12">port 443 to RedSky</text>
+<rect x="250" y="100" width="180" height="70" rx="12" fill="#142033" stroke="#7eb6ff"/><text x="264" y="130">Local Gateway</text><text x="264" y="150" fill="#8d8476" font-size="12">SIP TLS + SRTP</text>
+<rect x="490" y="90" width="180" height="90" rx="12" fill="#142033" stroke="#e0b07a"/><text x="504" y="124">Webex Calling</text><text x="504" y="146" fill="#8d8476" font-size="12">trunk + emergency</text><text x="504" y="164" fill="#8d8476" font-size="12">recording provider</text>
+<rect x="740" y="36" width="210" height="70" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="754" y="66">RedSky</text><text x="754" y="86" fill="#8d8476" font-size="12">api.wxc.e911cloud.com</text>
+<rect x="740" y="180" width="210" height="70" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="754" y="210">Recording store</text><text x="754" y="230" fill="#8d8476" font-size="12">Webex or Dubber</text>
+</g>
+<path d="M194 70 H250 V120" stroke="#7eb6ff" fill="none"/>
+<path d="M430 135 H490" stroke="#7eb6ff" fill="none"/>
+<path d="M194 215 H740" stroke="#e0b07a" fill="none"/>
+<path d="M670 120 H740" stroke="#e0b07a" fill="none"/>
+<path d="M670 160 H740 V180" stroke="#e0b07a" fill="none"/>
+<text x="24" y="280" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">The phone’s RedSky path is not the trunk. Endpoint registration to Webex Calling is also not the trunk.</text>
+</svg>
+</div>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Premises carrier or IP-PBX</td><td>Local Gateway</td><td>The gateway’s PSTN or PBX side. Not the Webex registration of phones.</td><td>PSTN calls for that location.</td><td><a href="#cite-5">[cite:5]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Local Gateway</td><td>Webex Calling</td><td>SIP over TLS, media SRTP. Registration trunk uses digest credentials. Certificate trunk uses FQDN and the LGW certificate.</td><td>Call signaling and media for premises PSTN. Up to 250 calls on registration; more than 250 on certificate.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-2">[cite:2]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Endpoint</td><td>Webex Calling</td><td>The endpoint’s own registration over the internet. Not proxied by the Local Gateway.</td><td>Phone or app registration. Debug this on the endpoint, not on the CUBE’s trunk registration.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>MPP phone or Webex App</td><td>RedSky</td><td>HTTPS port 443 to <code>https://api.wxc.e911cloud.com</code> and <code>https://wxc.e911cloud.com</code>. HELD / HELD+ for dynamic location.</td><td>Network location and the dispatch address for nomadic users.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>Control Hub</td><td>RedSky account</td><td>Account plus alert email addresses, as the emergency article lists in its setup list.</td><td>Who is notified when someone dials 911, on the RedSky side of the design.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>Control Hub organization</td><td>Locations</td><td>Emergency call notification. Organization first: Services → PSTN &amp; Routing → Settings. Then Management → Locations.</td><td>Email notification required by Kari’s Law. 933 tests the email and does not alert public safety.</td><td><a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>Administrator</td><td>Recording provider, then users</td><td>Select the provider in Control Hub before enabling users. Partner or user administrator can then enable or disable specific users.</td><td>Which store holds the recording: Webex (one year, 100 GB, compliance officer) or Dubber Go (30 days, user portal).</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Webex call recording</td><td>Webhook subscriber</td><td>The recording article says you can create webhook notifications on Webex call recordings.</td><td>A notification that a Webex recording exists. Cited names: <code>recordingStarting</code>, <code>recordingStarted</code>, <code>recordingPaused</code>, <code>recordingResumed</code>, <code>recordingStopped</code> on <code>telephony_calls</code>, scope <code>spark-admin:calls_read</code>. Resource <code>convergedRecordings</code> is “a Webex call was recorded for a user,” and <code>serviceType</code> is mandatory. <a href="#cite-18">[cite:18]</a> Dubber Go access stays in the Dubber portal.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Extension-only user</td><td>Emergency callback</td><td>Emergency services settings API description: location default ECBN or another number from that location.</td><td>The callback identity presented for that user. Read the scopes on this operation at developer.webex.com. A global scope catalog is not this endpoint’s requirement, and scopes change when the API is revised.</td><td><a href="#cite-17">[cite:17]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only</strong> Microsoft Teams Phone and Amazon Connect are peer labels. This table does not claim feature parity. Amazon Connect is a contact center; it is not a PBX analogue of Webex Calling.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Webex concept</th><th>Legacy</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Local Gateway trunk into Webex Calling</td><td>A CUCM SIP trunk to an SBC is the familiar shape. Dial peers and calling search spaces are different engines. CUCM closest-match stays in T6-R02. Webex enterprise patterns use the wildcard rules in T2-R03. No field-equivalence table is in these articles. Do not paste CUCM route patterns onto a Webex dial plan from memory.</td><td>Teams Phone PSTN and Amazon Connect telephony: orientation labels only. No parity matrix is published on help.webex.com. Cisco’s documented calling migrations are Unified CM and BroadWorks/BroadCloud. <a class="cite" href="#cite-19">[cite:19]</a> <a class="cite" href="#cite-20">[cite:20]</a></td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>RedSky, HELD, Kari email, RAY BAUM dispatch address</td><td>On-prem CER or a PRI’s emergency treatment is a different product. Calling RedSky is av6oo3. nvfbjts, header September 08, 2024, says WebRTC agents use Control Hub and RedSky, place 933, then use Enhanced emergency calling. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-22">[cite:22]</a> mwjlgk, header September 03, 2025, confirms the agent MyE911 host and a verification email. It does not reprint those admin steps. <a class="cite" href="#cite-23">[cite:23]</a> A CER field map is not in those articles and stays marked on the peer cell.</td><td>Check Kari and RAY BAUM on the Calling emergency pages in Control Hub. A peer product’s emergency checkbox is a different test and does not cover those Calling requirements.</td><td><a href="#cite-14">[cite:14]</a> <a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>Webex recording versus Dubber Go</td><td>CUCM recording profiles and a recording server are not these two cloud providers. Read retention in help.webex.com article nhvl4hw for Webex Calling and Dubber Go. Leave those numbers off a CUCM recording profile, because each product stores recordings on its own clock.</td><td>Contact-center recording in WxCC is a different article set. This room’s numbers are Webex Calling only. <a href="T3-R01-wxcc-multitenant-overview.html#eco">T3 ecosystem</a></td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Certificate trunk toward Dedicated Instance contact-center interop</td><td>Registration-based trunks are no longer the supported interop on that path.</td><td>Not a Microsoft or Amazon statement. See the DI article.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Future-integration hooks</h3>
+<div class="callout note"><span class="label">Canon plan, not a Cisco roadmap</span><p>Emergency depth is the planned room T2-R06. Survivability is T2-R07. Devices are T2-R04. None of those rooms exist yet.</p></div>
+<ul>
+<li>Recording-provider copy is settled as a conflict inside nhvl4hw: “Webex is the default value” and “Dubber is chosen by default.” Cite both. Do not pick a live control this Canon has not screenshotted. <a href="#cite-16">[cite:16]</a></li>
+<li>Recording event names are cited on the call-control page. Do not copy sample organization IDs from developer pages.</li>
+<li>Port ACLs still come from the current port-reference article, not from BRKCOL-2812 (2024). <mark class="recheck">re-check</mark> <a class="cite" href="#cite-9">[cite:9]</a></li>
+<li>Webex for Government remains certificate-based and CUBE-only in the getting-started article. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>WxCC voice that lands on Webex Calling PSTN is cited from the contact-center architecture article. Read the PSTN choice on the location in Control Hub. The order SKU sits on the subscription, and this architecture article does not name it. <a class="cite" href="#cite-12">[cite:12]</a></li>
+</ul>
+
+<h3 class="eco-sub">Ecosystem troubleshooting</h3>
+<p>Sister-system causes. The room’s own trouble matrix still owns trunk-down and certificate errors.</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>911 from a laptop off site has the wrong address</td><td>Nomadic dispatch address was never updated. RAY BAUM Phase 2 applies to non-fixed and nomadic users.</td><td>RedSky location for that Webex App user, not only the building’s civic address.</td><td>Use the HELD/HELD+ configuration the emergency article describes.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>Phones cannot determine location; trunk looks fine</td><td>443 to the RedSky hosts is blocked.</td><td>Allow <code>https://api.wxc.e911cloud.com</code> and <code>https://wxc.e911cloud.com</code>.</td><td>Open 443 to those hosts. This is not a SIP ACL on the CUBE.</td><td><a href="#cite-14">[cite:14]</a></td></tr>
+<tr><td>Nobody gets email when 911 is dialed</td><td>Emergency call notification is disabled by default, or the location was edited before the organization toggle.</td><td>Services → PSTN &amp; Routing → Settings, then the location’s Emergency Calling section.</td><td>Enable at the organization. Then set all-location email or a location-specific email.</td><td><a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>A 933 test “called the fire brigade”</td><td>933 is the test number. The article says it does not alert public safety personnel.</td><td>Confirm the dialed number was 933 and the location is US or Canada.</td><td>Use 933 for the email test. Other test capabilities depend on the PSTN or emergency provider. Do not invent a second test number.</td><td><a href="#cite-15">[cite:15]</a></td></tr>
+<tr><td>Extension-only user cannot place an emergency call</td><td>No accurate ECBN from that location.</td><td>Location default ECBN or another number at the same location.</td><td>Assign one of those two. A number from a different location is not what the API description allows.</td><td><a href="#cite-17">[cite:17]</a></td></tr>
+<tr><td>Registration trunk still caps near 250 after <code>max-conn</code> was raised</td><td>The documented registration limit is 250. The dial-peer knob does not raise it.</td><td>Trunk type in Control Hub.</td><td>Move that call budget to a certificate trunk.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Recording enabled on users and nothing is stored</td><td>Provider was not selected first, or the viewer is in the wrong store.</td><td>Organization provider. Webex retention is one year and 100 GB, compliance officer. Dubber Go is 30 days in the Dubber portal.</td><td>Select the provider, then enable users. Open the store that matches the provider.</td><td><a href="#cite-16">[cite:16]</a></td></tr>
+<tr><td>Phone unregistered, and the engineer is on the CUBE</td><td>Endpoints do not register through the Local Gateway.</td><td>Endpoint registration to Webex Calling over the internet.</td><td>Leave the trunk debug for PSTN calls. Registration is the endpoint’s path.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Inbound PSTN call through a Local Gateway</h2>
+<p>Outbound is the reverse until the carrier. Cisco Calling Plan and CCP do not traverse this gateway; forcing them through it is a design error, not a clever hairpin.</p>
+<!-- VISUAL:sequence -->
+<div class="diagram" role="img" aria-label="Inbound call sequence via Local Gateway">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inbound call sequence via Local Gateway">
+<rect width="980" height="280" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6" text-anchor="middle">
+<text x="80" y="36">PSTN</text>
+<text x="280" y="36">Local Gateway</text>
+<text x="520" y="36">Webex Calling</text>
+<text x="780" y="36">Endpoint</text>
+<line x1="80" y1="48" x2="80" y2="250" stroke="#e0b07a"/>
+<line x1="280" y1="48" x2="280" y2="250" stroke="#7eb6ff"/>
+<line x1="520" y1="48" x2="520" y2="250" stroke="#7eb6ff"/>
+<line x1="780" y1="48" x2="780" y2="250" stroke="#efe7d6"/>
+</g>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#d5ccbe">
+<text x="100" y="80">1 INVITE from carrier</text>
+<path d="M100 92 H260" stroke="#e0b07a"/>
+<text x="300" y="120">2 TLS + SRTP toward Webex</text>
+<path d="M300 132 H500" stroke="#7eb6ff"/>
+<text x="540" y="170">3 dial plan finds the user</text>
+<path d="M540 182 H760" stroke="#efe7d6"/>
+<text x="300" y="230">4 media anchors as designed — do not assume the phone’s RTP hits the carrier directly</text>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Carrier</td><td>Local Gateway</td><td>SIP as you contracted, often UDP/TCP to the carrier</td><td>Carrier-facing dial peers are customer-specific. This Canon does not paste a carrier template.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>2</td><td>Local Gateway</td><td>Webex Calling</td><td>SIP over TLS, media SRTP</td><td>Registration model uses digest credentials from the trunk page. Certificate model uses FQDN and the LGW certificate.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>3</td><td>Webex Calling</td><td>Called user or hunt/queue</td><td>Webex Calling routing</td><td>The number must already exist on the location. A location with no number cannot make or receive calls.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Webex Calling</td><td>Endpoint</td><td>The endpoint’s own registration, not the LGW</td><td>Do not debug “phone not registered” on the CUBE registration if the phone is a Webex endpoint.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>5</td><td>Certificate LGW</td><td>Webex Calling</td><td>SIP OPTIONS</td><td>Getting-started article: OPTIONS from the LGW are especially important for the trunk to show online in Control Hub.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>6</td><td>Control Hub</td><td>Admin</td><td>HTTPS</td><td>Trunk status and location PSTN properties are the cloud-side evidence.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>7</td><td>Admin</td><td>Route group</td><td>Control Hub config</td><td>A trunk without a route group and dial plan does not become the location’s PSTN path by existing.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>8</td><td>Firewall</td><td>Webex Calling</td><td>Outbound SIP, RTP, DNS, NTP</td><td>Exact current ports: as of 2026-10-14, b2exve (revision history September 07, 2026): certificate signaling destination TCP 5062, registration destination TCP 8934, phone signaling source ports 5060–5280 (the devices protocol cell is blank; this room does not call that range TCP). Local-gateway media source UDP 8000–48199 toward 5004, 9000, 8500–8699, and 19560–65535. Build the ACL from that article, not from BRKCOL-2812 (2024). <a class="cite" href="#cite-21">[cite:21]</a>. 2024 deck figures are re-check only. <a href="#cite-9">[cite:9]</a></td><td><a href="#cite-9">[cite:9]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config path</p>
+<h2>Control Hub first, gateway second</h2>
+<p>The IOS-XE guide assumes you already created the trunk and wrote down what Control Hub displayed. This room stops at the decision points. It does not reproduce sample usernames, passwords, or a full dial-peer stanza from the guide.</p>
+<ol class="steps">
+<li><span class="path">Decide per location</span>Write Cisco Calling Plan, CCP, or premises PSTN on the location row. Confirm country, data center, and whether a committed Outbound Calling Plan exists before you promise Cisco PSTN. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-6">[cite:6]</a>
+<div class="shot"><!-- VISUAL:screenshot:1 -->Screenshot placeholder · step 1 · location PSTN choices.</div></li>
+<li><span class="path">Management → Location → add or Manage PSTN</span>For premises PSTN, choose Premises-based PSTN (Local Gateway). Acknowledge the risk prompt if you are changing an existing choice. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:2 -->Screenshot placeholder · step 2 · premises PSTN selected.</div></li>
+<li><span class="path">Calling → Call Routing → Add Trunk</span>BRKCOL-2312’s lab path is Services → Calling → Call Routing → Add Trunk. Pick Registration-based or Certificate-based before you fill names. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-2">[cite:2]</a>
+<div class="shot"><!-- VISUAL:screenshot:3 -->Screenshot placeholder · step 3 · trunk type.</div></li>
+<li><span class="path">Registration trunk</span>Copy the trunk information Control Hub shows (registrar, username, password) into your password vault. The guide uses those values on a voice class tenant. Do not paste them into chat or into this Canon. <a class="cite" href="#cite-4">[cite:4]</a>
+<div class="shot"><!-- VISUAL:screenshot:4 -->Screenshot placeholder · step 4 · trunk credentials blurred.</div></li>
+<li><span class="path">Certificate trunk</span>Enter the FQDN. DNS must resolve the LGW from the public internet by A or SRV. The certificate CN or SAN must contain that FQDN. No wildcards. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-10">[cite:10]</a>
+<div class="shot"><!-- VISUAL:screenshot:5 -->Screenshot placeholder · step 5 · FQDN field.</div></li>
+<li><span class="path">On the CUBE / SBC</span>Follow Configure Local Gateway on Cisco IOS XE for the trunk type you picked. Set <code>max-conn 250</code> or lower on a registration trunk. Update the trustpool with the CA bundle Cisco documents. <a class="cite" href="#cite-4">[cite:4]</a>
+<div class="shot"><!-- VISUAL:screenshot:6 -->Screenshot placeholder · step 6 · redacted CLI header only.</div></li>
+<li><span class="path">Route group and location PSTN connection</span>Select the trunk for the location’s premises PSTN. Add numbers. The calling article: for non-integrated CCP or premises PSTN, enter numbers and Validate. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:7 -->Screenshot placeholder · step 7 · trunk selected on the location.</div></li>
+<li><span class="path">Prove status</span>Registration trunk: registration is up and a test call completes both ways. Certificate trunk: OPTIONS succeed and Control Hub shows the trunk online. <a class="cite" href="#cite-3">[cite:3]</a>
+<div class="shot"><!-- VISUAL:screenshot:8 -->Screenshot placeholder · step 8 · trunk status online.</div></li>
+</ol>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Capacity you can cite</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>PSTN options per location</td><td>Exactly one</td><td>Configure Webex Calling</td><td>Cited 2026-10-14 <a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Registration trunk concurrent calls</td><td>Up to 250 per trunk</td><td>Get started with Local Gateway</td><td>Cited <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Certificate trunk concurrent calls</td><td>More than 250 per trunk. Partner-hosted article shows a field range of 250–6500 on certificate trunks.</td><td>t9xctu and noei0ug</td><td>Cited <a href="#cite-3">[cite:3]</a> <a href="#cite-8">[cite:8]</a>. Platform sizing as of 2026-10-14 is t9xctu Table 5: up to 250 concurrent calls, 2500 users, registration-based, OTT; about 250–2000 concurrent calls, 20000 users, certificate-based, OTT; about 2000–6500 concurrent calls, 65000 users, certificate-based, interconnect. <a class="cite" href="#cite-3">[cite:3]</a> the platform row you will buy.</td></tr>
+<tr><td>Calling-capacity guideline table</td><td>Up to 250 calls / 2500 users → registration, OTT. ~250–2000 calls / 20000 users → certificate, OTT. ~2000–6500 calls / 65000 users → certificate, interconnect.</td><td>Table 5, Get started with Local Gateway</td><td>Cited <a href="#cite-3">[cite:3]</a>. The help table’s header is slightly garbled in the HTML extract (“Concurrent call requirement)”). <mark class="recheck">re-check</mark> the rendered table before you put these numbers on a customer slide.</td></tr>
+<tr><td>Registration <code>max-conn</code></td><td>250 maximum configured value</td><td>IOS-XE LGW guide</td><td>Cited <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Wildcard certificates</td><td>Not supported</td><td>Get started with Local Gateway</td><td>Cited <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Registration model on Webex for Government</td><td>Guide directs you to certificate-based only</td><td>IOS-XE LGW guide</td><td>Cited <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Markets for Cisco Calling Plan</td><td>At-a-glance PDF says 19 markets (US, Canada, 15 European markets, Australia, New Zealand). Help says “country where the plan is supported” without repeating that list in the extract used here.</td><td>cm-5770</td><td><mark class="recheck">re-check</mark> The PDF is undated in the extract. Read the country in the location wizard on the day you order. The live list changes, and this room leaves the undated PDF off that wizard. <a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>CCP “65+ markets” and LGW “120+ countries”</td><td>Printed in cm-5770</td><td>Same PDF</td><td><mark class="recheck">re-check</mark> Read current market coverage on the help article for the PSTN option you ordered. The undated PDF’s market counts are not that page, and the counts move when Cisco adds a country.</td></tr>
+<tr><td>Firewall ports</td><td>as of 2026-10-14, b2exve (revision history September 07, 2026): certificate signaling destination TCP 5062, registration destination TCP 8934, phone signaling source ports 5060–5280 (the devices protocol cell is blank; this room does not call that range TCP). Local-gateway media source UDP 8000–48199 toward 5004, 9000, 8500–8699, and 19560–65535. Build the ACL from that article, not from BRKCOL-2812 (2024). <a class="cite" href="#cite-21">[cite:21]</a></td><td>Do not use BRKCOL-2812 (2024) as the build ACL</td><td>Open <a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Supported IOS-XE release for your platform</td><td>as of 2026-10-14, t9xctu header September 10, 2026: registration CUBE minimum is Cisco IOS XE Bengaluru 17.6.1a (controller mode uses Cupertino 17.7.1 or later); certificate CUBE minimum is Cupertino 17.9.1a; the Cisco Secure Router rows in that table list IOS XE 26.2.1. Suggested releases stay on Cisco Software Research for the platform. <a class="cite" href="#cite-3">[cite:3]</a> in the Local Gateway ordering/configuration guide for the hardware in the design</td><td>Prepare your environment points at that guide</td><td>Open <a href="#cite-11">[cite:11]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Separate the trunk from the phone</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence / check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Trunk never registers</td><td>Digest credentials, DNS, or trust bundle</td><td>Compare vaulted trunk username to the tenant. Confirm the Webex CA bundle is in the trustpool. Outbound TCP/TLS allowed.</td><td>Re-copy credentials from Control Hub. Do not keep typing a password from a screenshot in a guide.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Certificate trunk stays offline</td><td>FQDN mismatch or OPTIONS not sent</td><td>Certificate CN/SAN versus the FQDN typed in Control Hub. Packet capture for OPTIONS toward Webex.</td><td>Reissue the cert for that exact FQDN. No wildcard. Make OPTIONS part of the config, not an afterthought.</td><td><a href="#cite-2">[cite:2]</a> <a href="#cite-3">[cite:3]</a> <a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>TLS handshake fails on a third-party SBC</td><td>SBC demands Client Authentication EKU and Webex presents Server Authentication EKU only</td><td>Handshake alert mentioning EKU</td><td>The trunk article says some SBCs must be set to accept Server Authentication EKU only, or to relax strict EKU checks if the product allows it.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Calls fail above a couple of hundred</td><td>Registration trunk, or <code>max-conn</code> left at 250, or shared IP/port on certificate trunks</td><td>Trunk type in Control Hub. <code>show</code> dial-peer max-conn. Whether two trunks share a socket.</td><td>Move to certificate-based if you need more than 250. Give each certificate trunk its own listen address/port.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-4">[cite:4]</a> <a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>One-way or no audio</td><td>RTP ports or SRTP mismatch. Not a SIP 200 problem.</td><td>Signaling completes; RTP counters stay at zero in one direction.</td><td>Current port list: as of 2026-10-14, b2exve (revision history September 07, 2026): certificate signaling destination TCP 5062, registration destination TCP 8934, phone signaling source ports 5060–5280 (the devices protocol cell is blank; this room does not call that range TCP). Local-gateway media source UDP 8000–48199 toward 5004, 9000, 8500–8699, and 19560–65535. Build the ACL from that article, not from BRKCOL-2812 (2024). <a class="cite" href="#cite-21">[cite:21]</a>. Confirm SRTP on the Webex-facing dial peers as the guide requires.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Phone unregistered, trunk looks fine</td><td>You are looking at the wrong registrar</td><td>Endpoint status in Control Hub, not <code>show sip-ua register status</code> on the CUBE</td><td>Debug the phone’s path to Webex Calling. LGW does not proxy endpoint registration.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Inbound PSTN rings nowhere</td><td>Number not on the location, or route group not selected</td><td>Location numbers list. Location PSTN connection points at the trunk.</td><td>Validate and add the number. Select the trunk. A caution icon means no number.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cannot select Cisco Calling Plan</td><td>Missing OCP, unsupported country, location already had another PSTN option, or data center</td><td>The four visibility conditions in the calling article</td><td>Do not hide the option with a browser trick. Open a support case if you believe the location should be eligible.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Changed PSTN type and emergency address looks stuck</td><td>Address fields lock after PSTN and emergency address are set</td><td>Location overview address is read-only</td><td>Update the emergency service address; Control Hub syncs the overview address from it.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Government deployment using registration</td><td>Wrong trunk model</td><td>Org is Webex for Government and the trunk type is registration</td><td>Rebuild as certificate-based on CUBE.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Recursive self-question</p>
+<h2>Ladder</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is a Local Gateway?</summary>
+<p class="answer">The premises SBC that terminates a Webex Calling trunk so a location can use premises-based PSTN or reach a non-cloud site. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p>
+<details class="qnode"><summary><span class="lvl">L1</span>Why does it exist?</summary>
+<p class="answer">Cisco PSTN and Cloud Connected PSTN replace the carrier in the cloud. Local Gateway exists when you keep your carrier, your analog, or a PBX next door. Without it, that location has no documented premises PSTN path. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L1a</span>What breaks if I also expect phones to register to it?</summary>
+<p class="answer">You will troubleshoot the wrong box. Endpoints register to Webex Calling. The gateway is a trunk, not a proxy registrar. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does a premises call work end to end?</summary>
+<p class="answer">Carrier ↔ LGW ↔ TLS/SRTP ↔ Webex Calling ↔ endpoint. The location’s numbers and route selection decide whether step three has anywhere to go. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L2a</span>What is different on a certificate trunk?</summary>
+<p class="answer">Trust is the FQDN in the certificate, not a digest password. SIP from the LGW carries that FQDN in Contact. OPTIONS drive the online status in Control Hub. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2b</span>Where do route groups sit?</summary>
+<p class="answer">In Control Hub, with trunks and dial plans. A trunk that is not selected as the location’s premises PSTN does not carry that location’s calls just because the CUBE is up. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do I prove which failure I have?</summary>
+<p class="answer">Four evidence piles: Control Hub trunk status, location number list, CUBE registration or TLS/OPTIONS, and whether the endpoint is registered in Control Hub. Audio failures are a fifth pile (RTP), after signaling succeeds.</p>
+<details class="qnode"><summary><span class="lvl">L3a</span>How do I prove a scale miss versus a bug?</summary>
+<p class="answer">If the trunk is registration-based, the documented ceiling is 250 concurrent calls and <code>max-conn</code> should not be set above 250. Crossing that is a design miss. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3b</span>How do I prove a certificate identity miss?</summary>
+<p class="answer">Read the CN/SAN and the Control Hub FQDN as strings. They must match. Wildcards are unsupported. Public DNS must resolve the name. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-10">[cite:10]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L4</span>How does this differ across Calling, WxCC, WxCCE, and Dedicated Instance?</summary>
+<p class="answer">This room is multi-tenant Webex Calling. Contact-center voice can ride Webex Calling PSTN services even without a Calling subscription for the contact-center order itself — that claim belongs to the WxCC architecture article and is taught in T3-R01. <a class="cite" href="#cite-12">[cite:12]</a> Dedicated Instance has its own Local Gateway patterns and, for DI-to-multi-tenant contact-center support, help says certificate-based trunks are required because registration-based trunks are no longer supported on that interop. <a class="cite" href="#cite-13">[cite:13]</a> WxCCE PSTN is not this trunk model; do not answer an enterprise-routing question with CUBE <code>max-conn 250</code>.</p>
+<details class="qnode"><summary><span class="lvl">L4a</span>Is Survivability Gateway just a second name for LGW?</summary>
+<p class="answer">No. BRKCOL-2312 treats SGW as the outage path for endpoints when the cloud is unreachable, managed from Control Hub, and lists co-location constraints that include provisioning the gateway as Survivability Gateway rather than as Local Gateway. Detail is T2-R07. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L5</span>If I redesigned PSTN attachment, what would I change?</summary>
+<p class="answer">I would want one trunk type so labs stop splitting digest and certificates. The constraint is scale and device support: registration is the simple CUBE model at 250 calls, and certificate exists because that model does not scale. The partner-hosted article says certificate trunking was created to solve registration’s scale limits. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-3">[cite:3]</a></p>
+<details class="qnode"><summary><span class="lvl">L5a</span>What would I refuse to hard-code?</summary>
+<p class="answer">Firewall ports from a 2024 Cisco Live slide are replaced by b2exve as of 2026-10-14. The country list from the undated at-a-glance PDF stays marked in the limits table. <a class="cite" href="#cite-21">[cite:21]</a> against current help before a build. <a class="cite" href="#cite-9">[cite:9]</a> <a class="cite" href="#cite-7">[cite:7]</a></p></details>
+</details>
+</details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Checklist</h2>
+<ul class="lab">
+<li><label><input type="checkbox"> Goal: for one lab location, state the PSTN option, the trunk model, and prove a test call — or prove why Cisco PSTN is not offered.</label></li>
+<li><label><input type="checkbox"> Prereq: lab Control Hub with Calling, plus a CUBE or supported SBC you are allowed to configure. IOS-XE minimums for the trunk type are as of 2026-10-14, t9xctu header September 10, 2026: registration CUBE minimum is Cisco IOS XE Bengaluru 17.6.1a (controller mode uses Cupertino 17.7.1 or later); certificate CUBE minimum is Cupertino 17.9.1a; the Cisco Secure Router rows in that table list IOS XE 26.2.1. Suggested releases stay on Cisco Software Research for the platform. <a class="cite" href="#cite-3">[cite:3]</a>. Carrier SIP credentials stay in a vault.</label></li>
+<li><label><input type="checkbox"> Step 1. Open the location. Record the PSTN choices the UI actually shows. Expected: at least the options your subscription and country allow. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 2. Create a registration trunk or a certificate trunk, not both, for this lab. Expected: Control Hub displays the parameters the guide says to copy.</label></li>
+<li><label><input type="checkbox"> Step 3. On the gateway, apply only the Webex-facing tenant from the official guide. Expected: registration up, or certificate trunk online via OPTIONS. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-3">[cite:3]</a></label></li>
+<li><label><input type="checkbox"> Step 4. Point the location’s premises PSTN at that trunk and add one test number. Expected: the caution clears once a number exists. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 5. Place an inbound and an outbound call. Expected: two-way audio. If signaling works and audio does not, stop and treat it as RTP.</label></li>
+<li><label><input type="checkbox"> Evidence: trunk type screenshot, redacted credential screen, trunk status, call trace with numbers partially masked.</label></li>
+<li><label><input type="checkbox"> Break-it: set a registration dial-peer <code>max-conn</code> above 250 only long enough to compare it with the guide, then put it back to 250 or below. Recovery: restore the documented value and confirm the guide’s warning still matches your release. <a class="cite" href="#cite-4">[cite:4]</a></label></li>
+<li><label><input type="checkbox"> Reflection: did I almost debug a phone registration on the CUBE? What did the endpoint status in Control Hub say instead?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header>
+<p>How many PSTN options can one location use at a time?</p>
+<ol type="A"><li>Three, active-active</li><li>One</li><li>Two if one is a Local Gateway</li><li>Unlimited</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>One. Mix across locations, not inside one. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header>
+<p>Registration-based Local Gateway concurrent calls, per trunk:</p>
+<ol type="A"><li>Up to 250</li><li>Up to 2000</li><li>6500</li><li>Unlimited on CUBE</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>Up to 250. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header>
+<p>Registration-based trunks support which SBC?</p>
+<ol type="A"><li>Any SBC in the cm-5770 PDF</li><li>CUBE only</li><li>CUBE and AudioCodes</li><li>Whatever answers SIP OPTIONS</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>CUBE only. Third-party SBCs are a certificate-trunk conversation, and only if Control Hub lists them. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header>
+<p>A designer sends phones to the Local Gateway’s registrar “so the branch survives.” What is wrong in the steady state?</p>
+<details class="reveal"><summary>Reveal</summary><p>Endpoints register to Webex Calling, not through the LGW. Survivability is a different gateway service. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header>
+<p>Wildcard certificates on a certificate-based LGW are:</p>
+<ol type="A"><li>Preferred</li><li>Not supported</li><li>Supported if the SAN lists the domain</li><li>Required for Webex for Government</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>Not supported. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header>
+<p>Control Hub shows a certificate trunk offline. Signaling config “looks right.” What transaction does the getting-started article single out?</p>
+<details class="reveal"><summary>Reveal</summary><p>OPTIONS from the Local Gateway. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header>
+<p>Webex-facing media and signaling in the IOS-XE guide are:</p>
+<ol type="A"><li>UDP SIP and RTP</li><li>SIP over TLS and SRTP</li><li>H.323 and SRTP</li><li>MGCP</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>SIP/TLS and SRTP. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Draw it</span></header>
+<p>Draw three locations: Austin on Cisco Calling Plan, Berlin on CCP, Denver on LGW. Show phones registering to the cloud in all three.</p>
+<details class="reveal"><summary>Reveal</summary><p>Only Denver’s PSTN hairpins through an SBC. All endpoints still register to Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header>
+<p>Cisco PSTN does not appear for a location that already used a Local Gateway. Name two documented reasons besides “the UI is broken.”</p>
+<details class="reveal"><summary>Reveal</summary><p>Pre-existing locations that already had another PSTN capability are not eligible in the article’s conditions, and Cisco PSTN may be unavailable after another option was assigned. Also check committed OCP, country, and data center. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header>
+<p>For a registration trunk, <code>max-conn</code> should be:</p>
+<ol type="A"><li>250 or lower</li><li>6500</li><li>Unset</li><li>Equal to the user count</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>250 or lower. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Oral</span></header>
+<p>Why was certificate-based trunking created, according to the partner-hosted gateway article?</p>
+<details class="reveal"><summary>Reveal</summary><p>To solve the scale limitations of the registration-based model. <a class="cite" href="#cite-8">[cite:8]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header>
+<p>Someone pastes TCP 5062 and UDP 19560–65535 into a firewall request and cites “Cisco Live.” What do you do?</p>
+<details class="reveal"><summary>Reveal</summary><p>Recognize BRKCOL-2812 (2024), mark it re-check, and open b2exve (retrieved 2026-10-14) before you build an ACL. <a class="cite" href="#cite-21">[cite:21]</a> the current port reference before the change window. <a class="cite" href="#cite-9">[cite:9]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio slots</p>
+<h2>Studio fills these</h2>
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Local Gateway to a senior engineer walking a PSTN design: three location-level options, why phones do not register to the gateway, and the 250-call registration ceiling." | assets/audio/T2-R02/overview.mp3 -->
+<article class="audio-slot">
+<h3>Overview · 3–5 min</h3>
+<p class="prompt">“Explain Local Gateway to a senior engineer walking a PSTN design: three location-level options, why phones do not register to the gateway, and the 250-call registration ceiling.”</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T2-R02/overview.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio. Cite 1, 3, and 5 only.</p></details>
+</article>
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Compare registration and certificate trunks: auth, devices, OPTIONS, wildcards, EKU surprises, max-conn, and what you still must verify in the port guide." | assets/audio/T2-R02/deep-dive.mp3 -->
+<article class="audio-slot">
+<h3>Deep dive · 8–12 min</h3>
+<p class="prompt">“Compare registration and certificate trunks: auth, devices, OPTIONS, wildcards, EKU surprises, max-conn, and what you still must verify in the port guide.”</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T2-R02/deep-dive.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio.</p></details>
+</article>
+<!-- AUDIO:oral-drill | 2 min | prompt: rapid Q&A from quiz -->
+<article class="audio-slot">
+<h3>Oral drill · 2 min</h3>
+<p class="prompt">Rapid Q&amp;A from the quiz. Correct any answer that sends endpoint registration through the CUBE.</p>
+<audio controls preload="none"></audio>
+<p class="placeholder-asset">assets/audio/T2-R02/oral-drill.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio.</p></details>
+</article>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral-ready</h2>
+<h3>1 · What are the PSTN options?</h3>
+<p><strong>30 seconds.</strong> Cisco Calling Plan, Cloud Connected PSTN, and premises Local Gateway. One per location. Mix across sites. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2 minutes.</strong> Add when Cisco PSTN is even visible (OCP, country, new/eligible location, data center), the integrated versus non-integrated CCP split, and the warning that switching back to Cisco PSTN may require a support case. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>2 · What is the Local Gateway actually doing?</h3>
+<p><strong>30 seconds.</strong> It is the SBC trunk for premises PSTN. Phones register to the cloud, not to it. <a class="cite" href="#cite-5">[cite:5]</a></p>
+<p><strong>2 minutes.</strong> Draw the map. Name TLS and SRTP on the Webex side. Separate Survivability Gateway in one sentence so you are not corrected. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-5">[cite:5]</a></p>
+<h3>3 · Registration or certificate?</h3>
+<p><strong>30 seconds.</strong> Registration: CUBE, digest, 250 calls. Certificate: FQDN and cert, above 250, more device types. <a class="cite" href="#cite-3">[cite:3]</a></p>
+<p><strong>2 minutes.</strong> Add wildcards unsupported, OPTIONS for status, EKU gotcha, <code>max-conn</code>, and Webex for Government = certificate on CUBE. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></p>
+<h3>4 · How do you troubleshoot an offline trunk?</h3>
+<p><strong>30 seconds.</strong> Registration: credentials, trust bundle, outbound TLS. Certificate: FQDN match and OPTIONS. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-3">[cite:3]</a></p>
+<p><strong>2 minutes.</strong> Walk the trouble rows for one-way audio versus failed registration versus a phone that was never the gateway’s job.</p>
+<h3>5 · What will you not quote?</h3>
+<p><strong>30 seconds.</strong> Live port numbers and the PDF’s country counts, until re-checked.</p>
+<p><strong>2 minutes.</strong> Explain BRKCOL-2812 as a 2024 teaching deck that itself points at the port reference, and cm-5770 as an at-a-glance that can drift from the Control Hub device list. <a class="cite" href="#cite-9">[cite:9]</a> <a class="cite" href="#cite-7">[cite:7]</a></p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T2-R02.md">cites/T2-R02.md</a>.</p>
+<ol class="cite-list">
+<li id="cite-1">Configure Webex Calling for your organization — help.webex — article njvdjf2 — <a href="https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization">help.webex.com article njvdjf2</a> — retrieved 2026-10-14.</li>
+<li id="cite-2">Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — <a href="https://help.webex.com/article/n0xb944">help.webex.com article n0xb944</a> — retrieved 2026-10-14.</li>
+<li id="cite-3">Get started with Local Gateway — help.webex — article t9xctu — <a href="https://help.webex.com/en-us/article/t9xctu/Get-started-with-Local-Gateway">help.webex.com article t9xctu</a> — retrieved 2026-10-14.</li>
+<li id="cite-4">Configure Local Gateway on Cisco IOS XE for Webex Calling — help.webex — article jr1i3r — <a href="https://help.webex.com/en-us/article/jr1i3r">help.webex.com article jr1i3r</a> — retrieved 2026-10-14.</li>
+<li id="cite-5">BRKCOL-2312 — Local Gateway and Survivability Gateway material (deck text: endpoint registration is not proxied; trunk types; SGW) — Cisco Live 2025 — <a href="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCOL-2312.pdf">ciscolive.com global-event 2025 PDF</a>. <mark class="recheck">re-check</mark> (event year 2025; confirm session title on the title slide).</li>
+<li id="cite-6">Get Started with the Cisco Calling Plans — help.webex — article nousk9ab — <a href="https://help.webex.com/article/nousk9ab">help.webex.com article nousk9ab</a> — retrieved 2026-10-14.</li>
+<li id="cite-7">Webex Calling PSTN options at-a-glance — Cisco/Webex PDF cm-5770 — <a href="https://www.webex.com/content/dam/wbx/us/aag/webex_calling_pstn_options_cm-5770.pdf">webex.com content dam … cm-5770.pdf</a> — retrieved 2026-10-14. Market counts need re-check.</li>
+<li id="cite-8">Configuring a Partner Hosted Gateway — help.webex — article noei0ug — <a href="https://help.webex.com/article/noei0ug">help.webex.com article noei0ug</a> — retrieved 2026-10-14.</li>
+<li id="cite-9">BRKCOL-2812 — Webex Calling PSTN architecture, registration and certificate trunks, firewall note — Cisco Live 2024 — <a href="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/BRKCOL-2812.pdf">ciscolive.com global-event 2024 PDF</a>. <mark class="recheck">re-check</mark> Ports in the deck are not a build source.</li>
+<li id="cite-10">Security requirements for Webex Calling (certificate FQDN, CA bundle, EKU) — help.webex — article jwkbt2 — <a href="https://help.webex.com/article/jwkbt2">help.webex.com article jwkbt2</a> — retrieved 2026-10-14.</li>
+<li id="cite-11">Prepare your environment for Webex Calling — help.webex — article n4cprps — <a href="https://help.webex.com/en-us/article/n4cprps/Prepare-Your-Environment-for-Webex-Calling">help.webex.com article n4cprps</a> — retrieved 2026-10-14. Points at the ordering guide and CA bundle steps.</li>
+<li id="cite-12">Webex Contact Center Architecture — help.webex — article utqcm7 — used only for the cross-track sentence on contact-center PSTN. Full treatment is T3-R01. <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a>.</li>
+<li id="cite-13">Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — certificate trunks required for DI to multi-tenant contact-center support; registration-based trunks no longer supported on that interop. <a href="https://help.webex.com/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-integration">help.webex.com article nmhk7ve</a> — retrieved 2026-10-14.</li>
+
+<li id="cite-14">Enhanced emergency calling for Webex Calling — help.webex — article av6oo3 — <a href="https://help.webex.com/article/av6oo3">help.webex.com article av6oo3</a> — retrieved 2026-10-14. RedSky hosts, port 443, HELD/HELD+, RAY BAUM’S Act Phase 2 (January 2022), Kari’s Law email.</li>
+<li id="cite-15">Configure emergency call notifications in Control Hub — help.webex — article nj0abhbb — <a href="https://help.webex.com/article/nj0abhbb">help.webex.com article nj0abhbb</a> — retrieved 2026-10-14. Disabled by default. Organization path Services → PSTN &amp; Routing → Settings. Location path Management → Locations. Test number 933 does not alert public safety.</li>
+<li id="cite-16">Manage call recording for Webex Calling — help.webex — article nhvl4hw — <a href="https://help.webex.com/article/nhvl4hw">help.webex.com article nhvl4hw</a> — retrieved 2026-10-14. Select the provider before enabling users. The provider procedure says “Webex is the default value” and also “Webex call recording is selected by default for organization and all locations.” A later note in the same procedure says “Dubber is chosen by default, as there is no additional cost to include Dubber Go.” Webex retention one year and 100 GB. Dubber Go 30 days, user portal.</li>
+<li id="cite-17">Emergency Services Settings — developer.webex — <a href="https://developer.webex.com/calling/docs/api/v1/emergency-services-settings">developer.webex.com calling emergency-services-settings</a> — retrieved 2026-10-14. ECBN for extension-only users: location default or another number from that location. Kari’s Law email restated. Endpoint-specific OAuth scopes were not isolated from the site-wide scope catalog.</li>
+<li id="cite-18">Call Control — developer.webex — <a href="https://developer.webex.com/calling/docs/call-control">developer.webex.com calling call-control</a> — retrieved 2026-10-14. telephony_calls events include the recording* names. Scope spark-admin:calls_read. List-events resource convergedRecordings; serviceType is mandatory when that resource is set. <a href="https://developer.webex.com/admin/docs/api/v1/events/list-events">list events</a>.</li>
+<li id="cite-19">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a>.</li>
+<li id="cite-20">Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb — <a href="https://help.webex.com/article/n1ku0vfb">help.webex.com article n1ku0vfb</a>.</li>
+
+<li id="cite-21">Port Reference for Cisco Webex Calling — help.webex — article b2exve — <a href="https://help.webex.com/article/b2exve">help.webex.com article b2exve</a> — retrieved 2026-10-14. Revision history line September 07, 2026 expanded phone signaling source ports from 5060–5080 to 5060–5280. Certificate-trunk signaling destination TCP 5062. Registration-trunk destination TCP 8934. Outbound media from the local gateway uses UDP source 8000–48199 toward 5004, 9000, 8500–8699, and 19560–65535. RedSky hosts api.wxc.e911cloud.com and wxc.e911cloud.com use port 443. b2exve does not name TCP on that row. Do not paste the IP subnet table from memory; the article points at IP Subnets for Webex Calling Services. Government ranges are a different article.</li><li id="cite-22">Provision Emergency Calling in Webex Contact Center — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14. Header September 08, 2024. WebRTC desktops use Control Hub and RedSky. Bundled Cisco PSTN makes RedSky mandatory. Re-checked 2026-10-14 against mwjlgk: the 2025 agent article does not replace these admin steps.</li><li id="cite-23">Provision Emergency Calling in Webex Contact Center for Agents — help.webex — article mwjlgk — <a href="https://help.webex.com/article/mwjlgk">help.webex.com article mwjlgk</a> — retrieved 2026-10-14. Header September 03, 2025. Cirrus host https://wxc.e911cloud.com. Verification email. Does not restate password length, Device User Id, $0 add-on, or 933-then-activate.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Stub</h2>
+<ul>
+<li>Open questions: exact title slide wording for BRKCOL-2312 and BRKCOL-2812; live device-type dropdown versus cm-5770 vendor list; current port-reference article id.</li>
+<li>Firewall ports, IOS-XE minimums, and the t9xctu capacity bands are cited as of 2026-10-14. Still marked in the limits table: live Cisco Calling Plan country list, CCP and LGW country counts, and the cm-5770 Table 5 header as rendered.</li>
+<li>Assets missing: <code>assets/diagrams/T2-R02/arch.svg</code>, <code>assets/diagrams/T2-R02/eco.svg</code>, <code>assets/images/T2-R02/hero.png</code>, screenshots 1–8, <code>assets/audio/T2-R02/*.mp3</code>. The ecosystem mind map is already an inline SVG.</li>
+<li>Ecosystem gaps: the recording article states both defaults and this room now cites both; webhook scopes for emergency settings, ECBN menu labels, CUCM dial-plan crosswalk, and peer PSTN equivalence stay open.</li>
+<li>Ideas for v1.0: a redacted CLI diff that shows only the tenant and dial-peer <em>names</em>, generated from a lab after Architect review. Do not commit live credentials.</li>
+<li>Next review date: 2027-01-15, or sooner if the port reference or Calling Plan country list is updated.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R06-analytics-troubleshooting.html"><span>Previous</span><strong>T1-R06</strong><em>Analytics &amp; Troubleshooting Views</em></a><a class="next" href="T2-R03-dial-plans-pstn-routing.html"><span>Next</span><strong>T2-R03</strong><em>Dial Plans, PSTN &amp; Routing</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>T2-R02 · v0.2 · private draft · not verified</span><a href="T3-R01-wxcc-multitenant-overview.html">T3-R01 WxCC overview</a></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

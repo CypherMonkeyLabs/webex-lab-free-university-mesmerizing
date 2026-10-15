@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T2-R07 · Survivability Gateway">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T2-R07 · Survivability Gateway · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R07" data-room-title="Survivability Gateway" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Survivability Gateway</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Survivability Gateway">
+<defs>
+<linearGradient id="T2R07sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R07sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R07</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Survivability Gateway. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Survivability Gateway">
+<defs>
+<marker id="T2R07arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R07arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R07arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R07arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R07lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">In Active mode, endpoints register to the Webex cloud. When that path fails they register to a Survivability Gateway on the local network and keep basic calling. They return to the cloud after the connection has been back for at least 30 seconds. The gateway listens on port 8933 after <code>mode webex-sgw</code>. IOS XE Dublin 17.12.3 is the feature baseline. Hunt group, call forward, and auto attendant on the gateway start at IOS 17.18.2.</p>
+<div class="meta-row"><span class="meta-chip">Room <strong>T2-R07</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L3</strong></span><span class="meta-chip">Est. time <strong>80–100 min</strong></span><span class="meta-chip">Prereq <strong>T2-R01, T2-R02</strong></span><span class="meta-chip read-chip">Reading <strong>20 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Each site that needs backup calling has a Survivability Gateway on the local network. Third-party devices are not supported. The gateway uses IPv4. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Platform maxima in the July 06, 2026 table include ISR 4321 at 50 endpoints and Catalyst Edge 8200-1N-4T at 2,500. Only the 4321 row states the minimum version, 17.12.3. The prose applies 17.12.3 to the feature set. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>While in survivability mode you can configure up to 100 hunt groups with 32 users each. Weighted hunt routing is not supported in that mode. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Webex App shows a banner. Supported calls include internal extensions, PSTN, outgoing emergency, hold, transfer, inbound caller ID, and shared call appearance. Messaging and meetings are not supported. A Webex Calling call in progress is terminated when the site switches. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Colocation of a local gateway and a survivability gateway on one Cisco IOS box is described in an article dated November 20, 2024. Those sentences stay marked. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Assign the service from Services &gt; Calling &gt; Managed Gateways. The hostname is the certificate FQDN. Devices register to the IPv4 address you enter. Download the template from Services &gt; PSTN &amp; Routing &gt; Gateway configurations &gt; Manage Gateways. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>SIP TLS from devices uses source ports 5060–5080 toward gateway port 8933. Media uses device UDP 19560–19660 toward gateway UDP 8000–14198. The article says these defaults can be customized. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Certificates must be from a publicly known CA. Private or enterprise CAs are not accepted. Wildcard certificates are not supported. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do not configure <code>SIP bind</code> under voice service voip. That causes registration failure. Shared line appearances count toward <code>max-dn</code>. Five phones sharing five DNs count as 25. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If you sign out of Webex App during survivability, you cannot sign in again until the network returns. When the outage ends, a call already up continues unchanged. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Survivability is local registration, not a second cloud. The hunt-group numbers from T2-R05 do not apply while the gateway is in that mode.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Active mode, then the local gateway</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T2-R07/arch.svg -->
+<div class="diagram" role="img" aria-label="Active registration versus survivability registration">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two registration modes">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Where the endpoint registers</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Cloud first. Local gateway after the path fails. Cloud again after 30 seconds.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="90" width="280" height="150" rx="12" fill="#14262a" stroke="#7eb6ff"/><text x="52" y="128">1 · Active mode</text><text x="52" y="156" fill="#b7ad9c" font-size="12">SIP registration to Webex</text><text x="52" y="178" fill="#b7ad9c" font-size="12">Daily sync of calling data</text><text x="52" y="200" fill="#b7ad9c" font-size="12">Cloud writes SGW into config</text>
+<rect x="350" y="90" width="280" height="150" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="366" y="128">2 · Survivability mode</text><text x="366" y="156" fill="#b7ad9c" font-size="12">Register to local IPv4</text><text x="366" y="178" fill="#b7ad9c" font-size="12">Listen port 8933</text><text x="366" y="200" fill="#b7ad9c" font-size="12">Basic backup calling</text>
+<rect x="664" y="90" width="280" height="150" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="680" y="128">3 · Restore</text><text x="680" y="156" fill="#b7ad9c" font-size="12">Link up for 30 seconds</text><text x="680" y="178" fill="#b7ad9c" font-size="12">Register back to the cloud</text><text x="680" y="200" fill="#b7ad9c" font-size="12">In-call Webex App stays up</text>
+<rect x="160" y="270" width="660" height="80" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="176" y="304">4 · PSTN during the outage</text><text x="176" y="328" fill="#b7ad9c" font-size="12">Depends on the local SIP trunk or circuit. VIC or SIP trunk to the ITSP.</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Task flow to assign a survivability gateway">
+<svg viewBox="0 0 980 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five configuration tasks">
+<rect width="980" height="180" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">The article’s task order</text>
+<text x="36" y="76" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Assign the Survivability Gateway service in Control Hub.</text>
+<text x="36" y="104" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Download the config template.  3  Configure licensing.  4  Configure public CA certificates.</text>
+<text x="36" y="132" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  Apply the template, including mode webex-sgw, so the gateway listens on 8933.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>Active</li><li><span class="num">2</span>Survivability</li><li><span class="num">3</span>Restore</li><li><span class="num">4</span>Local PSTN</li></ul>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">flowchart LR
+  Phone[Endpoint] --> Cloud[Webex Calling]
+  Cloud -->|outage| SGW[Survivability Gateway]
+  SGW --> PSTN
+  SGW -->|30 seconds restored| Cloud
+</pre></details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R07/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Mode, scale, and what still works</h2>
+<p>Site survivability for Webex Calling is dated July 06, 2026. The Webex App article is dated April 11, 2026. The colocation article is dated November 20, 2024 and is older than 12 months. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></p>
+<div class="chips"><span class="chip">Active</span><span class="chip">Survivability</span><span class="chip">8933</span><span class="chip">17.12.3</span><span class="chip">IPv4</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T2-R07/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T2-R07/hero.png</code> · Studio draws a phone leaving the cloud for a local IOS gateway.</div>
+<h3>Platform maxima from the July 06, 2026 table</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>Maximum endpoint registrations</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>ISR 4321</td><td>50. Minimum version cell: IOS XE Dublin 17.12.3 or later.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ISR 4331 / 4351</td><td>100 / 700</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ISR 4431 / 4451-X / 4461</td><td>1,200 / 2,000 / 2,000</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Catalyst Edge 8200L-1N-4T / 8200-1N-4T</td><td>1,500 / 2,500</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Catalyst Edge 8300 rows in the table</td><td>2,500 on each listed 8300 model</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Catalyst 8000V small / medium / large</td><td>500 / 1,000 / 2,000</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>What the mode allows</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Topic</th><th>Sentence to keep</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Software</td><td>Survivability Gateway features from IOS XE Dublin 17.12.3. Hunt group, call forward, and auto attendant from IOS 17.18.2.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phones</td><td>MPP models in the article’s endpoint table, minimum 12.0(1). 8875 uses Phone OS 3.2 or later. 9800 uses PhoneOS 3.2(1). Conference 7832 and 8832 minimum 12.0(1). Webex App Windows and Mac 43.2.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analog</td><td>VG400, VG410, and VG420 ATA minimum 17.16.1a. ATA 191 and 192 minimum 11.3(1).</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App calls</td><td>Internal extensions, incoming and outgoing PSTN, outgoing emergency, hold and resume, transfer, inbound caller ID name and number, shared call appearance.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Not in the app</td><td>Messaging, meetings, and other calling services. Hover text says the service is unavailable.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Softkeys</td><td>Park, Unpark, Barge, Pickup, Group Pickup, and Call Pull are not supported and do not appear disabled.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Shared lines</td><td>They ring all devices. Remote line state, hold, resume, synchronized DND, and call-forward settings are not available.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hunt groups in this mode</td><td>Up to 100 groups, 32 users each. Weighted routing is not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Sync</td><td>Calling information, including authentication and routing, syncs daily. An on-demand sync status in Control Hub can take up to 30 minutes.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Certificates, ports, and colocation</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Rule</th><th>Detail</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>CA</td><td>Publicly known CA only. Wildcard not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Trustpool</td><td>The article names import of the Cisco union bundle. Use the core bundle only when a local gateway is colocated. Read the command block in the article before you paste it.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud management</td><td>HTTPS from the connector to Webex on 443 and 8433.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>PSTN ports</td><td>SIP from the gateway’s ephemeral port to the ITSP on 5060, TCP or UDP. Media UDP 8000–48198 toward an ephemeral ITSP port.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>NTP and DNS</td><td>UDP 123 and UDP 53.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Codecs</td><td>Different codecs on a transfer are not supported. IOS will not invoke a transcoder for TCL applications.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Colocation</td><td>The same Cisco IOS gateway can be local gateway and survivability gateway. In Control Hub it is provisioned as Survivability Gateway. Third-party local gateways deploy survivability separately. <mark class="recheck">re-check</mark></td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>B-ACD</td><td>B-ACD with a colocated survivability gateway and local gateway is not supported.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Keep enterprise significant numbers unique across physical locations. The article ties that to failover and traceability. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>A phone on 4G or 5G, such as Webex App on a mobile or tablet, may still reach Webex during the outage and then be unable to call other numbers at the same site. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Control Hub hunt groups</span><p>The 1,000-agent patterns live in T2-R05. In survivability mode the article’s limit is 100 groups of 32 users, and weighted routing is absent. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R07">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R07map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R07map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Active mode</dt><dd>Endpoints register to the Webex cloud for SIP. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Survivability mode</dt><dd>Endpoints register to the local Survivability Gateway and use basic backup calling. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Survivability Gateway</dt><dd>An IOS XE router on the local network that takes registrations when the cloud path is down. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>mode webex-sgw</dt><dd>The configuration mode after which the gateway listens on port 8933. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>max-dn</dt><dd>The directory-number limit on the router. Shared appearances count. Five phones sharing five DNs count as 25. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>FQDN hostname</dt><dd>The certificate name entered in Control Hub. It can be a Subject Alternative Name. DNS population is not mandatory for the secure connection. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Colocation</dt><dd>Local gateway and survivability gateway services on one Cisco IOS device. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>B-ACD</dt><dd>Basic automatic call distribution on the gateway, with auto-attendant and one call-queue service. Colocation with a local gateway is not supported for this service. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T2-R07/eco.svg -->
+<div class="diagram" role="img" aria-label="Survivability sisters"><svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Sisters of a local registrar</text>
+<text x="36" y="74" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Control Hub assignment · public CA · IOS license</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Local PSTN trunk or VIC · unique ESNs</text>
+<text x="36" y="138" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Webex App banner · MPP and Room phone minimums</text>
+<text x="36" y="170" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Local gateway colocation on Cisco IOS · Unified SRST on the same box</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((SGW))
+    Active mode
+    Survivability mode
+    Certificates
+    PSTN
+    Webex App
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Local gateway</td><td>The PSTN bridge from T2-R02. It can share a Cisco IOS chassis with survivability.</td><td>Control Hub service type must be Survivability Gateway for that colocation.</td><td>Unassign a local-gateway service and reassign. <mark class="recheck">re-check</mark></td><td>Leaving the gateway typed only as a local gateway.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>PSTN</td><td>VIC or a SIP trunk to the ITSP.</td><td>External calls during the outage depend on that path.</td><td>Dial peers and voice class tenant in the article’s samples.</td><td>No trunk, so only internal extensions work.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Certificates</td><td>Public CA, no wildcard, no private CA.</td><td>Endpoints will not form the TLS session otherwise.</td><td>Trustpoint whose FQDN you type in Control Hub.</td><td>An enterprise CA or a wildcard name.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phones</td><td>MPP, 8875, 9800, conference phones, Webex App, ATAs, at the versions in the table.</td><td>Older loads are outside the article’s minimums.</td><td>Endpoint firmware before the test.</td><td>A third-party phone, which is not supported.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App</td><td>Banner, reduced feature set, sign-in lock after sign-out.</td><td>Users see the mode. Messaging does not follow.</td><td>No extra user toggle in the app article.</td><td>Expecting meetings during the outage.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Hunt groups</td><td>Control Hub caps are T2-R05. This mode is 100 by 32, no weighted.</td><td>A design that copies the cloud cap will not match the gateway.</td><td>voice hunt-group on the router, from IOS 17.18.2.</td><td>Weighted routing in survivability mode.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency</td><td>Outgoing emergency calls are in the Webex App supported list.</td><td>They still need the local PSTN path.</td><td>Outbound dial peers.</td><td>Emergency promised with no ITSP trunk.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unified SRST</td><td>The article says colocation with Unified SRST on the same gateway is possible and points at the SRST administration guide.</td><td>A different fallback product can share the router.</td><td>That guide, not this room’s command list.</td><td>Mixing SRST commands into the Webex template without that guide.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Endpoint</td><td>Webex cloud</td><td>SIP registration in Active mode</td><td>Normal calling</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud</td><td>Device config</td><td>Daily sync</td><td>Gateway IP, hostname, and port</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Endpoint</td><td>Survivability Gateway</td><td>SIP TLS to port 8933</td><td>Registration during the outage</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Endpoint</td><td>Gateway</td><td>SRTP UDP</td><td>Media, default ports in the table</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Gateway</td><td>ITSP</td><td>SIP 5060 and media</td><td>PSTN calls during the outage</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Connector</td><td>Webex</td><td>HTTPS 443 and 8433</td><td>Cloud management</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Control Hub</td><td>Gateway record</td><td>Assign service</td><td>Location, certificate FQDN, IPv4</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App</td><td>User</td><td>Banner</td><td>Mode indication. In-progress Webex Calling calls end when the switch happens.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Survivability edges"><svg viewBox="0 0 980 80" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="80" fill="#0c121c"/><text x="28" y="32" fill="#7eb6ff" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="58" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Phones register to the cloud, then to port 8933, then back after 30 seconds.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Unified SRST can share the gateway. The article points at the Cisco Unified SRST Administration Guide for that colocation. A third-party SBC used as a local gateway does not become the survivability registrar. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Hunt group, call forward, and auto attendant on the gateway require IOS 17.18.2, which is later than the 17.12.3 feature baseline. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Canon planning: record platform maximum, IOS version, and whether weighted hunt groups are required in an outage. If they are, survivability mode does not provide that pattern.</li>
+<li>The November 20, 2024 colocation article includes an encryption-scheme note tied to September 1, 2024. Re-read it before you treat that date as an open action. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Phones never register to the gateway</td><td><code>SIP bind</code> under voice service voip, or a non-public certificate.</td><td>The voice service stanza and the trustpoint.</td><td>Remove that bind. Use a public CA and no wildcard.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A mobile Webex App can reach the cloud and not the site</td><td>4G or 5G may keep the app on Webex.</td><td>The network the app is using.</td><td>The article describes that split. Site phones are on the gateway. The mobile app may not be.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Colocation was configured while Control Hub still says Local Gateway</td><td>The gateway must be assigned as Survivability Gateway.</td><td>The service field.</td><td>Unassign and reassign. <mark class="recheck">re-check</mark></td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From assignment to a restored registration</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Managed Gateways</td><td>Control Hub</td><td>Assign Survivability Gateway, locations, certificate FQDN, IPv4.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Admin</td><td>Laptop</td><td>Download template</td><td>PSTN &amp; Routing &gt; Gateway configurations.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Router</td><td>License</td><td>IOS boot level</td><td>uck9 and securityk9 on ISR 4000. Network Advantage examples on Catalyst 8000.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Router</td><td>Public CA</td><td>Certificate</td><td>No private CA. No wildcard.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Router</td><td>Endpoints</td><td>mode webex-sgw, port 8933</td><td>SIP TLS from device ports 5060–5080.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Cloud</td><td>Phones</td><td>Daily sync</td><td>IP, hostname, and port land in the device config.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Outage</td><td>Local registration</td><td>SIP to the IPv4 address</td><td>Webex App shows a banner. An in-progress Webex Calling call ends.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>8</td><td>Link restored</td><td>Cloud</td><td>30 seconds</td><td>Registrations return. A call already on the app continues.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths and the router order</h2>
+<ol>
+<li>If the gateway is not in Control Hub, enroll it first. The survivability article points at the enroll-IOS-gateways article. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open Services &gt; Calling &gt; Managed Gateways. Select the gateway. If the service is empty, click Assign Service and choose Survivability Gateway. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Select one or more locations. Enter the certificate FQDN as the host name and the IPv4 address phones will register to. Click Assign. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Download the template from Services &gt; PSTN &amp; Routing &gt; Gateway configurations &gt; Manage Gateways. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On an ISR 4000, the article’s license example is <code>license boot level uck9</code> and <code>license boot level securityk9</code>. Catalyst 8200 and 8300 examples use DNA Network Advantage and a crypto throughput. Catalyst 8000V examples use a throughput level. Throughput above 250 Mbps needs an HSEC license. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Install a public CA certificate. Do not use a wildcard or a private CA. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Apply the mandatory lines from the template, including <code>mode webex-sgw</code>. The gateway then listens on 8933. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Leave <code>SIP bind</code> unset under voice service voip. Set <code>max-dn</code> to the platform maximum and count shared appearances. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For external calls, add a VIC or a SIP trunk. PSTN during the outage depends on that path. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<!-- VISUAL:screenshot:managed-gateways | Studio | assets/images/T2-R07/gateways.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles. Router command blocks stay in the Cisco article rather than a shortened paste.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Values the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Restore wait</td><td>At least 30 seconds of restored connectivity</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header July 06, 2026.</td></tr>
+<tr><td>Feature IOS</td><td>17.12.3. Hunt group, call forward, and AA from 17.18.2.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>SIP TLS port</td><td>8933. Device source 5060–5080.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted defaults, customizable</td></tr>
+<tr><td>ISR 4321 / 8200-1N-4T</td><td>50 / 2,500 endpoints</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted from the platform table</td></tr>
+<tr><td>Survivability hunt groups</td><td>100 groups, 32 users, no weighted routing</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Different from T2-R05.</td></tr>
+<tr><td>On-demand sync status</td><td>Up to 30 minutes</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Address family</td><td>IPv4. IPv6 is not supported.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Webex App during the mode</td><td>Banner. Messaging and meetings unsupported. Sign-in blocked after sign-out.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header April 11, 2026.</td></tr>
+<tr><td>Colocation header</td><td>November 20, 2024</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Eight survivability failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Endpoints fail to register</td><td><code>SIP bind</code> is set under voice service voip.</td><td>The voice service configuration.</td><td>Remove that command.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>TLS never completes</td><td>Private CA or a wildcard certificate.</td><td>The trustpoint.</td><td>Use a public CA certificate without a wildcard.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phones do not return after a short blip</td><td>Restore requires the connection for at least 30 seconds.</td><td>How long the path has been up.</td><td>Wait for that interval.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>An in-progress Webex Calling call drops as the site fails</td><td>The app article says that call is terminated when the site switches.</td><td>Whether the call was up at the switch.</td><td>That is the documented behavior. A call up at restore continues.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>The user signed out and cannot return</td><td>Sign-in waits until the network is restored.</td><td>The banner and the WAN.</td><td>Restore the path, then sign in.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Weighted hunt groups do nothing in the outage</td><td>Weighted routing is not supported in survivability mode.</td><td>The pattern in Control Hub versus the mode.</td><td>Plan a supported pattern for the outage. The cloud cap is a different article.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Shared lines exceed max-dn</td><td>Each appearance counts. Five phones and five DNs count as 25.</td><td>The max-dn value.</td><td>Set the platform maximum and count appearances.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>External calls fail while extensions work</td><td>PSTN depends on the local trunk or circuit.</td><td>Dial peers and the ITSP path.</td><td>Add the VIC or SIP trunk the article describes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>Where do endpoints register in Active mode?</summary><p class="answer">To the Webex cloud. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>Where do they register in Survivability mode?</summary><p class="answer">To the local Survivability Gateway. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How long must the cloud path be back?</summary><p class="answer">At least 30 seconds. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which port does the gateway listen on after mode webex-sgw?</summary><p class="answer">8933. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What IOS starts the feature set?</summary><p class="answer">IOS XE Dublin 17.12.3. Hunt group, call forward, and auto attendant start at 17.18.2. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many endpoints on an ISR 4321?</summary><p class="answer">50. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What certificate types are refused?</summary><p class="answer">Private or enterprise CAs, and wildcard certificates. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What hunt-group cap applies in this mode?</summary><p class="answer">100 groups, 32 users each. Weighted routing is not supported. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does Webex App support during the outage?</summary><p class="answer">Internal extensions, PSTN in and out, outgoing emergency, hold and resume, transfer, inbound caller ID, and shared call appearance. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What happens to a live Webex Calling call when the site switches?</summary><p class="answer">That call is terminated. A call that is up when the outage ends continues. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>How do five shared DNs on five phones count?</summary><p class="answer">As 25 toward max-dn. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Can a third-party phone use the gateway?</summary><p class="answer">Third-party devices are not supported. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper failover, no production router</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: for one site, name the mode, the listen port, the platform maximum, and two features that stop.</label></li>
+<li><label><input type="checkbox"> Prereq: T2-R01 and this room. Do not load a production gateway.</label></li>
+<li><label><input type="checkbox"> Step 1. Phones are registered to Webex. Expected: Active mode.</label></li>
+<li><label><input type="checkbox"> Step 2. The WAN drops. Expected: local registration, Webex App banner, messaging unavailable.</label></li>
+<li><label><input type="checkbox"> Step 3. The WAN returns for 10 seconds. Expected: the article’s restore wait is 30 seconds.</label></li>
+<li><label><input type="checkbox"> Step 4. The platform is an ISR 4321. Expected: 50 endpoints, and 17.12.3 in that row.</label></li>
+<li><label><input type="checkbox"> Step 5. The design needs weighted hunt groups during the outage. Expected: not supported in this mode.</label></li>
+<li><label><input type="checkbox"> Evidence: the five answers with cites.</label></li>
+<li><label><input type="checkbox"> Break it: plan IPv6 on the gateway. Recovery: IPv4 only.</label></li>
+<li><label><input type="checkbox"> Reflection: which sites have a PSTN trunk that would still be up if the WAN to Webex failed.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Restore interval?</p><details><summary>Answer</summary><p class="answer">At least 30 seconds. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Listen port after mode webex-sgw?</p><details><summary>Answer</summary><p class="answer">8933. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Baseline IOS for the feature set?</p><details><summary>Answer</summary><p class="answer">IOS XE Dublin 17.12.3. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>ISR 4321 endpoint maximum?</p><details><summary>Answer</summary><p class="answer">50. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Survivability-mode hunt groups?</p><details><summary>Answer</summary><p class="answer">Up to 100 groups, 32 users each. Weighted is not supported. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Which address family?</p><details><summary>Answer</summary><p class="answer">IPv4. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>A user signs out of Webex App during the outage.</p><details><summary>Answer</summary><p class="answer">They cannot sign in again until the network is restored. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>What happens to a Webex Calling call when failover starts?</p><details><summary>Answer</summary><p class="answer">The call is terminated. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Are third-party devices supported?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Five phones share five DNs. How many max-dn?</p><details><summary>Answer</summary><p class="answer">25. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Where do you assign the service?</p><details><summary>Answer</summary><p class="answer">Services &gt; Calling &gt; Managed Gateways, service type Survivability Gateway. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Draw Active, Survivability, and the 30-second return.</p><details><summary>Answer</summary><p class="answer">Active is cloud SIP. Survivability is local registration on 8933 with basic calling. After 30 seconds of restored connectivity, registration returns to the cloud. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Explain Active mode, local registration on 8933, and the 30-second return to the cloud." | assets/audio/T2-R07/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk platform maxima, public CA, hunt groups of 32, and the Webex App banner." | assets/audio/T2-R07/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 17.12.3, IPv4, no wildcard, 100 by 32, sign-in lock." | assets/audio/T2-R07/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Phones register to Webex until the path fails, then to a local Survivability Gateway on port 8933. They return after the link has been up for 30 seconds. The gateway is IPv4, IOS XE 17.12.3 or later, and it does not take third-party phones.</p>
+<p><strong>2 minutes.</strong> I assign the service on Managed Gateways with the certificate FQDN and the IPv4 address. I download the template, license the platform, and use a public CA without a wildcard. <code>mode webex-sgw</code> opens 8933. I do not set SIP bind under voice service voip. Shared appearances count toward max-dn. In that mode I can have 100 hunt groups of 32 users and I cannot use weighted routing. Webex App shows a banner and keeps basic calls, including outgoing emergency if the local PSTN path is up. Messaging and meetings stop. A call that is up when failover starts is torn down. A call that is up when service returns stays up. If the user signs out, they wait for the network.</p>
+<p><strong>30 seconds, scale.</strong> An ISR 4321 is 50 endpoints. A Catalyst Edge 8200-1N-4T is 2,500. Those numbers are registrations in the survivability table, not the Control Hub hunt-group caps.</p>
+<p><strong>2 minutes, what I will not merge.</strong> I will not quote the November 2024 colocation article without a re-check. I will not put survivability on a third-party SBC. I will not promise meetings. I will not treat a 10-second WAN recovery as the restore timer.</p>
+<p><strong>What you will say about PSTN.</strong> Internal extensions can work on the gateway. External calls need the VIC or the SIP trunk that is still available at the site.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Site survivability for Webex Calling — help.webex — article d68vi1 — <a href="https://help.webex.com/article/d68vi1">help.webex.com article d68vi1</a> — header July 06, 2026 — retrieved 2026-10-14. Active and survivability modes, 30-second restore, platform table, ports, 8933, certificates, task flow, max-dn, IPv4, hunt groups 100 by 32, IOS versions, endpoint minimums.</li>
+<li id="cite-2">Webex App | Site survivability — help.webex — article dgjdi9 — <a href="https://help.webex.com/article/dgjdi9">help.webex.com article dgjdi9</a> — header April 11, 2026 — retrieved 2026-10-14. Banner, supported call list, messaging and meetings unsupported, in-progress call terminated, sign-in lock, call continues when the outage ends.</li>
+<li id="cite-3">Colocation of Local Gateway and Site Survivability on Cisco IOS Managed Gateways — help.webex — article w0qmeu — <a href="https://help.webex.com/article/w0qmeu">help.webex.com article w0qmeu</a> — header November 20, 2024 — retrieved 2026-10-14. <mark class="recheck">re-check</mark>. Same IOS gateway for both services. Provision as Survivability Gateway. Third-party local gateways deploy survivability separately. High availability is not supported for local gateways in that article.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: whether w0qmeu’s November 20, 2024 colocation limits are unchanged.</li>
+<li>Facts still TODO-verify: 0. Colocation sentences are <mark class="recheck">re-check</mark>.</li>
+<li>Assets missing: Managed Gateways screenshot, audio, a full endpoint-model plate copied only after the table is re-read line by line.</li>
+<li>Ideas for v1.0: a mode card with port 8933 on one side and the 30-second restore on the other.</li>
+<li>Next review: when d68vi1 changes a platform maximum or the hunt-group limit in survivability mode.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T2-R06-calling-security-compliance.html"><span>Previous</span><strong>T2-R06</strong><em>Calling Security &amp; Compliance</em></a><a class="next" href="../tracks/T2/index.html"><span>Next</span><strong>T2</strong><em>Calling track</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

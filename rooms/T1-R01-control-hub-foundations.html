@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T1-R01 · Control Hub Foundations · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T1" data-room="T1-R01" data-room-title="Control Hub Foundations" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T1</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T1/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T1 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T1 · Control Hub &amp; Platform Foundations</p>
+<h1>Control Hub Foundations</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Control Hub Foundations">
+<defs>
+<linearGradient id="T1R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T1R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T1-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Admin</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Identity</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Services</text></g>
+</svg>
+<figcaption>Illustrated scene for Control Hub Foundations. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Control Hub Foundations">
+<defs>
+<marker id="T1R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Admin → Control Hub → Identity → Services</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Services</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T1R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T1R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T1R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T1R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Admin → Control Hub → Identity → Services. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">The organization is the boundary. Control Hub is the console where users, roles, locations, services, and devices are made real. Every later room assumes this map.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T1-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.2</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L1</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>none</strong></span>
+<span class="meta-chip read-chip">Reading <strong>28 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Control Hub is the single dashboard Cisco documents for managing users, permissions, calling, meetings, messaging, and devices. <a class="cite" href="#cite-1">[cite:1]</a></li><li>The first sign-in can start a setup wizard; accepting terms creates the organization, and the activation email address is the sign-in identity used to set the administrator password. <a class="cite" href="#cite-1">[cite:1]</a></li><li>People you add start with no administrative privileges. A full administrator assigns prebuilt roles, and can also assign roles to groups. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Locations organize users and workspaces by a physical address and are also where calling is anchored. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Control Hub is the single dashboard Cisco documents for managing users, permissions, calling, meetings, messaging, and devices. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The first sign-in can start a setup wizard; accepting terms creates the organization, and the activation email address is the sign-in identity used to set the administrator password. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>People you add start with no administrative privileges. A full administrator assigns prebuilt roles, and can also assign roles to groups. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Locations organize users and workspaces by a physical address and are also where calling is anchored. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Service settings live under Services; organization-wide branding, support redirection, and single sign-on are organization settings. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interview answers and project designs both fail when “admin” is treated as one role. This room is the vocabulary for T2 PSTN location choice, T3 contact-center service administration, and any later partner-versus-customer argument.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>What sits inside one organization</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T1-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Control Hub organization map">
+<svg viewBox="0 0 980 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Control Hub organization map">
+<rect width="980" height="460" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Organization boundary</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">admin.webex.com · Control Hub · one customer org</text>
+<rect x="24" y="78" width="620" height="300" rx="16" fill="none" stroke="#3ecfb2" stroke-dasharray="6 4"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="48" y="110" width="180" height="78" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="62" y="140">1 · Overview</text>
+<text x="62" y="162" fill="#b7ad9c" font-size="12">licenses, alerts</text>
+<rect x="250" y="110" width="180" height="78" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="264" y="140">2 · Users &amp; roles</text>
+<text x="264" y="162" fill="#b7ad9c" font-size="12">Management → Users</text>
+<rect x="452" y="110" width="170" height="78" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="466" y="140">3 · Locations</text>
+<text x="466" y="162" fill="#b7ad9c" font-size="12">address + calling</text>
+<rect x="48" y="214" width="180" height="78" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="62" y="244">4 · Services</text>
+<text x="62" y="266" fill="#b7ad9c" font-size="12">Calling, Meetings…</text>
+<rect x="250" y="214" width="180" height="78" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="264" y="244">5 · Devices</text>
+<text x="264" y="266" fill="#b7ad9c" font-size="12">users or workspaces</text>
+<rect x="452" y="214" width="170" height="78" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="466" y="244">6 · Org settings</text>
+<text x="466" y="266" fill="#b7ad9c" font-size="12">brand, SSO, support</text>
+</g>
+<rect x="680" y="110" width="270" height="200" rx="16" fill="#14110c" stroke="#e0b07a"/>
+<text x="700" y="146" fill="#e0b07a" font-family="Georgia, serif" font-size="16">Outside the org console</text>
+<text x="700" y="178" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">Partner Hub</text>
+<text x="700" y="200" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">partner manages many orgs</text>
+<text x="700" y="232" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">Common Identity sign-in</text>
+<text x="700" y="254" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">the admin password lives here</text>
+<text x="700" y="286" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="13">Webex App / devices</text>
+<path d="M620 150 H670" stroke="#3ecfb2" fill="none"/>
+<path d="M620 250 H670" stroke="#e0b07a" fill="none"/>
+<text x="28" y="420" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Numbers match the config and flow sections. Dashed frame is the customer organization, not Cisco’s whole cloud.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Overview of active services</li>
+<li><span class="num">2</span>Users, licenses, roles</li>
+<li><span class="num">3</span>Locations as the place anchor</li>
+<li><span class="num">4</span>Per-service settings</li>
+<li><span class="num">5</span>Devices and workspaces</li>
+<li><span class="num">6</span>Organization settings</li>
+</ul>
+<details>
+<summary>Mermaid source (offline SVG above is the picture; no Mermaid engine is loaded)</summary>
+<pre class="mermaid">flowchart TB
+  subgraph org [Customer organization]
+    OV[1 Overview]
+    US[2 Users and roles]
+    LO[3 Locations]
+    SV[4 Services]
+    DV[5 Devices]
+    ST[6 Organization settings]
+  end
+  PH[Partner Hub]
+  CI[Common Identity]
+  PH -. manages many orgs .-> org
+  CI --> US
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T1-R01/arch.svg</code></p>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>The admin mental model</h2>
+<p>Cisco’s own overview calls Control Hub the central interface to manage the organization, users, services, and usage analytics, and says the first screen is an overview of services that are active or available. <a class="cite" href="#cite-5">[cite:5]</a> Treat that sentence as the product boundary: if a task is “change how Webex works for this customer,” the documented front door is this console, signed in at <code>https://admin.webex.com</code> when you are deleting or managing calling locations. <a class="cite" href="#cite-4">[cite:4]</a></p>
+<div class="chips" aria-label="Glossary">
+<span class="chip">organization</span>
+<span class="chip">full administrator</span>
+<span class="chip">location</span>
+<span class="chip">workspace</span>
+<span class="chip">service</span>
+<span class="chip">license</span>
+<span class="chip">Partner Hub</span>
+<span class="chip">custom role</span>
+</div>
+<!-- VISUAL:concept-image | Studio | assets/images/T1-R01/hero.png -->
+<div class="shot">VISUAL placeholder · concept image · <code>assets/images/T1-R01/hero.png</code> · Studio draws the org as a building: floors are locations, badges are roles, rooms are workspaces.</div>
+
+<h3>Objects you can point at</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Object</th><th>What the docs say it is</th><th>Where you touch it</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Organization</td><td>Created after you accept terms. The activation email is also the sign-in used to set the administrator password.</td><td>First-time wizard, then Organization settings</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>User</td><td>A person in the org. Status shows whether the account was activated. New users have no admin privileges.</td><td>Management → Users</td><td><a href="#cite-5">[cite:5]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Role</td><td>The privilege level in Control Hub. Full administrators can assign one or more roles.</td><td>User summary → Administrator roles</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location</td><td>Organizes users and workspaces by a physical location identified by an address. Calling and workspace management can share one location.</td><td>Documented calling path: Management → Location</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Workspace</td><td>A place such as a lunch room or lobby. You add a name, optional type and capacity, then devices and services.</td><td>Management → Workspaces</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Device</td><td>Assigned to a user or a workspace. Control Hub generates an activation code that is entered on the device.</td><td>Devices</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Service</td><td>Messaging, Meetings, or Webex Calling, when provisioned. Configure under Services → the service → Settings.</td><td>Services</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>Prebuilt organization roles worth memorizing</h3>
+<p>The role article lists why you assign each prebuilt role. This table is a study compression of that article, not a second source. Privileges that are easy to over-claim in an interview are called out in the notes column.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Role</th><th>Documented intent</th><th>Do not invent beyond this</th></tr></thead>
+<tbody>
+<tr><td>Full administrator</td><td>Access to every aspect of how the organization is run: users, licenses, policy templates, organization settings. <a href="#cite-2">[cite:2]</a></td><td>Cannot simultaneously hold location administrator. Cannot assign Advanced Troubleshooting Access to themselves. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Read-only administrator</td><td>View and monitor all areas. No organizational changes. <a href="#cite-2">[cite:2]</a></td><td>Cannot be combined with a custom role or location administrator. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Support administrator</td><td>Analytics, reports, troubleshooting tools, and organization support cases. <a href="#cite-2">[cite:2]</a></td><td>Not a full admin with a friendlier name.</td></tr>
+<tr><td>User and device administrator</td><td>Add and manage users, set up devices, assign the location administrator role. Cannot assign other administrator roles. <a href="#cite-2">[cite:2]</a></td><td>The article states they can’t administer Webex Calling. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Device administrator</td><td>Register or deregister devices and phone numbers, activation codes, workspaces. <a href="#cite-2">[cite:2]</a></td><td>Same Calling limitation: can’t administer Webex Calling. <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Compliance officer</td><td>User-generated content via Events API and eDiscovery; can override default retention for legal hold. <a href="#cite-2">[cite:2]</a></td><td>This is content access, not “read all admin settings.”</td></tr>
+<tr><td>Security activity administrator</td><td>Helps full admins monitor organization-setting changes and troubleshoot Calling and meeting logs. Audit log access is marked for this role. <a href="#cite-2">[cite:2]</a></td><td>The matrix shows troubleshooting access, not user-create rights.</td></tr>
+<tr><td>Location administrator</td><td>Delegated administration of certain services in locations. <a href="#cite-2">[cite:2]</a></td><td>Exclusive. It cannot be combined with other administrator roles, including custom roles. <a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>Navigation you can defend in a design review</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Job</th><th>Path as written in help</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>See whether services are on</td><td>Overview after sign-in</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Configure a provisioned service</td><td>Services → select the service → Settings</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Assign roles to a person</td><td>Management → Users → user → Summary → Administrator roles</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Assign roles to a group</td><td>Groups → Webex groups → group → Assignments → Assign roles</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Add a calling location</td><td>Management → Location, then name, country, address, languages, time zone</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Add a workspace</td><td>Management → Workspaces</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Brand and support redirect</td><td>Management → Organization Settings → Branding, or Help and support</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Devices list, org-wide settings, software channel</td><td>Devices page: list, Settings tab, Software tab, then a device details page</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Locations and floors via API</td><td>Help points admins at <code>/v1/locations</code> and the workspace-locations API on developer.webex.com</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-7">[cite:7]</a></td></tr>
+</tbody>
+</table></div>
+
+<div class="callout tip"><span class="label">Tip</span><p>When someone says “the admin,” ask which role. Full administrator, user and device administrator, and location administrator are three different keys. The Calling limitation on device-centric roles is the one most often missed in design workshops. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>Redirecting user support (Organization Settings → Help and support) sends users to your URLs and stops them opening TAC cases through Support Case Manager, the Webex Chat Assistant, or a phone call. The article says this does <em>not</em> apply to Webex organization administrators. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Partner versus customer</span><p>On first setup, the administrator from the partner organization becomes the full administrator and can create more administrators. If a partner is managing the org, delegated partner administrator access can also be present. Reviewing that access is a separate article from the role matrix. <a class="cite" href="#cite-2">[cite:2]</a> Partner Hub itself is named as the place for administrators who manage multiple customer organizations. <a class="cite" href="#cite-2">[cite:2]</a> Article 16gmxfb (July 30, 2026) names partner full administrator, partner administrator, partner read-only administrator, Help Desk administrator (Basic), and Help Desk administrator (Advanced). A partner full administrator can assign the first three. Provisioning administrator is implicit when a partner admin or partner full admin launches into a customer Control Hub. The article is that list, not a claim that no other role exists outside it. <a class="cite" href="#cite-14">[cite:14]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T1-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Services</text>
+<circle cx="200" cy="132" r="36" fill="url(#T1R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T1R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p>Control Hub is the console. The sisters around it are identity, sign-in, licensing, and analytics. This section names those neighbors before the flow section trusts a click-path. Peer-vendor names are orientation labels, not feature parity. <a href="../ecosystem.html">The hub ecosystem map</a> is the cross-track picture; it does not replace this section.</p>
+
+<h3 class="eco-sub">Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Control Hub</dt><dd>The central interface Cisco documents for the organization, users, services, and usage analytics. Calling location tasks sign in at <code>https://admin.webex.com</code>. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>Webex identity</dt><dd>The identity service the SSO guides configure. An IdP assertion has to land on a user Webex already knows. The SSO article’s contents name “Configure Webex Identity Service.” <a class="cite" href="#cite-10">[cite:10]</a></dd></div>
+<div class="term"><dt>uid</dt><dd>The SAML claim org SSO maps. You may map userPrincipalName, an email alias, or another attribute to <code>uid</code>, and the IdP must match one of the user’s email addresses to that <code>uid</code> at sign-in. <a class="cite" href="#cite-10">[cite:10]</a></dd></div>
+<div class="term"><dt>Partner SSO</dt><dd>Service-provider SSO for customer orgs that partner manages. The IdP claim includes the <code>mail</code> attribute rather than <code>uid</code>. <a class="cite" href="#cite-10">[cite:10]</a></dd></div>
+<div class="term"><dt>Directory Connector</dt><dd>The on-premises connector you download from Control Hub to provision Active Directory users into the org. It has a Windows and Active Directory requirements section. <a class="cite" href="#cite-9">[cite:9]</a></dd></div>
+<div class="term"><dt>SCIM</dt><dd>A REST API that keeps the user list in sync when someone is created, updated, or removed in the Entra application. No on-premises connector. <a class="cite" href="#cite-11">[cite:11]</a></dd></div>
+<div class="term"><dt>SCIM tenant URL</dt><dd>Commercial Webex uses <code>https://webexapis.com/identity/scim/OrgId/v2</code>. Webex for Government uses <code>https://api-usgov.webex.com/identity/scim/OrgId/v2</code>. <a class="cite" href="#cite-11">[cite:11]</a></dd></div>
+<div class="term"><dt>Entra ID Wizard</dt><dd>The Control Hub wizard path that can synchronize groups, rooms, and avatars. SCIM 1.1 cannot. SCIM 2.0 can synchronize users and groups, and still not rooms or avatars. <a class="cite" href="#cite-11">[cite:11]</a></dd></div>
+<div class="term"><dt>License</dt><dd>What you administer to users from the Control Hub overview once a service is provisioned. SKU names for a given subscription stay in the licensing room. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Analytics window</dt><dd>A standard customer can access 3 months of analytics data. A Pro Pack customer can access 13 months. <a class="cite" href="#cite-12">[cite:12]</a></dd></div>
+<div class="term"><dt>SP-initiated SSO</dt><dd>The ADFS guide says not to test SSO from the IdP interface. It says Webex only supports service-provider-initiated flows, and the Control Hub SSO test is the test. <a class="cite" href="#cite-13">[cite:13]</a></dd></div>
+<div class="term"><dt>Partner Hub</dt><dd>The console named for administrators who manage multiple customer organizations. It is not the customer org’s Control Hub. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+</dl>
+
+<h3 class="eco-sub">Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T1-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Mind map of Control Hub and sister technologies">
+<svg viewBox="0 0 980 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of Control Hub and sister technologies">
+<rect width="980" height="520" fill="#0c121c"/>
+<text x="28" y="34" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Control Hub and its sisters</text>
+<text x="28" y="56" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Identity, sign-in, licenses, analytics. Dashed nodes are orientation, not parity.</text>
+<rect x="380" y="210" width="220" height="78" rx="16" fill="#14262a" stroke="#3ecfb2" stroke-width="2"/>
+<text x="490" y="244" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="18">Control Hub</text>
+<text x="490" y="266" text-anchor="middle" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">one customer organization</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="96" width="250" height="92" rx="12" fill="#14110c" stroke="#3ecfb2"/>
+<text x="52" y="126">Directory Connector</text>
+<text x="52" y="148" fill="#b7ad9c" font-size="12">Windows, Active Directory</text>
+<text x="52" y="168" fill="#b7ad9c" font-size="12">download from Control Hub</text>
+<rect x="36" y="320" width="250" height="92" rx="12" fill="#14110c" stroke="#3ecfb2"/>
+<text x="52" y="350">SCIM 2.0 / Entra</text>
+<text x="52" y="372" fill="#b7ad9c" font-size="12">REST, no on-prem connector</text>
+<text x="52" y="392" fill="#b7ad9c" font-size="12">groups yes on 2.0, no on 1.1</text>
+<rect x="694" y="96" width="250" height="92" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="710" y="126">Licenses</text>
+<text x="710" y="148" fill="#b7ad9c" font-size="12">overview assigns services</text>
+<text x="710" y="168" fill="#b7ad9c" font-size="12">SKU names: later room</text>
+<rect x="694" y="320" width="250" height="92" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="710" y="350">Analytics</text>
+<text x="710" y="372" fill="#b7ad9c" font-size="12">standard 3 months</text>
+<text x="710" y="392" fill="#b7ad9c" font-size="12">Pro Pack 13 months</text>
+<rect x="365" y="400" width="250" height="78" rx="12" fill="#14110c" stroke="#3ecfb2"/>
+<text x="381" y="430">SSO · SAML</text>
+<text x="381" y="452" fill="#b7ad9c" font-size="12">org uid · partner mail</text>
+</g>
+<path d="M286 142 H380" stroke="#3ecfb2" fill="none"/>
+<path d="M286 366 H380" stroke="#3ecfb2" fill="none"/>
+<path d="M600 142 H694" stroke="#e0b07a" fill="none"/>
+<path d="M600 366 H694" stroke="#e0b07a" fill="none"/>
+<path d="M490 288 V400" stroke="#3ecfb2" fill="none"/>
+<text x="28" y="500" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Inline SVG is the picture. Mermaid source is below and is not rendered.</text>
+</svg>
+</div>
+<details>
+<summary>Mermaid mind map (no engine is loaded)</summary>
+<pre class="mermaid">mindmap
+  root((Control Hub))
+    Identity
+      Directory Connector
+      SCIM 2.0
+      Entra ID Wizard
+    Sign-in
+      Org SSO uid
+      Partner SSO mail
+      SP-initiated test
+    Licensing
+      Overview assignment
+    Analytics
+      Standard 3 months
+      Pro Pack 13 months
+    Partner Hub
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T1-R01/eco.svg</code></p>
+
+<h3 class="eco-sub">Sister-technology matrix</h3>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Webex identity</td><td>The account the SSO guides bind to an IdP. Org SSO maps an attribute to <code>uid</code>, and that value must match one of the user’s email addresses.</td><td>Roles and licenses hang off a person. A wrong claim means the right human never becomes the right user.</td><td>Control Hub SSO for services managed at admin.webex.com. Meetings Site Administration SSO is a different guide.</td><td><code>uid</code> mapped to a value that is not one of the user’s emails.</td><td><a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>SSO (SAML)</td><td>Single sign-on between an IdP and Webex services managed in Control Hub.</td><td>Directory sync can suppress automatic invite email only after SSO is integrated.</td><td>Download Directory Connector and configure SSO from Control Hub.</td><td>Testing the integration from the IdP page. The ADFS guide says use the Control Hub SSO test; flows are SP-initiated.</td><td><a href="#cite-9">[cite:9]</a> <a href="#cite-10">[cite:10]</a> <a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>Directory Connector</td><td>On-premises sync from Active Directory. Requirements include Windows and Active Directory.</td><td>Bulk-creates the people this room’s role matrix will later authorize.</td><td>Control Hub: view users, assign licenses, download the connector, configure SSO.</td><td>New users still receive automatic invite mail because SSO is not in place, so the suppress-invites feature cannot run.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>SCIM 2.0</td><td>Cloud provisioning from a custom Entra app. REST. No on-premises connector. Entra does not synchronize null values.</td><td>The cloud alternative to Directory Connector when the source of truth is Entra ID.</td><td>Tenant URL <code>https://webexapis.com/identity/scim/OrgId/v2</code>. Government: <code>https://api-usgov.webex.com/identity/scim/OrgId/v2</code>.</td><td>Expecting groups from a SCIM 1.1 app. Groups are No on SCIM 1.1, Yes on SCIM 2.0.</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Entra ID Wizard</td><td>Control Hub’s wizard for Entra synchronization, including choices for groups and avatars.</td><td>Rooms and avatars synchronize only through the wizard, not through SCIM 2.0.</td><td>Set up the Entra ID Wizard App in Control Hub. The SCIM article points at that guide.</td><td>SCIM 2.0 is healthy and rooms still never appear. That column is No for SCIM 2.0.</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Licensing</td><td>Entitlements you administer to users from the overview after Messaging, Meetings, or Calling is provisioned.</td><td>Service settings are missing when the service was never provisioned. The overview is the check.</td><td>Control Hub overview, then Services → the service → Settings.</td><td>Hunting Calling settings in an org whose overview does not show Calling. Read the subscription in Control Hub. The overview hides Calling when the org is not entitled, and the SKU string lives on the order. Read the subscription.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analytics</td><td>Control Hub charts of collaboration usage. History length follows the customer type.</td><td>A troubleshooting story that needs a year of charts is a licensing story if the org is standard.</td><td>Analytics in Control Hub. Pro Pack is the 13-month customer type.</td><td>Standard customer looking past 3 months. Pro Pack date picker: the article says that from 27 January 2026 the selectable range becomes 3 months at a time while 13 months of history remains. <mark class="recheck">re-check</mark> — that date is past.</td><td><a href="#cite-12">[cite:12]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Partner Hub</td><td>Where administrators who manage many customer organizations work.</td><td>Partner SSO is a different claim (<code>mail</code>, not <code>uid</code>) from org SSO.</td><td>Partner Hub, separate from the customer Control Hub session.</td><td>Mapping partner SSO as if it were org <code>uid</code>. The named Partner Hub customer-management roles are cited from 16gmxfb. <a class="cite" href="#cite-14">[cite:14]</a></td><td><a href="#cite-2">[cite:2]</a> <a href="#cite-10">[cite:10]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Integration map</h3>
+<p>One row is one edge. Webhook event names for user lifecycle are not in the articles read for this room.</p>
+<div class="diagram" role="img" aria-label="Identity and analytics edges into Control Hub">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity and analytics edges into Control Hub">
+<rect width="980" height="280" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="24" y="36" width="200" height="64" rx="10" fill="#14110c" stroke="#3ecfb2"/>
+<text x="36" y="64">Active Directory</text>
+<text x="36" y="84" fill="#8d8476" font-size="12">on-prem users</text>
+<rect x="24" y="160" width="200" height="64" rx="10" fill="#14110c" stroke="#3ecfb2"/>
+<text x="36" y="188">Entra ID</text>
+<text x="36" y="208" fill="#8d8476" font-size="12">SCIM 2.0 REST</text>
+<rect x="300" y="96" width="220" height="72" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="314" y="128">Directory Connector</text>
+<text x="314" y="148" fill="#8d8476" font-size="12">or SCIM tenant URL</text>
+<rect x="600" y="90" width="160" height="84" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="614" y="122">Control Hub</text>
+<text x="614" y="144" fill="#8d8476" font-size="12">users, licenses</text>
+<text x="614" y="162" fill="#8d8476" font-size="12">analytics</text>
+<rect x="800" y="36" width="156" height="64" rx="10" fill="#14110c" stroke="#e0b07a"/>
+<text x="812" y="64">IdP · SAML</text>
+<text x="812" y="84" fill="#8d8476" font-size="12">uid or mail</text>
+<rect x="800" y="160" width="156" height="64" rx="10" fill="#14110c" stroke="#e0b07a"/>
+<text x="812" y="188">Analytics store</text>
+<text x="812" y="208" fill="#8d8476" font-size="12">3 or 13 months</text>
+</g>
+<path d="M224 68 H300" stroke="#3ecfb2" fill="none" marker-end="url(#a1)"/>
+<path d="M224 192 H300" stroke="#3ecfb2" fill="none"/>
+<path d="M520 132 H600" stroke="#3ecfb2" fill="none"/>
+<path d="M760 122 H800" stroke="#e0b07a" fill="none"/>
+<path d="M760 132 H800 V192" stroke="#e0b07a" fill="none"/>
+<text x="24" y="258" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Arrows match the edge table. Locations API is a separate edge and is not drawn here.</text>
+</svg>
+</div>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Active Directory</td><td>Directory Connector</td><td>On-premises connector. Windows and Active Directory requirements are in the deployment guide.</td><td>Users you later full-sync into the cloud. Dry run is a documented step before full sync.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>Directory Connector</td><td>Control Hub</td><td>Provision users from Active Directory into Control Hub. Download and SSO live in the same console.</td><td>User accounts. Automatic invite email can be suppressed only when SSO is integrated.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>IdP</td><td>Webex identity</td><td>SAML for Control Hub–managed services. Map an attribute to <code>uid</code>.</td><td>A value that must equal one of the user’s email addresses.</td><td><a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>Partner IdP</td><td>Partner SSO</td><td>Separate claim from org SSO.</td><td><code>mail</code>, not <code>uid</code>, mapped to the attribute chosen in Partner Hub.</td><td><a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>Entra ID</td><td>SCIM endpoint</td><td>SCIM 2.0 REST. No on-premises connector.</td><td>Users and, on SCIM 2.0, groups. Not rooms or avatars.</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Entra ID Wizard</td><td>Control Hub</td><td>Wizard app, not the SCIM 1.1 gallery path.</td><td>Groups, rooms, and avatars (the only documented path for rooms and avatars).</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Full administrator</td><td>User</td><td>License administration from the Control Hub overview.</td><td>Service entitlement. Read the subscription in Control Hub for the SKU string. It changes with the order, which is why the overview article does not print it.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Services</td><td>Analytics</td><td>Control Hub analytics charts. Standard customer: 3 months. Pro Pack: 13 months of history.</td><td>Usage history. Selectable Pro Pack range of 3 months at a time from 27 January 2026 is <mark class="recheck">re-check</mark>.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>API client</td><td><code>/v1/locations</code></td><td>REST, referenced from the locations article. Schema page body was not re-read.</td><td>Location records. <mark class="recheck">re-check</mark> the live schema. Read the event names on developer.webex.com when a user-lifecycle catalog is published. The live schema is marked re-check because event names change when Cisco adds one.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-7">[cite:7]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only</strong> Legacy and peer names are study labels. A cell that is not cited is not a design claim.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Webex concept in this room</th><th>Legacy note</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Control Hub user, created in the org and given a role</td><td>On-prem CUCM end users and LDAP sync are the usual legacy pair. Compare the Control Hub user at Management → Users with the CUCM end user. Attribute names differ because Directory Connector and CUCM LDAP are separate syncs.</td><td>Microsoft Teams admin center, Amazon Connect console, Genesys admin: orientation labels only. No parity matrix is published on help.webex.com. Cisco’s documented calling migrations are Unified CM and BroadWorks/BroadCloud. <a class="cite" href="#cite-15">[cite:15]</a> <a class="cite" href="#cite-16">[cite:16]</a></td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Directory Connector or SCIM into Webex identity</td><td>CUCM LDAP directory sync is a different product. Do not copy a CUCM LDAP filter into Directory Connector without a cited mapping. Open the Directory Connector filter and the CUCM LDAP filter on the cluster that still syncs. The two filters use different syntax, which is why a copied string fails.</td><td>Entra ID is a cited SCIM source for Webex, which is not the same statement as “Teams Phone equals Control Hub.”</td><td><a href="#cite-9">[cite:9]</a> <a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Org SSO <code>uid</code> versus Partner SSO <code>mail</code></td><td>A federation service such as ADFS is a documented IdP for Webex, with SP-initiated test only. <a href="#cite-13">[cite:13]</a></td><td>Other IdPs are listed as separate guides from the SSO index. Do not assume the ADFS click-path is universal. Follow that identity provider’s own guide.</td><td><a href="#cite-10">[cite:10]</a> <a href="#cite-13">[cite:13]</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="eco-sub">Future-integration hooks</h3>
+<div class="callout note"><span class="label">Canon plan, not a Cisco roadmap</span><p>Next identity depth is the planned room T1-R02. Licensing SKUs are T1-R03. Analytics screens are T1-R06. Those rooms do not exist yet. Nothing in this list is a promise of a Cisco feature.</p></div>
+<ul>
+<li>Government SCIM already has its own host in the SCIM article. Read the Government identity pages on help.webex.com for differences beyond the SCIM host. Those pages change with the government cloud, so this commercial room leaves them there.</li>
+<li>When a user-lifecycle webhook catalog is cited, add it as another edge. Read the event names on developer.webex.com. They change when Cisco adds an event.</li>
+<li>Re-read the analytics selectable-range sentence after any Control Hub analytics release. The 27 January 2026 change is already in the past relative to this draft.</li>
+<li>Role assignment propagation (up to 10 minutes) stays a Control Hub fact, cited in the trouble section, and will matter the first time SSO and a new admin collide. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+
+<h3 class="eco-sub">Ecosystem troubleshooting</h3>
+<p>These rows are sister-system causes. They do not replace the room’s own troubleshooting matrix.</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Brand-new synced users get Webex invite email</td><td>Suppress-invites requires the SSO integration. SSO is not in place.</td><td>SSO status in Control Hub before the next full sync.</td><td>Integrate SSO, then use the suppress-invites feature the Directory Connector guide describes.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+<tr><td>SSO “works” on the IdP test page and fails for Webex</td><td>The ADFS guide forbids testing from the IdP. Only SP-initiated flows are supported there.</td><td>Did the test start at the IdP console?</td><td>Run the Control Hub SSO test.</td><td><a href="#cite-13">[cite:13]</a></td></tr>
+<tr><td>User exists in the IdP and is unknown to Webex</td><td><code>uid</code> does not match one of the user’s email addresses.</td><td>Claim mapping: userPrincipalName or email alias versus the addresses on the Webex user.</td><td>Map <code>uid</code> to an attribute that equals one of those emails. Partner SSO is the exception: use <code>mail</code>, not <code>uid</code>.</td><td><a href="#cite-10">[cite:10]</a></td></tr>
+<tr><td>Groups never appear after Entra provisioning</td><td>SCIM 1.1 groups column is No.</td><td>Which sync method the table lists: SCIM 1.1, Wizard, or SCIM 2.0.</td><td>Use SCIM 2.0 for groups. Use the Entra ID Wizard if you also need rooms or avatars.</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Rooms or avatars missing, users are fine</td><td>SCIM 2.0 does not synchronize rooms or avatars.</td><td>Confirm you are not on the wizard path.</td><td>Synchronize rooms and avatars through the Entra ID Wizard.</td><td><a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>Analytics chart stops at about three months</td><td>Standard customer data window is 3 months. Pro Pack is 13.</td><td>Customer type, not the chart filter first.</td><td>Pro Pack is what the article ties to 13 months. If Pro Pack is present and a single date pick still cannot span 13 months, the January 2026 selectable-range sentence applies. <mark class="recheck">re-check</mark>.</td><td><a href="#cite-12">[cite:12]</a></td></tr>
+<tr><td>A service’s settings page is not there</td><td>The service is not provisioned. Licenses are administered from the overview.</td><td>Overview of active services.</td><td>Provision the service, then Services → Settings. Do not invent a SKU.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>One admin change, end to end</h2>
+<p>This is not a SIP ladder. It is the control-plane path for “make Alex a user-and-device administrator and put a desk phone in the Austin workspace.” Numbers match the map.</p>
+<!-- VISUAL:sequence -->
+<div class="diagram" role="img" aria-label="Sequence of an admin change in Control Hub">
+<svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sequence of an admin change in Control Hub">
+<rect width="980" height="300" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<text x="70" y="36" text-anchor="middle">Full admin</text>
+<text x="280" y="36" text-anchor="middle">Control Hub</text>
+<text x="500" y="36" text-anchor="middle">Identity</text>
+<text x="720" y="36" text-anchor="middle">Device</text>
+<line x1="70" y1="48" x2="70" y2="270" stroke="#3ecfb2"/>
+<line x1="280" y1="48" x2="280" y2="270" stroke="#3ecfb2"/>
+<line x1="500" y1="48" x2="500" y2="270" stroke="#e0b07a"/>
+<line x1="720" y1="48" x2="720" y2="270" stroke="#e0b07a"/>
+</g>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#d5ccbe">
+<text x="88" y="80">1 sign in at admin.webex.com</text>
+<path d="M80 90 H270" stroke="#3ecfb2" marker-end="url(#a)"/>
+<text x="300" y="120">2 assign role on the user</text>
+<path d="M270 130 H90" stroke="#efe7d6"/>
+<text x="88" y="160">3 wait — article says up to 10 minutes</text>
+<text x="300" y="200">4 add device → activation code</text>
+<path d="M290 210 H700" stroke="#e0b07a"/>
+<text x="520" y="250">5 code entered on device links it to the org</text>
+</g>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#3ecfb2"/></marker></defs>
+</svg>
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>What moves</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Admin browser</td><td>Control Hub</td><td>Sign-in</td><td>Calling location procedures name <code>https://admin.webex.com</code>. First-time trials can auto-start a wizard.</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Full admin</td><td>User record</td><td>Role selection</td><td>Management → Users → Summary → Administrator roles → Save.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>3</td><td>Control Hub</td><td>The user’s session</td><td>Privilege</td><td>The role article says it may take up to 10 minutes for users to gain access to new roles.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>4</td><td>Admin</td><td>Devices</td><td>Activation code</td><td>After a device is added, Control Hub generates a code the device must accept.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Device</td><td>Organization</td><td>Registration binding</td><td>The code links the hardware to this org. Exact on-screen words differ by device family. Read the activation words on the device and in Control Hub → Devices. The wording changes by device family.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Admin</td><td>Location</td><td>Place assignment</td><td>Users and workspaces can be viewed from a location. Calling setup is a tab on the location in the locations article.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>7</td><td>Service</td><td>User</td><td>License</td><td>Get Started says you administer licenses to users from the overview. Which SKU unlocks Calling is a later room. Read it on the subscription in Control Hub. The string follows the order, which is why this overview does not freeze it.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Group</td><td>Members</td><td>Inherited role</td><td>Removing a user from the group removes the admin permissions that group granted.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config path</p>
+<h2>Stand up the mental model in the UI</h2>
+<p>Do these in a lab org, not production. Labels below are copied from help articles retrieved 2026-10-14. If the live menu differs, mark the step and do not “fix” the article from memory.</p>
+<ol class="steps">
+<li><span class="path">Email → browser</span>Open the administrator activation mail and set the password. The same address is the sign-in. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:1 -->Screenshot placeholder · step 1 · activation mail and first password screen.</div></li>
+<li><span class="path">Control Hub overview</span>Confirm which of Messaging, Meetings, and Calling are actually provisioned before you hunt for their settings. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:2 -->Screenshot placeholder · step 2 · overview service cards.</div></li>
+<li><span class="path">Management → Users → a second person → Administrator roles</span>Assign a second full administrator. Cisco recommends more than one full administrator even in small orgs. <a class="cite" href="#cite-2">[cite:2]</a>
+<div class="shot"><!-- VISUAL:screenshot:3 -->Screenshot placeholder · step 3 · role picker.</div></li>
+<li><span class="path">Management → Organization Settings → Help and support</span>Read the redirect toggle before you enable it. It changes where users go for help and blocks several TAC entry points for users. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:4 -->Screenshot placeholder · step 4 · support redirect.</div></li>
+<li><span class="path">Management → Location</span>Create one location with country, address, announcement language, email language, and time zone. A new location is hosted in the regional data center that corresponds to the country chosen in the First Time Setup Wizard. <a class="cite" href="#cite-4">[cite:4]</a>
+<div class="shot"><!-- VISUAL:screenshot:5 -->Screenshot placeholder · step 5 · location form.</div></li>
+<li><span class="path">Management → Workspaces</span>Add a workspace, set its location, and choose whether it gets a device. <a class="cite" href="#cite-3">[cite:3]</a>
+<div class="shot"><!-- VISUAL:screenshot:6 -->Screenshot placeholder · step 6 · workspace wizard.</div></li>
+<li><span class="path">Devices</span>Add a device to that workspace and copy the activation code. Do not complete registration until the lab section. <a class="cite" href="#cite-1">[cite:1]</a>
+<div class="shot"><!-- VISUAL:screenshot:7 -->Screenshot placeholder · step 7 · activation code.</div></li>
+<li><span class="path">Users → Admin roles → Create a custom role</span>Only if you need a privilege the prebuilt roles do not match. Custom roles are a separate article; location administrator still cannot be combined with them. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-2">[cite:2]</a>
+<div class="shot"><!-- VISUAL:screenshot:8 -->Screenshot placeholder · step 8 · custom role permission groups.</div></li>
+</ol>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits, licensing, gotchas</p>
+<h2>Numbers that are safe to say out loud</h2>
+<p>Anything not in this table is not a limit yet. Older Cisco Live slides are not used here; this room’s figures come from help articles retrieved 2026-10-14.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>Role change propagation</td><td>May take up to 10 minutes</td><td>Assign organization account roles</td><td>Cited 2026-10-14 <a href="#cite-2">[cite:2]</a>. <mark class="recheck">re-check</mark> if the article is revised.</td></tr>
+<tr><td>Groups that can hold admin roles</td><td>Up to 100 groups</td><td>Same article, group assignment limits</td><td>Cited <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Roles on one group</td><td>Up to 20 different roles</td><td>Same</td><td>Cited <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location admin combinable with other roles</td><td>No, including custom roles</td><td>Role article, known issues</td><td>Cited <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Read-only admin + custom role</td><td>Not combinable. Build a custom role that includes the view you need.</td><td>Same</td><td>Cited <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>User/device admin or device admin and Webex Calling</td><td>They can’t administer Webex Calling</td><td>Before-you-begin on role assignment</td><td>Cited <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex Calling Detailed Call History functional role</td><td>Marked obsolete. Remains operational until December 31, 2026. New assignments should use a custom role.</td><td>Role article</td><td>Cited <a href="#cite-2">[cite:2]</a>. <mark class="recheck">re-check</mark> after that date.</td></tr>
+<tr><td>Location delete duration</td><td>Typically a couple of minutes, can take up to an hour</td><td>Configure Webex Calling</td><td>Cited <a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Locations an administrator can be assigned</td><td>Up to 250 for a Webex Calling administrator. Delegation selects up to five locations. This is not an organization-wide cap.</td><td>760wbi, header August 05, 2026 <a class="cite" href="#cite-17">[cite:17]</a></td><td>Open</td></tr>
+<tr><td>Users per organization</td><td>Read the subscription in Control Hub for how many users this org can hold. The article used here does not print an organization-wide cap, and the number follows the order.</td><td>Not established here</td><td>Open</td></tr>
+<tr><td>Data-center region list</td><td>A new location follows the country chosen in the First Time Setup Wizard. Read the country in the First Time Setup Wizard, then the region list when you add a location in Control Hub. T3-R01 cites oybc4fb and n0p6xa1, and those two pages do not print the same set, which is why a matrix is not frozen here. T3-R01 cites oybc4fb and n0p6xa1, and those two pages do not print the same set.</td><td>Partial <a href="#cite-4">[cite:4]</a></td><td>Open for the matrix</td></tr>
+<tr><td>Which licenses a trial includes</td><td>Read the subscription in Control Hub for which licenses a trial includes. The set changes with the offer</td><td>—</td><td>Open</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Symptom → evidence → fix</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence / check</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>New admin still sees a read-only UI</td><td>Role change has not propagated, or the browser session is old</td><td>Role is saved on the user. Clock time since Save. Article allows up to 10 minutes.</td><td>Wait, sign out, sign in again. Do not stack a second role “to force it.”</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Cannot assign location admin to an existing full admin</td><td>Location administrator is exclusive</td><td>User already has another administrator role</td><td>Remove the other roles first. Known issue: location admin cannot combine with other roles, including custom roles.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Group role did not apply</td><td>Directly assigned role conflicts with the group role</td><td>User has a direct read-only or location administrator assignment</td><td>Remove the incompatible direct role, remove the user from the group, add them again.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Inherited badge does not match the checkboxes</td><td>Documented known issue with group-inherited roles</td><td>Compare group assignment to the user role page</td><td>Trust the article’s known-issue note; do not invent a second bug. Re-check membership.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Device admin cannot open Calling configuration</td><td>Role limitation, not a broken service</td><td>User is device administrator or user and device administrator</td><td>Use a full administrator, or a role the Calling docs allow. Do not “upgrade” the device admin in place without reading the matrix.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Users cannot open a TAC case in the app</td><td>Redirect user support is on</td><td>Organization Settings → Help and support. Admins are exempt per the article.</td><td>Decide if that redirect is intentional. Turning it off restores the non-redirected path described in the article.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Location has a caution and calling does not work</td><td>No telephone number on the location</td><td>Calling article: a caution means you have not configured a telephone number; you can’t make or receive calls until you do.</td><td>Add a number using the PSTN option for that location. PSTN choice is T2-R02.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Cannot delete a location</td><td>Users or workspaces still reference it</td><td>Services → Calling → Numbers, filter to the location</td><td>Remove users and workspaces first. Numbers return to the PSTN provider. Delete can take up to an hour.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Activation code does nothing</td><td>Code typed into the wrong device, or device not yet on the network</td><td>Devices page still shows the device as waiting. Read the error on the device and on Control Hub → Devices. The string changes by device family, so regenerate the code from Control Hub rather than reusing a screenshot.</td><td>Regenerate from Control Hub rather than reusing a code from a screenshot. Confirm the device family in a later room.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CSV export of admins changed under you</td><td>Filter was edited before the download finished</td><td>Article: wait until the CSV downloads before changing the filter</td><td>Re-export. You cannot manage roles through that CSV.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Webex site admin cannot see a site</td><td>Site is still Site Administration managed, or the user has not signed in once since the role was assigned</td><td>Article: site admin roles apply to Control Hub-managed sites, and the user must sign in to Control Hub once after assignment</td><td>Confirm site management mode. Have the user sign in once.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Recursive self-question</p>
+<h2>Ladder — do not skip to L4</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is Control Hub?</summary>
+<p class="answer">Cisco’s management console for one Webex organization: users, permissions, calling, meetings, messaging, and devices. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L1</span>Why does it exist — what breaks without a single org console?</summary>
+<p class="answer">Services, identities, and devices would be administered as separate products. The overview exists so an admin sees which services are actually provisioned before configuring them. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></p>
+<details class="qnode"><summary><span class="lvl">L1a</span>What breaks if only one person holds full administrator?</summary>
+<p class="answer">Cisco recommends more than one full administrator so the org stays operable. The partner’s administrator is the first full administrator and is expected to create more. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does an admin action work end to end?</summary>
+<p class="answer">Sign in, change a user or location or device, and the org record is what later services read. Role grants can take up to 10 minutes. A device is not in the org until its activation code is used. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-1">[cite:1]</a></p>
+<details class="qnode"><summary><span class="lvl">L2a</span>Where do licenses sit relative to users?</summary>
+<p class="answer">The Get Started article says the overview is where you view licenses across services and administer licenses to users. Organization-based and group-based license assignment are full-admin privileges in the role matrix. The SKU catalog is T1-R03. Read the strings on the subscription in Control Hub. They follow the order, and the role matrix only covers privileges. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2b</span>Are locations only a calling idea?</summary>
+<p class="answer">No. The locations article says you can use one location for both calling and workspaces, and that settings templates can apply to groups and locations. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L3</span>What are the failure modes, and how do I prove which one?</summary>
+<p class="answer">Prove it from the user role page, the group membership, the location caution icon, and the Devices state — not from the symptom sentence. The matrix in this room is the checklist.</p>
+<details class="qnode"><summary><span class="lvl">L3a</span>How do I prove a role conflict versus a delay?</summary>
+<p class="answer">If Save was moments ago, the 10-minute window is still open. If the user already holds location admin or read-only, combination rules explain a refused or ignored grant. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3b</span>How do I prove Calling is “missing” because of role, not because the subscription lacks Calling?</summary>
+<p class="answer">Check the overview for whether Calling is provisioned <a class="cite" href="#cite-1">[cite:1]</a>, then check whether the signed-in admin is a device administrator or user and device administrator, who can’t administer Webex Calling. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L4</span>How does this admin model differ across Calling, WxCC, WxCCE, and Dedicated Instance?</summary>
+<p class="answer">Control Hub remains the org console. Webex Calling configuration is a service inside it, and device-centric admins are explicitly blocked from administering Calling. <a class="cite" href="#cite-2">[cite:2]</a> Contact Center adds a Contact Center Service Administrator role; a customer full administrator can administer contact-center features, while a customer read-only administrator cannot access the Webex Contact Center administrative interfaces. <a class="cite" href="#cite-2">[cite:2]</a> WxCCE and Dedicated Instance Open Calling → Dedicated Instance for the private UC apps, or the Enterprise admin console for WxCCE. That split is T4 and T5. The multi-tenant role matrix does not cover them because those apps have their own admin pages.</p>
+<details class="qnode"><summary><span class="lvl">L4a</span>What is different about external contact-center admins?</summary>
+<p class="answer">A partner full administrator can perform contact-center admin similar to a customer full admin, except they cannot add or revoke Contact Center Service Administrator from other external administrators. A read-only admin from a partner org can access contact-center admin interfaces in read-only mode; a customer read-only admin cannot access them at all. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</details>
+<details class="qnode"><summary><span class="lvl">L5</span>If I redesigned Control Hub roles, what would I change, and what stops me?</summary>
+<p class="answer">I would want one location-scoped role that can also hold a narrow custom permission. The product constraint that stops me is explicit: location administrator cannot be combined with other roles, including custom roles. The supported escape hatch is a custom role that includes the needed view, not a stack of badges. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-8">[cite:8]</a></p>
+<details class="qnode"><summary><span class="lvl">L5a</span>What would I not automate?</summary>
+<p class="answer">Role assignment via the administrator CSV. The article says you can’t manage administrator roles through that CSV. <a class="cite" href="#cite-2">[cite:2]</a> Read developer.webex.com for which roles the API can assign. Coverage changes when Cisco adds a role, so check that page before any script is trusted.</p></details>
+</details>
+</details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Checklist — lab org only</h2>
+<p>Checks persist in this browser only.</p>
+<ul class="lab">
+<li><label><input type="checkbox"> Goal: name every object in the map from a live Control Hub, and prove one role rule by attempting a combination the article forbids.</label></li>
+<li><label><input type="checkbox"> Prereq: a trial or lab organization you are allowed to change. Production customer orgs are out of scope. Read the Calling license on the subscription in Control Hub. The name follows the order, and production customer orgs stay out of scope.</label></li>
+<li><label><input type="checkbox"> Step 1. Sign in. Expected: overview lists services that are active or available. <a class="cite" href="#cite-5">[cite:5]</a></label></li>
+<li><label><input type="checkbox"> Step 2. Open your user. Expected: full administrator (or you cannot finish the lab). Record who else is full admin.</label></li>
+<li><label><input type="checkbox"> Step 3. Create a test user with no role. Expected: the user has no administrative privileges. <a class="cite" href="#cite-2">[cite:2]</a></label></li>
+<li><label><input type="checkbox"> Step 4. Assign location administrator, Save, then try to add full administrator. Expected: the combination is refused or impossible. Capture the UI text.</label></li>
+<li><label><input type="checkbox"> Step 5. Create a location with a real-looking lab address and a time zone. Expected: the location saves. Note the menu label you actually saw (Location vs Locations).</label></li>
+<li><label><input type="checkbox"> Step 6. Create a workspace in that location and start adding a device until an activation code appears. Expected: a code is generated. Do not claim the device is registered. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Evidence: screenshots of the overview, the failed role combination, the location, and the activation code with the code redacted in anything you keep.</label></li>
+<li><label><input type="checkbox"> Break-it: turn on Redirect user support with a dummy URL in the lab org, then see the user help path. Recovery: turn the toggle off. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Reflection: which role distinction surprised me, and which menu label disagreed with the article?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header>
+<p>A brand-new user in the organization can do what in Control Hub?</p>
+<ol type="A"><li>Read-only admin automatically</li><li>Nothing administrative until a role is assigned</li><li>Device admin automatically</li><li>Full admin if they have a license</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Users you add have no administrative privileges at first. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header>
+<p>Which combination does the role article forbid?</p>
+<ol type="A"><li>Full admin plus support admin</li><li>Location administrator plus any other administrator role</li><li>Two full administrators in one org</li><li>Device admin plus workspace management</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Location administrator is exclusive, including versus custom roles. More than one full admin is recommended. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header>
+<p>A user-and-device administrator says Webex Calling settings are missing. The overview shows Calling is provisioned. What do you check before you open a TAC case?</p>
+<details class="reveal"><summary>Reveal</summary><p>The role itself. User and device administrators and device administrators can’t administer Webex Calling. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header>
+<p>After you save a new role, the article allows access to lag up to:</p>
+<ol type="A"><li>10 seconds</li><li>10 minutes</li><li>24 hours</li><li>The next subscription renewal</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Up to 10 minutes. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header>
+<p>You assign a role to a Webex group, then remove Jordan from that group. What happens to the admin rights that came only from the group?</p>
+<details class="reveal"><summary>Reveal</summary><p>Jordan loses those permissions. Group membership is the grant. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header>
+<p>Redirect user support, when enabled, does not apply to:</p>
+<ol type="A"><li>Anyone with a Calling license</li><li>Webex organization administrators</li><li>Partner Hub</li><li>Devices</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. Organization administrators, as defined in the roles article. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Draw it</span></header>
+<p>On paper, draw one organization containing overview, users, locations, services, devices, and org settings. Place Partner Hub outside the box. Then check the map in this room.</p>
+<details class="reveal"><summary>Reveal</summary><p>The dashed frame in the map is the customer org. Partner Hub manages orgs; it is not a folder inside one org. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header>
+<p>A caution beside a calling location most directly means:</p>
+<ol type="A"><li>The org has no full admin</li><li>No telephone number is configured, so calls cannot be made or received</li><li>SSO is off</li><li>The device firmware is old</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header>
+<p>You need a person who can see almost everything but also export the admin audit log, and they must not be a full admin. Which documented direction do you take?</p>
+<details class="reveal"><summary>Reveal</summary><p>Read-only cannot be combined with a custom role. Create a custom role that includes the access required, including the audit-log style permission if it is in the custom-role catalog. Confirm the permission exists in the UI. Security activity administrator is the prebuilt role tied to the admin actions audit log in the matrix. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-8">[cite:8]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header>
+<p>The functional role “Webex Calling Detailed Call History API access” is:</p>
+<ol type="A"><li>The recommended new assignment path</li><li>Obsolete, still operational until December 31, 2026; use a custom role for new assignments</li><li>Removed in 2020</li><li>A location administrator alias</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark> after that date.</p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Scenario</span></header>
+<p>A customer read-only administrator cannot open contact-center administration, but a partner read-only administrator can open it read-only. Is that a contradiction?</p>
+<details class="reveal"><summary>Reveal</summary><p>No. The contact-center role table documents those two rows differently. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Oral</span></header>
+<p>In one sentence: what is a workspace, and how is a device bound to the org?</p>
+<details class="reveal"><summary>Reveal</summary><p>A workspace is a place (room, desk, lobby) that can hold devices and services. Control Hub issues an activation code that is entered on the device to link it. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio slots</p>
+<h2>Studio fills these. Nothing plays in Phase 0.</h2>
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Control Hub to a senior engineer walking into a customer org for the first time: organization boundary, full admin versus location admin, and why locations are not just a calling folder." | assets/audio/T1-R01/overview.mp3 -->
+<article class="audio-slot">
+<h3>Overview · 3–5 min</h3>
+<p class="prompt">“Explain Control Hub to a senior engineer walking into a customer org for the first time: organization boundary, full admin versus location admin, and why locations are not just a calling folder.”</p>
+<audio controls preload="none"><p>No audio file in Phase 0.</p></audio>
+<p class="placeholder-asset">Expected file: assets/audio/T1-R01/overview.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio records against the cites in this room. Do not invent a spoken script that adds uncited limits.</p></details>
+</article>
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the role matrix: who can assign roles, who can touch Calling, what the 10-minute delay means operationally, how group inheritance fails, and how contact-center service admin differs for customer versus partner read-only." | assets/audio/T1-R01/deep-dive.mp3 -->
+<article class="audio-slot">
+<h3>Deep dive · 8–12 min</h3>
+<p class="prompt">“Walk the role matrix: who can assign roles, who can touch Calling, what the 10-minute delay means operationally, how group inheritance fails, and how contact-center service admin differs for customer versus partner read-only.”</p>
+<audio controls preload="none"><p>No audio file in Phase 0.</p></audio>
+<p class="placeholder-asset">Expected file: assets/audio/T1-R01/deep-dive.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio. Anchor every number to cite 2.</p></details>
+</article>
+<!-- AUDIO:oral-drill | 2 min | prompt: rapid Q&A from quiz -->
+<article class="audio-slot">
+<h3>Oral drill · 2 min</h3>
+<p class="prompt">Rapid Q&amp;A from the quiz: exclusive location admin, Calling blind spot for device admins, support redirect, location caution icon, obsolete CDR role date.</p>
+<audio controls preload="none"><p>No audio file in Phase 0.</p></audio>
+<p class="placeholder-asset">Expected file: assets/audio/T1-R01/oral-drill.mp3</p>
+<details><summary>Transcript</summary><p>Empty until Studio. Use quiz reveals as the answer key.</p></details>
+</article>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral-ready</h2>
+<h3>1 · What is Control Hub?</h3>
+<p><strong>30 seconds.</strong> It is the admin console for a Webex organization: people, roles, services, devices, and the overview of what is actually turned on. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<p><strong>2 minutes.</strong> Add the first-run story (wizard, terms, activation email becomes the admin sign-in), the object list (user, role, location, workspace, device, service), and the rule that new users are not admins. <a class="cite" href="#cite-2">[cite:2]</a> Offer to draw the map.</p>
+<h3>2 · How do you delegate without handing over the org?</h3>
+<p><strong>30 seconds.</strong> Assign a narrower prebuilt role, or a custom role. Do not hand out full admin by habit. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>2 minutes.</strong> Contrast support admin, device admin, and location admin. Mention the Calling blind spot and the non-combinable location role. Mention groups: up to 100 groups, 20 roles each, and removal from the group removes the grant. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<h3>3 · Where does calling configuration live?</h3>
+<p><strong>30 seconds.</strong> Under the Calling service and on the location. A location without a number is flagged and cannot place or receive calls. <a class="cite" href="#cite-4">[cite:4]</a></p>
+<p><strong>2 minutes.</strong> Separate “the service is provisioned” from “this admin is allowed to touch it.” Then point to T2-R02 for which PSTN option the location may pick. Do not invent PSTN detail in this answer.</p>
+<h3>4 · How is contact-center admin different?</h3>
+<p><strong>30 seconds.</strong> There is a Contact Center Service Administrator role, and customer read-only admins do not get into contact-center administration. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<p><strong>2 minutes.</strong> Quote the partner exception: external full admins cannot grant that service-admin role to other external admins. Say WxCCE operations are a different track. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<h3>5 · What do you refuse to guess?</h3>
+<p><strong>30 seconds.</strong> Maximum users, maximum locations, the live region matrix, and any SKU name not on the subscription.</p>
+<p><strong>2 minutes.</strong> Show the limits table. Explain why this room refuses an unstated cap, and the December 31, 2026 CDR-role deadline as a dated fact that needs a re-check. <a class="cite" href="#cite-2">[cite:2]</a></p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14 unless noted. Mirrors <a href="../cites/T1-R01.md">cites/T1-R01.md</a>. No Drive links.</p>
+<ol class="cite-list">
+<li id="cite-1">Get started with Control Hub — help.webex — article nkhozs6 — <a href="https://help.webex.com/article/nkhozs6/Get-Started-with-Control-Hub">https://help.webex.com/article/nkhozs6/Get-Started-with-Control-Hub</a> — retrieved 2026-10-14.</li>
+<li id="cite-2">Assign organization account roles in Control Hub — help.webex — article fs78p5 / qrdsz8 (same article body) — <a href="https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub">https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub</a> — retrieved 2026-10-14.</li>
+<li id="cite-3">Locations in Control Hub — help.webex — article ajh6iy — <a href="https://help.webex.com/en-us/article/ajh6iy">https://help.webex.com/en-us/article/ajh6iy</a> — retrieved 2026-10-14. Points at developer.webex.com workspace-locations and <code>/v1/locations</code>.</li>
+<li id="cite-4">Configure Webex Calling for your organization — help.webex — article njvdjf2 — <a href="https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization">https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization</a> — retrieved 2026-10-14. Used here for location create/delete and the admin.webex.com sign-in, not for the full PSTN design (that is T2-R02).</li>
+<li id="cite-5">Control Hub — help.webex — article nuylwki — <a href="https://help.webex.com/en-us/article/nuylwki/Control-Hub">https://help.webex.com/en-us/article/nuylwki/Control-Hub</a> — retrieved 2026-10-14.</li>
+<li id="cite-6">Devices page in Control Hub — help.webex — article z3elky — <a href="https://help.webex.com/article/z3elky/Devices-page-in-Control-Hub">https://help.webex.com/article/z3elky/Devices-page-in-Control-Hub</a> — retrieved 2026-10-14.</li>
+<li id="cite-7">Workspace locations API — developer.webex — referenced from cite 3 as <a href="https://developer.webex.com/docs/api/v1/workspace-locations">https://developer.webex.com/docs/api/v1/workspace-locations</a> — page body not re-read in this pass. <mark class="recheck">re-check</mark> the live schema before writing a client.</li>
+<li id="cite-8">Custom roles in Control Hub — help.webex — article x7l1qbb — <a href="https://help.webex.com/en-us/article/x7l1qbb/Customized-roles-in-Control-Hub">https://help.webex.com/en-us/article/x7l1qbb/Customized-roles-in-Control-Hub</a> — retrieved 2026-10-14.</li>
+
+<li id="cite-9">Deployment Guide for Directory Connector — help.webex — article zqvufbb — <a href="https://help.webex.com/article/zqvufbb">https://help.webex.com/article/zqvufbb</a> — retrieved 2026-10-14. Windows and Active Directory requirements, download from Control Hub, suppress-invites requires SSO.</li>
+<li id="cite-10">Single Sign-On Integration in Control Hub — help.webex — article lfu88u — <a href="https://help.webex.com/article/lfu88u">https://help.webex.com/article/lfu88u</a> — retrieved 2026-10-14. Org SSO <code>uid</code> must match an email address. Partner SSO uses <code>mail</code>, not <code>uid</code>.</li>
+<li id="cite-11">SCIM 2.0 provisioning with a custom Webex app in Entra ID — help.webex — article 3211gv — <a href="https://help.webex.com/article/3211gv">https://help.webex.com/article/3211gv</a> — retrieved 2026-10-14. Commercial and Government tenant URLs. Groups: No on SCIM 1.1, Yes on SCIM 2.0 and the Entra ID Wizard. Rooms and avatars: Wizard only.</li>
+<li id="cite-12">Analytics for Your Cloud Collaboration Portfolio — help.webex — article n0rlwxe — <a href="https://help.webex.com/article/n0rlwxe">https://help.webex.com/article/n0rlwxe</a> — retrieved 2026-10-14. Standard customer 3 months. Pro Pack 13 months. The 27 January 2026 selectable-range sentence is re-check.</li>
+<li id="cite-13">Configure single sign-on in Control Hub with Active Directory Federation Services (ADFS) — help.webex — article nyx7kubb — <a href="https://help.webex.com/article/nyx7kubb">https://help.webex.com/article/nyx7kubb</a> — retrieved 2026-10-14. Do not test SSO from the IdP. SP-initiated flows only. Use the Control Hub SSO test.</li>
+<li id="cite-14">Assign administrator and external administrator roles in Partner Hub — help.webex — article 16gmxfb — <a href="https://help.webex.com/article/16gmxfb">help.webex.com article 16gmxfb</a> — retrieved 2026-10-14. Header date on the fetch was July 30, 2026. Names partner full, partner administrator, partner read-only, and Help Desk Basic and Advanced. Provisioning administrator is implicit.</li>
+<li id="cite-15">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a>.</li>
+<li id="cite-16">Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb — <a href="https://help.webex.com/article/n1ku0vfb">help.webex.com article n1ku0vfb</a>.</li>
+<li id="cite-17">Delegate location administration — help.webex — article 760wbi — <a href="https://help.webex.com/article/760wbi">help.webex.com article 760wbi</a> — retrieved 2026-10-14. Header August 05, 2026. A Webex Calling administrator can administer up to 250 assigned locations. The delegation drop-down selects up to five locations. Adding administrators to one location allows up to 5 users at a time. None of these is an organization-wide location cap.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Stub</h2>
+<ul>
+<li>Open questions: live menu string “Location” versus “Locations”; which custom-role permission exactly matches the admin audit log. Partner Hub customer-management roles are cited from 16gmxfb and are not an open comparison.</li>
+<li>Read the user cap on the subscription in Control Hub, and read the data-center list on the residency articles T3-R01 cites. Assigned-location limits are 760wbi. Trial SKUs, per-device activation error strings, API coverage for role assignment, and WxCCE/DI operational ownership stay on those live pages because each one changes on its own.</li>
+<li>Assets missing: <code>assets/diagrams/T1-R01/arch.svg</code> export, <code>assets/diagrams/T1-R01/eco.svg</code> export, <code>assets/images/T1-R01/hero.png</code>, screenshots for steps 1–8, three audio files under <code>assets/audio/T1-R01/</code>. The ecosystem mind map is already an inline SVG.</li>
+<li>Ecosystem gaps: CUCM attribute crosswalk, per-IdP SSO click-path beyond ADFS, user-lifecycle webhook names, Webex for Government identity differences beyond the SCIM host, Calling SKU strings.</li>
+<li>Ideas for v1.0: clickable role matrix that highlights Calling and contact-center columns; a “menu label I actually saw” lab log.</li>
+<li>Next review date: 2026-12-15, and again immediately after 2026-12-31 for the CDR API role sunset.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><span class="prev edge">Start of the draft shelf</span><a class="next" href="T1-R06-analytics-troubleshooting.html"><span>Next</span><strong>T1-R06</strong><em>Analytics &amp; Troubleshooting Views</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>T1-R01 · v0.2 · private draft · not verified</span><a href="T2-R02-local-gateway-pstn.html">T2-R02 Local Gateway</a></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

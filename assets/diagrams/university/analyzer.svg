@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" role="img" aria-label="Analyzer clocks">
+<rect width="980" height="240" rx="20" fill="#0b1020"/>
+<text x="28" y="40" fill="#f8fafc" font-size="22" font-family="system-ui,sans-serif" font-weight="700">Analyzer clocks</text>
+<text x="28" y="64" fill="#94a3b8" font-size="13" font-family="system-ui,sans-serif">Keep Analyzer&#x27;s clocks apart from the desktop widget. The rooms record a 5-second default versus 60 seconds on the widget.</text>
+<rect x="36" y="78" width="200" height="72" rx="16" fill="#22d3ee"/><text x="136" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Events</text><rect x="266" y="78" width="200" height="72" rx="16" fill="#a5b4fc"/><text x="366" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Real-time</text><path d="M236 114 H266" stroke="#e2e8f0" stroke-width="3" fill="none"/><rect x="496" y="78" width="200" height="72" rx="16" fill="#fbbf24"/><text x="596" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Historical</text><path d="M466 114 H496" stroke="#e2e8f0" stroke-width="3" fill="none"/><rect x="726" y="78" width="200" height="72" rx="16" fill="#fb7185"/><text x="826" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Desktop widget</text><path d="M696 114 H726" stroke="#e2e8f0" stroke-width="3" fill="none"/>
+<circle r="7" fill="#fde68a">
+<animateMotion dur="4.8s" repeatCount="indefinite" path="M136 114 H266 V114 H496 V114 H726"/>
+</circle>
+</svg>

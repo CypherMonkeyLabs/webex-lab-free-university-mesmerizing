@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T4-R05 · CVP and VXML IVR">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T4-R05 · CVP &amp; VXML IVR · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T4" data-room="T4-R05" data-room-title="CVP &amp; VXML IVR" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T4</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T4/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T4 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T4 · Webex Contact Center Enterprise</p>
+<h1>CVP &amp; VXML IVR</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for CVP &amp;amp; VXML IVR">
+<defs>
+<linearGradient id="T4R05sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T4R05sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Enterprise</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T4-R05</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CVP</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Router</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Desktop</text></g>
+</svg>
+<figcaption>Illustrated scene for CVP &amp;amp; VXML IVR. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for CVP &amp;amp; VXML IVR">
+<defs>
+<marker id="T4R05arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · PSTN → CVP → Router → Desktop</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Desktop</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T4R05arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T4R05arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T4R05arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T4R05lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: PSTN → CVP → Router → Desktop. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Unified Customer Voice Portal is the VoiceXML IVR in the Unified CCE design guides. This room keeps the standalone model, the comprehensive model, and the Webex CCE hosting sentence in separate boxes.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T4-R05</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T4-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>20 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Standalone without reporting does not require a Call Server or a Reporting Server. Standalone with reporting requires both. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>In the standalone model the required pieces are the VXML Server, Call Studio, and a gateway, unless reporting is on. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Comprehensive is the only CVP call flow the Solution Design Guide allows inside a Reference Design. Standalone is a non-reference flow. <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></li>
+<li>A comprehensive call has a switch leg on the ingress gateway and a VRU leg on Cisco VVB. Micro-application VoiceXML returns only to the same Call Server as the switch leg. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>The VXML Server is a J2EE-compliant application server for dynamic VoiceXML applications. It can be installed without the Call Server. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Standalone without reporting uses the VXML Server (Standalone) option. Standalone with reporting uses the VXML Server option and adds a Call Server and a Reporting Server. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Comprehensive combines Call Director using SIP and VRU-Only. Basic ports play .wav files and collect DTMF. Advanced ports add ASR, TTS, and VXML Server applications. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>From Unified CVP 11.5(1), the Call Server IVR service lives on the VXML Server, which builds the VXML pages for the microapplications. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>The January 2025 Webex CCE note says custom CVP applications can be hosted on Webex CCE. That sentence is older than 12 months. <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviews fail when a standalone self-service app is drawn as a comprehensive queue, or when Flow Designer is named as the Unified CVP script tool. The configuration guide names Call Studio. The build-and-manage article names Flow Designer for multi-tenant Webex Contact Center. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-6">[cite:6]</a></div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two models, two legs</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T4-R05/arch.svg -->
+<div class="diagram" role="img" aria-label="Standalone and comprehensive CVP models">
+<svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standalone and comprehensive CVP models">
+<rect width="980" height="360" fill="#0c121c"/>
+<text x="28" y="36" fill="#ff8b9a" font-family="Georgia, serif" font-size="20">Call-flow models from the CVP 15 configuration guide</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Left is standalone. Right is comprehensive. The arrow between them is “do not merge.”</text>
+<rect x="28" y="80" width="440" height="240" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="46" y="112" fill="#e0b07a" font-family="Georgia, serif" font-size="16">1 · Standalone</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="48" y="132" width="120" height="44" rx="8" fill="#2a220c" stroke="#e0b07a"/><text x="62" y="158">PSTN / CUBE</text>
+<rect x="190" y="132" width="110" height="44" rx="8" fill="#2a220c" stroke="#e0b07a"/><text x="214" y="158">Cisco VVB</text>
+<rect x="322" y="132" width="120" height="44" rx="8" fill="#2a220c" stroke="#e0b07a"/><text x="336" y="158">VXML Server</text>
+<path d="M168 154 H190" stroke="#e0b07a" fill="none"/>
+<path d="M300 154 H322" stroke="#e0b07a" fill="none"/>
+<text x="48" y="210" fill="#b7ad9c" font-size="12">SIP invite carries the VVB trigger.</text>
+<text x="48" y="232" fill="#b7ad9c" font-size="12">VVB sends HTTP. VXML Server returns VoiceXML.</text>
+<text x="48" y="254" fill="#b7ad9c" font-size="12">Call Studio, VXML Server, gateway. Reporting adds</text>
+<text x="48" y="274" fill="#b7ad9c" font-size="12">Call Server and Reporting Server.</text>
+</g>
+<rect x="500" y="80" width="452" height="240" rx="14" fill="#14110c" stroke="#ff8b9a"/>
+<text x="518" y="112" fill="#ff8b9a" font-family="Georgia, serif" font-size="16">2 · Comprehensive</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="518" y="132" width="130" height="44" rx="8" fill="#2a1216" stroke="#ff8b9a"/><text x="532" y="158">Switch leg</text>
+<rect x="668" y="132" width="120" height="44" rx="8" fill="#2a1216" stroke="#ff8b9a"/><text x="690" y="158">Call Server</text>
+<rect x="808" y="132" width="120" height="44" rx="8" fill="#2a1216" stroke="#ff8b9a"/><text x="834" y="158">VRU leg</text>
+<text x="518" y="210" fill="#b7ad9c" font-size="12">Gateway: TDM to VoIP and call switching.</text>
+<text x="518" y="232" fill="#b7ad9c" font-size="12">Cisco VVB: VRU voice treatment.</text>
+<text x="518" y="254" fill="#b7ad9c" font-size="12">Micro-app VoiceXML returns to that same Call Server.</text>
+<text x="518" y="276" fill="#b7ad9c" font-size="12">Network VRU Type 10. SendToVRU in Script Editor.</text>
+</g>
+<text x="28" y="344" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Guide updated December 12, 2025. Retrieved 2026-10-14.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Standalone: VVB HTTP to VXML Server</li>
+<li><span class="num">2</span>Comprehensive: switch leg and VRU leg share one Call Server</li>
+</ul>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T4-R05/seq.svg -->
+<div class="diagram" role="img" aria-label="Standalone SIP and HTTP sequence">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standalone call sequence">
+<rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="32" fill="#ff8b9a" font-family="Georgia, serif" font-size="18">Standalone sequence printed in the configuration guide</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="40" y="56" width="150" height="36" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="62" y="78">Ingress / CUBE</text>
+<rect x="250" y="56" width="140" height="36" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="282" y="78">Cisco VVB</text>
+<rect x="450" y="56" width="160" height="36" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="478" y="78">VXML Server</text>
+<rect x="670" y="56" width="260" height="36" rx="8" fill="#14110c" stroke="#c4b5fd"/><text x="688" y="78">ASR/TTS or media server</text>
+<path d="M190 96 C220 130 220 130 250 110" stroke="#e0b07a" fill="none"/>
+<text x="40" y="150">3. PSTN or provider delivers the call to the ingress gateway or CUBE.</text>
+<text x="40" y="172">4. Gateway sends a SIP invite to Cisco VVB with the self-service trigger.</text>
+<text x="40" y="194">5. VVB requests an HTTP URL. VXML Server returns VoiceXML, which may point at ASR, TTS, or .wav files.</text>
+</g>
+</svg>
+</div>
+<details>
+<summary>Mermaid source (not rendered; the SVGs are the pictures)</summary>
+<pre class="mermaid">flowchart LR
+  PSTN[PSTN or CUBE] -->|SIP invite| VVB[Cisco VVB]
+  VVB -->|HTTP| VXML[VXML Server]
+  VXML -->|VoiceXML| VVB
+  GW[Ingress gateway switch leg] --> CS[Call Server]
+  CS --> VRU[Cisco VVB VRU leg]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What the CVP 15 guide separates</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T4-R05/hero.png -->
+<div class="callout def"><span class="label">VXML Server</span><p>A J2EE-compliant application server for creating and deploying dynamic VoiceXML applications. The standalone install omits the Call Server and is built for self-service. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Call Studio</span><p>Applications are created in Call Studio and deployed to the VXML Server. The configuration guide’s standalone procedure says to deploy the application as a zip file. CVPSNMPLogger is enabled by default on a new deployed application. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Two standalone variants</span><p>Without reporting, choose VXML Server (Standalone) in the Operations Console. With reporting, choose VXML Server, and the Call Server routes messages between components. Calls arrive through Cisco VVB and run VoiceXML on the VXML Server. Cisco VVB performs ingress. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Reference Design rule</span><p>The Solution Design Guide, updated March 15, 2025, says the Comprehensive call flow is the only one you can use in a Reference Design. Standalone VXML Server, Call Director, and VRU-Only are listed as non-reference alternates. <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></p></div>
+<div class="callout gotcha"><span class="label">Same Call Server</span><p>SIP calls that use Unified CVP micro-applications use the IVR Service of the Call Server that holds the switch leg. VoiceXML fetches go to that Call Server. Micro-application VoiceXML traffic must return only to the same Call Server. Comprehensive calls always use the same Call Server for the switch leg and the VRU leg. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<h3>Port license and VRU type</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>What the guide prints</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Basic comprehensive ports</td><td>.wav files and DTMF input</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Advanced comprehensive ports</td><td>ASR/TTS servers and VXML Server applications</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Network VRU</td><td>Type 10 serves both the switch leg and the VRU leg. Connect with the SendToVRU node in ICM Script Editor.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ICMH view</td><td>Unified ICMH sees the two legs as a single call routed through different peripherals.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IVR service move</td><td>From 11.5(1), the Call Server IVR service is on the VXML Server. Configure IVR settings on the IVR tab.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Session invalidation</td><td>The VXML Server user guide recommends keeping <code>session_invalidation_delay</code> at 30 seconds in <code>global_config.xml</code>. The file is edited by hand under <code>%CVP_HOME%\VXMLServer\conf</code>.</td><td><a class="cite" href="#cite-4">[cite:4]</a> <mark class="recheck">re-check</mark></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Sisters around the IVR</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T4-R05">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Desktop</text>
+<circle cx="200" cy="132" r="36" fill="url(#T4R05map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T4R05map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>VXML Server</dt><dd>J2EE server that runs dynamic VoiceXML applications. Standalone install does not include the Call Server. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Call Studio</dt><dd>The tool that creates the application deployed to the VXML Server. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Cisco VVB</dt><dd>Virtualized Voice Browser. In the standalone figure it receives the SIP invite and requests VoiceXML over HTTP. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Switch leg</dt><dd>Comprehensive leg where the gateway does TDM-to-VoIP and call switching. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>VRU leg</dt><dd>Comprehensive leg where Cisco VVB provides VRU voice treatment. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Micro-application</dt><dd>VoiceXML pages the VXML Server creates for Unified CVP microapplications after the 11.5(1) move. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>SendToVRU</dt><dd>ICM Script Editor node the comprehensive ICME section names for connecting the call to the Network VRU. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Type 10</dt><dd>Network VRU type that serves both the switch leg and the VRU leg in the comprehensive ICME model. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>ReqICMLabel</dt><dd>Call Studio decision element used when a standalone script looks up a label in ICM. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Flow Designer</dt><dd>The build-and-manage article is for Webex Contact Center flows. It is not the Call Studio chapter. <a class="cite" href="#cite-6">[cite:6]</a></dd></div>
+<div class="term"><dt>Hybrid IVR</dt><dd>The July 2023 Webex CCE note: traditional ASR/TTS/CRM plus Dialogflow CX, with some nodes on premises and some in the cloud. <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></dd></div>
+<div class="term"><dt>CVP on Webex CCE</dt><dd>January 2025 what’s-new: custom code applications, including CVP applications, can be hosted on Webex CCE. <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T4-R05/eco.svg -->
+<div class="diagram" role="img" aria-label="CVP ecosystem mind map">
+<svg viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CVP ecosystem mind map">
+<rect width="980" height="260" fill="#0c121c"/>
+<rect x="390" y="96" width="200" height="64" rx="16" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="490" y="134" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Unified CVP</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="28" y="28" width="160" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="42" y="54">Call Studio</text>
+<rect x="28" y="176" width="180" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="42" y="202">Cisco VVB</text>
+<rect x="760" y="28" width="190" height="44" rx="10" fill="#14110c" stroke="#f0b429"/><text x="774" y="54">ICM Script Editor</text>
+<rect x="760" y="176" width="190" height="44" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="774" y="202">ASR / TTS / .wav</text>
+</g>
+<path d="M188 50 H390" stroke="#e0b07a" fill="none"/>
+<path d="M208 198 H390" stroke="#e0b07a" fill="none"/>
+<path d="M590 50 H760" stroke="#f0b429" fill="none"/>
+<path d="M590 198 H760" stroke="#c4b5fd" fill="none"/>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Unified CVP))
+    Standalone
+    Comprehensive
+    Call Studio
+    Cisco VVB
+</pre>
+</details>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only.</strong> Peer columns are labels. help.webex.com does not publish a parity matrix for Microsoft, Amazon Connect, or Genesys.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What the cited page says</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>py6u9h lists WFO feature SKUs for Webex Contact Center Enterprise, CCE, and CCX.</td><td>WFM is not a CVP call-flow model.</td><td>The SKU table in that article.</td><td>Sizing IVR ports from a WFM interval.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Quality management and recording</td><td>The CVP call-flow chapter does not print a QM retention number.</td><td>Prompt recording and agent recording are different stores.</td><td>Read the Enterprise quality-management guide for the release you run.</td><td>Quoting a Calling retention figure as CVP reporting retention.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>The CVP call-flow chapter does not configure emergency calling.</td><td>An IVR label is not a dispatchable location.</td><td>Read the Webex CCE 9-1-1 section the what’s-new page points at, and the phone’s emergency path.</td><td>Treating a CVP transfer as proof of 911 compliance.</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Analytics and reporting</td><td>Standalone reporting requires a Call Server and a Reporting Server. CUIC stock reports are a different guide.</td><td>CVP reporting and CUIC are adjacent, not the same screen.</td><td>Operations Console reporting flag, then T4-R07 for CUIC.</td><td>Expecting Live Data refresh inside the VXML log.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce</td><td>Not named in the CVP call-flow chapter read here.</td><td>CRM screen-pop is a desktop integration.</td><td>Read the CRM guide for the desktop you deployed.</td><td>Putting a CRM URL in the VXML app and calling that the Finesse gadget.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Dynamics 365</td><td>Not named in the CVP chapter. Cisco’s multi-tenant connector is not Microsoft’s Dynamics 365 Contact Center.</td><td>The name collision still applies.</td><td>Read the connector guide for the product on the subscription.</td><td>Installing the multi-tenant connector as a CVP element.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>ServiceNow</td><td>Not named in the CVP chapter.</td><td>Same boundary as the other CRM rows.</td><td>Read the ServiceNow guide for the release you run.</td><td>Using a multi-tenant ServiceNow article as the VXML design.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Virtual agents and AI Assistant</td><td>July 2023 what’s-new describes Hybrid IVR with Dialogflow CX. The Control Hub AI Assistant article is a multi-tenant Webex Contact Center article.</td><td>Name the product on the article.</td><td>Hybrid IVR node choice is in the what’s-new example. AI Assistant toggles are in the multi-tenant article.</td><td>Turning on a multi-tenant assistant and calling it a CVP element.</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>IVR and self-service</td><td>This room’s subject. Standalone is self-service. Comprehensive adds queuing and VoIP routing to agents.</td><td>The model decides whether ICM owns the queue.</td><td>Operations Console call-flow choice and Call Studio.</td><td>Queuing in a standalone app that the design guide says has no Unified CCE queuing control.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Digital channels</td><td>VoiceXML is voice. Webex CCE digital channels are named on the what’s-new page as email, chat, SMS, and later WhatsApp and Facebook Messenger.</td><td>A VXML app does not become chat.</td><td>Manage Digital Channels gadget, cited from the what’s-new page.</td><td>Promising SMS from a Call Studio audio element.</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Identity and SSO</td><td>The CVP chapter does not define the agent IdP.</td><td>Call Studio login and agent desktop login are different consoles.</td><td>Read identity for the Webex org in Control Hub, and the CVP Operations Console account separately.</td><td>Reusing a Finesse password as the Operations Console password in a runbook.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Ingress gateway or CUBE</td><td>Cisco VVB</td><td>SIP invite</td><td>The self-service trigger number configured on VVB</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cisco VVB</td><td>VXML Server</td><td>HTTP</td><td>URL request, then VoiceXML instructions</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>VoiceXML</td><td>ASR, TTS, media server</td><td>References inside the instructions</td><td>Voice input, TTS, or .wav playback</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Call Studio</td><td>VXML Server</td><td>Deployed application</td><td>A zip the configuration procedure tells you to deploy</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ICM Script Editor</td><td>Network VRU</td><td>SendToVRU</td><td>The comprehensive ICME connection to Type 10</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Call Server IVR service</td><td>VXML Server</td><td>Service move at 11.5(1)</td><td>Microapplication VXML pages</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Standalone with ICM lookup</td><td>ICM</td><td>ReqICMLabel</td><td>A label lookup without the chapter calling that comprehensive queuing</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex CCE host</td><td>CVP application</td><td>What’s-new hosting note</td><td>Custom VXML and Call Server apps moved onto Webex CCE</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>CVP idea</th><th>Where to read the neighbor</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Call Studio application</td><td>Multi-tenant flows are built in Flow Designer. Open nhovcy4 for that canvas.</td><td>Amazon Connect and Genesys flow builders are orientation labels. No equivalence is claimed.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Comprehensive queue and transfer</td><td>On-premises UCCE uses SendToVRU and Script Editor. The design guide limits Reference Designs to Comprehensive.</td><td>Teams Phone is not this IVR.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Hosted CVP on Webex CCE</td><td>The January 2025 note is the cloud sentence. It does not rewrite the CVP 15 call-flow chapter.</td><td>No peer IVR parity is published on help.webex.com.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>Canon plan: when a newer CVP configuration guide replaces Release 15.0(1), re-read the standalone figure before teaching the SIP invite step.</li>
+<li>The March 15, 2025 design-guide sentence that Comprehensive is the only Reference Design call flow stays <mark class="recheck">re-check</mark> until that chapter is newer than 12 months.</li>
+<li>Dialogflow project steps are not in the July 2023 what’s-new paragraph. Read the CCAI guide before you teach a bot project.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>A Reference Design packet uses standalone queuing</td><td>Non-reference flow used where the design guide allows only Comprehensive</td><td>Does the packet say Reference Design?</td><td>Move queuing to Comprehensive, or mark the design non-reference.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>VoiceXML hits a second Call Server</td><td>Micro-application rule ignored</td><td>Which Call Server owns the switch leg?</td><td>Return VoiceXML only to that Call Server.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>The runbook says build the IVR in Flow Designer</td><td>nhovcy4 was pasted onto Unified CVP</td><td>Which product is on the subscription?</td><td>Call Studio for this room. Flow Designer for multi-tenant Webex Contact Center.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Chat is drawn as a VXML element</td><td>Digital channels were merged into voice</td><td>What’s-new channel list</td><td>Leave chat on the Manage Digital Channels gadget.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>The standalone figure, then the comprehensive legs</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>PSTN or service provider</td><td>Ingress gateway or CUBE</td><td>Call delivery</td><td>Standalone figure, first line.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Gateway</td><td>Cisco VVB</td><td>SIP invite</td><td>Trigger number configured on VVB for the self-service application.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Cisco VVB</td><td>VXML Server</td><td>HTTP</td><td>URL request.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>VXML Server</td><td>Cisco VVB</td><td>VoiceXML</td><td>Instructions may reference ASR/TTS and media-server .wav files.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Ingress gateway</td><td>Call Server</td><td>SIP switch leg</td><td>Comprehensive: gateway does TDM-to-VoIP and call switching.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Cisco VVB</td><td>Caller</td><td>VRU leg</td><td>VRU voice treatment. May include ASR/TTS.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>VVB</td><td>Same Call Server</td><td>VoiceXML fetch</td><td>Micro-applications return only to the Call Server that holds the switch leg.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>ICM script</td><td>Network VRU Type 10</td><td>SendToVRU</td><td>Comprehensive ICME connection named in the guide.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Operations Console steps the guide names</h2>
+<ol>
+<li>Decide the model. Standalone without reporting: Device Management path that selects VXML Server (Standalone). Standalone with reporting: VXML Server, plus a Call Server and a Reporting Server. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a Cisco VVB standalone deployment, define the VXML Server applications, configure the base gateway and VVB settings, and configure the dial-peer that triggers the self-service application. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create the application in Call Studio and deploy it to the VXML Server. The procedure says to deploy it as a zip file. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Enable loggers in Call Studio. CVPSNMPLogger is on by default for a new deployed application. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the script must ask ICM for a label, use the ReqICMLabel element. Pass data in Peripheral Variables 1–10. The guide says those values are taken as is. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For comprehensive ICME, configure the IVR service to work with Cisco VVB. Use SendToVRU. Keep both legs on the same Call Server. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>IVR settings for microapplications are on the VXML Server IVR tab, because the IVR service moved at 11.5(1). <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<!-- VISUAL:screenshot:1 | Studio | assets/images/T4-R05/ops-console.png -->
+<p class="placeholder-asset">Screenshot slot: Operations Console call-flow choice, with hostnames redacted.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers and rules that have a page</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>Standalone minimum, no reporting</td><td>VXML Server, Call Studio, and a gateway</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Standalone with reporting</td><td>Also a Call Server and a Reporting Server</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Reference Design call flow</td><td>Comprehensive only</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td><mark class="recheck">re-check</mark> Guide updated March 15, 2025</td></tr>
+<tr><td>Basic versus Advanced</td><td>Basic: .wav and DTMF. Advanced: ASR/TTS and VXML Server applications</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Guide updated December 12, 2025</td></tr>
+<tr><td>Micro-app VoiceXML target</td><td>Same Call Server as the switch leg</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>session_invalidation_delay</td><td>Recommended default 30 seconds</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Custom SIP headers, standalone</td><td>Initial INVITE only, not reinvite. August 2023 what’s-new.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Non-reference sizing table</td><td>The design guide says those limits are for non-reference designs only. Do not size a Reference Design from that table.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Wrong model, wrong server, wrong tool</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Reporting is empty on a standalone app</td><td>The (Standalone) option was selected</td><td>That option does not require a Reporting Server</td><td>Use the VXML Server option and add Call Server plus Reporting Server</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Self-service never starts</td><td>SIP invite trigger does not match VVB</td><td>Guide: gateway sends the trigger configured for the self-service application</td><td>Match the dial-peer to that trigger</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Prompts play from the wrong Call Server</td><td>VoiceXML was aimed at a second server</td><td>Micro-application traffic returns only to the switch-leg Call Server</td><td>Point fetches at that Call Server. Comprehensive uses one Call Server for both legs</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ASR is licensed and still silent</td><td>Port level is Basic</td><td>Basic is .wav and DTMF. Advanced adds ASR/TTS</td><td>Confirm Advanced port licensing before you debug the speech server</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A Reference Design review rejects the IVR</td><td>Standalone or VRU-Only was used</td><td>Design guide: Comprehensive is the only Reference Design call flow</td><td>Change the model or label the design non-reference</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Queue treatment never connects</td><td>SendToVRU is missing</td><td>Comprehensive ICME names that node for the Type 10 VRU</td><td>Add SendToVRU in Script Editor</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ICM lookup element returns nothing useful</td><td>Peripheral variables were transformed</td><td>The guide says variables 1–10 are taken as is</td><td>Pass the values unchanged</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>End-of-call logging errors</td><td>session_invalidation_delay set to 0</td><td>User guide: too small a delay breaks end-of-call logging</td><td>Keep the recommended 30 seconds unless you test a change</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Custom header missing on reinvite</td><td>Expected, on the August 2023 note</td><td>Headers are on the initial INVITE only</td><td>Read the header on the first INVITE</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>IVR tab is missing on the Call Server</td><td>Looking at the pre-11.5(1) place</td><td>IVR service moved to the VXML Server</td><td>Configure the IVR tab on the VXML Server</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is the VXML Server?</summary><p class="answer">A J2EE-compliant application server for dynamic VoiceXML applications. It can run without the Call Server. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What breaks if you want reports and you picked VXML Server (Standalone)?</summary><p class="answer">That option does not require a Call Server or a Reporting Server. Reporting needs the other option plus both servers. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which three components does standalone require before reporting is added?</summary><p class="answer">VXML Server, Call Studio, and a gateway. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What are the four steps in the standalone VVB figure?</summary><p class="answer">PSTN or provider to the ingress gateway or CUBE. SIP invite to VVB. HTTP request to the VXML Server. VoiceXML back to VVB, optionally pointing at ASR, TTS, or .wav files. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does each comprehensive leg do?</summary><p class="answer">Switch leg: gateway does TDM-to-VoIP and call switching. VRU leg: Cisco VVB does VRU voice treatment. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Why must micro-application VoiceXML return to one Call Server?</summary><p class="answer">The IVR Service of the Call Server that has the switch leg receives the fetches. The guide says the traffic must return only to that Call Server. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove a Reference Design is using the allowed CVP flow?</summary><p class="answer">The design guide says Comprehensive is the only call flow you can use in a Reference Design. Standalone is listed under non-reference. <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Basic ports are quiet when the caller speaks. What do you check?</summary><p class="answer">Basic supports .wav and DTMF. ASR and TTS are Advanced. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where did the Call Server IVR service go?</summary><p class="answer">To the VXML Server, beginning with 11.5(1). Microapplication pages are created there. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is comprehensive different from multi-tenant Flow Designer?</summary><p class="answer">This room’s script tool is Call Studio, and the queue handoff the guide names is SendToVRU. Flow Designer is the Webex Contact Center flow article. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-6">[cite:6]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does the January 2025 Webex CCE note add?</summary><p class="answer">Custom code applications can be hosted on Webex CCE, including a move of CVP applications that use VXML and Call servers. The note is older than 12 months. <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What constraint stops you from treating standalone as a full contact-center queue?</summary><p class="answer">The design guide describes standalone as a VRU with no integration to Unified CCE for queuing control or subsequent call control, and it excludes that flow from Reference Designs. <a class="cite" href="#cite-3">[cite:3]</a> <mark class="recheck">re-check</mark></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: label the model before you draw the ports</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Goal: classify one IVR design as standalone or comprehensive using only the CVP 15 configuration guide.</label></li>
+<li><label><input type="checkbox"> Prereq: the guide, not a production Operations Console. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 1. Write whether reporting is required. Expected: (Standalone) option, or VXML Server plus Call Server and Reporting Server.</label></li>
+<li><label><input type="checkbox"> Step 2. Draw the standalone figure: gateway or CUBE, SIP invite, VVB, HTTP, VoiceXML.</label></li>
+<li><label><input type="checkbox"> Step 3. If the packet says Reference Design, write Comprehensive and name the switch leg and the VRU leg.</label></li>
+<li><label><input type="checkbox"> Step 4. Write the Call Server rule for micro-application VoiceXML.</label></li>
+<li><label><input type="checkbox"> Evidence: the Operations Console option name, the port level (Basic or Advanced), and the Script Editor node (SendToVRU) if comprehensive.</label></li>
+<li><label><input type="checkbox"> Break it: point VoiceXML at a second Call Server. Recovery: return it to the switch-leg Call Server.</label></li>
+<li><label><input type="checkbox"> Reflection: which sentence was a December 2025 configuration-guide fact, and which was a March 2025 design-guide fact you marked re-check?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Standalone without reporting requires:</p>
+<ol type="A"><li>Call Server and Reporting Server</li><li>VXML Server (Standalone) option, and no Call Server or Reporting Server</li><li>SendToVRU</li><li>Flow Designer</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>The standalone minimum, before reporting, is:</p>
+<ol type="A"><li>VXML Server, Call Studio, and a gateway</li><li>Router and Logger only</li><li>CUIC and Finesse</li><li>Two Call Servers</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>The gateway sends a SIP invite to Cisco VVB. What must that invite carry, according to the standalone figure?</p>
+<details class="reveal"><summary>Reveal</summary><p>The trigger number configured in Cisco VVB for the self-service application. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Cisco VVB gets VoiceXML instructions by:</p>
+<ol type="A"><li>An HTTP URL request to the VXML Server</li><li>A CUIC export</li><li>A Finesse gadget</li><li>BGP</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Comprehensive Basic ports support:</p>
+<ol type="A"><li>.wav files and DTMF</li><li>ASR and TTS only</li><li>Digital chat</li><li>Live Data</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Advanced adds ASR/TTS and VXML Server applications. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>Micro-application VoiceXML is fetched from a different Call Server than the switch leg. What does the guide require?</p>
+<details class="reveal"><summary>Reveal</summary><p>VoiceXML for micro-applications must return only to the same Call Server as the switch leg. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>The only CVP call flow the design guide allows in a Reference Design is:</p>
+<ol type="A"><li>Standalone</li><li>Call Director</li><li>Comprehensive</li><li>VRU-Only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>C. The chapter was updated March 15, 2025, so this stays re-check. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Draw it</span></header><p>Draw two legs. Label which one is the gateway and which one is Cisco VVB.</p>
+<details class="reveal"><summary>Reveal</summary><p>Switch leg on the gateway. VRU leg on Cisco VVB. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>From CVP 11.5(1), microapplication VXML pages are created by:</p>
+<ol type="A"><li>The VXML Server</li><li>CUIC</li><li>Finesse</li><li>Partner Hub</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. The Call Server IVR service moved to the VXML Server. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A script needs an ICM label from a standalone Call Studio app. Which element does the guide name?</p>
+<details class="reveal"><summary>Reveal</summary><p>ReqICMLabel. Peripheral Variables 1–10 are taken as is. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>SendToVRU connects the call to:</p>
+<ol type="A"><li>The Network VRU</li><li>A Finesse workflow</li><li>Edge Connect</li><li>A Calling hunt group</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Type 10 serves both legs in the comprehensive ICME section. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>Someone cites Flow Designer as the Unified CVP builder. Which article did they open?</p>
+<details class="reveal"><summary>Reveal</summary><p>The Webex Contact Center flow article, nhovcy4. This room’s builder is Call Studio. <a class="cite" href="#cite-6">[cite:6]</a> <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain standalone versus comprehensive CVP without merging them." | assets/audio/T4-R05/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the standalone SIP and HTTP steps, then the two comprehensive legs and the same-Call-Server rule." | assets/audio/T4-R05/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: Basic versus Advanced, SendToVRU, Reference Design equals Comprehensive." | assets/audio/T4-R05/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Unified CVP has a standalone self-service model and a comprehensive switch model. Standalone needs the VXML Server, Call Studio, and a gateway. Reporting adds a Call Server and a Reporting Server. Comprehensive is the Reference Design flow.</p>
+<p><strong>2 minutes.</strong> In the standalone figure the call hits an ingress gateway or CUBE, the gateway sends a SIP invite to Cisco VVB with the trigger, VVB requests VoiceXML over HTTP, and the instructions can point at ASR, TTS, or .wav files. Comprehensive has a switch leg on the gateway and a VRU leg on VVB. Micro-application VoiceXML returns only to the Call Server that owns the switch leg. Type 10 and SendToVRU are the ICME names. Basic ports are .wav and DTMF. Advanced adds speech and VXML applications.</p>
+<p><strong>30 seconds, the tool.</strong> I build the app in Call Studio. Flow Designer is the multi-tenant Webex Contact Center canvas, not this chapter.</p>
+<p><strong>2 minutes, the cloud sentence.</strong> A January 2025 what’s-new line says Webex CCE can host custom CVP applications. I keep that sentence marked re-check, and I do not let it erase the CVP 15 call-flow chapter. Hybrid IVR, from July 2023, is the note that mixes on-premises ASR/TTS with Dialogflow CX. That date is also re-check.</p>
+<p><strong>What you will not say.</strong> You will not size a Reference Design from the non-reference limits table. The design guide says those limits apply to non-reference designs only.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">Configuration Guide for Cisco Unified Customer Voice Portal, Release 15.0(1), chapter Unified CVP Call Flow Models — cisco.com — updated December 12, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html">CVP 15 call flow models</a>. Standalone variants, VVB sequence, comprehensive legs, Basic and Advanced, same Call Server, Type 10, SendToVRU, Call Studio deploy, ReqICMLabel.</li>
+<li id="cite-2">Configuration Guide for Cisco Unified Customer Voice Portal, Release 15.0(1), chapter VXML Server Configuration — cisco.com — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/vxml_server_configuration.html">VXML Server configuration</a>. J2EE server. IVR service moved to the VXML Server at 11.5(1).</li>
+<li id="cite-3">Solution Design Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), chapter Non-Reference Designs — cisco.com — updated March 15, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_non-reference-designs_15_0.html">Non-reference designs</a>. Comprehensive is the only Reference Design call flow. <mark class="recheck">re-check</mark></li>
+<li id="cite-4">User Guide for Unified CVP VXML Server and Unified CVP Call Studio, Release 15.0(1), VXML Server configuration — cisco.com — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/user/guide/ccvp_b_1501_user-guide-for-unified-cvp-vxml-server-and-unified-cvp-call-studio-release/vxml_server_configuration.html">global_config.xml</a>. Hand edit. Recommended session_invalidation_delay of 30 seconds. <mark class="recheck">re-check</mark></li>
+<li id="cite-5">What’s new for administrators in Webex Contact Center Enterprise — help.webex — article nhy3hvdb — <a href="https://help.webex.com/article/nhy3hvdb">help.webex.com article nhy3hvdb</a>. January 2025 custom CVP hosting. July 2023 Hybrid IVR. August 2023 custom SIP headers on the initial INVITE. September 2022 pointer to the Webex CCE 9-1-1 section. Digital-channel list on the same page. <mark class="recheck">re-check</mark></li>
+<li id="cite-6">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a>. Cited as the multi-tenant flow article, not as Call Studio.</li>
+<li id="cite-7">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>. Scoped to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Open questions: the VXML user-guide update date for the 30-second recommendation; Dialogflow project steps beyond the July 2023 paragraph.</li>
+<li>Facts still marked re-check: the March 15, 2025 Reference Design sentence, session_invalidation_delay, and every what’s-new paragraph dated before October 2025.</li>
+<li>Assets missing: Operations Console screenshot, exported SVGs, audio.</li>
+<li>Ideas for v1.0: a one-page model card generated from the call-flow chapter at review time.</li>
+<li>Next review: re-read the non-reference chapter and nhy3hvdb before teaching those sentences as current.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R01-wxcc-enterprise-overview.html"><span>Previous written</span><strong>T4-R01</strong><em>WxCC Enterprise Overview</em></a><a class="next" href="T4-R06-finesse-desktop-gadgets.html"><span>Next</span><strong>T4-R06</strong><em>Finesse Desktop &amp; Gadgets</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span><span class="noprint">Opens from the hub. No server is required to read.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

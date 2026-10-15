@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T5-R01 · What Dedicated Instance Is">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T5-R01 · What Dedicated Instance Is · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T5" data-room="T5-R01" data-room-title="What Dedicated Instance Is" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T5</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T5/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T5 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T5 · Dedicated Instance</p>
+<h1>What Dedicated Instance Is</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for What Dedicated Instance Is">
+<defs>
+<linearGradient id="T5R01sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T5R01sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Dedicated Instance</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T5-R01</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Site</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Peering</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Calling</text></g>
+</svg>
+<figcaption>Illustrated scene for What Dedicated Instance Is. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for What Dedicated Instance Is">
+<defs>
+<marker id="T5R01arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Site → Peering → Dedicated UC → Calling</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Calling</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T5R01arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T5R01arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T5R01arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T5R01lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Site → Peering → Dedicated UC → Calling. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Dedicated Instance is a Webex Calling add-on: a dedicated cloud instance based on Unified CM. Calling features are not harmonized with multi-tenant Webex Calling. Peering design lives in the next rooms.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T5-R01</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T2-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>20 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>The add-on includes Unified CM, optional IM and Presence, Unity Connection, Expressway, multiple clusters, Emergency Responder in the Americas only, and optional Session Management Edition. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A full cluster is up to 8 call-processing servers or about 50,000 devices on version 14 and above. Do not activate call processing on the TFTP, MOH, or publisher nodes Cisco did not activate. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Partner or customer limits: 50,000 configured devices in a full-size cluster, and a maximum of 160,000 end users configured or synchronized over LDAP. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Webex Calling users cannot be part of a hunt group on Dedicated Instance. The features are not harmonized. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Knowledge Workers and Common Area devices captured in the First Time Setup Wizard determine how many call-processing nodes Cisco deploys. Sizing is a function of the Dedicated Instance team, not of the old on-premises cluster size. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The first cluster in a region is activated within 48 hours. Later clusters in that region are activated within 5 business days. More than three clusters in a region need customer-provided subnets. Cisco-provided subnets support only up to three. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>SME is eligible when three clusters are deployed. One SME can span regions. Its node-to-node and database replication traffic uses the Cisco backbone. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Nightly backups keep the latest three in the data center. They are for disaster recovery. You do not get access, and they are not a change-backout strategy. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Base configuration creates interop objects whose names start with patterns such as WXC-DI. Cisco says not to modify or delete the default trunks. The base-configuration article was updated May 27, 2025. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> People hear “Webex Calling” and put Dedicated Instance users into a multi-tenant hunt group. The introduction article gives that exact example as something that does not work. Peering math belongs in T5-R02 and T5-R03.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>What the add-on deploys</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T5-R01/arch.svg -->
+<div class="diagram" role="img" aria-label="Dedicated Instance application set">
+<svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Applications inside Dedicated Instance">
+<rect width="980" height="360" fill="#0c121c"/>
+<text x="28" y="34" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Dedicated Instance from the introduction article</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="56" width="220" height="120" rx="12" fill="#14110c" stroke="#c4b5fd"/>
+<text x="44" y="84" fill="#c4b5fd">1 · Unified CM cluster</text>
+<text x="44" y="108" fill="#b7ad9c">Publisher: provisioning</text>
+<text x="44" y="130" fill="#b7ad9c">Subscribers: TFTP, MOH,</text>
+<text x="44" y="152" fill="#b7ad9c">call processing</text>
+<rect x="270" y="56" width="220" height="120" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="286" y="84" fill="#e0b07a">2 · Optional apps</text>
+<text x="286" y="108" fill="#b7ad9c">IM and Presence, via FTSW</text>
+<text x="286" y="130" fill="#b7ad9c">SME after three clusters</text>
+<text x="286" y="152" fill="#b7ad9c">CER, Americas only</text>
+<rect x="512" y="56" width="220" height="120" rx="12" fill="#14110c" stroke="#f0b429"/>
+<text x="528" y="84" fill="#f0b429">3 · Always in the list</text>
+<text x="528" y="108" fill="#b7ad9c">Unity Connection</text>
+<text x="528" y="130" fill="#b7ad9c">Expressway-C and E</text>
+<text x="528" y="152" fill="#b7ad9c">Multiple cluster</text>
+<rect x="754" y="56" width="198" height="120" rx="12" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="770" y="84" fill="#c4b5fd">4 · Not the same PBX</text>
+<text x="770" y="108" fill="#b7ad9c">Webex Calling users</text>
+<text x="770" y="130" fill="#b7ad9c">stay out of a DI</text>
+<text x="770" y="152" fill="#b7ad9c">hunt group</text>
+<rect x="120" y="210" width="740" height="64" rx="12" fill="#2a220c" stroke="#f0b429"/>
+<text x="140" y="236" fill="#f0b429">5 · Peering is the next room</text>
+<text x="140" y="258" fill="#b7ad9c">T5-R02 holds the two-link Edge Connect rule. T5-R03 holds Partner Connect, Virtual Connect, and Edge Connect as choices.</text>
+</g>
+<text x="28" y="320" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">dk3o5r header September 23, 2026. Retrieved 2026-10-14. Current.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Cluster shape</li>
+<li><span class="num">2</span>Optional and region-limited apps</li>
+<li><span class="num">4</span>Features are not harmonized</li>
+<li><span class="num">5</span>Connectivity is a later room</li>
+</ul>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T5-R01/seq.svg -->
+<div class="diagram" role="img" aria-label="Cluster expansion sequence">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How extra clusters are requested">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="32" fill="#c4b5fd" font-family="Georgia, serif" font-size="18">When one cluster is not enough</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<text x="36" y="70">6. First Time Setup Wizard counts Knowledge Workers and Common Area devices.</text>
+<text x="36" y="96">7. First cluster in the region: within 48 hours. Later clusters: within 5 business days.</text>
+<text x="36" y="122">8. Extra clusters use the SKU the article names, then Control Hub: Calling, Dedicated Instance, Service Request, Request Cluster Expansion.</text>
+<text x="36" y="148">9. A2Q is required for multi-cluster provisioning. Above three clusters, bring your own subnets.</text>
+<text x="36" y="174" fill="#b7ad9c">SME approval goes through the account manager to the mailer the article prints.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  FTSW[Knowledge Workers] --> C1[First cluster]
+  C1 --> C2[Later clusters]
+  C2 --> SME[SME after three]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>A private Unified CM, still inside Webex Calling</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T5-R01/hero.png -->
+<div class="callout def"><span class="label">Add-on, not a second product family</span><p>Webex Calling includes a dedicated cloud instance based on the Cisco Unified Communications Manager architecture. It is integrated with Webex Calling and is an add-on. It supports the same features as on-premises Unified CM, including Jabber and Webex App, and it can trunk to third-party PBXs. It is orderable as an add-on for Webex Calling Flex Plan 3.0 through partners in specific countries. See the Global Availability Guide for countries. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Calling features are not harmonized</span><p>Customers can place users on both platforms. The introduction says the calling features are not harmonized. The example is that Webex Calling users cannot be part of a hunt group on Dedicated Instance. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Call processing stays on the nodes Cisco activated</span><p>A cluster is a publisher plus subscribers. The publisher role named in the sizing section is provisioning. Other subscriber roles include TFTP, MOH, and call processing. A fully deployed cluster supports up to 8 call-processing servers or approximately 50,000 devices on version 14 and above. Do not activate call processing on TFTP, MOH, or publisher nodes other than the nodes Cisco activated. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Backups are not yours</span><p>Cisco takes a backup of all Dedicated Instance UC applications every night and keeps the latest three in the data center. They are password protected and used only to restore after disaster recovery. On a major hardware failure the cluster can be reinstalled and restored from the daily DRS backup. Restore time depends on database size and which components you restore. This is not a change-backout strategy, and you will not have access to these backups. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<h3>What each application is for</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Application</th><th>How the introduction describes it</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Unified CM</td><td>The calling application. Cluster size follows Knowledge Workers and Common Area devices from the First Time Setup Wizard.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IM and Presence</td><td>Optional, chosen in the First Time Setup Wizard, installed as a subscriber. Sizing is the Dedicated Instance team’s.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Unity Connection</td><td>Installed from the Knowledge Worker count for the region. Office 365 integration needs a Cisco Support case because it affects sizing.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Expressway-C and Expressway-E</td><td>Deployed for Mobile and Remote Access and business-to-business calling. Entitlement is 100 percent of Knowledge Workers for MRA licenses and 5 percent for B2B calls. Operations deploys MRA for 20 percent at activation. Expand toward 100 percent by a Cisco Support case.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency Responder</td><td>Americas region only, in the add-on list.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SME</td><td>Eligible at three clusters. Centralizes SIP trunks, voicemail, and conferencing, and avoids a full mesh. Needs Business Unit approval. The account manager emails cucm-session-manager@cisco.com.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Security features named</td><td>Encrypted media, secure SRST, and secure over-the-top registration using MRA. Also SRST, Emergency Responder, and Nomadic E911.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Localization</td><td>Phone and gateway tones in 82 countries, self-care portal in 50 languages, clients in more than 30 languages.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>What sits beside the add-on</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T5-R01">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<circle cx="200" cy="132" r="36" fill="url(#T5R01map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T5R01map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>Dedicated Instance</dt><dd>Dedicated cloud instance based on Unified CM, integrated with Webex Calling, sold as an add-on. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Knowledge Worker</dt><dd>Count captured in the First Time Setup Wizard. Drives call-processing nodes, Unity Connection, and Expressway entitlements. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Common Area device</dt><dd>The other First Time Setup Wizard count that drives call-processing node count. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Full-size cluster</dt><dd>Up to 8 call-processing servers or about 50,000 devices on version 14 and above. The configuration limit stated to the partner is 50,000 configured devices. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>160,000 end users</dt><dd>Maximum that may be configured or synchronized over LDAP. They may be active or present only for directory or service discovery. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Not harmonized</dt><dd>Dedicated Instance and Webex Calling keep different calling features. Hunt-group membership does not cross. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>A2Q</dt><dd>Required for multi-cluster provisioning and activation. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Additional clusters SKU</dt><dd>The article’s name is “Additional Webex Calling Dedicated Instance Clusters.” It grants Unified CM, IM and Presence, Unity Connection, Expressways, and Emergency Responder. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>WXC-DI trunks</dt><dd>Default multi-tenant interop trunks, one toward each Dedicated Instance data center in the region. Do not modify or delete them. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></dd></div>
+<div class="term"><dt>DRS backup</dt><dd>Nightly. Latest three kept. Password protected. Restore only. No customer access. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Expressway-E call policy</dt><dd>Preconfigured to block all inbound B2B calls. Update it during B2B testing so calls come from valid sources. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T5-R01/eco.svg -->
+<div class="diagram" role="img" aria-label="Dedicated Instance ecosystem mind map">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Neighbors of Dedicated Instance">
+<rect width="980" height="240" fill="#0c121c"/>
+<rect x="370" y="88" width="240" height="60" rx="16" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="490" y="124" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Dedicated Instance</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="20" y="30" width="210" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="34" y="56">Webex Calling multi-tenant</text>
+<rect x="20" y="160" width="210" height="44" rx="10" fill="#14110c" stroke="#f0b429"/><text x="34" y="186">Third-party PBX trunk</text>
+<rect x="750" y="30" width="200" height="44" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="764" y="56">Unity and IM&amp;P</text>
+<rect x="750" y="160" width="200" height="44" rx="10" fill="#14110c" stroke="#ff8b9a"/><text x="764" y="186">T5-R02 peering</text>
+</g>
+<path d="M230 52 H370" stroke="#e0b07a" fill="none"/>
+<path d="M230 182 H370" stroke="#f0b429" fill="none"/>
+<path d="M610 52 H750" stroke="#c4b5fd" fill="none"/>
+<path d="M610 182 H750" stroke="#ff8b9a" fill="none"/>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Dedicated Instance))
+    Webex Calling
+    Unified CM
+    Unity Connection
+    Expressway
+</pre>
+</details>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only.</strong> Multi-tenant Webex Calling is the platform this add-on attaches to. It is not a feature-parity column.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What the cited page says</th><th>Why it matters</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>Not sized in the introduction. py6u9h is a contact-center WFO article.</td><td>Knowledge Workers are not contact-center agent seats.</td><td>A contact-center room if the user is an agent.</td><td>Using the 50,000 device line as a WFM server count.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Quality management and recording</td><td>Not given a retention number in dk3o5r.</td><td>DRS backups restore UC applications. They are not call recordings.</td><td>The recording product you licensed.</td><td>Asking Cisco for a backup to recover a deleted recording.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>The introduction names Emergency Responder for the Americas, Nomadic E911, and SRST. The base configuration names RedSky trunks and route groups with an x prefix, and a HELD customer ID the partner adds to the service profile.</td><td>Americas-only CER is a product limit. RedSky object names are a base-config fact.</td><td>Base configuration article. Do not delete x-prefixed objects.</td><td>Expecting CER in every region because Nomadic E911 is mentioned.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Analytics and reporting</td><td>Not a CUIC or Analyzer design in the introduction.</td><td>Call history inside Unified CM is not Webex Contact Center Analyzer.</td><td>The UC reporting guide for the apps Cisco deployed.</td><td>Opening T4 CUIC to explain a Dedicated Instance user.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce, Dynamics 365, ServiceNow</td><td>The introduction says open APIs enable third-party integrations. It does not name those three CRMs.</td><td>An integration claim needs the API guide for that CRM. <mark class="todo-verify">TODO-verify</mark> any specific CRM connector from this article alone.</td><td>developer.webex.com or the CRM’s Cisco guide, once read.</td><td>Listing a CRM as included in the add-on.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agents</td><td>Not part of the add-on list.</td><td>A contact-center bot is a T4 topic.</td><td>T4-R10 for Hybrid IVR.</td><td>Putting Dialogflow inside the Expressway entitlement.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IVR and self-service</td><td>Not a CVP design in this article. Unity Connection is voicemail, sized from Knowledge Workers.</td><td>Voicemail and contact-center IVR are different applications.</td><td>Unity from the Knowledge Worker count. IVR from T4-R05 if the user is a contact-center caller.</td><td>Treating Unity Connection as CVP.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital channels</td><td>Not in the Dedicated Instance application list.</td><td>Webex Connect channels are a contact-center what’s-new topic.</td><td>T4-R10.</td><td>Adding WhatsApp to the Expressway B2B percentage.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Identity and SSO</td><td>The introduction does not walk an IdP. The base configuration says not to modify DNS, NTP, or clustering addresses on Expressway.</td><td>Directory sync of up to 160,000 users is an LDAP limit, not an SSO procedure.</td><td>Activation and directory articles. Leave Expressway DNS and NTP as Cisco set them.</td><td>Repointing Expressway NTP during an SSO project.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Webex Calling multi-tenant</td><td>Dedicated Instance</td><td>Interop SIP trunks, one per data center</td><td>Basic interop. Default trunks must stay.</td><td><a href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Dedicated Instance</td><td>Third-party PBX</td><td>Trunk</td><td>Migration schedule the introduction allows.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>First Time Setup Wizard</td><td>Call-processing nodes</td><td>Knowledge Worker and Common Area counts</td><td>How many nodes Cisco deploys.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer</td><td>Extra clusters</td><td>Control Hub service request</td><td>Calling, Dedicated Instance, Service Request, UC Application Management, Request Cluster Expansion.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SME nodes</td><td>Other SME nodes</td><td>Cisco backbone</td><td>Node-to-node traffic and database replication. Not the customer network.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Expressway-E</td><td>Inbound B2B</td><td>Preconfigured call policy</td><td>Blocked until you update the policy for valid sources.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Location</td><td>Route group</td><td>Main number and PSTN connection</td><td>Without them, users cannot make or receive calls through that location’s route group. Premise PSTN is allowed when you are not using Cisco Calling Plan.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>This article</th><th>Neighbor</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>What the add-on is</td><td>T5-R02 is architecture and the two-link peering rule.</td><td>T5-R03 is which connectivity option you order.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hunt groups stay inside one platform</td><td>Multi-tenant hunt groups are a Webex Calling feature room, not a shared group.</td><td>Contact-center queues are T3 or T4, not this hunt-group sentence.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Flex Plan 3.0 add-on</td><td>Country list is the Global Availability Guide, which this room does not copy.</td><td>Webex Contact Center Enterprise is a different add-on family.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>When the Global Availability Guide is read into a room, attach the country list. Until then the sentence is “specific countries.”</li>
+<li>Base-configuration names were read from an article updated May 27, 2025. Re-check them before a change window.</li>
+<li>Activation permanence, the first voice domain, and the end of new EMEA regions are in the activation article used by T5-R02. This room points there instead of repeating that drill.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>A Webex Calling user is missing from a Dedicated Instance hunt group</td><td>Features were assumed to be harmonized</td><td>The introduction’s example is this exact case</td><td>Keep the hunt group on one platform.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Call processing was turned on the publisher</td><td>On-premises habit</td><td>Only nodes Cisco activated may run call processing</td><td>Stop the extra service and talk to Cisco before adding services.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A fourth cluster has no subnet</td><td>Cisco-provided subnets were assumed to scale forever</td><td>Cisco-provided subnets support up to three clusters per region</td><td>Provide customer subnets.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Someone asks for yesterday’s backup to undo a translation pattern</td><td>DRS was treated as a backout</td><td>The article says it is not a change-backout strategy and you will not have access</td><td>Use your own change plan.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From an order to a usable interop trunk</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Partner order</td><td>Webex Calling Flex Plan 3.0</td><td>Add-on</td><td>Specific countries. Global Availability Guide.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>First Time Setup Wizard</td><td>Node count</td><td>Knowledge Workers and Common Area devices</td><td>Dedicated Instance team sizes the applications.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Activation</td><td>First cluster</td><td>48 hours</td><td>Later clusters within 5 business days.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Control Hub location</td><td>Interop trunk</td><td>Location is mandatory</td><td>Pattern WXC-DI-*-LOC. Main number and PSTN connection or calls through that route group fail.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>Cisco</td><td>Trunk and route group</td><td>Default objects</td><td>WXC-DI-*-TRK- one per data center. WXC-DI-*-RG. Do not modify or delete.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>6</td><td>Three clusters</td><td>SME</td><td>Business Unit approval</td><td>Account manager emails the address in the article.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Objects Cisco creates, and the ones you still fill in</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Where</th><th>Rule</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Location</td><td>Control Hub, Calling, Location</td><td>Name pattern WXC-DI-*-LOC. Required for the interop SIP trunk.</td><td><a href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Main number</td><td>That location</td><td>Required, with a PSTN connection, or users cannot use the route group. Premise PSTN is allowed if you are not on Cisco Calling Plan.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>SIP trunk</td><td>Calling, Call Routing, Trunk</td><td>WXC-DI-*-TRK-. One to each Dedicated Instance data center. Cisco-created. Do not modify or delete.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Route group</td><td>Calling, Call Routing, Route Group</td><td>WXC-DI-*-RG. Link a custom dial plan to this default group.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>RedSky on Unified CM</td><td>x-prefixed trunk, route group, and route list</td><td>Names include x_e911_RedSky. Partner adds the RedSky account ID. Do not delete x-prefixed Cisco objects.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Expressway-E call policy</td><td>Edge components</td><td>Blocks all inbound B2B calls until you update it for valid sources during B2B testing.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DNS, NTP, clustering</td><td>Expressway System menus</td><td>Should not be modified.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Cluster expansion</td><td>Control Hub service request</td><td>Calling, Dedicated Instance, Service Request, Raise Request, UC Application Management, Request Cluster Expansion. A2Q for multi-cluster.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>MRA capacity</td><td>Operations at activation, then a case</td><td>Starts at 20 percent of Knowledge Workers. Entitlement is 100 percent. B2B entitlement is 5 percent.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the introduction prints</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Limit</th><th>Figure</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Call-processing servers</td><td>Up to 8</td><td>Or approximately 50,000 devices, version 14 and above.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Configured devices</td><td>50,000</td><td>Full-size cluster. Partner or customer configuration limit.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>End users</td><td>160,000</td><td>Configured or LDAP-synced. Active or directory-only.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>First cluster</td><td>48 hours</td><td>From the time of service activation.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Later clusters</td><td>5 business days</td><td>Same region.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cisco-provided subnets</td><td>Up to 3 clusters per region</td><td>More clusters need customer subnets. The article recommends starting with customer subnets if you plan to pass three.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>MRA at activation</td><td>20 percent of Knowledge Workers</td><td>Entitled to 100 percent by case. B2B entitlement is 5 percent.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SME eligibility</td><td>Three clusters</td><td>Business Unit approval. One SME may span regions.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Backups retained</td><td>Latest 3</td><td>Nightly. No customer access.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency Responder</td><td>Americas only</td><td>Listed in the add-on contents.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Tones, portal, clients</td><td>82 countries, 50 languages, more than 30 languages</td><td>Same localization claim as on-premises Unified CM, as the article states it.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Rows from the introduction and the base configuration</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>What to inspect</th><th>What the page implies</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Users cannot call through the location route group</td><td>Main number and PSTN connection on the WXC-DI location</td><td>Both are required. Premise PSTN is valid when Cisco Calling Plan is not in use.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Interop calls fail after a trunk edit</td><td>Whether a WXC-DI trunk was modified or deleted</td><td>Cisco says those default trunks should not be modified or deleted.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Inbound B2B calls never arrive</td><td>Expressway-E call policy</td><td>The policy blocks all inbound B2B calls until you update it for valid sources.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>MRA licenses look short on day one</td><td>The 20 percent deployment versus the 100 percent entitlement</td><td>Expansion is a Cisco Support case, based on consumption.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Office 365 voicemail sizing is wrong</td><td>Whether a support case was opened</td><td>Office 365 integration affects Unity Connection sizing.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CER is missing outside the Americas</td><td>The add-on contents line</td><td>Emergency Responder is Americas only.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A hunt group rejects a multi-tenant user</td><td>Which platform owns the group</td><td>Features are not harmonized.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is Dedicated Instance, in the introduction’s first definition?</summary><p class="answer">A dedicated cloud instance based on Unified CM, integrated with Webex Calling, and an add-on. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which application is Americas-only?</summary><p class="answer">Cisco Emergency Responder. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Can a Webex Calling user join a Dedicated Instance hunt group?</summary><p class="answer">No. The article uses that as the example of features that are not harmonized. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What sets the call-processing node count?</summary><p class="answer">Knowledge Workers and Common Area devices from the First Time Setup Wizard. The Dedicated Instance team sizes the apps. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is the full-cluster device figure?</summary><p class="answer">Up to 8 call-processing servers or approximately 50,000 devices on version 14 and above, and 50,000 configured devices as the partner limit. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many end users can be in the cluster?</summary><p class="answer">A maximum of 160,000, configured or synchronized over LDAP. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When is SME eligible, and whose network carries SME replication?</summary><p class="answer">At three clusters. Replication traverses the Cisco backbone, not the customer network. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is MRA on day one versus the entitlement?</summary><p class="answer">Deployed at 20 percent of Knowledge Workers. Entitled to 100 percent. B2B entitlement is 5 percent. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Who can use the nightly backups?</summary><p class="answer">Cisco, for disaster recovery. You do not have access, and they are not a backout tool. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What happens if the location has no main number?</summary><p class="answer">Users cannot make or receive calls through the route group associated with that location. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why do inbound B2B calls fail on a new Expressway-E?</summary><p class="answer">A call policy blocks all inbound B2B calls until you update it for valid sources. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Where do you go for the two-link peering rule?</summary><p class="answer">T5-R02. This room defines the add-on. Connectivity choices are T5-R03. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: name the objects before you touch them</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Goal: list what Cisco deploys and which names you must not delete.</label></li>
+<li><label><input type="checkbox"> Prereq: dk3o5r, header September 23, 2026. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 1. Write the add-on contents and circle Emergency Responder as Americas-only.</label></li>
+<li><label><input type="checkbox"> Step 2. Write 8, 50,000, and 160,000 on three separate lines.</label></li>
+<li><label><input type="checkbox"> Step 3. From the base-configuration article, copy the WXC-DI trunk pattern and the “do not modify” rule.</label></li>
+<li><label><input type="checkbox"> Step 4. Note the Expressway-E call policy and the 20 percent MRA start.</label></li>
+<li><label><input type="checkbox"> Evidence: 48 hours, 5 business days, three-cluster subnet rule, latest three backups.</label></li>
+<li><label><input type="checkbox"> Break it: put a multi-tenant user in a Dedicated Instance hunt group. Recovery: split the groups by platform.</label></li>
+<li><label><input type="checkbox"> Reflection: which base-config rows are still re-check because the article is May 27, 2025?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Dedicated Instance is:</p>
+<ol type="A"><li>A Webex Calling add-on based on Unified CM</li><li>Multi-tenant calling with a new name</li><li>Webex Contact Center Enterprise</li><li>A survivability gateway only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Emergency Responder in the add-on list is:</p>
+<ol type="A"><li>Americas region only</li><li>Every region</li><li>EU only</li><li>Optional everywhere</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>A full cluster’s call-processing servers top out at:</p>
+<ol type="A"><li>8, or about 50,000 devices on version 14 and above</li><li>2</li><li>160,000 servers</li><li>20 percent</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. 160,000 is the end-user figure. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>A Webex Calling user must join a Dedicated Instance hunt group. What does the article say?</p>
+<details class="reveal"><summary>Reveal</summary><p>Webex Calling users cannot be part of a hunt group on Dedicated Instance. Features are not harmonized. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>IM and Presence is:</p>
+<ol type="A"><li>Optional, driven by the First Time Setup Wizard, installed as a subscriber</li><li>Mandatory in every region</li><li>Americas only</li><li>The same node as Unity Connection</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>MRA at activation is deployed for:</p>
+<ol type="A"><li>20 percent of Knowledge Workers</li><li>100 percent on day one</li><li>5 percent</li><li>8 servers</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Entitlement is 100 percent. B2B entitlement is 5 percent. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Cisco-provided subnets support up to:</p>
+<ol type="A"><li>Three clusters per region</li><li>Eight clusters</li><li>One cluster worldwide</li><li>160,000 clusters</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>You want last night’s backup to undo a route-pattern change. What does the article allow?</p>
+<details class="reveal"><summary>Reveal</summary><p>Nothing for you. Backups are for disaster recovery, you have no access, and they are not a change backout. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Default interop trunks:</p>
+<ol type="A"><li>Must not be modified or deleted</li><li>Are built by the customer with any name</li><li>Replace Expressway</li><li>Exist only for Meetings</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Pattern WXC-DI-*-TRK-. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Expressway-E ships with a call policy that:</p>
+<ol type="A"><li>Blocks all inbound B2B calls</li><li>Allows every source</li><li>Disables MRA</li><li>Deletes the location</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Update it during B2B testing. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw it</span></header><p>Draw SME traffic.</p>
+<details class="reveal"><summary>Reveal</summary><p>Node-to-node and database replication on the Cisco backbone, not the customer network. Eligible at three clusters. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>The introduction article header used here is:</p>
+<ol type="A"><li>September 23, 2026</li><li>May 27, 2025</li><li>March 15, 2025</li><li>Undated</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. The base-configuration article is the May 27, 2025 one, and those rows stay re-check. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Define Dedicated Instance and the hunt-group example." | assets/audio/T5-R01/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk cluster size, MRA percentages, SME, and backups." | assets/audio/T5-R01/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 8, 50000, 160000, 20 percent, Americas CER." | assets/audio/T5-R01/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Dedicated Instance is a Webex Calling add-on built on Unified CM. It includes Unity Connection, Expressway, optional IM and Presence, optional SME, and Emergency Responder only in the Americas. Calling features are not the same as multi-tenant Webex Calling. A Webex Calling user cannot sit in a Dedicated Instance hunt group.</p>
+<p><strong>2 minutes.</strong> Cisco sizes the cluster from Knowledge Workers and Common Area devices, not from the old on-premises bill of materials. A full cluster is up to eight call-processing servers or about 50,000 devices on version 14 and above. I do not turn on call processing on the publisher or on TFTP and MOH nodes Cisco left inactive. I can configure 50,000 devices and up to 160,000 end users, including LDAP users who are only there for directory lookup. The first cluster in a region comes up within 48 hours. Later ones within five business days. Past three clusters I bring subnets. SME waits until I have three clusters, and its replication stays on the Cisco backbone.</p>
+<p><strong>30 seconds, operations.</strong> Nightly backups keep the latest three. I cannot download them to undo a mistake. MRA starts at 20 percent of Knowledge Workers even though the entitlement is 100 percent. B2B entitlement is 5 percent. Expressway-E blocks inbound B2B until I change the call policy.</p>
+<p><strong>2 minutes, the boundary.</strong> Default interop trunks use the WXC-DI name pattern, one toward each data center, and I do not edit them. The location needs a PSTN connection and a main number or the route group is unusable. RedSky objects are x-prefixed and the partner fills in the account ID. Peering, ASN 13445, and the choice among Partner Connect, Virtual Connect, and Edge Connect are the next two rooms. The introduction I am quoting was updated September 23, 2026. The base-configuration names come from May 27, 2025, so those rows stay re-check.</p>
+<p><strong>What you will not say.</strong> You will not say the platforms share hunt groups, and you will not treat a DRS backup as your rollback plan.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">Introduction to Dedicated Instance — help.webex — article dk3o5r — header September 23, 2026 — <a href="https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance">Introduction to Dedicated Instance</a>. Add-on contents, sizing, 8 servers, 50,000 devices, 160,000 users, MRA percentages, multi-cluster timing, subnets, SME, backups, Flex Plan 3.0, localization, hunt-group example, security features named in the article.</li>
+<li id="cite-2">Dedicated Instance for Webex Calling base configuration — help.webex — article 2vpf1 — header May 27, 2025 — <a href="https://help.webex.com/en-us/article/2vpf1/Dedicated-Instance-for-Webex-Calling-Base-Configuration">Base configuration</a>. WXC-DI location, trunk, and route group patterns. Do not modify or delete default trunks. RedSky x-prefixed objects. Expressway-E call policy. DNS, NTP, and clustering left unchanged. <mark class="recheck">re-check</mark></li>
+<li id="cite-3">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>. Contact-center WFO scope. Not a Dedicated Instance sizing table.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Open questions: country-by-country availability stays in the Global Availability Guide. A named CRM connector is <mark class="todo-verify">TODO-verify</mark> from the open-API sentence alone.</li>
+<li>Facts still marked re-check: the entire base-configuration article, updated May 27, 2025.</li>
+<li>Assets missing: application-set SVG export, audio, a redacted Control Hub location screenshot.</li>
+<li>Ideas for v1.0: a card that separates 8 servers, 50,000 devices, and 160,000 users.</li>
+<li>Next review: re-read 2vpf1 when Cisco updates it. dk3o5r was current on September 23, 2026 at retrieval.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R10-hybrid-cloud-connected.html"><span>Previous</span><strong>T4-R10</strong><em>Hybrid and cloud-connected features</em></a><a class="next" href="T5-R02-di-architecture-peering.html"><span>Next</span><strong>T5-R02</strong><em>DI architecture and peering</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

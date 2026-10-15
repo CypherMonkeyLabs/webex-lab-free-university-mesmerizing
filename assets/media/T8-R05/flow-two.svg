@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canon-svg" viewBox="0 0 1100 536" role="img" aria-labelledby="T8R05flowtwosvg-title T8R05flowtwosvg-desc">
+<title id="T8R05flowtwosvg-title">Two products</title>
+<desc id="T8R05flowtwosvg-desc">Mid-call summaries are only for direct agent-to-agent consults and transfers. Queues and entry points are not that path.</desc>
+<style>
+.canon-svg .pulse{animation:canon-pulse 4.8s ease-in-out infinite}
+.canon-svg .p0{animation-delay:0s}.canon-svg .p1{animation-delay:.7s}
+.canon-svg .p2{animation-delay:1.4s}.canon-svg .p3{animation-delay:2.1s}
+.canon-svg .p4{animation-delay:2.8s}.canon-svg .p5{animation-delay:3.5s}
+.canon-svg .p6{animation-delay:4.2s}
+.canon-svg .march{stroke-dasharray:7 9;animation:canon-march 1.15s linear infinite}
+.canon-svg .ex-step{opacity:.4;animation:canon-ex 12s ease-in-out infinite}
+.canon-svg .e0{animation-delay:0s}.canon-svg .e1{animation-delay:3s}
+.canon-svg .e2{animation-delay:6s}.canon-svg .e3{animation-delay:9s}
+.canon-svg .spin{transform-box:fill-box;transform-origin:center;animation:canon-spin 22s linear infinite}
+@keyframes canon-pulse{0%,100%{opacity:.42}35%,65%{opacity:1}}
+@keyframes canon-march{to{stroke-dashoffset:-32}}
+@keyframes canon-ex{0%,100%{opacity:.38}6%,20%{opacity:1}}
+@keyframes canon-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){
+  .canon-svg .pkt{display:none !important}
+  .canon-svg .pulse,.canon-svg .march,.canon-svg .ex-step,.canon-svg .spin{animation:none !important}
+  .canon-svg .pulse,.canon-svg .ex-step{opacity:1 !important}
+  .canon-svg .march{stroke-dasharray:none !important}
+}
+</style>
+
+<defs>
+<linearGradient id="T8R05flowtwosvg-bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#070b14"/>
+  <stop offset="0.55" stop-color="#0c1424"/>
+  <stop offset="1" stop-color="#10192b"/>
+</linearGradient>
+<radialGradient id="T8R05flowtwosvg-glow" cx="0.12" cy="0" r="0.9">
+  <stop offset="0" stop-color="#e879f9" stop-opacity="0.38"/>
+  <stop offset="1" stop-color="#e879f9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="T8R05flowtwosvg-glow2" cx="1" cy="1" r="0.8">
+  <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+  <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+</radialGradient>
+<pattern id="T8R05flowtwosvg-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.14"/>
+</pattern>
+<filter id="T8R05flowtwosvg-soft" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2.2" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<marker id="T8R05flowtwosvg-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+  <path d="M0 0 L8 4 L0 8 Z" fill="#e2e8f0"/>
+</marker>
+</defs>
+<rect width="1100" height="536" rx="22" fill="url(#T8R05flowtwosvg-bg)"/>
+<rect width="1100" height="536" rx="22" fill="url(#T8R05flowtwosvg-glow)"/>
+<rect width="1100" height="536" rx="22" fill="url(#T8R05flowtwosvg-glow2)"/>
+<rect width="1100" height="536" rx="22" fill="url(#T8R05flowtwosvg-dots)"/>
+<text x="1072" y="34" text-anchor="end" fill="#94a3b8" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">LIVE FLOW · T8-R05</text><text x="28" y="40" fill="#f8fafc" font-size="22" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Two products</text><g><rect x="48" y="198.0" width="250" height="130" rx="16" fill="#0b1220" stroke="#e879f9" stroke-width="2"/><rect x="48" y="198.0" width="250" height="7" rx="3" fill="#e879f9"/><g transform="translate(60.0,232.0) scale(1.0)" fill="none" stroke="#e879f9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6.5" width="16" height="11" rx="2.5"/><path d="M8.5 12h.1M12 12h.1M15.5 12h.1M9 4.8V6.5M15 4.8V6.5"/></g><text x="94" y="234.0" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">The word AI</text><text x="94" y="252.0" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Which product</text><g class="pulse p0"><circle cx="282" cy="224.0" r="11" fill="#e879f9"/><text x="282" y="228.0" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">1</text></g></g><g><rect x="620" y="92.0" width="420" height="86" rx="16" fill="#0b1220" stroke="#a5b4fc" stroke-width="2"/><rect x="620" y="92.0" width="420" height="7" rx="3" fill="#a5b4fc"/><g transform="translate(632.0,126.0) scale(1.0)" fill="none" stroke="#a5b4fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="3"/><path d="M6.2 18.2c1.1-2.5 3.1-3.7 5.8-3.7s4.7 1.2 5.8 3.7"/></g><text x="666" y="128.0" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">AI Assistant</text><text x="666" y="146.0" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Desktop icon. Paid add-on</text><g class="pulse p1"><circle cx="1024" cy="118.0" r="11" fill="#a5b4fc"/><text x="1024" y="122.0" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">2</text></g></g><path class="march" d="M298.0 263.0 C459.0 263.0 459.0 135.0 620.0 135.0" fill="none" stroke="#a5b4fc" stroke-width="5" stroke-linecap="round"/><text class="pulse p0" x="459.0" y="189.0" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Icon</text><g class="pkt" filter="url(#T8R05flowtwosvg-soft)"><circle r="7" fill="#a5b4fc" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.0s" repeatCount="indefinite" path="M298.0 263.0 C459.0 263.0 459.0 135.0 620.0 135.0"/></circle></g><g><rect x="620" y="188.5" width="420" height="86" rx="16" fill="#0b1220" stroke="#fbbf24" stroke-width="2"/><rect x="620" y="188.5" width="420" height="7" rx="3" fill="#fbbf24"/><g transform="translate(632.0,222.5) scale(1.0)" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h7.4L18 7.6V20H7z"/><path d="M14.4 4v3.6H18M9.2 12h6M9.2 15.6h4.2"/></g><text x="666" y="224.5" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Scripted agent</text><text x="666" y="242.5" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Virtual Agent V2 or Connect</text><g class="pulse p2"><circle cx="1024" cy="214.5" r="11" fill="#fbbf24"/><text x="1024" y="218.5" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">3</text></g></g><path class="march" d="M298.0 263.0 C459.0 263.0 459.0 231.5 620.0 231.5" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/><text class="pulse p1" x="459.0" y="237.2" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Flow</text><g class="pkt" filter="url(#T8R05flowtwosvg-soft)"><circle r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.4s" repeatCount="indefinite" path="M298.0 263.0 C459.0 263.0 459.0 231.5 620.0 231.5"/></circle></g><g><rect x="620" y="285.0" width="420" height="86" rx="16" fill="#0b1220" stroke="#fb7185" stroke-width="2"/><rect x="620" y="285.0" width="420" height="7" rx="3" fill="#fb7185"/><g transform="translate(632.0,319.0) scale(1.0)" fill="none" stroke="#fb7185" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6 18.5 6v5.6c0 3.8-2.6 6.3-6.5 8.2-3.9-1.9-6.5-4.4-6.5-8.2V6z"/></g><text x="666" y="321.0" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Autonomous voice</text><text x="666" y="339.0" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Limited to specific customers</text><g class="pulse p3"><circle cx="1024" cy="311.0" r="11" fill="#fb7185"/><text x="1024" y="315.0" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">4</text></g></g><path class="march" d="M298.0 263.0 C459.0 263.0 459.0 328.0 620.0 328.0" fill="none" stroke="#fb7185" stroke-width="5" stroke-linecap="round"/><text class="pulse p2" x="459.0" y="285.5" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Limited</text><g class="pkt" filter="url(#T8R05flowtwosvg-soft)"><circle r="7" fill="#fb7185" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="0.8s" repeatCount="indefinite" path="M298.0 263.0 C459.0 263.0 459.0 328.0 620.0 328.0"/></circle></g><g><rect x="620" y="381.5" width="420" height="86" rx="16" fill="#0b1220" stroke="#34d399" stroke-width="2"/><rect x="620" y="381.5" width="420" height="7" rx="3" fill="#34d399"/><g transform="translate(632.0,415.5) scale(1.0)" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="12" height="8" rx="2"/><path d="M8.2 11V8.2a3.8 3.8 0 0 1 7.6 0V11"/></g><text x="666" y="417.5" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Knowledge base</text><text x="666" y="435.5" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">No PCI, PII, or PHI</text><g class="pulse p4"><circle cx="1024" cy="407.5" r="11" fill="#34d399"/><text x="1024" y="411.5" text-anchor="middle" fill="#082033" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="800">5</text></g></g><path class="march" d="M298.0 263.0 C459.0 263.0 459.0 424.5 620.0 424.5" fill="none" stroke="#34d399" stroke-width="5" stroke-linecap="round"/><text class="pulse p3" x="459.0" y="333.8" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">Do not upload</text><g class="pkt" filter="url(#T8R05flowtwosvg-soft)"><circle r="7" fill="#34d399" stroke="#ffffff" stroke-width="2"><animateMotion dur="3.2s" begin="1.2000000000000002s" repeatCount="indefinite" path="M298.0 263.0 C459.0 263.0 459.0 424.5 620.0 424.5"/></circle></g><text x="28" y="502" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">Mid-call summaries are only for direct agent-to-agent consults and transfers. Queues and entry points are</text><text x="28" y="518" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">not that path.</text>
+</svg>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mastery map · Webex Lab</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/university.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="lab-links" aria-label="CypherMonkey">
+<a href="https://cyphermonkeylabs.com">Labs home</a>
+<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<button type="button" data-offline-save>Save for offline</button>
+<a href="downloads/webex-university-offline.zip">Offline bundle</a>
+</nav>
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Webex Lab<small>University</small></span></a>
+<nav class="nav-quick" aria-label="Primary">
+<a class="nav-icon" href="index.html" title="Home"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a>
+<a class="nav-icon" href="start.html" title="Start"><span aria-hidden="true">🚀</span><span class="sr">Start</span></a>
+<a class="nav-icon" href="mastery.html" title="Mastery"><span aria-hidden="true">🧭</span><span class="sr">Mastery</span></a>
+<a class="nav-icon" href="play.html" title="Play"><span aria-hidden="true">🎮</span><span class="sr">Play</span></a>
+<a class="nav-icon" href="downloads.html" title="Cheat Codes"><span aria-hidden="true">⬇️</span><span class="sr">Downloads</span></a>
+</nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Choose a theme">◐</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="ecosystem-atlas.html">Ecosystem atlas</a>
+<a href="ports.html">Ports and protocols</a>
+<a href="labs.html">Hands-on labs</a>
+<a href="certs.html">Certifications</a>
+<a href="glossary.html">Glossary</a>
+</nav>
+</div>
+</header>
+<main id="main"><div class="wrap">
+
+<p class="crumbs"><a href="index.html">Lab</a> / Mastery map</p>
+<h1>Mastery map</h1>
+<p class="lede">Fundamentals through the hard edges. Every row has a place to read. Anything this lab will not pretend to know is marked unverified.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Section</th><th>Where</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Fundamentals to advanced</td><td><a href="start.html">Start here</a> and tracks T1–T8</td><td>63 written rooms</td></tr>
+<tr><td>Architecture</td><td><a href="rooms/T2-R01-calling-architecture.html">Calling</a>, <a href="rooms/T3-R01-wxcc-multitenant-overview.html">WxCC</a>, <a href="rooms/T4-R02-core-components.html">Enterprise</a>, <a href="rooms/T5-R02-di-architecture-peering.html">Dedicated Instance</a></td><td>In the rooms</td></tr>
+<tr><td>Deployment</td><td><a href="rooms/T3-R02-tenant-provisioning-setup.html">WxCC setup</a>, <a href="rooms/T5-R03-connectivity-options.html">DI connectivity</a></td><td>In the rooms</td></tr>
+<tr><td>Migration and cutover</td><td><a href="rooms/T6-R02-cucm-to-webex-calling.html">T6</a> and <a href="downloads/sheets/migration-cutover.html">checklist</a></td><td>Study checklist, not a runbook</td></tr>
+<tr><td>Configuration walkthroughs</td><td>Each room's Config section, plus <a href="archive/webex-lab-v1/campus/index.html">archive studio</a></td><td>Archive keeps the click-path console</td></tr>
+<tr><td>Troubleshooting</td><td><a href="drills.html">Cases</a>, <a href="downloads/sheets/troubleshooting.html">tree</a></td><td>Cited fixes</td></tr>
+<tr><td>Ports and protocols</td><td><a href="ports.html">Mastery</a> and <a href="play.html">the port game</a></td><td>Checked against b2exve on 2026-10-15</td></tr>
+<tr><td>BYOC, SIP trunks, PSTN</td><td><a href="rooms/T2-R02-local-gateway-pstn.html">T2-R02</a>, <a href="rooms/T7-R04-sip-trunk-design.html">T7-R04</a></td><td>Three location choices</td></tr>
+<tr><td>WFM</td><td><a href="rooms/T3-R09-wfo-ai-features.html">T3-R09</a>, <a href="downloads/sheets/wfm.html">sheet</a></td><td>Multi-tenant SKU unverified</td></tr>
+<tr><td>Recording and QM</td><td><a href="rooms/T2-R06-calling-security-compliance.html">T2-R06</a></td><td>Provider, retention, E2EE</td></tr>
+<tr><td>E911</td><td><a href="ports.html#e911">Ports</a>, <a href="downloads/sheets/e911.html">sheet</a></td><td>Hosts and 933</td></tr>
+<tr><td>Reporting and analytics</td><td><a href="rooms/T1-R06-analytics-troubleshooting.html">T1-R06</a>, <a href="rooms/T2-R08-calling-analytics-cdr.html">T2-R08</a>, <a href="rooms/T3-R07-analyzer-reporting.html">Analyzer</a>, <a href="rooms/T4-R07-reporting-cuic.html">CUIC</a></td><td>Clocks differ</td></tr>
+<tr><td>CRM and APIs</td><td><a href="rooms/T8-R03-apis-webhooks-connect.html">T8-R03</a>, <a href="rooms/T8-R04-crm-integrations.html">T8-R04</a></td><td>Connectors cited</td></tr>
+<tr><td>AI agents</td><td><a href="rooms/T8-R05-ai-wxcc.html">T8-R05</a></td><td>AGENT_TRANSFER</td></tr>
+<tr><td>Security and compliance</td><td><a href="rooms/T1-R07-data-residency-security.html">T1-R07</a>, <a href="rooms/T2-R06-calling-security-compliance.html">T2-R06</a></td><td>TLS, SRTP, E2EE</td></tr>
+<tr><td>Licensing and certifications</td><td><a href="certs.html">Cert tracker</a>, <a href="rooms/T1-R03-licensing-subscriptions.html">T1-R03</a></td><td>Names as of 2026-10-14</td></tr>
+<tr><td>Roadmap, 2026</td><td><a href="rooms/T8-R08-latest-features-radar.html">T8-R08</a></td><td>Re-check the live what's-new page</td></tr>
+<tr><td>Customer integrations</td><td><a href="ecosystem-atlas.html">Atlas</a></td><td>Patterns only. No invented customers.</td></tr>
+<tr><td>Interview and career</td><td><a href="interviews.html">Interview prep</a>, <a href="certs.html">certs</a></td><td>Not a promise of a job or a score</td></tr>
+</tbody></table></div>
+<h2>Career path, without a salary myth</h2>
+<p>A calling administrator who can defend a trunk, a dial plan, and 933 is useful on a Calling project. A contact-center engineer adds flows, queues, and Analyzer. Enterprise adds ICM script sense and CUIC. Dedicated Instance adds peering. Certifications are optional evidence. The Canon cert page records CLCOR plus one of CLACC, CLHCT, or CLCCE. Domain weights are not printed, because memorizing a percent is not the skill.</p>
+
+</div></main>
+
+<footer class="site-footer lab-footer wrap">
+<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>
+<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>
+<p class="lab-actions">
+<a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a>
+<a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<a href="https://cyphermonkeylabs.com">Report a concern / takedown</a>
+<a href="https://cyphermonkeylabs.com">Work with us</a>
+</p>
+</footer>
+
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+</body></html>

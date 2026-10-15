@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T4-R07 · Reporting with CUIC">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T4-R07 · Reporting with CUIC · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T4" data-room="T4-R07" data-room-title="Reporting with CUIC" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T4</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T4/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T4 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T4 · Webex Contact Center Enterprise</p>
+<h1>Reporting with CUIC</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Reporting with CUIC">
+<defs>
+<linearGradient id="T4R07sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T4R07sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Enterprise</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T4-R07</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CVP</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Router</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Desktop</text></g>
+</svg>
+<figcaption>Illustrated scene for Reporting with CUIC. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Reporting with CUIC">
+<defs>
+<marker id="T4R07arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · PSTN → CVP → Router → Desktop</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Desktop</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T4R07arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T4R07arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T4R07arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T4R07lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: PSTN → CVP → Router → Desktop. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Cisco Unified Intelligence Center is the reporting platform named in the Unified CCE reporting guide. Stock bundles, Live Data, and Analyzer are three different clocks.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T4-R07</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T4-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>CUIC is a web application for Historical, Real-time, and Live Data reporting and dashboards. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></li>
+<li>Live Data templates refresh much faster than Realtime or Historical reports, usually less than every 3 seconds. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></li>
+<li>Stock reports are downloaded from Cisco.com and imported. An install may contain all of the bundles or a subset. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Supported screen resolution in that chapter is 1366×768 or higher. The chapter says CUIC adopts WCAG 2.1 Level A and Level AA. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Transitional templates are the introductory stock set. All Fields templates expose database fields and are the base for custom reports, including precision-queue data. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Import Outbound templates only when the deployment has Outbound Option. Import Customer Collaboration Platform templates only when that platform is deployed. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Contact Sharing templates show configuration, calls routed to each target, and calls that error during routing. Admin Security templates cover audit trails, permissions, and template ownership. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Stock report templates display data saved in the Unified CCE database. By default, stock reports have one grid view. Some also have a chart view. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Multi-tenant Analyzer is a different product surface. Its clocks are taught in T3-R07, not pasted onto CUIC. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A supervisor who asks for “real time” may mean Live Data, a Realtime stock template, or Analyzer. The reporting guide separates the first two. The architecture article for multi-tenant Webex Contact Center is the third.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Three report families</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T4-R07/arch.svg -->
+<div class="diagram" role="img" aria-label="CUIC report families">
+<svg viewBox="0 0 980 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Historical, realtime, and live data">
+<rect width="980" height="320" fill="#0c121c"/>
+<text x="28" y="34" fill="#ff8b9a" font-family="Georgia, serif" font-size="20">Families named in the UCCE reporting guide</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="60" width="290" height="200" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="44" y="92" fill="#e0b07a" font-family="Georgia, serif" font-size="16">1 · Historical</text>
+<text x="44" y="124">Saved in the Unified CCE database.</text>
+<text x="44" y="148" fill="#b7ad9c">Transitional and All Fields.</text>
+<text x="44" y="172" fill="#b7ad9c">Outbound, if you have it.</text>
+<text x="44" y="196" fill="#b7ad9c">One default grid view.</text>
+<rect x="344" y="60" width="290" height="200" rx="14" fill="#14110c" stroke="#ff8b9a"/>
+<text x="360" y="92" fill="#ff8b9a" font-family="Georgia, serif" font-size="16">2 · Realtime</text>
+<text x="360" y="124">Stock Realtime templates.</text>
+<text x="360" y="148" fill="#b7ad9c">Slower than Live Data.</text>
+<text x="360" y="172" fill="#b7ad9c">Precision queue fields live</text>
+<text x="360" y="196" fill="#b7ad9c">in the All Fields set.</text>
+<rect x="660" y="60" width="290" height="200" rx="14" fill="#14110c" stroke="#c4b5fd"/>
+<text x="676" y="92" fill="#c4b5fd" font-family="Georgia, serif" font-size="16">3 · Live Data</text>
+<text x="676" y="124">Stream processing source.</text>
+<text x="676" y="148" fill="#b7ad9c">Usually under 3 seconds.</text>
+<text x="676" y="172" fill="#b7ad9c">Agent, skill group, PQ,</text>
+<text x="676" y="196" fill="#b7ad9c">recent state, recent calls.</text>
+</g>
+<text x="28" y="294" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Chapter updated April 30, 2025. Retrieved 2026-10-14. Mark re-check.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Historical stock templates</li>
+<li><span class="num">2</span>Realtime stock templates</li>
+<li><span class="num">3</span>Live Data, usually under 3 seconds</li>
+</ul>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T4-R07/seq.svg -->
+<div class="diagram" role="img" aria-label="Import path for stock reports">
+<svg viewBox="0 0 980 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stock report import path">
+<rect width="980" height="180" fill="#0c121c"/>
+<text x="28" y="32" fill="#ff8b9a" font-family="Georgia, serif" font-size="18">How a stock bundle reaches the server</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="60" width="200" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="52" y="88">Cisco.com download</text>
+<rect x="280" y="60" width="180" height="48" rx="8" fill="#14110c" stroke="#ff8b9a"/><text x="310" y="88">Import</text>
+<rect x="500" y="60" width="200" height="48" rx="8" fill="#14110c" stroke="#c4b5fd"/><text x="530" y="88">CUIC folder</text>
+<rect x="740" y="60" width="200" height="48" rx="8" fill="#14110c" stroke="#f0b429"/><text x="770" y="88">Run or Save As</text>
+<path d="M236 84 H280" stroke="#e0b07a" fill="none"/>
+<path d="M460 84 H500" stroke="#ff8b9a" fill="none"/>
+<path d="M700 84 H740" stroke="#c4b5fd" fill="none"/>
+<text x="36" y="146">The install may already contain a subset. Import is still how the guide says you add bundles.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  DL[Cisco.com stock bundles] --> IMP[Import]
+  IMP --> CUIC[Unified Intelligence Center]
+  CUIC --> H[Historical]
+  CUIC --> R[Realtime]
+  CUIC --> L[Live Data]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Bundles, views, and the clock</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T4-R07/hero.png -->
+<div class="callout def"><span class="label">Unified Intelligence Center</span><p>A reporting platform for Cisco Contact Center products. The reporting user guide calls it a web-based application that provides Historical, Real-time, and Live Data reporting and dashboards. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></p></div>
+<div class="callout note"><span class="label">Stock versus custom</span><p>Cisco provides stock templates. You import them and can clone with Save As. If stock templates do not meet the need, the chapter points you at the Report Customization Guide. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Do not mix the clocks</span><p>Live Data uses the Live Data stream. The guide says its refresh is usually less than every 3 seconds and is much faster than Realtime or Historical reports. Analyzer’s real-time and historical behavior is documented on a different help article and belongs in T3-R07. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout gotcha"><span class="label">Version skew</span><p>A Cisco support note for CUIC 11.6 says mismatched stock reports after upgrades can report incorrect data because schemas change, and that the current UCCE version’s templates should be imported. That note is old. Treat the procedure as a warning to match bundles to the release, and re-check it before you run the SQL it prints. <a class="cite" href="#cite-4">[cite:4]</a> <mark class="recheck">re-check</mark></p></div>
+<h3>Live Data report names</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Template family</th><th>What you get</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Live Data</td><td>Agent, Agent Skill Group, Precision Queue, Skill Group, Recent State History, Recent Call History</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Transitional</td><td>Introductory templates. Simplified All Fields. Familiar if you have used other contact-center templates.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>All Fields</td><td>Data from all fields in a database. Basis for custom reports. Includes precision-queue routing data.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Outbound</td><td>Outbound Option activity. Import when that option is deployed.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact Sharing</td><td>Active routing configuration, calls per target group, calls that error while routing.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Admin Security</td><td>Audit trails, permissions, template ownership.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer Collaboration Platform</td><td>Import when that platform is in the deployment.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Reporting next to the rest of the stack</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T4-R07">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Desktop</text>
+<circle cx="200" cy="132" r="36" fill="url(#T4R07map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T4R07map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>CUIC</dt><dd>Cisco Unified Intelligence Center. The reporting application in the Unified CCE reporting user guide. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Stock report</dt><dd>A Cisco-provided template you download and import. It shows data saved in the Unified CCE database. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Live Data</dt><dd>Reports whose data source is the Live Data stream. Refresh is usually less than every 3 seconds. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Realtime template</dt><dd>A stock Realtime report. The guide says it is slower than Live Data. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Historical template</dt><dd>A stock Historical report over saved database data. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Grid view</dt><dd>The default tabular view. Every stock report has one. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Save As</dt><dd>The way the user guide says you clone a stock template before you customize it. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Report definition</dt><dd>How the user guide describes the query, fields, filters, and refresh behind a report template. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Analyzer</dt><dd>The multi-tenant Webex Contact Center reporting surface. Not this CUIC chapter. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>All Users group</dt><dd>A February 2022 what’s-new line: non-administrative owners can see the All Users group in the CUIC permission modal on Webex CCE. <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></dd></div>
+<div class="term"><dt>WCAG 2.1</dt><dd>The reporting chapter says CUIC adopts Level A and Level AA. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>1366×768</dt><dd>The minimum screen resolution that chapter lists for CUIC. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T4-R07/eco.svg -->
+<div class="diagram" role="img" aria-label="CUIC ecosystem mind map">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CUIC neighbors">
+<rect width="980" height="240" fill="#0c121c"/>
+<rect x="390" y="88" width="200" height="60" rx="16" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="490" y="124" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">CUIC</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="28" y="30" width="180" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="42" y="56">Unified CCE DB</text>
+<rect x="28" y="160" width="180" height="44" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="42" y="186">Live Data stream</text>
+<rect x="760" y="30" width="190" height="44" rx="10" fill="#14110c" stroke="#f0b429"/><text x="774" y="56">Finesse gadgets</text>
+<rect x="760" y="160" width="190" height="44" rx="10" fill="#14110c" stroke="#ff8b9a"/><text x="774" y="186">Analyzer · other</text>
+</g>
+<path d="M208 52 H390" stroke="#e0b07a" fill="none"/>
+<path d="M208 182 H390" stroke="#c4b5fd" fill="none"/>
+<path d="M590 52 H760" stroke="#f0b429" fill="none"/>
+<path d="M590 182 H760" stroke="#ff8b9a" fill="none"/>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((CUIC))
+    Stock bundles
+    Live Data
+    Historical
+    Realtime
+</pre>
+</details>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only.</strong> No parity matrix on help.webex.com equates CUIC stock reports with another vendor’s analytics.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What the cited page says</th><th>Why it matters</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>py6u9h lists WFO SKUs for Enterprise, CCE, and CCX. CUIC stock bundles are not that SKU list.</td><td>A schedule forecast is not a Live Data agent report.</td><td>WFO article for the SKU. CUIC for contact-center reports.</td><td>Importing an All Fields template and calling it WFM.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Quality management and recording</td><td>The stock-bundle list in this chapter does not print a QM retention window.</td><td>Supervisors ask for recordings in the same breath as reports.</td><td>Read the quality-management guide for that release.</td><td>Quoting Calling’s one-year retention as CUIC history.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>Not a CUIC stock bundle in the list read here.</td><td>Emergency compliance is not a report import.</td><td>The Webex CCE 9-1-1 section named on the what’s-new page.</td><td>Using a call-history report as proof of a dispatchable location.</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Analytics and reporting</td><td>This room. Three families: Historical, Realtime, Live Data.</td><td>The refresh sentence applies to Live Data templates.</td><td>Import the matching bundle. Run the report.</td><td>Promising a 3-second refresh on a Historical template.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce, Dynamics 365, ServiceNow</td><td>Not named as CUIC data sources in the stock-bundle section.</td><td>CRM objects are not Unified CCE database fields until a report definition says so.</td><td>Report Customization Guide if you build a custom query. Do not invent the SQL here.</td><td>Expecting a stock Agent report to list CRM cases.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agents and AI Assistant</td><td>Not a stock bundle name in the list read here.</td><td>AI transcripts are gadget content in the Finesse chapter comments.</td><td>T4-R06 for the gadget path. This room for CUIC templates.</td><td>Looking for a virtual-agent stock report that this list does not name.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IVR and self-service</td><td>CVP reporting uses the CVP Reporting Server when that model enables it.</td><td>A CVP report and a CUIC stock template answer different questions.</td><td>T4-R05 for the Reporting Server flag. This room for CUIC import.</td><td>Importing a CUIC bundle to fix a missing CVP Reporting Server.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Digital channels</td><td>Customer Collaboration Platform templates are the stock row that mentions that platform. Webex CCE digital channels are on the what’s-new page.</td><td>Import the bundle only if the platform is deployed.</td><td>Stock list, plus the digital gadget guide.</td><td>Importing the bundle on a voice-only system and expecting chat rows.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Identity and SSO</td><td>Admin Security templates report on permissions and ownership. The February 2022 note mentions the All Users group for non-admin owners.</td><td>Permission bugs look like empty reports.</td><td>Admin Security templates. The what’s-new permission sentence is re-check.</td><td>Debugging SQL when the user cannot see the folder.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Cisco.com download</td><td>CUIC</td><td>Import</td><td>Stock report bundles. The guide names the Intelligence Center Reports link.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Unified CCE database</td><td>Historical and Realtime templates</td><td>Saved data</td><td>The fields those templates query</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Live Data stream</td><td>Live Data templates</td><td>Stream processing</td><td>Agent, skill, precision queue, recent state, recent calls</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Stock template</td><td>Custom report</td><td>Save As</td><td>A clone you can edit</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Report definition</td><td>Grid</td><td>Query result</td><td>Default grid. Some stock reports also have a chart.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CUIC</td><td>Finesse</td><td>Live Data gadgets on the desktop</td><td>The Finesse admin book has a certificates chapter for Live Data. This room does not paste certificate steps.</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Webex CCE CUIC</td><td>All Users group</td><td>Permission modal</td><td>February 2022 note for non-admin owners</td><td><a href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Multi-tenant Analyzer</td><td>WxCC only</td><td>Separate article</td><td>Not a CUIC import</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>CUIC idea</th><th>Neighbor</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Stock Unified CCE reports</td><td>On-premises and Enterprise reporting use this guide. Multi-tenant reporting is Analyzer.</td><td>No vendor parity matrix.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Live Data under 3 seconds</td><td>Do not copy that sentence onto Analyzer. T3-R07 keeps Analyzer’s own clocks.</td><td>Other vendors’ wallboards are orientation only.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Import from Cisco.com</td><td>A mismatched older bundle is the failure the 11.6 support note describes.</td><td>Exporting a foreign report XML is not this import.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>Canon plan: when the reporting user guide is updated past April 30, 2025, drop the re-check on the Live Data sentence if the words are unchanged.</li>
+<li>The customization guide is a separate book. Custom SQL stays in that book.</li>
+<li>Webex CCE permission behavior newer than February 2022 should replace the All Users sentence when you find it.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>A supervisor wants Analyzer intervals inside CUIC</td><td>T3 clocks were pasted onto Unified CCE</td><td>Which product is on the subscription?</td><td>Use the CUIC families in this room. Open T3-R07 for Analyzer.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Outbound reports are empty</td><td>The bundle was imported on a system without Outbound Option</td><td>The guide says to import those templates if Outbound Option is deployed</td><td>Confirm the option before you debug the query.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Numbers look wrong after an upgrade</td><td>Old stock definitions remained</td><td>The 11.6 note says schemas change across versions</td><td>Import the templates for the current UCCE version. Re-check that note’s SQL before you run it.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Live Data feels as slow as a historical report</td><td>The wrong template family is open</td><td>Live Data is the stream. Historical reads the database.</td><td>Open a Live Data template from the list.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From download to a running report</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Administrator</td><td>Cisco.com</td><td>Download</td><td>Intelligence Center Reports link named in the reporting guide.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Bundle</td><td>CUIC</td><td>Import</td><td>The install may already include a subset.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Unified CCE database</td><td>Historical or Realtime template</td><td>Saved fields</td><td>Stock templates display that saved data.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Live Data stream</td><td>Live Data template</td><td>Stream</td><td>Usually refreshes in less than 3 seconds.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Stock report</td><td>Clone</td><td>Save As</td><td>Edit the clone. The user guide says stock reports have a default grid.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>6</td><td>User</td><td>Report</td><td>Run</td><td>Screen at 1366×768 or higher.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Owner</td><td>Permissions</td><td>Admin Security templates</td><td>Audit, permissions, ownership. All Users note is separate and older.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>8</td><td>Custom need</td><td>Customization guide</td><td>Report definition</td><td>The reporting chapter points at that guide rather than printing the SQL.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Import rules you can cite</h2>
+<ol>
+<li>Download the stock bundles from the Intelligence Center Reports link the reporting guide names. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Import the bundles. Expect the server to already contain all of them or only a subset, depending on the deployment. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Import Outbound templates when Outbound Option is deployed. Import Customer Collaboration Platform templates when that platform is deployed. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Use Transitional templates for a new reader. Use All Fields when you need every database field or precision-queue routing data. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a faster agent or queue wallboard, open a Live Data template: Agent, Agent Skill Group, Precision Queue, Skill Group, Recent State History, or Recent Call History. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Clone with Save As before you change a stock report. The default view is a grid. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Use a display at 1366×768 or higher. The chapter also states WCAG 2.1 Level A and Level AA. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<!-- VISUAL:screenshot:1 | Studio | assets/images/T4-R07/import.png -->
+<p class="placeholder-asset">Screenshot slot: CUIC import dialog with report names visible and no customer data.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>Live Data refresh</td><td>Usually less than every 3 seconds</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark> Chapter updated April 30, 2025</td></tr>
+<tr><td>Screen resolution</td><td>1366×768 or higher</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Default stock view</td><td>One grid. Some reports also have a chart.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Accessibility claim</td><td>WCAG 2.1 Level A and Level AA</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Bundle coverage</td><td>All or a subset, depending on deployment</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>All Users permission note</td><td>February 2022 what’s-new</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Stock-report SQL in the 11.6 note</td><td>Not copied into this room</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td><mark class="recheck">re-check</mark> Old support note</td></tr>
+<tr><td>Analyzer refresh</td><td>Read T3-R07. Not a CUIC number.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Boundary only</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Wrong bundle, wrong clock, wrong product</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Precision-queue columns are missing</td><td>Transitional template is open</td><td>All Fields includes precision-queue routing data</td><td>Import or open the All Fields template</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>The wallboard refreshes slowly</td><td>A Historical or Realtime template is open</td><td>Live Data is the fast family</td><td>Open a Live Data template from the named list</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Outbound folder is empty of useful rows</td><td>Outbound Option is not deployed</td><td>The guide conditions that import on the option</td><td>Confirm Outbound Option before you re-import</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact Sharing report shows nothing</td><td>The system is not a Contact Sharing deployment</td><td>Those templates describe that system</td><td>Use them only when Contact Sharing is in the design</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A stock report was edited in place and cannot be restored</td><td>Save As was skipped</td><td>The user guide says to clone, then customize</td><td>Re-import the stock bundle and edit the clone</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>The UI is cut off</td><td>The display is below the stated resolution</td><td>1366×768 or higher</td><td>Raise the resolution before you call the report broken</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>After upgrade, totals do not match the previous month</td><td>Stock definitions from an older schema</td><td>The 11.6 note warns about this</td><td>Import current-version templates. Do not run the note’s SQL until you re-check it.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>A user cannot see a report another owner can run</td><td>Permissions</td><td>Admin Security templates cover permissions and ownership</td><td>Check those templates. The All Users sentence is a 2022 note.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Someone quotes a 5-second Analyzer default as CUIC</td><td>T3-R07 was merged into this room</td><td>Analyzer is the multi-tenant article set</td><td>Keep that number in T3-R07</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Chat volume is expected from a voice All Fields report</td><td>Digital channels were assumed</td><td>Collaboration Platform templates are conditional. Webex CCE digital is a what’s-new topic.</td><td>Import the conditional bundle only if that platform exists</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is CUIC in the reporting user guide?</summary><p class="answer">A web-based reporting platform with Historical, Real-time, and Live Data reporting and dashboards. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why import stock reports instead of writing SQL on day one?</summary><p class="answer">Cisco ships the templates. They show data already saved in the Unified CCE database. Custom work starts from Save As or the customization guide. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What fails if you promise a sub-3-second Historical report?</summary><p class="answer">That refresh sentence is about Live Data templates, which the guide says are much faster than Realtime or Historical reports. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Name the Live Data reports in the stock list.</summary><p class="answer">Agent, Agent Skill Group, Precision Queue, Skill Group, Recent State History, and Recent Call History. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When do you import Outbound templates?</summary><p class="answer">When the deployment includes Outbound Option. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is the difference between Transitional and All Fields?</summary><p class="answer">Transitional templates are simplified introductions. All Fields templates expose database fields and include precision-queue routing data. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove a report is stock rather than a broken custom query?</summary><p class="answer">Stock reports have one default grid view. A few also have a chart. They were imported from Cisco’s bundles. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>A display clips the report. What resolution does the chapter require?</summary><p class="answer">1366×768 or higher. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why can an upgraded system show wrong totals?</summary><p class="answer">The 11.6 support note says mismatched stock reports can remain after upgrades because schemas change. Import the current version’s templates. <a class="cite" href="#cite-4">[cite:4]</a> <mark class="recheck">re-check</mark></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is CUIC different from Analyzer?</summary><p class="answer">This guide is Unified CCE reporting. Analyzer is the multi-tenant Webex Contact Center surface in T3-R07. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does the February 2022 Webex CCE note add about permissions?</summary><p class="answer">Non-administrative entity owners can view the All Users group in the permission modal and assign permissions. The date is re-check. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What stops you from sizing a custom report from memory?</summary><p class="answer">The reporting chapter sends customization to the Cisco Unified Intelligence Center Report Customization Guide. This room does not invent the query. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: pick the bundle before you promise a refresh</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Goal: choose a CUIC template family for three supervisor questions without opening a customer report that contains personal data.</label></li>
+<li><label><input type="checkbox"> Prereq: the Release 15.0(1) reporting user guide. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 1. “How did the queue do last week?” Expected: Historical.</label></li>
+<li><label><input type="checkbox"> Step 2. “Who is on a call right now, updating in a couple of seconds?” Expected: a Live Data template from the named list.</label></li>
+<li><label><input type="checkbox"> Step 3. “Precision queue fields.” Expected: All Fields, not only Transitional.</label></li>
+<li><label><input type="checkbox"> Step 4. Write whether Outbound templates belong in this deployment.</label></li>
+<li><label><input type="checkbox"> Evidence: the refresh sentence you will and will not attach to Historical reports.</label></li>
+<li><label><input type="checkbox"> Break it: tell the supervisor Analyzer’s clock is CUIC Live Data. Recovery: split the products.</label></li>
+<li><label><input type="checkbox"> Reflection: the chapter date is April 30, 2025. Which sentences did you mark re-check?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>CUIC in the reporting user guide provides:</p>
+<ol type="A"><li>Historical, Real-time, and Live Data reporting</li><li>Only Flow Designer logs</li><li>Only BGP routes</li><li>Only Finesse XML</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Live Data refresh is described as:</p>
+<ol type="A"><li>Usually less than every 3 seconds</li><li>Once a day</li><li>The same as Historical</li><li>1366 seconds</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. The chapter date is April 30, 2025, so this stays re-check. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>A new supervisor wants a simple report that resembles other contact-center templates. Which stock family fits?</p>
+<details class="reveal"><summary>Reveal</summary><p>Realtime and Historical Transitional templates. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Precision-queue routing data is called out on:</p>
+<ol type="A"><li>All Fields templates</li><li>Admin Security only</li><li>The Edge Connect article</li><li>Partner Hub</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Import Outbound templates when:</p>
+<ol type="A"><li>The deployment includes Outbound Option</li><li>Every deployment, always</li><li>You are configuring SSO</li><li>You are sizing a gateway</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>Name two Live Data reports from the stock list.</p>
+<details class="reveal"><summary>Reveal</summary><p>Any two of Agent, Agent Skill Group, Precision Queue, Skill Group, Recent State History, and Recent Call History. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>The default view of a stock report is:</p>
+<ol type="A"><li>A grid</li><li>Only a chart</li><li>A SIP ladder</li><li>A BGP table</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Some stock reports also have a chart view. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Minimum screen resolution in that chapter:</p>
+<ol type="A"><li>1366×768 or higher</li><li>640×480</li><li>No requirement is printed</li><li>4K only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>You want to change a stock report. What does the user guide tell you to do first?</p>
+<details class="reveal"><summary>Reveal</summary><p>Clone it with Save As, then customize the clone. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Contact Sharing templates help you see:</p>
+<ol type="A"><li>Routing configuration, calls per target, and routing errors</li><li>TLS versions</li><li>Phone firmware</li><li>Expressway call policy</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw it</span></header><p>Draw three boxes: Historical, Realtime, Live Data. Put “usually under 3 seconds” on one box only.</p>
+<details class="reveal"><summary>Reveal</summary><p>Live Data. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>A colleague uses an Analyzer refresh number as the CUIC Live Data interval. What do you correct?</p>
+<details class="reveal"><summary>Reveal</summary><p>Analyzer is the multi-tenant reporting surface. CUIC’s Live Data sentence is the one in the Unified CCE reporting guide, and that chapter is marked re-check because it was updated April 30, 2025. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Separate Historical, Realtime, and Live Data in CUIC." | assets/audio/T4-R07/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the stock bundles and when each import is conditional." | assets/audio/T4-R07/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: under 3 seconds, All Fields, Save As, 1366." | assets/audio/T4-R07/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> CUIC is the Unified CCE reporting application. I keep Historical, Realtime, and Live Data apart. Live Data is the one the guide says usually refreshes in less than 3 seconds.</p>
+<p><strong>2 minutes.</strong> Stock bundles come from Cisco.com and are imported. Transitional templates are the simple set. All Fields templates are the ones I clone when I need every column, including precision queues. Outbound and Customer Collaboration Platform bundles are conditional. Contact Sharing shows targets and routing errors. Admin Security shows audit and permissions. Every stock report has a grid. I use Save As before I edit. The screen requirement printed in that chapter is 1366 by 768 or higher.</p>
+<p><strong>30 seconds, the other product.</strong> Analyzer is multi-tenant Webex Contact Center. I do not quote its refresh as a CUIC fact.</p>
+<p><strong>2 minutes, dates.</strong> The reporting chapter I used was updated April 30, 2025, so the refresh and resolution sentences stay re-check. A February 2022 what’s-new line says Webex CCE CUIC lets non-admin owners see the All Users group. An 11.6 support note warns that old stock reports lie after a schema change. I import the current bundle and I do not paste that note’s SQL into a runbook.</p>
+<p><strong>What you will not say.</strong> You will not invent a custom SQL report in the interview. The customization guide is the next book.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">Cisco Unified Contact Center Enterprise Reporting User Guide, Release 15.0(1), Cisco Unified Intelligence Center — cisco.com — updated April 30, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_cisco-unified-contact-center-enterprise-reporting-user-guide-release1501/ucce_b_cisco-unified-contact-center-enterprise-1261_chapter_01.html">Reporting user guide, CUIC chapter</a>. Stock bundles, Live Data refresh, screen resolution, WCAG. <mark class="recheck">re-check</mark></li>
+<li id="cite-2">Cisco Unified Intelligence Center User Guide, Release 15.0(1), Reports — cisco.com — updated April 30, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/intelligence_suite/intelligence_suite_150/user/guide/cuic_b_1501_user-guide/cuic_m_1501_reports.html">CUIC user guide, Reports</a>. Grid view, Save As, report definition. <mark class="recheck">re-check</mark></li>
+<li id="cite-3">Webex Contact Center architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a>. Multi-tenant boundary. Analyzer detail stays in T3-R07.</li>
+<li id="cite-4">How to Verify Version of Stock CUIC Reports — cisco.com — document 214983 — <a href="https://www.cisco.com/c/en/us/support/docs/contact-center/unified-intelligence-center/214983-how-to-verify-version-of-stock-cuic-repo.html">Stock report version note</a>. CUIC 11.6. <mark class="recheck">re-check</mark></li>
+<li id="cite-5">What’s new for administrators in Webex Contact Center Enterprise — help.webex — article nhy3hvdb — <a href="https://help.webex.com/article/nhy3hvdb">help.webex.com article nhy3hvdb</a>. February 2022 All Users group. 9-1-1 pointer. Digital channels. <mark class="recheck">re-check</mark></li>
+<li id="cite-6">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>.</li>
+<li id="cite-7">Configuration Guide for Cisco Unified Customer Voice Portal, Release 15.0(1), Unified CVP Call Flow Models — cisco.com — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html">CVP call flow models</a>. Reporting Server boundary.</li>
+<li id="cite-8">Cisco Finesse Administration Guide, Release 15.0(1) — cisco.com — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide.html">Finesse administration guide contents</a>. Certificates for Live Data is a chapter title, not a procedure copied here.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Open questions: the CUIC user-guide update date for the grid and Save As sentences; a Webex CCE permission page newer than February 2022.</li>
+<li>Facts still marked re-check: the April 30, 2025 reporting chapter, the 11.6 stock-version note, and the All Users sentence.</li>
+<li>Assets missing: import screenshot with no customer rows, audio, exported SVGs.</li>
+<li>Ideas for v1.0: a bundle picker that only lists the families this chapter names.</li>
+<li>Next review: re-read the reporting user guide when Cisco updates it past April 30, 2025.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R06-finesse-desktop-gadgets.html"><span>Previous</span><strong>T4-R06</strong><em>Finesse Desktop &amp; Gadgets</em></a><a class="next" href="T4-R08-sizing-ha.html"><span>Next</span><strong>T4-R08</strong><em>Sizing &amp; HA</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

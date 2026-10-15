@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T2-R04 · Devices &amp; Provisioning">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T2-R04 · Devices &amp; Provisioning · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R04" data-room-title="Devices &amp; Provisioning" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Devices &amp; Provisioning</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Devices &amp;amp; Provisioning">
+<defs>
+<linearGradient id="T2R04sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R04sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R04</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Devices &amp;amp; Provisioning. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Devices &amp;amp; Provisioning">
+<defs>
+<marker id="T2R04arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R04arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R04arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R04arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R04lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">A phone joins Webex Calling by MAC address or by a 16-digit activation code. A blank MAC in Control Hub generates the code. The code lasts 30 days on an MPP phone and 7 days on a Room device. A professional workspace license holds up to five phones. A common-area workspace holds one.</p>
+<div class="meta-row"><span class="meta-chip">Room <strong>T2-R04</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L2</strong></span><span class="meta-chip">Est. time <strong>70–90 min</strong></span><span class="meta-chip">Prereq <strong>T2-R01, T1-R04</strong></span><span class="meta-chip read-chip">Reading <strong>18 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Add a device by MAC address or by activation code. A blank MAC generates the code. RoomOS uses activation codes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The activation-code subset includes 6800, 7800, and 8800 MPP models named in the article, conference phones 7832 and 8832, Desk Phone 9800, Wireless 9821, and Video Phone 8875. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A 16-digit code expires after 30 days for MPP phones and after 7 days for Room devices. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Professional workspace: up to five Cisco desk phones, MPP phones, wireless, ATAs, Phone OS, or third-party devices. Common area: one device. Multiple devices are added from the new workspace page. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Configure an ATA’s VLAN, IP address, and subnet mask before activation. After activation those settings are not available to change. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>MPP firmware 11.3.1 SR2 or later is required to enter an activation code on the phone. The phone reboots and onboards after the code is entered. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>CSV device type IP is for MPP, ATA, and DECT. WEBEX or WEBEX_CALLING is for RoomOS workspaces. The article’s example MAC is 001A2B3C4D5E. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A workspace device is assigned to the workspace, not to a user. Add it from Management &gt; Devices &gt; Add device, or from Management &gt; Workspaces. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Calling service choices for a Board, Desk, or Room workspace include None, Call on Webex (1:1, non-PSTN, the default), Cisco Webex Calling, premises calling, and legacy Hybrid Calling. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Only specific roles can generate activation codes. The article points at the organization-role article for which roles. Role names stay in T1-R05. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A phone without a MAC or a code never registers. The license on the workspace decides whether a second phone is even allowed.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two ways onto the cloud</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T2-R04/arch.svg -->
+<div class="diagram" role="img" aria-label="MAC address versus activation code">
+<svg viewBox="0 0 980 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Device onboarding paths">
+<rect width="980" height="380" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">How a device is claimed</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Blank MAC generates a 16-digit code. RoomOS uses the code path.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="90" width="280" height="150" rx="12" fill="#14262a" stroke="#7eb6ff"/><text x="52" y="128">1 · MAC address</text><text x="52" y="156" fill="#b7ad9c" font-size="12">All listed devices can use it</text><text x="52" y="178" fill="#b7ad9c" font-size="12">Example 001A2B3C4D5E</text><text x="52" y="200" fill="#b7ad9c" font-size="12">CSV type IP for MPP/ATA/DECT</text>
+<rect x="350" y="90" width="280" height="150" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="366" y="128">2 · Activation code</text><text x="366" y="156" fill="#b7ad9c" font-size="12">16 digits</text><text x="366" y="178" fill="#b7ad9c" font-size="12">MPP 30 days · Room 7 days</text><text x="366" y="200" fill="#b7ad9c" font-size="12">MPP firmware 11.3.1 SR2+</text>
+<rect x="664" y="90" width="280" height="150" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="680" y="128">3 · Who owns it</text><text x="680" y="156" fill="#b7ad9c" font-size="12">User: Users &gt; Devices</text><text x="680" y="178" fill="#b7ad9c" font-size="12">Workspace: shared usage</text><text x="680" y="200" fill="#b7ad9c" font-size="12">Professional 5 · common area 1</text>
+<rect x="180" y="270" width="620" height="70" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="196" y="312">4 · After the code: the phone reboots and onboards</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Workspace calling choices">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Calling service on a workspace">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Calling service on a Room or Desk workspace</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  None — standalone Room Navigator, Room USB, or Microsoft Teams Rooms.</text>
+<text x="36" y="110" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Call on Webex — 1:1, non-PSTN. This is the default.</text>
+<text x="36" y="142" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  Cisco Webex Calling — number and extension. PSTN from a local gateway, a provider bundle, or CCP.</text>
+<text x="36" y="174" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  Premises calling uses Webex Edge for Devices. Hybrid Calling is the legacy Unified CM path.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>MAC</li><li><span class="num">2</span>Activation code</li><li><span class="num">3</span>User or workspace</li><li><span class="num">4</span>Onboard</li></ul>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">flowchart LR
+  Admin[Control Hub] --> MAC[MAC claim]
+  Admin --> Code[16-digit code]
+  Code --> Phone[Phone reboot]
+  Phone --> Cloud[Webex Calling]
+</pre></details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R04/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Claim, license, then calling service</h2>
+<p>The add-device article is dated September 01, 2026. The activation-code article is dated January 12, 2026. The shared-workspace article is dated April 21, 2026. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p>
+<div class="chips"><span class="chip">MAC</span><span class="chip">16-digit code</span><span class="chip">MPP</span><span class="chip">RoomOS</span><span class="chip">Workspace license</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T2-R04/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T2-R04/hero.png</code> · Studio draws a MAC label beside a 16-digit code.</div>
+<h3>Activation-code models named on September 01, 2026</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Family</th><th>Models the article lists for activation codes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>6800 MPP audio</td><td>6821, 6841, 6851</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7800 MPP audio</td><td>7811, 7821, 7841, 7861</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8800 MPP audio</td><td>8811, 8841, 8851, 8861</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8800 MPP video</td><td>8845, 8865</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Conference</td><td>7832 and 8832</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Other named</td><td>Desk Phone 9800, Wireless 9821, Video Phone 8875</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<p>The same article says all listed devices can register by MAC address, and that the activation-code path is the subset above. Use activation codes for RoomOS. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>Workspace limits and calling choices</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Rule</th><th>Sentence to keep</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Professional workspace</td><td>Up to five Cisco desk phones, Cisco MPP phones, wireless, ATAs, Phone OS, or third-party devices.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Where the extra phones are added</td><td>Only from the new workspace page. Turn on Try new Workspaces. A notification blocks you at the maximum. Add Device is disabled at the maximum.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Common area</td><td>Only one device.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Assignment</td><td>The device belongs to the workspace, not to a user.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Name</td><td>A workspace name cannot be longer than 128 characters and cannot contain % # &lt; &gt; / \ or ".</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>None</td><td>No calling service. Used for a standalone Room Navigator, Room USB, or Microsoft Teams Rooms.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Call on Webex</td><td>1:1 call, non-PSTN. Default for Webex App and SIP address calling.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Cisco Webex Calling</td><td>Assign a phone number and extension. PSTN may come from a local gateway, a service-provider bundle, or a cloud-connected PSTN provider.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>One device type</td><td>A single space holds one type of device. Companion Mode is the exception: one Board and one Room Series device. A Room Navigator can be added in standalone mode.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Delete</td><td>Deleting a workspace that has an online MPP also deletes the phone and factory-resets it. An offline phone needs a manual factory reset.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>Code handling</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Fact</th><th>Value</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Length</td><td>16 digits</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>MPP expiry</td><td>30 days</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Room device expiry</td><td>7 days</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Delivery</td><td>Copy, Email, or Print. You can email a user other than the assignee.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Workspace path</td><td>Workspaces, select the workspace, Add Device</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>User path</td><td>Users, select the user, Devices, Add Device</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CSV blank MAC</td><td>Provide a link, or email the activation code. Workspace mail goes to an admin. User mail goes to the user.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>MPP actions</td><td>Add, remove, reboot, check activation, new activation code. Apply config or update firmware.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>ATA network</td><td>Set VLAN, IP address, and subnet mask before activation.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Enter the activation code only after the MPP is on firmware 11.3.1 SR2 or later. The phone reboots as part of onboarding. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>An ATA’s network settings are fixed once the device activates. Change VLAN, IP address, and subnet mask before you enter the code. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">License neighbor</span><p>Professional versus common-area calling licenses, and the rule that a professional workspace cannot be downgraded to common area, are in T1-R03. This room uses the device counts from the workspace article.</p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R04">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R04map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R04map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>MAC claim</dt><dd>Registration by the device MAC address. The add-device article says every device it lists can use this path. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Activation code</dt><dd>A 16-digit code from Control Hub. Blank MAC generates one. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>MPP</dt><dd>Multiplatform phone. The activation-code subset is the model list in the core table. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>RoomOS</dt><dd>The article says to use activation codes for RoomOS, and CSV types WEBEX or WEBEX_CALLING for RoomOS workspaces. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Professional workspace license</dt><dd>Allows up to five of the phone types the April 21, 2026 article names. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Common area workspace license</dt><dd>Allows one device on the workspace. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Call on Webex</dt><dd>1:1, non-PSTN calling. The default calling service when you add Board, Desk, or Room devices. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Companion Mode</dt><dd>The exception that allows one Board and one Room Series device in the same workspace. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T2-R04/eco.svg -->
+<div class="diagram" role="img" aria-label="Device provisioning sisters"><svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Sisters of a phone claim</text>
+<text x="36" y="74" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">User or workspace · professional or common-area license</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Location number and extension when Cisco Webex Calling is selected</text>
+<text x="36" y="138" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Admin role that may generate a code · ATA network settings first</text>
+<text x="36" y="170" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Firmware 11.3.1 SR2 before the code is typed on an MPP</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((Device))
+    MAC
+    Activation code
+    Workspace license
+    Calling service
+    ATA network
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Locations</td><td>The workspace is placed in a location. Cisco Webex Calling then takes a number from that location.</td><td>T1-R04 owns locations. The number is chosen here.</td><td>Location and phone number on the workspace wizard. The location updates during the nightly resync.</td><td>A number from the wrong location.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Licenses</td><td>Professional workspace versus common area.</td><td>Five devices versus one.</td><td>Calling service step in the add-device wizard.</td><td>A second phone on a common-area workspace.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>PSTN</td><td>Local gateway, service-provider bundle, or CCP when Cisco Webex Calling is selected.</td><td>Call on Webex is non-PSTN.</td><td>Calling service choice.</td><td>Expecting PSTN from the default Call on Webex choice.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Admin roles</td><td>Only specific roles generate activation codes.</td><td>T1-R05 lists who can add devices.</td><td>The role article fs78p5, which ndb7w0db points at.</td><td>A read-only admin trying to mint a code.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Firmware</td><td>11.3.1 SR2 or later to type a code on an MPP.</td><td>The phone cannot onboard on an older load.</td><td>MPP Actions: update firmware.</td><td>A code typed on older firmware.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Calendar</td><td>Optional scheduling for OBTP. Hybrid Calendar is required for that option.</td><td>A room device can be a calling device and a calendar resource.</td><td>Scheduling on the workspace wizard.</td><td>OBTP with no calendar mailbox.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Edge for Devices</td><td>Premises calling links an on-premises registered device.</td><td>Different from Cisco Webex Calling.</td><td>Premises calling choice.</td><td>Mixing it with a cloud MAC claim.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Identity</td><td>Hot desking lets a user sign in to a shared Board or Desk Series device with a Webex identity.</td><td>The device stays on the workspace. The person is a sign-in.</td><td>Hot desking toggle.</td><td>Assigning the room phone to a user record.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Control Hub</td><td>MPP</td><td>MAC address</td><td>Device claim for listed models</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Control Hub</td><td>Phone or RoomOS</td><td>16-digit activation code</td><td>Onboarding after reboot</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CSV</td><td>Control Hub</td><td>Device type IP, WEBEX, or WEBEX_CALLING</td><td>Bulk claim. Blank MAC yields a code.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Admin</td><td>Assignee or another user</td><td>Copy, Email, or Print</td><td>The code</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Workspace wizard</td><td>Location</td><td>Calling service Cisco Webex Calling</td><td>Phone number and extension</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Workspace delete</td><td>Online MPP</td><td>Factory reset</td><td>Phone returns to the activation-code screen</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>ATA</td><td>Network</td><td>Settings before activation</td><td>VLAN, IP address, subnet mask</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Provisioning edges"><svg viewBox="0 0 980 80" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="80" fill="#0c121c"/><text x="28" y="32" fill="#7eb6ff" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="58" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">MAC or code claims the phone. The workspace license caps how many phones share the room.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Microsoft Teams Rooms is a reason to choose calling service None for a standalone device. The article does not publish a Teams Phone provisioning crosswalk. Enterprise-to-MPP migration licenses are a separate article and are not restated here. <a class="cite" href="#cite-3">[cite:3]</a></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>MPP Actions already include apply configuration and update firmware. A later room can attach line keys once the phone is online. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Canon planning: record code expiry beside the device type so a Room device is not left on a 30-day assumption.</li>
+<li>The nightly location resync is the article’s timing for a location change on the workspace. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Add Device is disabled on the workspace</td><td>The workspace is already at its device maximum.</td><td>Professional cap of five, or common-area cap of one.</td><td>Remove a device or use a professional license and the new workspace page.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>The room has PSTN and the calling service was left on the default</td><td>Call on Webex is 1:1 and non-PSTN.</td><td>The calling service selected in the wizard.</td><td>Choose Cisco Webex Calling and assign a number.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A second device type will not add</td><td>One type per space, aside from Companion Mode and a standalone Room Navigator.</td><td>What is already in the workspace.</td><td>Match the type, or use the documented exception.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a blank MAC to a registered phone</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Control Hub</td><td>Users or Workspaces</td><td>Add Device. Shared usage for a workspace.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>2</td><td>Admin</td><td>License</td><td>Professional or common area</td><td>Five versus one.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>3</td><td>Admin</td><td>Claim</td><td>MAC or blank MAC</td><td>Blank MAC generates a code. CSV type IP, WEBEX, or WEBEX_CALLING.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Control Hub</td><td>Person with the phone</td><td>Copy, Email, or Print</td><td>16 digits. 30 days MPP, 7 days Room.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>MPP</td><td>Firmware check</td><td>11.3.1 SR2 or later</td><td>Required before the code is entered.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Phone</td><td>Cloud</td><td>Activation</td><td>The phone reboots and onboards.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>ATA</td><td>Network</td><td>Local settings</td><td>VLAN, IP, and mask before step 6.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>8</td><td>Workspace</td><td>Location</td><td>Nightly resync</td><td>Location is updated during that resync.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>For a user phone, open Users, select the user, open Devices, and click Add Device. Choose the device type and click Add device. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For a shared phone, open Management &gt; Devices &gt; Add device, or Management &gt; Workspaces &gt; Add workspace. Choose Shared usage, then New workspace. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Name the workspace within 128 characters and avoid % # &lt; &gt; / \ and ". Set room type, capacity, and location. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Choose Cisco Desk Phone, or Cisco MPP, Wireless, ATA, or third-party device with Cisco Managed Devices. Pick Professional workspace or Common area workspace. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Assign the location’s phone number and, if you want one, an extension. Save. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Enter a MAC address, or leave it blank so Control Hub generates an activation code. For RoomOS, use the code. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Copy, email, or print the 16-digit code. On an MPP, confirm firmware 11.3.1 SR2 or later, enter the code, and let the phone reboot. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For an ATA, set VLAN, IP address, and subnet mask before that activation. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For Board, Desk, or Room Series, choose the calling service: None, Call on Webex, Cisco Webex Calling, premises calling, or legacy Hybrid Calling. Activate with the code. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+<!-- VISUAL:screenshot:add-device | Studio | assets/images/T2-R04/add-device.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Values the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Activation code length</td><td>16 digits</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header January 12, 2026.</td></tr>
+<tr><td>MPP code lifetime</td><td>30 days</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Room device code lifetime</td><td>7 days</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>MPP firmware for a typed code</td><td>11.3.1 SR2 or later</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header September 01, 2026.</td></tr>
+<tr><td>Professional workspace devices</td><td>Up to 5</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. Header April 21, 2026.</td></tr>
+<tr><td>Common area devices</td><td>1</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr>
+<tr><td>Workspace name</td><td>128 characters, excluding % # &lt; &gt; / \ "</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr>
+<tr><td>Example MAC</td><td>001A2B3C4D5E</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as the article’s example</td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Eight provisioning failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>The MPP will not accept the code</td><td>Firmware older than 11.3.1 SR2.</td><td>The phone’s load.</td><td>Update firmware, then enter the code.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A Room device code from last month fails</td><td>Room device codes expire after 7 days. MPP codes expire after 30.</td><td>When the code was generated and the device family.</td><td>Generate a new code.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A sixth phone will not add</td><td>Professional workspace maximum is five.</td><td>The device count and the license.</td><td>The wizard notifies you and disables Add Device.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A second phone on a lobby workspace fails</td><td>Common area allows one device.</td><td>The workspace license.</td><td>Use a professional workspace license if five devices are required.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>ATA VLAN changes disappear after activation</td><td>Network settings cannot be changed after activation.</td><td>Whether the ATA is already active.</td><td>Set VLAN, IP, and mask first.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>RoomOS was added with a MAC-only plan</td><td>The article says to use activation codes for RoomOS.</td><td>The device family.</td><td>Generate a code. CSV type WEBEX or WEBEX_CALLING.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>The room phone has no PSTN</td><td>Call on Webex is the default and is non-PSTN.</td><td>The calling service.</td><td>Select Cisco Webex Calling and assign a number.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A deleted workspace leaves a configured MPP</td><td>Factory reset runs when the phone is online. An offline phone is not reset.</td><td>Whether the phone was reachable.</td><td>Factory-reset an offline phone before reuse.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What two claims does Control Hub offer?</summary><p class="answer">MAC address, or an activation code. A blank MAC generates the code. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>How long is the code?</summary><p class="answer">16 digits. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How long does an MPP code last?</summary><p class="answer">30 days. A Room device code lasts 7 days. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Which firmware can type the code?</summary><p class="answer">MPP firmware 11.3.1 SR2 or later. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many devices on a professional workspace?</summary><p class="answer">Up to five of the phone types the article names. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many on a common-area workspace?</summary><p class="answer">One. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the default calling service for a Room or Desk workspace?</summary><p class="answer">Call on Webex, which is 1:1 and non-PSTN. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which CSV device types cover RoomOS?</summary><p class="answer">WEBEX or WEBEX_CALLING. IP is for MPP, ATA, and DECT. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What must you set on an ATA before activation?</summary><p class="answer">Network settings, including VLAN, IP address, and subnet mask. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Who may generate a code?</summary><p class="answer">Only specific roles. The article points at the organization-role article rather than listing them. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What happens to an online MPP when its workspace is deleted?</summary><p class="answer">The phone is deleted and factory-reset, and it returns to the activation-code screen. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>When can a Board and a Room Series device share a workspace?</summary><p class="answer">Companion Mode. A standalone Room Navigator can also be added beside other devices. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper phones, no production claim</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: choose MAC or code, the license cap, and the calling service for four devices.</label></li>
+<li><label><input type="checkbox"> Prereq: this room. Do not activate a production phone.</label></li>
+<li><label><input type="checkbox"> Step 1. An 8841 on old firmware needs a code. Expected: upgrade to 11.3.1 SR2 or later first.</label></li>
+<li><label><input type="checkbox"> Step 2. A RoomOS device. Expected: activation code, CSV type WEBEX or WEBEX_CALLING, 7-day expiry.</label></li>
+<li><label><input type="checkbox"> Step 3. A lobby on a common-area license. Expected: one device.</label></li>
+<li><label><input type="checkbox"> Step 4. A professional workspace already has five phones. Expected: Add Device is disabled.</label></li>
+<li><label><input type="checkbox"> Step 5. An ATA still needs a voice VLAN. Expected: set it before activation.</label></li>
+<li><label><input type="checkbox"> Evidence: the four choices with cites.</label></li>
+<li><label><input type="checkbox"> Break it: leave Call on Webex selected and promise PSTN. Recovery: that choice is non-PSTN. Select Cisco Webex Calling.</label></li>
+<li><label><input type="checkbox"> Reflection: which of your rooms are still planned as common area when they need a second phone.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>What does a blank MAC produce?</p><details><summary>Answer</summary><p class="answer">An activation code. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>MPP activation-code lifetime?</p><details><summary>Answer</summary><p class="answer">30 days. Room devices expire in 7 days. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Minimum MPP firmware to type a code?</p><details><summary>Answer</summary><p class="answer">11.3.1 SR2. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Professional workspace device cap?</p><details><summary>Answer</summary><p class="answer">Five of the phone types named in the April 21, 2026 article. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Common-area device cap?</p><details><summary>Answer</summary><p class="answer">One. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Default calling service for a new Room or Desk workspace?</p><details><summary>Answer</summary><p class="answer">Call on Webex, 1:1, non-PSTN. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>You need PSTN on a workspace phone.</p><details><summary>Answer</summary><p class="answer">Choose Cisco Webex Calling and assign a number and extension. PSTN may come from a local gateway, a provider bundle, or CCP. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>CSV type for an MPP?</p><details><summary>Answer</summary><p class="answer">IP. WEBEX or WEBEX_CALLING is for RoomOS workspaces. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>What is fixed on an ATA after activation?</p><details><summary>Answer</summary><p class="answer">Network settings such as VLAN, IP address, and subnet mask. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Can you email the code to someone other than the assignee?</p><details><summary>Answer</summary><p class="answer">Yes. Copy, Email, or Print. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>What does deleting a workspace do to an online MPP?</p><details><summary>Answer</summary><p class="answer">Deletes the phone and factory-resets it. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Name the two claim methods and the two license caps.</p><details><summary>Answer</summary><p class="answer">MAC or 16-digit code. Professional workspace up to five. Common area one. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Explain MAC versus activation code, 30-day and 7-day expiry, and the five-versus-one workspace cap." | assets/audio/T2-R04/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk firmware 11.3.1 SR2, ATA network lock, calling service choices, and workspace delete." | assets/audio/T2-R04/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 16 digits, RoomOS codes, Call on Webex is non-PSTN, Companion Mode." | assets/audio/T2-R04/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> I claim a phone by MAC or by a 16-digit activation code. MPP codes last 30 days and Room codes last 7. A professional workspace holds five phones. A common-area workspace holds one.</p>
+<p><strong>2 minutes.</strong> All of the listed devices can use a MAC. The activation-code subset is the 6800, 7800, and 8800 models the September 2026 article names, plus 7832, 8832, 9800, 9821, and 8875. RoomOS uses a code, and the CSV types are WEBEX or WEBEX_CALLING. An MPP needs firmware 11.3.1 SR2 before the code is typed, then it reboots. I can copy, email, or print the code, including to someone who is not the assignee. An ATA gets its VLAN and IP address first, because those settings lock after activation. If the room needs PSTN I choose Cisco Webex Calling, not the default Call on Webex service.</p>
+<p><strong>30 seconds, delete.</strong> Deleting a workspace factory-resets an online MPP and returns it to the code screen. An offline phone needs a manual reset.</p>
+<p><strong>2 minutes, what I will not merge.</strong> I will not put a second device type in one space unless Companion Mode or a standalone Room Navigator applies. I will not promise PSTN on Call on Webex. I will not generate a code with a role the organization-role article does not allow. Migration licenses from Enterprise firmware are a different article.</p>
+<p><strong>What you will say about the nightly job.</strong> The workspace article says the location is updated during the nightly resync.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Add a device — help.webex — article n9r1aac — <a href="https://help.webex.com/article/n9r1aac">help.webex.com article n9r1aac</a> — header September 01, 2026 — retrieved 2026-10-14. MAC or activation code, model subset, RoomOS codes, CSV types IP and WEBEX or WEBEX_CALLING, example MAC, firmware 11.3.1 SR2, MPP actions, phone reboot.</li>
+<li id="cite-2">Generate an activation code for a device — help.webex — article ndb7w0db — <a href="https://help.webex.com/article/ndb7w0db">help.webex.com article ndb7w0db</a> — header January 12, 2026 — retrieved 2026-10-14. 16 digits, 30 days for MPP, 7 days for Room devices, Copy Email or Print, ATA network settings before activation, role pointer.</li>
+<li id="cite-3">Add shared devices and services to a workspace — help.webex — article 1mqb9cb — <a href="https://help.webex.com/article/1mqb9cb">help.webex.com article 1mqb9cb</a> — header April 21, 2026 — retrieved 2026-10-14. Five devices on a professional workspace, one on common area, calling service choices, workspace name rules, Companion Mode, delete and factory reset, nightly location resync.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: whether the activation-code model list gains phones after September 01, 2026.</li>
+<li>Facts still TODO-verify: 0.</li>
+<li>Assets missing: Add Device screenshot, audio.</li>
+<li>Ideas for v1.0: a card that pairs device family with code lifetime.</li>
+<li>Next review: when n9r1aac or 1mqb9cb changes the model list or the five-device cap.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T2-R03-dial-plans-pstn-routing.html"><span>Previous</span><strong>T2-R03</strong><em>Dial Plans, PSTN &amp; Routing</em></a><a class="next" href="T2-R05-call-features.html"><span>Next</span><strong>T2-R05</strong><em>Call Features</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

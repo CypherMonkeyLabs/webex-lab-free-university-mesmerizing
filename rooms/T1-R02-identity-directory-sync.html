@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T1-R02 · Identity &amp; Directory Sync">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T1-R02 · Identity &amp; Directory Sync · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T1" data-room="T1-R02" data-room-title="Identity &amp; Directory Sync" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T1</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T1/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T1 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T1 · Control Hub &amp; Platform Foundations</p>
+<h1>Identity &amp; Directory Sync</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Identity &amp;amp; Directory Sync">
+<defs>
+<linearGradient id="T1R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T1R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T1-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Admin</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Identity</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Services</text></g>
+</svg>
+<figcaption>Illustrated scene for Identity &amp;amp; Directory Sync. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Identity &amp;amp; Directory Sync">
+<defs>
+<marker id="T1R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Admin → Control Hub → Identity → Services</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Services</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T1R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T1R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T1R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T1R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Admin → Control Hub → Identity → Services. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Directory Connector is one Windows instance per Active Directory domain. SCIM 2.0 is a REST sync with no on-premises connector. Org SSO maps <code>uid</code>. Partner SSO maps <code>mail</code>. A dry run comes before the first full sync, and invite suppression requires SSO.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T1-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T1-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>22 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>One Directory Connector instance serves one Active Directory domain. Download it from Control Hub. A trial or any paid subscription is required to reach the software. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The only required cloud attribute is <code>uid</code>. Cisco recommends <code>mail</code> or <code>userPrincipalName</code>, and the chosen attribute must be in email format. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do a dry run before the first full synchronization. Incremental sync stays disabled until a full sync has completed. Group synchronization requires a full sync. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Organization SSO uses a SAML 2.0 NameID of <code>transient</code> and a <code>uid</code> claim. Partner SSO uses <code>mail</code>, rather than <code>uid</code>. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Commercial SCIM tenant URL is <code>https://webexapis.com/identity/scim/OrgId/v2</code>. Webex for Government uses <code>https://api-usgov.webex.com/identity/scim/OrgId/v2</code>. The manually retrieved bearer token is valid for 365 days. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Directory Connector runs on Windows Server 2025, 2022, 2019, or 2016, requires TLS 1.2 and .NET Framework 4.5, and needs Active Directory forest functional level 2 or higher. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>The connector sign-in account is the same user as a full administrator in Control Hub. By default the service uses the local system account to read Active Directory. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>New accounts can be Active before first sign-in when you verify domains, integrate SSO, and suppress automatic email invites. Invite suppression requires the SSO integration. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>With more than one IdP, Webex supports SAML, OpenID Connect, and Webex Identity. An extra IdP stays inactive until a routing rule exists. Directory Sync or Entra ID blocks SAML just-in-time create and update. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>SCIM 1.1 synchronizes users only. SCIM 2.0 adds groups. The Entra ID Wizard is the path that also synchronizes rooms and avatars, through Microsoft Graph. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Calling extensions, license templates, and contact-center agents all start as people in this identity store. A doubled routing prefix later in T2-R03 is usually an Active Directory attribute that already contained the prefix.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two pictures: where identity is born, and how a user becomes Active</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T1-R02/arch.svg -->
+<div class="diagram" role="img" aria-label="Directory Connector, SCIM, and SSO around one organization">
+<svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Directory Connector, SCIM, and SSO around one organization">
+<rect width="980" height="420" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Identity sources into one Webex organization</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">One connector per AD domain. SCIM has no on-premises connector. SSO is a separate agreement.</text>
+<rect x="340" y="150" width="300" height="110" rx="16" fill="#14262a" stroke="#3ecfb2" stroke-width="2"/>
+<text x="490" y="192" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="18">Webex organization</text>
+<text x="490" y="216" text-anchor="middle" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">uid is the required cloud field</text>
+<text x="490" y="236" text-anchor="middle" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Control Hub · admin.webex.com</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="88" width="250" height="92" rx="12" fill="#14110c" stroke="#3ecfb2"/>
+<text x="44" y="120">1 · Directory Connector</text>
+<text x="44" y="142" fill="#b7ad9c" font-size="12">Windows, one domain each</text>
+<text x="44" y="160" fill="#b7ad9c" font-size="12">dry run, then full sync</text>
+<rect x="28" y="240" width="250" height="92" rx="12" fill="#14110c" stroke="#3ecfb2"/>
+<text x="44" y="272">2 · Entra SCIM 2.0</text>
+<text x="44" y="294" fill="#b7ad9c" font-size="12">REST, users and groups</text>
+<text x="44" y="312" fill="#b7ad9c" font-size="12">rooms and avatars: no</text>
+<rect x="702" y="88" width="250" height="92" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="718" y="120">3 · Entra ID Wizard</text>
+<text x="718" y="142" fill="#b7ad9c" font-size="12">groups, rooms, avatars</text>
+<text x="718" y="160" fill="#b7ad9c" font-size="12">Microsoft Graph</text>
+<rect x="702" y="240" width="250" height="92" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="718" y="272">4 · SAML IdP</text>
+<text x="718" y="294" fill="#b7ad9c" font-size="12">org SSO: uid</text>
+<text x="718" y="312" fill="#b7ad9c" font-size="12">partner SSO: mail</text>
+</g>
+<path d="M278 134 H340" stroke="#3ecfb2" fill="none"/>
+<path d="M278 286 H340" stroke="#3ecfb2" fill="none"/>
+<path d="M640 134 H702" stroke="#e0b07a" fill="none"/>
+<path d="M640 286 H702" stroke="#e0b07a" fill="none"/>
+<text x="28" y="390" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Numbers match the flow table. A second IdP needs a routing rule before it activates.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Path from a directory user to an Active Webex account">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Path from a directory user to an Active Webex account">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Make a synchronized user Active before first sign-in</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<rect x="24" y="70" width="210" height="120" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="40" y="108">1 · Domains</text>
+<text x="40" y="132" fill="#b7ad9c" font-size="12">Add, verify, optionally</text>
+<text x="40" y="150" fill="#b7ad9c" font-size="12">claim the email domains</text>
+<rect x="258" y="70" width="210" height="120" rx="12" fill="#14262a" stroke="#3ecfb2"/>
+<text x="274" y="108">2 · SSO</text>
+<text x="274" y="132" fill="#b7ad9c" font-size="12">SAML 2.0 agreement</text>
+<text x="274" y="150" fill="#b7ad9c" font-size="12">NameID transient</text>
+<rect x="492" y="70" width="220" height="120" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="508" y="108">3 · Suppress invites</text>
+<text x="508" y="132" fill="#b7ad9c" font-size="12">Requires the SSO</text>
+<text x="508" y="150" fill="#b7ad9c" font-size="12">integration</text>
+<rect x="736" y="70" width="220" height="120" rx="12" fill="#14262a" stroke="#e0b07a"/>
+<text x="752" y="108">4 · Full sync</text>
+<text x="752" y="132" fill="#b7ad9c" font-size="12">Dry run first</text>
+<text x="752" y="150" fill="#b7ad9c" font-size="12">Then Sync Now</text>
+</g>
+<text x="28" y="240" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Directory synchronization stays disabled in Control Hub until a full synchronization succeeds.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Directory Connector</li>
+<li><span class="num">2</span>SCIM 2.0</li>
+<li><span class="num">3</span>Entra ID Wizard</li>
+<li><span class="num">4</span>SSO claim</li>
+</ul>
+<details>
+<summary>Mermaid source (offline SVG above is the picture; no Mermaid engine is loaded)</summary>
+<pre class="mermaid">flowchart LR
+  AD[Active Directory domain] --> DC[Directory Connector]
+  Entra[Entra ID] --> SCIM[SCIM 2.0]
+  Entra --> Wizard[Entra ID Wizard]
+  DC --> Org[Webex organization]
+  SCIM --> Org
+  Wizard --> Org
+  IdP[SAML IdP] --> Org
+</pre>
+</details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T1-R02/arch.svg</code></p>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Three provisioning paths, one uid</h2>
+<p>Control Hub is where you view users, assign licenses, download Directory Connector, and configure SSO when you want users to authenticate through an identity provider and you do not want to send Webex App email invitations. <a class="cite" href="#cite-1">[cite:1]</a> Directory synchronization is shown as disabled until you install the connector and a full synchronization succeeds. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<div class="chips" aria-label="Glossary chips">
+<span class="chip">uid</span><span class="chip">Directory Connector</span><span class="chip">dry run</span><span class="chip">SCIM 2.0</span><span class="chip">Entra ID Wizard</span><span class="chip">NameID transient</span><span class="chip">routing rule</span>
+</div>
+<!-- VISUAL:concept-image | Studio | assets/images/T1-R02/hero.png -->
+<div class="shot">VISUAL placeholder · concept image · <code>assets/images/T1-R02/hero.png</code> · Studio draws one domain, one connector, and a separate SCIM arrow that never touches the Windows server.</div>
+
+<h3>What each path will synchronize</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Object</th><th>Entra ID SCIM 1.1</th><th>Entra ID Wizard</th><th>Entra ID SCIM 2.0</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Users</td><td>Yes</td><td>Yes</td><td>Yes</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Groups</td><td>No</td><td>Yes, through Microsoft Graph</td><td>Yes</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Rooms</td><td>No</td><td>Yes, through Microsoft Graph</td><td>No</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Avatars</td><td>No</td><td>Yes, through Microsoft Graph</td><td>No</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>department, employee ID</td><td>No</td><td>No</td><td>Yes</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>manager</td><td>No</td><td>Yes</td><td>No</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>Directory Connector rules you can defend</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Rule</th><th>What the deployment guide says</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Scope</td><td>Install one connector for each Active Directory domain. A single instance can serve only a single domain.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Windows</td><td>Supported servers: Windows Server 2025, 2022, 2019, and 2016.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>TLS</td><td>Directory Connector requires TLS 1.2. .NET Framework 4.5 is required for TLS 1.2.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Forest</td><td>Active Directory forest functional level 2 (Windows Server 2003) or higher.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Sign-in</td><td>The sign-in account must be the same as a full admin account for Control Hub. An Active Directory administrative account is not required for that sign-in.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Service account</td><td>By default the connector uses the local system account to access Active Directory. Windows services can point it at another account.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>uid</td><td>The only required field is uid. Map mail or userPrincipalName. The attribute must be in email format.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Order</td><td>You must do a dry run before a full synchronization. Incremental sync is disabled if a full synchronization was not completed.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Groups</td><td>For group synchronization you must do a full sync.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Rooms</td><td>Check Identify Room to separate room data from user data.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+
+<h3>SSO claim, then the multi-IdP gate</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>SSO type</th><th>Claim</th><th>NameID</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Organization SSO</td><td><code>uid</code>, mapped to the Directory Connector attribute or the Webex identity attribute (email addresses or user principal name are the examples)</td><td><code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code></td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Partner SSO</td><td><code>mail</code>, rather than <code>uid</code>. Service provider administrators configuring SSO for customer organizations they manage.</td><td>Same transient NameID format in the IdP requirements</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody>
+</table></div>
+<div class="callout tip"><span class="label">Tip</span><p>If Directory Sync or Entra ID is enabled, SAML just-in-time create or update will not work. The multiple-IdP article states that directly. <a class="cite" href="#cite-4">[cite:4]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>Entra ID does not synchronize null values. Setting an attribute to NULL does not delete or patch that value in Webex. <a class="cite" href="#cite-3">[cite:3]</a> A userPrincipalName that does not match the email in Control Hub provisions a new user instead of matching the existing one. Webex uses the email address as the username, and the default map is userPrincipalName to userName. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout note"><span class="label">Header dates</span><p>The Directory Connector page retrieved for this room is dated September 15, 2026. The multiple-IdP page is dated April 17, 2026. The SSO overview and the SCIM 2.0 page did not print a header date in the retrieved text. <mark class="recheck">re-check</mark> those two before you teach a claim that might have moved.</p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T1-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Services</text>
+<circle cx="200" cy="132" r="36" fill="url(#T1R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T1R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p>Identity is the sister that Control Hub, Calling, and Contact Center all read. This section names the neighbors before the flow trusts a click-path. <a href="../ecosystem.html">The hub ecosystem map</a> is the cross-track picture.</p>
+<h3 class="eco-sub">Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Directory Connector</dt><dd>The Windows software you download from Control Hub and install on a trusted Windows server. One instance serves one Active Directory domain. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Dry run</dt><dd>A test of the synchronization process. You must do a dry run before a full synchronization. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Full synchronization</dt><dd>The sync that turns directory synchronization on for a new installation, and the sync required for groups. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Incremental synchronization</dt><dd>A sync of changes. The dashboard action is disabled when synchronization is paused or disabled, when a full sync has not completed, or when a sync is in progress. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>uid</dt><dd>The only required cloud attribute in Directory Connector attribute mapping. It must come from an Active Directory attribute in email format. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>SCIM</dt><dd>The REST API that keeps the user list in sync when someone is created, updated, or removed in the Entra application. No on-premises connector. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Bearer token</dt><dd>The secret Entra provisioning uses. The manual retrieval path in the SCIM article says the token is valid for 365 days. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Routing rule</dt><dd>The rule that tells Webex which IdP to use when more than one is configured. Skipping it leaves the IdP inactive. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>Hybrid Directory</dt><dd>Named among the Hybrid Services that data residency says are supported in the region, together with Hybrid Calendar, Hybrid Calling, Video Mesh, Hybrid Data Security, and Hybrid Messages. <a class="cite" href="#cite-5">[cite:5]</a></dd></div>
+</dl>
+<h3 class="eco-sub">Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T1-R02/eco.svg -->
+<div class="diagram" role="img" aria-label="Mind map of identity sisters">
+<svg viewBox="0 0 980 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of identity sisters">
+<rect width="980" height="300" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">What touches a Webex identity</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Active Directory domain · one Directory Connector · uid</text>
+<text x="36" y="110" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Entra ID · SCIM 1.1 users · SCIM 2.0 users and groups · Wizard adds rooms and avatars</text>
+<text x="36" y="142" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">SAML 2.0 · transient NameID · org uid · partner mail</text>
+<text x="36" y="174" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Multiple IdPs need a routing rule · Directory Sync blocks SAML JIT</text>
+<text x="36" y="206" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Licenses wait until the person is Active, unless SSO and invite suppression are already in place</text>
+<text x="36" y="238" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Calling extension attributes are a later room. Keep the prefix out of the directory value.</text>
+<text x="36" y="270" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Dashed peer names are orientation. This SVG is the picture. The Mermaid block is the source.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Identity))
+    Directory Connector
+    SCIM
+    Wizard
+    SSO
+    Routing rules
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Control Hub</td><td>The console that downloads the connector, assigns licenses, and configures SSO.</td><td>Directory sync stays disabled until a full sync succeeds.</td><td>admin.webex.com</td><td>Installing a connector and never running Sync Now.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Active Directory</td><td>The on-premises directory the connector reads.</td><td>One connector per domain. Forest functional level 2 or higher.</td><td>Domain controller the Windows account can read.</td><td>One connector pointed at two domains.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Entra ID</td><td>The cloud directory SCIM and the Wizard read.</td><td>Assignments decide who is provisioned. Nulls are not synced.</td><td>Enterprise application, Provisioning, Automatic.</td><td>UPN that is not the Control Hub email, so a second user appears.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>SAML IdP</td><td>The identity provider in the SSO agreement.</td><td>Invite suppression requires this integration.</td><td>NameID transient, uid or mail.</td><td>Testing partner SSO with a uid claim.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>License assignment</td><td>Automatic licenses apply when the user is added, and services are usable when the user is Active.</td><td>A synced user from an unverified domain stays unactivated until first sign-in.</td><td>Users &gt; Licenses, and SSO plus invite suppression.</td><td>Expecting a Calling line before the account is Active.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Webex Calling extension</td><td>The directory value that later becomes an extension.</td><td>The dial-plan article says Directory Connector must not already contain the routing prefix.</td><td>Attribute map, then the Calling room.</td><td>Prefix stored in the directory and added again by Webex.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Multiple IdPs</td><td>SAML, OpenID Connect, and Webex Identity.</td><td>Routing rules choose the IdP. Full admin is required.</td><td>SSO wizard routing rules.</td><td>A second IdP with no routing rule stays inactive.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Data residency</td><td>Identities and encryption keys are stored in the organization’s geographic region.</td><td>Country selection at provisioning permanently sets that GEO for users and keys.</td><td>Country Selector. T1-R07 is the residency room.</td><td>Planning a later move between GEO locations. The residency article says that move is not supported.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Active Directory domain</td><td>Directory Connector</td><td>LDAP read by the Windows service</td><td>Users, and rooms when Identify Room is checked</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Directory Connector</td><td>Webex identity</td><td>Full, then incremental sync</td><td>Mapped attributes. uid is required.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Entra enterprise app</td><td>Webex SCIM</td><td>REST, bearer token</td><td>Assigned users and, on SCIM 2.0, groups</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Entra ID Wizard</td><td>Control Hub</td><td>Microsoft Graph</td><td>Users, groups, rooms, avatars</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>IdP</td><td>Webex identity service</td><td>SAML 2.0</td><td>uid for org SSO, mail for partner SSO</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Control Hub</td><td>Entra secret</td><td>Service app token, or the manual idbroker URL</td><td>Bearer token, 365 days on the manual path</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Claimed domain</td><td>IdP sign-in</td><td>Domains claimed and turned on</td><td>Users from the domain are created and updated once each time they authenticate</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Directory Connector</td><td>Calling extension</td><td>Synchronized phone attribute</td><td>Extension without the routing prefix</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Integration edges for identity">
+<svg viewBox="0 0 980 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration edges for identity">
+<rect width="980" height="160" fill="#0c121c"/>
+<text x="28" y="36" fill="#3ecfb2" font-family="Georgia, serif" font-size="16">Edges</text>
+<text x="36" y="72" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">AD → Connector → Webex uid</text>
+<text x="36" y="98" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Entra assignment → SCIM tenant URL → user or group</text>
+<text x="36" y="124" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">IdP assertion → uid or mail → existing Webex user</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> The migration introduction says customers moving from on-premises Active Directory to Entra ID use the Entra ID Wizard app instead of Cisco Directory Connector. <a class="cite" href="#cite-8">[cite:8]</a> A Microsoft Entra gallery app and a custom non-gallery SCIM 2.0 app are both in the SCIM article. They are different scopes, which the supported-objects table records. <a class="cite" href="#cite-3">[cite:3]</a></div>
+<div class="table-wrap"><table><thead><tr><th>Webex path</th><th>Neighbor habit</th><th>What this room will say</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Directory Connector</td><td>On-premises AD sync tools</td><td>One Windows connector per AD domain, dry run, then full sync.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SCIM 2.0</td><td>Entra provisioning</td><td>Tenant URL plus a bearer token. Groups yes. Rooms and avatars no.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Org SSO uid</td><td>UPN as the only login</td><td>The claim value has to match a Webex email. Partner SSO uses mail.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon planning: when a lab tenant exists, capture a dry-run summary and a SCIM Test Connection result as text. That is a study asset, not a Cisco roadmap.</li>
+<li>The manually issued bearer token expires after 365 days. Put the renewal on a calendar before that day. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li><mark class="recheck">re-check</mark> the SSO and SCIM articles when their header dates appear. This room’s retrieved copies did not print one.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>SAML just-in-time will not create the user</td><td>Directory Sync or Entra ID is enabled.</td><td>Which provisioning method is on.</td><td>Keep creation on the directory method that is already enabled.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>A second IdP never activates</td><td>No routing rule.</td><td>SSO routing rules.</td><td>Add a routing rule. The default rule appears with the first IdP.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Calling users show prefix twice</td><td>The directory attribute already included the routing prefix.</td><td>The synced extension versus the location prefix in T2-R03.</td><td>Store the bare extension.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a domain account to a cloud uid</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Control Hub</td><td>HTTPS</td><td>Download the latest Directory Connector from https://admin.webex.com. A trial or paid subscription is required.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Connector</td><td>Domain controller</td><td>Directory read</td><td>Local system account by default. The interactive sign-in is a full Control Hub admin.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Attribute map</td><td>Cloud uid</td><td>Mapping</td><td>Choose mail or userPrincipalName. The value must be an email.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Connector</td><td>Dashboard</td><td>Dry run</td><td>Required before the first full synchronization.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Connector</td><td>Webex</td><td>Full sync</td><td>Turns directory synchronization on. Groups need this mode.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Entra app</td><td>SCIM tenant</td><td>REST</td><td>Commercial host webexapis.com, path /identity/scim/OrgId/v2. Government host api-usgov.webex.com with the same path.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>7</td><td>IdP</td><td>Webex identity</td><td>SAML 2.0</td><td>Transient NameID. Organization claim name uid. Partner claim name mail.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>8</td><td>Second IdP</td><td>Routing rule</td><td>Control Hub SSO wizard</td><td>Without the rule, Control Hub adds the IdP and does not activate it.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>Confirm a trial or paid subscription, then download Directory Connector from Control Hub so the installer is the current build. Upgrades after install are reported through the software. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Install on Windows Server 2025, 2022, 2019, or 2016. Confirm TLS 1.2 and .NET Framework 4.5. Confirm the forest functional level is 2 or higher. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Sign in with the same account as a full Control Hub administrator. Leave the service on the local system account, or set another account in Windows services if that account must read the domain. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Map uid to mail or userPrincipalName. Both must be email format. Map any other attribute only when you can still satisfy that format. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If room objects live in the directory, check Identify Room so room data stays separate from user data. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Run a dry run. Read the event view. Then start a full synchronization. Incremental sync is available after that full sync completes. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Optional Active-before-sign-in path: add and verify the email domains, optionally claim them, integrate SSO, then suppress automatic invites. Suppression requires SSO. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For organization SSO, set NameID format to transient and send uid. For partner SSO, send mail. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For a custom Entra SCIM 2.0 app: Enterprise applications, New application, Integrate any other application you don't find in the gallery, Provisioning mode Automatic, Visible to users set to No. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Copy the Organization ID from the customer view: organization name at the bottom left. Paste it into the tenant URL for the offer you use. Get the bearer token from Apps &gt; Service apps, or from the manual idbroker URL while signed in as a full admin in an incognito window. Test Connection, then save a notification email. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Assign one test user before the rest. Only assigned users and groups are synchronized. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>If you add a second IdP, add a routing rule or the IdP stays inactive. You need the Full Admin role. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ol>
+<!-- VISUAL:screenshot:directory-connector | Studio | assets/images/T1-R02/connector.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Connectors per domain</td><td>One instance serves one domain</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Windows Server</td><td>2025, 2022, 2019, 2016</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header September 15, 2026.</td></tr>
+<tr><td>Forest functional level</td><td>2 or higher</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>TLS</td><td>TLS 1.2, with .NET Framework 4.5</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Required attribute</td><td>uid only</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Bearer token lifetime</td><td>365 days on the manual retrieval path</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. <mark class="recheck">re-check</mark> header date.</td></tr>
+<tr><td>SCIM 1.1 groups</td><td>No</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted from the supported-objects table</td></tr>
+<tr><td>IdP protocols for multiple IdPs</td><td>SAML, OpenID Connect, and Webex Identity</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. Header April 17, 2026.</td></tr>
+<tr><td>SSO NameID</td><td>transient</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. <mark class="recheck">re-check</mark> header date.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Control Hub still shows directory synchronization disabled</td><td>A full synchronization has not succeeded.</td><td>Connector dashboard, Sync Now.</td><td>Finish install, dry run, then full sync.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Incremental sync is greyed out</td><td>No completed full sync, or a sync is already running, or sync is paused.</td><td>The Start incremental sync conditions.</td><td>Complete a full sync first.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Groups never appear</td><td>Only an incremental sync was run.</td><td>Synchronization mode.</td><td>Run a full sync for groups.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Users from a second domain are missing</td><td>One connector instance cannot serve two domains.</td><td>Installed instances versus domains.</td><td>Install one connector on each domain.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Connector will not sign in</td><td>The Windows login is not the full Control Hub admin.</td><td>Account comparison.</td><td>Use that full admin account for connector sign-in.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>uid mapping warning</td><td>The chosen attribute is not email format, or it is not mail or userPrincipalName.</td><td>The connector pop-up.</td><td>Map mail or userPrincipalName.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Invite suppression does nothing</td><td>SSO is not integrated. The feature requires it.</td><td>SSO status.</td><td>Finish SSO, then suppress invites.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SCIM Test Connection fails for a less-privileged session</td><td>The bearer token was minted by an account that cannot create users.</td><td>Who was signed in when the token URL ran.</td><td>Use an incognito window and a full admin.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Duplicate cloud users after Entra sync</td><td>userPrincipalName does not match the Control Hub email, so Webex treats them as new.</td><td>Attribute map, userName.</td><td>Map the Entra attribute that is the email address.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Cleared Entra attribute still shows in Webex</td><td>Entra ID does not synchronize null values.</td><td>The attribute is NULL in Entra and unchanged in Webex.</td><td>The article points that limitation at Microsoft.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What is Directory Connector?</summary><p class="answer">Windows software from Control Hub that synchronizes one Active Directory domain into the Webex organization. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>What is the only required mapped field?</summary><p class="answer">uid. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why does a dry run exist?</summary><p class="answer">The guide says you must do a dry run before a full synchronization. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What breaks if SSO is skipped and invites are suppressed?</summary><p class="answer">Invite suppression requires the SSO integration, so the suppression step is not available as a standalone switch. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does an organization SSO assertion name the user?</summary><p class="answer">The IdP claim includes the uid attribute, and NameID format is transient. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does partner SSO differ?</summary><p class="answer">The claim is mail, rather than uid. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which SCIM generation synchronizes groups and still skips rooms?</summary><p class="answer">SCIM 2.0. Rooms and avatars are Wizard-only, through Microsoft Graph. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How long is the manual SCIM bearer token valid?</summary><p class="answer">365 days. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why would SAML JIT create fail while Directory Connector is healthy?</summary><p class="answer">If Directory Sync or Entra ID is enabled, SAML JIT create or update will not work. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What proves a second IdP is configured and still unused?</summary><p class="answer">Control Hub can add the IdP and leave it inactive until a routing rule exists. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Where does the Calling routing prefix belong?</summary><p class="answer">In the location dialing settings, not already inside the Directory Connector extension. T2-R03 cites that rule. <a class="cite" href="#cite-7">[cite:7]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Can this identity move to another GEO later?</summary><p class="answer">The residency article says Webex does not currently support migrating between GEO locations. The country choice permanently sets the GEO for users and encryption keys. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Desk check, no production directory</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: classify a provisioning design as Directory Connector, SCIM 1.1, SCIM 2.0, or Entra ID Wizard, using only the tables in this room.</label></li>
+<li><label><input type="checkbox"> Prereq: this room. A production Active Directory and a production Entra tenant are out of scope.</label></li>
+<li><label><input type="checkbox"> Step 1. A design asks one connector to sync two domains. Expected: rejected. One instance, one domain.</label></li>
+<li><label><input type="checkbox"> Step 2. A design runs incremental sync on a brand-new connector. Expected: the action stays disabled until a full sync completes.</label></li>
+<li><label><input type="checkbox"> Step 3. A design wants rooms and avatars from Entra without the Wizard. Expected: SCIM 2.0 does not list rooms or avatars.</label></li>
+<li><label><input type="checkbox"> Step 4. Write the commercial tenant URL pattern and the government tenant URL pattern. Expected: webexapis.com and api-usgov.webex.com, both ending in /identity/scim/OrgId/v2.</label></li>
+<li><label><input type="checkbox"> Step 5. A partner SSO claim is named uid. Expected: partner SSO uses mail.</label></li>
+<li><label><input type="checkbox"> Evidence: a one-page sheet with the five decisions and the cite number beside each.</label></li>
+<li><label><input type="checkbox"> Break it: map uid to an attribute that is not an email. Recovery: map mail or userPrincipalName and rerun the dry run.</label></li>
+<li><label><input type="checkbox"> Reflection: which of your directories already stores a site prefix inside the extension attribute.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>How many Active Directory domains can one Directory Connector instance serve?</p><details><summary>Answer</summary><p class="answer">One. Install one connector for each domain. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Which cloud attribute is required?</p><details><summary>Answer</summary><p class="answer">uid. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>What must happen before the first full synchronization?</p><details><summary>Answer</summary><p class="answer">A dry run. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Which Windows Server versions does the deployment guide list?</p><details><summary>Answer</summary><p class="answer">Windows Server 2025, 2022, 2019, and 2016. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Organization SSO sends which claim name?</p><details><summary>Answer</summary><p class="answer">uid. Partner SSO sends mail. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>What is the NameID format?</p><details><summary>Answer</summary><p class="answer">urn:oasis:names:tc:SAML:2.0:nameid-format:transient. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Commercial SCIM tenant host?</p><details><summary>Answer</summary><p class="answer">webexapis.com, path /identity/scim/OrgId/v2. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Which path synchronizes rooms and avatars?</p><details><summary>Answer</summary><p class="answer">The Entra ID Wizard, through Microsoft Graph. SCIM 2.0 does not. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>Directory Connector is already synchronizing users. Someone enables SAML JIT to create the same people.</p><details><summary>Answer</summary><p class="answer">SAML JIT create or update will not work while Directory Sync or Entra ID is enabled. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A second IdP was added and users still hit the first one. The wizard skipped routing rules.</p><details><summary>Answer</summary><p class="answer">Control Hub adds the IdP and does not activate it until a routing rule exists. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>How long does the manual SCIM bearer token last?</p><details><summary>Answer</summary><p class="answer">365 days. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Write the four objects and mark Wizard-only versus SCIM 2.0.</p><details><summary>Answer</summary><p class="answer">Users: both. Groups: both. Rooms: Wizard only. Avatars: Wizard only. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain one connector per domain, uid, dry run, and why invite suppression needs SSO." | assets/audio/T1-R02/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk SCIM 1.1, SCIM 2.0, and the Entra ID Wizard object table, then org uid versus partner mail." | assets/audio/T1-R02/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: one domain, uid, transient NameID, 365-day token, routing rule." | assets/audio/T1-R02/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Directory Connector is one Windows instance per Active Directory domain. The only required attribute is uid, and I map mail or userPrincipalName. I dry-run, then full-sync. Invite suppression waits for SSO.</p>
+<p><strong>2 minutes.</strong> Supported servers on the September 15, 2026 guide are Windows Server 2025, 2022, 2019, and 2016, with TLS 1.2 and .NET Framework 4.5, and forest functional level 2 or higher. The connector login is a full Control Hub admin. The service account that reads the directory defaults to local system. Groups need a full sync. Incremental sync stays off until that full sync exists. Organization SSO is SAML 2.0 with a transient NameID and a uid claim. Partner SSO sends mail.</p>
+<p><strong>30 seconds, SCIM.</strong> SCIM needs no on-premises connector. Commercial tenant host is webexapis.com. Government host is api-usgov.webex.com. SCIM 2.0 synchronizes users and groups. Rooms and avatars stay on the Entra ID Wizard.</p>
+<p><strong>2 minutes, collisions.</strong> If Directory Sync or Entra ID is already on, SAML just-in-time create and update will not run. A second IdP stays inactive until a routing rule exists. A userPrincipalName that is not the Control Hub email creates a new user. Entra will not push a null, so clearing an attribute in Entra leaves the Webex value. The manual bearer token lasts 365 days, and I mint it as a full admin in a private window.</p>
+<p><strong>What you will say about Calling.</strong> The extension stored in the directory is the bare extension. The routing prefix is added by Webex Calling, and the dial-plan article says the directory must not already contain it.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Deployment Guide for Directory Connector — help.webex — article zqvufbb — <a href="https://help.webex.com/article/zqvufbb">help.webex.com article zqvufbb</a> — header September 15, 2026 — retrieved 2026-10-14. One connector per domain. Windows Server 2025, 2022, 2019, 2016. TLS 1.2 and .NET Framework 4.5. Forest functional level 2 or higher. Full-admin sign-in. Local system account by default. uid required. Dry run before full sync. Groups need a full sync. Invite suppression requires SSO.</li>
+<li id="cite-2">Single Sign-On Integration in Control Hub — help.webex — article lfu88u — <a href="https://help.webex.com/article/lfu88u">help.webex.com article lfu88u</a> — retrieved 2026-10-14. SAML 2.0. NameID transient. Organization claim uid. Partner claim mail. <mark class="recheck">re-check</mark> the header date; the retrieved body used here did not print one.</li>
+<li id="cite-3">SCIM 2.0 provisioning with a custom Webex app in Entra ID — help.webex — article 3211gv — <a href="https://help.webex.com/article/3211gv">help.webex.com article 3211gv</a> — retrieved 2026-10-14. Tenant URLs. 365-day manual token. Supported-objects table for SCIM 1.1, the Wizard, and SCIM 2.0. Null values are not synchronized. Default userPrincipalName to userName. <mark class="recheck">re-check</mark> the header date.</li>
+<li id="cite-4">SSO with multiple IdPs in Webex — help.webex — article ngp4sr8 — <a href="https://help.webex.com/article/ngp4sr8">help.webex.com article ngp4sr8</a> — header April 17, 2026 — retrieved 2026-10-14. SAML, OpenID Connect, and Webex Identity. Routing rule required to activate an added IdP. Directory Sync or Entra ID blocks SAML JIT create or update. Full Admin role.</li>
+<li id="cite-5">Data residency in Webex — help.webex — article oybc4fb — <a href="https://help.webex.com/article/oybc4fb">help.webex.com article oybc4fb</a> — header September 24, 2026 — retrieved 2026-10-14. Identities and keys stay in the organization GEO. Migration between GEO locations is not supported. Hybrid Directory is in the hybrid list.</li>
+<li id="cite-6">Set up automatic license assignments in Control Hub — help.webex — article n3ijtao — <a href="https://help.webex.com/article/n3ijtao">help.webex.com article n3ijtao</a> — header September 08, 2026 — retrieved 2026-10-14. Services are usable when the user becomes Active. Verified or claimed domains plus SSO and suppressed invites are the path for use before sign-in. An inactive user from an unverified domain stays unactivated until first sign-in.</li>
+<li id="cite-7">Configure Webex Calling for your organization — help.webex — article njvdjf2 — <a href="https://help.webex.com/article/njvdjf2">help.webex.com article njvdjf2</a> — cited from the T2-R03 ledger for the Directory Connector prefix rule. Read the extension attribute before you add a routing prefix.</li>
+<li id="cite-8">Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a> — header January 14, 2026 — retrieved 2026-10-14. Entra ID Wizard replaces Directory Connector when the customer moves the directory to Entra ID. Webex Calling in that guide means multi-tenant.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the header dates on lfu88u and 3211gv.</li>
+<li>Facts still TODO-verify: 0. Two header dates are <mark class="recheck">re-check</mark>, not unverified claims.</li>
+<li>Assets missing: connector screenshot, architecture SVG file, three audio files.</li>
+<li>Ideas for v1.0: a dry-run text capture from a lab domain.</li>
+<li>Next review: when the SCIM supported-objects table changes, or when the 365-day token sentence changes.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R01-control-hub-foundations.html"><span>Previous</span><strong>T1-R01</strong><em>Control Hub Foundations</em></a><a class="next" href="T1-R03-licensing-subscriptions.html"><span>Next</span><strong>T1-R03</strong><em>Licensing &amp; Subscriptions</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

@@ -1,59 +1,29 @@
-# Webex Lab
+# Webex Lab Free University
 
-A free, static study console for Cisco Webex Control Hub, Webex Calling, Dedicated Instance, Webex Contact Center, devices, APIs, and migration from Unified CM, UCCX, and UCCE.
+A static study site for Cisco Webex Control Hub, Webex Calling, Webex Contact Center, Dedicated Instance, devices, meetings-adjacent firewall notes, and migration. It opens from the repository root, uses relative paths, and does not call Webex.
 
-Lessons cite Cisco help, Cisco developer docs, IETF RFCs, the ITU-T E.164 recommendation, or the FCC MLTS page. The dial-plan simulator, flow canvas, Control Hub walkthrough, and topology are teaching models. They do not change a live tenant and they do not import into Control Hub.
+The written curriculum is the CypherWebex Canon: 8 tracks and 63 rooms. The older practice console (dial plan, flow designer, Control Hub walkthrough, 3D topology) is preserved under `archive/webex-lab-v1/campus/`.
 
 ## Run it
 
-From the repository root:
-
 ```bash
-npm run build:content
-npm run verify
 npm start
 ```
 
-`npm start` serves the repository on port 8741. Open [http://127.0.0.1:8741/campus/](http://127.0.0.1:8741/campus/). The root URL redirects there, which is the layout GitHub Pages can publish.
+Open [http://127.0.0.1:8741/](http://127.0.0.1:8741/). `npm run verify` checks that local links resolve, the port diagrams and cheat sheets exist, and the chrome does not point at LinkedIn or an email address.
 
-No API key is required. Nothing in the lab calls Webex.
+GitHub Pages can publish this branch from `/`. There is no build step for reading. `npm run build:university` regenerates the atlas diagrams, cheat sheets, and play-lab page.
 
-## What you can practice
+## What is on the front door
 
-- Sixteen tracks and 112 lessons, from the platform map through migration and a capstone.
-- A lesson player with a diagram, a Play / Pause / Step / Inspect ladder, a quiz, flashcards, a lab checklist, and a synthetic fault.
-- A flow designer (`#/studio/flow`) using Flow Designer activity names. Export is schema `webex-lab-flow-1` and is not a Control Hub import.
-- A dial-plan simulator (`#/studio/dial`) for extensions, routing prefixes, patterns, 911 and 933, premises-to-cloud PSTN blocking, and the one-trunk warning.
-- A Control Hub-style walkthrough (`#/studio/hub`) of eleven documented paths.
-- A 3D topology (`#/topology`) with failure toggles. Reduced motion, or a missing WebGL context, uses the same toggles on a flat map. three.js is vendored and loads only on that route.
-- Boss incidents, an interview desk, a glossary, a mind map, and a certification page that does not memorize exam prices.
-
-## Counts
-
-`npm run verify` checks the floor: 16 tracks, at least 100 lessons, 600 quiz questions, 20 labs, and 30 faults. The current build is 112 lessons, 672 quiz questions, 112 labs, 112 faults, 8 boss incidents, 38 interview answers, and 45 glossary terms.
-
-The first load (HTML, CSS, the shell scripts, and the small JSON indexes) is about 172 KB. Track JSON and three.js load later. A mobile Lighthouse run of the campus shell scored 98 for performance and 100 for accessibility.
-
-## Screens
-
-![Home](docs/screenshots/home.png)
-
-![Lesson](docs/screenshots/lesson.png)
-
-![Dial-plan simulator](docs/screenshots/dial.png)
-
-![Flow designer](docs/screenshots/flow.png)
-
-![Control Hub walkthrough](docs/screenshots/hub.png)
-
-![Topology](docs/screenshots/topology.png)
-
-## Settings
-
-Lumen, Orbit, high contrast, and Aurora. Sound, narration with a voice picker, speed, reduced motion, and font size persist in `localStorage` under `webexlab.settings`. Narration waits for `voiceschanged` and avoids robotic Microsoft voices when a better voice is installed. A service worker caches the shell; **Save all tracks for offline** fetches every track.
+- Rooms for Control Hub, Calling, multi-tenant contact center, Contact Center Enterprise, Dedicated Instance, migrations, SIP, and flows.
+- [Mastery map](mastery.html) from fundamentals through career evidence.
+- [Ecosystem atlas](ecosystem-atlas.html) for Calling, Contact Center, Meetings, Devices, Control Hub, WFM, recording, E911, analytics, and AI agents.
+- [Ports and protocols](ports.html), checked against the Webex Calling port reference on 2026-10-15.
+- [Play lab](play.html): port match, flow map, call-flow sandbox, daily question, badges, share card. Arrow keys up, up, down, down, left, right, left, right, then b, a, unlock a local badge.
+- [Cheat Codes](downloads.html): HTML, SVG, PDF, and PNG sheets, a 36-card flashcard deck, and `downloads/webex-university-offline.zip`.
+- Themes: Aurora, Futuristic, Gaming, Neon, Sunset, and Light. CypherMonkey sits in the corner and changes face on a timer.
 
 ## License
 
-MIT for the code. CC BY 4.0 for the lesson content. three.js r170 is vendored under its own MIT license in `campus/vendor/three/LICENSE`.
-
-Cisco product names belong to Cisco. This lab is not a Cisco product.
+MIT for the code. CC BY-NC-SA 4.0 for the university content. The archived console keeps CC BY 4.0. Cisco names are trademarks of their owners. This lab is not a Cisco product and it does not change a live tenant.

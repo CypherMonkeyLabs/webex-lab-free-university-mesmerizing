@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T3-R03 · Entry Points, Queues &amp; Routing Strategies">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T3-R03 · Entry Points, Queues &amp; Routing Strategies · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T3" data-room="T3-R03" data-room-title="Entry Points, Queues &amp; Routing Strategies" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T3</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T3/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T3 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+
+
+<p class="kicker">T3 · Webex Contact Center, multi-tenant</p>
+<h1>Entry Points, Queues &amp; Routing Strategies</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Entry Points, Queues &amp;amp; Routing Strategies">
+<defs>
+<linearGradient id="T3R03sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T3R03sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Contact center</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T3-R03</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Caller</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Entry point</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Queue</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Entry Points, Queues &amp;amp; Routing Strategies. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Entry Points, Queues &amp;amp; Routing Strategies">
+<defs>
+<marker id="T3R03arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Caller → Entry point → Queue → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T3R03arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T3R03arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T3R03arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T3R03lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Caller → Entry point → Queue → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">This room is the routing layer under the T3-R01 overview: how a contact enters, which flow the clock selects, and which agent a queue is allowed to pick. The patterns are not interchangeable across queue types.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T3-R03</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>22 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>An entry point is the ingress. Telephony maps it to a number. The flow is attached through a routing strategy. Messaging and social flows are chosen in Webex Connect. <a class="cite" href="#cite-1">[cite:1]</a></li><li>A routing strategy is a window: dates, 24-hour times, weekdays, a flow version, and an optional default flag. The article still supports existing strategies and points you at Business Hours. <a class="cite" href="#cite-4">[cite:4]</a></li><li>Team-assignment queues expand through call distribution groups. Agent-assignment queues name up to 1000 agents and do not expand on a timer. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li><li>Patterns in the current articles: Longest Available, Circular, Top-down, and Best Available. They are not all offered on every queue. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+
+<ul>
+<li>An entry point is the ingress. Telephony maps it to a number. The flow is attached through a routing strategy. Messaging and social flows are chosen in Webex Connect. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A routing strategy is a window: dates, 24-hour times, weekdays, a flow version, and an optional default flag. The article still supports existing strategies and points you at Business Hours. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Team-assignment queues expand through call distribution groups. Agent-assignment queues name up to 1000 agents and do not expand on a timer. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Patterns in the current articles: Longest Available, Circular, Top-down, and Best Available. They are not all offered on every queue. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Best Available ranks proficiency. Weights do not affect Longest Available. A variable queue that wanted skills is forced to Longest Available. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviewers ask which algorithm you would pick. The wrong answer is “the same one on every queue.” The Labs simulator will refuse a pattern the article does not offer for that queue type.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>From number to agent</h2>
+
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T3-R03/arch.svg -->
+<div class="diagram" role="img" aria-label="Telephony contact, then a queue pattern">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Telephony contact, then a queue pattern">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Telephony contact, then a queue pattern</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  Number hits the entry point. Webex Contact Center answers.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  A routing strategy in the window selects the flow version.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  The flow can self-serve, then Queue Contact parks the contact.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  Team queues add call distribution groups over time. Agent queues do not.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  Longest Available, Circular, Top-down, or Best Available runs on the eligible set.</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  Analyzer reads contact events. It is not the pattern.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  EP[Entry point] --> RS[Routing strategy]
+  RS --> Flow
+  Flow --> Q[Queue]
+  Q --> Agent
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What the pattern is allowed to see</h2>
+
+<div class="callout def"><span class="label">Eligible, then ranked</span><p>Every pattern in these articles starts from agents who already qualify. Longest Available then uses idle time. Circular and top-down use the configured order. Best Available uses a proficiency score. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">Two different “skills”</span><p>Skills on the queue make the agent pool implicit and the same for every contact. Skills injected by the flow travel with the contact, can relax over time, and still sit on a team-assignment queue with call distribution groups. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Not a fifth algorithm</span><p>T3-R01 left a fourth name unverified because the overview listed three. The routing article’s agent-assignment section names Linear/Top-down as well. That is the fourth name. It is not available on a team non-skill queue. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Sign-in picks the team</span><p>An agent configured on two teams counts only for the team they choose at sign-in, and only for the call distribution group that contains that team. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<h3>Where each pattern is documented</h3>
+<div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Queue types that name it</th><th>Selection</th><th>Cite</th></tr></thead><tbody><tr><td>Longest Available</td><td>Non-skill team (default). Also listed for agent assignment and for skill ties.</td><td>Longest idle among agents who already match.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Circular</td><td>Non-skill agent assignment (default), and listed among agent-assignment patterns.</td><td>Next available agent after the last one selected.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Top-down / Linear</td><td>Agent assignment.</td><td>Always the first available agent in the configured order.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Best Available</td><td>Skill-based.</td><td>Highest proficiency score. Less-than-or-equal inverts that skill.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T3-R03">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T3R03map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T3R03map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Entry point</dt><dd>The ingress for a contact. Telephony maps it to the phone number the call arrives on. Email and messaging entry points point at the Webex Connect configuration. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Routing strategy</dt><dd>A schedule on an entry point or queue: start and end date, start and end time in 0000–2400, selected weekdays, and a routing flow with a live or latest version. <a class="cite" href="#cite-4">[cite:4]</a></dd></div><div class="term"><dt>Default routing strategy</dt><dd>The flag that makes one strategy the default for that entry point or queue during the time window you set. The article prints the toggle twice in the same procedure. <a class="cite" href="#cite-4">[cite:4]</a></dd></div><div class="term"><dt>Business Hours</dt><dd>The model the routing-strategy article tells you to move toward. It does not delete existing strategies. Read holiday priority in the Business Hours article the routing-strategy page points you toward. Existing strategies stay, and the arithmetic lives on that later article because this room’s sources do not restate it.</dd></div><div class="term"><dt>Queue</dt><dd>The holding place for telephony, chat, email, or social contacts until an agent is selected or the contact is picked up. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Call distribution group</dt><dd>A level of teams on a team-assignment queue. If nobody matches, the contact parks for the configured interval, then the next group is added to the search. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Check Agent Availability</dt><dd>A Queue Contact toggle. If the current call distribution group has no matching agent, the contact expands to the next group immediately instead of waiting out the interval. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Longest Available</dt><dd>Among eligible agents, choose the one who has been available the longest. It is the default routing pattern for a non-skill queue with team assignment. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Circular</dt><dd>Round-robin through the configured agent order. The next contact starts after the agent who took the last one. It is the default for a non-skill queue with agent assignment. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Top-down</dt><dd>Also called Linear. Always walk the ordered agent list from the beginning and take the first available agent with a free channel for that media type. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Best Available</dt><dd>Among agents who fully meet the skill requirements, pick the highest proficiency score. Weights apply to proficiency skills for this pattern. They do not change Longest Available. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Skill criteria on the queue</dt><dd>Skills configured on the queue itself. Any agent whose direct skill profile fully satisfies them is implicitly on the queue. Team does not associate the agent. The contact cannot override the criteria. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Skill requirements in the flow</dt><dd>A team-assignment queue where the flow injects the skills for this contact, and can relax them on a timer while call distribution groups expand. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Skill score</dt><dd>Best Available scoring uses proficiency values of the skills named in the requirement. A less-than-or-equal condition inverts that skill as 10 minus the value. Boolean, text, and enum skills are eligibility filters, not score inputs. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Agent assignment</dt><dd>Agents are added directly to the queue, up to 1000, in an order the routing pattern can use. There is no time-based target expansion. If nobody is free, the contact parks until one of those agents is free or the park times out. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Team login</dt><dd>An agent on two teams is considered only in the team they sign in to, and therefore only in the call distribution group that contains that team. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>QueueToAgent</dt><dd>Voice-only path in the architecture article: send the contact to an agent id, and park it on an agent-specific queue if that agent is busy. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Variable queue</dt><dd>Queue Contact can take a queue id from a flow variable, with a fallback queue if the variable is not a valid id. If you also needed skill requirements, the article says the contact is routed Longest Available and the queue’s selected algorithm is overridden. <a class="cite" href="#cite-5">[cite:5]</a></dd></div><div class="term"><dt>Get Queue Info</dt><dd>Returns position in queue and estimated wait. Success needs both positive. Team assignment with skills in the flow always returns estimated wait of −1. That product rule is not the Erlang study model on the Labs page. <a class="cite" href="#cite-5">[cite:5]</a></dd></div><div class="term"><dt>Webex Connect</dt><dd>Where a non-telephony flow is chosen for messaging and social. The architecture article separates that from the telephony entry point’s routing strategy. <a class="cite" href="#cite-1">[cite:1]</a></dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T3-R03/eco.svg -->
+<div class="diagram" role="img" aria-label="What touches a routing decision">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What touches a routing decision">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">What touches a routing decision</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Entry point and routing strategy  ·  clock and flow version</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Flow Designer  ·  Queue Contact, skills, Get Queue Info</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Teams, call distribution groups, direct agent lists</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Patterns  ·  Longest Available, Circular, Top-down, Best Available</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Connect for digital  ·  Analyzer for events  ·  CRM outside the pattern</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Identity only as far as sign-in and the skill profile</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((T3-R03))
+    Entry
+    Strategy
+    Queue
+    Pattern
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Workforce management</td><td>Schedules and adherence sit beside the queue, not inside the routing pattern.</td><td>A pattern only chooses among agents who are already eligible. It does not build a shift.</td><td>Open the workforce screens for the subscription you actually bought. py6u9h’s SKU list is Enterprise, CCE, and CCX, so a multi-tenant tenant shows a different set.</td><td>Treating Longest Available as a staffing plan.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Quality management and recording</td><td>Queue routing does not choose the recording store.</td><td>Webex Calling recording retention is a different article. Read WxCC quality-management retention in the contact-center article for that feature. nhvl4hw’s one-year and Dubber Go 30-day numbers are Webex Calling, and the two products keep different clocks.</td><td>Do not paste Calling’s one-year or Dubber Go 30-day numbers onto a WxCC queue.</td><td>Quoting nhvl4hw as the queue’s retention policy.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>E911 / emergency</td><td>An entry point is not an emergency calling policy.</td><td>RAY BAUM, Kari, and RedSky are Calling articles. WxCC WebRTC emergency is nvfbjts (Control Hub + RedSky, 933, then Enhanced emergency calling). <a class="cite" href="#cite-10">[cite:10]</a></td><td>Do not test 911 by watching a queue pattern.</td><td>Using 933 inside a flow as if it alerted a PSAP.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analyzer</td><td>The architecture article says Analyzer is fed from contact events.</td><td>Routing outcomes are what you later try to see in reports. Analyzer session behavior is tajemk (real-time stays up; historical active 8 hours; refresh 5–60 seconds). Stock reports open under Visualizations; one path is Stock Reports &gt; Historical Reports &gt; Agent Reports. <a class="cite" href="#cite-8">[cite:8]</a> <a class="cite" href="#cite-11">[cite:11]</a></td><td>Do not invent a report that shows the skill score.</td><td>Debugging a pattern from a report that has not been cited.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Salesforce</td><td>CRM connectors are outside the queue pattern.</td><td>Lightning versus Classic, and the digital-channel limit on connectors, are cited in T3-R01. Read the CRM connector guide cited in T3-R01 for Lightning versus Classic and the digital-channel limit. This queue article does not repeat that guide, and connector support changes when Cisco revises it.</td><td>This room is not the CRM source.</td><td>Expecting a queue pattern to screen-pop.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Dynamics 365</td><td>Cisco’s CRM connector is not Microsoft’s product Dynamics 365 Contact Center.</td><td>On-premises Dynamics support is a T3-R01 cite, not restated here.</td><td>Keep the product names apart. Read the Dynamics connector steps in the CRM article T3-R01 cites. A new connector build is not in the queue article, and on-premises Dynamics support is a separate statement.</td><td>Naming the Microsoft contact-center product as if Cisco shipped it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>ServiceNow</td><td>Desktop launch from ServiceNow is a separate article, cited in T3-R01.</td><td>The queue still selects the agent. The CRM does not replace the pattern.</td><td>Read the ServiceNow desktop-launch article cited in T3-R01. The click-path lives there and can change, while this room only covers how the queue selects the agent.</td><td>Routing the contact in ServiceNow and also in the flow.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Virtual agents and AI Assistant</td><td>The architecture article allows a flow to send a contact to a virtual agent before queueing.</td><td>AI Assistant summaries are not a routing pattern. A fourth queue algorithm is not hiding in that add-on.</td><td>BYO virtual-agent schemas stay in the virtual-agent article.</td><td>Counting a virtual agent as Best Available.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>IVR / self-service</td><td>The flow treats the contact before or while it is queued.</td><td>Play, menu, and queue activities are Flow Designer. This room’s patterns run when a queue is selecting an agent.</td><td>Open the activity on the Flow Designer canvas for parameters beyond the sentences cited here. Those fields change when Cisco updates the activity.</td><td>Putting HTTP Request immediately after Queue Contact and expecting data.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Digital channels</td><td>Queues hold chat, email, and social as well as voice.</td><td>Call distribution group creation in the queue article is offered when the channel type is Telephony. Chat, email, and social take a different branch on that page.</td><td>as of 2026-10-14, s0qro1 names six Connect channels (WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, Live Chat). utqcm7’s architecture list is the other sentence. <a class="cite" href="#cite-9">[cite:9]</a></td><td>Building a telephony call distribution group on an email queue because the voice queue had one.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Identity and SSO</td><td>Agent eligibility still depends on the agent being signed in.</td><td>Directory and SSO are Control Hub identity, not a routing pattern.</td><td>Which skill profile applies before sign-in is the routing article’s team-selection sentence, not an IdP claim.</td><td>Reskilling a user who is not in the skill profile the queue reads.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Peers</td><td>No parity matrix is published for Amazon Connect, Genesys, or Microsoft contact center.</td><td>Orientation only. Cisco’s documented calling migrations are Unified CM and BroadWorks/BroadCloud, which are not this queue.</td><td>Do not fill this cell from memory. Read the peer product’s routing profile in that product’s own console. These articles do not name it, and a WxCC pattern is not an Amazon Connect routing profile.</td><td>Calling a WxCC pattern the same thing as a Connect routing profile.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>PSTN or internal caller</td><td>Entry point</td><td>Called number, for telephony</td><td>The call is answered by Webex Contact Center and the flow associated through the routing strategy starts.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Administrator</td><td>Routing strategy</td><td>Control Hub schedule</td><td>Entry point, time window, weekdays, music file for voice, flow, and live or latest version.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Flow</td><td>Queue</td><td>Queue Contact</td><td>Static queue, or a variable queue id with a fallback. Skill requirements on a variable queue are overridden to Longest Available.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Queue</td><td>Call distribution group</td><td>Timed expansion</td><td>Teams are added after the configured wait. Check Agent Availability can skip an empty group.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Queue</td><td>Agent</td><td>Routing pattern</td><td>Longest Available, Circular, Top-down, or Best Available, only on the queue types that offer that pattern.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Webex Connect</td><td>Non-telephony entry point</td><td>Channel configuration</td><td>The flow for messaging and social is chosen in Connect, not only on the telephony routing strategy.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Flow</td><td>Get Queue Info</td><td>PIQ and estimated wait</td><td>Success is both positive. Estimated wait is −1 when it does not apply. The value is in milliseconds in the calculation section.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Contact events</td><td>Analyzer</td><td>Event stream</td><td>The architecture article says reporting is built from those events. The lag is not given a number here.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Eight edges, one contact">
+<svg viewBox="0 0 980 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eight edges, one contact">
+<rect width="980" height="326" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Eight edges, one contact</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  PSTN or internal caller → Entry point</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  Administrator → Routing strategy</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  Flow → Queue</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  Queue → Call distribution group</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  Queue → Agent</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  Webex Connect → Non-telephony entry point</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7  Flow → Get Queue Info</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8  Contact events → Analyzer</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>Webex object</th><th>Legacy shape</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>Routing strategy on an entry point</td><td>A UCCE script schedule is a different product. Node-for-node mapping stays marked in <a href="T6-R04-ucce-pcce-to-wxcc.html">T6-R04</a>.</td><td>Amazon Connect contact flows and Genesys flows are orientation labels only.</td><td><a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>Queue pattern</td><td>An ICM node that selects a skill group is not Longest Available until a guide says so.</td><td>Do not rename Best Available to another vendor’s score.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Webex Connect digital entry</td><td>CVP/VXML is the Enterprise self-service conversation, and T4 does not treat Flow Designer as that tool.</td><td>Digital channels on other platforms stay unnamed here.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: when T3-R06 is written, hang digital-channel specifics under Connect rather than copying telephony call distribution groups.</li>
+<li>The routing-strategy article already tells administrators to move to Business Hours. That is a documented direction, not a Canon guess. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>as of 2026-10-14, s0qro1 names six Connect channels (WhatsApp, SMS, Email, Facebook Messenger, Apple Messages for Business, Live Chat). utqcm7’s architecture list is the other sentence. <a class="cite" href="#cite-9">[cite:9]</a></li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Digital contact never hits the telephony strategy</td><td>Non-telephony flow is chosen in Connect.</td><td>Channel configuration, not the voice strategy clock.</td><td>Edit the Connect side the architecture article names.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>CRM screen pop is missing</td><td>A routing strategy on an outdial entry point cannot carry screen pop or custom ANI.</td><td>Strategy versus flow on the outdial entry point.</td><td>Use a flow when those overrides are required.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr><tr><td>Report does not show the skill score</td><td>Analyzer is fed by events. A score column is not cited.</td><td>Do not invent the column.</td><td>Use the pattern definition in np2fdx, not an uncitable report.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Agent is skilled and still ineligible</td><td>They signed into the other team, or the skill profile is partial.</td><td>Sign-in team and whether the profile fully matches.</td><td>Match the association rule for that queue type.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>One telephony contact</h2>
+
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T3-R03/seq.svg -->
+<div class="diagram" role="img" aria-label="Sequence the articles actually describe">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sequence the articles actually describe">
+<rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Sequence the articles actually describe</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Caller → entry point → strategy window → flow version</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Flow activities, then Queue Contact</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Park, expand or wait, then one pattern</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Agent desktop. Events continue toward Analyzer.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol or mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Caller</td><td>Entry point</td><td>Telephony signaling</td><td>The number maps to the entry point. Extensions are not what the stale setup guide allowed for that map; re-check that sentence before you rely on it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Entry point</td><td>Routing strategy</td><td>Schedule match</td><td>A strategy is active inside its start and end, on the weekdays you selected. Flag one as the default for that interval.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>3</td><td>Routing strategy</td><td>Flow</td><td>Flow version</td><td>Choose the live version or the latest version. An outdial entry point can use a strategy or a flow. The channel article says a strategy cannot carry screen pop or custom ANI, and recommends a flow for those.</td><td><a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-7">[cite:7]</a></td></tr><tr><td>4</td><td>Flow</td><td>Self-service</td><td>Activities</td><td>Messages, menus, virtual agent, or other handlers run before or around the queue. Start Flow cannot be deleted.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>5</td><td>Flow</td><td>Queue</td><td>Queue Contact</td><td>The contact is parked if no agent matches, and the queueing handler continues.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>6</td><td>Queue</td><td>Teams or agents</td><td>Pattern</td><td>Team queues expand through call distribution groups. Agent-assignment queues do not.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>7</td><td>Eligible set</td><td>One agent</td><td>LAA, circular, top-down, or BAA</td><td>The pattern is applied only to agents who already qualify. Best Available then ranks by score.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>8</td><td>Agent</td><td>Desktop</td><td>Offer</td><td>The architecture article’s reserved-agent path delivers the interaction. Digital media is not the voice QueueToAgent activity.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Cited admin steps</h2>
+
+<ol>
+<li>Sign in to Control Hub and open the routing-strategy task. Choose the entry point from Select Entry Point. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Set the start date, start time, end date, and end time. Times are 24-hour, 0000–2400. Choose the weekdays. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>For a voice strategy, choose the music file. Skip that field for email and chat. Turn on Flag as a default routing strategy when this window should be the default. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Under call control, select the routing flow and either the live or the latest version. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Create the queue. For a non-skill team queue, leave the default pattern at Longest Available and add call distribution groups on a telephony channel. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For a non-skill agent queue, the default pattern is Circular. Add agents, no more than 1000, in the order circular and top-down will read. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For a skill queue, choose Longest Available or Best Available. Add weights only when the pattern is Best Available. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>In Flow Designer, Queue Contact can be a static queue or a variable queue id plus a fallback. Do not expect skill requirements to stick on the variable path. <a class="cite" href="#cite-5">[cite:5]</a></li>
+</ol>
+<!-- VISUAL:screenshot:strategy-window | Studio | assets/images/T3-R03/strategy.png -->
+<p class="placeholder-asset">Screenshot placeholder. The fields above are the article’s, not a redraw of a tenant.</p>
+<pre class="sim-out">Strategy window (nfrs2adb, not a secret)
+  entry point:        &lt;Select Entry Point&gt;
+  start/end time:     0000–2400
+  days:               selected weekdays
+  music:              voice only
+  default flag:       on or off for this interval
+  routing flow:       &lt;flow&gt;
+  version:            live | latest
+
+Queue pattern (ubg5qd / np2fdx)
+  team, non-skill:    Longest Available (default)
+  agent, non-skill:   Circular (default) | Longest Available | Top-down
+  skill:              Longest Available | Best Available
+  agent list cap:     1000 on the agent-assignment queue</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Strategy clock</td><td>24-hour 0000–2400</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr><tr><td>Agents on an agent-assignment queue</td><td>Maximum 1000</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted from ubg5qd, October 8, 2026</td></tr><tr><td>Call distribution group control</td><td>Described on the telephony channel path</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Patterns named</td><td>Longest Available, Circular, Top-down, Best Available</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Not all on one queue</td></tr><tr><td>Best Available inversion</td><td>10 minus the skill value for a ≤ condition</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Get Queue Info on skilled team assignment</td><td>Estimated wait always −1</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td>Quoted</td></tr><tr><td>Priority outside 1–9</td><td>Defaults to 10</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td>Flow rule, related</td></tr><tr><td>Stale setup-guide caps (sites, entry points, queues)</td><td>Read the current limits in Control Hub for the tenant you are in. The old setup guide’s site, entry-point, and queue caps are marked stale in T3-R01, and the live tenant is the list that changes.</td><td>n5595zd is stale in T3-R01</td><td>Open</td></tr><tr><td>Product estimated-wait formula</td><td>Statistical samples over a window, in milliseconds. Not published as Erlang C.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td>Read the estimated-wait description on the Flow Designer article. It says statistical samples over a window, in milliseconds, and it does not publish the formula, which is why the labs page keeps Erlang C labeled as a study model.</td></tr></tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Calls arrive and no flow runs</td><td>No strategy covers this time, or the default flag is on a strategy whose window has ended.</td><td>Entry point, start and end in 0000–2400, weekdays, default flag.</td><td>Open a strategy that covers now, or follow the article toward Business Hours.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>The wrong flow version is running</td><td>Latest was chosen and a draft is newer than live, or the reverse.</td><td>Version field: live or latest.</td><td>Select the version you meant to publish.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Email strategy has no music</td><td>Music on hold is not used for email and chat strategies.</td><td>The strategy article says the file does not apply to those channels.</td><td>Stop looking for a wav on an email strategy.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>The queue never expands</td><td>The queue is agent-assignment, which has no call distribution groups.</td><td>Agent list, not teams.</td><td>Add the agent, or use a team-assignment queue if expansion is the design.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Expansion waits even though the first group is empty</td><td>Check Agent Availability is off.</td><td>Queue Contact toggle.</td><td>Enable it when an empty group should be skipped.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>An agent on two teams never takes group-two contacts</td><td>They signed in on the team that sits in group one.</td><td>Sign-in team.</td><td>Sign in on the team whose group you intended.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Best Available ignores the weights</td><td>The pattern is Longest Available. Weights do not apply to it.</td><td>Routing pattern field.</td><td>Change the pattern to Best Available if the score is what you need.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>A variable queue ignores the skill algorithm</td><td>Skill requirements cannot be entered for a variable queue. The article routes that contact Longest Available.</td><td>Variable versus static queue.</td><td>Use a static queue when the skill algorithm must stick.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Estimated wait is −1 and the flow treats it as zero</td><td>Team assignment with skills in the flow. Estimated wait does not apply.</td><td>Get Queue Info branch.</td><td>Use Insufficient Information. Do not announce the Erlang lab’s number as the product’s wait.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Circular and top-down feel the same</td><td>Top-down always restarts at the first agent. Circular continues after the last agent who was selected.</td><td>Configured order and the last selection.</td><td>Pick the pattern that matches the bias you actually want.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What does an entry point represent for a phone call?</summary><p class="answer">The number the call arrives on. The flow tied to that entry point through a routing strategy handles it. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What is a queue?</summary><p class="answer">Where the contact waits until an eligible agent is selected or picks it up. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which patterns can a non-skill team queue use?</summary><p class="answer">The routing article lists Longest Available for that queue type. The queue article says Longest Available is the default. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which patterns can a non-skill agent-assignment queue use?</summary><p class="answer">Longest Available, Circular, and Linear/Top-down. Circular is the default. There is no timed target expansion. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When is Best Available a choice?</summary><p class="answer">Skill-based queues. It ranks agents who fully meet the requirements by proficiency score. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How does a call distribution group expand?</summary><p class="answer">The contact searches the first group. If nobody matches, it parks for the configured duration, then the next group’s teams are added. A later free agent in an earlier group can still be chosen. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What does Check Agent Availability change?</summary><p class="answer">An empty current group is skipped immediately, from the Queue Contact activity. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How is top-down different from circular?</summary><p class="answer">Top-down always starts at the beginning of the ordered list. Circular resumes after the last selected agent. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What does a less-than-or-equal skill do to a Best Available score?</summary><p class="answer">That skill’s value is inverted: 10 minus the actual value. Only proficiency skills enter the score. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why would a variable queue not honor Best Available?</summary><p class="answer">The flow article says you cannot enter skill requirements on a variable queue, and the contact is routed Longest Available, overriding the queue algorithm. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Where is the flow chosen for WhatsApp or email?</summary><p class="answer">The architecture article says non-telephony flows are chosen in the Webex Connect configuration, not only on the telephony routing strategy. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Is the Labs Erlang number the product’s estimated wait?</summary><p class="answer">No. Get Queue Info uses the article’s sample rules, including −1 when wait does not apply. The Erlang panel is labeled a study model. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A tenant checklist, plus the zero-key simulator</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: on a lab tenant, create one telephony entry point, one strategy for today, and one non-skill team queue whose pattern is Longest Available.</label></li>
+<li><label><input type="checkbox"> Prereq: a Webex Contact Center lab you are allowed to change. Production tenants are out of scope. Read licenses on the subscription in Control Hub. The queue article does not name them, and the set follows the order.</label></li>
+<li><label><input type="checkbox"> Step 1. Open the routing-strategy procedure and choose the entry point. Expected: the time fields accept 24-hour values.</label></li>
+<li><label><input type="checkbox"> Step 2. Set a window that includes now, choose a flow version, and flag the strategy as the default. Expected: the article’s call-control section shows the flow and the live or latest choice.</label></li>
+<li><label><input type="checkbox"> Step 3. Create a non-skill team queue and confirm Longest Available is the default. Expected: that sentence in the queue article.</label></li>
+<li><label><input type="checkbox"> Step 4. Add two call distribution groups with a short delay, on a telephony channel. Expected: the create-group control is the telephony path.</label></li>
+<li><label><input type="checkbox"> Evidence: the strategy window, the pattern field, and the group list.</label></li>
+<li><label><input type="checkbox"> Break it: set Check Agent Availability off, leave group one with no signed-in agents, and confirm the contact waits the interval before group two.</label></li>
+<li><label><input type="checkbox"> Recovery: enable Check Agent Availability and confirm the article’s skip behavior is the one you are testing.</label></li>
+<li><label><input type="checkbox"> Reflection: which pattern you would refuse to configure on this queue type, and why.</label></li>
+</ul>
+<p>The zero-key version is the WxCC panel on the <a href="../labs.html">Labs</a> page. It applies the pattern rules above and a separate Erlang-style wait that is labeled a study model.</p>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>A non-skill queue with team assignment defaults to which pattern?</p><details><summary>Answer</summary><p class="answer">A non-skill queue with team assignment defaults to which pattern: Longest Available. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>A non-skill queue with agents added directly defaults to which pattern?</p><details><summary>Answer</summary><p class="answer">Circular. You can still choose Longest Available or Linear/Top-down. The article’s agent cap on that queue is 1000. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Agents are ordered A3, A4, A5. A3 is available. A second contact arrives while A3 is still available. Which pattern can prefer A3 again?</p><details><summary>Answer</summary><p class="answer">Top-down. It walks from the start every time, so A3 is offered again while A3 is still available. Circular would move on. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>The same order, and the last contact went to A4. A3 is free again. Which pattern offers the next contact to A5 if A5 is next and free?</p><details><summary>Answer</summary><p class="answer">Circular. It continues after the last selected agent, so the next free agent after A4 is A5. Top-down would offer A3 again. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Weights on a proficiency skill change which pattern?</p><details><summary>Answer</summary><p class="answer">Best Available. They do not change Longest Available. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Who is implicitly on a queue whose skills are configured on the queue itself?</p><details><summary>Answer</summary><p class="answer">Who is implicitly on a queue whose skills are configured on the queue itself: Agents whose direct skill profile fully satisfies the criteria. Team membership is not the association. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>An agent belongs to team 1 and team 2 and signs in on team 1. Which call distribution group can see them?</p><details><summary>Answer</summary><p class="answer">Only the group that contains team 1. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Music on hold on a routing strategy applies to which channels?</p><details><summary>Answer</summary><p class="answer">Music on hold on a routing strategy applies to which channels: Voice. The article says it is not applicable for email and chat strategies. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>Queue Contact uses a variable queue id and you also wanted skill requirements. What algorithm does the flow article apply?</p><details><summary>Answer</summary><p class="answer">Longest Available, overriding the queue’s selected algorithm. Set a fallback queue for an invalid id. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Estimated wait is −1 and position in queue is a positive number on a team queue with skills in the flow. Which Get Queue Info branch is that?</p><details><summary>Answer</summary><p class="answer">Insufficient Information. Success requires both values positive. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name the four routing patterns this room is allowed to teach, and the queue family each one belongs to.</p><details><summary>Answer</summary><p class="answer">Longest Available: team non-skill default, also offered on agent-assignment and as the skill-based alternative to Best Available. Circular and Top-down: agent-assignment queues. Best Available: skill-based, by proficiency score. Do not invent a fifth. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>The strategy window is 0900–1700 and the contact arrives at 0800. What runs?</p><details><summary>Answer</summary><p class="answer">Not that strategy, unless another strategy or the Business Hours flow covers 0800. Times are 0000–2400. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article></div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain entry points, routing strategies, and why queue patterns are not interchangeable." | assets/audio/T3-R03/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk call distribution groups, then circular versus top-down, then Best Available scoring." | assets/audio/T3-R03/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers from the quiz: defaults, the 1000-agent cap, and estimated wait of −1." | assets/audio/T3-R03/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> An entry point receives the contact. A routing strategy picks the flow for that window. The queue then uses only the pattern that queue type allows: Longest Available, Circular, Top-down, or Best Available.</p>
+<p><strong>2 minutes.</strong> Team queues expand through call distribution groups and default to Longest Available when they are not skill-based. Agent-assignment queues list up to 1000 agents, default to Circular, and can also run top-down, which always restarts at the first agent. Skill queues choose Longest Available or Best Available. Best Available scores proficiency and can invert a less-than-or-equal skill. Weights do not affect Longest Available.</p>
+<p><strong>30 seconds, variable queue.</strong> If the queue id comes from a variable and you wanted skills, Flow Designer routes that contact Longest Available and overrides the queue algorithm. Set a fallback for a bad id.</p>
+<p><strong>2 minutes, estimated wait.</strong> Get Queue Info is the product’s wait. Success needs position and wait both positive. Skilled team-assignment queues always return −1. A textbook Erlang estimate on the Labs page is not that number.</p>
+<p><strong>What you will not say.</strong> You will not claim a fifth pattern, and you will not map these objects onto UCCE nodes. The crosswalk is written in T6-R04. Unpublished pairs stay marked in that room.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+
+<ol class="cite-list"><li id="cite-1">Webex Contact Center architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a> — retrieved 2026-10-14. Entry point, flow via routing strategy, queue, team, QueueToAgent for voice, Analyzer from events, Connect for non-telephony.</li><li id="cite-2">Understand routing and queueing in Webex Contact Center — help.webex — article np2fdx — <a href="https://help.webex.com/article/np2fdx">help.webex.com article np2fdx</a> — retrieved 2026-10-14. Team versus agent assignment, call distribution groups, Longest Available, Circular, Top-down, skill criteria versus skills in the flow, Best Available scoring.</li><li id="cite-3">Create queues and configure routing patterns — help.webex — article ubg5qd — <a href="https://help.webex.com/article/ubg5qd">help.webex.com article ubg5qd</a> — header date October 8, 2026, retrieved 2026-10-14. Longest Available default for non-skill team assignment. Circular default for non-skill agent assignment. Maximum 1000 agents on that agent-assignment queue. Call distribution groups on the telephony channel path.</li><li id="cite-4">Set up routing strategies — help.webex — article nfrs2adb — <a href="https://help.webex.com/article/nfrs2adb">help.webex.com article nfrs2adb</a> — retrieved 2026-10-14. Entry point, 0000–2400 window, weekdays, music file not used for email and chat, default flag, flow and live or latest version. Recommends moving to Business Hours while existing strategies remain.</li><li id="cite-5">Build and manage flows with Flow Designer — help.webex — article nhovcy4 — <a href="https://help.webex.com/article/nhovcy4">help.webex.com article nhovcy4</a> — retrieved 2026-10-14. Variable queue overrides skills to Longest Available. Fallback queue. Get Queue Info success and −1 rules. Start Flow cannot be deleted.</li><li id="cite-6">Introduction, migrate Unified CM to Webex Calling — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a> — retrieved 2026-10-14. Cited only to say Cisco’s documented calling migration is not a contact-center parity matrix.</li><li id="cite-7">Set up a channel — help.webex — article ewuay1 — <a href="https://help.webex.com/article/ewuay1">help.webex.com article ewuay1</a> — retrieved 2026-10-14. An outdial entry point can use a routing strategy or a flow. A strategy cannot customize outdial features such as flow, music, and outdial queues, and cannot use screen pop or custom ANI. The article recommends a flow for those.</li><li id="cite-8">Cisco Webex Contact Center Analyzer User Guide — help.webex — article tajemk — <a href="https://help.webex.com/article/tajemk">help.webex.com article tajemk</a> — retrieved 2026-10-14.</li><li id="cite-9">Use AI agents for customer interactions — help.webex — article s0qro1 — <a href="https://help.webex.com/article/s0qro1">help.webex.com article s0qro1</a> — retrieved 2026-10-14. Header August 25, 2026. Six Connect channels.</li><li id="cite-10">Provision Emergency Calling in Webex Contact Center — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14.</li><li id="cite-11">Webex Contact Center Analyzer Stock Reports — help.webex — article t137o3 — <a href="https://help.webex.com/article/t137o3">help.webex.com article t137o3</a> — retrieved 2026-10-14. Example path: Stock Reports &gt; Historical Reports &gt; Agent Reports. Sudden Disconnected Count is not used and will not be populated.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+
+
+<ul>
+<li>Open questions: live menu path for strategies on a current tenant; whether Business Hours fully replaces the strategy UI.</li>
+<li>Analyzer session behavior, the Connect six-channel list, and WxCC WebRTC emergency are cited as of 2026-10-14. Still marked above: stale numeric caps, the estimated-wait formula, CRM click-paths, and multi-tenant WFO.</li>
+<li>Assets missing: strategy screenshot, eco.svg export, audio.</li>
+<li>Ideas for v1.0: a worked Best Available score with the article’s four-agent example redrawn only after the numbers are copied from np2fdx, not from memory.</li>
+<li>Next review date: <mark class="recheck">re-check</mark> when np2fdx or ubg5qd changes the pattern list.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T3-R01-wxcc-multitenant-overview.html"><span>Previous</span><strong>T3-R01</strong><em>WxCC Multi-tenant Overview</em></a><a class="next" href="T3-R04-agent-desktop-supervisor.html"><span>Next</span><strong>T3-R04</strong><em>Agent Desktop &amp; Supervisor</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

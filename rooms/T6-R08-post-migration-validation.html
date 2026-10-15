@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T6-R08 · Post-migration Validation">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T6-R08 · Post-migration Validation · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T6" data-room="T6-R08" data-room-title="Post-migration Validation" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T6</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T6/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T6 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T6 · Migration</p>
+<h1>Post-migration Validation</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Post-migration Validation">
+<defs>
+<linearGradient id="T6R08sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T6R08sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Migration</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T6-R08</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Plan</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Cutover</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Webex</text></g>
+</svg>
+<figcaption>Illustrated scene for Post-migration Validation. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Post-migration Validation">
+<defs>
+<marker id="T6R08arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Source PBX → Plan → Cutover → Webex</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Webex</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T6R08arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T6R08arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T6R08arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T6R08lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Source PBX → Plan → Cutover → Webex. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">After a group moves, you test a subset and you test the queues and hunts that moved with them. After everyone has moved, Unified CM’s remaining job can be transit between the PSTN gateways and Webex Calling. Cleanup then removes the discovery records, the DHCP options, and the virtual machines. Dedicated Instance post-migration reports live in T5-R06.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T6-R08</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T6-R07</strong></span>
+<span class="meta-chip read-chip">Reading <strong>16 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>The pilot uses the same Cisco and third-party tools as the full move, and it takes voicemail, auto attendants, queues, and hunts with the users. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Number checks confirm extension, external number, on-net routing, PSTN routing, and overlaps. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Queue acceptance language in that article is “round robin, longest idle, or simultaneous ring.” That is a Calling test phrase, not the Webex Contact Center queue catalog. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>To leave premises PSTN, port every number on the Unified CM trunk to the Cloud Connect partner at the same time, then point every location at that provider. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Remove cisco_uds._tcp and cup_login._tcp from on-premises DNS, collab_edge._tls from public DNS, and DHCP options 66 and 150. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>On-net tests cover transfer, hold, forwarding, and conferencing. PSTN tests cover inbound to users, queues, hunts, and auto attendants, plus outbound caller ID. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Hunt tests check the configured algorithm, overflow, forwarding, no-answer, and that membership and routing match what was on Unified CM. The article states that as the test goal. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If hybrid trunking was used from the start, the guide says there is no extra PSTN migration step after the users move, beyond decommissioning Unified CM and the Local Gateways. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Put migrated directory numbers in a hidden partition so calling search spaces prefer the cloud path. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Analytics cover media quality, call history, call queue, hunt group, and auto attendant. Troubleshooting can integrate ThousandEyes and Meraki. The detailed guide is “Troubleshoot Webex Calling calls in Control Hub.” <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Validation fails when option 150 is still handing phones a Unified CM TFTP address, or when a queue test borrows a Webex Contact Center pattern name the Calling article did not use.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>What remains, then what you delete</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T6-R08/arch.svg -->
+<div class="diagram" role="img" aria-label="Unified CM as transit, then Cloud Connect">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Unified CM as transit, then Cloud Connect">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="36" fill="#c6e27a" font-family="Georgia, serif" font-size="20">After the users move, Unified CM can be only a transit.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="64" width="200" height="140" rx="14" fill="#1a2214" stroke="#c6e27a"/>
+<text x="44" y="96">PSTN gateways</text>
+<text x="44" y="122" fill="#b7ad9c">Still on premises</text>
+<text x="44" y="144" fill="#b7ad9c">until the port</text>
+<text x="44" y="166" fill="#b7ad9c">All numbers together</text>
+<text x="44" y="188" fill="#b7ad9c">or no extra step</text>
+<rect x="268" y="64" width="210" height="140" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="284" y="96">Unified CM + LGW</text>
+<text x="284" y="122" fill="#b7ad9c">Transit role only</text>
+<text x="284" y="144" fill="#b7ad9c">Hidden partition for old DNs</text>
+<text x="284" y="166" fill="#b7ad9c">Then delete the VMs</text>
+<text x="284" y="188" fill="#b7ad9c">Expressway goes too</text>
+<rect x="518" y="64" width="200" height="140" rx="14" fill="#121a2a" stroke="#7eb6ff"/>
+<text x="534" y="96">Webex Calling</text>
+<text x="534" y="122" fill="#b7ad9c">Users and endpoints</text>
+<text x="534" y="144" fill="#b7ad9c">Acceptance tests</text>
+<text x="534" y="166" fill="#b7ad9c">Analytics in Control Hub</text>
+<text x="534" y="188" fill="#b7ad9c">ThousandEyes, Meraki</text>
+<rect x="752" y="64" width="200" height="140" rx="14" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="768" y="96">Cloud Connect</text>
+<text x="768" y="122" fill="#b7ad9c">Test location first</text>
+<text x="768" y="144" fill="#b7ad9c">Then every location</text>
+<text x="768" y="166" fill="#b7ad9c">Inbound and outbound</text>
+<text x="768" y="188" fill="#b7ad9c">Deprovision the test</text>
+</g>
+<text x="28" y="244" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Hybrid trunking from day one: no additional PSTN migration step beyond decommissioning Unified CM and the Local Gateways.</text>
+<text x="28" y="268" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Dedicated Instance readiness reports are T5-R06. This room is the multi-tenant optimize chapter.</text>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Records removed after cloud registration">
+<svg viewBox="0 0 980 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Records removed after cloud registration">
+<rect width="980" height="180" fill="#0c121c"/>
+<text x="28" y="32" fill="#c6e27a" font-family="Georgia, serif" font-size="18">Discovery records the guide says to remove</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="28" y="56" width="220" height="80" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="44" y="88">cisco_uds._tcp</text><text x="44" y="110" fill="#b7ad9c">cup_login._tcp</text>
+<rect x="268" y="56" width="220" height="80" rx="10" fill="#1a2214" stroke="#c6e27a"/><text x="284" y="88">collab_edge._tls</text><text x="284" y="110" fill="#b7ad9c">public DNS</text>
+<rect x="508" y="56" width="200" height="80" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="524" y="88">DHCP 66 and 150</text><text x="524" y="110" fill="#b7ad9c">TFTP scopes</text>
+<rect x="728" y="56" width="220" height="80" rx="10" fill="#121a2a" stroke="#7eb6ff"/><text x="744" y="88">CUBE dial-peers</text><text x="744" y="110" fill="#b7ad9c">to and from UCM</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  PSTN[PSTN gateways] --> UCM[Unified CM transit]
+  UCM --> LGW[Local Gateway]
+  LGW --> WXC[Webex Calling]
+  WXC --> CCP[Cloud Connect]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Test the batch, then retire the platform</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T6-R08/hero.png -->
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>What the implement article asks</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Pilot population</td><td>A representative subset across one or more locations. Move voicemail, auto attendants, call queues, and hunt groups with them. Use the same Cisco and third-party tools as the full deployment.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>After a group</td><td>Test a subset of the users. If queues or hunts moved with them, test those services.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Numbers</td><td>Correct extension and external number. On-net and PSTN. Look for overlaps, missing assignments, and misconfiguration.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>On-net</td><td>Transfer, hold, forwarding, and conferencing. Dial plan and extension-to-extension.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>PSTN</td><td>Inbound to users, queues, hunts, or auto attendants. Outbound with the correct caller name and number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Queues</td><td>Distribution “such as round robin, longest idle, or simultaneous ring.” Agent presentation, accept, hold, and transfer. This phrase is the Calling test. It is not a Webex Contact Center pattern list.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hunts</td><td>Configured algorithm, overflow, forwarding, no-answer. Membership and routing should match what was on Unified CM. That is the test goal the article prints.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<div class="callout gotcha"><strong>Gotcha.</strong> The acceptance section says it is not an exhaustive checklist. Do not treat a passed subset as proof that every feature moved. <a class="cite" href="#cite-1">[cite:1]</a></div>
+<h3>Cloud Connect cutover</h3>
+<div class="table-wrap"><table><thead><tr><th>Step the guide numbers</th><th>Action</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Select a Cloud Connect for Webex Calling partner available for the location.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>2</td><td>Build a test location and test users. Set that location’s PSTN to the partner. Validate with the test phones. Then deprovision the test location.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>3</td><td>Port all numbers on the Unified CM PSTN trunk to that partner at the same time, so inter-location reachability holds.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>4</td><td>On cutover day, set every Webex Calling location’s PSTN to that provider and verify inbound and outbound.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Already hybrid</td><td>If PSTN trunking for hybrid deployments was used from the start, there is no additional PSTN migration step beyond decommissioning Unified CM and the Local Gateways.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>What the optimize list removes</h3>
+<div class="table-wrap"><table><thead><tr><th>Remove or update</th><th>Why the guide gives</th><th>Cite</th></tr></thead><tbody>
+<tr><td>On-premises SRV cisco_uds._tcp and cup_login._tcp</td><td>No longer required for client service discovery.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Public collab_edge._tls</td><td>No longer required for collaboration edge discovery.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DHCP options 66 and 150</td><td>No longer required for endpoint TFTP discovery.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Local Gateway or CUBE dial-peers to and from Unified CM</td><td>No longer required for on-premises call routing.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unified CM and Expressway virtual machines</td><td>No longer needed for call control and edge.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unity Connection virtual machines</td><td>No longer needed for voicemail. The same guide says there is no native move of existing Unity Connection messages or greetings.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>After Cloud Connect: Unified CM PSTN trunks, PSTN gateways, and the Local Gateway</td><td>The cleanup bullet once PSTN has moved.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>On-premises E911 locations and numbers, then those virtual machines</td><td>After the full transition.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Migrated DNs in a hidden partition</td><td>So calling search spaces prefer the cloud path of the same numbers.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Horizon Mobility dispatchable location and network element</td><td>Update when switches, access points, DHCP scopes, or floor plans change. The guide prints the name “Horizon Mobility.”</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="callout note"><strong>Note.</strong> The Dedicated Instance assistant’s post-migration and post-registration reports are a different article. Point at T5-R06. Do not describe those report names as if the December 2025 multi-tenant optimize chapter printed them. <a class="cite" href="#cite-2">[cite:2]</a></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T6-R08">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Webex</text>
+<circle cx="200" cy="132" r="36" fill="url(#T6R08map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T6R08map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Acceptance test</dt><dd>The implement article’s sample checks after a group moves. The article says the section is not exhaustive. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Transit role</dt><dd>After users and endpoints are on Webex Calling, Unified CM can remain only to pass calls between PSTN gateways and Webex Calling through the Local Gateway. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Hidden partition</dt><dd>Where the guide says to place migrated directory numbers so search spaces prefer the cloud path. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Cloud Connect cutover</dt><dd>The four-step move of premises PSTN onto a Cloud Connect partner, including a disposable test location. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Horizon Mobility</dt><dd>The name the December 2025 guide prints for the dispatchable-location product you update when the building network changes. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T6-R08/eco.svg -->
+<div class="diagram" role="img" aria-label="Sisters around post-migration validation">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sisters around post-migration validation">
+<rect width="980" height="220" fill="#0c121c"/>
+<circle cx="490" cy="110" r="54" fill="#14110c" stroke="#c6e27a"/>
+<text x="456" y="106" fill="#efe7d6" font-family="Georgia, serif" font-size="14">Validate</text>
+<text x="462" y="128" fill="#efe7d6" font-family="Georgia, serif" font-size="14">then retire</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="24" y="24" width="190" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="36" y="47">Pilot tools</text>
+<rect x="24" y="92" width="190" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="36" y="115">Queue and hunt tests</text>
+<rect x="24" y="160" width="190" height="36" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="36" y="183">Caller ID</text>
+<rect x="766" y="24" width="190" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="778" y="47">DNS and DHCP</text>
+<rect x="766" y="92" width="190" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="778" y="115">Analytics</text>
+<rect x="766" y="160" width="190" height="36" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="778" y="183">Hidden partition</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Validation))
+    Pilot
+    Acceptance
+    Cloud Connect
+    Cleanup
+    Analytics
+</pre>
+</details>
+<h3>Sister technologies</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Auto attendant and voicemail</td><td>Services the pilot must move with users.</td><td>Acceptance covers greetings, menus, timeouts, and mailbox access including remote.</td><td>Test invalid and timeout paths.</td><td>A user moves and the attendant stays on Unified CM.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unity Connection</td><td>The on-premises store.</td><td>VMs are deleted after the move. Messages and greetings have no native migration in the guide.</td><td>Do not promise the old mailbox contents moved.</td><td>Users expect old messages in Webex voicemail.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DHCP and DNS</td><td>Discovery for Unified CM and Expressway.</td><td>Phones and Jabber keep finding the old cluster if the records remain.</td><td>Options 66 and 150. The three SRV names.</td><td>A phone reboots onto Unified CM.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>ThousandEyes and Meraki</td><td>Products the guide says troubleshooting can integrate.</td><td>Richer call views in Control Hub. The procedure is the frj1efb article, not invented here.</td><td>Control Hub troubleshooting.</td><td>A media fault with no call record opened.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Emergency / E911</td><td>On-premises locations and numbers, then the VMs.</td><td>Delete migrated locations. Horizon Mobility still needs updates when the floor changes.</td><td>The guide’s cleanup bullets.</td><td>An old dispatchable location after a switch replacement.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Number porting</td><td>T6-R06 for Cisco Calling Plan orders. This chapter’s port is every number on the Unified CM trunk, together.</td><td>Partial ports break inter-location reachability in the guide’s step 3.</td><td>Cloud Connect partner, not a one-DID experiment on cutover day.</td><td>Porting one site while another site still routes through the old trunk.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Identity</td><td>The acceptance comparison is source directory versus Webex Calling users.</td><td>Extensions and DIDs have to match.</td><td>Control Hub user list.</td><td>A user present on Unified CM and missing in Webex.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Contact Center queues</td><td>A different pattern catalog.</td><td>Do not grade a Calling queue with Longest Available unless that queue article is the one you opened.</td><td>T6-R04 for those names. This room quotes q0pgpb.</td><td>A false failure because the names differ.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Pilot group</td><td>Webex Calling</td><td>Same tools as production</td><td>Users plus voicemail, attendants, queues, and hunts.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Test location</td><td>Cloud Connect partner</td><td>PSTN setting</td><td>Test calls, then the location is deprovisioned.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unified CM PSTN trunk</td><td>Cloud Connect</td><td>One port of all numbers</td><td>Inter-location reachability.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>On-premises DNS</td><td>Clients</td><td>SRV removal</td><td>cisco_uds, cup_login, and public collab_edge.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DHCP</td><td>Phones</td><td>Options 66 and 150 removed</td><td>TFTP discovery that should stop.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Control Hub</td><td>Operator</td><td>Analytics and troubleshooting</td><td>Media quality, call history, queue, hunt, auto attendant. ThousandEyes and Meraki when integrated.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Cleanup edges from DNS and DHCP">
+<svg viewBox="0 0 980 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cleanup edges from DNS and DHCP">
+<rect width="980" height="110" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="32" width="200" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="72" y="62">DNS SRV</text>
+<rect x="280" y="32" width="200" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="320" y="62">DHCP 66/150</text>
+<rect x="524" y="32" width="200" height="48" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="560" y="62">Hidden DN</text>
+<rect x="760" y="32" width="184" height="48" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="792" y="62">Delete VMs</text>
+</g>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Multi-tenant optimize</td><td>Unified CM, Expressway, Unity Connection, on-premises E911.</td><td>Dedicated Instance day-2 reports are T5-R06. <mark class="todo-verify">TODO-verify</mark> any claim that this cleanup list is also the Dedicated Instance decommission.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Calling queue test phrase</td><td>Round robin, longest idle, simultaneous ring.</td><td>Webex Contact Center patterns are a different article set. Do not equate them.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Future hooks</h3>
+<p><strong>Canon plan.</strong> Keep the DI report names out of this room until someone is reading T5-R06. <strong>Cisco.</strong> The guide already points troubleshooting detail at help.webex.com article frj1efb. That pointer is the published next step. <a class="cite" href="#cite-2">[cite:2]</a></p>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>A rebooted phone returns to Unified CM</td><td>DHCP option 150 or 66 is still set.</td><td>Scope options.</td><td>Remove them after endpoints are cloud-registered or decommissioned.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Jabber still discovers the old cluster</td><td>cisco_uds or collab_edge SRV remains.</td><td>Internal and public DNS.</td><td>Remove the SRVs the guide names.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Old voicemail messages are missing</td><td>The guide says there is no native migration of Unity Connection messages or greetings.</td><td>Whether a separate tool was in the plan.</td><td>Do not tell users the platform move included the mailbox contents.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a pilot to an empty rack</h2>
+<!-- VISUAL:sequence | SVG | assets/diagrams/T6-R08/seq.svg -->
+<div class="diagram" role="img" aria-label="Validation sequence">
+<svg viewBox="0 0 980 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Validation sequence">
+<rect width="980" height="150" fill="#0c121c"/>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="20" y="48" width="140" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="56" y="78">Pilot</text>
+<rect x="184" y="48" width="150" height="48" rx="8" fill="#1a2214" stroke="#c6e27a"/><text x="204" y="78">Acceptance</text>
+<rect x="358" y="48" width="160" height="48" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="386" y="78">Test PSTN</text>
+<rect x="542" y="48" width="170" height="48" rx="8" fill="#121a2a" stroke="#7eb6ff"/><text x="566" y="78">Port together</text>
+<rect x="736" y="48" width="210" height="48" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="770" y="78">Remove discovery</text>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Pilot users</td><td>Webex Calling</td><td>Same tool set</td><td>Include voicemail, attendants, queues, and hunts.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Tester</td><td>Subset</td><td>Calls</td><td>On-net features and PSTN caller ID. Queues and hunts if they moved.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Admin</td><td>Test location</td><td>Cloud Connect</td><td>Validate, then deprovision the test location.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>4</td><td>All trunk numbers</td><td>Partner</td><td>One port</td><td>Then set every location and verify both directions.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>DNS, DHCP, VMs</td><td>Decommission</td><td>Removal</td><td>Only after endpoints are cloud-registered or already decommissioned.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths you can cite</h2>
+<ol>
+<li>After each batch, compare extensions and DIDs with the Unified CM directory. Place on-net and PSTN calls. Check overlaps. <!-- VISUAL:screenshot:users --><a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If a queue moved, confirm distribution against the logic you configured. The article’s examples are round robin, longest idle, and simultaneous ring. <!-- VISUAL:screenshot:queue --><a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a hunt, confirm the algorithm, overflow, forwarding, no-answer, and that membership matches Unified CM. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Before a Cloud Connect cutover, provision a test location, point it at the partner, call through it, and deprovision it. <!-- VISUAL:screenshot:testloc --><a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Port every number on the Unified CM PSTN trunk together. On the day, set each location’s PSTN and verify inbound and outbound. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Remove the SRVs and DHCP options, hide the migrated DNs, update Horizon Mobility when the building network changes, and delete the virtual machines the guide names. <!-- VISUAL:screenshot:dns --><a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Open Control Hub analytics for media quality, call history, queues, hunts, and auto attendants. For a failed call, follow Troubleshoot Webex Calling calls in Control Hub, article frj1efb. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<div class="callout warn"><strong>Warn.</strong> Do not power off Unified CM while it is still the transit between PSTN gateways and Webex Calling, unless you have already moved PSTN or you started on hybrid trunking and the guide’s “no additional PSTN step” sentence applies. <a class="cite" href="#cite-2">[cite:2]</a></div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Acceptance checklist</td><td>Not exhaustive</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header date not in the retrieved markdown. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Queue examples in the Calling test</td><td>Round robin, longest idle, simultaneous ring</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as examples, not as a closed catalog. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Cloud Connect number port</td><td>All numbers on the Unified CM PSTN trunk, at the same time</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Guide dated December 2025.</td></tr>
+<tr><td>DHCP options removed</td><td>66 and 150</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>SRV names removed</td><td>cisco_uds._tcp, cup_login._tcp, collab_edge._tls</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. The guide prints a trailing dot on the names.</td></tr>
+<tr><td>Unity Connection messages</td><td>No native migration of messages or greetings</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr>
+<tr><td>Troubleshooting window</td><td>The past 21 days. The call appears after it ends. Full admin, read-only admin, or support admin. The view cannot necessarily provide the root cause.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted from frj1efb. The December 2025 guide names that article and does not restate these sentences.</td></tr><tr><td>Troubleshooting export</td><td>Up to 100 call records per CSV. JSON is from the call details page.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr><tr><td>Verify Call Routing</td><td>Simulates a call from a cloud user, workspace, virtual line, or premises trunk. Shows permissions, fraud prevention, digit patterns, intercept, and translation. Path: Services &gt; PSTN &amp; Routing &gt; Gateway configurations. Cisco Calling Plan customers can use Services &gt; Calling &gt; Call Routing.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted from n0xb944. A green simulation is not a placed PSTN call.</td></tr><tr><td>Client features in the acceptance examples</td><td>Hold, resume, blind transfer, consultative transfer, forward, conference, park, retrieve, and do not disturb. On-net examples also name transfer, hold, forwarding, and conferencing.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted as examples. <mark class="recheck">re-check</mark></td></tr><tr><td>US and Canada location address</td><td>q0pgpb says enter a street address. PIDF-LO uses that validated address. This room does not place 911 as that test.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr><tr><td>Firewall flows</td><td>Required traffic flows are supported through the firewalls the organization actually uses.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>DI post-migration report names</td><td>Not in this optimize chapter</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>See T5-R06. <mark class="todo-verify">TODO-verify</mark> before copying those names here.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten validation misses</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>A user has no DID in Webex</td><td>Number assignment did not match the source directory.</td><td>Extension and external number fields.</td><td>The acceptance section says to compare both and to check overlaps.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Outbound caller ID is the wrong site</td><td>PSTN presentation was not checked.</td><td>External call to a known display.</td><td>The article asks for the correct caller name and number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Queue rings everyone at once</td><td>The configured logic may be simultaneous ring. It may also be a different pattern you did not open.</td><td>Queue settings versus the test phrase.</td><td>Grade the queue against the logic you configured. Do not import a Webex Contact Center name.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Hunt overflow goes nowhere</td><td>Overflow, forwarding, or no-answer was not rebuilt.</td><td>Hunt settings versus the Unified CM group.</td><td>The test goal is that membership and routing match.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>One location cannot dial another after the port</td><td>Numbers were ported in pieces.</td><td>Which trunk numbers moved.</td><td>The guide says port all of them at the same time.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Production PSTN was switched with no test</td><td>Step 2 was skipped.</td><td>Whether a test location existed.</td><td>Validate on a test location, then deprovision it, then cut over.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Phones boot to the old TFTP</td><td>Option 66 or 150 remains.</td><td>DHCP scope.</td><td>Remove both after cloud registration.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Calls hit the old DN</td><td>The migrated DN is still in a searched partition.</td><td>Calling search space order.</td><td>Place it in a hidden partition so the cloud path wins.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Emergency dispatch uses an old floor</td><td>Horizon Mobility was not updated after a switch or AP change.</td><td>Dispatchable location and network element.</td><td>Update on the events the guide lists.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A call failed and nobody can see media</td><td>Troubleshooting was not opened.</td><td>Control Hub call history.</td><td>Use the analytics the guide names, then article frj1efb. ThousandEyes or Meraki only if that integration is in place.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What do you test first?</summary><p class="answer">A representative pilot that includes voicemail, attendants, queues, and hunts, using the same tools as the full move. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What does a number check include?</summary><p class="answer">Extension, external number, on-net, PSTN, and overlaps. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Is the acceptance list complete?</summary><p class="answer">The article says it is not exhaustive. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which queue phrase belongs in this room?</summary><p class="answer">Round robin, longest idle, or simultaneous ring, as examples of configured Calling queue logic. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is Unified CM’s job after every user has moved and PSTN is still local?</summary><p class="answer">Transit between the PSTN gateways and Webex Calling through the Local Gateway. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove a Cloud Connect cutover was sequenced?</summary><p class="answer">A test location was validated and deprovisioned, all trunk numbers ported together, then every location was switched and tested both ways. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When is there no extra PSTN step?</summary><p class="answer">When hybrid trunking was used from the start. The remaining work is decommissioning Unified CM and the Local Gateways. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Which DNS names do you remove, and from where?</summary><p class="answer">cisco_uds._tcp and cup_login._tcp on premises. collab_edge._tls in public DNS. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why a hidden partition?</summary><p class="answer">So calling search spaces prefer the cloud path of the same directory numbers. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which report names will you not recite here?</summary><p class="answer">The Dedicated Instance post-migration and post-registration reports. Those belong to T5-R06. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What voicemail promise will you not make?</summary><p class="answer">That Unity Connection messages and greetings moved natively. The guide says they do not. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where is the call-troubleshooting procedure?</summary><p class="answer">The guide points at Troubleshoot Webex Calling calls in Control Hub, article frj1efb. This room does not reprint it. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not delete a production SRV to learn this.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: sequence a Cloud Connect cutover and name the discovery records that come out last.</label></li>
+<li><label><input type="checkbox"> Prereq: q0pgpb acceptance section and the December 2025 optimize chapter. No live DHCP change.</label></li>
+<li><label><input type="checkbox"> Step 1. Pilot omits the hunt group. Expected: the article says hunts move with the users.</label></li>
+<li><label><input type="checkbox"> Step 2. Grade a Calling queue as “Longest Available.” Expected: that name is not the sentence in q0pgpb.</label></li>
+<li><label><input type="checkbox"> Step 3. Port one site’s numbers and leave the rest on the trunk. Expected: the guide says all numbers, same time.</label></li>
+<li><label><input type="checkbox"> Step 4. List the SRVs and the DHCP options. Expected: the three names and options 66 and 150.</label></li>
+<li><label><input type="checkbox"> Evidence: the hidden-partition sentence and the frj1efb pointer.</label></li>
+<li><label><input type="checkbox"> Break it: tell users their Unity Connection messages came across. Recovery: the guide says there is no native migration of messages or greetings.</label></li>
+<li><label><input type="checkbox"> Reflection: which DI report you almost pasted into this multi-tenant chapter.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>What must move with the pilot users?</p><details><summary>Answer</summary><p class="answer">Voicemail, auto attendants, call queues, and hunt groups. The tools match the full move. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Is the acceptance section a complete checklist?</p><details><summary>Answer</summary><p class="answer">No. The article says it is not exhaustive. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Which on-net features does the article name?</p><details><summary>Answer</summary><p class="answer">Transfer, hold, forwarding, and conferencing. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>What queue examples does the Calling acceptance text give?</p><details><summary>Answer</summary><p class="answer">Round robin, longest idle, or simultaneous ring. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>Unified CM still sits between PSTN gateways and Webex Calling. What role is that?</p><details><summary>Answer</summary><p class="answer">Transit, through the Local Gateway, until PSTN moves. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>How do you port numbers onto Cloud Connect in this chapter?</p><details><summary>Answer</summary><p class="answer">All numbers on the Unified CM PSTN trunk, at the same time. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>What happens to the Cloud Connect test location?</p><details><summary>Answer</summary><p class="answer">You validate with test phones, then deprovision it. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">Draw</span></header><p>Name the SRV records and the DHCP options the guide removes.</p><details><summary>Answer</summary><p class="answer">cisco_uds._tcp and cup_login._tcp on premises, collab_edge._tls in public DNS, DHCP options 66 and 150. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Why hide migrated directory numbers?</p><details><summary>Answer</summary><p class="answer">So calling search spaces prefer the cloud path. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>Hybrid trunking was used from the first day. What PSTN step remains after all users move?</p><details><summary>Answer</summary><p class="answer">None beyond decommissioning Unified CM and the Local Gateways. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Did Unity Connection messages move natively?</p><details><summary>Answer</summary><p class="answer">The guide says there is no native migration of messages or greetings. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Which article does the guide name for call troubleshooting detail?</p><details><summary>Answer</summary><p class="answer">Troubleshoot Webex Calling calls in Control Hub, frj1efb. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain the pilot, the Calling queue test phrase, and why Unified CM can remain as transit." | assets/audio/T6-R08/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the four Cloud Connect steps, the SRV and DHCP cleanup, and the hidden partition." | assets/audio/T6-R08/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: not exhaustive, all numbers together, options 66 and 150, no native voicemail move, frj1efb." | assets/audio/T6-R08/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Validate a representative pilot with the same tools you will use later, and move voicemail, attendants, queues, and hunts with those people. After each group, test a subset. The written acceptance list is a sample, not a complete script.</p>
+<p><strong>2 minutes.</strong> Check extensions and DIDs, on-net and PSTN, and overlaps. On-net means transfer, hold, forwarding, and conferencing. PSTN means the call lands on the right user or queue and the far end sees the right caller ID. For a Calling queue, the article’s examples are round robin, longest idle, and simultaneous ring. That sentence is not the Webex Contact Center pattern list. For a hunt, match the algorithm, overflow, and the membership you had on Unified CM.</p>
+<p><strong>30 seconds, transit.</strong> When everyone is on Webex Calling and PSTN is still local, Unified CM only forwards calls between the gateways and Webex Calling. Do not shut it off in that state.</p>
+<p><strong>2 minutes, cleanup.</strong> Test Cloud Connect on a throwaway location, then deprovision it. Port every number on the Unified CM trunk together and flip every location the same day. If you started with hybrid trunking, the guide says you skip that PSTN migration and only decommission Unified CM and the gateways. Then remove the UDS, login, and collab-edge SRVs, DHCP options 66 and 150, and the dial-peers. Hide the old directory numbers. Delete Unified CM, Expressway, and Unity Connection. Do not promise that old voicemail messages came along. Update Horizon Mobility when the switches or the floor plan change.</p>
+<p><strong>What you will not say.</strong> You will not recite Dedicated Instance post-migration report names in this room. You will not call the acceptance section complete. You will not invent steps from the troubleshooting article; you will name frj1efb and stop.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — <a href="https://help.webex.com/en-us/article/q0pgpb">help.webex.com article q0pgpb</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. <mark class="recheck">re-check</mark> Pilot scope. Acceptance tests for numbers, PSTN, on-net, queues, and hunts. The section says it is not exhaustive. Queue examples are round robin, longest idle, or simultaneous ring.</li>
+<li id="cite-2">Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — <a href="https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf">cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf</a> — retrieved 2026-10-14. Transit role. Four Cloud Connect steps. Hybrid-trunking exception. DNS, DHCP, dial-peer, VM, E911, and hidden-partition cleanup. Horizon Mobility. Analytics. ThousandEyes and Meraki. Article frj1efb. No native Unity Connection message migration. Acceptance narrative in the same guide restates on-net and voicemail checks.</li>
+<li id="cite-3">Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — <a href="https://help.webex.com/article/n0xb944">help.webex.com article n0xb944</a> — retrieved 2026-10-14. Verify Call Routing path, the four call sources, and the result fields. Folded from the slice-5 draft, which cited this page and did not carry the December 2025 cleanup list.</li>
+<li id="cite-4">Troubleshoot Webex Calling calls in Control Hub — help.webex — article frj1efb — <a href="https://help.webex.com/article/frj1efb">help.webex.com article frj1efb</a> — retrieved 2026-10-14. Roles. 21 days. Calls appear after they end. Segments. CSV of 100. JSON report. Not necessarily root cause. Folded from the slice-5 draft.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: q0pgpb header date. Whether a later Calling queue article replaces “round robin, longest idle, or simultaneous ring” inside the implement page.</li>
+<li>Facts still marked TODO-verify: treating this cleanup list as the Dedicated Instance decommission.</li>
+<li>Facts still marked re-check: the acceptance examples, because that retrieval had no header date.</li>
+<li>Assets missing: analytics screenshot, audio.</li>
+<li>Ideas for v1.0: a teardown card with the three SRV names and two DHCP options, regenerated from the December 2025 guide at review time.</li>
+<li>Next review: <mark class="recheck">re-check</mark> the optimize chapter before a decommission window.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T6-R07-coexistence-interop.html"><span>Previous</span><strong>T6-R07</strong><em>Coexistence &amp; Interop</em></a><a class="next" href="T7-R01-sip-fundamentals-webex.html"><span>Next</span><strong>T7-R01</strong><em>SIP Fundamentals for Webex</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

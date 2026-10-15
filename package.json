@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:content": "node scripts/emit.mjs",
-    "verify": "node scripts/verify.mjs",
+    "build:university": "python3 scripts/build_university.py",
+    "verify": "node scripts/verify-university.mjs",
     "start": "python3 -m http.server 8741"
   }
 }

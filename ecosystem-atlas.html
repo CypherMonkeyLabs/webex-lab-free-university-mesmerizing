@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecosystem atlas · Webex Lab</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/university.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="lab-links" aria-label="CypherMonkey">
+<a href="https://cyphermonkeylabs.com">Labs home</a>
+<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<button type="button" data-offline-save>Save for offline</button>
+<a href="downloads/webex-university-offline.zip">Offline bundle</a>
+</nav>
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Webex Lab<small>University</small></span></a>
+<nav class="nav-quick" aria-label="Primary">
+<a class="nav-icon" href="index.html" title="Home"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a>
+<a class="nav-icon" href="start.html" title="Start"><span aria-hidden="true">🚀</span><span class="sr">Start</span></a>
+<a class="nav-icon" href="mastery.html" title="Mastery"><span aria-hidden="true">🧭</span><span class="sr">Mastery</span></a>
+<a class="nav-icon" href="play.html" title="Play"><span aria-hidden="true">🎮</span><span class="sr">Play</span></a>
+<a class="nav-icon" href="downloads.html" title="Cheat Codes"><span aria-hidden="true">⬇️</span><span class="sr">Downloads</span></a>
+</nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Choose a theme">◐</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="ecosystem-atlas.html">Ecosystem atlas</a>
+<a href="ports.html">Ports and protocols</a>
+<a href="labs.html">Hands-on labs</a>
+<a href="certs.html">Certifications</a>
+<a href="glossary.html">Glossary</a>
+</nav>
+</div>
+</header>
+<main id="main"><div class="wrap">
+
+<p class="crumbs"><a href="index.html">Lab</a> / Ecosystem atlas</p>
+<h1>Ecosystem atlas</h1>
+<p class="lede">Calling, Contact Center, Meetings, Devices, Control Hub, workforce management, recording, emergency calling, analytics, and AI agents. Diagrams are study drawings. They are not Cisco architecture posters.</p>
+<div class="atlas-grid"><figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/calling-registration.svg" aria-label="Calling registration">Calling registration</object><figcaption>SIP TLS toward the cloud. Endpoints do not register through the Local Gateway.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/certificate-trunk.svg" aria-label="Certificate trunk">Certificate trunk</object><figcaption>Certificate-based trunks use destination TCP 5062. The FQDN must match the certificate.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/registration-trunk.svg" aria-label="Registration trunk">Registration trunk</object><figcaption>Registration-based trunks use destination TCP 8934. The Canon records a 250-call CUBE cap for that mode.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/pstn-choices.svg" aria-label="Three PSTN choices">Three PSTN choices</object><figcaption>One PSTN choice per location. Premises PSTN uses a Local Gateway.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/lgw-media.svg" aria-label="Local Gateway media">Local Gateway media</object><figcaption>Outbound media from the local gateway. UDP is the production transport. TCP media is not supported.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/app-media.svg" aria-label="Webex App optimized media">Webex App optimized media</object><figcaption>When ICE succeeds inside the org, media can go direct on these ranges.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/device-media.svg" aria-label="Device optimized media">Device optimized media</object><figcaption>Devices send direct media on 19560-19661 when optimization succeeds. Room Series uses its own ranges.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/e911-held.svg" aria-label="Emergency HELD">Emergency HELD</object><figcaption>RedSky. 933 does not alert public safety. Kari&#x27;s Law email is a separate Control Hub setting.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/recording-path.svg" aria-label="Call recording">Call recording</object><figcaption>Choose the provider before you enable users. Processing media disables Calling end-to-end encryption.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/e2ee-path.svg" aria-label="Calling encryption">Calling encryption</object><figcaption>E2EE is opportunistic and off by default. Recording, auto attendant, and a mixer drop it.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/control-hub.svg" aria-label="Control Hub">Control Hub</object><figcaption>The organization is the boundary. People you add start without admin rights.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/identity-sync.svg" aria-label="Identity">Identity</object><figcaption>Org SSO maps an attribute to uid. Partner SSO uses mail, not uid.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/device-claim.svg" aria-label="Device onboarding">Device onboarding</object><figcaption>Firmware and activation also use 6970 and, for older MIC renewal, port 80 to sudirenewal.cisco.com.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/meetings-split.svg" aria-label="Meetings beside Calling">Meetings beside Calling</object><figcaption>b2exve tells suite customers to also allow the Meetings network-requirements article. This drawing does not copy that matrix.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/wxcc-path.svg" aria-label="WxCC voice path">WxCC voice path</object><figcaption>Multi-tenant contact center. The flow is not a Unified CM dial plan.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/flow-designer.svg" aria-label="Flow Designer">Flow Designer</object><figcaption>Start Flow cannot be removed. Validation starts off. Publish waits for a clean check.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/ai-handoff.svg" aria-label="AI agent handoff">AI agent handoff</object><figcaption>Bring-your-own virtual agent must escalate with AGENT_TRANSFER.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/wfm-loop.svg" aria-label="WFM study loop">WFM study loop</object><figcaption>Orientation for workforce management. SKU scope in py6u9h is Enterprise, CCE, and CCX. Multi-tenant fit stays unverified.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/analyzer.svg" aria-label="Analyzer clocks">Analyzer clocks</object><figcaption>Keep Analyzer&#x27;s clocks apart from the desktop widget. The rooms record a 5-second default versus 60 seconds on the widget.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/crm-pop.svg" aria-label="CRM screen pop">CRM screen pop</object><figcaption>Salesforce is Lightning only. On-premises Dynamics is unsupported on the connector article. Chat and email are not on these connectors.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/migration.svg" aria-label="Migration order">Migration order</object><figcaption>Canon study order, not a Cisco runbook. Calling migration and contact-center migration are different projects.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/number-port.svg" aria-label="Number move">Number move</object><figcaption>Do not edit a port order after FOC. Test emergency with 933 before you call the public network.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/di-peering.svg" aria-label="Dedicated Instance">Dedicated Instance</object><figcaption>Dedicated Instance is not multi-tenant Calling. Interop trunks are certificate trunks.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/survivability.svg" aria-label="Survivability">Survivability</object><figcaption>Site survivability is a gateway mode. It is not a second Webex cloud.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/qos.svg" aria-label="QoS marks">QoS marks</object><figcaption>b2exve QoS table. Windows source-port split for audio versus video needs the port-range feature enabled.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/firewall-lanes.svg" aria-label="Firewall lanes">Firewall lanes</object><figcaption>Filter HTTPS by domain. Filter signaling and media by port and the article&#x27;s IP subnets. Do not paste subnets from memory.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/nat-sip.svg" aria-label="NAT and SIP ALG">NAT and SIP ALG</object><figcaption>Phones may reuse SIP source ports. Strict source-port preservation breaks registration. Turn SIP ALG off.</figcaption></figure>
+<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/cscan.svg" aria-label="CScan">CScan</object><figcaption>cscan.webex.com is a pre-check. It is not a substitute for a live call.</figcaption></figure></div>
+<h2>Control Hub</h2>
+<p>The organization is the boundary for users, roles, locations, and services. A person you add starts without administrative privileges. <a href="rooms/T1-R01-control-hub-foundations.html">T1-R01</a>. <a href="https://help.webex.com/en-us/article/nuylwki/Control-Hub">Control Hub article</a>.</p>
+<h2>Webex Calling</h2>
+<p>Each location picks Cisco Calling Plan, Cloud Connected PSTN, or premises PSTN on a Local Gateway. Phones do not register through that gateway. <a href="rooms/T2-R01-calling-architecture.html">T2-R01</a> <a href="rooms/T2-R02-local-gateway-pstn.html">T2-R02</a>.</p>
+<h2>Devices</h2>
+<p>Claim by MAC or activation code. Firmware and activation use the device-configuration ports in the Calling port reference, including TCP 443 and 6970. <a href="rooms/T2-R04-devices-provisioning.html">T2-R04</a>.</p>
+<h2>Meetings</h2>
+<p>The Calling port reference tells suite customers to also allow the separate network-requirements article for Meetings and messaging. This atlas does not copy that matrix. <mark class="unverified">Meeting UDP ranges are not restated here.</mark> <a href="https://help.webex.com/article/b2exve">b2exve</a>.</p>
+<h2>Webex Contact Center</h2>
+<p>Multi-tenant: entry point, flow, queue, team. Enterprise is a different product with Router, Logger, PG, and CUIC. <a href="rooms/T3-R01-wxcc-multitenant-overview.html">T3-R01</a> <a href="rooms/T4-R01-wxcc-enterprise-overview.html">T4-R01</a>.</p>
+<h2>Workforce management</h2>
+<p>Forecast, schedule, and adherence live with WFO, not with Calling CDR. Article py6u9h scopes the listed WFO SKUs to Enterprise, CCE, and CCX. <mark class="unverified">Multi-tenant applicability is unverified.</mark> <a href="rooms/T3-R09-wfo-ai-features.html">T3-R09</a>.</p>
+<h2>Recording and quality</h2>
+<p>Select the Calling provider before you enable users. Webex recordings: one year, 100 GB. Dubber Go: 30 days. Recording disables Calling end-to-end encryption. Quality-management SKUs are a contact-center add-on, not that toggle. <a href="rooms/T2-R06-calling-security-compliance.html">T2-R06</a>.</p>
+<h2>E911</h2>
+<p>Port 443 to api.wxc.e911cloud.com and wxc.e911cloud.com. Test with 933. Do not prove the design by calling emergency services. <a href="ports.html">Ports page</a>.</p>
+<h2>Analytics</h2>
+<p>Control Hub analytics retention and the Calling troubleshooting view are different clocks. The Canon records a 21-day troubleshooting window and a longer analytics window for Pro Pack. <mark class="unverified">Re-check both live articles before you quote a retention number in a design.</mark> <a href="rooms/T1-R06-analytics-troubleshooting.html">T1-R06</a> <a href="rooms/T2-R08-calling-analytics-cdr.html">T2-R08</a> <a href="rooms/T3-R07-analyzer-reporting.html">T3-R07</a>.</p>
+<h2>AI agents</h2>
+<p>Virtual Agent–Voice, AI Assistant, and AI Agent Studio are different surfaces. A bring-your-own virtual agent escalates with <code>AGENT_TRANSFER</code>. <a href="rooms/T8-R05-ai-wxcc.html">T8-R05</a>.</p>
+<h2>Integrations and future hooks</h2>
+<p>Published connectors: Salesforce Lightning, Dynamics CIF, ServiceNow. No customer logo wall is drawn here, because this lab does not invent deployments. A future hook is a webhook or connector you have not turned on: recording events, Connect flows, and CRM screen pop. Build from the article, not from a peer-product column. <a href="rooms/T8-R03-apis-webhooks-connect.html">T8-R03</a> <a href="rooms/T8-R04-crm-integrations.html">T8-R04</a>.</p>
+<h2 id="cites">Sources</h2>
+<ul>
+<li><a href="https://help.webex.com/article/b2exve">Port Reference for Cisco Webex Calling</a>, retrieved 2026-10-15. Revision history includes September 07, 2026.</li>
+<li><a href="https://help.webex.com/article/av6oo3">Enhanced emergency calling for Webex Calling</a>.</li>
+<li><a href="https://help.webex.com/article/nhvl4hw">Manage call recording for Webex Calling</a>.</li>
+<li><a href="https://help.webex.com/article/5h5d8ab">End-to-end encryption for Webex Meetings and Webex Calling</a>.</li>
+<li><a href="https://help.webex.com/article/n6gaghu">Configure Virtual Agent-Voice</a> and <a href="https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent">bring your own virtual agent</a>.</li>
+<li><a href="https://help.webex.com/article/py6u9h">Webex WFO feature-specific SKUs</a>.</li>
+</ul>
+
+</div></main>
+
+<footer class="site-footer lab-footer wrap">
+<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>
+<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>
+<p class="lab-actions">
+<a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a>
+<a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<a href="https://cyphermonkeylabs.com">Report a concern / takedown</a>
+<a href="https://cyphermonkeylabs.com">Work with us</a>
+</p>
+</footer>
+
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+</body></html>

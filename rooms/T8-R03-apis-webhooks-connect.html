@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T8-R03 · APIs, Webhooks &amp; Webex Connect">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T8-R03 · APIs, Webhooks &amp; Webex Connect · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T8" data-room="T8-R03" data-room-title="APIs, Webhooks &amp; Webex Connect" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T8</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T8/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T8 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T8 · Flows, integrations, and the current platform</p>
+<h1>APIs, Webhooks &amp; Webex Connect</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for APIs, Webhooks &amp;amp; Webex Connect">
+<defs>
+<linearGradient id="T8R03sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T8R03sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Flows and tools</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T8-R03</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Customer</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Flow</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">API</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for APIs, Webhooks &amp;amp; Webex Connect. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for APIs, Webhooks &amp;amp; Webex Connect">
+<defs>
+<marker id="T8R03arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Customer → Flow → API → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T8R03arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T8R03arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T8R03arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T8R03lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Customer → Flow → API → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Webex Connect is the programmable CPaaS: channels, a service workspace, Flow Builder, and rules. Inbound webhooks start a flow. Outbound webhooks carry receipts and incoming messages. A Webex Contact Center Task is the unit of agent work, and the tasks API asks for <code>cjp:config</code> or <code>cjp:config_read</code>. Calling recording events already have names on the commercial call-control page. A subscription cap, and webhooks for call queues, are not in those pages.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T8-R03</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R01, T8-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control. Channels include SMS, RCS, Branded Text, WhatsApp, Push, Live Chat and In-App, Email, Voice, MMS, Apple Messages for Business, and Messenger. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Assets are created in the Connect portal, in Control Hub for Email and Chat, or through Developer Portal APIs for those digital assets. A service holds the assets, integrations, credentials, flows, and rules. Flow Builder is the multi-step designer. Rules are the shorter trigger-condition-action path. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Inbound webhooks notify Connect about an external event and can start a flow or a rule. Outbound webhooks deliver receipts and incoming messages. Custom nodes wrap REST or SOAP. Authorizations are a service key or a JWT. <a class="cite" href="#cite-1">[cite:1]</a></li><li>A contact-center Task is a request for agent work. Telephony is an incoming call, chat is a session, email is a chain. Listing tasks wants scope <code>cjp:config</code> or <code>cjp:config_read</code>. <a class="cite" href="#cite-2">[cite:2]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control. Channels include SMS, RCS, Branded Text, WhatsApp, Push, Live Chat and In-App, Email, Voice, MMS, Apple Messages for Business, and Messenger. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Assets are created in the Connect portal, in Control Hub for Email and Chat, or through Developer Portal APIs for those digital assets. A service holds the assets, integrations, credentials, flows, and rules. Flow Builder is the multi-step designer. Rules are the shorter trigger-condition-action path. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Inbound webhooks notify Connect about an external event and can start a flow or a rule. Outbound webhooks deliver receipts and incoming messages. Custom nodes wrap REST or SOAP. Authorizations are a service key or a JWT. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A contact-center Task is a request for agent work. Telephony is an incoming call, chat is a session, email is a chain. Listing tasks wants scope <code>cjp:config</code> or <code>cjp:config_read</code>. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Commercial call control documents <code>telephony_calls</code> recording events and scope <code>spark-admin:calls_read</code>. List Events uses resource <code>convergedRecordings</code> with <code>serviceType</code> required. as of 2026-10-14 the Webhooks guide prints 30000 personal webhooks per user and one org-wide webhook, plus additional registrations for different resources and filters. A Calling call queue emits <code>telephony_queue</code> <code>updated</code>, not the recording events on <code>telephony_calls</code>. <a class="cite" href="#cite-6">[cite:6]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Flow Designer, Connect Flow Builder, and an ICM script are three editors. T8-R01 is Flow Designer. This room is Connect plus the two APIs above. CRM connectors still exclude chat and email; Connect is where those channels are built.</div>
+</section>
+
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>A service, two webhook directions, one task</h2>
+<div class="diagram" role="img" aria-label="Connect service beside a contact-center task">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connect service beside a contact-center task">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Connect service beside a contact-center task</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  A channel asset is SMS, WhatsApp, email, voice, or another listed channel.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  The service workspace holds credentials, flows, and rules.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  An inbound webhook or a custom event starts a flow or a rule.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  An outbound webhook returns receipts and incoming messages.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  A human handoff is a contact-center Task: call, chat session, or email chain.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  Calling recording webhooks are a different API, on telephony_calls.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Asset[Channel asset] --> Svc[Service]
+  InHook[Inbound webhook] --> Flow
+  Flow --> OutHook[Outbound webhook]
+  Flow --> Task[WxCC Task]
+</pre>
+</details>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Name the editor before you name the API</h2>
+<div class="callout def"><span class="label">Three editors</span><p>Webex Contact Center Flow Designer is T8-R01. Webex Connect Flow Builder designs multi-step customer flows inside a service. An ICM script is the Enterprise editor, and T6-R04 keeps that import marked. Connect’s page also has Rules, which are triggers, conditions, and actions for shorter work. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Host match is not this room</span><p>SIP URI host matching lives in T2-R03. Connect Voice on the CPaaS page is outbound notifications, programmable calling, IVR, and call recording for Connect. It is not the Local Gateway dial-peer table. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Do not invent a webhook quota</span><p>The commercial pages cited here name recording events and the tasks scopes. The recording pages still do not say a call queue emits <code>telephony_calls</code>. The ceiling and the Calling queue resource are on the Webhooks guide. as of 2026-10-14 the Webhooks guide prints 30000 personal webhooks per user and one org-wide webhook, plus additional registrations for different resources and filters. A Calling call queue emits <code>telephony_queue</code> <code>updated</code>, not the recording events on <code>telephony_calls</code>. <a class="cite" href="#cite-6">[cite:6]</a> The government developer site is a different cloud. <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<h3>Where an asset is born</h3>
+<div class="table-wrap"><table><thead><tr><th>Path</th><th>What the Connect page says it is for</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Connect portal</td><td>Supported channel assets, including SMS, RCS, and the other channels in the portal docs.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Control Hub</td><td>Email and Chat assets, assigned to a Webex service.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Developer Portal APIs</td><td>Programmatic Email and Chat assets.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration tools</h3>
+<div class="table-wrap"><table><thead><tr><th>Tool</th><th>Direction</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Inbound webhook</td><td>Into Connect</td><td>An external event that can start a flow or a rule.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Outbound webhook</td><td>Out of Connect</td><td>Delivery receipts and incoming messages.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Custom event</td><td>Into Connect</td><td>A business event plus data, to start a flow or a rule.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Custom node</td><td>Connect calls out</td><td>A reusable REST or SOAP integration inside a flow.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Authorization</td><td>On the call</td><td>Service key or JWT for services, APIs, inbound webhooks, and nodes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Pre-built integration</td><td>To another system</td><td>CRM, contact center, bot, healthcare, and customer-data systems the page lists.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Tasks API</td><td>Contact center</td><td>Open or closed tasks in a date range. Scopes cjp:config or cjp:config_read.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>telephony_calls recording</td><td>Webex Calling</td><td>recordingStarting, recordingStarted, recordingPaused, recordingResumed, recordingStopped. Scope spark-admin:calls_read.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T8-R03">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T8R03map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T8R03map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Webex Connect</dt><dd>Programmable CPaaS. APIs, SDKs, and low-code tools for the six areas on the product page. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Channel asset</dt><dd>Email configuration, app, messaging account, phone number, sender, or channel-specific application. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Service</dt><dd>Workspace for the assets, integrations, credentials, flows, and rules of one use case. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Flow Builder</dt><dd>Connect’s designer for multi-step flows: design, test, publish, manage. Not Flow Designer and not an ICM script. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Rules</dt><dd>Trigger, condition, and action for shorter automation than a flow. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Inbound webhook</dt><dd>External application notifies Connect and can start a flow or a rule. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Outbound webhook</dt><dd>Connect delivers receipts and incoming messages to an application. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Custom node</dt><dd>Reusable REST or SOAP call inside a flow. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Service key and JWT</dt><dd>The two authorization styles the integration table names. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>AI Agent Studio</dt><dd>Where Connect says you create and manage AI agents. Fulfillment flows connect agent actions back to Connect flows. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Contact policy</dt><dd>Consent, preferences, and how often you may contact someone. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Task</dt><dd>A request for agent work. A telephony task is an incoming call. A chat task is a session. An email task is a chain. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>cjp:config</dt><dd>One of the two scopes the Tasks Call Control page requires. The other is cjp:config_read. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>telephony_calls</dt><dd>The Calling webhook resource that carries the recording lifecycle events. Scope spark-admin:calls_read. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>convergedRecordings</dt><dd>List Events resource for “a Webex call was recorded for a user.” serviceType is mandatory when that resource is set. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>CRM connector</dt><dd>Cisco’s Salesforce, Dynamics 365, or ServiceNow screen pop. Chat and email are not supported on those connectors. Connect is the digital path. <a class="cite" href="#cite-4">[cite:4]</a></dd></div></dl>
+<h3>Mind map</h3>
+<div class="diagram" role="img" aria-label="Connect, tasks, and Calling recordings">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connect, tasks, and Calling recordings">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Connect, tasks, and Calling recordings</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Channels and assets  ·  service  ·  Flow Builder and Rules</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Inbound and outbound webhooks  ·  custom nodes  ·  JWT</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">AI Agent Studio and fulfillment flows</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">WxCC Task with cjp:config</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Calling recording events on telephony_calls</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Quota and call-queue webhooks stay marked</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((T8-R03))
+    Connect
+    Tasks
+    Recording hooks
+    Marked gaps
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>WFM / WFO</td><td>Workforce scheduling outside the CPaaS page.</td><td>Connect’s control section is roles, audit, contact policy, and reports. It does not set a WFM shift.</td><td>Connect reports and debug console.</td><td>Read the WFM failure in the workforce article, not on the Connect debug console. Connect does not set a WFM shift, so a Connect error is a different symptom.</td></tr><tr><td>Quality / recording</td><td>Connect Voice lists call recording. Calling has its own recording webhooks.</td><td>Use the event names from call control when the recording is a Webex call. Connect Voice recording is the CPaaS feature.</td><td>telephony_calls versus Connect Voice docs.</td><td>Subscribing to recordingStopped and expecting a queue event.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>E911</td><td>Emergency calling on the voice path.</td><td>Not configured by a Connect inbound webhook in the pages cited here.</td><td>Calling and WxCC WebRTC emergency are nvfbjts and av6oo3, not a Connect webhook.</td><td>Cited <a class="cite" href="#cite-7">[cite:7]</a></td></tr><tr><td>Analyzer</td><td>Contact-center reporting.</td><td>A Task is the work object. Analyzer is not the Tasks API.</td><td>Tasks date range versus Analyzer.</td><td>Treating a task list as a historical report.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>CRM</td><td>Pre-built Connect integrations, and the separate WxCC CRM connectors.</td><td>Connect can integrate with CRM systems. The agent gadget still excludes chat and email.</td><td>Pre-built integrations, and dyidod for the gadget.</td><td>Opening Salesforce to read a WhatsApp thread.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>AI agents</td><td>AI Agent Studio and fulfillment flows.</td><td>The agent’s action runs a Connect flow.</td><td>Getting Started with Webex AI Agent Studio, as the page links it.</td><td>Putting the bot logic in Flow Designer and calling it Connect.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>IVR</td><td>Connect Voice includes IVR.</td><td>That IVR is Connect’s, beside Flow Designer.</td><td>Connect Voice documentation.</td><td>Importing a CVP app. That row is marked in T6-R04.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Digital channels</td><td>The channel table on the Connect page.</td><td>SMS through Messenger, including WhatsApp and Apple Messages for Business.</td><td>Portal, Control Hub, or digital asset APIs.</td><td>Assuming every channel is configured in Control Hub. Email and Chat are the Control Hub pair the page names.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Identity</td><td>Service key or JWT on Connect. Webex scopes on the Calling and contact-center APIs.</td><td>The scope string has to match the API.</td><td>Connect authorizations, and the developer app.</td><td>Sending spark-admin:calls_read to the Tasks API.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Flow Designer</td><td>WxCC flow editor, T8-R01.</td><td>Queue Contact and estimated wait live there. Connect chooses non-telephony flows in the architecture article’s digital path.</td><td>T8-R01 and T3-R03.</td><td>One canvas for both products.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Contact center pre-built</td><td>Connect integrations that include contact center.</td><td>A handoff can become a Task.</td><td>Pre-built integrations plus the Tasks API.</td><td>Assuming the webhook payload is the task body without reading the task page.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Debug console</td><td>Transaction diagnostics on Connect.</td><td>The page lists it next to reports and the user audit.</td><td>Debug console, user audit.</td><td>Guessing a failed node from the customer’s handset.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>External app</td><td>Connect flow or rule</td><td>Inbound webhook or custom event</td><td>The event that starts work</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Connect</td><td>External app</td><td>Outbound webhook</td><td>Receipts and incoming messages</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Flow</td><td>REST or SOAP system</td><td>Custom node</td><td>The integration call, with service key or JWT</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Control Hub</td><td>Email or Chat asset</td><td>Asset configuration assigned to a Webex service</td><td>The channel endpoint</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Developer Portal</td><td>Email or Chat asset</td><td>Digital asset APIs</td><td>The same class of asset, created by API</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>AI agent action</td><td>Connect flow</td><td>Fulfillment flow</td><td>The action the agent is allowed to run</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Contact</td><td>Agent</td><td>Task</td><td>Call, chat session, or email chain. List with cjp:config or cjp:config_read.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Webex Calling</td><td>Webhook listener</td><td>telephony_calls recording events</td><td>recordingStarting through recordingStopped</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Another vendor’s CPaaS is not these event names.</div>
+<div class="table-wrap"><table><thead><tr><th>Webex object</th><th>Easy to confuse with</th><th>What to say</th><th>Cite</th></tr></thead><tbody><tr><td>Connect Flow Builder</td><td>Flow Designer</td><td>Different products. T8-R01 is the contact-center flow.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Connect Flow Builder</td><td>ICM script</td><td>No import. The unpublished ICM rows stay marked in T6-R04.</td><td>See T6-R04</td></tr><tr><td>telephony_calls</td><td>A call-queue webhook</td><td>The cited recording events are <code>telephony_calls</code>. Calling queue coverage is <code>telephony_queue</code> <code>updated</code>. <a class="cite" href="#cite-6">[cite:6]</a></td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Task</td><td>A Connect flow execution</td><td>A Task is agent work on the contact-center API.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The commercial Webhooks guide prints the ceiling cited above. <a class="cite" href="#cite-6">[cite:6]</a> <mark class="recheck">re-check</mark> developer.webex.com rather than a community post.</li>
+<li>Canon planning: a lab that registers one recording webhook and one Connect inbound webhook, with the secrets kept out of the repo.</li>
+<li>Government Webex developer pages are a different cloud. Do not paste them into this commercial room.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Tasks API returns 403</td><td>The token has neither cjp:config nor cjp:config_read.</td><td>The token’s scopes.</td><td>Request one of those two scopes.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Recording webhook never fires for a queue</td><td>The cited resource is a Webex call recording, and queue coverage is unmarked.</td><td>Whether the call is a user recording.</td><td>Stay on the cited events. Do not invent a queue event.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Chat transcript expected inside Salesforce</td><td>CRM connectors exclude chat and email.</td><td>Which UI the agent used.</td><td>Read the digital conversation in Connect or the desktop, not the gadget.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From an inbound message to a person</h2>
+<div class="diagram" role="img" aria-label="Inbound webhook, flow, optional task">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inbound webhook, flow, optional task">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Inbound webhook, flow, optional task</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  The channel asset already exists in the portal, Control Hub, or the digital asset API.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  An inbound webhook or a customer message hits the service.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  A rule handles the short case. A flow handles the multi-step case.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  A custom node calls the system of record with a service key or JWT.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  An outbound webhook reports the receipt.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  A human handoff is a Task on the contact-center API, not a second Connect flow.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>What the page says</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Admin</td><td>Channel asset</td><td>Portal, Control Hub for Email and Chat, or Developer Portal APIs.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>External system</td><td>Connect</td><td>Inbound webhook or custom event starts a flow or a rule.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Flow Builder</td><td>Published flow</td><td>Design, test, publish. Rules stay the short path.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>4</td><td>Custom node</td><td>REST or SOAP</td><td>Authorization is service key or JWT.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>5</td><td>Connect</td><td>Your app</td><td>Outbound webhook: receipts and incoming messages.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>6</td><td>AI agent</td><td>Fulfillment flow</td><td>Agent actions run Connect flows.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>7</td><td>Contact center</td><td>Your app</td><td>List tasks in a date range with cjp:config or cjp:config_read.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>8</td><td>Calling</td><td>Your app</td><td>Subscribe to the recording events on telephony_calls.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>What to configure, without a sample secret</h2>
+<ol>
+<li>Pick the channel from the Connect table before you pick a portal. Email and Chat are the Control Hub pair. Other channels follow the portal docs the page links. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create a service. Put the asset, the credentials, and either a flow or a rule in that workspace. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For a short notification, use a rule. For a multi-step conversation, use Flow Builder and publish it. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create an inbound webhook when an external system must start that flow. Create an outbound webhook when you need receipts. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Store a service key or a JWT in Connect’s authorizations. Do not commit either value. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If an AI agent must act, connect the action to a fulfillment flow. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For agent work, call the Tasks API with <code>cjp:config</code> or <code>cjp:config_read</code>. A telephony task is the call, a chat task is the session, an email task is the chain. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For Webex call recordings, subscribe to <code>recordingStarting</code>, <code>recordingStarted</code>, <code>recordingPaused</code>, <code>recordingResumed</code>, and <code>recordingStopped</code> on <code>telephony_calls</code>, scope <code>spark-admin:calls_read</code>. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>When you list events for <code>convergedRecordings</code>, send <code>serviceType</code>. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Subscription limits and the Calling queue resource are the Webhooks guide. <a class="cite" href="#cite-6">[cite:6]</a> Use the debug console and the user audit when a flow did not run. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<pre class="sim-out">Scopes you may quote
+  Tasks:     cjp:config  or  cjp:config_read
+  Recording: spark-admin:calls_read
+  Events:    telephony_calls
+             recordingStarting recordingStarted recordingPaused
+             recordingResumed recordingStopped
+  List:      resource convergedRecordings requires serviceType
+
+Do not quote
+  a subscription maximum
+  a call-queue event name
+  a sample org id or a sample JWT</pre>
+<!-- VISUAL:screenshot:connect-flow | Studio | assets/images/T8-R03/flow.png -->
+<p class="placeholder-asset">Screenshot placeholder. The page is the developer doc, not a tenant capture.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is printed, and what is not</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Connect areas</td><td>Six, listed on the product page</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Tasks scopes</td><td>cjp:config or cjp:config_read</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Recording scope</td><td>spark-admin:calls_read</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Recording event names</td><td>Five recording* names on telephony_calls</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>convergedRecordings</td><td>serviceType mandatory</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Webhook subscription maximum</td><td>30000 personal per user; org-wide limit 1, plus more for other resources and filters</td><td>Webhooks guide</td><td>Quoted <a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>Call-queue webhook events</td><td><code>telephony_queue</code> <code>updated</code> (Calling, not WxCC)</td><td>Webhooks guide</td><td>Quoted <a class="cite" href="#cite-6">[cite:6]</a></td></tr><tr><td>Control Hub asset types named</td><td>Email and Chat</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Other channels use the portal</td></tr><tr><td>CRM gadget channels</td><td>Chat and email excluded</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted via dyidod</td></tr><tr><td>Government webhook catalog</td><td>Different cloud</td><td>Not used</td><td>Omitted on purpose</td></tr></tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the pages</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>A flow never starts</td><td>Nothing calls the inbound webhook or the custom event, or the rule’s trigger does not match.</td><td>Debug console.</td><td>Send the event the flow expects.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>The short path was built as a 20-node flow</td><td>Rules exist for trigger, condition, and action.</td><td>Service contents.</td><td>Use a rule when the page’s split fits.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>REST node returns 401</td><td>Service key or JWT missing on that node.</td><td>Authorizations.</td><td>Attach the credential. Do not paste it into the flow label.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Email asset missing in the Connect portal</td><td>Email and Chat can be created in Control Hub or by the digital asset API.</td><td>Where you looked.</td><td>Check Control Hub and the API, not only the portal list.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Tasks call succeeds and shows nothing</td><td>The date range has no open or closed tasks, or the media type is not what you assumed.</td><td>The range and the channel.</td><td>Remember chat is a session and email is a chain.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Tasks call is forbidden</td><td>Wrong scope.</td><td>Token.</td><td>cjp:config or cjp:config_read.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>recordingStopped arrives and the queue report is empty</td><td>The event is a recording lifecycle event.</td><td>Resource name.</td><td>Do not treat it as a queue webhook. Calling queue events are <code>telephony_queue</code>. <a class="cite" href="#cite-6">[cite:6]</a></td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>List events for recordings fails validation</td><td>serviceType omitted on convergedRecordings.</td><td>Query string.</td><td>Send serviceType.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>A community post says you get 20 subscriptions</td><td>That number is not in the cited commercial pages.</td><td>The URL of the post.</td><td>Leave the cap marked until a developer page states it.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>WhatsApp shows in Salesforce and nowhere else</td><td>The CRM connector does not carry chat.</td><td>dyidod, and the Connect channel table.</td><td>Open the Connect conversation.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What is Webex Connect?</summary><p class="answer">A programmable CPaaS with APIs, SDKs, and low-code tools, organized as six areas. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What is a service?</summary><p class="answer">The workspace for assets, integrations, credentials, flows, and rules. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which assets does the page put in Control Hub?</summary><p class="answer">Email and Chat. Other channels have portal docs. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Inbound versus outbound webhook?</summary><p class="answer">Inbound starts a flow or a rule. Outbound delivers receipts and incoming messages. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is a Task?</summary><p class="answer">Agent work. A call, a chat session, or an email chain. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which scopes list tasks?</summary><p class="answer">cjp:config or cjp:config_read. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which recording events can you name?</summary><p class="answer">recordingStarting, recordingStarted, recordingPaused, recordingResumed, recordingStopped, on telephony_calls. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What scope do those recording events use?</summary><p class="answer">spark-admin:calls_read. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why is serviceType required?</summary><p class="answer">List Events requires it when the resource is convergedRecordings. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Is Flow Builder the same canvas as Flow Designer?</summary><p class="answer">No. Flow Designer is T8-R01. Flow Builder is Connect. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Where is the subscription limit?</summary><p class="answer">Webhooks guide, retrieved 2026-10-14: 30000 personal per user, and org-wide limit 1 with extra registrations per resource and filter. <a class="cite" href="#cite-6">[cite:6]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Can the Salesforce gadget show the WhatsApp thread?</summary><p class="answer">No. CRM connectors exclude chat and email. Connect holds the digital channel. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper integration, no tokens in the repo</h2>
+<ul><li><label><input type="checkbox"> Goal: write the request you would make for one recording webhook and one task list, with scopes and without secrets.</label></li><li><label><input type="checkbox"> Prereq: this room and T8-R01. A developer sandbox is optional. Do not commit a JWT, a service key, or an org id.</label></li><li><label><input type="checkbox"> Step 1. List the five recording event names and the scope. Expected: spark-admin:calls_read and the recording* set.</label></li><li><label><input type="checkbox"> Step 2. Write the list-events constraint. Expected: convergedRecordings plus serviceType.</label></li><li><label><input type="checkbox"> Step 3. Write a tasks request in words: date range, and one of the two cjp scopes. Expected: call, chat session, or email chain named correctly.</label></li><li><label><input type="checkbox"> Step 4. Pick one Connect channel and the setup path. Expected: Email or Chat may be Control Hub; SMS is the portal path the page points at.</label></li><li><label><input type="checkbox"> Step 5. Add an inbound webhook and an outbound webhook as one sentence each. Expected: start a flow, versus deliver a receipt.</label></li><li><label><input type="checkbox"> Evidence: the one-page sheet. No Authorization header.</label></li><li><label><input type="checkbox"> Break it: add “maximum 20 webhooks” because a forum said so. Recovery: delete the forum number and cite the Webhooks guide (30000 personal per user; org-wide limit 1, plus other resources).</label></li><li><label><input type="checkbox"> Reflection: which editor you would open for a queue treatment, Flow Designer or Connect Flow Builder, and why.</label></li></ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>How many areas does the Connect page organize?</p><details><summary>Answer</summary><p class="answer">How many areas does the Connect page organize: Six. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Which pair does Control Hub configure, in that page’s table?</p><details><summary>Answer</summary><p class="answer">Which pair does Control Hub configure, in that page’s table: Email and Chat assets. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>What starts a flow from outside?</p><details><summary>Answer</summary><p class="answer">What starts a flow from outside: An inbound webhook or a custom event. A rule can start the same way. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>What does an outbound webhook carry, in the integration table?</p><details><summary>Answer</summary><p class="answer">What does an outbound webhook carry, in the integration table: Delivery receipts and incoming messages. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Custom node protocols?</p><details><summary>Answer</summary><p class="answer">Custom node protocols: REST or SOAP. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>A chat Task is what?</p><details><summary>Answer</summary><p class="answer">A chat session. An email Task is a chain. A telephony Task is an incoming call. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Tasks scopes?</p><details><summary>Answer</summary><p class="answer">Tasks scopes: cjp:config or cjp:config_read. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Recording event scope?</p><details><summary>Answer</summary><p class="answer">Recording event scope: spark-admin:calls_read. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>You omit serviceType while listing convergedRecordings.</p><details><summary>Answer</summary><p class="answer">You omit serviceType while listing convergedRecordings.: The list-events page requires it for that resource. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>A blog says telephony_calls covers call queues.</p><details><summary>Answer</summary><p class="answer">That sentence is not on the commercial recording page. A Calling call queue emits telephony_queue updated, not the recording events on telephony_calls. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-6">[cite:6]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name Flow Designer, Flow Builder, and an ICM script as three editors.</p><details><summary>Answer</summary><p class="answer">Name Flow Designer, Flow Builder, and an ICM script as three editors.: T8-R01, this room’s Connect page, and T6-R04’s marked import. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Why is WhatsApp absent from the Salesforce gadget?</p><details><summary>Answer</summary><p class="answer">WhatsApp stays on Connect. CRM connectors exclude chat and email, so the Salesforce gadget does not show that thread. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article></div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Connect’s six areas, inbound versus outbound webhooks, and a contact-center Task." | assets/audio/T8-R03/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk channel setup paths, recording event names, and the two scopes you must not swap." | assets/audio/T8-R03/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: six areas, cjp scopes, five recording events, serviceType." | assets/audio/T8-R03/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Connect is the CPaaS. A service holds the channel, the flow or the rule, and the credentials. Inbound webhooks start work. Outbound webhooks report it. A Task is the contact-center’s unit of agent work, with its own scopes.</p>
+<p><strong>2 minutes.</strong> I name the channel before the API. Email and Chat can be Control Hub or the digital asset API. SMS, WhatsApp, and the rest follow the portal. Flow Builder is not Flow Designer. Rules are the short form. Custom nodes are REST or SOAP with a service key or JWT. AI agent actions use fulfillment flows. I can list the five recording events and <code>spark-admin:calls_read</code>, and I send <code>serviceType</code> with <code>convergedRecordings</code>.</p>
+<p><strong>30 seconds, tasks.</strong> Telephony is a call, chat is a session, email is a chain. The scope is <code>cjp:config</code> or <code>cjp:config_read</code>.</p>
+<p><strong>2 minutes, boundaries.</strong> I will not quote a webhook quota from a forum. I will not claim call queues emit <code>telephony_calls</code> until a commercial page says so. I will not read a government developer page into a commercial tenant. Chat lives in Connect, not in the CRM gadget.</p>
+<p><strong>What you will not say.</strong> You will not paste a sample org id or a JWT. You will not call an ICM script a Connect flow.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list"><li id="cite-1">Webex Connect (CPaaS) — developer.webex — <a href="https://developer.webex.com/webex-connect/docs/webex-connect">developer.webex.com Webex Connect</a> — retrieved 2026-10-14. Six areas. Channel table. Assets via portal, Control Hub, or Developer Portal APIs. Inbound and outbound webhooks, custom events, custom nodes, service key and JWT, Flow Builder, Rules, AI Agent Studio, fulfillment flows, roles, contact policy, reports, debug console.</li><li id="cite-2">Tasks Call Control — developer.webex — <a href="https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control">developer.webex.com tasks call control</a> — retrieved 2026-10-14. A Task is agent work. Telephony is an incoming call, chat is a session, email is a chain. Scopes cjp:config or cjp:config_read.</li><li id="cite-3">Call Control — developer.webex — <a href="https://developer.webex.com/calling/docs/call-control">developer.webex.com calling call-control</a> — retrieved 2026-10-14, also cited from T2-R02. telephony_calls recordingStarting, recordingStarted, recordingPaused, recordingResumed, recordingStopped. Scope spark-admin:calls_read. List Events resource convergedRecordings requires serviceType. <a href="https://developer.webex.com/admin/docs/api/v1/events/list-events">list events</a>.</li><li id="cite-4">Integrate Webex Contact Center with Salesforce (Version 2-New) — help.webex — article dyidod — <a href="https://help.webex.com/article/dyidod">help.webex.com article dyidod</a> — retrieved 2026-10-14 via T3-R01. Digital channels such as chat and email are not supported with CRM connectors.</li><li id="cite-5">Webex Contact Center architecture — help.webex — article utqcm7 — <a href="https://help.webex.com/article/utqcm7">help.webex.com article utqcm7</a> — retrieved 2026-10-14. Non-telephony flows are chosen in Connect. Flow Designer remains the contact-center flow editor in T8-R01.</li><li id="cite-6">Webhooks — developer.webex — <a href="https://developer.webex.com/messaging/docs/webhooks">developer.webex.com/messaging/docs/webhooks</a> — retrieved 2026-10-14. Personal webhooks: threshold of 30000 per user. Org-wide webhooks: limit of 1, with additional registrations allowed for different resources and filters. The same page lists <code>telephony_queue</code> <code>updated</code> for a Calling call-queue event (added, answered, abandoned, bounced, overflowed, stranded, transferred, or policy applied). That resource is not the recording lifecycle on <code>telephony_calls</code>, and it is not a Webex Contact Center queue. <code>Telephony_calls</code> notifications on this page are for Webex Calling users.</li><li id="cite-7">Provision Emergency Calling in Webex Contact Center — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14.</li></ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: commercial webhook subscription maximum; call-queue event names; the full recording webhook filter table if the moved page is published again.</li>
+<li>Subscription cap and Calling <code>telephony_queue</code> are cited as of 2026-10-14. WFM shift from Connect stays marked in the sister row, E911 via a Connect webhook.</li>
+<li>Assets missing: flow screenshot, audio. No tokens.</li>
+<li>Ideas for v1.0: a redacted webhook registration checklist once a sandbox exists.</li>
+<li>Next review: <mark class="recheck">re-check</mark> the Call Control page if the recording event list changes.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T8-R02-flow-design-patterns.html"><span>Previous</span><strong>T8-R02</strong><em>Flow Design Patterns</em></a><a class="next" href="T8-R04-crm-integrations.html"><span>Next</span><strong>T8-R04</strong><em>CRM Integrations</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

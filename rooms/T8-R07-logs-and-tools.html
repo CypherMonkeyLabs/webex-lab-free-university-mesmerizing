@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T8-R07 · Logs and Tools">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T8-R07 · Logs and Tools · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T8" data-room="T8-R07" data-room-title="Logs and Tools" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T8</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T8/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T8 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T8 · Build, integrate, operate</p>
+<h1>Logs and tools</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Logs and Tools">
+<defs>
+<linearGradient id="T8R07sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T8R07sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Flows and tools</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T8-R07</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Customer</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Flow</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">API</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Logs and Tools. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Logs and Tools">
+<defs>
+<marker id="T8R07arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Customer → Flow → API → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T8R07arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T8R07arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T8R07arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T8R07lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Customer → Flow → API → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Troubleshooting exports and on-demand PRT, including DECT. The July 01, 2025 PRT page is marked for re-check. Retrieved 2026-10-14.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T8-R07</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–120 min</strong></span>
+<span class="meta-chip">Prereq <strong>T8-R06</strong></span>
+<span class="meta-chip read-chip">Reading <strong>15 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>You can export up to 100 troubleshooting call records per CSV file. From the call details page you can also download a JSON call report and participant details as CSV. <a class="cite" href="#cite-1">[cite:1]</a></li><li>n4hssfr, dated July 01, 2025: an administrator can start a PRT from a Webex Calling MPP phone that is actively registered. DECT base stations are in the same overview. <mark class="todo-verify">re-check</mark> that page date. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Remote DECT PRT needs an active SIP connection, and a base registers over SIP only when a handset is connected. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The DECT path in that article is Management &gt; Devices, then Support, Manage device logs. The online MPP path is Devices, then Report Problem under actions. <a class="cite" href="#cite-2">[cite:2]</a></li><li>What’s new, October 13, 2026: DECT network logging is Standard or Debug for the whole network. Debug is granular PRT and syslog. Use Debug only while diagnosing. Applying a logging change may restart base stations if other configuration is queued. <a class="cite" href="#cite-3">[cite:3]</a></li></ul></aside></section><section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>One hundred rows, then a PRT</h2>
+<ul><li>You can export up to 100 troubleshooting call records per CSV file. From the call details page you can also download a JSON call report and participant details as CSV. <a class="cite" href="#cite-1">[cite:1]</a></li><li>n4hssfr, dated July 01, 2025: an administrator can start a PRT from a Webex Calling MPP phone that is actively registered. DECT base stations are in the same overview. <mark class="todo-verify">re-check</mark> that page date. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Remote DECT PRT needs an active SIP connection, and a base registers over SIP only when a handset is connected. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The DECT path in that article is Management &gt; Devices, then Support, Manage device logs. The online MPP path is Devices, then Report Problem under actions. <a class="cite" href="#cite-2">[cite:2]</a></li><li>What’s new, October 13, 2026: DECT network logging is Standard or Debug for the whole network. Debug is granular PRT and syslog. Use Debug only while diagnosing. Applying a logging change may restart base stations if other configuration is queued. <a class="cite" href="#cite-3">[cite:3]</a></li></ul>
+<div class="why"><strong>Why it matters.</strong> The CSV is the call. The PRT is the phone. Debug logging is a temporary DECT network setting, not a gateway debug.</div>
+</section><section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>From the call row to a file</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T8-R07/arch.svg -->
+<div class="diagram" role="img" aria-label="From the call row to a file">
+<svg viewBox="0 0 980 196" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From the call row to a file">
+<rect width="980" height="196" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">From the call row to a file</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Export 100 at a time.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Use Report Problem on a registered MPP.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">DECT PRT needs a handset.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Debug the network only while diagnosing.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Do not copy the sample FTP password.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  A --> B</pre>
+</details>
+</section><section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Exports and problem reports</h2>
+<div class="callout def"><span class="label">Three downloads, one details page</span><p>frj1efb: troubleshooting call records, the call report in JSON, and participant details as CSV. Download search results (CSV) is a separate menu item. The 100-record sentence names troubleshooting call records, so this room does not put that cap on the search-results file. <a class="cite" href="#cite-1">[cite:1]</a></p></div><div class="callout gotcha"><span class="label">A DECT base with no handset</span><p>n4hssfr: you can request PRTs only from base stations with one or more connected handsets. <a class="cite" href="#cite-2">[cite:2]</a></p></div><div class="callout warn"><span class="label">Debug is not the steady state</span><p>The October 13 note says to use Debug only when actively diagnosing, to keep performance. The level applies to the entire DECT network. <a class="cite" href="#cite-3">[cite:3]</a></p></div><div class="callout note"><span class="label">High CPU still uninstalls debugs</span><p>If the next step is an IOS XE debug, jr1i3r’s DS 64224 remains the brake at 75 percent. This room does not add debug command names from a second document. <a class="cite" href="#cite-4">[cite:4]</a></p></div><h3>Call exports</h3><div class="table-wrap"><table><thead><tr><th>File</th><th>Where</th><th>Limit the article states</th><th>Cite</th></tr></thead><tbody><tr><td>Troubleshooting call records CSV</td><td>Export on the list, or the details page</td><td>Up to 100 records per CSV</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Search results CSV</td><td>Export &gt; Download search results</td><td>A separate file. The 100-record cap sentence names troubleshooting call records, not this file.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Call report</td><td>Call details page</td><td>JSON</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Participant details</td><td>Call details page</td><td>CSV</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div><h3>PRT paths</h3><div class="table-wrap"><table><thead><tr><th>Case</th><th>Path</th><th>Cite</th></tr></thead><tbody><tr><td>MPP, online</td><td>Devices, select the phone, actions, Report Problem.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>MPP, offline section</td><td>Devices, select the device, actions, Reboot is step 3, then Manage across Device Logs, then download.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>DECT</td><td>Management &gt; Devices, Support, Manage. Also Services &gt; Calling &gt; Features &gt; DECT Network &gt; Manage.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>DECT logging level</td><td>Standard or Debug, entire network, Control Hub.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+
+<!-- VISUAL:concept-image | Studio | assets/images/T8-R07/hero.png -->
+</section><section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T8-R07">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Customer</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Flow</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">API</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T8R07map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T8R07map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3><dl class="glossary"><div class="term"><dt>100 records</dt><dd>The per-CSV cap for troubleshooting call records. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>JSON call report</dt><dd>Downloaded from the call details page beside the participant CSV. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Participant CSV</dt><dd>Participant details from that same page. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>PRT</dt><dd>Problem report tool. A compressed set of support files, in n4hssfr’s words. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Actively registered</dt><dd>The MPP condition for on-demand collection. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Report Problem</dt><dd>The online MPP action. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Manage device logs</dt><dd>The DECT support action, and the offline MPP wording “Manage across Device Logs.” <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Handset required</dt><dd>Remote DECT PRT needs a connected handset so the base has a SIP registration. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Stored under the base</dt><dd>The system stores all PRTs under the base station’s device ID. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Standard</dt><dd>One of the two DECT network logging levels. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Debug</dt><dd>Granular PRT and syslog. Recommended only while diagnosing. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Whole network</dt><dd>The selected level applies to the entire DECT network. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Restart warning</dt><dd>If other configuration is queued, applying the logging change may restart base stations. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>DS 64224</dt><dd>Disables debugs at 75 percent CPU. Sample FTP secret is not copied. <a class="cite" href="#cite-4">[cite:4]</a></dd></div><div class="term"><dt>Helpdesk collection</dt><dd>n4hssfr says TAC can collect logs through helpdesk. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Client log window</dt><dd>Not quoted from a fetched article in this room. <mark class="todo-verify">TODO-verify</mark>.</dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T8-R07/eco.svg -->
+<div class="diagram" role="img" aria-label="Systems beside this room">
+<svg viewBox="0 0 980 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Systems beside this room">
+<rect width="980" height="140" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Systems beside this room</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">T8-R07</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">sisters</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">edges</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((T8-R07))
+    Core
+    Sisters</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Troubleshooting view</td><td>Source of the CSV and JSON.</td><td>The methodology room says when the row exists.</td><td>Export menu.</td><td>Exporting before the call ends and expecting a row.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>MPP phones</td><td>On-demand PRT while registered.</td><td>Offline collection is a different set of steps and includes Reboot in the article’s list.</td><td>Devices.</td><td>Requesting Report Problem from a phone that is not registered.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>DECT bases</td><td>PRT plus network logging.</td><td>No handset means no remote PRT.</td><td>Management &gt; Devices.</td><td>Setting Debug on a healthy network and leaving it.</td><td><a class="cite" href="#cite-2">[cite:2]</a><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Syslog</td><td>Named as part of Debug logging.</td><td>The what’s-new page does not paste a syslog host.</td><td>The DECT network logging control.</td><td>Inventing a collector address.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>IOS XE Local Gateway</td><td>DS 64224.</td><td>This room does not add debug voip command names.</td><td>The Local Gateway guide.</td><td>Pasting the sample FTP password.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>TAC</td><td>Helpdesk can collect logs.</td><td>A Control Hub case is one of the Get Help choices after Report Problem.</td><td>Get Help.</td><td>Waiting on a PRT that was never requested.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Quality files</td><td>Participant CSV is not a recording.</td><td>QM retention is not in these pages.</td><td><mark class="todo-verify">TODO-verify</mark>.</td><td>Calling the CSV a recording archive.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Identity</td><td>Who may export is the troubleshooting role from the methodology article, not a new role invented here.</td><td>PRT says an administrator.</td><td>Control Hub sign-in.</td><td>Sharing a downloaded JSON outside the ticket.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Search list</td><td>CSV</td><td>Export</td><td>Up to 100 troubleshooting records.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Call details</td><td>JSON</td><td>Download</td><td>Call report.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Call details</td><td>Participant CSV</td><td>Download</td><td>Participant details.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Admin</td><td>Registered MPP</td><td>Report Problem</td><td>PRT while online.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Admin</td><td>DECT base</td><td>Manage device logs</td><td>Requires a handset and SIP.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Control Hub</td><td>DECT network</td><td>Standard or Debug</td><td>Entire network.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Queued config</td><td>Base stations</td><td>Apply</td><td>May restart.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>CPU</td><td>DS 64224</td><td>75 percent</td><td>Debugs disabled.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Edges">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Edges">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Edges</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  Search list to CSV</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  Call details to JSON</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  Call details to Participant CSV</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  Admin to Registered MPP</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  Admin to DECT base</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  Control Hub to DECT network</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7  Queued config to Base stations</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8  CPU to DS 64224</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>Webex behavior</th><th>Legacy habit</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>Control Hub CSV</td><td>A CUCM CDR dump is a different system.</td><td>A Teams call-record export is <mark class="todo-verify">TODO-verify</mark>.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>MPP PRT</td><td>A phone’s local problem report button is not the Control Hub path.</td><td>Third-party phone PRT is <mark class="todo-verify">TODO-verify</mark> in n4hssfr, which names WxC MPP and DECT.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>DECT Debug</td><td>Do not equate it with IOS debug.</td><td>Peer handset logging is <mark class="todo-verify">TODO-verify</mark>.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul><li>Canon plan: T8-R08 watches the what’s-new pages. This room keeps only the logging control.</li><li>status.xml report counts were on the what’s-new page without a date heading in the extract used here. They are not restated.</li><li>A 30-day Webex App client log article was not opened. <mark class="todo-verify">TODO-verify</mark>.</li></ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>CSV stops at 100</td><td>That is the documented cap.</td><td>frj1efb.</td><td>Run another export for the next set. The article does not describe an automatic second file.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>DECT PRT button does nothing useful</td><td>No handset, so no SIP registration.</td><td>Limitations.</td><td>Register a handset first.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Bases reboot after a log-level change</td><td>Other configuration was queued.</td><td>October 13 note.</td><td>Read the alert before you apply.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>IOS debug disappears</td><td>CPU hit 75 percent and DS 64224 ran.</td><td>jr1i3r.</td><td>Reinstall the signature if monitoring should continue.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+</section><section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Export, then device log</h2>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T8-R07/seq.svg -->
+<div class="diagram" role="img" aria-label="Export, then device log">
+<svg viewBox="0 0 980 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Export, then device log">
+<rect width="980" height="168" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0a0ff" font-family="Georgia, serif" font-size="20">Export, then device log</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Export the call.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Download JSON.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Collect the PRT.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Narrow Debug to the diagnosis.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Ended call</td><td>List</td><td>Search</td><td>Then export.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>List</td><td>CSV</td><td>Up to 100</td><td>Troubleshooting records.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Details</td><td>JSON and participant CSV</td><td>Download</td><td>Same page.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>4</td><td>Registered MPP</td><td>Report Problem</td><td>PRT</td><td>Online path.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>5</td><td>DECT</td><td>Manage logs</td><td>SIP plus handset</td><td>Stored under the base device ID.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>6</td><td>Network</td><td>Debug</td><td>Whole network</td><td>Only while diagnosing.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>7</td><td>Apply</td><td>Bases</td><td>Possible restart</td><td>If other changes are queued.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>8</td><td>Gateway debug</td><td>DS 64224</td><td>75 percent</td><td>No sample secret.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+</section><section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths the articles print</h2>
+<ol><li>On the troubleshooting list, use Export and choose the CSV. Stay within 100 troubleshooting records per file. <a class="cite" href="#cite-1">[cite:1]</a></li><li>On the call details page, download the JSON call report and the participant CSV. <a class="cite" href="#cite-1">[cite:1]</a></li><li>For a registered MPP, open Devices, select the phone, and use Report Problem. <a class="cite" href="#cite-2">[cite:2]</a></li><li>For DECT, open Management &gt; Devices, Support, Manage device logs. Confirm a handset is connected. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Set Debug only for the diagnosis. Read the restart alert if Control Hub says other changes are queued. Return to Standard when you are done. The article’s recommendation is the reason. <a class="cite" href="#cite-3">[cite:3]</a></li></ol>
+
+<!-- VISUAL:screenshot:1 | Studio | assets/images/T8-R07/step.png -->
+</section><section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers these articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Troubleshooting CSV</td><td>100 records</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>PRT page date</td><td>July 01, 2025</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>re-check</td></tr><tr><td>DECT remote PRT</td><td>At least one connected handset</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>DECT logging levels</td><td>Standard or Debug</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Logging scope</td><td>Entire DECT network</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>What’s-new header</td><td>October 13, 2026</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>DS 64224</td><td>75 percent CPU</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr><tr><td>status.xml counts</td><td>Not used</td><td>Date heading not in the extract</td><td>Omitted</td></tr><tr><td>App client log days</td><td><mark class="todo-verify">TODO-verify</mark></td><td>Article not opened</td><td>Open</td></tr><tr><td>Analyzer interval</td><td>Not used</td><td>Not opened for this room</td><td>Omitted</td></tr></tbody></table></div>
+</section><section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Export is empty</td><td>The call has not ended, from the methodology article’s rule.</td><td>frj1efb appearance sentence.</td><td>Wait, then export.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>You needed record 101</td><td>The cap is 100 per CSV.</td><td>Export section.</td><td>Make another export.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Report Problem is the wrong phone</td><td>The overview requires an actively registered WxC MPP.</td><td>n4hssfr.</td><td>Confirm registration first.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Offline steps mention Reboot</td><td>That is the article’s offline list, step 3, before Manage across Device Logs.</td><td>Report an issue while offline.</td><td>Follow the list. Do not skip into a reboot you did not intend.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>DECT PRT unavailable</td><td>No SIP registration without a handset.</td><td>Limitations.</td><td>Connect a handset.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Logs land on an unexpected device</td><td>PRTs are stored under the base station’s device ID.</td><td>Limitations.</td><td>Open that base.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Every base got louder logs</td><td>Debug applies to the entire network.</td><td>October 13.</td><td>Use it only while diagnosing.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Bases restarted</td><td>Pending configuration was applied with the logging change.</td><td>The alert sentence.</td><td>Read the alert first.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>You want a syslog server IP from the what’s-new page</td><td>The page says syslog data and does not give a host.</td><td>October 13.</td><td>Do not invent the host.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Gateway debug sample password</td><td>jr1i3r prints one. This Canon does not.</td><td>DS section.</td><td>Use your own server.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+</section><section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>How many troubleshooting records per CSV?</summary><p class="answer">100. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L1</span>What JSON file is on the details page?</summary><p class="answer">The call report. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L1</span>What else is on that page?</summary><p class="answer">Participant details as CSV. <a class="cite" href="#cite-1">[cite:1]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>Which phones does the PRT overview name?</summary><p class="answer">WxC MPP phones and DECT base stations. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>Online MPP action?</summary><p class="answer">Report Problem. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L2</span>DECT menu path?</summary><p class="answer">Management &gt; Devices, then Support, Manage. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Why can a base refuse a remote PRT?</summary><p class="answer">No connected handset, so no SIP registration. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Where are DECT PRTs stored?</summary><p class="answer">Under the base station’s device ID. <a class="cite" href="#cite-2">[cite:2]</a></p></details><details class="qnode"><summary><span class="lvl">L3</span>Two logging levels?</summary><p class="answer">Standard and Debug. <a class="cite" href="#cite-3">[cite:3]</a></p></details><details class="qnode"><summary><span class="lvl">L4</span>How wide is Debug?</summary><p class="answer">The entire DECT network. <a class="cite" href="#cite-3">[cite:3]</a></p></details><details class="qnode"><summary><span class="lvl">L4</span>When may bases restart?</summary><p class="answer">When applying a logging change that also has other queued configuration. <a class="cite" href="#cite-3">[cite:3]</a></p></details><details class="qnode"><summary><span class="lvl">L5</span>What is re-check or TODO-verify?</summary><p class="answer">The July 01, 2025 PRT page. App client log retention. status.xml counts were omitted.</p></details>
+</section><section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab</h2>
+<ul><li><label><input type="checkbox"> Goal: pick the file or the PRT path from the symptom.</label></li><li><label><input type="checkbox"> Prereq: the two articles open. Do not reboot a phone.</label></li><li><label><input type="checkbox"> Step 1. You need hop-level rows for 40 calls. Expected: one troubleshooting CSV is enough.</label></li><li><label><input type="checkbox"> Step 2. You need the 140th record. Expected: one file will not hold it.</label></li><li><label><input type="checkbox"> Step 3. A registered MPP. Expected path: Report Problem.</label></li><li><label><input type="checkbox"> Step 4. A DECT base with zero handsets. Expected: remote PRT is not available.</label></li><li><label><input type="checkbox"> Evidence: the sentence.</label></li><li><label><input type="checkbox"> Break it: set Debug network-wide and leave it. Recovery: the article says only while diagnosing.</label></li><li><label><input type="checkbox"> Reflection: which download is JSON.</label></li></ul>
+
+</section><section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>CSV cap:</p><details><summary>Answer</summary><p class="answer">100 troubleshooting records. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Details-page formats:</p><details><summary>Answer</summary><p class="answer">JSON call report and participant CSV. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Online MPP:</p><details><summary>Answer</summary><p class="answer">Report Problem. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>DECT path:</p><details><summary>Answer</summary><p class="answer">Management &gt; Devices, Support, Manage. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Remote DECT PRT requires:</p><details><summary>Answer</summary><p class="answer">A connected handset. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>PRT storage:</p><details><summary>Answer</summary><p class="answer">The base station device ID. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Logging levels:</p><details><summary>Answer</summary><p class="answer">Standard and Debug. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Debug scope:</p><details><summary>Answer</summary><p class="answer">The entire DECT network. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Debug contents:</p><details><summary>Answer</summary><p class="answer">Granular PRT and syslog. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Restart condition:</p><details><summary>Answer</summary><p class="answer">Other queued configuration applied with the logging change. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>PRT article date:</p><details><summary>Answer</summary><p class="answer">July 01, 2025. re-check.</p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>IOS debug command list in this room:</p><details><summary>Answer</summary><p class="answer">Not added. DS 64224 is the brake that is quoted.</p></details></article></div>
+</section><section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Overview of this room." | assets/audio/T8-R07/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk the limits and the failure cases." | assets/audio/T8-R07/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div><div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid oral drill from the quiz." | assets/audio/T8-R07/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section><section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Export at most 100 troubleshooting records per CSV. The details page adds a JSON call report and a participant CSV. <a class="cite" href="#cite-1">[cite:1]</a></p><p><strong>2 minutes.</strong> A registered MPP uses Report Problem. DECT uses Management, Devices, Support, Manage device logs, and it needs a handset. PRTs sit under the base’s device ID. The PRT article is dated July 01, 2025, so re-check it. <a class="cite" href="#cite-2">[cite:2]</a></p><p><strong>30 seconds, logging.</strong> Standard or Debug, whole network, Debug only while you are diagnosing. A queued config can restart the bases when you apply it. <a class="cite" href="#cite-3">[cite:3]</a></p><p><strong>2 minutes, what you skip.</strong> You do not invent a syslog host. You do not quote status.xml counts without a date. You do not paste the Local Gateway FTP sample. DS 64224 still disables debugs at 75 percent. <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></p><p><strong>What you will not say.</strong> You will not call the participant CSV a recording.</p>
+</section><section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T8-R07.md">cites/T8-R07.md</a>.</p>
+<ol class="cite-list"><li id="cite-1">Troubleshoot Webex Calling calls in Control Hub — help.webex — article frj1efb — <a href="https://help.webex.com/article/frj1efb">help.webex.com article frj1efb</a> — retrieved 2026-10-14. CSV cap of 100. JSON call report. Participant CSV.</li><li id="cite-2">Demand PRT collection in Control Hub — help.webex — article n4hssfr — <a href="https://help.webex.com/article/n4hssfr">help.webex.com article n4hssfr</a> — page date July 01, 2025 — retrieved 2026-10-14. <mark class="todo-verify">re-check</mark>. MPP and DECT paths. Handset and SIP limitation.</li><li id="cite-3">What’s new in Webex Calling — help.webex — article 278bz2 / rdmb0 — <a href="https://help.webex.com/article/278bz2">help.webex.com article 278bz2</a> — page header October 13, 2026 — retrieved 2026-10-14. DECT Standard and Debug logging.</li><li id="cite-4">Configure Local Gateway on Cisco IOS XE — help.webex — article jr1i3r — <a href="https://help.webex.com/article/jr1i3r">help.webex.com article jr1i3r</a> — retrieved 2026-10-14. DS 64224. Sample FTP credentials omitted.</li></ol>
+</section><section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Open</h2>
+<ul><li>re-check: n4hssfr is dated July 01, 2025.</li><li>TODO-verify: Webex App client log retention. Peer export tools.</li><li>Omitted on purpose: status.xml 10-report and 30-day sentences, because the extract had no date heading. Analyzer clocks.</li><li>Next review: frj1efb, n4hssfr, 278bz2, jr1i3r.</li></ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T8-R06-troubleshooting-methodology.html"><span>Previous</span><strong>T8-R06</strong><em>Troubleshooting Methodology</em></a><a class="next" href="T8-R08-latest-features-radar.html"><span>Next</span><strong>T8-R08</strong><em>Latest Features Radar</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

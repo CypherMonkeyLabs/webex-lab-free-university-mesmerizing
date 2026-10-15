@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T5-R04 · DI Admin &amp; Operations">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T5-R04 · DI Admin &amp; Operations · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T5" data-room="T5-R04" data-room-title="DI Admin &amp; Operations" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T5</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T5/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T5 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T5 · Dedicated Instance</p>
+<h1>DI Admin &amp; Operations</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for DI Admin &amp;amp; Operations">
+<defs>
+<linearGradient id="T5R04sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T5R04sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Dedicated Instance</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T5-R04</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Site</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Peering</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Calling</text></g>
+</svg>
+<figcaption>Illustrated scene for DI Admin &amp;amp; Operations. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for DI Admin &amp;amp; Operations">
+<defs>
+<marker id="T5R04arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Site → Peering → Dedicated UC → Calling</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Calling</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T5R04arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T5R04arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T5R04arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T5R04lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Site → Peering → Dedicated UC → Calling. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Dedicated Instance operations is a RACI, not a shared login. Cisco builds and restores the cloud UC applications. The customer or partner owns the dial plan, the users, premise DNS, and the service restart — after they tell Cisco.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T5-R04</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T5-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>16 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>If there is no active partner, the customer takes the partner column. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Advertise 0.0.0.0/0 toward the Dedicated Instance data center. More specific routes are not accepted. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Do not edit the base UC configuration Cisco deployed. Dial plan and integrations are the customer or partner column. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>TAC cannot restart a UC service. Notify Cisco first, then restart. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Planned maintenance that disrupts calling gets at least 10 calendar days of written notice. The regional window itself cannot be moved. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>R means the person doing the work. A signs off. C is two-way. I is one-way. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Cisco is accountable and responsible for the core application build, core monitoring, and operational readiness testing before handover. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A widespread issue is 100 percent of a UC cluster, or more than one cluster. Cisco resolves non-configuration issues there and restores clusters. A smaller issue is the customer or partner’s configuration to fix. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Service requests live at Calling → Dedicated Instance → Service Request. Day-0 and Day-1 types include DNS, firewall, firmware upload, cloud connectivity, audit log, UC application management, DI–MT inter-op trunks, UC application lifecycle, and IaaS. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Open a TAC case on Collaboration and Conferencing, sub-technology UCM Cloud / Dedicated Instance. Do not choose the Webex option. Port 21 FTP is not allowed. <a class="cite" href="#cite-4">[cite:4]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A design review fails when someone treats DRS as a customer rollback, adds a custom SAN, or restarts CallManager without the service request. Those three are written down.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Who holds the admin plane</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T5-R04/arch.svg -->
+<div class="diagram" role="img" aria-label="Customer, partner, and Cisco responsibilities">
+<svg viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Customer, partner, and Cisco responsibilities">
+<rect width="980" height="280" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Three columns. One UC cluster.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="64" width="280" height="150" rx="14" fill="#1a1430" stroke="#c4b5fd"/>
+<text x="52" y="96">Customer or partner</text>
+<text x="52" y="122" fill="#b7ad9c">Dial plan, users, MACDs</text>
+<text x="52" y="144" fill="#b7ad9c">Premise DNS, CPE, UAT</text>
+<text x="52" y="166" fill="#b7ad9c">Firmware COP install</text>
+<text x="52" y="188" fill="#b7ad9c">Restart after notify</text>
+<rect x="350" y="64" width="280" height="150" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="366" y="96">Control Hub</text>
+<text x="366" y="122" fill="#b7ad9c">Service Request</text>
+<text x="366" y="144" fill="#b7ad9c">Alerts: Maintenance and Outage</text>
+<text x="366" y="166" fill="#b7ad9c">UC application cross-launch</text>
+<text x="366" y="188" fill="#b7ad9c">Lifecycle and cert windows</text>
+<rect x="664" y="64" width="280" height="150" rx="14" fill="#121a2a" stroke="#7eb6ff"/>
+<text x="680" y="96">Cisco</text>
+<text x="680" y="122" fill="#b7ad9c">Cloud build, DNS, certs</text>
+<text x="680" y="144" fill="#b7ad9c">Upgrades and DRS restore</text>
+<text x="680" y="166" fill="#b7ad9c">Widespread non-config faults</text>
+<text x="680" y="188" fill="#b7ad9c">TAC cannot restart services</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="Service request types into Dedicated Instance operations">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Service request types into Dedicated Instance operations">
+<rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Calling → Dedicated Instance → Service Request</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="60" width="200" height="64" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="48" y="98">DNS · Firewall · Firmware</text>
+<rect x="256" y="60" width="220" height="64" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="268" y="98">Cloud connectivity · Audit log</text>
+<rect x="496" y="60" width="220" height="64" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="508" y="86">UC app management</text><text x="508" y="106" fill="#b7ad9c">includes restart notify</text>
+<rect x="736" y="60" width="210" height="64" rx="10" fill="#1a1430" stroke="#c4b5fd"/><text x="748" y="86">DI–MT trunks · Lifecycle</text><text x="748" y="106" fill="#b7ad9c">IaaS</text>
+<text x="36" y="168" fill="#8d8476">Day-0 and Day-1 assistance types from the service-request article. A restart is a notify, not a TAC action.</text>
+<text x="36" y="196" fill="#8d8476">Widespread faults still page Cisco. Configuration faults stay with the customer or partner.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  CP[Customer or partner] --> CH[Control Hub service request]
+  CH --> OPS[Dedicated Instance operations]
+  CISCO[Cisco TAC and cloud] --> UC[UC applications]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>The split the matrix actually prints</h2>
+<div class="callout def"><span class="label">RACI</span><p>Responsible does the task. Accountable signs off. Consulted is two-way. Informed is one-way. The matrix covers partner onboarding, customer onboarding, and operations. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">No partner</span><p>In the absence of an active partner, the customer assumes the responsibilities designated for the partner. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Two version sentences</span><p>The RACI article, header October 09, 2026, says customers may stay on n-1 of the current UC applications deployed in Dedicated Instance, and it names v15SU4a, unless a security issue forces a COP or an upgrade. The partner operations guide prints a table with v14.0 as n-1 and v15.0-SU4a as n, then says that n-1 has entered end of support and those customers must upgrade. Quote both. Do not collapse them. The partner-operations markdown retrieved 2026-10-14 did not print a header date. <mark class="recheck">re-check</mark> that table before you teach which release is n. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout note"><span class="label">Base config is Cisco’s</span><p>Default base configurations in the UC applications are Cisco A+R. Customer or partner should not modify them. Non-base configuration, for example dial plan, integrations, and PSTN, is customer or partner A+R. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<h3>Letters</h3>
+<div class="table-wrap"><table><thead><tr><th>Letter</th><th>Meaning in the matrix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>R</td><td>Performs the task</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A</td><td>Accountable for completion and signs off</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>C</td><td>Consulted. Communication is two-way</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>I</td><td>Informed. Communication is one-way</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Customer onboarding rows you will be asked</h3>
+<div class="table-wrap"><table><thead><tr><th>Activity</th><th>Customer</th><th>Partner</th><th>Cisco</th><th>Remark to keep</th></tr></thead><tbody>
+<tr><td>CCW order</td><td>C</td><td>A+R</td><td>I</td><td>Order Webex Calling and select Dedicated Instance. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Order hold release</td><td>I</td><td>I</td><td>A+R</td><td>Cisco releases after review. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Direct, Edge, or Virtual Connect</td><td>A+R</td><td>A+R</td><td>R</td><td>Advertise 0.0.0.0/0. More specific routes are not accepted. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Core application build</td><td>I</td><td>I</td><td>A+R</td><td>Sizing follows the CCW order. A modified order needs new cluster sizing with Cisco. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>More than 3 Unified CM clusters in a region</td><td>A+R</td><td>A+R</td><td>R</td><td>Customer or partner provides the IP subnet range used as internal addresses. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BYO PSTN</td><td>A+R</td><td>A+R</td><td>C</td><td>PSTN connectivity into Dedicated Instance is the customer or partner. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Application configuration</td><td>A+R</td><td>A+R</td><td>I</td><td>Dial plan and route groups. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>User acceptance and cutover</td><td>A+R</td><td>A+R</td><td>I</td><td>Integrations, tests, and a successful cut-over. <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Operations rows that get mis-assigned</h3>
+<div class="table-wrap"><table><thead><tr><th>Activity</th><th>Who is A+R</th><th>What the remark adds</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Widespread issue, 100% of a cluster or across clusters</td><td>Cisco, for non-UC-application configuration issues</td><td>Subscribe to Alerts Center rule Calling - Maintenance and Outage. Cisco restores the clusters.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Non-widespread issue</td><td>Customer and partner</td><td>Follow redundancy in the solution design guidance. Cisco still restores clusters.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud Connected PSTN</td><td>Partner and Cisco both A+R</td><td>Customer or partner owns number procurement and configuration. Cisco owns connectivity to the CCP provider.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Internal and public DI DNS</td><td>Cisco</td><td>Premise DNS is customer or partner.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>UC application certificates</td><td>Cisco</td><td>Custom SAN entries are not supported. UCM Cloud conversions keep customer-managed certificates unless the domain and certificate authority transfer to Cisco.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Phone firmware and locales</td><td>Customer and partner</td><td>Service request uploads firmware to Cisco SFTP. Cisco returns SFTP details. The customer or partner installs the COP and restarts services.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Backup and restore</td><td>Cisco</td><td>No customer access to backups. No on-demand restore. A restore is not a change backout.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Service restart</td><td>Customer and partner</td><td>Notify Cisco first. TAC does not have access to restart or reboot services.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T5-R04/hero.png -->
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T5-R04">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Site</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Peering</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Dedicated UC</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<circle cx="200" cy="132" r="36" fill="url(#T5R04map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T5R04map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>RACI</dt><dd>Responsible, Accountable, Consulted, Informed, as the Dedicated Instance matrix defines those four letters. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Service request</dt><dd>The Control Hub object at Calling → Dedicated Instance → Service Request for Day-0 and Day-1 assistance. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Widespread issue</dt><dd>100 percent of a UC cluster, or an issue across multiple clusters. Cisco troubleshoots non-configuration issues in that band. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Alerts Center rule</dt><dd>Calling - Maintenance and Outage. The customer or partner configures email, Webex App, or webhooks. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>DRS</dt><dd>Disaster Recovery System on Unified CM, IM and Presence, or Unity Connection. Cisco runs it. Partners do not get access. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Custom SAN</dt><dd>Not supported on Dedicated Instance certificates. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>n and n-1</dt><dd>The partner operations guide says customers can run the current Collaboration Systems release or the previous one, then states the printed n-1 has entered end of support. Read the live table. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></dd></div>
+<div class="term"><dt>Tier 1</dt><dd>Initial technical support included in the Webex Calling subscription at no additional cost for the subscription term. Basic support is 24/7 in English. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>UC application lifecycle request</dt><dd>The service-request type for maintenance schedule questions covering certificate management, software upgrades, or PSIRT fixes. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>DI–MT inter-op request</dt><dd>Changes the location in the selected region on multi-tenant for the default trunks Cisco created. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T5-R04/eco.svg -->
+<div class="diagram" role="img" aria-label="Operations neighbors of Dedicated Instance">
+<svg viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Operations neighbors of Dedicated Instance">
+<rect width="980" height="260" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">What touches day-2</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="78">Identity and LDAP stay customer-managed. Cisco does not take that column.</text>
+<text x="36" y="106">CCP numbers are partner or customer. CCP connectivity is Cisco.</text>
+<text x="36" y="134">Webex App issues go to Cisco Cloud TAC. Premise SBC issues do not.</text>
+<text x="36" y="162">Certificate renewal can force an SSO metadata reimport.</text>
+<text x="36" y="190">IaaS build stops at ESXi. The application install is the customer or partner.</text>
+<text x="36" y="218">Peering debug starts with the customer or partner before TAC.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((DI operations))
+    RACI
+    Service request
+    TAC
+    DRS
+    Certificates
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Control Hub Alerts</td><td>The notification channel for maintenance and outage.</td><td>Widespread-issue response assumes the Calling - Maintenance and Outage rule is subscribed.</td><td>Email, Webex App, or webhooks.</td><td>A maintenance window arrives with no enrolled contact.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>LDAP</td><td>Customer directory for end users.</td><td>The operations matrix assigns customer LDAP to the customer, with the partner consulted.</td><td>On the dedicated Unified CM, not as a Cisco-run directory.</td><td>Waiting for Cisco to populate users.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>SSO on UC apps</td><td>Single sign-on inside the UC applications.</td><td>After Cisco renews a certificate, the partner disables SSO, reimports IdP metadata, and re-enables SSO.</td><td>UC application SSO, then a validation.</td><td>Sign-in fails the morning after a certificate window.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Cloud Connected PSTN</td><td>Provider PSTN peered to Webex Calling.</td><td>Number procurement is not Cisco’s column. Connectivity to the provider is.</td><td>CCP configuration plus the Cisco-owned provider link.</td><td>Opening a TAC case for a number the partner never ordered.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BYO PSTN / SBC</td><td>Customer or partner premises PSTN.</td><td>Troubleshooting SBC and PSTN is A+R for customer and partner. Cisco is consulted.</td><td>Partner premises infrastructure row.</td><td>Treating a carrier reject as a cluster restore.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex App</td><td>The cloud client.</td><td>Webex App issues are Cisco Cloud TAC. Jabber and Webex App configuration on Dedicated Instance is still customer or partner.</td><td>Keep the issue type separate from the UC configuration.</td><td>A client bug filed as a dial-plan change.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>IaaS</td><td>A server Cisco builds up to ESXi.</td><td>After that, Cisco gives access details so the customer or partner installs the application.</td><td>Service request type Infrastructure as a Service.</td><td>Expecting Cisco to install the guest application.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Peering</td><td>Partner Connect, Edge Connect, or Virtual Connect.</td><td>First debug is the customer or partner IT staff, before TAC.</td><td>Partner Connect requests include the Dot1q tag.</td><td>Opening TAC before the local link is checked.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Administrator</td><td>Dedicated Instance operations</td><td>Service request</td><td>DNS, firewall, firmware upload, connectivity, audit log, UC management, DI–MT trunks, lifecycle, IaaS.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Service request</td><td>Operations engineer</td><td>Communications tab</td><td>Messages with timestamps. Webex App or email for more detail.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Cisco</td><td>Partner</td><td>Alerts Center</td><td>At least 10 calendar days written notice when planned maintenance disrupts calling.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Partner</td><td>Cisco</td><td>UC application lifecycle request</td><td>A reschedule when the proposed window conflicts. Cisco’s available dates only.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Cisco</td><td>SFTP</td><td>Firmware upload request</td><td>Phone firmware placed where UC applications can reach it. Install stays with the customer or partner.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>UC apps</td><td>DRS store</td><td>Scheduled or user-invoked backup by Cisco</td><td>Cluster backup. Expressway uses a custom backup. Partners have no access.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CCO user</td><td>TAC</td><td>Support Case Manager</td><td>Subscription or contract entitlement. Technology Collaboration and Conferencing. Sub-technology UCM Cloud / Dedicated Instance.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Certificate renewal</td><td>UC SSO</td><td>IdP metadata reimport</td><td>Partner disables SSO, reimports metadata, re-enables SSO, and validates.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Operations edges">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Operations edges">
+<rect width="980" height="240" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Eight operations edges</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="72">1 Admin → service request → operations</text>
+<text x="36" y="96">2 Communications tab, then Webex App or email</text>
+<text x="36" y="120">3 Cisco → partner, 10 calendar days</text>
+<text x="36" y="144">4 Partner → lifecycle request to reschedule</text>
+<text x="500" y="72">5 Firmware stops at SFTP</text>
+<text x="500" y="96">6 DRS stays with Cisco</text>
+<text x="500" y="120">7 TAC case, not the Webex product option</text>
+<text x="500" y="144">8 Certificate window → SSO reimport</text>
+<text x="36" y="190" fill="#8d8476">IaaS ends at ESXi. The guest application is a different handoff.</text>
+</g>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>This room</th><th>Legacy</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Cisco-run DRS</td><td>On-premises, the publisher admin can run DRS. Here partners have no access, and a restore is not a change backout.</td><td>A Teams Phone tenant admin is not this RACI. No parity matrix.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Customer LDAP</td><td>The same product idea as on-premises LDAP, and it remains the customer’s column.</td><td>Directory sync inside multi-tenant Control Hub is a different task from this LDAP row.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>UCM Cloud conversion</td><td>Certificates stay customer-managed until the domain and CA move to Cisco.</td><td>Do not describe that conversion as a Microsoft or Amazon tenant move. The article does not.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: T5-R05 owns the DI and multi-tenant dial plan. This room only records that a DI–MT service request changes the multi-tenant location on the default trunks. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Canon plan: T5-R06 owns the migration gates. Day-2 documents named there point back at this RACI, the partner operations guide, and the service-request list.</li>
+<li>The partner operations version table and the October 09, 2026 RACI sentence about v15SU4a are not the same snapshot. <mark class="recheck">re-check</mark> both before a maintenance window. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>SSO fails after a certificate window</td><td>IdP metadata still trusts the previous certificate.</td><td>Whether SSO was disabled, metadata reimported, and SSO re-enabled.</td><td>Do that sequence and validate SSO.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CCP calls fail and TAC is asked to order numbers</td><td>Number procurement is the customer or partner column.</td><td>Which side owns the provider link versus the numbers.</td><td>Partner or customer orders and configures numbers. Cisco owns provider connectivity.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Peering case opened before local checks</td><td>Tier 1 says the first debug is customer or partner IT.</td><td>Partner Connect, Edge Connect, or Virtual Connect, and the Dot1q tag on Partner Connect.</td><td>Finish local debugging, then TAC.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Maintenance notice missed</td><td>The partner is not enrolled for Maintenance and outages alerts, or the contact record is stale.</td><td>Alerts enrollment and current contact information.</td><td>Enroll and correct the contact. Cisco recommends a Webex App account for notifications.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a fault to the right owner</h2>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T5-R04/seq.svg -->
+<div class="diagram" role="img" aria-label="How an operations event moves">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How an operations event moves">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#c4b5fd" font-family="Georgia, serif" font-size="20">Classify, then notify, then touch the service</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<text x="36" y="78">1 Is the cluster fully down, or is it configuration?</text>
+<text x="36" y="106">2 Widespread non-config faults go to Cisco. Cisco restores from backup in a disaster.</text>
+<text x="36" y="134">3 A restart is allowed only after the service request tells Cisco.</text>
+<text x="36" y="162">4 A planned disruptive change is announced at least 10 calendar days ahead, inside a fixed regional window.</text>
+</g>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Symptom</td><td>RACI row</td><td>Scope</td><td>100 percent of a cluster, or several clusters, is widespread. Less than that is non-widespread.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Partner</td><td>Alerts</td><td>Calling - Maintenance and Outage</td><td>Email, Webex App, or webhooks.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Admin</td><td>Operations</td><td>Service request</td><td>Path Calling → Dedicated Instance → Service Request.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>4</td><td>Admin</td><td>Cisco</td><td>Restart notify</td><td>UC Application Management → Server/Service Restart → Notify Cisco regarding the restart.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>CCO</td><td>TAC</td><td>Support Case Manager</td><td>Find product by service agreement. Do not choose Webex. P1 and P2 call TAC frontline.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>6</td><td>Cisco</td><td>Partner</td><td>Written notice</td><td>At least 10 calendar days when calling will be disrupted. Respond in 2–3 days if the date conflicts.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>7</td><td>Cisco</td><td>UC cluster</td><td>DRS</td><td>On an application failure, the stated goal is a new publisher from backup and services resumed within one business day.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>8</td><td>Certificate window</td><td>SSO</td><td>Metadata</td><td>Disable SSO, reimport IdP metadata, re-enable, validate.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Paths you can cite</h2>
+<ol>
+<li>Open Calling → Dedicated Instance → Service Request to create and track a request. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For a restart, use Service Request → UC Application Management → Server/Service Restart → Notify Cisco regarding the restart. Do this before the restart, including configuration-related restarts. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>To change the multi-tenant location on the default DI–MT trunks, raise DI–MT Inter-op SIP trunks and choose the region. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>For certificate, upgrade, or PSIRT schedule questions, raise UC application lifecycle. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Subscribe to Calling - Maintenance and Outage and keep the partner contact current. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Open TAC at Support Case Manager. Product and Services, not the Webex option. Entitlement is the Dedicated Instance subscription or service contract. Technology is Collaboration and Conferencing. Sub-technology is UCM Cloud / Dedicated Instance (DI). <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Leave base UC configuration unchanged. Put customer requirements in the non-base dial plan, integrations, and PSTN. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ol>
+<!-- VISUAL:screenshot:service-request | Studio | assets/images/T5-R04/service-request.png -->
+<pre class="sim-out">Operations card (nlh9lde / ntqlhe1 / nuk5o63 / nvfve88). No customer secrets.
+  route toward DI:     0.0.0.0/0 from the customer side
+  more specific:       not accepted
+  restart:             notify Cisco first; TAC cannot restart
+  disruptive change:   written notice at least 10 calendar days
+  AMER window:         9 p.m. ET through 6 a.m. ET, Mon–Fri
+  weekend:             Cisco infrastructure maintenance only
+  TAC product pick:    not Webex
+  TAC sub-technology:  UCM Cloud / Dedicated Instance (DI)
+  FTP:                 port 21 not allowed
+  custom SAN:          not supported
+  DRS:                 Cisco only; not a change backout</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>What is quantified</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Customer route toward DI</td><td>0.0.0.0/0. More specific routes are not accepted.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header October 09, 2026.</td></tr>
+<tr><td>Widespread</td><td>100% of a UC cluster, or across multiple clusters</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Disruptive maintenance notice</td><td>At least 10 calendar days written notice</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header date not in the retrieved markdown. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Conflict response</td><td>Partner should respond in 2–3 days</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted as a recommendation. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>AMER maintenance window</td><td>9 p.m. ET through 6 a.m. ET, Monday–Friday. Weekends are Cisco infrastructure only. The window cannot be changed.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>High-severity TAC response</td><td>Within 60 minutes. Lower severity by the next business day. English, 24/7.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. Header November 17, 2025.</td></tr>
+<tr><td>Application-failure restore goal</td><td>New publisher from DRS backup and services resumed within one business day</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted as a goal for application failure, not every fault. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>FTP</td><td>Port 21 is not allowed</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted</td></tr>
+<tr><td>Custom SAN</td><td>Not supported</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Clusters before the customer supplies subnets</td><td>The row is “more than 3 Unified CM clusters within a Dedicated Instance region”</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten ownership failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>DI rejects the customer prefixes</td><td>More specific routes are not accepted.</td><td>Connectivity rows in the RACI.</td><td>Advertise 0.0.0.0/0 from the customer side.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Base route list was edited</td><td>Base configuration is Cisco’s, and it should not be modified.</td><td>Onboarding row for default base configurations.</td><td>Put requirements in non-base dial plan, integrations, and PSTN.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>TAC will not restart CallManager</td><td>TAC has no access to restart or reboot services.</td><td>Restart rows.</td><td>Notify Cisco with the service request, then restart.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Customer asks Cisco to roll back a bad dial plan with DRS</td><td>Cisco does not do on-demand restores and does not allow restore as a change backout.</td><td>Backup row.</td><td>Fix the configuration. DRS is for Cisco disaster recovery.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Certificate request asks for a custom SAN</td><td>Custom SAN entries are not supported.</td><td>Certificate management remark.</td><td>Use the certificate Cisco manages. Converted UCM Cloud customers are the exception until domain and CA transfer.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Firmware never appears on the phones</td><td>Cisco only places the load on SFTP. Install and service restart are customer or partner.</td><td>Phone firmware row.</td><td>Install the COP and restart the required services after the notify.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>TAC case lands on the wrong team</td><td>The Webex product option was selected.</td><td>Tier 1 steps.</td><td>Reopen under Collaboration and Conferencing / UCM Cloud / Dedicated Instance, using the DI subscription or contract.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Partner scans the Dedicated Instance nodes</td><td>Vulnerability scanning by a partner or customer is not supported.</td><td>Partner operations guide.</td><td>Use Cisco’s scanning regime and the letter of attestation on the Cisco Trust Portal.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Emergency certificate change was moved</td><td>Severe vulnerability fixes and certificates nearing expiration do not allow a window change.</td><td>Urgent-change paragraph.</td><td>Take the window Cisco set. A normal conflict can still be a lifecycle request.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>One node is down and Cisco is expected to debug the route pattern</td><td>Non-widespread configuration issues are customer or partner A+R.</td><td>Operations table.</td><td>Use RTMT or WebRTMT and TAC assistance. Cisco remains responsible for restoring the cluster.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What does Dedicated Instance operations decide first?</summary><p class="answer">Which RACI column owns the activity: customer, partner, or Cisco. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What breaks if the partner column is empty?</summary><p class="answer">Nothing in the matrix moves to Cisco. The customer assumes the partner responsibilities. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why advertise a default route?</summary><p class="answer">The Dedicated Instance side does not accept more specific routes than 0.0.0.0/0 from the customer. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Where is a Day-1 request opened?</summary><p class="answer">Calling → Dedicated Instance → Service Request. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Who may restart a service?</summary><p class="answer">The customer or partner, after they inform Cisco. TAC cannot. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove a fault is Cisco’s?</summary><p class="answer">Show it is a non-configuration issue on 100 percent of a UC cluster, or across clusters. Smaller configuration faults stay with the customer or partner, while cluster restore stays with Cisco in both rows. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What evidence shows a maintenance window was announced?</summary><p class="answer">Written notice at least 10 calendar days ahead for work that disrupts calling, sent to partners enrolled for Maintenance and outages. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is certificate ownership different from multi-tenant Calling?</summary><p class="answer">On Dedicated Instance, Cisco manages UC application certificates and rejects custom SANs. A UCM Cloud conversion keeps customer-managed certificates until the domain and CA transfer. This room does not restate multi-tenant trunk certificates. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Who owns CCP numbers versus the CCP link?</summary><p class="answer">Customer or partner owns procurement and configuration. Cisco owns connectivity to the Cloud Connected PSTN provider. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why will you not use DRS as the rollback for a dial-plan change?</summary><p class="answer">The RACI says Cisco does not do on-demand restores and does not allow a restore as a change backout. Partners also have no DRS access. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which n-1 sentence do you teach?</summary><p class="answer">Both, until you re-read them. October 09, 2026 RACI allows n-1 of the deployed applications and names v15SU4a, with a security exception. The partner operations table prints v14.0 as n-1 and v15.0-SU4a as n, then says that n-1 is end of support. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the TAC technology pair?</summary><p class="answer">Collaboration and Conferencing, then UCM Cloud / Dedicated Instance (DI). High severity is a 60-minute response target. Call frontline for P1 and P2. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A paper lab. Do not open a production service request to learn this.</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: assign ten operations events to the RACI column the articles name.</label></li>
+<li><label><input type="checkbox"> Prereq: the four articles in the citation list. No customer org you do not administer.</label></li>
+<li><label><input type="checkbox"> Step 1. A site advertises 10.0.0.0/8 only. Expected: the matrix says more specific routes are not accepted.</label></li>
+<li><label><input type="checkbox"> Step 2. A dial-plan mistake is one subscriber. Expected: customer or partner owns the configuration; Cisco still owns cluster restore.</label></li>
+<li><label><input type="checkbox"> Step 3. Someone wants TAC to restart TFTP. Expected: notify first; TAC cannot restart.</label></li>
+<li><label><input type="checkbox"> Step 4. Write the AMER window and the 10-calendar-day notice. Expected: 9 p.m. to 6 a.m. ET on weekdays, and the window cannot be changed.</label></li>
+<li><label><input type="checkbox"> Evidence: the service-request type you would use for a certificate date, and the TAC sub-technology string.</label></li>
+<li><label><input type="checkbox"> Break it: plan a DRS restore as the backout for a route-pattern change. Recovery: remove that backout. The article does not allow it.</label></li>
+<li><label><input type="checkbox"> Reflection: which n-1 sentence you still have to re-check before a real upgrade.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>With no active partner, who takes the partner column?</p><details><summary>Answer</summary><p class="answer">The customer. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Which route must the customer advertise toward Dedicated Instance?</p><details><summary>Answer</summary><p class="answer">0.0.0.0/0. More specific routes are not accepted. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>Who performs operational readiness testing of the core applications before handover?</p><details><summary>Answer</summary><p class="answer">Cisco is A+R. Customer and partner are informed. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>Every node in one cluster is unreachable and the fault is not a UC application configuration. Who resolves it?</p><details><summary>Answer</summary><p class="answer">Cisco. That scope is the widespread row. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Can TAC restart a Dedicated Instance service?</p><details><summary>Answer</summary><p class="answer">No. The customer or partner notifies Cisco, then restarts. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Where do you open the request?</p><details><summary>Answer</summary><p class="answer">Calling → Dedicated Instance → Service Request. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">Scenario</span></header><p>A partner adds a custom SAN to the Dedicated Instance certificate. What does the RACI say?</p><details><summary>Answer</summary><p class="answer">Cisco does not support custom SAN entries on those certificates. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>How much written notice precedes planned maintenance that disrupts calling?</p><details><summary>Answer</summary><p class="answer">At least 10 calendar days. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Which TAC product option do you avoid?</p><details><summary>Answer</summary><p class="answer">The Webex option. Use Collaboration and Conferencing, sub-technology UCM Cloud / Dedicated Instance (DI). <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>After a certificate renewal, UC SSO fails. What does the partner operations guide tell the partner to do?</p><details><summary>Answer</summary><p class="answer">Disable SSO, reimport the IdP metadata, re-enable SSO, and validate. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw</span></header><p>Name the AMER weekday maintenance window and say whether you can move it.</p><details><summary>Answer</summary><p class="answer">9 p.m. ET through 6 a.m. ET, Monday through Friday. The regional window cannot be changed. A conflicting business date can still be a lifecycle reschedule onto Cisco’s available dates, except urgent vulnerability or near-expiry certificate work. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>Someone schedules a DRS restore to undo a route-pattern edit. What is wrong?</p><details><summary>Answer</summary><p class="answer">Cisco does not allow a restore as a change backout, and partners have no DRS access. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain the Dedicated Instance RACI: who owns the dial plan, who owns the cluster, and why a restart is a notify." | assets/audio/T5-R04/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk widespread versus configuration faults, DRS, certificates, and the 10-day maintenance notice." | assets/audio/T5-R04/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 0.0.0.0/0, no custom SAN, TAC cannot restart, do not pick Webex in the case tool." | assets/audio/T5-R04/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Dedicated Instance splits work with a RACI. Cisco builds and monitors the core applications and restores clusters. The customer or partner owns dial plan, users, premise DNS, and acceptance testing. No partner means the customer takes that column.</p>
+<p><strong>2 minutes.</strong> Connectivity advertises 0.0.0.0/0. More specific routes are refused. Base configuration stays as Cisco deployed it. Widespread means the whole cluster or several clusters, and Cisco takes non-configuration faults there. A single mis-set route pattern is still yours. You can restart a service only after the Control Hub request notifies Cisco. TAC cannot restart it. DRS is Cisco’s backup. It is not your backout, and you do not get the backups.</p>
+<p><strong>30 seconds, certificates.</strong> Cisco manages Dedicated Instance UC certificates and will not add a custom SAN. After renewal, SSO has to be disabled, the IdP metadata reimported, and SSO turned back on. Converted UCM Cloud customers keep their own certificates until the domain and CA move to Cisco.</p>
+<p><strong>2 minutes, the window.</strong> Disruptive planned maintenance gets at least 10 calendar days of written notice if the partner is enrolled for Maintenance and outages. The AMER weekday window is 9 p.m. to 6 a.m. Eastern and cannot be slid. You can ask for another Cisco date with a lifecycle service request, and you should answer in two or three days. A severe vulnerability or a certificate about to expire does not move. Do not vulnerability-scan the cloud yourself.</p>
+<p><strong>What you will not say.</strong> You will not merge the October 09, 2026 n-1 sentence with the partner-operations v14.0 table. You will not open the TAC case under the Webex product option. You will not claim port 21 FTP is allowed.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Responsibility assignment matrix — help.webex — article nlh9lde — <a href="https://help.webex.com/en-us/article/nlh9lde/Responsibility-assignment-matrix">help.webex.com article nlh9lde</a> — header October 09, 2026, retrieved 2026-10-14. RACI letters. Customer assumes the partner column if no partner is active. 0.0.0.0/0 and refusal of more specific routes. Base configuration is not for the customer to modify. Widespread versus non-widespread. Certificate, firmware, DRS, and restart rows.</li>
+<li id="cite-2">Partner operations guide — help.webex — article ntqlhe1 — <a href="https://help.webex.com/en-us/article/ntqlhe1/Partner-operations-guide">help.webex.com article ntqlhe1</a> — retrieved 2026-10-14. The retrieved markdown did not print a header date. Ten calendar days. Regional windows that cannot be changed. SSO metadata after certificate renewal. DRS access and the one-business-day application-failure goal. n and n-1 table. Vulnerability scanning is not a partner or customer activity. <mark class="recheck">re-check</mark></li>
+<li id="cite-3">How to raise a service request — help.webex — article nvfve88 — <a href="https://help.webex.com/en-us/article/nvfve88/How-to-raise-a-service-request">help.webex.com article nvfve88</a> — retrieved 2026-10-14. Path Calling → Dedicated Instance → Service Request. Day-0 and Day-1 types. DI–MT inter-op changes the multi-tenant location on the default trunks. UC application lifecycle covers certificates, upgrades, and PSIRT.</li>
+<li id="cite-4">Dedicated Instance Tier 1 support — help.webex — article nuk5o63 — <a href="https://help.webex.com/en-us/article/nuk5o63/Dedicated-Instance-Tier-1-Support">help.webex.com article nuk5o63</a> — header November 17, 2025, retrieved 2026-10-14. Basic support 24/7 English, 60 minutes for high severity, next business day for lower severity. Do not choose the Webex option. Sub-technology UCM Cloud / Dedicated Instance (DI). Port 21 FTP is not allowed. Peering debug starts with the customer or partner.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the partner operations header date, and whether v14.0 is still the printed n-1 beside the October 09, 2026 RACI sentence that names v15SU4a.</li>
+<li>Facts still marked re-check: the partner operations guide rows in the limits table, because that retrieval did not show a header date.</li>
+<li>Assets missing: service-request screenshot, RACI SVG export, audio.</li>
+<li>Ideas for v1.0: a one-page RACI card generated from nlh9lde at review time, with the header date in the caption.</li>
+<li>Next review: <mark class="recheck">re-check</mark> maintenance windows and the n / n-1 table before teaching an upgrade.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T5-R02-di-architecture-peering.html"><span>Previous</span><strong>T5-R02</strong><em>DI Architecture &amp; Peering</em></a><a class="next" href="T5-R05-di-webex-calling-coexistence.html"><span>Next</span><strong>T5-R05</strong><em>DI + Webex Calling Coexistence</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

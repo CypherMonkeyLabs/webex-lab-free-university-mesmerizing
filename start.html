@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Start here · CypherWebex Canon">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="assets/og-card.svg">
+<title>Start here · CypherWebex Canon</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>63 rooms</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="start.html" aria-current="page" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main"><div class="wrap">
+<p class="crumbs"><a href="index.html">Canon</a> / Start</p>
+<p class="kicker">Fundamentals to the marked edges</p>
+<h1>Start here</h1>
+<p class="lede">Read Control Hub before a dial plan, and the contact-center overview before a queue. The 30/60/90 sequence is a Canon study plan. It is not a Cisco learning path and it does not promise an exam result.</p>
+
+<div class="diagram" role="img" aria-label="Study path from Control Hub through contact center and APIs">
+<svg viewBox="0 0 980 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Study path from Control Hub through contact center and APIs">
+<rect width="980" height="250" fill="#0c121c"/>
+<text x="28" y="40" fill="#e0b07a" font-family="Georgia, serif" font-size="20">Draft rooms, in the order this Canon teaches them</text>
+<text x="36" y="84" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">30 days · T1-R01, T1-R06, T2-R02 Local Gateway, T2-R03 dial plans, T2-R06 security</text>
+<text x="36" y="118" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">60 days · T7-R01 SIP, T5-R02, T6-R02, T3-R01, T3-R03, T3-R04, T3-R07 Analyzer</text>
+<text x="36" y="152" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">90 days · T4-R01, T6-R04, T6-R01 Canon planning, T8-R01, T8-R03, T8-R05</text>
+<text x="36" y="196" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="14">Labs, drills, and the interview desk sit beside the rooms. Planned rooms stay off this path until they exist.</text>
+</svg>
+</div>
+
+<section id="prereq">
+<h2>Prerequisites</h2>
+<ul>
+<li>T1-R01 is the first room. Every later track assumes you can find a user, a location, and a service in Control Hub.</li>
+<li>Calling rooms assume T1-R01. T2-R03 assumes T2-R02, because a dial plan’s routing choice is a trunk or a route group you already know how to name. T2-R06 is TLS, SRTP, Calling end-to-end encryption, recording, and RedSky.</li>
+<li>Contact-center rooms assume T3-R01. T3-R03 is the queue article. T3-R04 is the desktop. T3-R07 is Analyzer. T8-R01 is Flow Designer before T8-R03’s APIs. T8-R05 is AI Assistant and the AI agents the articles describe.</li>
+<li>T6-R04 assumes T3-R01 and T4-R01. The calling migration is T6-R02 and stays a different project. T6-R01 is Canon planning for a 2,000-seat scenario. That seat count is the scenario, not a Cisco scale number.</li>
+<li>T5-R02 assumes you can tell Dedicated Instance from multi-tenant Calling. Read T2-R02 first.</li>
+</ul>
+</section>
+
+<section id="path">
+<h2>Fundamentals, then the hard edges</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Stage</th><th>Rooms that exist</th><th>What you can defend after</th></tr></thead>
+<tbody>
+<tr><td>Fundamentals</td><td><a href="rooms/T1-R01-control-hub-foundations.html">T1-R01</a>, <a href="rooms/T1-R06-analytics-troubleshooting.html">T1-R06</a></td><td>Where an admin looks, how long troubleshooting history lasts, what a client log is.</td></tr>
+<tr><td>Calling</td><td><a href="rooms/T2-R02-local-gateway-pstn.html">T2-R02</a>, <a href="rooms/T2-R03-dial-plans-pstn-routing.html">T2-R03</a>, <a href="rooms/T2-R06-calling-security-compliance.html">T2-R06</a>, <a href="rooms/T7-R01-sip-fundamentals-webex.html">T7-R01</a></td><td>PSTN choice, pattern language, trunk type, SRTP cipher, Calling encryption, recording, and RedSky.</td></tr>
+<tr><td>Cloud contact center</td><td><a href="rooms/T3-R01-wxcc-multitenant-overview.html">T3-R01</a>, <a href="rooms/T3-R03-entry-points-queues-routing.html">T3-R03</a>, <a href="rooms/T3-R04-agent-desktop-supervisor.html">T3-R04</a>, <a href="rooms/T3-R07-analyzer-reporting.html">T3-R07</a>, <a href="rooms/T8-R01-flow-designer-essentials.html">T8-R01</a>, <a href="rooms/T8-R05-ai-wxcc.html">T8-R05</a></td><td>Entry point, queue pattern, desktop sign-in, Analyzer clocks, and the AI features the articles name.</td></tr>
+<tr><td>Enterprise and migration</td><td><a href="rooms/T4-R01-wxcc-enterprise-overview.html">T4-R01</a>, <a href="rooms/T6-R02-cucm-to-webex-calling.html">T6-R02</a>, <a href="rooms/T6-R04-ucce-pcce-to-wxcc.html">T6-R04</a>, <a href="rooms/T6-R01-enterprise-cutover-capstone.html">T6-R01</a></td><td>Which product you are migrating, which noun swaps stay marked, and a Canon planning cutover that is not a Cisco runbook.</td></tr>
+<tr><td>Peering and APIs</td><td><a href="rooms/T5-R02-di-architecture-peering.html">T5-R02</a>, <a href="rooms/T8-R03-apis-webhooks-connect.html">T8-R03</a></td><td>Two DI links, the Melbourne ASN cell, Connect versus Flow Designer, and the Webhooks guide ceiling.</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="certs">
+<h2>Cisco certifications, names checked 2026-10-14</h2>
+<p>CCNP Collaboration is a core exam plus one concentration. Each passing exam also earns a specialist certification. Exam study is optional beside this Canon. Domain weights are not printed here. Topic phrases map to rooms on the <a href="certs.html">cert tracker</a>. As of 2026-10-14 the CLHCT page title says “Implementing Cisco Collaboration Hybrid and Cloud Technologies” and the overview body says “Implementing Cisco Collaboration Cloud and Edge Solutions (300-820 CLHCT).”</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Exam</th><th>Current name</th><th>What Cisco prints</th></tr></thead>
+<tbody>
+<tr><td>350-801 CLCOR</td><td>Implementing and Operating Cisco Collaboration Core Technologies</td><td>120 minutes, $US400, English, no prerequisites, valid 3 years, pass/fail, results in about 48 hours. Specialist: Collaboration Core. Also the core for CCNP and CCIE Collaboration.</td></tr>
+<tr><td>300-815 CLACC</td><td>Implementing Cisco Advanced Call Control On-Premises</td><td>The current concentration. 90 minutes, $US300. Specialist: Collaboration Call Control &amp; Mobility Implementation. CLACCM retired February 2, 2026.</td></tr>
+<tr><td>300-820 CLHCT</td><td>Implementing Cisco Collaboration Hybrid and Cloud Technologies</td><td>The current concentration. 90 minutes, $US300. Specialist: Collaboration Cloud &amp; Edge Implementation. CLCEI retired February 2, 2026. Cisco’s CLCEI training page says the course remains for skills and 40 CE credits and prepares you for CLHCT.</td></tr>
+<tr><td>300-830 CLCCE</td><td>Implementing Cisco Collaboration Cloud Customer Experience</td><td>An additional current concentration on the same CCNP page: Webex Contact Center, telephony and call routing, tenant configuration and reporting, digital channels, advanced features, and AI. 90 minutes, $US300. Specialist: Collaboration Cloud Customer Experience.</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccnp-collaboration/index.html">CCNP Collaboration</a></li>
+<li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/clacc.html">CLACC exam page</a></li>
+<li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/retired.html">Retired exams, including CLACCM and CLCEI</a></li>
+<li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clcei.html">CLCEI training page, retirement note</a></li>
+</ul>
+<div class="diagram" role="img" aria-label="CCNP Collaboration is CLCOR plus one concentration">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CCNP Collaboration is CLCOR plus one concentration">
+<rect width="980" height="220" fill="#0c121c"/>
+<text x="28" y="40" fill="#e0b07a" font-family="Georgia, serif" font-size="20">One core, then one concentration</text>
+<text x="36" y="84" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">350-801 CLCOR · required core · 120 minutes</text>
+<text x="36" y="118" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">300-815 CLACC · was CLACCM until February 2, 2026</text>
+<text x="36" y="152" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">300-820 CLHCT · was CLCEI until February 2, 2026</text>
+<text x="36" y="186" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">300-830 CLCCE · contact-center concentration on the same CCNP page</text>
+</svg>
+</div>
+</section>
+
+<section id="roadmap">
+<h2>30 / 60 / 90 days</h2>
+<p>Canon planning. Weekends are yours. The point is the order, not a calendar Cisco published.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Window</th><th>Open these</th><th>Done when</th></tr></thead>
+<tbody>
+<tr><td>30 days</td><td>T1-R01, T1-R06, T2-R02, T2-R03, T2-R06. The dial-plan and CSS labs.</td><td>You can separate a Webex dial-plan wildcard from CUCM closest-match, name the three PSTN choices, and say that recording disables Calling end-to-end encryption.</td></tr>
+<tr><td>60 days</td><td>T7-R01, T5-R02, T6-R02, T3-R01, T3-R03, T3-R04, T3-R07.</td><td>You can refuse a queue pattern the article does not offer, sign an agent out only from Idle, leave the Melbourne ASN cell as printed, and keep Analyzer’s 5-second default apart from the desktop widget’s 60 seconds.</td></tr>
+<tr><td>90 days</td><td>T4-R01, T6-R04, T6-R01, T8-R01, T8-R03, T8-R05. Then <a href="interviews.html">interviews</a> and <a href="drills.html">drills</a>.</td><td>You can name the three published contact-center moves, keep the ICM rows marked, and quote the Webhooks guide ceiling (30,000 personal webhooks per user, org-wide limit of 1) without calling it a WxCC Tasks quota. T6-R01 stays Canon planning.</td></tr>
+</tbody>
+</table></div>
+<p>Flashcards and the practice quiz are for the gaps between rooms. The Erlang panel on the labs page stays a study model. A=6 and N=8 still give a probability of waiting near 0.357 and a wait near 32.1 seconds, and that figure is not Webex Contact Center estimated wait.</p>
+</section>
+</div></main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+</body>
+</html>

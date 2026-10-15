@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" role="img" aria-label="Troubleshooting tree">
+<rect width="980" height="300" fill="#0b1020"/>
+<text x="36" y="48" fill="#f8fafc" font-size="28" font-family="system-ui,sans-serif" font-weight="700">Troubleshooting tree</text>
+<text x="36" y="78" fill="#94a3b8" font-size="14" font-family="system-ui,sans-serif">CypherMonkey · Webex Lab · not a vendor document</text>
+<text x="36" y="120" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Registers, no audio — SRTP path and UDP ports. Not a SIP 200 problem.</text><text x="36" y="148" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">No registration — NAT source-port preservation, SIP ALG, or DNS.</text><text x="36" y="176" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">933 fails, calls work — TCP 443 to both RedSky hosts.</text><text x="36" y="204" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">One department only — Location PSTN connection and dial plan, not a global outage.</text><text x="36" y="232" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Contact center idle — Agent state, team, and queue skill. Not the Calling trunk.</text>
+</svg>

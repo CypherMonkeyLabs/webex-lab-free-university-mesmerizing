@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Scenario drills">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="assets/og-card.svg">
+<title>Troubleshooting Cases · CypherWebex Canon</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>63 rooms</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="drills.html" aria-current="page" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main"><div class="wrap">
+
+<p class="crumbs"><a href="index.html">Canon</a> / Troubleshooting Cases</p>
+<p class="kicker">12 scenarios</p>
+<h1>Troubleshooting Cases</h1>
+<p class="lede">Each scenario is a decision with a cited consequence. Pick a choice. The note stays on this page. Scores stay in this browser.</p>
+<p><button type="button" class="ghost" data-cmdk-open>Search <kbd>Ctrl</kbd><kbd>K</kbd></button></p>
+<div id="drills"></div>
+<p id="drill-score"></p>
+<script id="drill-data" type="application/json">
+[
+  {
+    "id": "outage",
+    "title": "Branch outage",
+    "story": "The site’s internet is down. Someone proposes pointing the phones at the Local Gateway so they register through it until the circuit returns. A second proposal is to use the Survivability Gateway the migration introduction names for on-site Webex Calling endpoints.",
+    "choices": [
+      {
+        "t": "Register the phones through the Local Gateway.",
+        "ok": false,
+        "why": "Calling endpoints do not register through the Local Gateway. That fact is the BRKCOL-2312 line already in T2, and the gateway’s job during coexistence is routing, including unmatched calls."
+      },
+      {
+        "t": "Treat Survivability Gateway as the outage path the migration introduction names, and do not invent registration through LGW.",
+        "ok": true,
+        "why": "nbedetf names Survivability Gateway in the migration architecture. T2 already separates it from LGW. Do not add a registration proxy the articles do not describe."
+      },
+      {
+        "t": "Decommission Unified CM because phase 1 has started.",
+        "ok": false,
+        "why": "nw9po3o says on-premises UC comes out after all users, soft clients, and devices have moved."
+      }
+    ]
+  },
+  {
+    "id": "cutover",
+    "title": "Migration cutover",
+    "story": "Friday you will move 40 people. Twelve of them share one hunt pilot with eight people you planned to move next month. The dial plan will be edited in Webex Calling only.",
+    "choices": [
+      {
+        "t": "Move the forty, leave the hunt split, update only Webex Calling.",
+        "ok": false,
+        "why": "q0pgpb says shared hunt and queue dependencies should move together. nw9po3o says each group needs dial-plan updates on Unified CM, Webex Calling, and the Local Gateways."
+      },
+      {
+        "t": "Put everyone on that hunt pilot in the same batch, and update all three routing planes.",
+        "ok": true,
+        "why": "That matches the implement article’s dependency list and the plan article’s three-system update."
+      },
+      {
+        "t": "Flash-cut the hunt by powering off Unified CM tonight.",
+        "ok": false,
+        "why": "Decommission is phase 2, after the estate has moved. A split hunt is a batching problem, not a power-off."
+      }
+    ]
+  },
+  {
+    "id": "e911",
+    "title": "E911 audit",
+    "story": "An extension-only user at a new location fails emergency setup. The RedSky hosts are blocked. Someone tests with 933 and expects the PSAP to answer. The callback number belongs to a different location.",
+    "choices": [
+      {
+        "t": "Open 443 to api.wxc.e911cloud.com and wxc.e911cloud.com, keep the callback number inside the user’s location, and treat 933 as a test that does not alert the PSAP.",
+        "ok": true,
+        "why": "Those are the RedSky, ECBN, and Kari-notification facts already cited in T2 from av6oo3, nj0abhbb, and the emergency settings reference."
+      },
+      {
+        "t": "Prove 911 by watching a contact-center flow trace.",
+        "ok": false,
+        "why": "Emergency calling for Calling endpoints is not a Flow Designer activity. T3 and T8 both leave a WxCC-only emergency menu unverified."
+      },
+      {
+        "t": "Borrow a callback number from another location because any DID works.",
+        "ok": false,
+        "why": "Extension-only users use the location default or another number from that same location."
+      }
+    ]
+  },
+  {
+    "id": "overflow",
+    "title": "Queue overflow",
+    "story": "A team-based queue with skills assigned in the flow shows estimated wait of -1. The flow announces “you are next” from the Success branch. An HTTP Request is the next activity after Queue Contact and returns empty. Priority is set to 15.",
+    "choices": [
+      {
+        "t": "Keep Success, leave the HTTP activity where it is, and keep priority 15 so the caller jumps the queue.",
+        "ok": false,
+        "why": "Success needs both values positive. EWT is always -1 for that queue type. HTTP Request directly after Queue Contact may not see data. Priority outside 1–9 defaults to 10, it does not mean ‘first’."
+      },
+      {
+        "t": "Use Insufficient Information, insert Play Message or Play Music before the HTTP Request, and expect priority 10.",
+        "ok": true,
+        "why": "That is nhovcy4: PIQ valid with EWT -1, the spacing warning, and the 1–9 range."
+      },
+      {
+        "t": "Delete Start Flow and publish with validation off.",
+        "ok": false,
+        "why": "Start Flow cannot be deleted. Publish stays disabled while validation is off."
+      }
+    ]
+  },
+  {
+    "id": "sso",
+    "title": "SSO break",
+    "story": "After a directory sync, new users got invite emails. Sign-in works from the ADFS test page inside the IdP, and fails from Webex. Partner-managed customer orgs were mapped with uid. Someone suggests the fix is a full administrator role.",
+    "choices": [
+      {
+        "t": "Turn on SSO before suppressing invites, test from Control Hub because Webex is service-provider initiated, and map partner SSO with mail rather than uid.",
+        "ok": true,
+        "why": "zqvufbb requires SSO to suppress invites. nyx7kubb says not to test from the IdP. lfu88u says partner SSO uses mail, and org SSO uid must match an email."
+      },
+      {
+        "t": "Retest from the IdP until it passes, and leave invites suppressed without SSO.",
+        "ok": false,
+        "why": "The ADFS guide says Webex does not want the IdP-initiated test. Invite suppression without SSO contradicts the Directory Connector guide."
+      },
+      {
+        "t": "Assign Help Desk administrator (Advanced) and ignore the claim.",
+        "ok": false,
+        "why": "16gmxfb’s help-desk role is a Partner Hub support role. It does not repair a uid/mail mismatch."
+      }
+    ]
+  },
+  {
+    "id": "css-order",
+    "title": "CSS closest match",
+    "story": "A lobby phone’s CSS lists the internal partition before the emergency partition. 911 exists as a specific pattern in emergency and as part of a 9XXX pattern in internal. Someone says the first partition that matches wins, so 911 hits the internal pattern.",
+    "choices": [
+      {
+        "t": "Leave it. Partition order is the match.",
+        "ok": false,
+        "why": "The CallManager System Guide says digit analysis looks through every partition and keeps the closest match. Order only breaks a tie between equally good matches. 911 is closer than 9XXX."
+      },
+      {
+        "t": "Expect the emergency partition, because closest match beats list order.",
+        "ok": true,
+        "why": "System Guide 4.0(1), and the 12.5 troubleshooting chapter restates it. The null partition is searched last. The CSS lab’s OrderTrap case is this rule."
+      },
+      {
+        "t": "Put 911 only in the null partition so every CSS finds it first.",
+        "ok": false,
+        "why": "The null partition is searched last, not first."
+      }
+    ]
+  },
+  {
+    "id": "recording-default",
+    "title": "Recording provider default",
+    "story": "Two engineers disagree about the Calling recording provider. One quotes “Webex is the default value.” The other quotes “Dubber is chosen by default.” Both sentences are in the same article. Neither has a screenshot of today’s Control Hub.",
+    "choices": [
+      {
+        "t": "Cite both sentences from nhvl4hw and refuse to name the live control.",
+        "ok": true,
+        "why": "The article says Webex is the default if you only have Calling, and later that Dubber is chosen by default because Dubber Go is included. Retention still differs: Webex one year and 100 GB, Dubber Go 30 days."
+      },
+      {
+        "t": "Delete the Dubber sentence because the dropdown text is enough.",
+        "ok": false,
+        "why": "Both sentences are in the article. Closing the conflict by dropping one of them hides the conflict."
+      },
+      {
+        "t": "Tell the customer Dubber Go stores a year because Webex does.",
+        "ok": false,
+        "why": "Dubber Go is 30 days in the user portal. Webex provider retention is one year and 100 GB."
+      }
+    ]
+  },
+  {
+    "id": "di-links",
+    "title": "DI links and private ASN",
+    "story": "A design uses one Edge Connect peer for Dedicated Instance because a customer story shows one peer, and it prepends a private ASN three times so that data center is preferred.",
+    "choices": [
+      {
+        "t": "Keep the single link and the prepend. The story overrides the order guide.",
+        "ok": false,
+        "why": "ny65x1bb’s one-peer story stays a story. n68tcpb and tf6kpq still say two DI links are required. Private ASN prepending is stripped on ingress."
+      },
+      {
+        "t": "Order two DI links, and use 13445 communities for preference instead of a private prepend.",
+        "ok": true,
+        "why": "Redundancy is mandatory on a DI Edge Connect order. Communities 13445:200, :300, and :400 set local preference. Do not filter on prefix lists."
+      },
+      {
+        "t": "Turn on CallManager on the publisher so the second data center is optional.",
+        "ok": false,
+        "why": "0ppivs says not to run Unified CM on the publisher, and a CM group must include nodes from both data centers in the region."
+      }
+    ]
+  },
+  {
+    "id": "cube-uri",
+    "title": "CUBE inbound match",
+    "story": "An INVITE has dtg=webex in the Request-URI and a called number that also matches a PSTN dial-peer’s destination-pattern. The engineer debugs only called-number and concludes the PSTN peer should win.",
+    "choices": [
+      {
+        "t": "The URI request peer wins before called-number is considered.",
+        "ok": true,
+        "why": "Document 211306 checks URI via, request, to, and from before called number. The first matching criterion wins. The Webex peer’s incoming uri request is that criterion."
+      },
+      {
+        "t": "Longest destination-pattern always wins, inbound and outbound.",
+        "ok": false,
+        "why": "Longest match is hunt 0 on the outbound hunt, after a peer has already been selected as a candidate. It is not the inbound SIP order."
+      },
+      {
+        "t": "Paste the sample registrar password into the dial-peer and retest.",
+        "ok": false,
+        "why": "jr1i3r’s sample credentials stay out of this Canon. Registration uses the trunk credentials from Control Hub, not a copied lab password."
+      }
+    ]
+  },
+  {
+    "id": "clocks",
+    "title": "21 days versus 13 months",
+    "story": "A Pro Pack admin wants a six-month media-quality chart and also wants the hop that failed on a call from last Tuesday. Someone exports Troubleshooting to CSV and expects the whole org history.",
+    "choices": [
+      {
+        "t": "Use analytics for the historical chart, Troubleshooting for the 21-day call, and expect the CSV to hold 100 rows from the current tab.",
+        "ok": true,
+        "why": "n0rlwxe is the analytics clock, including the January 27, 2026 note that a selectable window is 3 months at a time. frj1efb is 21 days and a 100-record CSV for the tab you are on."
+      },
+      {
+        "t": "Troubleshooting stores 13 months because Pro Pack does.",
+        "ok": false,
+        "why": "The 13-month figure is analytics. Troubleshooting is 21 days. The Webex App calling-history sentence is a separate sentence."
+      },
+      {
+        "t": "Collect logs for an offline user and read 90 days of them.",
+        "ok": false,
+        "why": "z84p2bb: the user must be online, and uploaded logs last 30 days."
+      }
+    ]
+  },
+  {
+    "id": "gcm",
+    "title": "Government cipher",
+    "story": "A Webex for Government Local Gateway is copied from the commercial sample: SHA1_80, a registration trunk, and a third-party SBC.",
+    "choices": [
+      {
+        "t": "Ship it. SHA1_80 is the only cipher Webex Calling supports.",
+        "ok": false,
+        "why": "That sentence is the commercial crypto class. jr1i3r marks the SHA1 step not applicable for Government and requires AEAD_AES_256_GCM."
+      },
+      {
+        "t": "Use a certificate trunk on CUBE and GCM. Do not register a Government trunk with the commercial digest sample.",
+        "ok": true,
+        "why": "t9xctu: Government is certificate-based and CUBE is the only SBC named there. Registration trunks are the commercial path up to 250."
+      },
+      {
+        "t": "Point the Government dial-peer at destination-pattern BAD.BAD and give that number to users.",
+        "ok": false,
+        "why": "BAD.BAD is a dummy required when outbound calls use an inbound dial-peer group. It is not a dialable number."
+      }
+    ]
+  },
+  {
+    "id": "strategy",
+    "title": "Routing strategy window",
+    "story": "An outdial entry point uses a routing strategy so the team can set screen pop and a custom ANI. The window is 0900–1700 written as 9:00. Music is attached for the email queue too. Best Available is selected on a non-skill team queue.",
+    "choices": [
+      {
+        "t": "Keep the strategy. It is the only way to set ANI and screen pop.",
+        "ok": false,
+        "why": "ewuay1: a strategy cannot customize outdial features and cannot use Customize ANI, screen pop, or a global variable. Use a flow for those."
+      },
+      {
+        "t": "Use a flow for the outdial features, enter times as 0900–1700, skip music on email, and keep Longest Available on the team queue.",
+        "ok": true,
+        "why": "nfrs2adb times are 0000–2400 and music is not for email or chat. ubg5qd’s team default is Longest Available. Best Available is a skill score."
+      },
+      {
+        "t": "Announce the lab’s Erlang wait as the contact-center EWT.",
+        "ok": false,
+        "why": "The queue lab is a study model. nhovcy4 EWT comes from samples and is −1 when a team queue has skills in the flow."
+      }
+    ]
+  }
+]
+</script>
+<script>
+(function () {
+  var drills = JSON.parse(document.getElementById("drill-data").textContent);
+  var store = {};
+  try { store = JSON.parse(localStorage.getItem("canon-drills") || "{}"); } catch (e) { store = {}; }
+  var root = document.getElementById("drills");
+  function save() { try { localStorage.setItem("canon-drills", JSON.stringify(store)); } catch (e) {} }
+  function score() {
+    var n = drills.filter(function (d) { return store[d.id]; }).length;
+    document.getElementById("drill-score").textContent = n + " of " + drills.length + " answered on this browser.";
+  }
+  drills.forEach(function (d) {
+    var art = document.createElement("article");
+    art.className = "qcard";
+    art.innerHTML = "<header><strong>" + d.title + "</strong></header><p>" + d.story + "</p>";
+    var box = document.createElement("div");
+    d.choices.forEach(function (c, idx) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ghost choice";
+      b.textContent = c.t;
+      b.addEventListener("click", function () {
+        store[d.id] = idx;
+        save();
+        var note = document.createElement("p");
+        note.className = "why";
+        note.textContent = (c.ok ? "This choice matches the cited articles. " : "This choice conflicts with the cited articles. ") + c.why;
+        var old = art.querySelector(".why");
+        if (old) old.remove();
+        art.appendChild(note);
+        score();
+      });
+      box.appendChild(b);
+    });
+    art.appendChild(box);
+    root.appendChild(art);
+  });
+  score();
+})();
+</script>
+
+</div></main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+
+</body></html>

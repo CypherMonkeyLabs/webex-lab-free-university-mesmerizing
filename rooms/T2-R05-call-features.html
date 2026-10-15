@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T2-R05 · Call Features">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T2-R05 · Call Features · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T2" data-room="T2-R05" data-room-title="Call Features" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T2</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T2/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T2 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li><li><a href="#tldr"><span class="n">01</span>TL;DR</a></li><li><a href="#map"><span class="n">02</span>Map</a></li><li><a href="#core"><span class="n">03</span>Core</a></li><li><a href="#eco"><span class="n">04</span>Ecosystem</a></li><li><a href="#flow"><span class="n">05</span>Flow</a></li><li><a href="#config"><span class="n">06</span>Config</a></li><li><a href="#limits"><span class="n">07</span>Limits</a></li><li><a href="#trouble"><span class="n">08</span>Trouble</a></li><li><a href="#selfq"><span class="n">09</span>Self-question</a></li><li><a href="#lab"><span class="n">10</span>Lab</a></li><li><a href="#quiz"><span class="n">11</span>Quiz</a></li><li><a href="#audio"><span class="n">12</span>Audio</a></li><li><a href="#interview"><span class="n">13</span>Interview</a></li><li><a href="#cites"><span class="n">14</span>Cites</a></li><li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T2 · Webex Calling</p>
+<h1>Call Features</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Call Features">
+<defs>
+<linearGradient id="T2R05sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T2R05sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Calling</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T2-R05</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for Call Features. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Call Features">
+<defs>
+<marker id="T2R05arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → Control Hub → CUBE → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T2R05arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T2R05arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T2R05arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T2R05lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → Control Hub → CUBE → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Hunt groups, call queues, auto attendants, call pickup, and feature access codes are location features in Control Hub under Services &gt; Calling &gt; Features. A hunt group rings a list. A call queue holds callers when agents are busy and is part of the professional license. An auto attendant plays a menu. Pickup answers a coworker’s ringing line. Star codes run the same features from a phone.</p>
+<div class="meta-row"><span class="meta-chip">Room <strong>T2-R05</strong></span><span class="meta-chip">Version <strong>v0.1</strong></span><span class="meta-chip">last-verified: <strong>2026-10-14</strong></span><span class="meta-chip">Difficulty <strong>L2</strong></span><span class="meta-chip">Est. time <strong>80–100 min</strong></span><span class="meta-chip">Prereq <strong>T2-R01, T1-R04</strong></span><span class="meta-chip read-chip">Reading <strong>20 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Hunt-group routing caps: Circular, Top Down, and Longest Idle allow 1,000 agents. Weighted allows 100. Simultaneous allows 50. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A call queue is voice-only and part of the Webex Calling professional license. The article recommends voice queues for up to 50 agents and recommends Webex Contact Center for omnichannel or large volume. The maximum table is separate from that recommendation. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>An auto attendant’s location cannot be changed after it is created. Transfer to operator uses the configured number when the key is pressed, or when no keys are pressed for the no-input timer. The CSV default for that timer is 10 seconds, range 1–60. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>A user belongs to one call pickup group, and the group is one location. Desk phones pick up with *98. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>The call-queue article’s retrieved body had no header date. Treat that date as unverified. <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>When a hunt group or a call queue sends a call to an agent, that agent’s call forwarding does not apply. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Hunt group busy is off by default. Only an administrator enables it, unless agents are allowed to use the FAC codes. Activation is #51, deactivation #52, interrogation #53. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></li>
+<li>Call-queue size is 250 calls. You can set calls in queue from 0 to 250, and the article says not to set 0 because incoming calls are then not allowed. A supervisor can manage 100 agents. Up to 1,000 queues per location. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Skill level 1 is highest and 20 is lowest. Default skill is 1. Skill routing uses skill first, then Circular, Top Down, or Longest Idle to break a tie. Calls are not routed to agents in Wrapping Up by default. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Call park is *68 after hold and a dial tone. Retrieve is *88. Group park is #58 or *58. Directed pickup is *97. Directed pickup with barge-in is *33. <a class="cite" href="#cite-5">[cite:5]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> A sales ring pattern, a held queue, and a menu are three different objects. The agent caps are not interchangeable.</div>
+</section>
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Five objects under Calling features</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T2-R05/arch.svg -->
+<div class="diagram" role="img" aria-label="Hunt group, queue, auto attendant, pickup, and star codes">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Call feature objects">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">What answers the call</text>
+<text x="28" y="58" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">All five are configured from Services, Calling, Features.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="88" width="220" height="130" rx="12" fill="#14262a" stroke="#7eb6ff"/><text x="52" y="124">1 · Hunt group</text><text x="52" y="150" fill="#b7ad9c" font-size="12">Rings a list</text><text x="52" y="172" fill="#b7ad9c" font-size="12">1000 / 100 / 50</text><text x="52" y="194" fill="#b7ad9c" font-size="12">Busy off by default</text>
+<rect x="276" y="88" width="220" height="130" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="292" y="124">2 · Call queue</text><text x="292" y="150" fill="#b7ad9c" font-size="12">Holds callers</text><text x="292" y="172" fill="#b7ad9c" font-size="12">Queue size 250</text><text x="292" y="194" fill="#b7ad9c" font-size="12">Professional license</text>
+<rect x="516" y="88" width="210" height="130" rx="12" fill="#14262a" stroke="#e0b07a"/><text x="532" y="124">3 · Auto attendant</text><text x="532" y="150" fill="#b7ad9c" font-size="12">Menu, no receptionist</text><text x="532" y="172" fill="#b7ad9c" font-size="12">Location is fixed</text><text x="532" y="194" fill="#b7ad9c" font-size="12">No-input default 10s</text>
+<rect x="746" y="88" width="200" height="130" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="762" y="124">4 · Pickup</text><text x="762" y="150" fill="#b7ad9c" font-size="12">One group per user</text><text x="762" y="172" fill="#b7ad9c" font-size="12">Same location</text><text x="762" y="194" fill="#b7ad9c" font-size="12">*98</text>
+<rect x="180" y="250" width="620" height="100" rx="12" fill="#14110c" stroke="#7eb6ff"/><text x="196" y="292">5 · Feature access codes</text><text x="196" y="318" fill="#b7ad9c" font-size="12">Park *68 · Retrieve *88 · Directed *97 · Group park *58 · Hunt busy #51</text>
+</g>
+</svg>
+</div>
+<div class="diagram" role="img" aria-label="How a queued call waits">
+<svg viewBox="0 0 980 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Queue hold path">
+<rect width="980" height="180" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">A queue holds, a hunt group rings</text>
+<text x="36" y="76" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Caller reaches the queue number. If every agent is unavailable, the call waits.</text>
+<text x="36" y="108" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  When an agent is free, routing follows priority or skill, then the pattern you chose.</text>
+<text x="36" y="140" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  Overflow runs when the calls-in-queue number is reached. Zero means new calls are not allowed.</text>
+</svg>
+</div>
+<ul class="legend"><li><span class="num">1</span>Hunt group</li><li><span class="num">2</span>Call queue</li><li><span class="num">3</span>Auto attendant</li><li><span class="num">4</span>Pickup</li><li><span class="num">5</span>Star codes</li></ul>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">flowchart LR
+  Caller --> AA[Auto attendant]
+  AA --> HG[Hunt group]
+  AA --> CQ[Call queue]
+  AA --> VM[Voicemail]
+  Phone[Desk phone] --> Pickup
+</pre></details>
+<p class="placeholder-asset">Studio asset still required: <code>assets/diagrams/T2-R05/arch.svg</code></p>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Concept deep-dive</p>
+<h2>Caps, timers, and codes</h2>
+<p>Hunt groups and call pickup are dated July 23, 2026. Feature access codes are dated July 15, 2026. Auto attendants are dated December 12, 2025. The call-queue page retrieved on October 14, 2026 did not include a header date. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-5">[cite:5]</a> <mark class="recheck">re-check</mark> <a class="cite" href="#cite-2">[cite:2]</a></p>
+<div class="chips"><span class="chip">Hunt group</span><span class="chip">Call queue</span><span class="chip">Auto attendant</span><span class="chip">Pickup</span><span class="chip">FAC</span></div>
+<!-- VISUAL:concept-image | Studio | assets/images/T2-R05/hero.png -->
+<div class="shot">VISUAL placeholder · <code>assets/images/T2-R05/hero.png</code> · Studio draws a menu, a ringing list, and a held queue.</div>
+<h3>Hunt group routing</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Pattern</th><th>What it does</th><th>Max agents</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Circular</td><td>Cycles through members after the last member who took a call.</td><td>1,000</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Top Down</td><td>Starts from the top of the list each time.</td><td>1,000</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Longest Idle</td><td>Rings the member idle the longest, then the next.</td><td>1,000</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Weighted</td><td>Sends calls to idle members by the percentages you assign, up to 100%.</td><td>100</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Simultaneous</td><td>Rings all members at once.</td><td>50</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<p>Advance when busy skips members already on a call. If you turn that off and the member has call waiting, the caller hears call-waiting tone until the member declines or becomes idle. Divert when unreachable applies to a network outage, and does not divert users who only have a mobile device. A blank extension uses the last four digits of the phone number. CSV weight is 0–100. Each CSV row holds 50 agents. A hunt group can have 1,000 agents, using continuation rows with the same name and location. <a class="cite" href="#cite-1">[cite:1]</a></p>
+<h3>Call queue numbers</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value in the article</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>License</td><td>Part of the Webex Calling professional license. Voice only.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Recommendation</td><td>Voice queues are recommended for queues up to 50 agents. Webex Contact Center is recommended for omnichannel or large volume.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Agents</td><td>1,000. Weighted 100. Simultaneous 50. Skill-based Circular, Top Down, and Longest Idle are 1,000 in the routing table.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Queue size</td><td>250 calls. The per-queue setting is 0–250. Do not set 0.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Queues per location</td><td>1,000</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Supervisor</td><td>100 agents</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>DNIS</td><td>Up to 100 entries per queue. DNIS replaces alternate numbers in the article’s transition text.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Skill</td><td>1 highest, 20 lowest, default 1. CSV skill range 1–20.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CSV</td><td>1,000 rows excluding the header. 50 agents per row. Routing type PRIORITY_BASED or SKILL_BASED.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<h3>Pickup, attendant, and codes</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Object</th><th>Rule</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Pickup membership</td><td>One group per user. Users from the same location. A location may have many groups. Names unique in the location.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Pickup notify</td><td>New groups default to visual and audio. Existing groups default to none. Delay 1–60 seconds, CSV default 6. Webex App from version 44.2. Desk phones from 12.0.4. The 6821 has audio only. Chrome extension and mobile clients do not get automatic notifications.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Auto attendant create</td><td>Services &gt; Calling &gt; Features &gt; Auto Attendant &gt; Add New. Location cannot be changed later. Blank extension becomes the last four digits.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Menu</td><td>Routes to a person, hunt group, or voicemail. After-hours menu also applies to the holiday schedule. Send to Voicemail is disabled when the forward target is an external number.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Park</td><td>Hold, dial tone, *68, then an extension or # for your own. Retrieve with *88 and the extension, or # if it is your own.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Selected caller ID</td><td>#80 uses the queue or hunt-group number and an IVR asks for the destination. #81 uses the default caller ID and connects directly. The hunt-group article describes the same two codes as temporary CLID.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-5">[cite:5]</a></td></tr>
+</tbody></table></div>
+<div class="callout tip"><span class="label">Tip</span><p>Keep the 50-agent voice-queue recommendation next to the 1,000-agent maximum. They are different sentences. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Gotcha</span><p>Disabling “allow agents to use the hunt group number as caller ID” is rejected while any agent still uses that number as Agent Caller ID. India locations also require the same PSTN provider, country, and zone. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Survivability neighbor</span><p>Hunt groups inside survivability mode have a different cap. That cap is T2-R07. The 1,000-agent figures on this page are Control Hub features while the cloud is reachable.</p></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T2-R05">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T2R05map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T2R05map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary">
+<div class="term"><dt>Hunt group</dt><dd>A number that rings a defined list of users, workspaces, or virtual lines in a chosen pattern. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Call queue</dt><dd>A professional-license voice queue that holds calls until an agent is available. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Auto attendant</dt><dd>A menu that answers and routes to a person, hunt group, or voicemail without a receptionist. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Call pickup group</dt><dd>An administrator-defined set of users in one location who can answer each other’s ringing lines. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>FAC</dt><dd>Feature access code, also called a star code, dialed on Webex App or an IP phone. <a class="cite" href="#cite-5">[cite:5]</a></dd></div>
+<div class="term"><dt>DNIS</dt><dd>Extra numbers that route to the same call queue while keeping the dialed number’s identity. Up to 100 per queue. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Skill level</dt><dd>1 is the highest skill on a call queue and 20 is the lowest. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Wrapping Up</dt><dd>Agents in this state do not receive queued calls unless that default is changed. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+</dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T2-R05/eco.svg -->
+<div class="diagram" role="img" aria-label="Call feature sisters"><svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="36" fill="#7eb6ff" font-family="Georgia, serif" font-size="20">Sisters of a ringing list</text>
+<text x="36" y="74" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Location and number · professional license for queues</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Voicemail, caller ID, India PSTN zone</text>
+<text x="36" y="138" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Webex Contact Center when the work is omnichannel</text>
+<text x="36" y="170" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Star codes on the phone · survivability caps in T2-R07</text>
+</svg></div>
+<details><summary>Mermaid source (not rendered)</summary><pre class="mermaid">mindmap
+  root((Features))
+    Hunt group
+    Call queue
+    Auto attendant
+    Pickup
+    FAC
+</pre></details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Locations</td><td>Each feature is created in a location.</td><td>Pickup cannot mix locations. An auto attendant cannot move later.</td><td>Location drop-down on create.</td><td>Building the menu in the wrong site.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Licenses</td><td>Call Queue is part of the professional Calling license.</td><td>A standard user is not the license the queue article names.</td><td>User and workspace licenses in T1-R03.</td><td>Promising queues on a license the article does not name.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Voicemail</td><td>Hunt groups can divert to voicemail. Attendants can transfer to a mailbox.</td><td>External forward targets cannot use Send to Voicemail.</td><td>Forwarding settings.</td><td>Send to Voicemail greyed out on an external number.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Webex Contact Center</td><td>The queue article recommends it for omnichannel or large volume.</td><td>A 50-agent recommendation is not a contact-center design.</td><td>Separate Contact Center setup.</td><td>Stretching a voice queue into digital channels.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Microsoft Teams</td><td>Cisco Call for Microsoft Teams is named so Teams users can reach queue features.</td><td>Orientation for where the agent clicks. Not a Teams Phone dial plan.</td><td>The integration the queue article names.</td><td>Assuming Teams replaces Control Hub routing.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Caller ID</td><td>Agents may present the group or queue number.</td><td>You cannot turn the policy off while agents still use it.</td><td>Allow agents to use the group number.</td><td>A rejected disable, or a missing ID across India PSTN zones.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency</td><td>Star codes are not a substitute for location emergency calling.</td><td>E911 stays with the location and the PSTN design.</td><td>T1-R04 and T2-R02.</td><td>Teaching * codes as emergency routing.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Analytics</td><td>The auto attendant and call queue articles include analytics and reports sections.</td><td>Reporting windows are T1-R06.</td><td>Feature analytics in the same articles.</td><td>Mixing a queue report with the Pro Pack analytics window.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Caller</td><td>Hunt group</td><td>Group number and pattern</td><td>The call, one member at a time or all at once</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Caller</td><td>Call queue</td><td>Queue number, priority or skill</td><td>A held call, then an agent</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Caller</td><td>Auto attendant</td><td>Menu key</td><td>Transfer to a person, hunt group, or voicemail</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Desk phone</td><td>Pickup group</td><td>*98 or a softkey</td><td>A ringing line in the same group</td><td><a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Phone</td><td>Park orbit</td><td>*68 after hold</td><td>A parked call, retrieved with *88</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Agent</td><td>Outbound CLID</td><td>#80 or #81</td><td>Queue or hunt number, or the default caller ID</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>CSV</td><td>Control Hub</td><td>ADD, REMOVE, REPLACE</td><td>Up to 50 agents per row</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>DNIS number</td><td>Same queue</td><td>DNIS entry</td><td>Dialed number and name presented to the agent</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Feature edges"><svg viewBox="0 0 980 80" xmlns="http://www.w3.org/2000/svg"><rect width="980" height="80" fill="#0c121c"/><text x="28" y="32" fill="#7eb6ff" font-family="Georgia, serif" font-size="16">Edges</text><text x="36" y="58" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Menu, list, and queue are separate features. *98, *68, and #51 act on the phone.</text></svg></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> The queue article names Cisco Call for Microsoft Teams as a place agents can use queue features. It does not publish a Dynamics 365 or Amazon Connect field map. Webex Contact Center is the product the same article recommends when the work outgrows a voice queue. <a class="cite" href="#cite-2">[cite:2]</a></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The queue article describes DNIS as the replacement for alternate numbers, with a three-month and six-month transition in the text. The retrieved body had no header date, so the clock start stays <mark class="recheck">re-check</mark>. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Canon planning: write the routing pattern and the agent cap on the same line so Weighted is never planned for 1,000 agents.</li>
+<li>Survivability-mode hunt groups are a later check in T2-R07, not an extension of the 1,000-agent table.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Agent call-forward rules never fire for queue calls</td><td>Forwarding does not apply when the queue or hunt group sends the call.</td><td>Whether the call arrived from the feature.</td><td>Change the feature’s own divert or overflow, not the agent’s forward.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A contact-center requirement is drawn as a call queue</td><td>The article recommends Webex Contact Center for omnichannel or large volume.</td><td>Channels and volume.</td><td>Keep the voice queue inside the recommendation, or move the design to Contact Center.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Pickup members in two cities share one group</td><td>A pickup group is one location.</td><td>The users’ locations.</td><td>Create a group per location.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a feature card to a star code</h2>
+<!-- VISUAL:sequence -->
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Protocol</th><th>Notes</th><th>Cite</th></tr></thead><tbody>
+<tr><td>1</td><td>Admin</td><td>Control Hub</td><td>Services &gt; Calling &gt; Features</td><td>Hunt Group, Call Queue, Auto Attendant, or Call Pickup.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Admin</td><td>Location</td><td>Drop-down</td><td>Auto attendant location is permanent. Pickup users share the location.</td><td><a class="cite" href="#cite-3">[cite:3]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>3</td><td>Admin</td><td>Number</td><td>Primary number and extension</td><td>Blank extension becomes the last four digits.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Admin</td><td>Pattern</td><td>Circular, Top Down, Longest Idle, Weighted, Simultaneous</td><td>Caps differ. Skill routing is queue-only in this set.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>5</td><td>Caller</td><td>Feature</td><td>Dial the number</td><td>Queue holds. Hunt group rings. Attendant plays the menu.</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>6</td><td>Phone</td><td>Pickup</td><td>*98</td><td>Directed pickup is *97. Barge-in is *33.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>7</td><td>Phone</td><td>Park</td><td>*68 then *88</td><td>Hold and a dial tone before *68.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>8</td><td>Agent</td><td>Hunt busy</td><td>#51 #52 #53</td><td>Only if the administrator allowed agents to change busy.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>Sign in to Control Hub and open Services &gt; Calling &gt; Features. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Hunt group: Add New, choose the location, name, number, and whether agents may use the group number as caller ID. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On Call Routing, pick Circular, Top Down, Longest Idle, Weighted, or Simultaneous and stay inside that pattern’s agent cap. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On Routing Settings, decide Advance when busy, divert when unreachable, divert when busy, and hunt group busy. Busy is off until you enable it. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Call queue: Add new, set location, name, number, calls in queue (not 0), and caller ID. Choose priority or skill, then the pattern. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Auto attendant: Add New, set the location knowing it cannot change, then business hours, after hours, and holiday. Menu keys transfer to a person, hunt group, voicemail, or the operator number. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Call pickup: Add New, one location, unique name, then users, workspaces, or virtual lines. Notification delay is 1–60 seconds. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>From a phone, park with hold, dial tone, *68. Retrieve with *88. Pick up with *98. <a class="cite" href="#cite-5">[cite:5]</a></li>
+</ol>
+<!-- VISUAL:screenshot:calling-features | Studio | assets/images/T2-R05/features.png -->
+<p class="placeholder-asset">Screenshot placeholder. The paths above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Values the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Hunt Circular / Top Down / Longest Idle</td><td>1,000 agents</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted. Header July 23, 2026.</td></tr>
+<tr><td>Hunt Weighted / Simultaneous</td><td>100 / 50</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Hunt CSV</td><td>50 agents per row, 1,000 agents in the group, weight 0–100</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr>
+<tr><td>Queue size</td><td>250, setting 0–250, do not use 0</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. Header date missing. <mark class="recheck">re-check</mark></td></tr>
+<tr><td>Queues per location / supervisor</td><td>1,000 queues, 100 agents per supervisor</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. <mark class="recheck">re-check</mark> date</td></tr>
+<tr><td>Voice-queue recommendation</td><td>Up to 50 agents</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Recommendation, not the maximum table</td></tr>
+<tr><td>AA no-input timer</td><td>1–60 seconds, default 10</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. Header December 12, 2025.</td></tr>
+<tr><td>Pickup delay</td><td>1–60 seconds, CSV default 6</td><td><a class="cite" href="#cite-4">[cite:4]</a></td><td>Quoted. Header July 23, 2026.</td></tr>
+<tr><td>Park / pickup codes</td><td>*68, *88, *98, *97, *33, #51</td><td><a class="cite" href="#cite-5">[cite:5]</a></td><td>Quoted. Header July 15, 2026.</td></tr>
+</tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Eight feature failures</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>A weighted hunt group will not accept agent 101</td><td>Weighted maximum is 100. Simultaneous is 50.</td><td>The routing pattern.</td><td>Change the pattern or reduce the list.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Busy members still ring</td><td>Advance when busy is off, and call waiting plays tone.</td><td>The routing setting.</td><td>Enable Advance when busy if the caller should skip busy members.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>New queue calls are refused</td><td>Calls in queue is 0, or Enable Queue is off.</td><td>The queue size and the enable toggle.</td><td>Set a size from 1 to 250. Turning the queue off also resets circular routing to the first agent.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>A wrapping agent receives nothing</td><td>Calls are not routed to Wrapping Up by default.</td><td>Agent state.</td><td>That is the documented default.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Callback to a chosen number is silent</td><td>An unassigned number selected as caller ID is not answered on callback.</td><td>Whether the number is assigned.</td><td>Choose an assigned number.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>The attendant cannot move to another site</td><td>Location is fixed after create.</td><td>The general settings.</td><td>Create a new attendant in the other location.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Send to Voicemail is unavailable</td><td>The forward target is an external number.</td><td>The number type.</td><td>Use an internal mailbox, or forward without that option.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A user will not join a second pickup group</td><td>One pickup group per user.</td><td>Existing membership.</td><td>Remove the user from the first group.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>Where are these features created?</summary><p class="answer">Services &gt; Calling &gt; Features. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L0</span>What is the simultaneous hunt-group cap?</summary><p class="answer">50 agents. Weighted is 100. Circular, Top Down, and Longest Idle are 1,000. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Is hunt group busy on by default?</summary><p class="answer">No. An administrator turns it on. Agents use FAC codes only if they are allowed. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What license includes Call Queue?</summary><p class="answer">The Webex Calling professional license. The offering is voice-only. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What queue size does the article warn against?</summary><p class="answer">Zero. Incoming calls are not allowed. The maximum in the table is 250. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which skill level is highest?</summary><p class="answer">1. Level 20 is the lowest. The default is 1. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Can you change an auto attendant’s location?</summary><p class="answer">No. The article says you cannot change it after creation. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the default no-input timer?</summary><p class="answer">10 seconds. The CSV range is 1–60. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How many pickup groups can a user join?</summary><p class="answer">One, and the group is a single location. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What do you dial to park and to retrieve?</summary><p class="answer">*68 to park after hold and a dial tone. *88 to retrieve. # parks or retrieves against your own extension. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why might India agents not see the hunt-group caller ID?</summary><p class="answer">The hunt group’s location and the agent’s location must share PSTN provider, country, and zone. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What is the 50-agent sentence on a queue?</summary><p class="answer">A recommendation for voice queues. The maximum table still lists 1,000, 100, or 50 by pattern. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper features, no production queue</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: pick hunt group, queue, or attendant for six call stories, and name the cap.</label></li>
+<li><label><input type="checkbox"> Prereq: this room. Do not create a production feature.</label></li>
+<li><label><input type="checkbox"> Step 1. Fifty-one people must ring at once. Expected: simultaneous cap is 50.</label></li>
+<li><label><input type="checkbox"> Step 2. Callers must wait with a comfort message. Expected: call queue, size at most 250, not 0.</label></li>
+<li><label><input type="checkbox"> Step 3. A menu must send callers to a hunt group. Expected: auto attendant. Location is fixed after create.</label></li>
+<li><label><input type="checkbox"> Step 4. Coworkers in one office answer each other’s phones. Expected: one pickup group, *98.</label></li>
+<li><label><input type="checkbox"> Step 5. An agent must present the queue number. Expected: #80, and the allow-caller-ID policy stays on while they use it.</label></li>
+<li><label><input type="checkbox"> Evidence: the six answers with cites.</label></li>
+<li><label><input type="checkbox"> Break it: plan 1,000 agents on Weighted. Recovery: Weighted is 100.</label></li>
+<li><label><input type="checkbox"> Reflection: which of your “queues” are actually hunt groups.</label></li>
+</ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Simultaneous hunt-group maximum?</p><details><summary>Answer</summary><p class="answer">50 agents. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Weighted hunt-group maximum?</p><details><summary>Answer</summary><p class="answer">100 agents. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>What happens to agent forwarding on a hunt-group call?</p><details><summary>Answer</summary><p class="answer">It does not apply. The same sentence is in the queue article. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>Recommended voice-queue size versus the table maximum?</p><details><summary>Answer</summary><p class="answer">Recommended up to 50 agents. The table allows 1,000, or 100 weighted, or 50 simultaneous. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Highest call-queue skill level?</p><details><summary>Answer</summary><p class="answer">1. Lowest is 20. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>Calls in queue is set to 0.</p><details><summary>Answer</summary><p class="answer">Incoming calls are not allowed. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Can an auto attendant change location later?</p><details><summary>Answer</summary><p class="answer">No. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Default no-input timer?</p><details><summary>Answer</summary><p class="answer">10 seconds, range 1–60. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Pickup group rules?</p><details><summary>Answer</summary><p class="answer">One group per user, users from the same location, many groups per location. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>Park and retrieve codes?</p><details><summary>Answer</summary><p class="answer">*68 and *88. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Hunt group busy FAC codes?</p><details><summary>Answer</summary><p class="answer">#51 activate, #52 deactivate, #53 interrogate. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Separate a hunt group from a call queue in one sentence each.</p><details><summary>Answer</summary><p class="answer">A hunt group rings a list in a pattern. A call queue holds callers until an agent is free and is part of the professional license. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot"><!-- AUDIO:overview | 3–5 min | prompt: "Separate hunt groups, call queues, and auto attendants, and name the 1000, 100, and 50 caps." | assets/audio/T2-R05/overview.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk skill levels, queue size 250, pickup membership, and the star codes for park and busy." | assets/audio/T2-R05/deep-dive.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+<div class="audio-slot"><!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: *68, *98, #51, skill 1, location locked on an attendant." | assets/audio/T2-R05/oral-drill.mp3 --><audio controls preload="none"><p>No recording in this slot yet.</p></audio><details><summary>Transcript slot</summary><p>Studio fills this.</p></details></div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> A hunt group rings a list. Circular, top down, and longest idle allow 1,000 agents. Weighted allows 100. Simultaneous allows 50. A call queue holds callers and belongs to the professional license. An auto attendant is the menu.</p>
+<p><strong>2 minutes.</strong> I create all of them under Services, Calling, Features, in a location. A blank extension becomes the last four digits. Agent forwarding does not apply once the feature has sent the call. Hunt group busy is off until an admin enables it. Agents then use #51, #52, and #53. A queue’s recommended voice size is 50 agents, while the table allows more except for weighted and simultaneous. Queue size is 250 and must not be 0. Skill 1 is highest. Pickup is one group per user in one location, and the desk code is *98. Park is *68 after hold. The attendant’s location cannot change, and its no-input default is 10 seconds.</p>
+<p><strong>30 seconds, caller ID.</strong> I can let agents present the group number. I cannot turn that policy off while an agent still uses it. In India the locations must share PSTN provider, country, and zone.</p>
+<p><strong>2 minutes, what I will not merge.</strong> I will not treat the 50-agent recommendation as the hard maximum. I will not teach survivability hunt caps as these Control Hub caps. I will not date the call-queue article, because the retrieved page had no header. I will not send omnichannel work to a voice queue when the article points at Webex Contact Center.</p>
+<p><strong>What you will say about a missed call on a coworker’s phone.</strong> If they share a pickup group, *98 or the softkey answers it. A new group notifies with visual and audio. An existing group defaults to no notification until you change it.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Manage hunt groups in Control Hub — help.webex — article o6rfjeb — <a href="https://help.webex.com/article/o6rfjeb">help.webex.com article o6rfjeb</a> — header July 23, 2026 — retrieved 2026-10-14. Routing caps, advance when busy, divert, hunt group busy default off, caller ID policy, India PSTN zone, CSV 50 per row and 1,000 agents, weights 0–100, agent forwarding does not apply, #80 and #81.</li>
+<li id="cite-2">Configure Call Queue — help.webex — article nzkg083 — <a href="https://help.webex.com/article/nzkg083">help.webex.com article nzkg083</a> — retrieved 2026-10-14. Header date was not in the retrieved body. <mark class="recheck">re-check</mark>. Professional license, voice-only, 50-agent recommendation, agent and queue maxima, skill 1–20, Wrapping Up, DNIS up to 100, calls in queue 0–250.</li>
+<li id="cite-3">Manage auto attendants — help.webex — article nsioxoi — <a href="https://help.webex.com/article/nsioxoi">help.webex.com article nsioxoi</a> — header December 12, 2025 — retrieved 2026-10-14. Menu to a person, hunt group, or voicemail. Location fixed after create. No-input timer 1–60, default 10. Send to Voicemail disabled for an external number. After-hours menu applies to holidays.</li>
+<li id="cite-4">Configure call pickup group — help.webex — article tll322 — <a href="https://help.webex.com/article/tll322">help.webex.com article tll322</a> — header July 23, 2026 — retrieved 2026-10-14. One group per user, same location, notification defaults, delay 1–60, CSV default 6, *98, Webex App 44.2, desk phone 12.0.4, 6821 audio only.</li>
+<li id="cite-5">Feature access codes for Webex Calling — help.webex — article 0zgzwj — <a href="https://help.webex.com/article/0zgzwj">help.webex.com article 0zgzwj</a> — header July 15, 2026 — retrieved 2026-10-14. *68, *88, *98, *97, *33, #58 and *58, #51, #52, #53, #80, #81.</li>
+</ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open questions: the header date on nzkg083, and when the DNIS transition clock in that article started.</li>
+<li>Facts still TODO-verify: 0. The call-queue date is <mark class="recheck">re-check</mark>.</li>
+<li>Assets missing: Features screenshot, audio.</li>
+<li>Ideas for v1.0: a card that pairs each routing pattern with its agent cap.</li>
+<li>Next review: when o6rfjeb or nzkg083 changes an agent maximum.</li>
+</ul>
+</section>
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T2-R04-devices-provisioning.html"><span>Previous</span><strong>T2-R04</strong><em>Devices &amp; Provisioning</em></a><a class="next" href="T2-R06-calling-security-compliance.html"><span>Next</span><strong>T2-R06</strong><em>Calling Security &amp; Compliance</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

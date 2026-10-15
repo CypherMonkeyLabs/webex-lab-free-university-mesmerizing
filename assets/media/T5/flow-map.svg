@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canon-svg" viewBox="0 0 1100 520" role="img" aria-labelledby="T5flowmap-title T5flowmap-desc" data-verify="Track order is the Canon page sequence, not a Cisco requirement.">
+<title id="T5flowmap-title">Dedicated Instance track flow</title>
+<desc id="T5flowmap-desc">Reading order on this Canon track page, from the first room to the last. A Canon sequence, not a Cisco-mandated path.</desc>
+<style>
+.canon-svg .pulse{animation:canon-pulse 4.8s ease-in-out infinite}
+.canon-svg .p0{animation-delay:0s}.canon-svg .p1{animation-delay:.7s}
+.canon-svg .p2{animation-delay:1.4s}.canon-svg .p3{animation-delay:2.1s}
+.canon-svg .p4{animation-delay:2.8s}.canon-svg .p5{animation-delay:3.5s}
+.canon-svg .p6{animation-delay:4.2s}
+.canon-svg .march{stroke-dasharray:7 9;animation:canon-march 1.15s linear infinite}
+.canon-svg .ex-step{opacity:.4;animation:canon-ex 12s ease-in-out infinite}
+.canon-svg .e0{animation-delay:0s}.canon-svg .e1{animation-delay:3s}
+.canon-svg .e2{animation-delay:6s}.canon-svg .e3{animation-delay:9s}
+.canon-svg .spin{transform-box:fill-box;transform-origin:center;animation:canon-spin 22s linear infinite}
+@keyframes canon-pulse{0%,100%{opacity:.42}35%,65%{opacity:1}}
+@keyframes canon-march{to{stroke-dashoffset:-32}}
+@keyframes canon-ex{0%,100%{opacity:.38}6%,20%{opacity:1}}
+@keyframes canon-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){
+  .canon-svg .pkt{display:none !important}
+  .canon-svg .pulse,.canon-svg .march,.canon-svg .ex-step,.canon-svg .spin{animation:none !important}
+  .canon-svg .pulse,.canon-svg .ex-step{opacity:1 !important}
+  .canon-svg .march{stroke-dasharray:none !important}
+}
+</style>
+
+<defs>
+<linearGradient id="T5flowmap-bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#070b14"/>
+  <stop offset="0.55" stop-color="#0c1424"/>
+  <stop offset="1" stop-color="#10192b"/>
+</linearGradient>
+<radialGradient id="T5flowmap-glow" cx="0.12" cy="0" r="0.9">
+  <stop offset="0" stop-color="#34d399" stop-opacity="0.38"/>
+  <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="T5flowmap-glow2" cx="1" cy="1" r="0.8">
+  <stop offset="0" stop-color="#67e8f9" stop-opacity="0.28"/>
+  <stop offset="1" stop-color="#67e8f9" stop-opacity="0"/>
+</radialGradient>
+<pattern id="T5flowmap-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.14"/>
+</pattern>
+<filter id="T5flowmap-soft" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2.2" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<marker id="T5flowmap-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+  <path d="M0 0 L8 4 L0 8 Z" fill="#e2e8f0"/>
+</marker>
+</defs>
+<rect width="1100" height="520" rx="22" fill="url(#T5flowmap-bg)"/>
+<rect width="1100" height="520" rx="22" fill="url(#T5flowmap-glow)"/>
+<rect width="1100" height="520" rx="22" fill="url(#T5flowmap-glow2)"/>
+<rect width="1100" height="520" rx="22" fill="url(#T5flowmap-dots)"/>
+<text x="1072" y="34" text-anchor="end" fill="#94a3b8" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">TRACK MAP · T5</text><text x="28" y="40" fill="#f8fafc" font-size="22" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">Dedicated Instance track flow</text><path class="march" d="M354.0 166.0 L550.0 166.0 L746.0 166.0 L746.0 336.0 L550.0 336.0 L354.0 336.0" fill="none" stroke="#34d399" stroke-width="4" opacity="0.55"/><g class="pkt" filter="url(#T5flowmap-soft)"><circle r="7" fill="#ffffff" stroke="#ffffff" stroke-width="2"><animateMotion dur="10s" begin="0s" repeatCount="indefinite" path="M354.0 166.0 L550.0 166.0 L746.0 166.0 L746.0 336.0 L550.0 336.0 L354.0 336.0"/></circle></g><g><rect x="264.0" y="120" width="180" height="92" rx="16" fill="#0b1220" stroke="#22d3ee" stroke-width="2"/><rect x="264.0" y="120" width="180" height="7" rx="3" fill="#22d3ee"/><g transform="translate(276.0,154.0) scale(1.0)" fill="none" stroke="#22d3ee" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="310.0" y="156" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R01</text><text x="310.0" y="174" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">What Dedicated</text><text x="310.0" y="188" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Instance Is</text></g><g><rect x="460.0" y="120" width="180" height="92" rx="16" fill="#0b1220" stroke="#a5b4fc" stroke-width="2"/><rect x="460.0" y="120" width="180" height="7" rx="3" fill="#a5b4fc"/><g transform="translate(472.0,154.0) scale(1.0)" fill="none" stroke="#a5b4fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="506.0" y="156" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R02</text><text x="506.0" y="174" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">DI Architecture &amp;</text><text x="506.0" y="188" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Peering</text></g><g><rect x="656.0" y="120" width="180" height="92" rx="16" fill="#0b1220" stroke="#fbbf24" stroke-width="2"/><rect x="656.0" y="120" width="180" height="7" rx="3" fill="#fbbf24"/><g transform="translate(668.0,154.0) scale(1.0)" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="702.0" y="156" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R03</text><text x="702.0" y="174" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Connectivity</text><text x="702.0" y="188" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Options</text></g><g><rect x="264.0" y="290" width="180" height="92" rx="16" fill="#0b1220" stroke="#fb7185" stroke-width="2"/><rect x="264.0" y="290" width="180" height="7" rx="3" fill="#fb7185"/><g transform="translate(276.0,324.0) scale(1.0)" fill="none" stroke="#fb7185" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="310.0" y="326" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R06</text><text x="310.0" y="344" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">DI Migration Path</text></g><g><rect x="460.0" y="290" width="180" height="92" rx="16" fill="#0b1220" stroke="#34d399" stroke-width="2"/><rect x="460.0" y="290" width="180" height="7" rx="3" fill="#34d399"/><g transform="translate(472.0,324.0) scale(1.0)" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="506.0" y="326" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R05</text><text x="506.0" y="344" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">DI + Webex Calling</text><text x="506.0" y="358" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Coexistence</text></g><g><rect x="656.0" y="290" width="180" height="92" rx="16" fill="#0b1220" stroke="#e879f9" stroke-width="2"/><rect x="656.0" y="290" width="180" height="7" rx="3" fill="#e879f9"/><g transform="translate(668.0,324.0) scale(1.0)" fill="none" stroke="#e879f9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M8 12h7.2M14.2 11.2 16.4 8.6M14.2 12.8 16.4 15.4"/></g><text x="702.0" y="326" fill="#f8fafc" font-size="14" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="750">T5-R04</text><text x="702.0" y="344" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">DI Admin &amp;</text><text x="702.0" y="358" fill="#94a3b8" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">Operations</text></g><text x="28" y="486" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">Reading order on this Canon track page, from the first room to the last. A Canon sequence, not a</text><text x="28" y="502" fill="#cbd5e1" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif">Cisco-mandated path.</text>
+</svg>

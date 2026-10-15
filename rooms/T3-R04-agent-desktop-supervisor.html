@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T3-R04 · Agent Desktop &amp; Supervisor">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T3-R04 · Agent Desktop &amp; Supervisor · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T3" data-room="T3-R04" data-room-title="Agent Desktop &amp; Supervisor" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T3</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T3/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T3 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T3 · Webex Contact Center</p>
+<h1>Agent Desktop &amp; Supervisor</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Agent Desktop &amp;amp; Supervisor">
+<defs>
+<linearGradient id="T3R04sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T3R04sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Contact center</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T3-R04</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Caller</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Entry point</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Queue</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Agent</text></g>
+</svg>
+<figcaption>Illustrated scene for Agent Desktop &amp;amp; Supervisor. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Agent Desktop &amp;amp; Supervisor">
+<defs>
+<marker id="T3R04arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Caller → Entry point → Queue → Agent</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Agent</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T3R04arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T3R04arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T3R04arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T3R04lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Caller → Entry point → Queue → Agent. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Agent Desktop is a browser. The sign-in article wants a display larger than 500 by 500 and zoom at 100 percent. The agent picks Desktop, Extension, or Dial Number, then a team. Supervisors listen and barge from the Interactions page. Those controls are gone from the Team Performance widget. A team is agents at a site, agent-based or capacity-based, and a skill profile is shared by at most 500 agents.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T3-R04</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>80–100 min</strong></span>
+<span class="meta-chip">Prereq <strong>T3-R01, T3-R03</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or a bad dial number, can RONA. If E911 was accepted and telephony still fails, share the Tracking ID. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Handle calls using Desktop (WebRTC), Extension, or Dial Number, depending on the profile. Digital-only users do not see telephony options. Auto sign-in is the “Don’t show this again” checkbox. A failed auto sign-in returns you to the preferences screen. An empty team selection still enables Save &amp; Continue and then errors. <a class="cite" href="#cite-1">[cite:1]</a></li><li>A team belongs to one site, and the site cannot be edited later. Agent-based teams list agents. Capacity-based teams take a dial number and a capacity, and you cannot switch the type afterward. Multimedia profile and the agent list are not for a capacity-based team. Queue ranking allows 50 queues across media types. <a class="cite" href="#cite-2">[cite:2]</a></li><li>Only 500 agents can share one skill profile. Assign it on the agent or the team. Adding the agent to the team assigns the team’s skill profile. Skill changes do not require a new sign-in. Desktop layout is optional on an agent-based team. Team and layout edits are bidirectional in the audit log. New layout features appear after sign-in or a browser reload. <a class="cite" href="#cite-2">[cite:2]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or a bad dial number, can RONA. If E911 was accepted and telephony still fails, share the Tracking ID. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Handle calls using Desktop (WebRTC), Extension, or Dial Number, depending on the profile. Digital-only users do not see telephony options. Auto sign-in is the “Don’t show this again” checkbox. A failed auto sign-in returns you to the preferences screen. An empty team selection still enables Save &amp; Continue and then errors. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>A team belongs to one site, and the site cannot be edited later. Agent-based teams list agents. Capacity-based teams take a dial number and a capacity, and you cannot switch the type afterward. Multimedia profile and the agent list are not for a capacity-based team. Queue ranking allows 50 queues across media types. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Only 500 agents can share one skill profile. Assign it on the agent or the team. Adding the agent to the team assigns the team’s skill profile. Skill changes do not require a new sign-in. Desktop layout is optional on an agent-based team. Team and layout edits are bidirectional in the audit log. New layout features appear after sign-in or a browser reload. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Listen and barge live on Interactions, Active tab, View, then Listen. One agent at a time. Barge only after listen has started, and not during consult. You cannot transfer, drop the agent, or start consult while you are barged in. A transfer to another team or queue ends monitoring. Finish monitoring before you sign out. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Finesse gadgets are a Webex CCE conversation, written in T6-R04 as a marked row. This room is the multi-tenant desktop the sign-in article describes. T3-R08 stays planned so this room is the listen-and-barge page.</div>
+</section>
+
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Sign-in, team, then a monitored call</h2>
+<div class="diagram" role="img" aria-label="Agent sign-in and a supervisor listen">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent sign-in and a supervisor listen">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Agent sign-in and a supervisor listen</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Email, password, or Azure SSO when the administrator enabled it.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  Desktop, Extension, or Dial Number. Then a real team. Save and Continue.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  The task page uses the layout on the agent-based team, after sign-in or reload.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  Supervisor opens Interactions, Active, View, Listen, and answers the monitor call.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  Barge In joins only after listen. Consult blocks barge.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  Transfer to another team or queue drops the monitor. Sign out waits until listen ends.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Agent[Agent browser] --> Team
+  Team --> Task[Task page]
+  Sup[Supervisor] --> Interactions
+  Interactions --> Listen
+  Listen --> Barge
+</pre>
+</details>
+</section>
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>What the desktop will and will not do</h2>
+<div class="callout def"><span class="label">Telephony choice is the profile</span><p>Desktop means WebRTC in the browser. Headset control actions are not supported on those calls. Extension is a Webex Calling extension, prefilled when the profile has one. Dial Number is a Webex Calling number, with an international checkbox that builds +country and subscriber. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">RONA is a sign-in symptom</span><p>The article says enhanced validation is there to stop RONA from an invalid or unassigned dial number or extension. Browser permission for Desktop is separate: the user is told to allow the microphone or talk to the administrator. E911 accepted and still no telephony is a Tracking ID case. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Listen moved</span><p>Monitoring and barge are only on the Interactions page. The Team Performance widget no longer has those controls. The Interactions article dates that behavior and also describes a granular agent-state toggle from April 30, 2026 through October 29, 2026. Keep that toggle off if you still need Webex WFO. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<h3>Team types</h3>
+<div class="table-wrap"><table><thead><tr><th>Setting</th><th>Agent-based</th><th>Capacity-based</th><th>Cite</th></tr></thead><tbody><tr><td>Who is on it</td><td>Named agents</td><td>No specific agent count. For voicemail or groups Webex Contact Center does not manage.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Dial number and capacity</td><td>Not the capacity fields</td><td>Both apply</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Multimedia profile</td><td>Can override the site profile</td><td>Cannot assign it</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Desktop layout</td><td>Optional</td><td>Not described as the agent-based layout picker</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Skill profile</td><td>Optional when skills-based routing is on. 500 agents share one profile.</td><td>The 500-agent sentence is on the skill profile, not a second cap for capacity.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Type change later</td><td>Cannot switch to capacity-based</td><td>Cannot switch to agent-based</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Delete</td><td>Inactive first</td><td>Inactive first</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Monitor rules</h3>
+<div class="table-wrap"><table><thead><tr><th>Action</th><th>Rule</th><th>Cite</th></tr></thead><tbody><tr><td>Listen</td><td>One agent at a time. The button is disabled if another supervisor is already monitoring.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Barge In</td><td>Only after listen has started. Blocked while the agent is in consult.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>During barge</td><td>No transfer, no drop agent, no new consult or conference.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Transfer by the agent</td><td>A move to a different team or queue ends the monitor.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Telephony down</td><td>Monitoring is unavailable if desktop telephony is disconnected.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Sign out</td><td>Finish monitoring first. The sign-in article also blocks sign-out during an active conversation.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T3-R04">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Caller</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Queue</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Agent</text>
+<circle cx="200" cy="132" r="36" fill="url(#T3R04map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T3R04map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Agent Desktop</dt><dd>The browser desktop. Display greater than 500×500. Zoom 100%. One browser and one tab. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>WebRTC Desktop</dt><dd>Handle calls using Desktop. The browser is the phone. Headset control actions are not supported. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Dial Number</dt><dd>A Webex Calling number on the profile. International format uses the country-code checkbox. Other formats are E.164 or IDD. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Extension</dt><dd>A Webex Calling extension. One configured extension is prefilled. Several become a dropdown of pre-validated extensions. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Auto sign-in</dt><dd>Don’t show this again. Preferences are stored in the browser. A bad saved dial number sends you back to the preferences screen. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>RONA</dt><dd>Redirect on no answer. The sign-in article ties it to missing browser permission and to an invalid dial number or extension, and to E911 accepted with telephony still down. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Team</dt><dd>Agents associated with one site. Parent site cannot be edited later. Active by default. Delete only when inactive. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Agent-based team</dt><dd>A listed set of agents. Optional desktop layout and multimedia profile. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Capacity-based team</dt><dd>Dial number and capacity. No named agent list and no multimedia profile. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Skill profile</dt><dd>Optional when skills-based routing is enabled. At most 500 agents share one. Team assignment copies the team’s profile onto the agent. Changes apply without a new sign-in. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Queue ranking</dt><dd>Optional per team, per media type. At most 50 queues across all media types. Unranked queues show None. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Desktop layout</dt><dd>Optional on an agent-based team. Users see new layout-based features after they sign in or reload. Team edits and layout edits show up together in the audit log. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Interactions page</dt><dd>Supervisor workspace: Active, Queued, and Completed. Listen and barge are here. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Listen</dt><dd>Monitor one agent from the interaction details. Answer the monitoring call. Pause mutes the supervisor’s audio. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Barge In</dt><dd>Join as a participant after listen. Not available during consult. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Granular agent state</dt><dd>Control Hub toggle available April 30, 2026 through October 29, 2026, then general availability. Leave it off to keep using Webex WFO. <a class="cite" href="#cite-3">[cite:3]</a></dd></div></dl>
+<h3>Mind map</h3>
+<div class="diagram" role="img" aria-label="Desktop, team, and the sisters around a call">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Desktop, team, and the sisters around a call">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Desktop, team, and the sisters around a call</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Sign-in and RONA  ·  team type  ·  skill profile of 500</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Layout after reload  ·  Interactions listen and barge</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">WFO toggle  ·  CRM connectors exclude chat and email</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Analyzer is the report  ·  Finesse is the marked Enterprise row</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">E911 Tracking ID when desktop telephony still fails</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">Identity is Webex sign-in, Azure SSO when enabled</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Desktop))
+    Sign-in
+    Team
+    Listen
+    Sisters
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>WFM / WFO</td><td>Webex WFO, named on the Interactions article.</td><td>The granular agent-state toggle must stay off through the published window if WFO is in use.</td><td>Control Hub admin toggle.</td><td>Turning the toggle on and losing WFO behavior.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Quality / recording</td><td>Listen is live monitoring, not a recording export.</td><td>Barge changes the call. Listen is the silent path the article describes, with Pause and Resume.</td><td>Interactions, Active.</td><td>Looking for listen on Team Performance.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>E911</td><td>Accepted E911 notifications with telephony still down.</td><td>That path can RONA. The administrator needs the Tracking ID.</td><td>Browser telephony and the sign-in article’s RONA note.</td><td>Retrying sign-in without the Tracking ID.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analyzer</td><td>Historical and real-time reporting, T3-R07 when written.</td><td>Interactions can filter completed history for up to 13 months and starts with 500 rows.</td><td>Interactions customize, filter, export.</td><td>Treating the 500-row first page as the full day.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>CRM connectors</td><td>Salesforce, Dynamics 365, ServiceNow.</td><td>Digital chat and email are not supported on those connectors. The desktop inside the CRM is the voice connector.</td><td>T3-R01 cites dyidod.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>AI Assistant</td><td>Listed on newer desktop articles in the Canon backlog.</td><td>nvvv1zb, header October 06, 2026: paid add-on, Agent Desktop AI Assistant icon, administrator can leave features off. <a class="cite" href="#cite-7">[cite:7]</a></td><td>Desktop Experience &gt; Desktop Layouts. File name Default Desktop Layout.json. <a class="cite" href="#cite-6">[cite:6]</a></td><td>Icon hidden because the paid add-on is off.</td><td><a class="cite" href="#cite-7">[cite:7]</a></td></tr><tr><td>IVR / flow</td><td>The flow that queued the contact.</td><td>Desktop receives the contact after routing. Queue ranking on the team is a priority hint, 50 queues.</td><td>User Management &gt; Teams.</td><td>Ranking 51 queues.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Digital channels</td><td>Chat, email, social on the platform.</td><td>Digital-only profiles hide telephony at sign-in. CRM gadgets still exclude chat and email.</td><td>User profile, Connect for the channel.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Identity / SSO</td><td>Email and password, or Azure SSO when enabled.</td><td>Teams authentication is skipped when Azure SSO is on. A cancelled Teams auth can be retried from Profile Settings.</td><td>Profile, Collaboration Tools.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Finesse</td><td>Enterprise desktop.</td><td>Gadget import into Agent Desktop is unmarked. See T6-R04.</td><td>Not this sign-in URL.</td><td>Stays marked in T6-R04</td><td>See T6-R04</td></tr><tr><td>Skill-based routing</td><td>The feature flag that reveals skill profiles on the team.</td><td>500 agents per profile. No extra sign-in after a change.</td><td>User Management &gt; Skill Profiles.</td><td>Expecting a re-login that the article does not require.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Queue</td><td>Where the contact waited.</td><td>A transfer to another queue ends a monitor.</td><td>Interactions while listening.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>Browser</td><td>Agent Desktop</td><td>Administrator URL, email, password or Azure SSO</td><td>Session. One tab.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Profile</td><td>Sign-in telephony</td><td>Desktop, Extension, or Dial Number</td><td>The calling device for this session</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Agent</td><td>Team</td><td>Team dropdown. Empty selection errors.</td><td>Which team this sign-in counts for</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Team</td><td>Skill profile</td><td>Add agent, profile copies. 500-agent share.</td><td>Skills, applied without a new sign-in</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Team</td><td>Desktop layout</td><td>Optional on agent-based teams. Audit is bidirectional.</td><td>What the task page shows after reload</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Supervisor</td><td>Active interaction</td><td>Interactions, View, Listen, answer</td><td>A monitoring call</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Listen</td><td>Barge In</td><td>After listen, not during consult</td><td>Supervisor becomes a participant</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>CRM</td><td>Desktop</td><td>Connector inside Salesforce, Dynamics, or ServiceNow</td><td>Voice session. Chat and email excluded on the connector.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr></tbody></table></div>
+<h3>Cross-platform bridges</h3>
+<div class="orientation"><strong>Orientation only.</strong> Finesse, Amazon Connect agent workspace, and Dynamics 365 Contact Center are different desks. Cisco’s Dynamics CRM connector is the screen-pop connector, not Microsoft’s contact-center product.</div>
+<div class="table-wrap"><table><thead><tr><th>This desktop</th><th>Other name</th><th>What to say</th><th>Cite</th></tr></thead><tbody><tr><td>Agent Desktop sign-in</td><td>Finesse</td><td>Different product. The mapping stays marked in T6-R04.</td><td>No published payload in this room</td><td>See T6-R04</td></tr><tr><td>Listen / barge</td><td>CUIC silent monitor</td><td>Not published as the same control.</td><td>Open barge and listen on the supervisor desktop, and open silent monitor in CUIC. The articles do not publish them as the same control, and each console changes on its own release.</td></tr><tr><td>Dynamics connector</td><td>Dynamics 365 Contact Center</td><td>The connector is Cisco’s. The Microsoft product is a peer label.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>WebRTC Desktop</td><td>A physical MPP</td><td>Extension and Dial Number are the Webex Calling options. Desktop is the browser.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>The granular agent-state toggle’s general-availability date in the article is October 29, 2026. <mark class="recheck">re-check</mark> after that date. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Schedule-listening caps are 5k9gxcb (250 queues, 100 teams, 500 specific agents, six months, 2000 schedules per tenant). The JSON download is Default Desktop Layout.json (60x9ji). Finesse gadget import stays marked in the limits table. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-6">[cite:6]</a></li>
+<li>Canon planning: keep T3-R08 as the later supervisor-only room so listen is not documented twice.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>WFO stops matching agent state</td><td>Granular agent-state toggle was enabled.</td><td>Control Hub toggle and the article’s dates.</td><td>Turn it off while you still need WFO.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Chat is missing inside Salesforce</td><td>CRM connectors do not support chat and email.</td><td>Which surface the agent opened.</td><td>Use the digital desktop, not the CRM gadget.</td><td><a class="cite" href="#cite-4">[cite:4]</a></td></tr><tr><td>Listen button missing on Team Performance</td><td>The control moved to Interactions.</td><td>Active tab, View, Listen.</td><td>Stop hunting the widget.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From browser to a barged call</h2>
+<div class="diagram" role="img" aria-label="Supervisor joins after the agent is already on the call">
+<svg viewBox="0 0 980 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supervisor joins after the agent is already on the call">
+<rect width="980" height="270" fill="#0c121c"/>
+<text x="28" y="40" fill="#f0b429" font-family="Georgia, serif" font-size="20">Supervisor joins after the agent is already on the call</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">1  Agent is Idle-capable and signed in with a team.</text>
+<text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">2  A contact is on the Active tab.</text>
+<text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">3  Supervisor clicks View, then Listen, then answers.</text>
+<text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">4  Barge In is optional and only now.</text>
+<text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">5  End Listen before sign-out.</text>
+<text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="15">6  Agent sign-out itself still requires Idle and no active conversation.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>What the article says</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Browser</td><td>Desktop URL</td><td>First load can take seconds. A failure shows an error to share with the administrator.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Email</td><td>Password or SSO</td><td>Alt+Left or Command-Left changes the email. Forgot password uses a six-digit code.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Preferences</td><td>Team</td><td>Default DN can be locked read-only. Don’t show this again stores preferences. Empty team errors.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>4</td><td>Admin</td><td>Team</td><td>Services &gt; Contact Center &gt; User Management &gt; Teams. Site is permanent.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>5</td><td>Supervisor</td><td>Interactions</td><td>Home, Interactions icon. Active, Queued, Completed.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>6</td><td>Active row</td><td>Listen</td><td>View, Listen, answer the monitoring call.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>7</td><td>Listen</td><td>Barge</td><td>Optional. Not during consult.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>8</td><td>Monitor</td><td>Sign out</td><td>End Listen first. Agent sign-out also needs Idle.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths</h2>
+<ol>
+<li>Give the agent the desktop URL, a display above 500×500, and zoom 100%. Tell them to use one tab. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If Azure SSO is enabled, the Microsoft Teams window does not appear. If it does, they can cancel and retry under Profile, Collaboration Tools, Try Again. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Lock the dial number only if the administrator restricted it to the default DN. Otherwise the agent chooses Desktop, Extension, or Dial Number. Digital-only users skip telephony. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create the team at Services &gt; Contact Center &gt; User Management &gt; Teams. Pick the site first. Choose agent-based or capacity-based. You cannot change that later. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>On an agent-based team, optionally set multimedia, desktop layout, and agents. Skill profile is optional when the feature is on, and only 500 agents share one. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Rank queues only if you need it. Maximum 50 across telephony, chat, email, and social. Same rank may repeat. Save, then Create. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Deactivate before delete. Inactive is the only deletable state. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Supervisor: Interactions, Active, View, Listen, answer. Barge only after that. End Listen before sign-out. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Through October 29, 2026, leave the granular agent-state toggle off when Webex WFO must keep working. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Export or filter from Interactions if you need a list. The first paint is 500 interactions. History filters go out 13 months. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+<pre class="sim-out">Sign-in (n6lmci8)
+  display:        &gt; 500 x 500
+  zoom:           100%
+  tabs:           one
+  sign-out:       Idle, no active conversation, no monitoring
+  empty team:     Save stays enabled, then errors
+
+Team (mqf72s)
+  site:           cannot edit later
+  type:           cannot switch later
+  skill profile:  500 agents share one
+  queue rank:     50 across media
+
+Monitor (xceh0k)
+  where:          Interactions, not Team Performance
+  listen:         one agent
+  barge:          after listen, not during consult</pre>
+<!-- VISUAL:screenshot:interactions | Studio | assets/images/T3-R04/interactions.png -->
+<p class="placeholder-asset">Screenshot placeholder. The controls above are the articles.</p>
+</section>
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles state</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Display</td><td>Greater than 500×500</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Zoom</td><td>100%</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Skill profile share</td><td>500 agents</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Queue ranking</td><td>50 queues across all media types</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Interactions first page</td><td>500, then scroll for more</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>History filter</td><td>Up to 13 months</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Listen concurrency</td><td>One agent at a time</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Granular state toggle</td><td>April 30, 2026 through October 29, 2026, then GA</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted. <mark class="recheck">re-check</mark> after that date</td></tr><tr><td>Teams per agent</td><td>The sign-in article shows one team choice per session</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Read the teams on the user in Control Hub. The article does not print a numeric maximum of teams on the user, so the live user record is the list that changes</td></tr><tr><td>Schedule listening caps</td><td>250 queues, 100 teams, 500 agents, six months, 2000 schedules per tenant</td><td>5k9gxcb</td><td>Quoted <a class="cite" href="#cite-5">[cite:5]</a></td></tr><tr><td>Finesse gadget import</td><td>Not published here</td><td>T6-R04</td><td>Stays marked in T6-R04</td></tr></tbody></table></div>
+</section>
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten failures that follow from the articles</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>Desktop layout is clipped</td><td>Viewport at or under 500×500, or zoom is not 100%.</td><td>Display and zoom.</td><td>Enlarge the window and reset zoom.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>A second tab steals the session</td><td>Multiple browsers or tabs are refused.</td><td>The Continue prompt.</td><td>Stay on one tab. Continue reloads the interaction pane if you were on a call.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>RONA on every Desktop call</td><td>Browser permission denied, or E911 accepted and telephony still down.</td><td>Browser site settings. Tracking ID.</td><td>Allow the microphone, or send the Tracking ID.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>RONA on Extension or Dial Number</td><td>Invalid or unassigned number. The article says validation was added to prevent that.</td><td>Profile dial numbers.</td><td>Pick a pre-validated extension or number.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Save &amp; Continue with a blank team</td><td>Known issue. The button stays enabled.</td><td>Team dropdown.</td><td>Select a team again.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Auto sign-in loops back to preferences</td><td>Saved dial number is invalid or in use.</td><td>The restored preferences screen.</td><td>Correct the number. Default DN loses to saved preferences.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Skill change seems to need a re-login</td><td>The team article says it does not.</td><td>Skill profile on the agent.</td><td>Wait for the update. Do not force a sign-out for that reason.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Cannot delete a team</td><td>It is still active.</td><td>Activate toggle.</td><td>Deactivate, save, then delete.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Listen is disabled</td><td>Another supervisor is already monitoring that agent.</td><td>The button state.</td><td>One monitor at a time.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Barge does nothing during consult</td><td>Barge is refused while the agent is consulting.</td><td>Agent state.</td><td>Wait until consult ends, and only after listen has started.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>What display size does the sign-in article require?</summary><p class="answer">Greater than 500 by 500 pixels, zoom 100%. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>When can an agent sign out?</summary><p class="answer">From Idle, with no active conversation and no monitoring task. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What are the three telephony choices?</summary><p class="answer">Desktop, Extension, and Dial Number, when the profile includes them. Digital-only users do not see them. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is a capacity-based team for?</summary><p class="answer">Voicemail or agent groups that Webex Contact Center does not manage. It has a dial number and a capacity. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many agents share a skill profile?</summary><p class="answer">500. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Do skill-profile edits force a new sign-in?</summary><p class="answer">No. The article says the changes apply without sign-out and sign-in. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where did listen and barge go?</summary><p class="answer">The Interactions page. They were removed from Team Performance. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>When is barge allowed?</summary><p class="answer">After listen has started, and not while the agent is in consult. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What ends a monitoring session besides End Listen?</summary><p class="answer">The agent transfers to a different team or queue. Disconnected desktop telephony makes monitoring unavailable. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What is the granular state toggle’s published window?</summary><p class="answer">April 30, 2026 through October 29, 2026, then general availability. Off keeps Webex WFO. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Why is chat missing in the Salesforce gadget?</summary><p class="answer">CRM connectors do not support chat and email. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Is this desktop Finesse?</summary><p class="answer">No. Finesse gadget parity is marked in T6-R04. This room cites the Agent Desktop sign-in article.</p></details>
+</section>
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>A sign-in and listen checklist</h2>
+<ul><li><label><input type="checkbox"> Goal: on a lab tenant, sign in one agent and have a supervisor listen, then barge, then end listen before sign-out.</label></li><li><label><input type="checkbox"> Prereq: a Webex Contact Center lab you may change. Production monitoring of real customers is out of scope.</label></li><li><label><input type="checkbox"> Step 1. Set the browser to 100% zoom and a window larger than 500×500. Expected: the desktop loads.</label></li><li><label><input type="checkbox"> Step 2. Choose Extension or Dial Number from a pre-validated profile, and a real team. Expected: the task page.</label></li><li><label><input type="checkbox"> Step 3. Place a test call to that agent. Expected: the interaction is on the supervisor’s Active tab.</label></li><li><label><input type="checkbox"> Step 4. View, Listen, answer. Expected: the monitoring pane. Pause and Resume mute and restore the supervisor audio.</label></li><li><label><input type="checkbox"> Step 5. Barge In. Expected: the article’s limits: no transfer, no drop, no new consult.</label></li><li><label><input type="checkbox"> Evidence: note the team name and that listen was on Interactions. Do not record a customer.</label></li><li><label><input type="checkbox"> Break it: clear the team dropdown and click Save &amp; Continue. Recovery: select the team again.</label></li><li><label><input type="checkbox"> Reflection: which RONA cause you would ask for first, browser permission or Tracking ID.</label></li></ul>
+</section>
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Required zoom?</p><details><summary>Answer</summary><p class="answer">Required zoom: 100%, and the display must be greater than 500×500. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Sign-out state?</p><details><summary>Answer</summary><p class="answer">Sign-out state: Idle, no active conversation, no monitoring task. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Desktop is selected and the browser blocked the microphone.</p><details><summary>Answer</summary><p class="answer">The article points at browser settings or the administrator, and treats this as a RONA path. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>What does Don’t show this again do?</p><details><summary>Answer</summary><p class="answer">Auto sign-in. A bad saved number returns you to preferences. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Can you change a team from capacity-based to agent-based?</p><details><summary>Answer</summary><p class="answer">Can you change a team from capacity-based to agent-based: No. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Skill profile cap?</p><details><summary>Answer</summary><p class="answer">500 agents share one profile. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Queue ranking cap?</p><details><summary>Answer</summary><p class="answer">50 queues across all media types. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>You add an agent to a team that has a skill profile.</p><details><summary>Answer</summary><p class="answer">The agent receives that profile. Later skill edits do not require a new sign-in. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Where is Listen?</p><details><summary>Answer</summary><p class="answer">Interactions, Active, View, Listen. Not the Team Performance widget. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>Another supervisor is already listening.</p><details><summary>Answer</summary><p class="answer">Another supervisor is already listening.: Your Listen button is disabled. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">Scenario</span></header><p>The agent is on a consult. You click Barge In.</p><details><summary>Answer</summary><p class="answer">Barge is not available during consult, and it is only available after you have started listening. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>Why keep the granular state toggle off in October 2026?</p><details><summary>Answer</summary><p class="answer">The article says to keep it off to continue using Webex WFO, until general availability on October 29, 2026. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article></div>
+</section>
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Agent Desktop sign-in, team types, and where a supervisor listens." | assets/audio/T3-R04/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk RONA causes, the 500-agent skill profile, and barge limits." | assets/audio/T3-R04/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: zoom, Idle, 50 queues, one listen, WFO toggle." | assets/audio/T3-R04/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline.</p></details>
+</div>
+</section>
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> The agent signs in through a browser, picks Desktop, an extension, or a dial number, and must pick a team. Sign-out is from Idle. Supervisors listen on the Interactions page, one agent at a time, and barge only after listen.</p>
+<p><strong>2 minutes.</strong> I would check zoom and the 500-pixel floor before I call it a bug. RONA on Desktop is often the microphone permission or an E911 case that needs a Tracking ID. RONA on a number is an invalid or unassigned DN. Teams are agent-based or capacity-based, the site and the type stick, and 500 agents share a skill profile. Ranking stops at 50 queues. Layout changes show up after a reload, and the audit log ties team edits to layout edits.</p>
+<p><strong>30 seconds, barge.</strong> Barge is a participant join. I cannot transfer, drop the agent, or start a consult while I am in it. Consult blocks barge. A transfer to another team or queue ends the monitor.</p>
+<p><strong>2 minutes, WFO and CRM.</strong> Through October 29, 2026 I leave the granular agent-state toggle off if Webex WFO is required. Chat and email are not on the CRM connectors, so a missing chat panel inside Salesforce is expected. Finesse gadgets are not this desktop; that crosswalk is marked in T6-R04.</p>
+<p><strong>What you will not say.</strong> You will not tell someone to listen from Team Performance. You will not require a re-login for a skill-profile change.</p>
+</section>
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list"><li id="cite-1">Sign in to Agent Desktop — help.webex — article n6lmci8 — <a href="https://help.webex.com/article/n6lmci8">help.webex.com article n6lmci8</a> — header November 12, 2025, retrieved 2026-10-14. Display greater than 500×500, zoom 100%, one tab, Idle sign-out, Desktop/Extension/Dial Number, auto sign-in, empty-team known issue, RONA and Tracking ID, Azure SSO.</li><li id="cite-2">Manage teams in Webex Contact Center — help.webex — article mqf72s — <a href="https://help.webex.com/article/mqf72s">help.webex.com article mqf72s</a> — header August 20, 2025, retrieved 2026-10-14. Site is permanent. Agent-based versus capacity-based. Skill profile shared by 500 agents. Queue ranking 50. Desktop layout on agent-based teams. Bidirectional audit. Delete only when inactive.</li><li id="cite-3">Manage and Monitor Interactions — help.webex — article xceh0k — <a href="https://help.webex.com/article/xceh0k">help.webex.com article xceh0k</a> — header September 01, 2026, retrieved 2026-10-14. Listen and barge only on Interactions. One agent. Barge after listen, not during consult. Granular agent-state toggle April 30, 2026 through October 29, 2026. First view 500 interactions. History filter 13 months.</li><li id="cite-4">Integrate Webex Contact Center with Salesforce (Version 2-New) — help.webex — article dyidod — <a href="https://help.webex.com/article/dyidod">help.webex.com article dyidod</a> — retrieved 2026-10-14, via T3-R01. Digital channels such as chat and email are not supported with CRM connectors. Cisco’s Dynamics connector is not Microsoft Dynamics 365 Contact Center.</li><li id="cite-5">Schedule call monitoring — help.webex — article 5k9gxcb — <a href="https://help.webex.com/article/5k9gxcb">help.webex.com article 5k9gxcb</a> — retrieved 2026-10-14. At least 1 queue (maximum 250), at least 1 team (maximum 100), specific agents maximum 500, schedule window maximum six months, maximum 2000 listening schedules per tenant.</li><li id="cite-6">Manage desktop layouts — help.webex — article 60x9ji — <a href="https://help.webex.com/article/60x9ji">help.webex.com article 60x9ji</a> — retrieved 2026-10-14. Header August 20, 2025. Path Desktop Experience &gt; Desktop Layouts. Download file name Default Desktop Layout.json.</li><li id="cite-7">Cisco AI Assistant for Webex Contact Center — help.webex — article nvvv1zb — <a href="https://help.webex.com/article/nvvv1zb">help.webex.com article nvvv1zb</a> — retrieved 2026-10-14. Header October 06, 2026. Paid add-on. Agent Desktop has an AI Assistant icon. The administrator can leave features off.</li></ol>
+</section>
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Schedule listening, the layout file name, and the Agent Desktop AI Assistant icon are cited as of 2026-10-14. Teams-per-agent maximum, Finesse import, and CUIC silent-monitor equivalence stay marked above.</li>
+<li>Assets missing: Interactions screenshot, audio.</li>
+<li>Ideas for v1.0: a sign-in fault card that maps each RONA sentence to the evidence you collect.</li>
+<li>Next review: <mark class="recheck">re-check</mark> xceh0k after October 29, 2026 for the WFO toggle.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T3-R03-entry-points-queues-routing.html"><span>Previous</span><strong>T3-R03</strong><em>Entry Points, Queues &amp; Routing Strategies</em></a><a class="next" href="T3-R07-analyzer-reporting.html"><span>Next</span><strong>T3-R07</strong><em>Analyzer &amp; Reporting</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

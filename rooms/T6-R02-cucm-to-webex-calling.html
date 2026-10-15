@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T6-R02 · CUCM to Webex Calling">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T6-R02 · CUCM to Webex Calling · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T6" data-room="T6-R02" data-room-title="CUCM to Webex Calling" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T6</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T6/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T6 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T6 · Migrations</p>
+<h1>CUCM to Webex Calling</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for CUCM to Webex Calling">
+<defs>
+<linearGradient id="T6R02sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T6R02sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Migration</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T6-R02</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Plan</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Cutover</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Webex</text></g>
+</svg>
+<figcaption>Illustrated scene for CUCM to Webex Calling. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for CUCM to Webex Calling">
+<defs>
+<marker id="T6R02arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Source PBX → Plan → Cutover → Webex</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Webex</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T6R02arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T6R02arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T6R02arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T6R02lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Source PBX → Plan → Cutover → Webex. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">The documented path is Unified CM to multi-tenant Webex Calling. It is a PPDIO project, not a lift-and-shift. Phased moves split users across both platforms, and every group changes dial plans on Unified CM, Webex Calling, and the Local Gateway.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T6-R02</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T2-R02</strong></span>
+<span class="meta-chip read-chip">Reading <strong>17 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Choose flash-cut or phased. Flash-cut moves everyone at once. The guides spend their detail on phased, because groups of users sit on both platforms during the move. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></li><li>Each time a group moves, dial plans and call routing must be updated on Unified CM, Webex Calling, and the Local Gateway. <a class="cite" href="#cite-3">[cite:3]</a></li><li>Cisco recommends migrating a physical site or department together, unless feature dependencies force smaller batches (shared hunt pilot, call queue, shared line, pickup, call park). <a class="cite" href="#cite-4">[cite:4]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Choose flash-cut or phased. Flash-cut moves everyone at once. The guides spend their detail on phased, because groups of users sit on both platforms during the move. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Each time a group moves, dial plans and call routing must be updated on Unified CM, Webex Calling, and the Local Gateway. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Cisco recommends migrating a physical site or department together, unless feature dependencies force smaller batches (shared hunt pilot, call queue, shared line, pickup, call park). <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>BroadWorks and BroadCloud have a separate Control Hub migration. They are not this Unified CM path. <a class="cite" href="#cite-9">[cite:9]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Cutover week fails when the dial plan is updated on only one of the three systems, or when a hunt group is split across the move. The lab on the Labs page is a study model of +E.164 normalization, not a CUCM engine.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two platforms, one gateway, during the phase</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T6-R02/arch.svg -->
+<div class="diagram" role="img" aria-label="Phased migration between Unified CM and Webex Calling">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Phased migration between Unified CM and Webex Calling">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#c6e27a" font-family="Georgia, serif" font-size="20">Phase 1 · users split across two calling platforms</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="40" y="80" width="250" height="120" rx="14" fill="#1a220c" stroke="#c6e27a"/>
+<text x="56" y="114">Unified CM</text>
+<text x="56" y="138" fill="#b7ad9c">still-on-prem users</text>
+<text x="56" y="160" fill="#b7ad9c">normalizes to +E.164</text>
+<rect x="365" y="80" width="250" height="120" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="381" y="114">Local Gateway</text>
+<text x="381" y="138" fill="#b7ad9c">PSTN and inter-platform</text>
+<text x="381" y="160" fill="#b7ad9c">ISR, Catalyst, or certified SBC</text>
+<rect x="690" y="80" width="250" height="120" rx="14" fill="#121a2a" stroke="#7eb6ff"/>
+<text x="706" y="114">Webex Calling</text>
+<text x="706" y="138" fill="#b7ad9c">moved users and devices</text>
+<text x="706" y="160" fill="#b7ad9c">unmatched calls go to LGW</text>
+</g>
+<path d="M290 140 H365" stroke="#c6e27a" fill="none"/>
+<path d="M615 140 H690" stroke="#7eb6ff" fill="none"/>
+<text x="40" y="250" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Update all three when a group moves. Phase 2 decommissions on-premises UC after everyone has moved.</text>
+<text x="40" y="290" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Webex Calling sends calls it does not match — PSTN numbers and Unified CM extensions it cannot see — to the Local Gateway.</text>
+<text x="40" y="330" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="13">Stay-on-prem reasons include unsupported phones, a complex dial plan or highly granular classes of service, and a contact center that is not moving yet.</text>
+<text x="40" y="370" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">A field-level CSS or LDAP crosswalk is not in these guides. That gap stays open.</text>
+</svg>
+</div>
+<details>
+<summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  UCM[Unified CM] --- LGW[Local Gateway]
+  LGW --- WXC[Webex Calling]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Decisions the introduction forces</h2>
+<div class="callout def"><span class="label">PPDIO</span><p>Prepare, Plan, Design, Implement, Optimize. The introduction uses that sequence for Unified CM to Webex Calling and says the current deployment should not be lifted as-is. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">Flash-cut versus phased</span><p>Flash-cut moves users and devices at once and is the fastest. Phased moves groups over time. While that happens, enterprise users are split across Unified CM and Webex Calling. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout def"><span class="label">Reasons to consider staying</span><p>The introduction lists unsupported phone models; complex on-premises integrations that are hard to replicate; a complex dial plan, highly granular classes of service, or both; restrictive or unreliable internet; stringent data-privacy policies; compliance that needs on-premises or in-country recording; third-party integrations without a Webex alternative; and contact-center integrations where the contact center is not moving to the cloud yet. The last bullet is clipped on the page at the word “inter.” <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">+E.164</span><p>The Webex Calling configuration workflow says the Unified CM dial plan normalizes numbers as +E.164. Webex Calling sends unmatched calls, including PSTN numbers and Unified CM extensions it cannot see, to the Local Gateway. <a class="cite" href="#cite-8">[cite:8]</a></p></div>
+<div class="callout warn"><span class="label">CSS order, from the System Guide</span><p>The migration articles still only say to map the dial plan. The evaluation rule is in the Cisco CallManager System Guide, Release 4.0(1), chapter “Partitions and Calling Search Spaces,” and the 12.5(1) Troubleshooting Guide restates it. Digit analysis looks through every partition in the calling search space for the best match. Partition order breaks ties when two patterns match equally. The null partition is searched last. A line CSS and a device CSS are concatenated, line first. The Labs walker now follows that rule. It is not a live CUCM. <a class="cite" href="#cite-10">[cite:10]</a> <a class="cite" href="#cite-11">[cite:11]</a></p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>What has to move with the users</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T6-R02">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Source PBX</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Plan</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Cutover</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Webex</text>
+<circle cx="200" cy="132" r="36" fill="url(#T6R02map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T6R02map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<dl class="glossary">
+<div class="term"><dt>PPDIO</dt><dd>Prepare, Plan, Design, Implement, Optimize. The migration introduction’s process. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Flash-cut</dt><dd>Move all users and devices at once. Fastest, and the introduction contrasts it with a phased approach. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Phased migration</dt><dd>Groups move over time. Users are split across Unified CM and Webex Calling until phase 2. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Local Gateway</dt><dd>For a phased move the introduction names ISR 1100 and 4000, Catalyst 8200 and 8300, Catalyst 8000V, and certified third-party SBCs. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Unmatched call</dt><dd>A destination Webex Calling does not own. The configuration workflow sends those calls, including unseen Unified CM extensions, to the Local Gateway. <a class="cite" href="#cite-8">[cite:8]</a></dd></div>
+<div class="term"><dt>+E.164</dt><dd>The form the configuration workflow attributes to Unified CM normalization. <a class="cite" href="#cite-8">[cite:8]</a></dd></div>
+<div class="term"><dt>Main number</dt><dd>Set for each location. It can belong to a user or to a feature such as an auto attendant. <a class="cite" href="#cite-4">[cite:4]</a></dd></div>
+<div class="term"><dt>Migration Insights</dt><dd>Control Hub path Services → Upgrades &amp; Migrations → Migration Insights. Unified CM data can be uploaded as a .tar. <a class="cite" href="#cite-5">[cite:5]</a></dd></div>
+<div class="term"><dt>Migrate features from UCM</dt><dd>Control Hub card under Services → Updates &amp; Migrations. Maps auto attendant, devices, lines, layout, virtual line, call queue, hunt group, call park, and user calling data. <a class="cite" href="#cite-6">[cite:6]</a></dd></div>
+<div class="term"><dt>UserBasedUCMFeatureMigration</dt><dd>Python script that processes Unified CM CDR for migration tasks. Read what the feature-migration article says the script does, then run the published tool. The article does not print the Python internals, and they change when Cisco ships a new script. <a class="cite" href="#cite-6">[cite:6]</a></dd></div>
+<div class="term"><dt>Enterprise to MPP</dt><dd>7800 and 8800 phones can be moved with Control Hub’s “Migrate your phone to Webex Calling” tool. 8821 and 8831 are not eligible for MPP. <a class="cite" href="#cite-4">[cite:4]</a> <a class="cite" href="#cite-7">[cite:7]</a></dd></div>
+<div class="term"><dt>BroadWorks migration</dt><dd>A different Control Hub tool. PBX type BroadWorks or BroadCloud. The <code>do_not_move_phone</code> flag is BroadWorks-only. <a class="cite" href="#cite-9">[cite:9]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T6-R02/eco.svg -->
+<div class="diagram" role="img" aria-label="Migration ecosystem">
+<svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Migration ecosystem">
+<rect width="980" height="220" fill="#0c121c"/>
+<rect x="380" y="70" width="220" height="70" rx="14" fill="#1a220c" stroke="#c6e27a"/>
+<text x="490" y="112" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif">Unified CM move</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="30" y="30" width="160" height="44" rx="8" fill="#14110c" stroke="#c6e27a"/><text x="42" y="56">PPDIO</text>
+<rect x="30" y="140" width="200" height="44" rx="8" fill="#14110c" stroke="#7eb6ff"/><text x="42" y="166">Webex Calling + LGW</text>
+<rect x="740" y="30" width="200" height="44" rx="8" fill="#14110c" stroke="#e0b07a"/><text x="752" y="56">Features and phones</text>
+<rect x="740" y="140" width="210" height="44" rx="8" fill="#14110c" stroke="#ff8b9a"/><text x="752" y="166">BroadWorks is separate</text>
+</g>
+</svg>
+</div>
+<p class="eco-sub">Sister matrix</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Piece</th><th>What the guides say</th><th>Why it bites at cutover</th><th>Where</th><th>Failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Users</td><td>Users must be provisioned in Webex even for a phased migration.</td><td>A phone with no Webex user has nowhere to land.</td><td>Prepare article.</td><td>Waiting until move night to create users.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Desk phones</td><td>Webex Calling desk phones in the prepare article: 6800, 7800, 8800, and 9800 series only.</td><td>Other Cisco IP phone families are outside that list.</td><td>Prepare.</td><td>Promising a 79xx fleet will register as-is.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>7800 / 8800 firmware</td><td>Control Hub tool “Migrate your phone to Webex Calling” moves 7800 and 8800 from Enterprise firmware to MPP.</td><td>MPP is a firmware change, not a setting.</td><td>Implement article.</td><td>Shipping phones that are still on Enterprise firmware.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Ineligible 8800 models</td><td>8821 and 8831 are not eligible to migrate to MPP. 8832NR can migrate; some features may not be supported. V15 and later hardware needs minimum 11.3.3 MPP and cannot downgrade.</td><td>A model number is not “an 8800.”</td><td>Firmware article. The tool’s steps also apply to Dedicated Instance. Phones migrated with the tool must use Webex Calling.</td><td>Putting an 8821 in the MPP job.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Jabber</td><td>Single step moves the client and the calling service together, typically for a small user count. Dual step is recommended for larger customers: Webex App registers to Unified CM first, then calling moves.</td><td>A big site that changes client and PBX the same morning doubles the variables.</td><td>Plan article.</td><td>Forcing single-step on a large Jabber estate.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Locations</td><td>Set the main number for each location, on a user or on a feature such as an auto attendant.</td><td>Calling locations without a main number are incomplete for the move.</td><td>Implement.</td><td>Leaving the main number blank.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Features that share users</td><td>Move voicemail, auto attendants, call queues, and hunt groups to Webex Calling equivalents. Dependencies include BLF monitoring, the same hunt pilot or call queue, shared lines, call pickup, the same call-park numbers, intercom, and executive/admin.</td><td>Splitting a hunt pilot across platforms strands the pilot.</td><td>Implement. Cisco prefers a site or department together.</td><td>Migrating one member of a hunt group.</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Feature import</td><td>Mapped objects include auto attendant, devices, configured lines, device layout, virtual line, call queue, hunt group, call park, and user calling data.</td><td>The CSV is not the whole Unified CM database.</td><td>Services → Updates &amp; Migrations → Migrate features from UCM.</td><td>Assuming every CUCM feature has a row.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>CDR script</td><td>UserBasedUCMFeatureMigration processes CDR collected on a server or Unified CM. Compressed files upload in Control Hub.</td><td>The article does not document the script’s source.</td><td>Same feature-migration article.</td><td>Editing the script from memory. Follow the feature-migration article’s steps instead of editing the script. The internals are not published, and a local edit drifts from the next Cisco build.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>Dial plan</td><td>Each group transition needs dial-plan and call-routing updates on Unified CM, Webex Calling, and the Local Gateways. Unified CM normalizes to +E.164. A CSS field crosswalk is not published.</td><td>One-sided routing black-holes the split estate.</td><td>Plan article and the configuration workflow.</td><td>Updating only Webex Calling.</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>PSTN during coexistence</td><td>Webex Calling sends unmatched calls to the Local Gateway, including PSTN numbers and Unified CM extensions it cannot see. The gateway routes between Webex Calling and Unified CM.</td><td>Extensions that have not moved are invisible to Webex Calling until the gateway knows them.</td><td>Configuration workflow, on-premises IP PBX section.</td><td>Expecting Webex Calling to dial a Unified CM extension with no gateway route.</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Other PBX migrations</td><td>BroadWorks and BroadCloud use their own Control Hub migration, including an optional BroadWorks-only <code>do_not_move_phone</code> flag.</td><td>A Unified CM BAT file is the wrong input for that tool.</td><td>Article n1ku0vfb.</td><td>Telling a BroadWorks partner to follow this room’s BAT steps.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>What crosses</th><th>Proof</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Unified CM BAT / .tar</td><td>Migration Insights</td><td>User and device export</td><td>Upload the .tar. Step 3 is Migrate to Webex Calling → Start New Task. A downloaded zip leads to a CSV you upload on Unified CM. Cloud-Connected UC can take device migration if it is enabled.</td><td><a href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Unified CM features</td><td>Migrate features from UCM</td><td>The mapped feature list</td><td>admin.webex.com → Services → Updates &amp; Migrations → that card → Get Started</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>CDR files</td><td>UserBasedUCMFeatureMigration</td><td>Records the script knows how to read</td><td>The article names the script and CDR input. It does not paste the code.</td><td><a href="#cite-6">[cite:6]</a></td></tr>
+<tr><td>7800 / 8800 Enterprise firmware</td><td>MPP on Webex Calling</td><td>The phone-migration tool</td><td>Phones migrated with the firmware tool must use Webex Calling</td><td><a href="#cite-4">[cite:4]</a> <a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Jabber</td><td>Webex App on Unified CM, then Webex Calling</td><td>Dual-step client move</td><td>Step 1: Webex App registers to Unified CM. Step 2: calling, numbers, and registration move.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Webex Calling</td><td>Local Gateway</td><td>Unmatched PSTN and unseen Unified CM extensions</td><td>Configuration workflow</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Local Gateway</td><td>Unified CM</td><td>Calls from Webex Calling, and the reverse</td><td>The gateway routes both directions in that section</td><td><a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Group move</td><td>Three dial plans</td><td>Routing updates</td><td>Unified CM, Webex Calling, and the Local Gateways, each time a group moves</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>This path</th><th>Legacy habit</th><th>Not this path</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Unified CM to multi-tenant Webex Calling</td><td>CSS, partitions, and route patterns still exist on the Unified CM that has not been decommissioned. Open the Webex Calling dial plan in Control Hub and the CSS, partitions, and route patterns on the Unified CM that is still in service. The migration article does not print a field-by-field map, because closest-match and Webex patterns are different engines.</td><td>No parity matrix is published on help.webex.com for Microsoft, Amazon Connect, or Genesys. <a href="#cite-9">[cite:9]</a></td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Directory Connector or the Entra path named in the wider identity rooms</td><td>CUCM LDAP sync is a different product. Open Directory Connector in Control Hub and the LDAP filter on the Unified CM that still syncs. The two products do not share a filter language, so the migration guides say “map” without printing a crosswalk.</td><td>Teams admin center is not Control Hub.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>BroadWorks / BroadCloud tool</td><td>Do not feed it a Unified CM BAT and expect the same three steps.</td><td><code>do_not_move_phone</code> is documented as BroadWorks only.</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>A partition and CSS crosswalk stays open until a help article prints one.</li>
+<li>Survivability Gateway is named in the introduction’s architecture discussion. Its outage behavior stays in T2 until this migration set restates it.</li>
+<li>Contact-center moves are a reason the introduction gives for staying on premises when that contact center is not moving. They are not this room’s procedure.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Half a hunt group rings, half does not</td><td>The group was split across platforms</td><td>Same hunt pilot or call queue in the dependency list</td><td>Move the dependent users together</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Webex users cannot dial remaining extensions</td><td>The Local Gateway was not updated for that group</td><td>Three-system routing update</td><td>Change Unified CM, Webex Calling, and the gateway</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>An 8821 is in the MPP job</td><td>Model family treated as eligible</td><td>8821 and 8831 are not eligible</td><td>Leave those devices off the tool</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>A BroadWorks estate is run through the Unified CM .tar task</td><td>Two migrations were merged</td><td>Article title is BroadWorks and BroadCloud</td><td>Use that tool, not this room’s BAT steps</td><td><a href="#cite-9">[cite:9]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Order of the move</h2>
+<ol>
+<li>Prepare: decide whether the requirements say to stay. Unsupported phones, a complex dial plan or highly granular classes of service, and a contact center that is not moving are on that list. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Provision users in Webex even if the cut is phased. Confirm desk phones are in the 6800, 7800, 8800, or 9800 series. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Plan Jabber: small populations can move client and calling together. Larger populations should move the soft client first, with Webex App still registered to Unified CM, and move calling in a second step. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Choose groups. Prefer a physical site or department. Shrink the batch only for feature dependencies. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>For each group, update dial plans and call routing on Unified CM, Webex Calling, and the Local Gateways. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Set each location’s main number. Move voicemail, auto attendants, call queues, and hunt groups with the users who depend on them. <a class="cite" href="#cite-4">[cite:4]</a></li>
+<li>Import Unified CM data via Migration Insights (.tar, then Step 3, Start New Task). Import mapped features from the Updates &amp; Migrations card. Use the CDR script only as that article describes it. <a class="cite" href="#cite-5">[cite:5]</a> <a class="cite" href="#cite-6">[cite:6]</a></li>
+<li>Migrate eligible 7800 and 8800 phones to MPP with the Control Hub tool. Exclude 8821 and 8831. Phones the firmware tool migrates must use Webex Calling. <a class="cite" href="#cite-7">[cite:7]</a></li>
+<li>After the last group (the plan article’s phase 2), on-premises UC can be removed. Not before. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Control Hub paths that are printed</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Task</th><th>Path in the article</th><th>Stop</th></tr></thead>
+<tbody>
+<tr><td>Insights</td><td>Control Hub → Services → Upgrades &amp; Migrations → Migration Insights. Import the Unified CM .tar. Step 3: Migrate to Webex Calling → Start New Task.</td><td>Do not invent extra wizard steps.</td></tr>
+<tr><td>Device handoff</td><td>Download the zip, upload the device CSV on Unified CM. If Cloud-Connected UC is enabled, it takes up device migration.</td><td>The article does not say every MAC is in that CSV. Do not add columns from memory.</td></tr>
+<tr><td>Features</td><td>admin.webex.com → Services → Updates &amp; Migrations → Migrate features from UCM → Get Started.</td><td>Read the mapped feature list under Services → Updates &amp; Migrations → Migrate features from UCM. That list is what the tool moves, and it changes when Cisco adds a feature to the article.</td></tr>
+<tr><td>Phones</td><td>Migrate your phone to Webex Calling, for 7800 and 8800 Enterprise-to-MPP.</td><td>8821 and 8831 are out. V15 hardware needs at least 11.3.3 MPP and cannot downgrade.</td></tr>
+<tr><td>Locations</td><td>Set the main number. It can be a user or a feature such as an auto attendant.</td><td>Voicemail still needs the pilot the implement article tells you to transition. Open voicemail management for the pilot the implement article tells you to transition, and open each other feature’s own page in Control Hub. Portal-number screens differ by feature, which is why this room stays on voicemail.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Bounds the articles actually print</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Bound</th><th>What is printed</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Desk phone families</td><td>6800, 7800, 8800, 9800 series for Webex Calling desk phones in the prepare article</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Not eligible for MPP</td><td>8821 and 8831</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>8832NR</td><td>Can migrate; some features may not be supported</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>8800 V15 and later</td><td>Minimum 11.3.3 MPP after conversion; cannot downgrade to earlier MPP</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Firmware tool outcome</td><td>Phones migrated with the tool must use Webex Calling. Steps also apply to Dedicated Instance.</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>LGW platforms named for phased migration</td><td>ISR 1100 and 4000, Catalyst 8200/8300, Catalyst 8000V, certified third-party SBCs</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CSS evaluation order</td><td>Best match across every partition in the CSS. Order is only the tie-break. Null partition last. Line CSS is concatenated in front of the device CSS.</td><td><a href="#cite-10">[cite:10]</a> <a href="#cite-11">[cite:11]</a></td></tr>
+<tr><td>LDAP or CSS field crosswalk</td><td>Open LDAP and CSS on the Unified CM admin page and the user in Control Hub. The guides say “map” and do not print the table, because the field names differ by UC version.</td><td>Guides say “map,” and do not print the table</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Cutover failures</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Next move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Moved users cannot reach people still on Unified CM</td><td>Gateway or dial plan not updated for the group</td><td>Webex Calling cannot see those extensions</td><td>Update all three routing planes</td><td><a href="#cite-3">[cite:3]</a> <a href="#cite-8">[cite:8]</a></td></tr>
+<tr><td>Only some members of a queue moved</td><td>Batch ignored the dependency list</td><td>Same call queue or hunt pilot</td><td>Put the dependent users back into one batch</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Phone will not take MPP</td><td>8821, 8831, or a V15 unit below 11.3.3</td><td>Eligibility paragraph</td><td>Remove the model or meet the firmware floor</td><td><a href="#cite-7">[cite:7]</a></td></tr>
+<tr><td>Location has no main number</td><td>The implement step was skipped</td><td>Main number can be a user or an auto attendant</td><td>Set it before calling the location done</td><td><a href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Users were never created in Webex</td><td>Phased was misread as “create them later”</td><td>Prepare: users must be provisioned even for a phased migration</td><td>Create them before the group moves</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Jabber and calling changed the same hour on a large site</td><td>Single-step used where dual-step is recommended</td><td>Plan article: dual step for larger customers</td><td>Split client move from calling move</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>On-prem UC was powered off while a group remained</td><td>Phase 2 started early</td><td>Decommission after all users, soft clients, and devices have moved</td><td>Restore the path until the last group is on Webex Calling</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>A CSS spreadsheet was treated as Cisco’s mapping</td><td>No crosswalk exists in these articles</td><td>Complex dial plan is a reason to stay, not a converted table</td><td>Do not treat a spreadsheet as Cisco’s mapping. Test the calls.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<details class="qnode"><summary><span class="lvl">L1</span>What does the introduction forbid as a method?</summary><p class="answer">A lift-and-shift of the current Unified CM deployment. Redefine requirements. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What does PPDIO stand for in this guide?</summary><p class="answer">Prepare, Plan, Design, Implement, Optimize. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>When are users split across both platforms?</summary><p class="answer">During a phased move, until everyone has transitioned. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Which three places need dial-plan updates for each group?</summary><p class="answer">Unified CM, Webex Calling, and the Local Gateways. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does Webex Calling do with a Unified CM extension it cannot see?</summary><p class="answer">It sends the call to the Local Gateway, along with other unmatched destinations such as PSTN numbers. <a class="cite" href="#cite-8">[cite:8]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How does the configuration workflow describe Unified CM numbering?</summary><p class="answer">The Unified CM dial plan normalizes numbers as +E.164. <a class="cite" href="#cite-8">[cite:8]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Who should use dual-step Jabber migration?</summary><p class="answer">Larger customers. Step 1 moves Jabber to the Webex App while the app still registers to Unified CM. Step 2 moves calling. Single-step is the small-population option. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What batching does Cisco recommend, and what overrides it?</summary><p class="answer">Physical sites or departments together. Feature dependencies such as a shared hunt pilot, call queue, shared line, pickup, or call park can force a tighter batch. <a class="cite" href="#cite-4">[cite:4]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Which 8800 models are not eligible for MPP?</summary><p class="answer">8821 and 8831. 8832NR can migrate with a feature caveat. V15 and later need at least 11.3.3 MPP and cannot downgrade. <a class="cite" href="#cite-7">[cite:7]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Where do you import a Unified CM .tar?</summary><p class="answer">Control Hub → Services → Upgrades &amp; Migrations → Migration Insights, then Step 3 Migrate to Webex Calling → Start New Task. <a class="cite" href="#cite-5">[cite:5]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Name two reasons the introduction gives for considering staying on premises.</summary><p class="answer">Any two from the printed list. A complex dial plan or highly granular classes of service is one. A contact center that is not moving yet is another. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>What will you not claim about CSS order?</summary><p class="answer">An evaluation algorithm. It is not in these articles. The labs explorer is a teaching model. Read closest-match on the Unified CM that still routes the call. The labs explorer is a teaching model, and it is not the order that cluster uses. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper cutover for one department</h2>
+<p>Use a lab org if you have one. The pass condition is a written batch, not a production cut.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> List one department and the shared features that would force them into one batch: hunt, queue, shared line, pickup, park.</label></li>
+<li><label><input type="checkbox"> Write the three routing updates you would make for that batch: Unified CM, Webex Calling, Local Gateway.</label></li>
+<li><label><input type="checkbox"> Mark each desk phone 6800, 7800, 8800, 9800, or out of the prepare list. Flag 8821 and 8831 as not eligible for MPP.</label></li>
+<li><label><input type="checkbox"> Choose single-step or dual-step for any Jabber users and write why.</label></li>
+<li><label><input type="checkbox"> Name the location’s main number as a user or an auto attendant.</label></li>
+<li><label><input type="checkbox"> Open the dial-plan lab and normalize one on-prem national number to +E.164. Label it a study model.</label></li>
+<li><label><input type="checkbox"> Write “do not decommission” until the plan article’s phase 2.</label></li>
+<li><label><input type="checkbox"> Reflection: which dependency would have split the batch if you had migrated by last name instead of by site?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>The introduction’s instruction about the current Unified CM design is:</p>
+<ol type="A"><li>Lift it unchanged</li><li>Do not lift-and-shift; redefine requirements</li><li>Copy every CSS into a Webex location</li><li>Start by decommissioning Unified CM</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Each group transition requires routing updates on:</p>
+<ol type="A"><li>Webex Calling only</li><li>Unified CM only</li><li>Unified CM, Webex Calling, and the Local Gateways</li><li>The phone keypad</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>C. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>A 200-person site still on Jabber wants the smallest blast radius. Which option does the plan article recommend for larger customers?</p>
+<details class="reveal"><summary>Reveal</summary><p>Dual step. Webex App registers to Unified CM first. Calling moves in step 2. Single step is described for a small number of users. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>8821 and 8831 are:</p>
+<ol type="A"><li>The preferred MPP targets</li><li>Not eligible to migrate to MPP</li><li>V15-only</li><li>BroadWorks phones</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-7">[cite:7]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Webex Calling’s treatment of a Unified CM extension it cannot see is:</p>
+<ol type="A"><li>Drop</li><li>Send to the Local Gateway</li><li>Send to Partner Hub</li><li>Normalize it to an extension and stop</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-8">[cite:8]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>You want to migrate people alphabetically and a hunt pilot has members in three letters. What does the implement article push you toward?</p>
+<details class="reveal"><summary>Reveal</summary><p>Keep users who share the hunt pilot together. Sites or departments are the recommended unit when dependencies allow. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Migration Insights import of Unified CM data uses:</p>
+<ol type="A"><li>A .tar, then Start New Task</li><li>A Genesys export</li><li>Only a screenshot</li><li>The BroadWorks do_not_move_phone flag</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-5">[cite:5]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>do_not_move_phone is documented as:</p>
+<ol type="A"><li>A Unified CM BAT column</li><li>BroadWorks only</li><li>Required for every 8800</li><li>An E911 setting</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-9">[cite:9]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Draw it</span></header><p>Draw Unified CM, the Local Gateway, and Webex Calling. Mark unmatched calls moving toward the gateway.</p>
+<details class="reveal"><summary>Reveal</summary><p>That is the configuration-workflow picture: unmatched PSTN numbers and unseen Unified CM extensions go to the gateway, and the gateway routes between the two. <a class="cite" href="#cite-8">[cite:8]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>A complex dial plan or highly granular class of service is:</p>
+<ol type="A"><li>Automatically converted by Migration Insights</li><li>A printed reason to consider keeping call control on premises</li><li>Forbidden</li><li>A Partner Hub role</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Scenario</span></header><p>Phase 2 has not finished and someone wants the Unified CM publisher powered off tonight. What does the plan article say?</p>
+<details class="reveal"><summary>Reveal</summary><p>On-premises UC comes out after all users, soft clients, and devices have moved. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">MCQ</span></header><p>The main number of a location can be assigned to:</p>
+<ol type="A"><li>Only a gateway</li><li>A user or a feature such as an auto attendant</li><li>Only a hunt pilot MAC</li><li>Only Partner Hub</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-4">[cite:4]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<!-- AUDIO:overview | assets/audio/T6-R02/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> PPDIO, no lift-and-shift, three places to update, sites together unless a shared feature forces the batch.</p><p class="placeholder-asset">No mp3 shipped.</p></div>
+<!-- AUDIO:mistake | assets/audio/T6-R02/mistake.mp3 -->
+<div class="audio-slot"><p><strong>45 seconds.</strong> The mistake is updating Webex Calling and leaving Unified CM and the gateway stale.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<p>“I treat Unified CM to Webex Calling as PPDIO, not a copy of the old dial plan. If we phase it, every group is a routing change on Unified CM, Webex Calling, and the Local Gateway, because Webex Calling sends extensions it cannot see to that gateway. I move a site or a department together, and I only shrink the batch when people share a hunt pilot, queue, line, pickup, or park. Jabber on a large site moves to the Webex App while it still registers to Unified CM, and calling moves second. 8821 and 8831 do not go through the MPP tool. I will not pretend a CSS crosswalk exists, and I will not decommission Unified CM until the last user is gone. BroadWorks is a different article.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<ol class="cite-list">
+<li id="cite-1">Introduction, migrate Unified CM to Webex Calling — help.webex — article nbedetf — <a href="https://help.webex.com/article/nbedetf">help.webex.com article nbedetf</a> — retrieved 2026-10-14. PPDIO. Do not lift-and-shift. Flash-cut versus phased. Stay-on-premises list. LGW platforms for a phased approach: ISR 1100 and 4000, Catalyst 8200/8300, Catalyst 8000V, certified third-party SBCs.</li>
+<li id="cite-2">Prepare to migrate from Unified CM to Webex Calling — help.webex — article 4yz2zd — <a href="https://help.webex.com/article/4yz2zd">help.webex.com article 4yz2zd</a>. Users must be provisioned in Webex even for a phased migration. Desk phones: 6800, 7800, 8800, and 9800 series.</li>
+<li id="cite-3">Plan to migrate from Unified CM to Webex Calling — help.webex — article nw9po3o — <a href="https://help.webex.com/article/nw9po3o">help.webex.com article nw9po3o</a>. Single-step versus dual-step Jabber. Dial-plan and routing updates on Unified CM, Webex Calling, and the Local Gateways for each group. Decommission after phase 2.</li>
+<li id="cite-4">Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — <a href="https://help.webex.com/article/q0pgpb">help.webex.com article q0pgpb</a>. Sites or departments together. Feature dependencies. Main number. “Migrate your phone to Webex Calling” for 7800 and 8800 Enterprise to MPP. Voicemail, auto attendant, call queue, hunt group.</li>
+<li id="cite-5">Migrate Unified CM data to Webex Calling — help.webex — article x974bd — <a href="https://help.webex.com/article/x974bd">help.webex.com article x974bd</a>. Migration Insights. .tar import. Step 3 Start New Task. CSV back to Unified CM. Cloud-Connected UC can take device migration.</li>
+<li id="cite-6">Migrate devices and features from Unified CM to Webex Calling — help.webex — article d2lemv — <a href="https://help.webex.com/article/d2lemv">help.webex.com article d2lemv</a>. Services → Updates &amp; Migrations → Migrate features from UCM. Mapped feature list. Python script UserBasedUCMFeatureMigration processes CDR.</li>
+<li id="cite-7">Migrate enterprise phone to Webex Calling phone firmware — help.webex — article n19c71 — <a href="https://help.webex.com/article/n19c71">help.webex.com article n19c71</a>. 8821 and 8831 not eligible. 8832NR caveat. V15 minimum 11.3.3 MPP, no downgrade. Tool requires Webex Calling. Steps apply to Dedicated Instance.</li>
+<li id="cite-8">Webex Calling configuration workflow — help.webex — article 32gfts — <a href="https://help.webex.com/article/32gfts">help.webex.com article 32gfts</a>. Unmatched calls go to the Local Gateway, including PSTN numbers and Unified CM extensions Webex Calling cannot see. Unified CM normalizes numbers as +E.164.</li>
+<li id="cite-9">Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb — <a href="https://help.webex.com/article/n1ku0vfb">help.webex.com article n1ku0vfb</a>. Separate tool. <code>do_not_move_phone</code> is BroadWorks only.</li>
+<li id="cite-10">Cisco CallManager System Guide, Release 4.0(1), chapter Partitions and Calling Search Spaces — Cisco — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html">cisco.com CUCM System Guide 4.0(1), partitions and calling search spaces</a> — retrieved 2026-10-14. Digit analysis looks through every partition for the best match. Order breaks equal matches. Null partition is last. Line CSS is placed in front of the device CSS. Combined CSS clause limit 1024 characters.</li>
+<li id="cite-11">Troubleshooting Guide for Cisco Unified Communications Manager, Release 12.5(1), chapter Dial Plans and Routing Issues — Cisco — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/trouble/12_5_1/cucm_b_troubleshooting-guide-1251/cucm_b_troubleshooting-guide-1251_chapter_0101.html">cisco.com CUCM 12.5(1) troubleshooting, dial plans</a> — retrieved 2026-10-14. From each listed partition, take the best pattern, then choose the best among those. Equal matches go to the partition listed first. Null partition is searched last. Line and device calling search spaces are combined.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>CSS evaluation order is cited from the System Guide. The combined CSS clause length of 1024 characters, including separators, is in that same chapter. <a href="#cite-10">[cite:10]</a></li>
+<li>Compare the LDAP filter and CSS on Unified CM admin with the user in Control Hub. Those screens change with the cluster version, and these articles do not print the crosswalk.</li>
+<li>Run the tool the feature-migration article names and read that article for what it processes. The Python internals are not published and change with the script Cisco ships.</li>
+<li>Features that are not in d2lemv’s mapped list.</li>
+<li>The contact-center stay bullet is clipped on nbedetf (“contact center inter”). Do not invent the missing letters.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T6-R01-enterprise-cutover-capstone.html"><span>Previous</span><strong>T6-R01</strong><em>2,000-seat CUCM + UCCE Cutover</em></a><a class="next" href="T6-R04-ucce-pcce-to-wxcc.html"><span>Next</span><strong>T6-R04</strong><em>UCCE and PCCE to Webex Contact Center</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

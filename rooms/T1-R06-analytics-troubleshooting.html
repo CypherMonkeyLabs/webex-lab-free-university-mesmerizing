@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T1-R06 · Analytics &amp; Troubleshooting Views">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T1-R06 · Analytics &amp; Troubleshooting Views · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T1" data-room="T1-R06" data-room-title="Analytics &amp; Troubleshooting Views" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T1</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T1/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T1 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+
+
+<p class="kicker">T1 · Control Hub and platform</p>
+<h1>Analytics &amp; Troubleshooting Views</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Analytics &amp;amp; Troubleshooting Views">
+<defs>
+<linearGradient id="T1R06sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T1R06sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T1-R06</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Admin</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Identity</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Services</text></g>
+</svg>
+<figcaption>Illustrated scene for Analytics &amp;amp; Troubleshooting Views. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Analytics &amp;amp; Troubleshooting Views">
+<defs>
+<marker id="T1R06arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Admin → Control Hub → Identity → Services</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Services</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T1R06arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T1R06arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T1R06arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T1R06lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Admin → Control Hub → Identity → Services. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Three different clocks live in Control Hub: 21 days of call troubleshooting, 3 or 13 months of analytics, and 30 days of uploaded client logs. Mixing them up is how a ticket goes looking in the wrong room.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T1-R06</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L2</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T1-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>15 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Webex Calling troubleshooting is Monitoring → Troubleshooting. It keeps 21 days and shows segments, hops, and whether media used the cloud or ICE. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Path optimization is ICE, PNC, or No optimization. A CSV holds 100 records from the tab you are on. <a class="cite" href="#cite-1">[cite:1]</a></li><li>Analytics keeps 3 months, or 13 with Pro Pack. From January 27, 2026 you select 3 months at a time even when the longer history is still there. <a class="cite" href="#cite-2">[cite:2]</a></li><li>The worst-experience table cross-launches into Troubleshooting, still capped at 21 days. <a class="cite" href="#cite-2">[cite:2]</a></li></ul></aside></section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+
+<ul>
+<li>Webex Calling troubleshooting is Monitoring → Troubleshooting. It keeps 21 days and shows segments, hops, and whether media used the cloud or ICE. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Path optimization is ICE, PNC, or No optimization. A CSV holds 100 records from the tab you are on. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Analytics keeps 3 months, or 13 with Pro Pack. From January 27, 2026 you select 3 months at a time even when the longer history is still there. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>The worst-experience table cross-launches into Troubleshooting, still capped at 21 days. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Client logs are Troubleshooting → Logs, kept 30 days, and only if the user is online. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> “Pull the logs” and “pull the CDR” are different pages with different retention. Saying 13 months when you mean the 21-day view is a wrong answer.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Three evidence stores</h2>
+
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T1-R06/arch.svg -->
+<div class="diagram" role="img" aria-label="Which clock you are on">
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Which clock you are on">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Which clock you are on</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Troubleshooting view  ·  21 days  ·  segments and hops</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Analytics  ·  3 months, or 13 with Pro Pack  ·  select 3 at a time</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Cross-launch  ·  a user in Analytics opens Troubleshooting, still 21 days</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Client logs  ·  30 days  ·  the user has to be online</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex Online on *.my.webex.com  ·  analytics article says no data</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  Call --> Trouble[Troubleshooting 21d]
+  Call --> Analytics
+  App[Webex App] --> Logs[Logs 30d]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Search behavior that surprises people</h2>
+
+<div class="callout def"><span class="label">A segment is not the whole story</span><p>The article says each segment can succeed, fail, or be refused. You read the segment that matches the complaint, then the hop. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout note"><span class="label">Email search splits the world</span><p>Searching a user’s email puts meetings and calls on separate tabs. A correlation ID or a phone number shows only the relevant tab. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">History is not the picker</span><p>Pro Pack storing 13 months does not mean the picker spans 13 months. The article’s January 27, 2026 change limits a selection to 3 months. Today is after that date. <mark class="recheck">re-check</mark> that the control matches the sentence. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout gotcha"><span class="label">Not a bill</span><p>Analytics is explicitly not for billing, and it is not there for Webex Online sites on *.my.webex.com. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<h3>What each page is for</h3>
+<div class="table-wrap"><table><thead><tr><th>Page</th><th>Path</th><th>Retention the article states</th><th>Good question</th><th>Cite</th></tr></thead><tbody><tr><td>Troubleshooting</td><td>Monitoring → Troubleshooting</td><td>21 days</td><td>Which hop was lossy on Tuesday’s call?</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analytics</td><td>Analytics</td><td>3 months, or 13 with Pro Pack</td><td>How did this location look last quarter?</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Logs</td><td>Troubleshooting → Logs</td><td>30 days of uploaded client logs</td><td>What did the app do when it crashed?</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem &amp; sister technologies</p>
+<h2>Glossary, map, sisters, edges</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T1-R06">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Admin</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Identity</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Services</text>
+<circle cx="200" cy="132" r="36" fill="url(#T1R06map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T1R06map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+
+<h3>Glossary</h3>
+<dl class="glossary"><div class="term"><dt>Troubleshooting view</dt><dd>The Control Hub place where you search one Webex Calling call, see whether it succeeded, refused, or failed, and open media statistics. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Monitoring path</dt><dd>The article’s click path is Monitoring → Troubleshooting. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>21-day window</dt><dd>Troubleshooting shows calls for the past 21 days. Analytics can cross-launch into that same 21-day slice. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Call segment</dt><dd>One piece of a call with its own outcome. A transfer can be several segments. The view is built so you can see which segment failed. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Correlation ID</dt><dd>Groups related calls in the search view. Filters are not available when you searched by phone number or correlation ID. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Hop</dt><dd>A leg of the media path. The article tells you to open hop details to see where quality broke. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>ICE</dt><dd>Interactive Connectivity Establishment. One way media stays directly between the users instead of crossing the Webex Calling cloud. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>PNC</dt><dd>Private Network Connect. One of the path-optimization values the article lists next to ICE and “No optimization.” <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Path optimization</dt><dd>The call-details field. Accepted values in the article: ICE, PNC, or No optimization. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Partial search</dt><dd>Phone number, user name, and device name can be partial. For a phone number, the first digits list candidates. Enter alone searches for an exact match. A pasted number needs the leading +1 for that search to work. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>CSV export</dt><dd>Search results or troubleshooting call records, up to 100 records per file, for the tab you are on. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>JSON call report</dt><dd>From the call details page, along with participant details as CSV. <a class="cite" href="#cite-1">[cite:1]</a></dd></div><div class="term"><dt>Analytics</dt><dd>Historical charts. Standard customers get 3 months. Pro Pack customers get 13 months. Not for billing. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Selectable range</dt><dd>The article says that starting January 27, 2026 a Pro Pack admin can select at most 3 months at a time, while 13 months of history remain. That date is before this Canon pass. <mark class="recheck">re-check</mark> the live picker. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Webex App calling history</dt><dd>A separate sentence: Pro Pack has 13 months for calls based in Webex App, and everyone else has 3 months for those calls. Do not paste that sentence onto every Calling report without reading which dashboard you opened. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Calling media quality</dt><dd>A Control Hub dashboard of KPIs and charts by location, IP, media type, connection, codec, endpoint, and phone model. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Worst-experience cross-launch</dt><dd>Clicking a name in Users with worst calling experience opens Troubleshooting for that user’s media sessions in the selected dates, capped at 21 days. <a class="cite" href="#cite-2">[cite:2]</a></dd></div><div class="term"><dt>Logs page</dt><dd>Troubleshooting → Logs. Search the user by email and choose Collect logs. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>30-day client logs</dt><dd>Uploaded Webex App logs are available for the last 30 days. The user can also send logs from the app. <a class="cite" href="#cite-3">[cite:3]</a></dd></div><div class="term"><dt>Offline collection</dt><dd>You cannot collect logs for a user who is offline. They need an active internet connection. <a class="cite" href="#cite-3">[cite:3]</a></dd></div></dl>
+<h3>Mind map</h3>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T1-R06/eco.svg -->
+<div class="diagram" role="img" aria-label="Evidence around one user">
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evidence around one user">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Evidence around one user</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Calling media session  ·  troubleshooting and analytics</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Meetings tab  ·  same email search, different export</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Webex App logs  ·  30 days, online only</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Pro Pack  ·  longer analytics history, shorter picker</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Local Gateway debugs  ·  a different room when the SIP leg never became a media session</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((Control Hub evidence))
+    Troubleshooting
+    Analytics
+    Logs
+</pre>
+</details>
+<h3>Sister-technology matrix</h3>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody><tr><td>Webex Calling media</td><td>The quality metrics the troubleshooting view and the calling dashboard both read.</td><td>Hops, codecs, and path optimization.</td><td>A Meetings-only search will not explain a Calling segment.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Webex App</td><td>The client that can upload logs.</td><td>30 days of uploaded logs. The user must be online to collect.</td><td>Collecting from a phone that is off the network.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Meetings</td><td>The same troubleshooting search can show a meetings tab when you search an email.</td><td>Calling and meetings are separated. Download the tab you mean.</td><td>Exporting the meetings CSV and calling it a calling record.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analytics roles</td><td>Full administrator, read-only administrator, or support administrator can open the charts the article describes.</td><td>Open Users → Admin roles → Create a custom role and read the analytics toggles on that role. The list changes when Cisco adds a permission, and a custom role is not one of the three administrators the analytics article names.</td><td>Assuming every custom role sees Calling media quality.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Pro Pack</td><td>Extends history to 13 months.</td><td>The selectable window is a separate control from the retention.</td><td>Telling a standard customer they can scroll 13 months.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Webex Online</td><td>Sites on *.my.webex.com.</td><td>The analytics article says analytics data is not available for those customers.</td><td>Debugging a my.webex.com site from this dashboard.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Detailed call history</td><td>The analytics article describes a calling-records report for troubleshooting and for seeing how people use the service.</td><td>It is still not a billing source.</td><td>Invoicing from the chart.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Local Gateway</td><td>Path optimization and hops may show the access path. They do not replace a dial-peer debug.</td><td>Use T7 when the failure is a SIP peer. Use this view when the call is already a Webex Calling media session.</td><td>Expecting a CUBE debug inside the 21-day UI.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr></tbody></table></div>
+<h3>Integration map</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody><tr><td>User</td><td>Webex Calling</td><td>Call</td><td>A media session with at least one Webex Calling-registered endpoint is what the search returns.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Administrator</td><td>Troubleshooting</td><td>Monitoring → Troubleshooting</td><td>Search, then open the call.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Call</td><td>Hop details</td><td>Media statistics</td><td>Where the quality broke, including cloud versus ICE.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Search</td><td>CSV</td><td>Export</td><td>Up to 100 records, current tab only.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analytics</td><td>Troubleshooting</td><td>Cross-launch</td><td>Worst-experience user, at most 21 days.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Client</td><td>Control Hub</td><td>Log upload</td><td>Last 30 days. User may send logs themselves.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Administrator</td><td>Logs</td><td>Collect</td><td>Email search, then Collect. Fails if the user is offline.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Charts</td><td>History store</td><td>3 or 13 months</td><td>Standard versus Pro Pack. Select 3 months at a time after the January 27, 2026 change the article describes.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<div class="diagram" role="img" aria-label="Where a record moves">
+<svg viewBox="0 0 980 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where a record moves">
+<rect width="980" height="326" fill="#0c121c"/>
+<text x="28" y="40" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">Where a record moves</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">1  User → Webex Calling</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">2  Administrator → Troubleshooting</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">3  Call → Hop details</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">4  Search → CSV</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">5  Analytics → Troubleshooting</text><text x="36" y="218" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">6  Client → Control Hub</text><text x="36" y="246" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">7  Administrator → Logs</text><text x="36" y="274" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">8  Charts → History store</text>
+</svg>
+</div>
+<h3>Cross-platform bridges</h3>
+<div class="table-wrap"><table><thead><tr><th>Control Hub</th><th>CUCM habit</th><th>Peer orientation</th><th>Cite</th></tr></thead><tbody><tr><td>21-day troubleshooting</td><td>Compare a hop in Monitoring → Troubleshooting with the CUCM CDR or RTMT record. Field names differ because they are different databases, and the Control Hub view only keeps the past 21 days.</td><td>Teams admin call analytics are not this view.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Client logs</td><td>A phone’s console web page is not Troubleshooting → Logs.</td><td>Other soft clients are out of scope.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Pro Pack 13 months</td><td>A CUCM CAR report’s retention is not this number.</td><td>Do not borrow a vendor’s retention.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+<h3>Future-integration hooks</h3>
+<ul>
+<li>Canon plan: T2-R08 owns Calling CDR detail. This room stops at the screens the two articles actually describe.</li>
+<li>Check the custom role in Control Hub at Users → Admin roles, the same place T1-R01 uses for other permissions. Analytics and troubleshooting toggles vary by role and by when Cisco last edited that permission set.</li>
+<li>The January 27, 2026 picker change is <mark class="recheck">re-check</mark> against the live control.</li>
+</ul>
+<h3>Ecosystem troubleshooting</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>SIP never reached Webex, so Troubleshooting is empty</td><td>The failure is on the Local Gateway, before a Calling media session.</td><td>T7 dial-peer and OPTIONS, not this 21-day view.</td><td>Debug the trunk. Do not wait for a hop that was never created.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>A supervisor can see Analytics and not the hop</td><td>The articles name full, read-only, and support administrators for the charts. A narrower custom role is not proven here.</td><td>Role assignment.</td><td>Use an administrator the analytics article names, or open the custom role in Control Hub and confirm the analytics permission is on. That toggle varies by role and is not printed on the analytics article.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Logs exist on the laptop and not in Control Hub</td><td>Nobody uploaded them, or they aged past 30 days.</td><td>The logs article.</td><td>Ask the user to send logs from the app while online.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>Last year’s Calling quality is missing for a standard customer</td><td>They have 3 months.</td><td>Customer type, not the troubleshooting window.</td><td>Do not cite the Pro Pack sentence.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a complaint to a file</h2>
+
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T1-R06/seq.svg -->
+<div class="diagram" role="img" aria-label="A quality complaint">
+<svg viewBox="0 0 980 242" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A quality complaint">
+<rect width="980" height="242" fill="#0c121c"/>
+<text x="28" y="40" fill="#3ecfb2" font-family="Georgia, serif" font-size="20">A quality complaint</text>
+<text x="36" y="78" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">User reports a bad call from this week.</text><text x="36" y="106" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Monitoring, Troubleshooting, search the email.</text><text x="36" y="134" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Open the Calling segment and the hop. Note ICE, PNC, or none.</text><text x="36" y="162" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Export at most 100 rows from that tab.</text><text x="36" y="190" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">If the app crashed, Troubleshooting, Logs, and only if they are online.</text>
+</svg>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead><tbody><tr><td>1</td><td>Caller</td><td>Webex Calling</td><td>Media session</td><td>At least one registered Calling endpoint.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>2</td><td>Admin</td><td>Search</td><td>Email, number, MAC, call id, or correlation id</td><td>Email splits meetings and calls.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>3</td><td>Result</td><td>Segment</td><td>Outcome</td><td>Success, failure, or refusal can differ by segment.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>4</td><td>Segment</td><td>Hop</td><td>Statistics</td><td>Cloud path versus ICE.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>5</td><td>Details</td><td>File</td><td>CSV or JSON</td><td>100 CSV rows. JSON from the details page.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>6</td><td>Analytics</td><td>Troubleshooting</td><td>Cross-launch</td><td>Worst user, max 21 days.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>7</td><td>App</td><td>Logs</td><td>Upload</td><td>30 days.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>8</td><td>Admin</td><td>Collect</td><td>Online user</td><td>Offline collection is refused.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Click paths, not a CLI</h2>
+
+<ol>
+<li>Sign in to Control Hub. Go to Monitoring → Troubleshooting. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Search. For a phone number you paste, keep the +1. A short prefix lists candidates. An email opens both a meetings tab and a calling tab. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open the segment. Read the outcome, the hops, and path optimization: ICE, PNC, or No optimization. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Export with Export → Download search results (CSV) or Download troubleshooting call records (CSV). Stay on the Webex Calling tab if that is the file you want. The cap is 100 records. The details page can also download a JSON report and a participant CSV. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>For trends, open Analytics. Standard history is 3 months. Pro Pack history is 13 months. Select at most 3 months in one range after the change dated January 27, 2026. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>From Users with worst calling experience, click the name to land in Troubleshooting for that range, up to 21 days. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>For the app itself, go to Troubleshooting → Logs, search the email, and choose Collect logs, then Collect. The user must be online. Uploaded logs last 30 days. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ol>
+<!-- VISUAL:screenshot:troubleshooting | Studio | assets/images/T1-R06/trouble.png -->
+<pre class="sim-out">Evidence clocks (cited, not a tenant export)
+  Troubleshooting calls:   21 days          Monitoring → Troubleshooting
+  CSV:                     100 rows / file  current tab only
+  Path optimization:       ICE | PNC | No optimization
+  Analytics standard:      3 months
+  Analytics Pro Pack:      13 months stored
+  Picker after 2026-01-27: 3 months at a time
+  Client logs:             30 days          Troubleshooting → Logs
+  Collect:                 user must be online</pre>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>The clocks</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody><tr><td>Troubleshooting calls</td><td>Past 21 days</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>CSV</td><td>100 records</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted</td></tr><tr><td>Analytics, standard</td><td>3 months</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Analytics, Pro Pack</td><td>13 months</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Selectable range from 2026-01-27</td><td>3 months at a time</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td><mark class="recheck">re-check</mark> live picker</td></tr><tr><td>Webex App call analytics</td><td>13 months Pro Pack, else 3</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted for calls based in the app</td></tr><tr><td>Cross-launch window</td><td>Up to 21 days</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Uploaded client logs</td><td>30 days</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr><tr><td>Webex Online analytics</td><td>Not available on *.my.webex.com</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted</td></tr><tr><td>Custom role matrix for these pages</td><td>Open Users → Admin roles in Control Hub and read the live permission groups. They change when Cisco adds a permission, so a frozen matrix would go stale.</td><td>Not re-read in this room</td><td>Open</td></tr></tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Ten misses</h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead><tbody><tr><td>The call is not in Troubleshooting</td><td>It is older than 21 days, or it had no Webex Calling-registered endpoint in a media session.</td><td>The article’s window and the endpoint condition.</td><td>Use Analytics for older history. Do not expect this view to be a year-long CDR browser.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>A pasted number finds nothing</td><td>The +1 was dropped.</td><td>The article’s paste note.</td><td>Paste the number with +1, or type a short prefix and pick from the list.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Filters disappeared</td><td>You searched by phone number or correlation ID.</td><td>The article says filters are not available for those searches.</td><td>Search by the user if you need the filters.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>The CSV is meetings</td><td>Export follows the tab you are on.</td><td>Email searches split meetings and calls.</td><td>Open the Webex Calling tab, then export.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>The export stops at 100</td><td>That is the documented cap per file.</td><td>frj1efb.</td><td>Export a narrower search. Do not expect one file of the whole day.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Quality looks fine and the user disagrees</td><td>You read the aggregate and skipped the hop.</td><td>The article wants hop details for the complaint.</td><td>Open the segment and the hop.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr><tr><td>Analytics will not select a 6-month range</td><td>After January 27, 2026 the article limits a selection to 3 months, even when 13 months are stored.</td><td>Run two ranges. <mark class="recheck">re-check</mark> the picker.</td><td>Two reports, not a wider picker.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>A standard customer asks for last year</td><td>They have 3 months, not 13.</td><td>Customer type.</td><td>Do not promise Pro Pack history.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr><tr><td>Collect logs does nothing</td><td>The user is offline.</td><td>The logs article.</td><td>Wait until the app is online, or ask them to send logs from the app.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr><tr><td>A my.webex.com site has no analytics</td><td>The article excludes Webex Online customers on that domain form.</td><td>The *.my.webex.com sentence.</td><td>Do not debug that site from this dashboard.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr></tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L1</span>Where do you open Webex Calling troubleshooting?</summary><p class="answer">Control Hub, Monitoring → Troubleshooting. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How far back does that view go?</summary><p class="answer">21 days. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What is a call segment for?</summary><p class="answer">Each segment can succeed, fail, or be refused on its own, so a transfer is not one blob. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What path-optimization values does the article list?</summary><p class="answer">ICE, PNC, and No optimization. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How many troubleshooting records fit in one CSV?</summary><p class="answer">100. And only the tab you are viewing. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why did filters vanish?</summary><p class="answer">The search was a phone number or a correlation ID. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is the difference between 13 months and a 3-month picker?</summary><p class="answer">Pro Pack keeps 13 months. Starting January 27, 2026 the article says you select at most 3 months at a time. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What does the worst-experience click do?</summary><p class="answer">Opens Troubleshooting for that user’s media sessions in the chosen dates, up to 21 days. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How do you collect Webex App logs?</summary><p class="answer">Troubleshooting → Logs, search the email, Collect logs, then Collect. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How long are uploaded logs kept, and who else can send them?</summary><p class="answer">30 days. The user can send them from the app. An offline user cannot be collected. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Can you bill from Analytics?</summary><p class="answer">No. The article says the data is for general use and should not be used for billing. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>Which calling history sentence is only about Webex App?</summary><p class="answer">Pro Pack gets 13 months, and others 3 months, for calls based in Webex App. Read the dashboard you actually opened before you repeat it. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Look, do not hoard exports</h2>
+<ul>
+<li><label><input type="checkbox"> Goal: find one call and one log path on a lab org, without exporting a customer’s records into a ticket you do not own.</label></li>
+<li><label><input type="checkbox"> Prereq: an org where you are allowed to look. History beyond 21 days will not be in Troubleshooting.</label></li>
+<li><label><input type="checkbox"> Step 1. Open Monitoring → Troubleshooting and search an email. Expected: meetings and calls on separate tabs.</label></li>
+<li><label><input type="checkbox"> Step 2. Open a Calling segment and read path optimization. Expected: ICE, PNC, or No optimization.</label></li>
+<li><label><input type="checkbox"> Step 3. Export. Expected: at most 100 rows, and only that tab.</label></li>
+<li><label><input type="checkbox"> Step 4. Open Troubleshooting → Logs for a user you can see online. Expected: Collect is offered. If they are offline, expect the article’s refusal.</label></li>
+<li><label><input type="checkbox"> Evidence: the segment outcome, the path-optimization value, and whether logs were collectable.</label></li>
+<li><label><input type="checkbox"> Break it: select a six-month analytics range in one picker. Recovery: two ranges of three months if the January 2026 rule is live.</label></li>
+<li><label><input type="checkbox"> Reflection: which view you would open for a call last Tuesday, and which one for a call last quarter.</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve questions</h2>
+<div class="qgrid" id="quiz"><article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Troubleshooting history is:</p><details><summary>Answer</summary><p class="answer">Troubleshooting history is: 21 days. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</article><article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Path optimization values are:</p><details><summary>Answer</summary><p class="answer">ICE, PNC, or No optimization. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q3</strong><span class="kind">MCQ</span></header><p>CSV cap:</p><details><summary>Answer</summary><p class="answer">CSV cap: 100 records, current tab. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q4</strong><span class="kind">Scenario</span></header><p>You paste 5550101234 and get nothing. What does the article warn?</p><details><summary>Answer</summary><p class="answer">Include +1 when you paste. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q5</strong><span class="kind">Scenario</span></header><p>You searched a correlation ID and cannot filter. Is that a bug?</p><details><summary>Answer</summary><p class="answer">No. Filters are unavailable for phone-number and correlation-ID searches. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article><article class="qcard"><header><strong>Q6</strong><span class="kind">MCQ</span></header><p>Standard analytics history:</p><details><summary>Answer</summary><p class="answer">Standard analytics history: 3 months. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Pro Pack analytics history:</p><details><summary>Answer</summary><p class="answer">Pro Pack analytics history: 13 months, with a 3-month selectable window from the January 27, 2026 change. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q8</strong><span class="kind">Scenario</span></header><p>You need July through December for a Pro Pack org after that change. How many selections?</p><details><summary>Answer</summary><p class="answer">You need July through December for a Pro Pack org after that change. How many selections: Two. The article’s own example of six months is two 3-month ranges. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q9</strong><span class="kind">MCQ</span></header><p>Uploaded Webex App logs last:</p><details><summary>Answer</summary><p class="answer">Uploaded Webex App logs last: 30 days. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q10</strong><span class="kind">Scenario</span></header><p>Collect logs fails and the user is on a plane with the laptop shut. Why?</p><details><summary>Answer</summary><p class="answer">The user must be online. You cannot collect logs for someone who is offline. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article><article class="qcard"><header><strong>Q11</strong><span class="kind">MCQ</span></header><p>Analytics on a *.my.webex.com site:</p><details><summary>Answer</summary><p class="answer">Not available, per the analytics article. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article><article class="qcard"><header><strong>Q12</strong><span class="kind">Draw</span></header><p>Write the two click paths.</p><details><summary>Answer</summary><p class="answer">Write the two click paths.: Monitoring → Troubleshooting for calls. Troubleshooting → Logs for client logs. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details></article></div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain the 21-day view, the analytics clocks, and the 30-day logs as three tools." | assets/audio/T1-R06/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk a search that splits meetings from calls, then a hop, then a cross-launch." | assets/audio/T1-R06/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 21, 100, 3, 13, 30, ICE, PNC, offline." | assets/audio/T1-R06/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this. The prompt is the spoken outline, not a second article.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Monitoring → Troubleshooting is 21 days of Webex Calling media sessions: segments, hops, and ICE, PNC, or no path optimization. Analytics is the longer history. Logs are the client.</p>
+<p><strong>2 minutes.</strong> Search an email and you get two tabs. Export the tab you are on, 100 rows. A pasted number needs +1. Correlation IDs group calls and remove filters. Pro Pack stores 13 months and, since January 27, 2026, you select three months at a time. A standard org has three months total.</p>
+<p><strong>30 seconds, logs.</strong> Troubleshooting → Logs, by email, Collect. Thirty days. The user has to be online, or they send the logs themselves from the app.</p>
+<p><strong>2 minutes, what you will not conclude.</strong> An empty troubleshooting search can mean the SIP leg died on the Local Gateway before a media session existed. Analytics is not a bill. A *.my.webex.com site is outside this analytics article.</p>
+<p><strong>Draw it.</strong> Three boxes: 21 days, 3-or-13 months, 30 days. Put the click path under each.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+
+<ol class="cite-list"><li id="cite-1">Troubleshoot Webex Calling calls in Control Hub — help.webex — article frj1efb — <a href="https://help.webex.com/article/frj1efb">help.webex.com article frj1efb</a> — retrieved 2026-10-14. Monitoring → Troubleshooting. 21 days. Segments, hops, ICE versus cloud, path optimization ICE / PNC / No optimization. CSV of 100 records for the current tab. JSON report from the call details page. Partial phone search and the +1 paste note.</li><li id="cite-2">Analytics for Your Cloud Collaboration Portfolio — help.webex — article n0rlwxe — <a href="https://help.webex.com/article/n0rlwxe">help.webex.com article n0rlwxe</a> — retrieved 2026-10-14. Standard 3 months, Pro Pack 13 months. From January 27, 2026 the selectable range is 3 months at a time while 13 months of history remain. Calling media quality dashboard. Cross-launch to Troubleshooting, up to 21 days. Calls based in Webex App use the same 13-or-3 split. Not for billing. Not available for *.my.webex.com Webex Online sites.</li><li id="cite-3">Collect Webex App logs from users in Control Hub — help.webex — article z84p2bb — <a href="https://help.webex.com/article/z84p2bb">help.webex.com article z84p2bb</a> — header April 11, 2026, retrieved 2026-10-14. Troubleshooting → Logs. Search by email. Collect logs. Uploaded logs kept 30 days. The user must be online. Users can also send logs from the app.</li></ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+
+
+<ul>
+<li>Open questions: custom-role permission names for these two pages; whether the 3-month picker is what a Pro Pack org shows today.</li>
+<li>Read the live toggles under Users → Admin roles in Control Hub. They vary by role, which is why the picker is <mark class="recheck">re-check</mark>.</li>
+<li>Assets missing: screenshots of the three pages, audio.</li>
+<li>Ideas for v1.0: a one-screen “which clock” card on the hub.</li>
+<li>Next review: when n0rlwxe or frj1efb changes a retention number.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T1-R01-control-hub-foundations.html"><span>Previous</span><strong>T1-R01</strong><em>Control Hub Foundations</em></a><a class="next" href="T2-R02-local-gateway-pstn.html"><span>Next</span><strong>T2-R02</strong><em>Local Gateway and PSTN Options</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

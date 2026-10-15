@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T7-R07 · SIP Trace Reading Lab">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T7-R07 · SIP Trace Reading Lab · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T7" data-room="T7-R07" data-room-title="SIP Trace Reading Lab" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T7</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T7/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T7 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T7 · SIP, routing, and queues</p>
+<h1>SIP Trace Reading Lab</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for SIP Trace Reading Lab">
+<defs>
+<linearGradient id="T7R07sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T7R07sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">SIP and queues</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T7-R07</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Phone</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CUBE</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g>
+</svg>
+<figcaption>Illustrated scene for SIP Trace Reading Lab. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for SIP Trace Reading Lab">
+<defs>
+<marker id="T7R07arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · Phone → CUBE → Control Hub → PSTN</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T7R07arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T7R07arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T7R07arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T7R07lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: Phone → CUBE → Control Hub → PSTN. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">This lab is how you read a Webex Calling dial-plan or Cloud Connected PSTN failure without inventing a ladder. Start in Verify Call Routing. If a media session exists, open Monitoring → Troubleshooting and separate a Cloud Connected PSTN hop from a Local Gateway hop. The PSTN party’s receive metrics are absent because they are not sent to the Webex Calling cloud. Gateway debugs stay in T7-R01.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T7-R07</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>2026-10-14</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>70–90 min</strong></span>
+<span class="meta-chip">Prereq <strong>T2-R03, T7-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>21 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Cloud PSTN, Cisco Calling Plan or Cloud Connected PSTN, is only for Webex Calling users. Premises-originated calls cannot use it. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Verify Call Routing shows permissions, fraud prevention, digit patterns, call intercept, and translation patterns. Cisco Calling Plan customers and other customers do not share one menu path. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>CCP numbers are stored in Control Hub as +E.164. The country list lives on the global-availability page the voice-channel article names, and that list changes. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Off-net media through a Cloud Connected PSTN provider is a different hop from off-net media through a Local Gateway. PSTN-side end-to-end and receive metrics are not in the cloud view. <a class="cite" href="#cite-3">[cite:3]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>A dial plan is global for the enterprise. It chooses a trunk or a route group for matching patterns, for every user, regardless of location. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the caller is still a premises user, stop. Cloud PSTN will not take that call. Give them a premises path or move the user. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Run Verify Call Routing before you open a packet capture. Pick the call source, enter the number or URI, and read the routing result. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>When the call connected and quality is the complaint, Monitoring → Troubleshooting keeps the past 21 days and shows whether the hop was CCPP or the Local Gateway. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Webex Contact Center CCP uses its own location. Do not put endpoint devices in that same location. Outbound premises patterns are a separate dial plan. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> Interviewers ask “walk me through a CCP call that fails.” The honest walk is user type, +E.164, the dial plan, Verify Call Routing, then the hop view. A missing PSTN receive stream is what the troubleshooting article says you will see. It is not proof the phone is broken.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Map</p>
+<h2>Which console answers which question</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Question</th><th>Where to look</th><th>Why it varies</th></tr></thead>
+<tbody>
+<tr><td>Can this user use cloud PSTN?</td><td>The user in Control Hub, and n0xb944’s premises rule</td><td>Only Webex Calling users can. Premises users cannot.</td></tr>
+<tr><td>Which country and provider?</td><td>The location’s PSTN connection, and the global-availability page named by 2dputx</td><td>The article says over 65 countries. The live list is that page, and it changes.</td></tr>
+<tr><td>Is the number stored the way CCP expects?</td><td>Calling → Numbers. CCP DIDs and toll-free are saved as +E.164</td><td>What you typed can include dashes or parentheses. Control Hub globalizes it.</td></tr>
+<tr><td>Which pattern won?</td><td>Verify Call Routing</td><td>The menu is Services → PSTN &amp; Routing → Gateway configurations, or Services → Calling → Call Routing for Cisco Calling Plan customers.</td></tr>
+<tr><td>Did media use CCP or the gateway?</td><td>Monitoring → Troubleshooting, hop view</td><td>CCPP and Local Gateway are different off-net paths. The view only keeps 21 days, and only calls with a Webex Calling media session.</td></tr>
+</tbody></table></div>
+<div class="diagram" role="img" aria-label="Dial plan and CCP troubleshooting order">
+<svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Order of checks for a failed outbound call">
+<rect width="980" height="400" fill="#0c121c"/>
+<text x="28" y="36" fill="#ffb067" font-family="Georgia, serif" font-size="20">Read the decision before you read a packet.</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="36" y="64" width="200" height="72" rx="12" fill="#2a1c0c" stroke="#ffb067"/><text x="52" y="94">Webex Calling</text><text x="52" y="114" fill="#b7ad9c" font-size="12">user? If not, stop.</text>
+<rect x="270" y="64" width="200" height="72" rx="12" fill="#14110c" stroke="#ffb067"/><text x="286" y="94">+E.164 in</text><text x="286" y="114" fill="#b7ad9c" font-size="12">Control Hub</text>
+<rect x="504" y="64" width="210" height="72" rx="12" fill="#14110c" stroke="#e0b07a"/><text x="520" y="94">Verify Call</text><text x="520" y="114" fill="#b7ad9c" font-size="12">Routing</text>
+<rect x="748" y="64" width="196" height="72" rx="12" fill="#14110c" stroke="#8d8476"/><text x="764" y="94">Monitoring</text><text x="764" y="114" fill="#b7ad9c" font-size="12">Troubleshooting</text>
+</g>
+<path d="M236 100 H270" stroke="#ffb067" fill="none"/>
+<path d="M470 100 H504" stroke="#ffb067" fill="none"/>
+<path d="M714 100 H748" stroke="#ffb067" fill="none"/>
+<rect x="36" y="170" width="908" height="196" rx="14" fill="#14110c" stroke="#ffb067"/>
+<text x="56" y="204" fill="#ffb067" font-family="Georgia, serif" font-size="16">What Verify Call Routing is willing to show</text>
+<text x="56" y="236" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Call source: cloud user, workspace, virtual line, or premises trunk.</text>
+<text x="56" y="264" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">Then a number or URI, then See Routing Result.</text>
+<text x="56" y="292" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">The result includes outgoing permissions, fraud prevention, digit patterns, call intercept, and translation patterns.</text>
+<text x="56" y="328" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Open Troubleshooting only after a media session exists. A call that never reached Webex has no hop.</text>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  User[Webex Calling user] --> E164["+E.164"]
+  E164 --> Verify[Verify Call Routing]
+  Verify --> Hop[Monitoring Troubleshooting]
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Rules that change the trace</h2>
+<div class="callout def"><span class="label">Cloud Connected PSTN</span><p>n0xb944: choose it when you want a cloud PSTN path and no local hardware, then select a CCP provider. Cloud PSTN, whether Cisco PSTN or Cloud Connected PSTN, provides PSTN access for Webex Calling users. Calls that originate from premises users cannot access cloud PSTN. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">Dial plan</span><p>Dial plans route calls to on-premises destinations by trunks or route groups. They are configured globally for the enterprise and apply to all users, regardless of location. The routing choice is the trunk or route group for patterns that match. A dial pattern represents on-premises extensions. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout def"><span class="label">+E.164 on CCP</span><p>The voice-channel article: CCP providers are provisioned for +E.164, for DID and toll-free. When you configure those numbers in Control Hub, they are saved in +E.164. Webex Calling does the same by default for Cloud Connected PSTN or Local Gateway. The article also says CCP provides connectivity in over 65 countries through certified providers, and it points the country and provider list at the Webex global-availability page. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout warn"><span class="label">Contact-center location</span><p>Webex Contact Center PSTN needs its own location. Cisco does not support endpoint devices in that same Webex Calling location. The article says placing endpoints there might result in unexpected overage charges on the contact-center subscription. You may create more than one PSTN location, for example one for CCP and one for a Local Gateway. <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<div class="callout def"><span class="label">Two off-net hops</span><p>Off-net via Cloud Connected PSTN Provider: the other party is on the PSTN, and media is relayed through the CCPP. Off-net via Local Gateway: the other party’s media comes through the enterprise, either an enterprise-hosted user or enterprise-provided PSTN. For a PSTN caller into a Webex user, the view shows that user’s client metrics and the media relay, not both parties the way an on-net call can. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout note"><span class="label">Missing PSTN metrics</span><p>For off-net PSTN through CCPP, the end-to-end experience and the receive stream of the party on the PSTN are not available, because those metrics are not transmitted to the Webex Calling cloud. The Local Gateway section says the same about the party called from the local gateway. Hop quality for CCPP or local gateway is collected from the Webex Calling cloud, not from the PSTN endpoint. <a class="cite" href="#cite-3">[cite:3]</a></p></div>
+<div class="callout note"><span class="label">What this room will not draw</span><p>The troubleshooting article’s contents list a SIP call diagram. The body used here documents the hop view, the call summary, and refusal and failure codes. Read the diagram on the call you opened in Control Hub. T7-R01 keeps gateway debugs. Do not paste a sample ladder from memory.</p></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>Ecosystem and sister technologies</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T7-R07">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Phone</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Control Hub</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text>
+<circle cx="200" cy="132" r="36" fill="url(#T7R07map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T7R07map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<dl class="glossary">
+<div class="term"><dt>Verify Call Routing</dt><dd>Control Hub simulation of a routing decision. Call source is a cloud user, workspace, virtual line, or premises trunk. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>CCPP</dt><dd>The troubleshooting article’s name for the cloud connected PSTN provider that relays off-net media. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>Local Gateway hop</dt><dd>The other off-net path. Media comes through the enterprise, not through the CCP interconnect. <a class="cite" href="#cite-3">[cite:3]</a></dd></div>
+<div class="term"><dt>+E.164</dt><dd>The format Control Hub saves for CCP DIDs, toll-free numbers, and Local Gateway numbers. <a class="cite" href="#cite-2">[cite:2]</a></dd></div>
+<div class="term"><dt>Unknown extension length</dt><dd>n0xb944: 2–10 digits for premises-based routing. If you lengthen extensions and the PSTN provider is not E.164, inbound calls can be treated as on-premises local calls. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<div class="diagram" role="img" aria-label="CCPP hop versus Local Gateway hop">
+<svg viewBox="0 0 980 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two off-net media paths and the metrics you will not see">
+<rect width="980" height="320" fill="#0c121c"/>
+<text x="28" y="36" fill="#ffb067" font-family="Georgia, serif" font-size="20">Same symptom, two hops. The PSTN receive stream is missing in both.</text>
+<g font-family="Segoe UI, sans-serif" font-size="14" fill="#efe7d6">
+<rect x="40" y="70" width="420" height="120" rx="12" fill="#2a1c0c" stroke="#ffb067"/>
+<text x="58" y="104">Off-net via CCPP</text>
+<text x="58" y="132" fill="#b7ad9c" font-size="13">Media relayed through the provider.</text>
+<text x="58" y="158" fill="#b7ad9c" font-size="13">PSTN caller metrics are not in the cloud.</text>
+<rect x="500" y="70" width="440" height="120" rx="12" fill="#14110c" stroke="#e0b07a"/>
+<text x="518" y="104">Off-net via Local Gateway</text>
+<text x="518" y="132" fill="#b7ad9c" font-size="13">Media through the enterprise.</text>
+<text x="518" y="158" fill="#b7ad9c" font-size="13">UCM user or enterprise PSTN. Not CCP.</text>
+</g>
+<text x="40" y="230" fill="#efe7d6" font-family="Segoe UI, sans-serif" font-size="14">PSTN and Local Gateway participants in the call summary are not clickable.</text>
+<text x="40" y="260" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="13">Hover a Refusal or Failure status for the code. UnassignedNumber, NoRouteToDestination, and LocalGatewayLoop are dial-plan codes.</text>
+<text x="40" y="290" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">If Troubleshooting is empty, the call may never have created a Webex media session. Debug the trunk in T7-R01.</text>
+</svg>
+</div>
+<div class="table-wrap"><table class="sister"><thead><tr><th>Sister</th><th>What it is</th><th>Why it matters here</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Local Gateway</td><td>Premises trunk for PSTN or a PBX.</td><td>A CCP complaint is sometimes a gateway pattern.</td><td>Compare the hop type in Troubleshooting with the routing choice on the dial plan.</td><td>Debugging CUBE when Verify Call Routing already shows a permission block.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Webex Contact Center voice</td><td>CCP or Local Gateway into the contact center.</td><td>The contact-center location is not an agent phone location.</td><td>Connect Type Cloud Connected PSTN on the PSTN location. Agent devices get their own location.</td><td>Phones and the contact-center PSTN sharing one location.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Unified CM</td><td>Closest-match on the cluster that still owns the call.</td><td>A Webex pattern and a CUCM route pattern are different engines.</td><td>Open both. T2-R03 and T6-R02 keep the field map off a frozen table.</td><td>Expecting Webex wildcards to win inside CUCM.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Emergency calling</td><td>Cisco Calling Plan locations in the US and Canada require an emergency service address.</td><td>A dial-plan failure is not an ESA failure, and the reverse is also true.</td><td>Management → Locations, on a Cisco Calling Plan location. RedSky for agents is nvfbjts, header September 08, 2024. <mark class="recheck">re-check</mark></td><td>Using Verify Call Routing as the only emergency test.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-4">[cite:4]</a></td></tr>
+<tr><td>Recording</td><td>Webex Calling and Dubber Go keep their own clocks.</td><td>The troubleshooting view is media quality, not a recording archive.</td><td>Read nhvl4hw for Calling retention. Do not paste those numbers onto a queue.</td><td>Searching Troubleshooting for a recording file.</td><td><a class="cite" href="#cite-5">[cite:5]</a></td></tr>
+<tr><td>Analytics</td><td>Longer history than the 21-day troubleshooting view.</td><td>A call older than 21 days will not be a hop.</td><td>Open Analytics. The retention split is the analytics article T1-R06 cites, and it changes with Pro Pack.</td><td>Waiting for a month-old CCP failure inside Troubleshooting.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Amazon Connect</td><td>Not named in n0xb944, 2dputx, or frj1efb.</td><td>A Connect contact flow is not this dial plan.</td><td>Read that product’s own admin guide before copying a trace.</td><td>Treating a CCP provider as an Amazon telephony instance.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody></table></div>
+<h3>Integration edges</h3>
+<div class="table-wrap"><table class="edges"><thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead><tbody>
+<tr><td>CCP provider</td><td>Webex Calling</td><td>The provider sets up the connection. You choose Cloud Connected PSTN on the location.</td><td>Inbound and outbound PSTN for Webex Calling users</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Control Hub numbers</td><td>Stored directory</td><td>Save</td><td>DID and toll-free, kept as +E.164</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Dial plan</td><td>Trunk or route group</td><td>Pattern match, global for the enterprise</td><td>On-premises destinations</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex Contact Center</td><td>On-premises agents or PSTN</td><td>Calling → Call Routing → Dial Plans → Create Dial Plan</td><td>Name, routing choice, and patterns you configure</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Registered endpoint</td><td>Troubleshooting hop</td><td>A media session with at least one Webex Calling-registered endpoint</td><td>Quality and path. Not the PSTN party’s receive stream</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+<h3>Sister-system trouble</h3>
+<div class="table-wrap"><table class="eco-trouble"><thead><tr><th>Symptom</th><th>Likely sister-system cause</th><th>Check</th><th>Fix</th><th>Cite</th></tr></thead><tbody>
+<tr><td>Premises phones cannot dial out the Cisco Calling Plan</td><td>Premises-originated calls cannot use cloud PSTN.</td><td>Where the user is homed.</td><td>Premises path, or move the user to Webex Calling.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Contact-center PSTN location shows phone devices</td><td>Endpoints were placed in the PSTN location.</td><td>The location’s devices versus the agent location.</td><td>Move endpoints to an agent location. The article warns of overage charges.</td><td><a class="cite" href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Troubleshooting has no PSTN receive stream</td><td>Those metrics are not transmitted to the cloud.</td><td>Whether the hop is CCPP or Local Gateway.</td><td>Judge the Webex side and the relay. Do not call the blank PSTN stream a capture failure.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>The call summary will not open the PSTN party</td><td>PSTN and Local Gateway user types are not clickable.</td><td>The call summary legend.</td><td>Use the Webex participant and the hop under it.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>Order of the lab</h2>
+<ol>
+<li>Name the user. If the call starts on a premises PBX user, cloud PSTN is the wrong path. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Open the location’s PSTN connection. For CCP, Connect Type is Cloud Connected PSTN. Read the numbers under Calling → Numbers and confirm +E.164. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>If the destination is on-premises, open the dial plan. It is global. The routing choice is a trunk or a route group. For contact-center outbound premises calls the voice article uses Calling → Call Routing → Dial Plans. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Run Verify Call Routing with the real call source and the real number. Read permissions, fraud prevention, digit patterns, intercept, and translation before you blame the carrier. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the result says the call should leave, and a media session existed, open Monitoring → Troubleshooting. Confirm CCPP versus Local Gateway. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Hover Refusal or Failure. UnassignedNumber, NoRouteToDestination, and LocalGatewayLoop are the codes to say out loud. Permission and intercept refusals match what Verify Call Routing already displays. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>If Troubleshooting is empty, the session may never have reached a Webex Calling-registered endpoint. Continue on the gateway with T7-R01. Do not wait 21 days for a hop that was never created.</li>
+</ol>
+<div class="orientation"><strong>Orientation only.</strong> A Microsoft Teams dial plan and an Amazon Connect contact flow use different consoles. Compare the Webex pattern with the other product’s own normalization rule. A match in one is not a match in the other.</div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Clicks the articles print</h2>
+<ul>
+<li>Verify Call Routing: Services → PSTN &amp; Routing → Gateway configurations, then Verify Call Routing. Cisco Calling Plan customers use Services → Calling → Call Routing for the same tool. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Call source: cloud user, workspace, virtual line, or premises trunk. Enter a number or URI. See Routing Result. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Create a dial plan after the trunk or route group exists. Name it, choose the routing choice, and add patterns. Bulk add is a CSV from the dial plan’s Actions menu. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Unknown-number handling: Standard Behavior is the default and the one the article recommends when dial plans exist. Legacy Behavior is for old local-gateway behavior and is not recommended once dial plans are in use. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Caller ID format on that same premises setting: +E.164 uses the external calling line ID. ESN uses the internal calling line ID. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Contact-center CCP: create the PSTN location, Connect Type Cloud Connected PSTN, add the provider’s numbers, then confirm them under Calling → Numbers in +E.164. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Contact-center outbound premises dial plan: Calling → Call Routing → Dial Plans → Create Dial Plan. Name, Routing Choice, Patterns, Save. The article’s sample range is an example of a premises block. Replace it with the numbers you actually own. <a class="cite" href="#cite-2">[cite:2]</a></li>
+<li>Troubleshooting: sign in to Control Hub and go to Monitoring → Troubleshooting. The view covers the past 21 days. <a class="cite" href="#cite-3">[cite:3]</a></li>
+<li>Before you finish a contact-center PSTN build, place an inbound test call and an outbound test call on the option you chose. <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers the articles print</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead><tbody>
+<tr><td>Troubleshooting history</td><td>Past 21 days</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted</td></tr>
+<tr><td>Unknown extension length</td><td>2–10 digits</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td>Quoted for premises-based routing</td></tr>
+<tr><td>CCP country coverage</td><td>Over 65 countries, through certified providers</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted. The country list is the global-availability page, not a table in this room</td></tr>
+<tr><td>Number format stored for CCP and Local Gateway</td><td>+E.164</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Quoted for DID and toll-free</td></tr>
+<tr><td>PSTN receive metrics</td><td>Not available</td><td><a class="cite" href="#cite-3">[cite:3]</a></td><td>Quoted for CCPP and for the Local Gateway callee</td></tr>
+<tr><td>Sample premises range in the voice article</td><td>An example, not a cap</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td>Replace it with the numbers allocated to you</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Trouble</p>
+<h2>Codes and the wrong story next to each</h2>
+<div class="table-wrap"><table><thead><tr><th>What you see</th><th>Wrong story</th><th>What you can cite</th><th>Do this</th><th>Cite</th></tr></thead><tbody>
+<tr><td>UnassignedNumber</td><td>The carrier rejected the call.</td><td>Refusal: the dialed number is not assigned to a user or service.</td><td>Read the number in Control Hub and the pattern on the dial plan.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>NoRouteToDestination</td><td>CCP is down nationwide.</td><td>Failure: no route to the destination. The article’s example is a workplace device.</td><td>Run Verify Call Routing for that source and number.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>LocalGatewayLoop</td><td>A codec mismatch.</td><td>Refusal: a loop between the local gateway and Webex Calling.</td><td>Compare the gateway dial peers with the Webex dial plan. T7-R01 is the peer debug.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Call rejected, permissions or intercept</td><td>The pattern is wrong.</td><td>The refusal examples include outgoing permissions and call intercept. Verify Call Routing displays those.</td><td>Read the routing result before you edit a pattern.</td><td><a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Inbound PSTN treated as an internal extension</td><td>CCP rewrote the number at random.</td><td>If extension length grows and the provider is not E.164, incoming PSTN can look like an on-premises local call.</td><td>Enforce E.164 toward Webex Calling, as the article recommends.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Quality looks one-sided</td><td>The capture failed.</td><td>PSTN receive metrics are not transmitted. The hop grade comes from the cloud relay.</td><td>Separate CCPP from Local Gateway, then judge the Webex hop.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Nothing in Troubleshooting</td><td>Control Hub is broken.</td><td>The view needs a media session with a Webex Calling-registered endpoint, inside 21 days.</td><td>Confirm the call happened, then debug the trunk if Webex never saw it.</td><td><a class="cite" href="#cite-3">[cite:3]</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<details class="qnode"><summary><span class="lvl">L1</span>Who can use Cloud PSTN?</summary><p class="answer">Webex Calling users. Premises-originated calls cannot. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>How are CCP numbers stored?</summary><p class="answer">+E.164, for DID and toll-free. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Is a dial plan per location?</summary><p class="answer">No. It is global for the enterprise and applies to all users, regardless of location. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>Where do Cisco Calling Plan customers open Verify Call Routing?</summary><p class="answer">Services → Calling → Call Routing. Other customers use Services → PSTN &amp; Routing → Gateway configurations. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does the routing result include?</summary><p class="answer">Outgoing call permissions, fraud prevention, digit patterns, call intercept, and translation patterns. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you tell CCPP media from Local Gateway media?</summary><p class="answer">CCPP relays the PSTN party over the provider interconnect. Local Gateway media comes through the enterprise, from a hosted user or from enterprise PSTN. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why is the PSTN caller’s receive stream blank?</summary><p class="answer">Those metrics are not transmitted to the Webex Calling cloud. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>What is LocalGatewayLoop?</summary><p class="answer">A refusal: a loop between the local gateway and Webex Calling. <a class="cite" href="#cite-3">[cite:3]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Why must contact-center phones stay out of the PSTN location?</summary><p class="answer">The voice article says Cisco does not support endpoint devices in that location, and that sharing it might cause unexpected overage charges. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Where is the CCP country list?</summary><p class="answer">The global-availability page the voice article links. “Over 65 countries” is the sentence. The page is the list, and it changes. <a class="cite" href="#cite-2">[cite:2]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>One failed outbound, on paper</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Prereq: a lab org you are allowed to change. Do not run this against a production customer. Read the PSTN choice on the subscription. These articles do not name the order SKU.</label></li>
+<li><label><input type="checkbox"> Write whether the caller is a Webex Calling user or a premises user. If premises, stop and name the path n0xb944 allows.</label></li>
+<li><label><input type="checkbox"> Copy one DID from Calling → Numbers and mark whether it is +E.164.</label></li>
+<li><label><input type="checkbox"> Open Verify Call Routing on the menu your subscription shows. Record the call source and the routing result’s permission, pattern, and intercept lines.</label></li>
+<li><label><input type="checkbox"> If you have a recent test call, open Monitoring → Troubleshooting and write CCPP or Local Gateway. Write “PSTN receive not transmitted” beside the blank stream.</label></li>
+<li><label><input type="checkbox"> If the status is Refusal or Failure, hover it and copy the code. Map UnassignedNumber, NoRouteToDestination, or LocalGatewayLoop to the row in the trouble table.</label></li>
+<li><label><input type="checkbox"> For a contact-center location, confirm no endpoint devices sit on the PSTN location.</label></li>
+<li><label><input type="checkbox"> Reflection: which check would have saved you from opening a gateway debug?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Eight checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Premises-originated calls and cloud PSTN:</p>
+<ol type="A"><li>Use CCP if the location has a Calling Plan</li><li>Cannot access cloud PSTN</li><li>Always use the Local Gateway and CCP together</li><li>Are stored as national numbers only</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>A Webex Calling dial plan applies to:</p>
+<ol type="A"><li>One location only</li><li>All users in the enterprise, regardless of location</li><li>Contact-center queues only</li><li>The PSTN provider’s switch</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Verify Call Routing shows an outgoing-permission block. What do you edit first?</p>
+<details class="reveal"><summary>Reveal</summary><p>The permission the tool displayed. The refusal article lists outgoing permissions as a reject reason. Do not start by rewriting the pattern. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>CCP DIDs in Control Hub are saved as:</p>
+<ol type="A"><li>Whatever you typed, unchanged</li><li>+E.164</li><li>A location routing prefix only</li><li>An extension of 2–10 digits</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Off-net media through CCPP means:</p>
+<ol type="A"><li>ICE optimized the call inside the office</li><li>The PSTN party is relayed through the cloud connected provider</li><li>The call used a Local Gateway</li><li>Both parties’ receive streams are always present</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. The PSTN party’s receive metrics are not transmitted. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>The call summary will not open the PSTN participant. What does the article say?</p>
+<details class="reveal"><summary>Reveal</summary><p>PSTN and Local Gateway user types are not clickable. Use the Webex participant and the hop. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>LocalGatewayLoop is:</p>
+<ol type="A"><li>A failure codec</li><li>A refusal: a loop between the local gateway and Webex Calling</li><li>Proof CCP is out of the country</li><li>An emergency-address error</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-3">[cite:3]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>Endpoint phones on the Webex Contact Center PSTN location:</p>
+<ol type="A"><li>Are required so agents register</li><li>Are not supported there, and may cause overage charges</li><li>Are how you add a second CCP country</li><li>Replace the dial plan</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>B. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<!-- AUDIO:overview | assets/audio/T7-R07/overview.mp3 -->
+<div class="audio-slot"><p><strong>90 seconds.</strong> Premises users cannot use cloud PSTN. Numbers land as +E.164. Verify Call Routing before a packet capture. CCPP and the Local Gateway are different hops, and the PSTN receive stream is not in the cloud.</p><p class="placeholder-asset">No mp3 shipped.</p></div>
+<!-- AUDIO:mistake | assets/audio/T7-R07/mistake.mp3 -->
+<div class="audio-slot"><p><strong>45 seconds.</strong> Do not put agent phones in the contact-center PSTN location.</p></div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<p>“I start by asking whether the caller is a Webex Calling user. Premises-originated calls cannot use cloud PSTN. CCP numbers are saved as +E.164, and the country list is the global-availability page, not a number I memorize past the article’s ‘over 65 countries.’ The dial plan is global and points matching patterns at a trunk or a route group. I run Verify Call Routing on the menu the subscription shows, with a real call source, and I read permissions, fraud prevention, digit patterns, intercept, and translation. If a media session exists, Monitoring → Troubleshooting shows the past 21 days and whether the hop was the Cloud Connected PSTN provider or the Local Gateway. I do not treat a missing PSTN receive stream as a broken capture. Those metrics are not transmitted. UnassignedNumber, NoRouteToDestination, and LocalGatewayLoop are the codes I name. Contact-center PSTN gets its own location, with no endpoints on it. If Troubleshooting is empty, I go to the gateway debug in T7-R01 instead of waiting for a hop that was never created.”</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<p>Retrieved 2026-10-14. Mirrors <a href="../cites/T7-R07.md">cites/T7-R07.md</a>.</p>
+<ol class="cite-list">
+<li id="cite-1">Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — <a href="https://help.webex.com/article/n0xb944">help.webex.com article n0xb944</a> — retrieved 2026-10-14. Cloud PSTN only for Webex Calling users. Premises-originated calls cannot use it. Dial plans are global. Verify Call Routing paths and result fields. Unknown extension length 2–10. Standard versus Legacy unknown-number handling. E.164 recommendation when the provider schema is not E.164. Emergency service address for Cisco Calling Plan in the US and Canada.</li>
+<li id="cite-2">Set up voice channels for Webex Contact Center — help.webex — article 2dputx — <a href="https://help.webex.com/article/2dputx">help.webex.com article 2dputx</a> — retrieved 2026-10-14. CCP in over 65 countries. Country list on the global-availability page. +E.164 storage. Dedicated PSTN location and the endpoint warning. More than one PSTN location. Calling → Call Routing → Dial Plans for premises outbound. Inbound and outbound test calls before the rest of the build.</li>
+<li id="cite-3">Troubleshoot Webex Calling calls in Control Hub — help.webex — article frj1efb — <a href="https://help.webex.com/article/frj1efb">help.webex.com article frj1efb</a> — retrieved 2026-10-14. Monitoring → Troubleshooting. Past 21 days. Off-net via CCPP versus Local Gateway. PSTN metrics not transmitted. PSTN and Local Gateway participants not clickable. Refusal and failure codes, including UnassignedNumber, NoRouteToDestination, and LocalGatewayLoop.</li>
+<li id="cite-4">Provision Emergency Calling in Webex Contact Center for Agents — help.webex — article nvfbjts — <a href="https://help.webex.com/article/nvfbjts">help.webex.com article nvfbjts</a> — retrieved 2026-10-14. Header September 08, 2024. <mark class="recheck">re-check</mark> WebRTC agents use Control Hub and RedSky. Not the Calling dial-plan tool.</li>
+<li id="cite-5">Manage call recording for Webex Calling — help.webex — article nhvl4hw — <a href="https://help.webex.com/article/nhvl4hw">help.webex.com article nhvl4hw</a> — retrieved 2026-10-14. Calling recording retention. Not the troubleshooting hop view and not WxCC quality-management retention.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<ul>
+<li>Open the SIP call diagram on a live call in Monitoring → Troubleshooting. The article lists it, and the on-screen ladder changes with the call, so read that diagram in Control Hub.</li>
+<li>Read the country and provider list on the global-availability page the day you order. “Over 65 countries” is the sentence in 2dputx. The page is the list that changes.</li>
+<li>When frj1efb adds or retires a refusal code, add the code here only after the article prints it.</li>
+<li>Gateway debugs, OPTIONS, and dial-peer hunt stay in T7-R01. Pattern grammar stays in T2-R03.</li>
+<li>Header dates for n0xb944, 2dputx, and frj1efb were not in the extracts used on 2026-10-14. Re-read those headers on the next pass.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T7-R01-sip-fundamentals-webex.html"><span>Previous</span><strong>T7-R01</strong><em>SIP Fundamentals for Webex</em></a><a class="next" href="T8-R01-flow-designer-essentials.html"><span>Next</span><strong>T8-R01</strong><em>Flow Designer Essentials</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

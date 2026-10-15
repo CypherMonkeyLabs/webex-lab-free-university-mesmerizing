@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" role="img" aria-label="E911 and emergency calling">
+<rect width="980" height="300" fill="#0b1020"/>
+<text x="36" y="48" fill="#f8fafc" font-size="28" font-family="system-ui,sans-serif" font-weight="700">E911 and emergency calling</text>
+<text x="36" y="78" fill="#94a3b8" font-size="14" font-family="system-ui,sans-serif">CypherMonkey · Webex Lab · not a vendor document</text>
+<text x="36" y="120" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Hosts — api.wxc.e911cloud.com and wxc.e911cloud.com</text><text x="36" y="148" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Port — 443 from the phone and the Webex client</text><text x="36" y="176" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">933 — Test. Does not alert public safety in the US and Canada.</text><text x="36" y="204" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Kari&#x27;s Law — Notification email exists and is not the same setting as RedSky routing.</text><text x="36" y="232" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">RAY BAUM — Dispatchable location for nomadic users. Phase 2 is January 2022 in the Canon.</text>
+</svg>

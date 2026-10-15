@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="T4-R08 · Sizing and HA">
+<meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
+<meta property="og:image" content="../assets/og-card.svg">
+<title>T4-R08 · Sizing &amp; HA · CypherWebex Canon</title>
+<link rel="stylesheet" href="../assets/css/canon.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="icon" href="../assets/mark.svg">
+</head>
+<body data-track="T4" data-room="T4-R08" data-room-title="Sizing &amp; HA" class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>T4</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a class="nav-icon" href="../index.html" title="Home. Eight tracks and your progress"><span aria-hidden="true">🏠</span><span class="sr">Home</span></a><a class="nav-icon" href="../start.html" title="Start Here. Prerequisites and the first rooms"><span aria-hidden="true">🚀</span><span class="sr">Start Here</span></a><a class="nav-icon" href="../index.html#rooms" title="All Rooms. Every room on the map"><span aria-hidden="true">🗂️</span><span class="sr">All Rooms</span></a><a class="nav-icon" href="../quizzes.html" title="Practice Quiz. 483 questions besides the room quizzes"><span aria-hidden="true">✅</span><span class="sr">Practice Quiz</span></a><a class="nav-icon" href="../flashcards.html" title="Flashcards. 842 know-or-again cards in this browser"><span aria-hidden="true">🃏</span><span class="sr">Flashcards</span></a></nav>
+<form class="nav-search" role="search" action="#">
+<input class="nav-q" type="search" placeholder="Search" aria-label="Search rooms and glossary" data-nav-search autocomplete="off">
+</form>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Light or dark">🌙</button>
+<button type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="canon-nav" aria-label="More">⋯</button>
+<nav id="canon-nav" class="nav-panel nav-more" aria-label="More" hidden>
+<a href="../start.html#path" title="Fundamentals through the hard edges"><span class="nav-ico" aria-hidden="true">🧭</span><span class="nav-text"><span class="nav-label">Learning Paths</span><span class="nav-sub">Fundamentals through the hard edges</span></span></a><a href="../labs.html" title="Dial plan, flow, queue, and trunk practice"><span class="nav-ico" aria-hidden="true">🧪</span><span class="nav-text"><span class="nav-label">Hands-on Labs</span><span class="nav-sub">Dial plan, flow, queue, and trunk practice</span></span></a><a href="../drills.html" title="Scenarios with a cited fix"><span class="nav-ico" aria-hidden="true">🔧</span><span class="nav-text"><span class="nav-label">Troubleshooting Cases</span><span class="nav-sub">Scenarios with a cited fix</span></span></a><a href="../interviews.html" title="Calling, contact center, and migration questions"><span class="nav-ico" aria-hidden="true">🎤</span><span class="nav-text"><span class="nav-label">Interview Prep</span><span class="nav-sub">Calling, contact center, and migration questions</span></span></a><a href="../glossary.html" title="Terms collected from the written rooms"><span class="nav-ico" aria-hidden="true">📖</span><span class="nav-text"><span class="nav-label">Glossary</span><span class="nav-sub">Terms collected from the written rooms</span></span></a><a href="../ecosystem.html" title="How the Webex products sit together"><span class="nav-ico" aria-hidden="true">🌐</span><span class="nav-text"><span class="nav-label">Ecosystem Map</span><span class="nav-sub">How the Webex products sit together</span></span></a><a href="../tracks/T4/index.html" title="Rooms in this track"><span class="nav-ico" aria-hidden="true">📍</span><span class="nav-text"><span class="nav-label">This track</span><span class="nav-sub">T4 room list</span></span></a>
+</nav>
+</div>
+</header>
+
+<main id="main" class="wrap room-shell">
+<nav class="toc" aria-label="Room sections"><ol>
+<li><a href="#hdr"><span class="n">00</span>Header</a></li>
+<li><a href="#tldr"><span class="n">01</span>TL;DR</a></li>
+<li><a href="#map"><span class="n">02</span>Map</a></li>
+<li><a href="#core"><span class="n">03</span>Core</a></li>
+<li><a href="#eco"><span class="n">04</span>Ecosystem</a></li>
+<li><a href="#flow"><span class="n">05</span>Flow</a></li>
+<li><a href="#config"><span class="n">06</span>Config</a></li>
+<li><a href="#limits"><span class="n">07</span>Limits</a></li>
+<li><a href="#trouble"><span class="n">08</span>Trouble</a></li>
+<li><a href="#selfq"><span class="n">09</span>Self-question</a></li>
+<li><a href="#lab"><span class="n">10</span>Lab</a></li>
+<li><a href="#quiz"><span class="n">11</span>Quiz</a></li>
+<li><a href="#audio"><span class="n">12</span>Audio</a></li>
+<li><a href="#interview"><span class="n">13</span>Interview</a></li>
+<li><a href="#cites"><span class="n">14</span>Cites</a></li>
+<li><a href="#reeng"><span class="n">15</span>Re-engineer</a></li>
+</ol></nav>
+<article class="room-main">
+
+<section id="hdr">
+<p class="sec-kicker">00 · Header</p>
+<p class="kicker">T4 · Webex Contact Center Enterprise</p>
+<h1>Sizing &amp; HA</h1>
+<div class="canon-visuals" data-canon-visuals>
+<figure class="room-banner">
+<svg class="illu" viewBox="0 0 980 300" role="img" aria-label="Illustrated scene for Sizing &amp;amp; HA">
+<defs>
+<linearGradient id="T4R08sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient>
+</defs>
+<rect width="980" height="300" fill="url(#T4R08sky)"/>
+<circle cx="860" cy="58" r="40" fill="#fff" opacity=".88"/>
+<ellipse cx="160" cy="62" rx="58" ry="20" fill="#fff" opacity=".4"/>
+<ellipse cx="210" cy="70" rx="40" ry="16" fill="#fff" opacity=".55"/>
+<ellipse cx="490" cy="268" rx="430" ry="28" fill="#0b1020" opacity=".16"/>
+<rect x="118" y="92" width="210" height="128" rx="18" fill="#f8fafc"/>
+<rect x="138" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="186" y="110" width="38" height="28" rx="4" fill="#312e81" opacity=".55"/>
+<rect x="234" y="110" width="38" height="28" rx="4" fill="var(--accent)"/>
+<rect x="138" y="150" width="134" height="16" rx="8" fill="#c7d2fe"/>
+<rect x="190" y="180" width="66" height="40" rx="6" fill="#1e1b4b"/>
+<rect x="420" y="128" width="64" height="108" rx="14" fill="#0f172a"/>
+<rect x="430" y="140" width="44" height="70" rx="6" fill="#67e8f9"/>
+<circle cx="452" cy="222" r="5" fill="#fde68a"/>
+<rect x="560" y="156" width="168" height="54" rx="14" fill="#fde68a"/>
+<text x="644" y="190" text-anchor="middle" fill="#422006" font-size="18" font-family="system-ui,sans-serif" font-weight="800">Gateway</text>
+<path d="M484 186 H560" fill="none" stroke="#fff" stroke-width="4"/>
+<text x="36" y="46" fill="#0b1020" font-size="32" font-family="system-ui,sans-serif" font-weight="800">Enterprise</text>
+<text x="36" y="72" fill="#0b1020" font-size="14" font-family="system-ui,sans-serif" opacity=".8">T4-R08</text>
+<g><rect x="48" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="132" y="254" text-anchor="middle" fill="#083344" font-size="15" font-family="system-ui,sans-serif" font-weight="800">PSTN</text></g><g><rect x="268" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="352" y="254" text-anchor="middle" fill="#1e1b4b" font-size="15" font-family="system-ui,sans-serif" font-weight="800">CVP</text></g><g><rect x="488" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="572" y="254" text-anchor="middle" fill="#422006" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Router</text></g><g><rect x="708" y="228" width="168" height="40" rx="12" fill="#fff" opacity=".94"/><text x="792" y="254" text-anchor="middle" fill="#4c0519" font-size="15" font-family="system-ui,sans-serif" font-weight="800">Desktop</text></g>
+</svg>
+<figcaption>Illustrated scene for Sizing &amp;amp; HA. Original drawing, not a product screenshot.</figcaption>
+</figure>
+<figure class="room-seq">
+<svg class="illu" viewBox="0 0 980 360" role="img" aria-label="Sequence diagram for Sizing &amp;amp; HA">
+<defs>
+<marker id="T4R08arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#fff"/></marker>
+</defs>
+<rect width="980" height="360" rx="24" fill="#0b1020"/>
+<text x="28" y="26" fill="#a5b4fc" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Sequence · PSTN → CVP → Router → Desktop</text>
+<rect x="34" y="36" width="192" height="68" rx="16" fill="#22d3ee" stroke="#fff" stroke-width="3"/><text x="130" y="78" text-anchor="middle" fill="#083344" font-size="16" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="130" y1="104" x2="130" y2="330" stroke="#22d3ee" stroke-width="3" stroke-dasharray="7 7"/><rect x="274" y="36" width="192" height="68" rx="16" fill="#a5b4fc" stroke="#fff" stroke-width="3"/><text x="370" y="78" text-anchor="middle" fill="#1e1b4b" font-size="16" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="370" y1="104" x2="370" y2="330" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="7 7"/><rect x="514" y="36" width="192" height="68" rx="16" fill="#fbbf24" stroke="#fff" stroke-width="3"/><text x="610" y="78" text-anchor="middle" fill="#422006" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="610" y1="104" x2="610" y2="330" stroke="#fbbf24" stroke-width="3" stroke-dasharray="7 7"/><rect x="754" y="36" width="192" height="68" rx="16" fill="#fb7185" stroke="#fff" stroke-width="3"/><text x="850" y="78" text-anchor="middle" fill="#4c0519" font-size="16" font-family="system-ui,sans-serif" font-weight="800">Desktop</text><line x1="850" y1="104" x2="850" y2="330" stroke="#fb7185" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="130" y1="156" x2="356" y2="156" stroke="#fff" stroke-width="4" marker-end="url(#T4R08arrow)"/><text x="250" y="146" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">1</text><line x1="370" y1="220" x2="596" y2="220" stroke="#fff" stroke-width="4" marker-end="url(#T4R08arrow)"/><text x="490" y="210" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">2</text><line x1="610" y1="284" x2="836" y2="284" stroke="#fff" stroke-width="4" marker-end="url(#T4R08arrow)"/><text x="730" y="274" text-anchor="middle" fill="#e0e7ff" font-size="12" font-family="system-ui,sans-serif">3</text>
+<path id="T4R08lane" class="packet-lane" d="M130 156 H370 V220 H610 V284 H850" fill="none" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>Color-coded sequence: PSTN → CVP → Router → Desktop. A packet moves along the arrows. Reduced motion keeps every step visible.</figcaption>
+</figure>
+</div>
+
+<p class="lede">Unified CCE high availability is Side A and Side B for redundancy, not for load-balancing. A Webex CCE what’s-new sentence about 48,000 agents is a different number from the Finesse 2,000-user line in the design guide.</p>
+<div class="meta-row">
+<span class="meta-chip">Room <strong>T4-R08</strong></span>
+<span class="meta-chip">Version <strong>v0.1</strong></span>
+<span class="meta-chip">last-verified: <strong>TODO</strong></span>
+<span class="meta-chip">Difficulty <strong>L3</strong></span>
+<span class="meta-chip">Est. time <strong>90–110 min</strong></span>
+<span class="meta-chip">Prereq <strong>T4-R01</strong></span>
+<span class="meta-chip read-chip">Reading <strong>22 min</strong></span></div>
+<p><button class="ghost" type="button" data-expand-all>Expand all sections</button></p>
+<aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>
+<li>Side A and Side B are redundant. Either side can run the full load. Both sides process every call. Logically there is one Router. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></li>
+<li>Device majority: Side A needs at least half of its enabled PGs. Side B needs more than half. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Private and public networks are separate physical networks. QoS is required on every private network. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>One Finesse cluster on an Agent PG supports a maximum of 2,000 users across both servers. A January 2025 Webex CCE note says 48,000 concurrent agents and 300 calls per second on a single tenant. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ul></aside>
+</section>
+
+<section id="tldr">
+<p class="sec-kicker">01 · Executive summary</p>
+<h2>Five lines, then why it matters</h2>
+<ul>
+<li>The private network carries synchronization and MDS traffic. The public network carries traffic between Central Controllers and PGs and is the alternate path that distinguishes a component failure from a network failure. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Never split one component’s private traffic onto a low-priority path and a high-priority path. That disables failover. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>On a private-network failure, a router with device majority goes isolated-enabled and keeps handling traffic. Without majority it goes isolated-disabled and stops. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>If the private network stays down longer than the 14-day retention of Config_Message_Log, logger resynchronization uses Unified ICMDBA. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Where possible, do not run devices, call processing, or CTI Manager on the Unified CM publisher. PGs are hot standby: only one side is active. <a class="cite" href="#cite-1">[cite:1]</a></li>
+</ul>
+<div class="why"><strong>Why it matters.</strong> People add Side A and Side B and then load-balance calls across them. The design guide says the opposite. People also paste 2,000, 12,000, and 48,000 into one sentence. Those numbers live on different pages.</div>
+</section>
+
+<section id="map">
+<p class="sec-kicker">02 · Architecture map</p>
+<h2>Two sides, two networks</h2>
+<!-- VISUAL:primary-arch | SVG/Mermaid | assets/diagrams/T4-R08/arch.svg -->
+<div class="diagram" role="img" aria-label="Side A and Side B with public and private networks">
+<svg viewBox="0 0 980 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Duplex sides and two networks">
+<rect width="980" height="340" fill="#0c121c"/>
+<text x="28" y="34" fill="#ff8b9a" font-family="Georgia, serif" font-size="20">Duplex from the Unified CCE 15 design guide</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<rect x="40" y="60" width="250" height="200" rx="14" fill="#14110c" stroke="#ff8b9a"/>
+<text x="56" y="92" fill="#ff8b9a" font-family="Georgia, serif" font-size="16">1 · Side A</text>
+<text x="56" y="124">Router A</text>
+<text x="56" y="148" fill="#b7ad9c">Logger A, from Router A only</text>
+<text x="56" y="172" fill="#b7ad9c">PG active or standby</text>
+<text x="56" y="210" fill="#b7ad9c">Majority: at least half</text>
+<text x="56" y="232" fill="#b7ad9c">of enabled PGs</text>
+<rect x="690" y="60" width="250" height="200" rx="14" fill="#14110c" stroke="#e0b07a"/>
+<text x="706" y="92" fill="#e0b07a" font-family="Georgia, serif" font-size="16">2 · Side B</text>
+<text x="706" y="124">Router B</text>
+<text x="706" y="148" fill="#b7ad9c">Logger B, from Router B only</text>
+<text x="706" y="172" fill="#b7ad9c">The other PG side</text>
+<text x="706" y="210" fill="#b7ad9c">Majority: more than half</text>
+<text x="706" y="232" fill="#b7ad9c">of enabled PGs</text>
+<rect x="330" y="90" width="320" height="44" rx="8" fill="#1a1430" stroke="#c4b5fd"/><text x="348" y="116">3 · Private network · sync and MDS</text>
+<rect x="330" y="180" width="320" height="44" rx="8" fill="#2a220c" stroke="#f0b429"/><text x="348" y="206">4 · Public network · CC to PG</text>
+</g>
+<text x="28" y="310" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="12">Guide updated March 15, 2025. Retrieved 2026-10-14. Mark re-check.</text>
+</svg>
+</div>
+<ul class="legend">
+<li><span class="num">1</span>Side A majority rule</li>
+<li><span class="num">2</span>Side B majority rule</li>
+<li><span class="num">3</span>Private path stays whole</li>
+<li><span class="num">4</span>Public path, redundant if you can</li>
+</ul>
+<!-- VISUAL:sequence | SVG/Mermaid | assets/diagrams/T4-R08/seq.svg -->
+<div class="diagram" role="img" aria-label="Private network failure sequence">
+<svg viewBox="0 0 980 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What a private network failure does">
+<rect width="980" height="200" fill="#0c121c"/>
+<text x="28" y="32" fill="#ff8b9a" font-family="Georgia, serif" font-size="18">Private network fails</text>
+<g font-family="Segoe UI, sans-serif" font-size="13" fill="#efe7d6">
+<text x="36" y="70">5. Each router checks device majority for itself. None, one, or both can have it.</text>
+<text x="36" y="96">6. Majority: isolated-enabled, traffic continues. No majority: isolated-disabled, processing stops.</text>
+<text x="36" y="122">7. The logger of an idle router shuts down. In-progress calls already at a VRU or agent continue.</text>
+<text x="36" y="148">8. If both networks fail and both sides are isolated-enabled, Side B restarts when the network returns.</text>
+<text x="36" y="174" fill="#b7ad9c">Route requests queue until the surviving router is isolated-enabled.</text>
+</g>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">flowchart LR
+  A[Side A] --- P[Private network]
+  B[Side B] --- P
+  A --- U[Public network]
+  B --- U
+</pre>
+</details>
+</section>
+
+<section id="core">
+<p class="sec-kicker">03 · Core concepts</p>
+<h2>Redundancy, majority, and three different caps</h2>
+<!-- VISUAL:concept-image | Studio | assets/images/T4-R08/hero.png -->
+<div class="callout def"><span class="label">Not load-balancing</span><p>The two sides are for redundancy, not load-balancing. Either side can run the full load. Sides A and B perform the same messages and produce the same result. During a failure the surviving Router takes the call midstream without user intervention. <a class="cite" href="#cite-1">[cite:1]</a> <mark class="recheck">re-check</mark></p></div>
+<div class="callout note"><span class="label">PG hot standby</span><p>Only one PG is active and controlling the peripheral. When the active side fails, the surviving side takes over and runs stand-alone until the other side returns. Then the PGs return to redundant operation. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout warn"><span class="label">Device majority is asymmetric</span><p>Side A has majority when it can communicate with at least half of its total enabled PGs. Side B has majority when it can communicate with more than half. Each router decides for itself. <a class="cite" href="#cite-1">[cite:1]</a></p></div>
+<div class="callout gotcha"><span class="label">Three caps, three pages</span><p>The design guide says each Finesse server can support the CTI maximum of 2,000 users, and the total across the two servers in that cluster cannot exceed 2,000. The same chapter names 2000 Agent, 4000 Agent, and 12,000 Agent Reference Designs in a QoS paragraph. A January 2025 Webex CCE what’s-new line says 48,000 concurrent agents and 300 calls per second on a single tenant. Do not add them. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></p></div>
+<h3>What each failure does</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Failure</th><th>What the design guide says</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Private network only</td><td>Routers enter isolated-enabled or isolated-disabled based on device majority. They resynchronize when the private network returns.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Router has no majority</td><td>Isolated-disabled. It stops processing traffic.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Logger</td><td>Shuts down when its router goes idle. Each logger talks only to its own router. Automatic resync if the private network returns before 14 days of Config_Message_Log retention. After that, Unified ICMDBA.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Call already at VRU or agent</td><td>A router failure does not affect it.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Public network, desktop and phone on opposite sides</td><td>The phone stays on the other subscriber. The PG cannot see it. Unified CCE signs the agent out.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Both networks between sites</td><td>Catastrophic. Each router checks majority. Calls whose voice path is on the failed public WAN fail, and the PG writes a TCD. If both sides are isolated-enabled, Side B’s service restarts when the network is restored.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CUIC cluster</td><td>A publisher and up to 7 subscribers. Processing spreads across active nodes and bypasses failed nodes.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Unified CM publisher</td><td>Where possible, no devices, call processing, or CTI Manager services on the publisher.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="eco">
+<p class="sec-kicker">04 · Ecosystem</p>
+<h2>What HA touches</h2>
+<figure class="mini-map" data-mini-map>
+<svg class="illu" viewBox="0 0 544 300" role="img" aria-label="Mini map of neighbors for T4-R08">
+<rect width="544" height="300" rx="20" fill="#0b1020"/>
+<line x1="200" y1="132" x2="272" y2="50" stroke="#22d3ee" stroke-width="3"/><rect x="200" y="28" width="144" height="44" rx="14" fill="#22d3ee"/><text x="272" y="56" text-anchor="middle" fill="#083344" font-size="13" font-family="system-ui,sans-serif" font-weight="800">PSTN</text><line x1="200" y1="132" x2="444" y2="140" stroke="#a5b4fc" stroke-width="3"/><rect x="372" y="118" width="144" height="44" rx="14" fill="#a5b4fc"/><text x="444" y="146" text-anchor="middle" fill="#1e1b4b" font-size="13" font-family="system-ui,sans-serif" font-weight="800">CVP</text><line x1="200" y1="132" x2="272" y2="258" stroke="#fbbf24" stroke-width="3"/><rect x="200" y="236" width="144" height="44" rx="14" fill="#fbbf24"/><text x="272" y="264" text-anchor="middle" fill="#422006" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Router</text><line x1="200" y1="132" x2="100" y2="140" stroke="#fb7185" stroke-width="3"/><rect x="28" y="118" width="144" height="44" rx="14" fill="#fb7185"/><text x="100" y="146" text-anchor="middle" fill="#4c0519" font-size="13" font-family="system-ui,sans-serif" font-weight="800">Desktop</text>
+<circle cx="200" cy="132" r="36" fill="url(#T4R08map)"/>
+<text x="200" y="137" text-anchor="middle" fill="#0b1020" font-size="12" font-family="system-ui,sans-serif" font-weight="800">This room</text>
+<defs><linearGradient id="T4R08map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></linearGradient></defs>
+</svg>
+<figcaption>Mini map of the neighbors named on this room’s sequence. Orientation sketch, not a new product claim.</figcaption>
+</figure>
+<p class="eco-sub">Glossary</p>
+<dl class="glossary">
+<div class="term"><dt>Side A and Side B</dt><dd>The two redundant instances. Not a load-balance pair. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Private network</dt><dd>Separate physical network for synchronization, MDS, and state transfer after isolation. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Public network</dt><dd>Separate path between Central Controllers and PGs. Also the path that lets fault tolerance tell a dead component from a dead network. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Device majority</dt><dd>The test a router runs when it loses its peer. Side A: at least half the enabled PGs. Side B: more than half. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Isolated-enabled</dt><dd>The router keeps handling traffic because it has device majority. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Isolated-disabled</dt><dd>The router stops processing because it does not have device majority. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Config_Message_Log</dt><dd>14-day retention. Inside that window, logger resync is automatic when the private network returns. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Hot standby PG</dt><dd>One side active. The other takes over and runs stand-alone until redundancy returns. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Finesse 2,000</dt><dd>The design guide’s per-cluster user maximum tied to the CTI server maximum. Both servers together stay at or under 2,000. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>Reference design names</dt><dd>2000 Agent, 4000 Agent, and 12,000 Agent appear in the QoS paragraph. They are not the Webex CCE what’s-new figure. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+<div class="term"><dt>48,000 agents</dt><dd>January 2025 what’s-new: Webex CCE supports 48,000 concurrent agents and 300 calls per second on a single tenant. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></dd></div>
+<div class="term"><dt>TCD</dt><dd>The record the PG creates when a call fails because the public WAN voice path failed. <a class="cite" href="#cite-1">[cite:1]</a></dd></div>
+</dl>
+<p class="eco-sub">Mind map</p>
+<!-- VISUAL:ecosystem-mindmap | SVG/Mermaid | assets/diagrams/T4-R08/eco.svg -->
+<div class="diagram" role="img" aria-label="HA ecosystem mind map">
+<svg viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HA neighbors">
+<rect width="980" height="240" fill="#0c121c"/>
+<rect x="380" y="88" width="220" height="60" rx="16" fill="#2a1216" stroke="#ff8b9a"/>
+<text x="490" y="124" text-anchor="middle" fill="#efe7d6" font-family="Georgia, serif" font-size="16">Side A / Side B</text>
+<g font-family="Segoe UI, sans-serif" font-size="12" fill="#efe7d6">
+<rect x="28" y="30" width="170" height="44" rx="10" fill="#14110c" stroke="#c4b5fd"/><text x="42" y="56">Private network</text>
+<rect x="28" y="160" width="170" height="44" rx="10" fill="#14110c" stroke="#f0b429"/><text x="42" y="186">Public network</text>
+<rect x="760" y="30" width="190" height="44" rx="10" fill="#14110c" stroke="#e0b07a"/><text x="774" y="56">Finesse 2,000</text>
+<rect x="760" y="160" width="190" height="44" rx="10" fill="#14110c" stroke="#ff8b9a"/><text x="774" y="186">Webex CCE 48,000</text>
+</g>
+<path d="M198 52 H380" stroke="#c4b5fd" fill="none"/>
+<path d="M198 182 H380" stroke="#f0b429" fill="none"/>
+<path d="M600 52 H760" stroke="#e0b07a" fill="none"/>
+<path d="M600 182 H760" stroke="#ff8b9a" fill="none"/>
+</svg>
+</div>
+<details><summary>Mermaid source (not rendered)</summary>
+<pre class="mermaid">mindmap
+  root((HA))
+    Private network
+    Public network
+    Device majority
+    Reference designs
+</pre>
+</details>
+<p class="eco-sub">Sister matrix</p>
+<div class="orientation"><strong>Orientation only.</strong> No parity matrix equates this duplex model with another vendor’s region pair.</div>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>Sister</th><th>What the cited page says</th><th>Why it matters</th><th>Config touchpoint</th><th>Typical failure</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Workforce management</td><td>py6u9h is the WFO SKU scope. The HA chapter does not size WFM servers.</td><td>Agent count and WFM seats are different worksheets.</td><td>SKU article, then the WFM guide for that release.</td><td>Using the Finesse 2,000 line as a WFM server count.</td><td><a href="#cite-3">[cite:3]</a></td></tr>
+<tr><td>Quality management and recording</td><td>Not given a retention number in the HA chapter.</td><td>A failed public WAN creates a TCD. That is not a recording file.</td><td>Read the recording guide separately.</td><td>Treating a TCD as the audio archive.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>E911, RAY BAUM, Kari, RedSky</td><td>The HA chapter does not configure emergency calling. SRST is mentioned when an agent site loses the public network to both sites: the voice gateway can provide local dial tone, and phones in SRST cannot function as contact-center agents.</td><td>Local dial tone is not agent routing, and it is not a location proof.</td><td>Emergency articles for the phone. This chapter for the sign-out.</td><td>Calling SRST mode a staffed queue.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Analytics and reporting</td><td>CUIC is a publisher plus up to 7 subscribers. Processing spreads and skips failed nodes. That is a different pattern from the Router.</td><td>Do not apply “not load-balancing” to CUIC, and do not apply CUIC’s spread to the Router.</td><td>T4-R07 for reports. This chapter for the cluster shape.</td><td>Expecting both routers to split calls because CUIC spreads work.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Salesforce, Dynamics 365, ServiceNow</td><td>Not sized in this chapter.</td><td>CRM capacity is not device majority.</td><td>The CRM guide for the desktop you deployed.</td><td>Adding CRM users to the PG enabled count.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Virtual agents</td><td>Not a duplex rule in the paragraphs read here.</td><td>A bot leg is still a call the router has already delivered or has not.</td><td>T4-R05 and the CCAI guide.</td><td>Counting virtual agents against the Finesse 2,000 line without a page that says to.</td><td><a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>IVR and self-service</td><td>On a public-network loss at an agent site, Unified CVP gateways can run a local survivability TCL script to reroute inbound calls.</td><td>Survivability script is not the comprehensive SendToVRU path.</td><td>This chapter for the failure. T4-R05 for the normal IVR.</td><td>Debugging Call Studio when the gateway is in survivability.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital channels</td><td>The same chapter says Digital Routing runs active/standby inside Cloud Connect publisher and subscriber nodes, and that there is no dedicated private network between those Cloud Connect nodes. Replication uses the public network.</td><td>Digital routing redundancy is not the Router private network.</td><td>Cloud Connect nodes and the MR PG.</td><td>Drawing a private MDS link between Cloud Connect nodes.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Identity and SSO</td><td>Cisco IdS is a publisher and a subscriber. The cluster replicates configuration and authorization codes. On reconnect it picks the most recent data.</td><td>An IdS split is not a router split.</td><td>IdS cluster. Finesse sign-in is T4-R06.</td><td>Restarting a router to fix an IdS code mismatch.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Integration edges</p>
+<div class="table-wrap">
+<table class="edges">
+<thead><tr><th>From</th><th>To</th><th>Mechanism</th><th>What moves</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Side A</td><td>Side B</td><td>Private network</td><td>Synchronized data, control messages, MDS, state transfer</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Central Controller</td><td>PG</td><td>Public network</td><td>Traffic between them. Redundant connections, ideally different carriers.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Router A</td><td>Logger A</td><td>Direct</td><td>Messages only to its own logger. Router B does the same with Logger B.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Router</td><td>Enabled PGs</td><td>Device majority test</td><td>Half, or more than half, depending on the side</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Finesse server</td><td>CTI server</td><td>One connection</td><td>Up to the 2,000-user cluster maximum</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>CUIC publisher</td><td>Up to 7 subscribers</td><td>Cluster replication</td><td>Configuration. Work spreads and skips failed nodes.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Cloud Connect</td><td>MR PG</td><td>Public network</td><td>Digital Routing active/standby. No dedicated private network between the Cloud Connect nodes.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Webex CCE tenant</td><td>Agents</td><td>What’s-new scale sentence</td><td>48,000 concurrent agents and 300 CPS, single tenant, January 2025</td><td><a href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Bridges</p>
+<div class="table-wrap">
+<table class="sister">
+<thead><tr><th>This chapter</th><th>Neighbor</th><th>Peer label</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Unified CCE duplex</td><td>Webex CCE’s 48,000-agent sentence is a what’s-new line, not a replacement for device majority.</td><td>No vendor parity matrix.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>Reference design QoS names</td><td>2000, 4000, and 12,000 Agent Reference Designs are named for public-link QoS behavior.</td><td>A cloud region pair is not automatically one of those designs.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Publisher guidance</td><td>Dedicated Instance has its own “do not run CallManager on the publisher” line in a different article. Quote the article you are in.</td><td>Teams Phone survivability is not this private network.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="eco-sub">Future hooks</p>
+<ul>
+<li>Canon plan: when the design guide is updated past March 15, 2025, re-read device majority before you teach the half versus more-than-half rule.</li>
+<li>The 48,000 / 300 CPS sentence stays re-check until a page newer than January 2025 repeats it.</li>
+<li>Do not build a firewall ACL from the QoS discussion. The chapter is about priority, not a port list.</li>
+</ul>
+<p class="eco-sub">Ecosystem troubleshooting</p>
+<div class="table-wrap">
+<table class="eco-trouble">
+<thead><tr><th>Symptom</th><th>Likely mix-up</th><th>Check</th><th>Move</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Calls are pinned to one side to “use capacity”</td><td>Load-balancing was assumed</td><td>The guide says either side runs the full load and both process every call</td><td>Stop steering. Fix the failed side instead.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital tasks stop when someone looks for a private link</td><td>Cloud Connect was drawn like a Router pair</td><td>The chapter says there is no dedicated private network between those nodes</td><td>Check MR PG connectivity and the public path.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A proposal quotes 48,000 Finesse users on one PG</td><td>The what’s-new tenant figure was pasted onto the Finesse cluster line</td><td>2,000 is the design-guide cluster total. 48,000 is the what’s-new tenant sentence.</td><td>Cite each number on its own page.</td><td><a href="#cite-1">[cite:1]</a> <a href="#cite-2">[cite:2]</a></td></tr>
+<tr><td>CUIC is expected to freeze like a router when one node dies</td><td>The spread model was ignored</td><td>CUIC bypasses failed nodes</td><td>Treat a dead subscriber as capacity the cluster skips, then read the report guide if data is wrong.</td><td><a href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="flow">
+<p class="sec-kicker">05 · Flow</p>
+<h2>From a private-network break to a restored logger</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>From</th><th>To</th><th>Mechanism</th><th>Notes</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Side A</td><td>Side B</td><td>Private network</td><td>Heartbeats and synchronized state. QoS required.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>2</td><td>Private path</td><td>Both routers</td><td>Failure</td><td>Each router tests device majority on its own.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>3</td><td>Router with majority</td><td>Calls</td><td>Isolated-enabled</td><td>Traffic continues. Route requests queue until that state.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>4</td><td>Router without majority</td><td>Idle</td><td>Isolated-disabled</td><td>Processing stops. Its logger shuts down.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>5</td><td>Surviving router</td><td>In-progress VRU or agent call</td><td>No tear-down from the router failure itself</td><td>The guide says those calls are not affected by the router failure.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>6</td><td>Private network</td><td>Loggers</td><td>Resync</td><td>Automatic inside 14 days. Unified ICMDBA after that.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>7</td><td>Public WAN</td><td>Voice path</td><td>Both networks failed</td><td>Calls on that WAN fail. PG writes a TCD. Side B restarts on restoration if both sides were isolated-enabled.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>8</td><td>Phone on the far subscriber</td><td>Agent</td><td>Public failure with split registration</td><td>PG cannot see the phone. The agent is signed out.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="config">
+<p class="sec-kicker">06 · Config</p>
+<h2>Design rules you can check on a drawing</h2>
+<ol>
+<li>Draw Side A and Side B as a redundant pair. Do not label them active/active load-balance for the Router. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Draw two physical networks. Put MDS and sync on the private network. Put Central Controller to PG traffic on the public network. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Keep all private traffic for a component on the same link. Do not split low-priority and high-priority private traffic. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Require QoS on private networks. On public links, read the QoS note for the 2000 Agent and 4000 Agent Reference Designs, and the delay warning for the 12,000 Agent Reference Design. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Prefer redundant public connections on different carriers. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Keep devices, call processing, and CTI Manager off the Unified CM publisher where you can. <a class="cite" href="#cite-1">[cite:1]</a></li>
+<li>Size one Finesse cluster to the 2,000-user total. If the paperwork says 48,000 agents, cite the January 2025 Webex CCE sentence and mark it re-check. Do not replace the Finesse line with it. <a class="cite" href="#cite-1">[cite:1]</a> <a class="cite" href="#cite-2">[cite:2]</a></li>
+</ol>
+<!-- VISUAL:screenshot:1 | Studio | assets/images/T4-R08/duplex.png -->
+<p class="placeholder-asset">Screenshot slot: a redacted duplex diagram with private and public paths labeled from the design guide, not from a customer WAN.</p>
+</section>
+
+<section id="limits">
+<p class="sec-kicker">07 · Limits</p>
+<h2>Numbers that must stay on their own row</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Source</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>Router sides</td><td>Redundancy, not load-balancing. Either side runs the full load.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark> Guide updated March 15, 2025</td></tr>
+<tr><td>Side A device majority</td><td>At least half of total enabled PGs</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Side B device majority</td><td>More than half of total enabled PGs</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Logger auto-resync window</td><td>14 days of Config_Message_Log</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Finesse users per Agent PG cluster</td><td>2,000 total across the two servers. Each server can carry the full load if the other fails.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>CUIC subscribers</td><td>Up to 7, plus a publisher</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+<tr><td>Public QoS reference designs</td><td>Named 2000 Agent, 4000 Agent, and 12,000 Agent</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark> QoS behavior, not a tenant cap</td></tr>
+<tr><td>Webex CCE single tenant</td><td>48,000 concurrent agents, 300 CPS</td><td><a class="cite" href="#cite-2">[cite:2]</a></td><td><mark class="recheck">re-check</mark> January 2025 what’s-new</td></tr>
+<tr><td>HSRP versus heartbeat</td><td>Private heartbeat interval printed as 100 ms. Public heartbeat interval printed as 400 ms. Hold time should be lower than five times the heartbeat.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td><td><mark class="recheck">re-check</mark></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="trouble">
+<p class="sec-kicker">08 · Troubleshooting</p>
+<h2>Split brain, split registration, split numbers</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Evidence</th><th>Fix</th><th>Cite</th></tr></thead>
+<tbody>
+<tr><td>Both routers keep routing after the private link dies</td><td>Both had device majority</td><td>The guide says none, one, or both can have majority</td><td>Expect Side B to restart when the networks return if both were isolated-enabled</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>One router goes quiet</td><td>It lost device majority</td><td>Isolated-disabled stops processing</td><td>Restore PG visibility or the private path. Do not force load onto a disabled side.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Loggers disagree after a long outage</td><td>Private network was down more than 14 days</td><td>Config_Message_Log retention</td><td>Resynchronize with Unified ICMDBA</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Failover feels random</td><td>Private high and low priority were split across links</td><td>The guide says that split disables failover behavior</td><td>Put all private traffic for the component on one link</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Agents sign out when the public WAN drops</td><td>Desktop and phone registered on different sides</td><td>The PG cannot see the phone</td><td>The sign-out is the documented result. Rehome so phone and desktop share a side when you can.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Calls at agents drop when only the router peer link fails</td><td>Not what the router-failure sentence says</td><td>In-progress VRU or agent calls are not affected by the router failure itself</td><td>Look for a public WAN voice-path failure if the calls actually dropped</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A 12,000 Agent Reference Design detects server failure slowly</td><td>QoS on the public links</td><td>The chapter says QoS can delay detection in that design</td><td>Read that paragraph before you enable public QoS there</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Finesse refuses users past 2,000 on one PG</td><td>The cluster total</td><td>Two servers, 2,000 users combined</td><td>Add another Agent PG and another Finesse cluster. Multiple Finesse clusters cannot share one Agent PG.</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>Digital routing has no private heartbeat</td><td>Expected for Cloud Connect</td><td>No dedicated private network between those nodes</td><td>Use MR PG connectivity, not the Router private design</td><td><a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+<tr><td>A slide says the product maximum is 48,000 because of this design guide</td><td>The what’s-new sentence was merged with the reference-design names</td><td>48,000 is nhy3hvdb. The design guide’s 12,000 name is a QoS reference design.</td><td>Split the citations</td><td><a class="cite" href="#cite-2">[cite:2]</a> <a class="cite" href="#cite-1">[cite:1]</a></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="selfq">
+<p class="sec-kicker">09 · Self-question ladder</p>
+<h2>Twelve rungs</h2>
+<details class="qnode"><summary><span class="lvl">L0</span>What are Side A and Side B for?</summary><p class="answer">Redundancy. Not load-balancing. Either side can run the full load, and both process every call. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>What breaks if the private and public networks share one failure domain?</summary><p class="answer">The design requires two independent physical networks so a single failure does not look like both a dead component and a dead path. A simultaneous failure of both is called catastrophic. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L1</span>Why is Side B’s majority test stricter?</summary><p class="answer">Side A needs at least half of its enabled PGs. Side B needs more than half. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What moves on the private network?</summary><p class="answer">Synchronized data, control messages, MDS client communication, and the state transfer used to recover from isolation. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>What does isolated-enabled mean?</summary><p class="answer">The router has device majority and continues handling traffic. Isolated-disabled means it stops. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L2</span>How long can the private network stay down before logger resync is manual?</summary><p class="answer">14 days, the retention of Config_Message_Log. After that, use Unified ICMDBA. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>How do you prove an agent sign-out was the split-registration case?</summary><p class="answer">Desktop on one side, phone on the other, public network failed, phone did not rehome, PG could not see the phone. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>A call is already with an agent when the router peer fails. What does the guide say happens to that call?</summary><p class="answer">A router failure does not affect in-progress calls that have already reached a VRU or an agent. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L3</span>Why can public QoS be a bad idea on a 12,000 Agent Reference Design?</summary><p class="answer">The chapter says QoS on those public links can delay detection of server failures. It allows public QoS in the 2000 and 4000 Agent Reference Designs. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>How is CUIC HA different from Router HA?</summary><p class="answer">CUIC uses a publisher and up to 7 subscribers and spreads processing around failed nodes. The Router pair does not load-balance. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+<details class="qnode"><summary><span class="lvl">L4</span>Where does 48,000 come from?</summary><p class="answer">The January 2025 Webex CCE what’s-new entry: 48,000 concurrent agents and 300 calls per second on a single tenant. It is not the Finesse 2,000 line. <a class="cite" href="#cite-2">[cite:2]</a> <mark class="recheck">re-check</mark></p></details>
+<details class="qnode"><summary><span class="lvl">L5</span>What constraint stops you from treating both isolated-enabled routers as a permanent design?</summary><p class="answer">The guide calls a dual-network failure catastrophic. If both sides are isolated-enabled, Side B restarts when connectivity returns so it can re-establish communication with its peer. <a class="cite" href="#cite-1">[cite:1]</a></p></details>
+</section>
+
+<section id="lab">
+<p class="sec-kicker">10 · Lab</p>
+<h2>Paper lab: label the number before you use it</h2>
+<ul class="checklist">
+<li><label><input type="checkbox"> Goal: review a duplex drawing and a capacity slide without changing a production system.</label></li>
+<li><label><input type="checkbox"> Prereq: the Release 15.0(1) high-availability chapter. <a class="cite" href="#cite-1">[cite:1]</a></label></li>
+<li><label><input type="checkbox"> Step 1. Mark private and public as separate physical networks.</label></li>
+<li><label><input type="checkbox"> Step 2. Write the two device-majority tests. Expected: Side A at least half, Side B more than half.</label></li>
+<li><label><input type="checkbox"> Step 3. Find every agent-count on the slide. Tag 2,000 as the Finesse cluster line, the reference-design names as QoS context, and 48,000 as the what’s-new sentence.</label></li>
+<li><label><input type="checkbox"> Step 4. Confirm the Unified CM publisher is not drawn as a call-processing or CTI Manager host.</label></li>
+<li><label><input type="checkbox"> Evidence: the 14-day logger window and the Side B restart note.</label></li>
+<li><label><input type="checkbox"> Break it: load-balance the routers and split private QoS across two links. Recovery: restore redundancy-only and one private path.</label></li>
+<li><label><input type="checkbox"> Reflection: the design guide date is March 15, 2025. Which rows did you mark re-check?</label></li>
+</ul>
+</section>
+
+<section id="quiz">
+<p class="sec-kicker">11 · Quiz</p>
+<h2>Twelve checks</h2>
+<div class="quiz-tools"><span data-quiz-count>0 revealed</span><span class="placeholder-asset">Answers stay closed until you open them.</span></div>
+<div class="qgrid">
+<article class="qcard"><header><strong>Q1</strong><span class="kind">MCQ</span></header><p>Side A and Side B exist for:</p>
+<ol type="A"><li>Redundancy, not load-balancing</li><li>A 50/50 call split</li><li>Two customers</li><li>Digital-only routing</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q2</strong><span class="kind">MCQ</span></header><p>Side B has device majority when it can see:</p>
+<ol type="A"><li>More than half of its enabled PGs</li><li>At least one PG</li><li>The publisher only</li><li>Neither network</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Side A’s test is at least half. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q3</strong><span class="kind">Scenario</span></header><p>Private traffic for one component is split into a high-priority link and a low-priority link. What does the guide say that does?</p>
+<details class="reveal"><summary>Reveal</summary><p>It disables the component failover behavior. All private traffic for the component must use the same link. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q4</strong><span class="kind">MCQ</span></header><p>QoS is required on:</p>
+<ol type="A"><li>All private networks</li><li>Only the public network</li><li>Only guest Wi-Fi</li><li>No network</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q5</strong><span class="kind">MCQ</span></header><p>Logger automatic resync applies if the private network returns within:</p>
+<ol type="A"><li>14 days</li><li>14 minutes</li><li>2 minutes</li><li>48 hours</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. Config_Message_Log retention. After that, Unified ICMDBA. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q6</strong><span class="kind">Scenario</span></header><p>The agent desktop is on Side A and the phone is on Side B. The public network fails. What happens to the agent?</p>
+<details class="reveal"><summary>Reveal</summary><p>Unified CCE signs the agent out because the PG can no longer direct calls to that phone. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q7</strong><span class="kind">MCQ</span></header><p>Users across the two Finesse servers on one Agent PG cannot exceed:</p>
+<ol type="A"><li>2,000</li><li>48,000</li><li>12,000</li><li>7</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. 48,000 is a different sentence. 7 is the CUIC subscriber count. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q8</strong><span class="kind">MCQ</span></header><p>CUIC high availability in this chapter is:</p>
+<ol type="A"><li>A publisher and up to 7 subscribers, spreading work around failed nodes</li><li>The same as Router lockstep</li><li>A single server</li><li>Two private-only links</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q9</strong><span class="kind">Scenario</span></header><p>Both public and private networks fail, and both routers are isolated-enabled. What does the note say Side B does when the network returns?</p>
+<details class="reveal"><summary>Reveal</summary><p>Side B’s service restarts to re-establish communication with its peer. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q10</strong><span class="kind">MCQ</span></header><p>The 48,000-agent figure is from:</p>
+<ol type="A"><li>The January 2025 Webex CCE what’s-new entry</li><li>The Finesse cluster paragraph</li><li>A BGP community</li><li>The CUIC subscriber count</li></ol>
+<details class="reveal"><summary>Reveal</summary><p>A. It also states 300 calls per second on a single tenant. Re-check. <a class="cite" href="#cite-2">[cite:2]</a></p></details></article>
+<article class="qcard"><header><strong>Q11</strong><span class="kind">Draw it</span></header><p>Draw two networks. Put MDS on one and Central Controller-to-PG traffic on the other.</p>
+<details class="reveal"><summary>Reveal</summary><p>MDS on the private network. Central Controller to PG on the public network. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+<article class="qcard"><header><strong>Q12</strong><span class="kind">Scenario</span></header><p>Where does the design guide prefer you not to run CTI Manager?</p>
+<details class="reveal"><summary>Reveal</summary><p>On the Unified CM publisher, where possible, along with devices and call processing. <a class="cite" href="#cite-1">[cite:1]</a></p></details></article>
+</div>
+</section>
+
+<section id="audio">
+<p class="sec-kicker">12 · Audio</p>
+<h2>Slots for Studio</h2>
+<div class="audio-slot">
+<!-- AUDIO:overview | 3–5 min | prompt: "Explain Side A and Side B as redundancy and state the two majority tests." | assets/audio/T4-R08/overview.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:deep-dive | 8–12 min | prompt: "Walk a private-network failure through isolated-enabled, the 14-day logger window, and the Side B restart." | assets/audio/T4-R08/deep-dive.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+<div class="audio-slot">
+<!-- AUDIO:oral-drill | 2 min | prompt: "Rapid answers: 2000 Finesse, 7 CUIC subscribers, 48000 is a different page." | assets/audio/T4-R08/oral-drill.mp3 -->
+<audio controls preload="none"><p>No recording in this slot yet.</p></audio>
+<details><summary>Transcript slot</summary><p>Studio fills this from the cites.</p></details>
+</div>
+</section>
+
+<section id="interview">
+<p class="sec-kicker">13 · Interview</p>
+<h2>Oral answers</h2>
+<p><strong>30 seconds.</strong> Unified CCE runs Side A and Side B for redundancy. Both sides process every call. Either side can carry the full load. I do not load-balance the Router.</p>
+<p><strong>2 minutes.</strong> Two physical networks. Private carries sync and MDS and must stay on one link per component, with QoS. Public carries Central Controller to PG traffic. If the private network fails, Side A stays up when it sees at least half its enabled PGs. Side B stays up only when it sees more than half. The loser goes isolated-disabled and its logger stops. If the private network returns inside 14 days, logger resync is automatic. A call already at an agent is not dropped just because the router peer failed. If the phone and the desktop are on opposite sides and the public network fails, the agent is signed out.</p>
+<p><strong>30 seconds, the caps.</strong> Two thousand is the Finesse total on one Agent PG. Forty-eight thousand is a January 2025 Webex CCE sentence, with 300 calls per second. I do not add them.</p>
+<p><strong>2 minutes, the other clusters.</strong> CUIC is a publisher and up to seven subscribers, and it spreads work around a dead node. Cloud Connect digital routing is active/standby with no dedicated private network. Cisco IdS is its own publisher and subscriber pair. The Unified CM publisher should not run devices, call processing, or CTI Manager if I can avoid it. The design guide I am quoting was updated March 15, 2025, so these rows stay re-check.</p>
+<p><strong>What you will not say.</strong> You will not treat a 12,000 Agent Reference Design QoS warning as the Webex CCE tenant maximum.</p>
+</section>
+
+<section id="cites">
+<p class="sec-kicker">14 · Citations</p>
+<h2>Ledger</h2>
+<p>Retrieved 2026-10-14. Study notes from public sources.</p>
+<ol class="cite-list">
+<li id="cite-1">Solution Design Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), High Availability and Network Design — cisco.com — updated March 15, 2025 — <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html">High availability and network design</a>. Duplex, device majority, private and public networks, 14-day logger window, Finesse 2,000, CUIC subscribers, Cloud Connect, IdS, publisher guidance. <mark class="recheck">re-check</mark></li>
+<li id="cite-2">What’s new for administrators in Webex Contact Center Enterprise — help.webex — article nhy3hvdb — <a href="https://help.webex.com/article/nhy3hvdb">help.webex.com article nhy3hvdb</a>. January 2025: 48,000 concurrent agents and 300 CPS on a single tenant. <mark class="recheck">re-check</mark></li>
+<li id="cite-3">Webex WFO: Feature Specific SKUs — help.webex — article py6u9h — <a href="https://help.webex.com/article/py6u9h">help.webex.com article py6u9h</a>. WFO scope. Not an HA sizing table.</li>
+</ol>
+</section>
+
+<section id="reeng">
+<p class="sec-kicker">15 · Re-engineer later</p>
+<h2>Still open</h2>
+<ul>
+<li>Open questions: a Webex CCE scale page newer than January 2025; whether the 12,000 Agent Reference Design name is still the label in a guide updated after March 15, 2025.</li>
+<li>Facts still marked re-check: the whole design-guide chapter used here, and the 48,000 / 300 CPS sentence.</li>
+<li>Assets missing: duplex SVG export, audio, a redacted reference drawing.</li>
+<li>Ideas for v1.0: a three-row card that refuses to add 2,000 and 48,000.</li>
+<li>Next review: re-read the high-availability chapter when Cisco updates it past March 15, 2025.</li>
+</ul>
+</section>
+
+<nav class="room-pager" aria-label="Adjacent rooms"><a class="prev" href="T4-R07-reporting-cuic.html"><span>Previous</span><strong>T4-R07</strong><em>Reporting with CUIC</em></a><a class="next" href="T4-R09-classroom-index.html"><span>Next</span><strong>T4-R09</strong><em>Classroom index</em></a></nav>
+</article>
+</main>
+<footer class="site-footer wrap"><span>CypherWebex Canon · Webex Calling, Control Hub, and contact center.</span></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/canon.js"></script>
+<script src="../assets/js/redesign.js"></script>
+<script src="../assets/js/study-index.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

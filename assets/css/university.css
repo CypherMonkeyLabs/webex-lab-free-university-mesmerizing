@@ -267,7 +267,101 @@ html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
   .monkey, html.v4-motion .monkey.is-live { animation: none; }
   html.v4-motion .atlas-card { transition: none; }
 }
+.uni-fold {
+  margin: 0 0 12px;
+  padding: 8px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.uni-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 0 8px;
+}
+.uni-menu a {
+  flex: none;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  font-weight: 700;
+}
+.uni-menu a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.fold-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.fold-hero svg { width: 100%; height: auto; display: block; max-height: 120px; }
+.fold-side { display: flex; flex-direction: column; gap: 8px; }
+.fold-counts, .spark-row { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.fold-counts b, .spark-row b { font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.theme-switch, .mascot-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.theme-switch button {
+  border: 1px solid var(--line-strong);
+  background: var(--card-bg, transparent);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+.mascot-row svg { width: 42px; height: 50px; }
+.cube-scene { width: 46px; height: 46px; perspective: 280px; flex: none; }
+.cube-3d {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 9px;
+  transform-style: preserve-3d;
+  animation: cube-spin 9s linear infinite;
+}
+.cube-3d i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #22d3ee;
+  background: rgba(34, 211, 238, 0.18);
+}
+.cube-3d i:nth-child(1) { transform: rotateY(0deg) translateZ(14px); }
+.cube-3d i:nth-child(2) { transform: rotateY(180deg) translateZ(14px); }
+.cube-3d i:nth-child(3) { transform: rotateY(90deg) translateZ(14px); }
+.cube-3d i:nth-child(4) { transform: rotateY(-90deg) translateZ(14px); }
+.cube-3d i:nth-child(5) { transform: rotateX(90deg) translateZ(14px); }
+.cube-3d i:nth-child(6) { transform: rotateX(-90deg) translateZ(14px); }
+@keyframes cube-spin { to { transform: rotateX(360deg) rotateY(360deg); } }
+.spark-icon { width: 42px; height: 42px; }
+.track-spark { margin: 0 0 16px; }
+.atlas-grid, .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.atlas-card, .chart-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 10px;
+  background: color-mix(in srgb, var(--paper, var(--bg-2)) 86%, transparent);
+}
+.atlas-card object, .atlas-card img, .chart-card svg, .chart-card canvas { width: 100%; height: auto; }
+.lab-chart { width: 100%; height: auto; }
+[data-three] { width: 72px; height: 72px; }
+[data-three] canvas { width: 72px; height: 72px; display: block; }
+#mindmap { width: 100%; height: 420px; border: 1px solid var(--line); border-radius: 16px; }
+.career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.career-grid article { border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+@media (max-width: 720px) {
+  .fold-grid { grid-template-columns: 1fr; }
+  .fold-hero svg { max-height: 72px; }
+  .uni-fold { padding: 4px 10px 8px; }
+  .uni-menu a { padding: 4px 8px; font-size: 0.82rem; }
+  .lab-links { flex-wrap: nowrap; overflow-x: auto; }
+  .mascot-row svg { width: 34px; height: 40px; }
+  [data-three] { display: none; }
+  #mindmap { height: 280px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cube-3d { animation: none; }
+}
 @media print {
-  .lab-links, .monkey, .monkey-note, .v4-sidebar, .v4-toc, .topbar { display: none !important; }
+  .lab-links, .monkey, .monkey-note, .v4-sidebar, .v4-toc, .topbar, .uni-fold, .uni-menu { display: none !important; }
   .lab-footer { display: block !important; }
 }

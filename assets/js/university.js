@@ -171,7 +171,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v1").then(function (cache) {
+    return caches.open("webex-university-v2").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -197,6 +197,67 @@
         btn.textContent = label;
       });
     });
+  });
+
+  var MENU = [
+    ["Diagrams", "diagrams.html"],
+    ["Flows", "flows.html"],
+    ["Charts", "charts.html"],
+    ["Cheat Codes", "downloads.html"],
+    ["Play", "play.html"],
+    ["Ecosystem", "ecosystem.html"],
+    ["Downloads", "downloads.html"],
+    ["Careers", "careers.html"]
+  ];
+  if (!document.querySelector(".uni-menu")) {
+    var menu = document.createElement("nav");
+    menu.className = "uni-menu";
+    menu.setAttribute("aria-label", "University");
+    menu.innerHTML = MENU.map(function (item) {
+      return '<a href="' + fromRoot(item[1]) + '">' + item[0] + "</a>";
+    }).join("");
+    var header = document.querySelector(".topbar .bar-inner") || document.querySelector(".topbar");
+    if (header) header.appendChild(menu);
+  }
+  document.querySelectorAll(".uni-menu").forEach(function (menu) {
+    var links = Array.prototype.slice.call(menu.querySelectorAll("a"));
+    links.forEach(function (link, index) {
+      link.addEventListener("keydown", function (event) {
+        var next = null;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") next = links[(index + 1) % links.length];
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = links[(index - 1 + links.length) % links.length];
+        if (event.key === "Home") next = links[0];
+        if (event.key === "End") next = links[links.length - 1];
+        if (!next) return;
+        event.preventDefault();
+        next.focus();
+      });
+    });
+  });
+  document.querySelectorAll("[data-set-theme]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var theme = btn.getAttribute("data-set-theme");
+      document.documentElement.dataset.theme = theme;
+      try { localStorage.setItem("canon-theme", theme); } catch (err) { /* storage off */ }
+    });
+  });
+  var spark = document.querySelector(".track-spark, .uni-fold");
+  if (spark && !reduce) {
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY || 0;
+      spark.querySelectorAll("[data-depth]").forEach(function (layer) {
+        var depth = Number(layer.getAttribute("data-depth")) || 0.3;
+        layer.style.transform = "translateY(" + (y * depth * 0.08).toFixed(1) + "px)";
+      });
+    }, { passive: true });
+  }
+  var confettiScript = document.createElement("script");
+  confettiScript.src = fromRoot("vendor/confetti.browser.js");
+  confettiScript.async = true;
+  document.body.appendChild(confettiScript);
+  document.addEventListener("canon-badge", function () {
+    if (reduce || typeof window.confetti !== "function") return;
+    window.confetti({ particleCount: 70, spread: 64, origin: { y: 0.75 } });
   });
 
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {

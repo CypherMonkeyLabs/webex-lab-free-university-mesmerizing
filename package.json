@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:university": "python3 scripts/build_university.py",
+    "build:round3": "python3 scripts/build_round3.py",
     "verify": "node scripts/verify-university.mjs",
     "start": "python3 -m http.server 8741"
   }

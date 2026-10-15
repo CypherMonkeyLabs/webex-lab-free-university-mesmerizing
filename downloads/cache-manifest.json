@@ -63,5 +63,12 @@
   "downloads/sheets/migration-cutover.html",
   "downloads/sheets/licensing-certs.html",
   "downloads/sheets/crm-apis.html",
-  "downloads/sheets/security.html"
+  "downloads/sheets/security.html",
+  "diagrams.html",
+  "flows.html",
+  "charts.html",
+  "careers.html",
+  "assets/js/effects.js",
+  "vendor/d3.min.js",
+  "vendor/confetti.browser.js"
 ]

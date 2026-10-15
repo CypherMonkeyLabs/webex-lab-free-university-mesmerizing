@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control Hub roles</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 24px; color: #142033; }
+h1 { font-size: 1.5rem; margin-bottom: 0.2rem; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+td, th { border: 1px solid #cbd5e1; padding: 6px 8px; vertical-align: top; font-size: 0.88rem; }
+th { background: #e0f2fe; text-align: left; }
+footer { margin-top: 18px; font-size: 0.78rem; color: #334155; }
+footer a { color: #0f766e; }
+@media print { a { color: inherit; } }
+</style></head><body>
+<nav aria-label="CypherMonkey">
+<a href="https://cyphermonkeylabs.com">Labs home</a> ·
+<a href="https://linktr.ee/cyphermonkey">Linktree</a> ·
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Repo</a> ·
+<a href="https://dev.to/cyphermonkey">dev.to</a> ·
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
+<a href="https://x.com/Cypher0x9">X</a>
+</nav>
+<h1>Control Hub roles</h1>
+<p>One page pulled from the Canon rooms named in the source column. Open the room before you quote a number in a design. This is not a copy of a Cisco document.</p>
+<table><thead><tr><th>Check</th><th>What the room says</th><th>Source</th></tr></thead><tbody>
+<tr><td>What is Control Hub?</td><td>Cisco’s management console for one Webex organization: users, permissions, calling, meetings, messaging, and devices. [cite:1]</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>Why does it exist — what breaks without a single org console?</td><td>Services, identities, and devices would be administered as separate products. The overview exists so an admin sees which services are actually provisioned before configuring them. [cite:1] [cite:5]</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>What breaks if only one person holds full administrator?</td><td>Cisco recommends more than one full administrator so the org stays operable. The partner’s administrator is the first full administrator and is expected to create more. [cite:2]</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>How does an admin action work end to end?</td><td>Sign in, change a user or location or device, and the org record is what later services read. Role grants can take up to 10 minutes. A device is not in the org until its activation code is used. [cite:2] [cite:1]</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>Where do licenses sit relative to users?</td><td>The Get Started article says the overview is where you view licenses across services and administer licenses to users. Organization-based and group-based license assignment are full-admin privileges in the role matrix. The SKU catalog is T1</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>Are locations only a calling idea?</td><td>No. The locations article says you can use one location for both calling and workspaces, and that settings templates can apply to groups and locations. [cite:3]</td><td>T1-R01-control-hub-foundations.html</td></tr><tr><td>What are the failure modes, and how do I prove which one?</td><td>Prove it from the user role page, the group membership, the location caution icon, and the Devices state — not from the symptom sentence. The matrix in this room is the checklist.</td><td>T1-R01-control-hub-foundations.html</td></tr>
+</tbody></table>
+<p><a href="../../index.html">Back to the lab</a> · <a href="../../downloads.html">Cheat Codes</a></p>
+<footer>
+<p><strong>CypherMonkey · Webex Lab Free University</strong></p>
+<p>Independent educational project. Not affiliated with or endorsed by any vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content. Study notes, not a vendor document.</p>
+<p>
+<a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> ·
+<a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a> ·
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">repo</a> ·
+<a href="https://dev.to/cyphermonkey">dev.to</a> ·
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
+<a href="https://x.com/Cypher0x9">X</a> ·
+<a href="https://cyphermonkeylabs.com">Report a concern</a> ·
+<a href="https://cyphermonkeylabs.com">Work with us</a>
+</p>
+<p>Other labs:
+<a href="https://cipher0x9.github.io/uc-lab-free-university-mesmerizing/">UC</a> ·
+<a href="https://cipher0x9.github.io/ai-lab-free-university-mesmerizing/">AI</a> ·
+<a href="https://cipher0x9.github.io/sip-universe-lab-free-university-mesmerizing/">SIP Universe</a> ·
+<a href="https://cipher0x9.github.io/microsoft-voice-cc-lab-free-university-mesmerizing/">Microsoft Voice</a> ·
+<a href="https://cipher0x9.github.io/amazon-connect-lab-free-university-mesmerizing/">Amazon Connect</a> ·
+<a href="https://cipher0x9.github.io/genesys-cloud-lab-free-university-mesmerizing/">Genesys Cloud</a> ·
+<a href="https://cipher0x9.github.io/five9-lab-free-university-mesmerizing/">Five9</a> ·
+<a href="https://cipher0x9.github.io/nice-cxone-lab-free-university-mesmerizing/">NICE CXone</a>
+</p>
+</footer>
+</body></html>

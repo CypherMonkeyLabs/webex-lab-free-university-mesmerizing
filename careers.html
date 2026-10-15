@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers · Webex Lab</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/university.css">
+<link rel="icon" href="assets/mark.svg">
+</head>
+<body class="v4" data-effects="1">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="lab-links" aria-label="CypherMonkey">
+<a href="https://cyphermonkeylabs.com">Labs home</a>
+<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
+<a href="https://dev.to/cyphermonkey">dev.to</a>
+<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
+<a href="https://x.com/Cypher0x9">X</a>
+<button type="button" data-offline-save>Save for offline</button>
+<a href="downloads/webex-university-offline.zip">Offline bundle</a>
+</nav>
+<nav class="uni-menu" aria-label="University">
+<a href="diagrams.html">Diagrams</a>
+<a href="flows.html">Flows</a>
+<a href="charts.html">Charts</a>
+<a href="downloads.html">Cheat Codes</a>
+<a href="play.html">Play</a>
+<a href="ecosystem.html">Ecosystem</a>
+<a href="downloads.html">Downloads</a>
+<a href="careers.html">Careers</a>
+</nav>
+<header class="topbar" data-chrome="v4">
+<div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Webex Lab<small>University</small></span></a>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="Choose a theme">◐</button>
+</div>
+</header>
+<main id="main"><div class="wrap">
+<p class="crumbs"><a href="index.html">Home</a> / Careers</p><h1>Careers</h1><p class="lede">Study paths through this Canon. Job titles here are study labels, not Cisco requisitions. No salaries.</p><svg id="mindmap"></svg><script type="application/json" id="mindmap-data">{"content": "Webex study paths", "children": [{"content": "Control Hub admin", "children": [{"content": "T1 rooms", "children": []}]}, {"content": "Calling engineer", "children": [{"content": "Gateway, dial plan, devices", "children": []}]}, {"content": "Contact center", "children": [{"content": "Multi-tenant WxCC", "children": []}, {"content": "Enterprise and CUIC", "children": []}]}, {"content": "Dedicated Instance", "children": []}, {"content": "Migration", "children": []}, {"content": "Certifications", "children": [{"content": "350-801 plus one concentration", "children": []}, {"content": "Prices not re-fetched", "children": []}]}]}</script><div class="career-grid">
+<article><h2>Control Hub</h2><p>Start with T1. Roles, locations, and identity are the admin job before any dial plan.</p><p><a href="tracks/T1/index.html">T1</a></p></article>
+<article><h2>Calling</h2><p>T2 and T7 cover the local gateway, the three PSTN choices, devices, and SIP. The archive studio still runs the dial-plan simulator.</p><p><a href="tracks/T2/index.html">T2</a> · <a href="archive/webex-lab-v1/campus/index.html">Archive studio</a></p></article>
+<article><h2>Contact center</h2><p>Multi-tenant WxCC is T3. Enterprise routing, CUIC, and Finesse are T4. Do not answer one with the other's limits.</p><p><a href="tracks/T3/index.html">T3</a> · <a href="tracks/T4/index.html">T4</a></p></article>
+<article><h2>Dedicated Instance and migration</h2><p>T5 is the private UC app pair. T6 is cutover, number moves, and coexistence. Re-check live help before a window.</p><p><a href="tracks/T5/index.html">T5</a> · <a href="tracks/T6/index.html">T6</a></p></article>
+<article><h2>Certifications</h2><p>certs.html prints CCNP Collaboration as 350-801 CLCOR plus one of 300-815 CLACC, 300-820 CLHCT, or 300-830 CLCCE. It prints CLACCM and CLCEI as retired February 2, 2026. Minutes and dollar amounts on that page were not re-fetched for this pass.</p><p><a href="certs.html">Certifications</a> · <a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcor.html">Cisco CLCOR page</a></p></article>
+<article><h2>Interview practice</h2><p>The interview set is scenarios from the rooms. It is not a leaked exam and not a promise of a role.</p><p><a href="interviews.html">Interview prep</a> · <a href="downloads/sheets/careers-certs.html">Careers sheet</a></p></article>
+</div>
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/markmap-view.js"></script>
+<script>
+(function () {
+  var node = document.getElementById("mindmap-data");
+  var svg = document.getElementById("mindmap");
+  if (!node || !svg || !window.markmap || !window.d3) return;
+  window.markmap.Markmap.create(svg, null, JSON.parse(node.textContent));
+})();
+</script>
+</div></main>
+<footer class="site-footer lab-footer wrap"><p>CypherMonkey · Webex Lab Free University</p></footer>
+<aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/redesign.js"></script>
+<script src="assets/js/study-index.js"></script>
+<script src="assets/js/shell.js"></script>
+<script type="module" src="assets/js/effects.js"></script>
+</body></html>

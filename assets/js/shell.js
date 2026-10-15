@@ -167,8 +167,12 @@
     ["ecosystem-atlas.html", "globe", "Ecosystem Atlas", ""],
     ["mastery.html", "map", "Mastery Map", ""],
     ["ports.html", "radio", "Ports & Protocols", ""],
+    ["diagrams.html", "image", "Diagrams", ""],
+    ["flows.html", "flow", "Flows", ""],
+    ["charts.html", "sliders", "Charts", ""],
     ["downloads.html", "cards", "Cheat Codes", ""],
     ["play.html", "spark", "Play Lab", ""],
+    ["careers.html", "mic", "Careers", ""],
     ["drills.html", "wrench", "Troubleshooting Cases", ""],
     ["archive/webex-lab-v1/campus/index.html", "flask", "Archive Studio", ""]
   ];
@@ -1101,6 +1105,7 @@
   document.head.appendChild(uniCss);
   var uniJs = document.createElement("script");
   uniJs.src = rootPrefix + "assets/js/university.js";
+  uniJs.async = false;
   uniJs.defer = true;
   document.body.appendChild(uniJs);
 })();

@@ -31,6 +31,59 @@
 </header>
 
 <main id="main">
+<section class="uni-fold" id="uni-fold" aria-label="University front door">
+<nav class="uni-menu" aria-label="University">
+<a href="diagrams.html">Diagrams</a>
+<a href="flows.html">Flows</a>
+<a href="charts.html">Charts</a>
+<a href="downloads.html">Cheat Codes</a>
+<a href="play.html">Play</a>
+<a href="ecosystem.html">Ecosystem</a>
+<a href="downloads.html">Downloads</a>
+<a href="careers.html">Careers</a>
+</nav>
+<div class="fold-grid">
+<div class="fold-hero">
+<svg viewBox="0 0 360 96" role="img" aria-label="Animated path from a phone through Control Hub toward the PSTN">
+<rect width="360" height="96" rx="16" fill="#0b1020"/>
+<rect x="16" y="28" width="72" height="40" rx="10" fill="#67e8f9"/>
+<text x="52" y="52" text-anchor="middle" fill="#083344" font-size="11" font-family="system-ui,sans-serif" font-weight="700">Phone</text>
+<rect x="144" y="28" width="72" height="40" rx="10" fill="#a5b4fc"/>
+<text x="180" y="52" text-anchor="middle" fill="#1e1b4b" font-size="11" font-family="system-ui,sans-serif" font-weight="700">Hub</text>
+<rect x="272" y="28" width="72" height="40" rx="10" fill="#fbbf24"/>
+<text x="308" y="52" text-anchor="middle" fill="#422006" font-size="11" font-family="system-ui,sans-serif" font-weight="700">PSTN</text>
+<path id="fold-lane" d="M88 48 H144 M216 48 H272" fill="none" stroke="#22d3ee" stroke-width="3"/>
+<circle r="5" fill="#fde68a"><animateMotion dur="3.2s" repeatCount="indefinite" path="M88 48 H272"/></circle>
+<circle data-anime-dot="1" r="4" cx="88" cy="48" fill="#ffffff"/>
+</svg>
+</div>
+<div class="fold-side">
+<div class="fold-counts" aria-label="Live counters">
+<span><b data-count="63">0</b> rooms</span>
+<span><b data-count="483">0</b> practice prompts</span>
+<span><b data-count="959">0</b> cheat-code cards</span>
+<span><b data-count="28">0</b> diagrams</span>
+<span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+<span data-three aria-hidden="true"></span>
+</div>
+<div class="theme-switch" role="group" aria-label="Theme switcher">
+<button type="button" data-set-theme="aurora">Aurora</button>
+<button type="button" data-set-theme="futuristic">Futuristic</button>
+<button type="button" data-set-theme="gaming">Gaming</button>
+<button type="button" data-set-theme="neon">Neon</button>
+<button type="button" data-set-theme="sunset">Sunset</button>
+<button type="button" data-set-theme="paper">Light</button>
+</div>
+<div class="mascot-row" aria-label="Mascot variations">
+<svg viewBox="0 0 80 96" aria-hidden="true"><circle cx="40" cy="42" r="22" fill="#fbbf24"/><circle cx="32" cy="40" r="3" fill="#1c1917"/><circle cx="48" cy="40" r="3" fill="#1c1917"/><path d="M28 54 Q40 66 52 54" fill="none" stroke="#1c1917" stroke-width="2"/></svg>
+<svg viewBox="0 0 80 96" aria-hidden="true"><circle cx="40" cy="42" r="22" fill="#f59e0b"/><circle cx="32" cy="40" r="3" fill="#1c1917"/><circle cx="48" cy="40" r="3" fill="#1c1917"/><path d="M30 58 H50" fill="none" stroke="#1c1917" stroke-width="2"/></svg>
+<svg viewBox="0 0 80 96" aria-hidden="true"><circle cx="40" cy="42" r="22" fill="#fde68a"/><circle cx="32" cy="40" r="3" fill="#1c1917"/><circle cx="48" cy="40" r="3" fill="#1c1917"/><path d="M26 52 Q40 68 54 52" fill="none" stroke="#1c1917" stroke-width="2"/></svg>
+<svg viewBox="0 0 80 96" aria-hidden="true"><circle cx="40" cy="42" r="22" fill="#fbbf24"/><circle cx="32" cy="38" r="3" fill="#1c1917"/><circle cx="48" cy="38" r="3" fill="#1c1917"/><path d="M32 56 Q40 52 48 56" fill="none" stroke="#1c1917" stroke-width="2"/></svg>
+</div>
+</div>
+</div>
+</section>
+
 <section class="hero-live" aria-label="Introduction">
 <canvas class="mesh-canvas" data-mesh aria-hidden="true"></canvas>
 <div class="hero-copy">
@@ -231,4 +284,5 @@
 <script src="assets/js/redesign.js"></script>
 <script src="assets/js/study-index.js"></script>
 <script src="assets/js/shell.js"></script>
+<script type="module" src="assets/js/effects.js"></script>
 </body></html>

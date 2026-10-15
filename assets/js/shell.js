@@ -4,7 +4,11 @@
 (function () {
   window.CANON_SHELL_MEDIA = true;
   var root = document.documentElement;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  try {
+    var storedMotion = localStorage.getItem("canon-motion");
+    if (storedMotion === "reduce" || storedMotion === "full") root.dataset.motion = storedMotion;
+  } catch (err) { /* storage off */ }
+  var reduce = root.dataset.motion === "reduce" || (root.dataset.motion !== "full" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   var fine = window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(hover: none)").matches;
   var touch = window.matchMedia("(pointer: coarse)").matches;
   if (!reduce) root.classList.add("v4-motion");
@@ -1083,7 +1087,7 @@
       }, { passive: true });
     }
     if ("IntersectionObserver" in window) {
-      var revealNodes = document.querySelectorAll("main section:not(.world-hero), .track-tile, .stat, .plan-item");
+      var revealNodes = document.querySelectorAll("main section:not(.world-hero), .track-tile, .stat, .plan-item, .atlas-card, .chart-card, .career-grid article");
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;

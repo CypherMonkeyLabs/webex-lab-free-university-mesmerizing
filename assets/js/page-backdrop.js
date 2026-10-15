@@ -203,10 +203,19 @@ function frame(rig, time) {
   }
 }
 
+function motionReduced() {
+  try {
+    var stored = localStorage.getItem("canon-motion");
+    if (stored === "reduce") return true;
+    if (stored === "full") return false;
+  } catch (err) { /* storage off */ }
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 function boot() {
   var kind = pageKind();
   if (!kind) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (motionReduced()) return;
   var banner = document.querySelector(".stage-banner");
   if (!banner) return;
   var canvas = document.createElement("canvas");
@@ -232,7 +241,7 @@ function boot() {
     document.body.classList.remove("has-page-gl");
     return;
   }
-  renderer.setPixelRatio(1);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   var sky = {
     diagrams: 0x0b1c3a,
     flows: 0x07281f,
@@ -272,20 +281,30 @@ function boot() {
   window.addEventListener("resize", resize);
   if (window.ResizeObserver) new ResizeObserver(resize).observe(banner);
 
-  var running = true;
+  var onScreen = true;
   var handle = 0;
+  function running() {
+    return onScreen && !document.hidden && !motionReduced();
+  }
   function loop(now) {
-    if (!running) return;
+    if (!running()) return;
     frame(rig, now || 0);
     renderer.render(scene, camera);
     handle = window.requestAnimationFrame(loop);
   }
-  handle = window.requestAnimationFrame(loop);
-  document.addEventListener("visibilitychange", function () {
-    running = !document.hidden;
-    if (running) handle = window.requestAnimationFrame(loop);
-    else window.cancelAnimationFrame(handle);
-  });
+  function kick() {
+    window.cancelAnimationFrame(handle);
+    if (running()) handle = window.requestAnimationFrame(loop);
+  }
+  kick();
+  document.addEventListener("visibilitychange", kick);
+  document.addEventListener("canon-motion", kick);
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(function (entries) {
+      onScreen = entries.some(function (entry) { return entry.isIntersecting; });
+      kick();
+    }, { threshold: 0.02 }).observe(banner);
+  }
   document.addEventListener("canon-theme", function () {
     var next = colors();
     var flat = [];

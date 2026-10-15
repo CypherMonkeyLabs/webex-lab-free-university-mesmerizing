@@ -26,11 +26,20 @@ function boot() {
   }
 }
 
+function motionReduced() {
+  try {
+    var stored = localStorage.getItem("canon-motion");
+    if (stored === "reduce") return true;
+    if (stored === "full") return false;
+  } catch (err) { /* storage off */ }
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 function bootScene() {
   var canvas = document.querySelector("[data-world-canvas]");
   var hero = canvas && canvas.closest("[data-world]");
   if (!canvas || !hero) return;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = motionReduced();
   if (reduce) {
     document.documentElement.dataset.hero = "flat";
     canvas.hidden = true;
@@ -57,7 +66,7 @@ function bootScene() {
     return;
   }
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setClearColor(0x000000, 0);
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(48, 1, 0.1, 80);
@@ -198,13 +207,15 @@ function bootScene() {
     paint(event.detail && event.detail.theme);
   });
 
-  var running = true;
+  var onScreen = true;
   var loopOn = false;
   var clock = new THREE.Clock();
+  var scrollLift = 0;
+  window.addEventListener("scroll", function () {
+    scrollLift = Math.min(window.scrollY || 0, 480) / 480;
+  }, { passive: true });
   function frame() {
     if (!loopOn) return;
-    requestAnimationFrame(frame);
-    if (!running) return;
     var t = clock.getElapsedTime();
     world.rotation.y = t * 0.18 + pointer.x * 0.35;
     world.rotation.x = pointer.y * -0.12;
@@ -220,25 +231,34 @@ function bootScene() {
     });
     points.rotation.y = t * 0.05;
     camera.position.x += (pointer.x * 1.4 - camera.position.x) * 0.04;
-    camera.position.y += (2.2 + pointer.y * -0.6 - camera.position.y) * 0.04;
+    camera.position.y += (2.2 + pointer.y * -0.6 + scrollLift * 1.1 - camera.position.y) * 0.04;
     camera.lookAt(0, 0, 0);
     renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  function allowed() {
+    return onScreen && !document.hidden && !motionReduced();
   }
   function start() {
-    if (loopOn) return;
+    if (loopOn || !allowed()) return;
     loopOn = true;
     requestAnimationFrame(frame);
   }
   function stop() { loopOn = false; }
+  function sync() {
+    if (allowed()) start();
+    else stop();
+  }
 
   if ("IntersectionObserver" in window) {
     var seen = new IntersectionObserver(function (entries) {
-      running = entries.some(function (entry) { return entry.isIntersecting; });
-      if (running) start();
-      else stop();
+      onScreen = entries.some(function (entry) { return entry.isIntersecting; });
+      sync();
     }, { threshold: 0.02 });
     seen.observe(hero);
   }
+  document.addEventListener("visibilitychange", sync);
+  document.addEventListener("canon-motion", sync);
   document.documentElement.dataset.hero = "webgl";
   canvas.hidden = false;
   start();

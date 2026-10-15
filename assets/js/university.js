@@ -58,6 +58,7 @@
       '<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>' +
       '<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>' +
       '<p class="lab-actions">' +
+      '<a href="' + REPO + '">Rate, comment, help</a>' +
       '<a href="' + CONTACT + '">Report a concern / takedown</a>' +
       '<a href="' + CONTACT + '">Work with us</a>' +
       '<a href="' + fromRoot("downloads.html") + '">Cheat Codes</a>' +
@@ -171,7 +172,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v7").then(function (cache) {
+    return caches.open("webex-university-v8").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -298,6 +299,10 @@
     backdropJs.src = rootPrefix + "assets/js/page-backdrop.js";
     document.body.appendChild(backdropJs);
   }
+  var phoneJs = document.createElement("script");
+  phoneJs.src = rootPrefix + "assets/js/phone-nav.js";
+  phoneJs.async = false;
+  document.body.appendChild(phoneJs);
   var wowJs = document.createElement("script");
   wowJs.src = rootPrefix + "assets/js/wow.js";
   wowJs.async = false;

@@ -76,20 +76,29 @@ html.v4-motion .chart-card.v4-reveal {
   transform: none;
 }
 
+body.home-world .v4-app { display: block; }
 body.home-world .v4-stage { display: block; }
+body.home-world .v4-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 60;
+  transform: translateX(-105%);
+  width: min(320px, 88vw);
+}
+html[data-drawer="open"] body.home-world .v4-sidebar { transform: none; }
 body.home-world .v4-toc { display: none !important; }
-body.home-world .lab-links {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  max-height: 40px;
-}
+body.home-world .lab-links,
 body.home-world .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
-  backdrop-filter: blur(14px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  background: linear-gradient(180deg, rgba(4, 8, 20, 0.55), transparent);
 }
+body.home-world .lab-links { top: 0; flex-wrap: nowrap; overflow-x: auto; max-height: 36px; }
+body.home-world .topbar { top: 32px; }
+body.home-world .world-hero { min-height: 100svh; }
+body.home-world .world-ui { min-height: 100svh; padding-top: 108px; }
 body.home-world .monkey { left: 12px; right: auto; bottom: 12px; z-index: 8; }
 body.home-world .monkey-note { left: 12px; right: auto; }
 
@@ -298,10 +307,11 @@ html.v4-motion .mascot-row .wave { transform-box: fill-box; transform-origin: 10
 }
 
 .lab-audio {
-  flex: 1 1 240px;
-  min-width: 220px;
+  flex: 1 1 220px;
+  min-width: 180px;
   font-size: 0.82rem;
 }
+.lab-audio summary { cursor: pointer; color: #fde68a; }
 .lab-audio p { margin: 0 0 4px; }
 .lab-audio a { color: #fde68a; }
 .audio-rates { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -330,8 +340,10 @@ html.v4-motion .mascot-row .wave { transform-box: fill-box; transform-origin: 10
   box-shadow: 0 18px 40px color-mix(in srgb, var(--accent) 32%, transparent), 0 0 0 1px var(--accent);
 }
 
-.atlas-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); }
-.atlas-card object { width: 100%; min-height: 240px; background: #0b1020; border-radius: 12px; }
+.atlas-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 640px), 1fr)); }
+.atlas-card:first-child { grid-column: 1 / -1; }
+.atlas-card object { width: 100%; min-height: 300px; background: #0b1020; border-radius: 12px; }
+.atlas-card:first-child object { min-height: 420px; }
 .atlas-card { cursor: zoom-in; }
 .chart-tip {
   position: fixed;

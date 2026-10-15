@@ -255,7 +255,7 @@
     });
   }
   function toggleNav() {
-    if (window.matchMedia("(max-width: 960px)").matches) {
+    if (window.matchMedia("(max-width: 960px)").matches || document.body.classList.contains("home-world")) {
       drawerOpen(root.dataset.drawer !== "open");
       return;
     }

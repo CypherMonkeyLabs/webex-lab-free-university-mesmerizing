@@ -43,7 +43,8 @@ function bootScene() {
       canvas: canvas,
       antialias: true,
       alpha: true,
-      powerPreference: "high-performance"
+      powerPreference: "high-performance",
+      preserveDrawingBuffer: true
     });
   } catch (err) {
     document.documentElement.dataset.hero = "flat";

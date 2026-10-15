@@ -439,6 +439,7 @@ html[dir="rtl"] .v4-sidebar { text-align: right; }
 .hud-sheet-toggle { display: none; }
 @media (max-width: 720px) {
   html, body { overflow-x: clip; max-width: 100%; }
+  .v4-read { display: none; }
   body { padding-bottom: var(--dock); }
   body.home-world .lab-links,
   .lab-links,
@@ -516,6 +517,7 @@ html[dir="rtl"] .v4-sidebar { text-align: right; }
   .tile-art { width: 88px; height: 76px; }
   .monkey { bottom: calc(var(--dock) + 8px); }
   .monkey-note { bottom: calc(var(--dock) + 96px); }
+  .uni-menu { display: none !important; }
   .phone-menu-btn { display: inline-flex; }
   .phone-dock { display: grid; }
 }
@@ -635,8 +637,10 @@ html[data-motion="reduce"] { scroll-behavior: auto; }
 html[data-motion="reduce"] .v4-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
 :root { --dock: calc(64px + env(safe-area-inset-bottom)); }
-.phone-menu-btn,
-.phone-dock { display: none; }
+@media (min-width: 721px) {
+  .phone-menu-btn,
+  .phone-dock { display: none !important; }
+}
 .phone-menu-btn {
   margin-inline-start: auto;
   align-items: center;

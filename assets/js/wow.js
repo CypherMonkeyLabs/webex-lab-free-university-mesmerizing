@@ -27,6 +27,62 @@
     root.dir = code === "ar" ? "rtl" : "ltr";
     try { localStorage.setItem("canon-lang", code); } catch (err) { /* storage off */ }
     document.querySelectorAll("[data-lang]").forEach(function (sel) { sel.value = code; });
+    applyRooms(code);
+  }
+
+  var MT = { es: "Traducción automática", hi: "मशीन अनुवाद", te: "యంత్ర అనువాదం", fr: "Traduction automatique", de: "Maschinenübersetzung", ja: "機械翻訳", ar: "ترجمة آلية" };
+
+  function applyRooms(code) {
+    var book = window.CANON_ROOMS_I18N;
+    if (!book) return;
+    var flag = document.querySelector(".mt-flag");
+    function remember(node, attr) {
+      if (node && !node.getAttribute(attr)) node.setAttribute(attr, node.textContent);
+    }
+    function restore(selector, attr) {
+      document.querySelectorAll("[" + attr + "]").forEach(function (node) {
+        if (selector && !node.matches(selector)) return;
+        node.textContent = node.getAttribute(attr);
+      });
+    }
+    if (code === "en") {
+      restore("", "data-en-title");
+      restore("", "data-en-summary");
+      if (flag) flag.hidden = true;
+      return;
+    }
+    var room = document.body.getAttribute("data-room");
+    var h1 = document.querySelector("main h1");
+    var lede = document.querySelector("main .lede, main p.lede");
+    if (room && book[room]) {
+      if (h1 && book[room].title && book[room].title[code]) {
+        remember(h1, "data-en-title");
+        h1.textContent = book[room].title[code];
+      }
+      if (lede && book[room].summary && book[room].summary[code]) {
+        remember(lede, "data-en-summary");
+        lede.textContent = book[room].summary[code];
+      }
+    }
+    document.querySelectorAll(".room-row").forEach(function (row) {
+      var id = row.getAttribute("data-code");
+      var link = row.querySelector(".room-title");
+      if (!id || !link || !book[id] || !book[id].title || !book[id].title[code]) return;
+      remember(link, "data-en-title");
+      link.textContent = book[id].title[code];
+    });
+    var host = h1 || document.querySelector("#rooms") || document.querySelector("main");
+    if (host && !document.querySelector(".mt-flag")) {
+      flag = document.createElement("p");
+      flag.className = "mt-flag";
+      if (h1) h1.insertAdjacentElement("afterend", flag);
+      else host.prepend(flag);
+    }
+    flag = document.querySelector(".mt-flag");
+    if (flag) {
+      flag.hidden = false;
+      flag.textContent = MT[code] || "Machine translation";
+    }
   }
 
   function mountLang() {
@@ -53,6 +109,10 @@
     var stored = "en";
     try { stored = localStorage.getItem("canon-lang") || "en"; } catch (err) { stored = "en"; }
     applyLang(stored);
+    document.addEventListener("canon-rooms-ready", function () {
+      var live = document.querySelector("[data-lang]");
+      applyRooms(live && live.value ? live.value : stored);
+    });
   }
 
   var isoN = 0;
@@ -208,55 +268,68 @@
     });
   }
 
-  function mountMascot() {
-    var faces = document.querySelectorAll(".mascot-row svg");
-    if (!faces.length) return;
-    faces.forEach(function (svg, index) {
-      svg.classList.toggle("is-face", index === 0);
-      svg.querySelectorAll("circle").forEach(function (circle, circleIndex) {
-        if (circleIndex > 0) circle.classList.add("eye");
-      });
-      var arm = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      arm.setAttribute("d", "M58 48 q10 -8 8 10");
-      arm.setAttribute("fill", "none");
-      arm.setAttribute("stroke", "#1c1917");
-      arm.setAttribute("stroke-width", "3");
-      arm.setAttribute("class", "wave");
-      svg.appendChild(arm);
+  var FUR = { aurora: "#fbbf24", neon: "#e879f9", holographic: "#5eead4", cyberpunk: "#facc15", sunset: "#fb7185", paper: "#d97706", futuristic: "#38bdf8", gaming: "#4ade80" };
+  var VARIANTS = ["wave", "cheer", "think", "idle"];
+
+  function showVariant(name) {
+    document.querySelectorAll(".mascot-var").forEach(function (node) {
+      node.classList.toggle("is-var", node.getAttribute("data-variant") === name);
     });
-    var face = 0;
-    function show(next) {
-      face = next % faces.length;
-      faces.forEach(function (svg, index) { svg.classList.toggle("is-face", index === face); });
+  }
+  function paintMascot() {
+    var svg = document.querySelector(".mascot");
+    if (!svg) return;
+    svg.style.setProperty("--mascot-fur", FUR[document.documentElement.dataset.theme || "aurora"] || "#fbbf24");
+  }
+  function mountMascot() {
+    if (!document.querySelector(".mascot-var")) return;
+    var step = 0;
+    showVariant(VARIANTS[0]);
+    paintMascot();
+    document.addEventListener("canon-theme", function () {
+      paintMascot();
+      step = (step + 1) % VARIANTS.length;
+      showVariant(VARIANTS[step]);
+    });
+    if (!reduce) window.setInterval(function () {
+      step = (step + 1) % VARIANTS.length;
+      showVariant(VARIANTS[step]);
+    }, 20000);
+  }
+  function assetRoot() {
+    var nodes = document.querySelectorAll("script[src]");
+    for (var i = 0; i < nodes.length; i++) {
+      var src = nodes[i].getAttribute("src") || "";
+      var at = src.indexOf("assets/js/wow.js");
+      if (at !== -1) return src.slice(0, at);
     }
-    document.addEventListener("canon-theme", function () { show(face + 1); });
-    if (!reduce) window.setInterval(function () { show(face + 1); }, 90000);
-    if ("IntersectionObserver" in window) {
-      var sections = document.querySelectorAll("main section");
-      var seen = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) show(face + 1);
-        });
-      }, { threshold: 0.6 });
-      sections.forEach(function (section) { seen.observe(section); });
-    }
+    return "";
   }
 
   function mountAudio() {
     var box = document.querySelector("[data-audio-player]");
-    if (!box) return;
-    var status = box.querySelector("[data-audio-status]");
-    var controls = box.querySelector("[data-audio-controls]");
-    var audio = box.querySelector("[data-audio]");
-    if (audio && audio.getAttribute("src")) {
-      if (status) status.hidden = true;
-      if (controls) controls.hidden = false;
-    }
+    var audio = box && box.querySelector("[data-audio]");
+    if (!audio) return;
+    audio.preload = "none";
+    audio.src = assetRoot() + "audio/how-to-use.mp3";
     box.querySelectorAll("[data-rate]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        if (audio) audio.playbackRate = Number(btn.getAttribute("data-rate")) || 1;
+        audio.playbackRate = Number(btn.getAttribute("data-rate")) || 1;
       });
     });
+  }
+
+  function mountHud() {
+    var hud = document.querySelector("[data-hud]");
+    if (!hud || reduce) return;
+    window.addEventListener("pointermove", function (event) {
+      var px = (event.clientX / window.innerWidth) - 0.5;
+      var py = (event.clientY / window.innerHeight) - 0.5;
+      hud.querySelectorAll("[data-depth]").forEach(function (panel) {
+        var depth = Number(panel.getAttribute("data-depth")) || 0.4;
+        panel.style.translate = (px * depth * -28).toFixed(1) + "px " + (py * depth * -18).toFixed(1) + "px";
+      });
+    }, { passive: true });
   }
 
   function mountProgress() {
@@ -275,10 +348,10 @@
   }
 
   mountLang();
-  paintIcons();
   mountLightbox();
   mountCharts();
   mountMascot();
   mountAudio();
   mountProgress();
+  mountHud();
 })();

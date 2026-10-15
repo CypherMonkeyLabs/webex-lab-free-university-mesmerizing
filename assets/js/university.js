@@ -171,7 +171,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v4").then(function (cache) {
+    return caches.open("webex-university-v6").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -268,10 +268,30 @@
     navigator.serviceWorker.register(fromRoot("sw.js")).catch(function () { /* pages still work */ });
   }
 
+  if (!document.body.classList.contains("home-world")) {
+    document.body.classList.add("canon-world");
+    var mainEl = document.querySelector("main");
+    if (mainEl && !document.querySelector(".stage-banner")) {
+      var banner = document.createElement("div");
+      banner.className = "stage-banner";
+      banner.setAttribute("aria-hidden", "true");
+      banner.innerHTML = '<div class="stage-grid"></div><div class="stage-orb"></div><p class="stage-kicker">Canon · in color</p>';
+      mainEl.parentNode.insertBefore(banner, mainEl);
+    }
+  }
+
   var wowCss = document.createElement("link");
   wowCss.rel = "stylesheet";
   wowCss.href = rootPrefix + "assets/css/wow.css";
   document.head.appendChild(wowCss);
+  var i18nJs = document.createElement("script");
+  i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
+  i18nJs.async = false;
+  document.body.appendChild(i18nJs);
+  var iconJs = document.createElement("script");
+  iconJs.type = "module";
+  iconJs.src = rootPrefix + "assets/js/track-icons.js";
+  document.body.appendChild(iconJs);
   var wowJs = document.createElement("script");
   wowJs.src = rootPrefix + "assets/js/wow.js";
   wowJs.async = false;

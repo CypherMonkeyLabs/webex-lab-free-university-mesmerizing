@@ -98,7 +98,14 @@ body.home-world .topbar {
 body.home-world .lab-links { top: 0; flex-wrap: nowrap; overflow-x: auto; max-height: 36px; }
 body.home-world .topbar { top: 32px; }
 body.home-world .world-hero { min-height: 100svh; }
-body.home-world .world-ui { min-height: 100svh; padding-top: 108px; }
+body.home-world .world-ui {
+  min-height: 100svh;
+  padding-top: 108px;
+  z-index: 4;
+  width: min(38rem, 62%);
+  margin-inline-end: auto;
+  box-sizing: border-box;
+}
 body.home-world .monkey { left: 12px; right: auto; bottom: 12px; z-index: 8; }
 body.home-world .monkey-note { left: 12px; right: auto; }
 
@@ -233,19 +240,39 @@ html[data-hero="flat"] .world-hero::after {
 }
 .world-hero .uni-menu { position: relative; top: auto; background: transparent; backdrop-filter: none; }
 
-.world-dock {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: center;
-  padding: 12px;
-  border-radius: 22px;
-  background: rgba(7, 11, 22, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(16px);
+.hud {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  perspective: 1100px;
 }
+.hud-panel {
+  position: absolute;
+  pointer-events: auto;
+  padding: 12px 14px;
+  border-radius: 22px;
+  color: #e0f2fe;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(8, 16, 40, 0.42) 42%, rgba(34, 211, 238, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 0 28px rgba(34, 211, 238, 0.28), inset 0 0 18px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+}
+html.v4-motion .hud-panel { animation: hud-float 7s ease-in-out infinite; }
+.hud-stats { inset-inline-start: 3%; bottom: 4%; width: 250px; transform: rotateX(10deg) rotateY(10deg); animation-delay: -1s; }
+.hud-themes { inset-inline-end: 3%; top: 16%; width: 236px; transform: rotateX(8deg) rotateY(-12deg); animation-delay: -2.4s; }
+.hud-lang { inset-inline-end: 3%; bottom: 4%; width: 236px; transform: rotateX(10deg) rotateY(-8deg); animation-delay: -3.2s; }
+.hud-mascot { inset-inline-end: 3%; bottom: 22%; width: 176px; transform: rotateX(6deg) rotateY(-12deg); animation-delay: -0.6s; }
+.hud-audio { left: 36%; bottom: 4%; width: 230px; transform: rotateX(12deg); animation-delay: -4s; }
+.hud-stats .fold-counts { max-width: 224px; }
+.hud-themes .theme-switch { max-width: 210px; }
+@keyframes hud-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+.world-dock { display: contents; }
 .fold-counts b { color: #fff; }
 .fold-counts span, .world-dock { color: #e0f2fe; }
 .progress-ring {
@@ -288,12 +315,8 @@ html[data-hero="flat"] .world-hero::after {
   padding: 6px 10px;
   font: inherit;
 }
-.mascot-row svg { width: 64px; height: 76px; filter: drop-shadow(0 10px 14px rgba(251, 191, 36, 0.45)); }
-.mascot-row svg:not(.is-face) { display: none; }
-.mascot-row svg.is-face { display: block; }
-html.v4-motion .mascot-row svg.is-face { animation: mascot-bob 2.6s ease-in-out infinite; }
-html.v4-motion .mascot-row .eye { transform-box: fill-box; transform-origin: center; animation: eye-blink 4.6s infinite; }
-html.v4-motion .mascot-row .wave { transform-box: fill-box; transform-origin: 10% 80%; animation: wave-arm 1.8s ease-in-out infinite; }
+.mascot-row { display: grid; place-items: center; }
+html.v4-motion .mascot-row .mascot { animation: mascot-bob 2.6s ease-in-out infinite; }
 @keyframes mascot-bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -341,10 +364,15 @@ html.v4-motion .mascot-row .wave { transform-box: fill-box; transform-origin: 10
   box-shadow: 0 18px 40px color-mix(in srgb, var(--accent) 32%, transparent), 0 0 0 1px var(--accent);
 }
 
-.atlas-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 640px), 1fr)); }
-.atlas-card:first-child { grid-column: 1 / -1; }
-.atlas-card object { width: 100%; min-height: 300px; background: #0b1020; border-radius: 12px; }
-.atlas-card:first-child object { min-height: 420px; }
+.atlas-grid { grid-template-columns: 1fr; }
+.atlas-card object {
+  width: min(100%, 960px);
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
+  background: transparent;
+  border-radius: 18px;
+}
 .atlas-card { cursor: zoom-in; }
 .chart-tip {
   position: fixed;
@@ -404,20 +432,89 @@ html.v4-motion .lab-chart rect:not(:first-of-type) {
 .flag { font-size: 1.4rem; margin-right: 6px; }
 
 html[dir="rtl"] .world-ui { text-align: right; }
-html[dir="rtl"] .world-title, html[dir="rtl"] .world-lede { margin-left: auto; }
+html[dir="rtl"] .world-title, html[dir="rtl"] .world-lede { margin-left: 0; margin-inline: 0; }
 html[dir="rtl"] .uni-menu { flex-direction: row-reverse; }
 html[dir="rtl"] .world-dock { flex-direction: row-reverse; }
 html[dir="rtl"] .v4-sidebar { text-align: right; }
 
 @media (max-width: 720px) {
-  .world-ui { justify-content: flex-end; }
-  .world-dock { margin-top: 0; }
-  .world-hero, .world-ui { min-height: 100svh; }
-  .world-title { font-size: 2.4rem; }
+  body.home-world .world-ui { width: auto; margin-inline: 0; padding-bottom: 210px; }
+  .world-ui { justify-content: flex-start; }
+  .world-title { font-size: 2.2rem; }
   .world-hero .uni-menu a { padding: 8px 10px; }
+  .hud { inset: auto 8px 8px 8px; display: grid; grid-template-columns: 84px 1fr; gap: 6px; align-items: stretch; }
+  .hud-panel { position: relative; inset: auto; width: auto; max-width: none; transform: none; animation: none; padding: 8px; }
+  .hud-mascot { grid-row: 1 / span 2; width: auto; align-self: end; }
+  .hud-stats, .hud-themes { grid-column: 2; }
+  .hud-lang, .hud-audio { grid-column: 1 / -1; }
+  .hud-audio p { display: none; }
+  .hud-stats .fold-counts, .hud-themes .theme-switch { max-width: none; }
+  .hud-themes .theme-switch button, .hud-stats { font-size: 0.78rem; }
+  .progress-ring { width: 42px; height: 42px; }
+  .hud-mascot .mascot { width: 72px; height: 82px; display: block; }
   .tile-art { width: 88px; height: 76px; }
-  .atlas-dialog object { min-height: 200px; }
 }
+@media (min-width: 721px) {
+  .hud-mascot .mascot { width: 148px; height: 166px; display: block; }
+}
+.mascot-var { display: none; }
+.mascot-var.is-var { display: block; }
+html.v4-motion .mascot .eye { transform-box: fill-box; transform-origin: center; animation: eye-blink 4.2s infinite; }
+html.v4-motion .is-var .arm-wave { transform-box: fill-box; transform-origin: 10% 100%; animation: wave-arm 1.3s ease-in-out infinite; }
+html.v4-motion .is-var .tail { transform-box: fill-box; transform-origin: 0 0; animation: wave-arm 2.4s ease-in-out infinite; }
+.gl-icon, .gl-sprite { width: 84px; height: 84px; display: block; object-fit: contain; filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45)); }
+.room-code .gl-sprite { width: 36px; height: 36px; }
+.mt-flag { margin: 0 0 8px; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--gold, #fde68a); }
+body.canon-world {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(34, 211, 238, 0.2), transparent 26%),
+    radial-gradient(circle at 92% 6%, rgba(244, 114, 182, 0.18), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(129, 140, 248, 0.12), transparent 28%),
+    var(--bg);
+}
+.stage-banner {
+  position: relative;
+  min-height: 240px;
+  margin: 0 0 12px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(115deg, #083344, #312e81 48%, #9d174d);
+}
+.stage-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(#000, transparent 85%);
+}
+.stage-orb {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: 6%;
+  top: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde68a, #22d3ee 42%, transparent 70%);
+  opacity: 0.85;
+}
+html.v4-motion .stage-orb { animation: hud-float 8s ease-in-out infinite; }
+.stage-banner .gl-sprite { position: absolute; left: 22px; bottom: 16px; width: 96px; height: 96px; }
+.stage-kicker { position: absolute; left: 132px; bottom: 28px; margin: 0; color: #fff; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+body.canon-world .uni-menu a,
+body.canon-world .atlas-card,
+body.canon-world .chart-card,
+body.canon-world .track-card,
+body.canon-world .career-grid article,
+body.canon-world .region-grid article {
+  background: color-mix(in srgb, var(--card-bg) 78%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28), 0 0 18px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+body.canon-world h1 { text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 45%, transparent); }
+.atlas-dialog { width: min(1200px, 100%); }
+.atlas-dialog object { width: 100%; aspect-ratio: 4 / 3; height: auto; min-height: 0; background: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .world-hero::before, .mascot-row svg, .mascot-row .eye, .mascot-row .wave, .lab-chart rect { animation: none !important; }
 }

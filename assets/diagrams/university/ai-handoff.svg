@@ -1,9 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" role="img" aria-label="AI agent handoff">
-<rect width="980" height="240" rx="20" fill="#0b1020"/>
-<text x="28" y="40" fill="#f8fafc" font-size="22" font-family="system-ui,sans-serif" font-weight="700">AI agent handoff</text>
-<text x="28" y="64" fill="#94a3b8" font-size="13" font-family="system-ui,sans-serif">Bring-your-own virtual agent must escalate with AGENT_TRANSFER.</text>
-<rect x="36" y="78" width="200" height="72" rx="16" fill="#22d3ee"/><text x="136" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Caller</text><rect x="266" y="78" width="200" height="72" rx="16" fill="#a5b4fc"/><text x="366" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Virtual agent</text><path d="M236 114 H266" stroke="#e2e8f0" stroke-width="3" fill="none"/><rect x="496" y="78" width="200" height="72" rx="16" fill="#fbbf24"/><text x="596" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">AGENT_TRANSFER</text><path d="M466 114 H496" stroke="#e2e8f0" stroke-width="3" fill="none"/><rect x="726" y="78" width="200" height="72" rx="16" fill="#fb7185"/><text x="826" y="120" text-anchor="middle" fill="#0b1020" font-size="15" font-family="system-ui,sans-serif" font-weight="700">Human queue</text><path d="M696 114 H726" stroke="#e2e8f0" stroke-width="3" fill="none"/>
-<circle r="7" fill="#fde68a">
-<animateMotion dur="4.8s" repeatCount="indefinite" path="M136 114 H266 V114 H496 V114 H726"/>
-</circle>
+<svg data-palette="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="AI agent handoff">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c4a6e"/><stop offset="0.5" stop-color="#4338ca"/><stop offset="1" stop-color="#9d174d"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.55">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 18; 0 0" dur="14s" repeatCount="indefinite"/>
+<circle cx="180" cy="160" r="90" fill="#22d3ee" opacity="0.25"/>
+<circle cx="980" cy="220" r="120" fill="#f472b6" opacity="0.2"/>
+<circle cx="640" cy="760" r="140" fill="#fbbf24" opacity="0.16"/>
+</g>
+<g opacity="0.35" stroke="#67e8f9" stroke-width="1">
+<animateTransform attributeName="transform" type="translate" values="0 0; -12 8; 0 0" dur="18s" repeatCount="indefinite"/>
+<line x1="80" y1="140" x2="40" y2="820" />
+<line x1="150" y1="140" x2="118" y2="820" />
+<line x1="220" y1="140" x2="196" y2="820" />
+<line x1="290" y1="140" x2="274" y2="820" />
+<line x1="360" y1="140" x2="352" y2="820" />
+<line x1="430" y1="140" x2="430" y2="820" />
+<line x1="500" y1="140" x2="508" y2="820" />
+<line x1="570" y1="140" x2="586" y2="820" />
+<line x1="640" y1="140" x2="664" y2="820" />
+<line x1="710" y1="140" x2="742" y2="820" />
+<line x1="780" y1="140" x2="820" y2="820" />
+<line x1="850" y1="140" x2="898" y2="820" />
+<line x1="920" y1="140" x2="976" y2="820" />
+<line x1="990" y1="140" x2="1054" y2="820" />
+<line x1="1060" y1="140" x2="1132" y2="820" />
+<line x1="1130" y1="140" x2="1210" y2="820" />
+</g>
+<text x="64" y="72" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">AI agent handoff</text>
+<text x="64" y="112" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">Bring-your-own virtual agent must escalate with AGENT_TRANSFER.</text>
+<path d="M 250 266 C 250 356 750 160 750 266 C 750 356 250 370 250 476 C 250 566 750 370 750 476" fill="none" stroke="#fde68a" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+<g class="hop"><rect x="80" y="248" width="300" height="108" rx="22" fill="#020617" opacity="0.45"/><rect x="80" y="230" width="300" height="108" rx="22" fill="#22d3ee"/><rect x="80" y="230" width="300" height="28" rx="14" fill="#ffffff" opacity="0.28"/><text x="230" y="292" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Caller</text><text x="230" y="316" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="580" y="248" width="300" height="108" rx="22" fill="#020617" opacity="0.45"/><rect x="580" y="230" width="300" height="108" rx="22" fill="#a5b4fc"/><rect x="580" y="230" width="300" height="28" rx="14" fill="#ffffff" opacity="0.28"/><text x="730" y="292" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Virtual agent</text><text x="730" y="316" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="80" y="458" width="300" height="108" rx="22" fill="#020617" opacity="0.45"/><rect x="80" y="440" width="300" height="108" rx="22" fill="#fbbf24"/><rect x="80" y="440" width="300" height="28" rx="14" fill="#ffffff" opacity="0.28"/><text x="230" y="502" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">AGENT_TRANSFER</text><text x="230" y="526" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="580" y="458" width="300" height="108" rx="22" fill="#020617" opacity="0.45"/><rect x="580" y="440" width="300" height="108" rx="22" fill="#fb7185"/><rect x="580" y="440" width="300" height="28" rx="14" fill="#ffffff" opacity="0.28"/><text x="730" y="502" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Human queue</text><text x="730" y="526" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="6.5s" repeatCount="indefinite" path="M 250 266 C 250 356 750 160 750 266 C 750 356 250 370 250 476 C 250 566 750 370 750 476"/>
+<circle r="18" fill="#fde68a" opacity="0.45"/>
+<circle r="8" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
 </svg>

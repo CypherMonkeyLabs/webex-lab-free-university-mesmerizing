@@ -171,7 +171,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v6").then(function (cache) {
+    return caches.open("webex-university-v7").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -292,6 +292,12 @@
   iconJs.type = "module";
   iconJs.src = rootPrefix + "assets/js/track-icons.js";
   document.body.appendChild(iconJs);
+  if (!document.body.classList.contains("home-world")) {
+    var backdropJs = document.createElement("script");
+    backdropJs.type = "module";
+    backdropJs.src = rootPrefix + "assets/js/page-backdrop.js";
+    document.body.appendChild(backdropJs);
+  }
   var wowJs = document.createElement("script");
   wowJs.src = rootPrefix + "assets/js/wow.js";
   wowJs.async = false;

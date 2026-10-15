@@ -5,14 +5,14 @@
   var root = document.documentElement;
 
   var COPY = {
-    en: { greeting: "Learn the Canon in orbit.", lede: "Sixty-three rooms. Watch the call path, then open a track.", kicker: "Webex study · 8 tracks · offline", diagrams: "Diagrams", flows: "Flows", charts: "Charts", cheat: "Cheat Codes", play: "Play", ecosystem: "Ecosystem", downloads: "Downloads", careers: "Careers", regions: "Countries and residency", audioTitle: "Architect desk", langName: "Language" },
-    es: { greeting: "Aprende el Canon en órbita.", lede: "Sesenta y tres salas. Mira la ruta de la llamada y abre una pista.", kicker: "Estudio Webex · 8 pistas · sin red", diagrams: "Diagramas", flows: "Flujos", charts: "Gráficos", cheat: "Chuletas", play: "Jugar", ecosystem: "Ecosistema", downloads: "Descargas", careers: "Carreras", regions: "Países y residencia", audioTitle: "Mesa de arquitectos", langName: "Idioma" },
-    hi: { greeting: "कैनन को रंगों में सीखें।", lede: "तिरसठ कमरे। कॉल पथ देखें, फिर एक ट्रैक खोलें।", kicker: "वेबेक्स अध्ययन · 8 ट्रैक · ऑफ़लाइन", diagrams: "आरेख", flows: "प्रवाह", charts: "चार्ट", cheat: "चीट कोड", play: "खेल", ecosystem: "पारिस्थितिकी", downloads: "डाउनलोड", careers: "करियर", regions: "देश और डेटा निवास", audioTitle: "आर्किटेक्ट डेस्क", langName: "भाषा" },
-    te: { greeting: "క్యానన్‌ను కక్ష్యలో నేర్చుకోండి.", lede: "అరవై మూడు గదులు. కాల్ మార్గం చూడండి, తర్వాత ట్రాక్ తెరవండి.", kicker: "వెబెక్స్ అధ్యయనం · 8 ట్రాక్‌లు · ఆఫ్‌లైన్", diagrams: "రేఖాచిత్రాలు", flows: "ప్రవాహాలు", charts: "చార్టులు", cheat: "చీట్ కోడ్స్", play: "ఆట", ecosystem: "పర్యావరణం", downloads: "డౌన్‌లోడ్‌లు", careers: "కెరీర్", regions: "దేశాలు మరియు డేటా నివాసం", audioTitle: "ఆర్కిటెక్ట్ డెస్క్", langName: "భాష" },
-    fr: { greeting: "Apprenez le Canon en orbite.", lede: "Soixante-trois salles. Suivez le chemin d'appel, puis ouvrez une piste.", kicker: "Étude Webex · 8 pistes · hors ligne", diagrams: "Schémas", flows: "Flux", charts: "Graphiques", cheat: "Antisèches", play: "Jouer", ecosystem: "Écosystème", downloads: "Téléchargements", careers: "Carrières", regions: "Pays et résidence", audioTitle: "Bureau des architectes", langName: "Langue" },
-    de: { greeting: "Lerne den Canon in der Umlaufbahn.", lede: "Dreiundsechzig Räume. Folge dem Anrufpfad und öffne dann einen Track.", kicker: "Webex-Studium · 8 Tracks · offline", diagrams: "Diagramme", flows: "Flüsse", charts: "Charts", cheat: "Spickzettel", play: "Spielen", ecosystem: "Ökosystem", downloads: "Downloads", careers: "Karriere", regions: "Länder und Residenz", audioTitle: "Architektentisch", langName: "Sprache" },
-    ja: { greeting: "軌道でキヤノンを学ぶ。", lede: "63の部屋。通話経路を見てからトラックを開く。", kicker: "Webex学習 · 8トラック · オフライン", diagrams: "図", flows: "フロー", charts: "チャート", cheat: "チートコード", play: "プレイ", ecosystem: "エコシステム", downloads: "ダウンロード", careers: "キャリア", regions: "国とデータ居住地", audioTitle: "設計者の机", langName: "言語" },
-    ar: { greeting: "تعلّم القانون في المدار.", lede: "ثلاث وستون غرفة. شاهد مسار المكالمة ثم افتح مساراً.", kicker: "دراسة ويبيكس · ٨ مسارات · دون اتصال", diagrams: "مخططات", flows: "تدفقات", charts: "رسوم", cheat: "أوراق الغش", play: "لعب", ecosystem: "المنظومة", downloads: "تنزيلات", careers: "مهن", regions: "البلدان وإقامة البيانات", audioTitle: "مكتب المهندسين", langName: "اللغة" }
+    en: { greeting: "Learn the Canon in orbit.", lede: "Sixty-three rooms. Watch the call path, then open a track.", kicker: "Webex study · 8 tracks · offline", diagrams: "Diagrams", flows: "Flows", charts: "Charts", cheat: "Cheat Codes", play: "Play", ecosystem: "Ecosystem", downloads: "Downloads", careers: "Careers", regions: "Countries and residency", audioTitle: "Architect desk", langName: "Language", sheet: "Scene controls" },
+    es: { greeting: "Aprende el Canon en órbita.", lede: "Sesenta y tres salas. Mira la ruta de la llamada y abre una pista.", kicker: "Estudio Webex · 8 pistas · sin red", diagrams: "Diagramas", flows: "Flujos", charts: "Gráficos", cheat: "Chuletas", play: "Jugar", ecosystem: "Ecosistema", downloads: "Descargas", careers: "Carreras", regions: "Países y residencia", audioTitle: "Mesa de arquitectos", langName: "Idioma", sheet: "Controles de la escena" },
+    hi: { greeting: "कैनन को रंगों में सीखें।", lede: "तिरसठ कमरे। कॉल पथ देखें, फिर एक ट्रैक खोलें।", kicker: "वेबेक्स अध्ययन · 8 ट्रैक · ऑफ़लाइन", diagrams: "आरेख", flows: "प्रवाह", charts: "चार्ट", cheat: "चीट कोड", play: "खेल", ecosystem: "पारिस्थितिकी", downloads: "डाउनलोड", careers: "करियर", regions: "देश और डेटा निवास", audioTitle: "आर्किटेक्ट डेस्क", langName: "भाषा", sheet: "दृश्य नियंत्रण" },
+    te: { greeting: "క్యానన్‌ను కక్ష్యలో నేర్చుకోండి.", lede: "అరవై మూడు గదులు. కాల్ మార్గం చూడండి, తర్వాత ట్రాక్ తెరవండి.", kicker: "వెబెక్స్ అధ్యయనం · 8 ట్రాక్‌లు · ఆఫ్‌లైన్", diagrams: "రేఖాచిత్రాలు", flows: "ప్రవాహాలు", charts: "చార్టులు", cheat: "చీట్ కోడ్స్", play: "ఆట", ecosystem: "పర్యావరణం", downloads: "డౌన్‌లోడ్‌లు", careers: "కెరీర్", regions: "దేశాలు మరియు డేటా నివాసం", audioTitle: "ఆర్కిటెక్ట్ డెస్క్", langName: "భాష", sheet: "దృశ్య నియంత్రణలు" },
+    fr: { greeting: "Apprenez le Canon en orbite.", lede: "Soixante-trois salles. Suivez le chemin d'appel, puis ouvrez une piste.", kicker: "Étude Webex · 8 pistes · hors ligne", diagrams: "Schémas", flows: "Flux", charts: "Graphiques", cheat: "Antisèches", play: "Jouer", ecosystem: "Écosystème", downloads: "Téléchargements", careers: "Carrières", regions: "Pays et résidence", audioTitle: "Bureau des architectes", langName: "Langue", sheet: "Contrôles de la scène" },
+    de: { greeting: "Lerne den Canon in der Umlaufbahn.", lede: "Dreiundsechzig Räume. Folge dem Anrufpfad und öffne dann einen Track.", kicker: "Webex-Studium · 8 Tracks · offline", diagrams: "Diagramme", flows: "Flüsse", charts: "Charts", cheat: "Spickzettel", play: "Spielen", ecosystem: "Ökosystem", downloads: "Downloads", careers: "Karriere", regions: "Länder und Residenz", audioTitle: "Architektentisch", langName: "Sprache", sheet: "Szenenregler" },
+    ja: { greeting: "軌道でキヤノンを学ぶ。", lede: "63の部屋。通話経路を見てからトラックを開く。", kicker: "Webex学習 · 8トラック · オフライン", diagrams: "図", flows: "フロー", charts: "チャート", cheat: "チートコード", play: "プレイ", ecosystem: "エコシステム", downloads: "ダウンロード", careers: "キャリア", regions: "国とデータ居住地", audioTitle: "設計者の机", langName: "言語", sheet: "シーンの操作" },
+    ar: { greeting: "تعلّم القانون في المدار.", lede: "ثلاث وستون غرفة. شاهد مسار المكالمة ثم افتح مساراً.", kicker: "دراسة ويبيكس · ٨ مسارات · دون اتصال", diagrams: "مخططات", flows: "تدفقات", charts: "رسوم", cheat: "أوراق الغش", play: "لعب", ecosystem: "المنظومة", downloads: "تنزيلات", careers: "مهن", regions: "البلدان وإقامة البيانات", audioTitle: "مكتب المهندسين", langName: "اللغة", sheet: "عناصر المشهد" }
   };
   var LANGS = ["en", "es", "hi", "te", "fr", "de", "ja", "ar"];
 
@@ -321,7 +321,15 @@
 
   function mountHud() {
     var hud = document.querySelector("[data-hud]");
-    if (!hud || reduce) return;
+    if (!hud) return;
+    var toggle = hud.querySelector(".hud-sheet-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        var open = hud.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+    if (reduce || window.matchMedia("(max-width: 720px)").matches) return;
     window.addEventListener("pointermove", function (event) {
       var px = (event.clientX / window.innerWidth) - 0.5;
       var py = (event.clientY / window.innerHeight) - 0.5;

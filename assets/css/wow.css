@@ -161,7 +161,7 @@ html[data-hero="flat"] .world-hero::after {
   min-height: calc(100svh - 104px);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 14px;
   padding: 28px 4vw 22px;
   pointer-events: none;
@@ -234,6 +234,7 @@ html[data-hero="flat"] .world-hero::after {
 .world-hero .uni-menu { position: relative; top: auto; background: transparent; backdrop-filter: none; }
 
 .world-dock {
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
@@ -388,7 +389,7 @@ html.v4-motion .lab-chart rect:not(:first-of-type) {
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
   padding: 16px;
 }
-.atlas-dialog object { width: 100%; min-height: 320px; background: #0b1020; }
+.atlas-dialog object { width: 100%; min-height: min(68vh, 640px); background: #0b1020; }
 .atlas-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0; font-size: 0.85rem; }
 .atlas-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 99px; margin-right: 6px; }
 .atlas-why { margin: 0 0 8px; }
@@ -409,7 +410,9 @@ html[dir="rtl"] .world-dock { flex-direction: row-reverse; }
 html[dir="rtl"] .v4-sidebar { text-align: right; }
 
 @media (max-width: 720px) {
-  .world-hero, .world-ui { min-height: calc(100svh - 120px); }
+  .world-ui { justify-content: flex-end; }
+  .world-dock { margin-top: 0; }
+  .world-hero, .world-ui { min-height: 100svh; }
   .world-title { font-size: 2.4rem; }
   .world-hero .uni-menu a { padding: 8px 10px; }
   .tile-art { width: 88px; height: 76px; }

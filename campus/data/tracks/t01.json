@@ -1,0 +1,1844 @@
+{
+  "id": "t01",
+  "title": "Foundations",
+  "blurb": "What sits in a Webex organization, which protocols the calling path actually uses, and which documents this lab will trust.",
+  "level": "Foundation",
+  "lessons": [
+    {
+      "id": "map",
+      "title": "The Webex platform map",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Control Hub is the admin surface. Calling, meetings, messaging, devices, Contact Center, and Dedicated Instance are services of one organization, not separate products with separate identity stores.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the admin portal",
+        "Separate multi-tenant calling from Dedicated Instance",
+        "Place Contact Center and devices on the same map"
+      ],
+      "diagram": {
+        "caption": "Control Hub administers Calling, Dedicated Instance, Contact Center, and devices.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "admin.webex.com",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex Calling",
+            "sub": "multi-tenant",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dedicated Instance",
+            "sub": "Unified CM add-on",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Contact Center",
+            "sub": "flows and queues",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "Devices",
+            "sub": "MPP and RoomOS",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "service"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "add-on"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "service"
+          },
+          {
+            "from": "n0",
+            "to": "n4",
+            "label": "claim"
+          }
+        ]
+      },
+      "flow": {
+        "title": "An administrator opens the organization",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Control Hub",
+            "label": "Sign in",
+            "detail": "The customer view is the organization you are about to change.",
+            "inspect": "GET https://admin.webex.com as a full administrator.",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Calling",
+            "label": "Open Calling",
+            "detail": "Locations, PSTN, features, and Dedicated Instance live under Calling.",
+            "inspect": "Services > Calling",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Contact Center",
+            "label": "Open Contact Center",
+            "detail": "Flows and queues are a different service from Webex Calling call queues.",
+            "inspect": "Contact Center service, not Calling > Features > Call Queue",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Devices",
+            "label": "Open Devices",
+            "detail": "Phones and RoomOS devices are claimed into the same organization.",
+            "inspect": "Devices list",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "One organization",
+          "paragraphs": [
+            "Administrators work in Control Hub. Webex Calling configuration, including locations and PSTN, is documented as an organization-level task, not a per-phone task.",
+            "Dedicated Instance is an add-on to Webex Calling. It includes Unified CM, optional IM and Presence, Unity Connection, Expressway, and Emergency Responder in the Americas. It is not a second Control Hub."
+          ],
+          "cite": {
+            "label": "Introduction to Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "Two different queues",
+          "paragraphs": [
+            "A Webex Calling call queue is a calling feature for a location. A Webex Contact Center queue is a routing object used by Flow Designer and the agent desktop.",
+            "Mixing those names in a design review is how a hunt-pilot migration lands in the wrong product. The migration tools for Unified CM features produce Calling CSVs, not Contact Center flows."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which portal administers a Webex organization?",
+          "choices": [
+            "Control Hub",
+            "The RedSky admin portal only",
+            "Expressway-E",
+            "A UCCX editor"
+          ],
+          "answer": 0,
+          "why": "Calling, devices, and Contact Center are administered from Control Hub.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Dedicated Instance is best described as",
+          "choices": [
+            "An add-on to Webex Calling that runs Unified CM applications",
+            "A rename of Webex Calling multi-tenant",
+            "A Contact Center flow",
+            "A phone firmware"
+          ],
+          "answer": 0,
+          "why": "Cisco's introduction lists Unified CM, Unity Connection, Expressway, and related apps as the Dedicated Instance add-on.",
+          "cite": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+        },
+        {
+          "q": "A Webex Calling call queue and a Contact Center queue are",
+          "choices": [
+            "Different features in different services",
+            "The same object with two names",
+            "Both stored on the local gateway",
+            "Both Unity Connection call handlers"
+          ],
+          "answer": 0,
+          "why": "Calling features and Contact Center routing are documented in different articles and admin paths.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Where do RoomOS devices get claimed?",
+          "choices": [
+            "The same Control Hub organization",
+            "Only on the Unified CM publisher",
+            "Only in the RedSky portal",
+            "Only in Flow Designer"
+          ],
+          "answer": 0,
+          "why": "Devices are an organization resource reached from Control Hub.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Migration of Unified CM hunt pilots is aimed at",
+          "choices": [
+            "Webex Calling features such as call queues and hunt groups",
+            "Flow Designer activities",
+            "RoomOS macros",
+            "xAPI commands"
+          ],
+          "answer": 0,
+          "why": "The migrate-features article produces Calling CSV files such as CallQueueBulk.csv.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Which statement is safe to tell a new admin?",
+          "choices": [
+            "Start in Control Hub, then choose the service you are changing",
+            "Every calling change is made on the CUBE CLI",
+            "Contact Center queues are edited under Calling > Call Queue",
+            "Dedicated Instance replaces Control Hub"
+          ],
+          "answer": 0,
+          "why": "The configuration articles start from the customer view in Control Hub.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Control Hub",
+          "back": "The admin portal for the Webex organization."
+        },
+        {
+          "front": "Dedicated Instance",
+          "back": "Private-cloud Unified CM, Unity Connection, and Expressway, sold as a Webex Calling add-on."
+        },
+        {
+          "front": "Calling call queue",
+          "back": "A Webex Calling location feature, not a Contact Center queue."
+        },
+        {
+          "front": "admin.webex.com",
+          "back": "The customer view Cisco's articles tell you to open."
+        }
+      ],
+      "lab": {
+        "title": "Draw your own map",
+        "goal": "Sketch the services this organization actually bought before you click.",
+        "steps": [
+          {
+            "do": "List Control Hub, Calling, and any Dedicated Instance region",
+            "expect": "You can point at a doc for each box"
+          },
+          {
+            "do": "Mark whether queues are Calling features or Contact Center queues",
+            "expect": "The two are not combined"
+          },
+          {
+            "do": "Note where devices are claimed",
+            "expect": "Control Hub devices, not a side spreadsheet"
+          }
+        ],
+        "check": "The map names the admin surface and does not merge the two queue types."
+      },
+      "fault": {
+        "title": "Wrong queue in the design",
+        "symptom": "A site wants 'the queue' migrated and nobody knows which product.",
+        "log": "SYNTHETIC design note: hunt pilot 4500 flagged isCallQueue=true in Migration Insights, while UCCX also has an application named Support.",
+        "cause": "The Unified CM hunt pilot is a Calling feature. The UCCX application is a contact-center script. They do not migrate with the same tool.",
+        "fix": "Split the inventory. Use Migration Insights for the hunt pilot. Redesign the UCCX application in Flow Designer.",
+        "cite": {
+          "label": "Migration Insights",
+          "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        }
+      }
+    },
+    {
+      "id": "models",
+      "title": "Three calling models",
+      "level": "foundation",
+      "minutes": 16,
+      "summary": "Multi-tenant Webex Calling, Dedicated Instance, and on-premises Unified CM can all exist in one design. The local gateway is how the premises system meets the cloud.",
+      "uncertainty": "",
+      "objectives": [
+        "Contrast the three call-control homes",
+        "Say what the local gateway is for",
+        "Remember the interop trunk into Dedicated Instance"
+      ],
+      "diagram": {
+        "caption": "Cloud users, a Dedicated Instance cluster, and an on-premises Unified CM meet at the local gateway.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Webex Calling",
+            "sub": "multi-tenant users",
+            "x": 40,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Local Gateway",
+            "sub": "CUBE or supported SBC",
+            "x": 250,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Unified CM",
+            "sub": "on premises",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Dedicated Instance",
+            "sub": "hosted Unified CM",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "trunk"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "SIP"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "interop"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A call leaves a Webex Calling user for an on-prem extension",
+        "steps": [
+          {
+            "from": "Webex user",
+            "to": "Webex Calling",
+            "label": "Dial an on-prem extension",
+            "detail": "Webex Calling does not see Unified CM extensions unless a dial plan or the location PSTN points them at a trunk.",
+            "inspect": "No matching Webex Calling destination",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Local Gateway",
+            "label": "Hand off",
+            "detail": "Unmatched calls go to the local gateway for that premises path.",
+            "inspect": "SIP toward the gateway",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Local Gateway",
+            "to": "Unified CM",
+            "label": "Deliver",
+            "detail": "Unified CM routes with its own dial plan, which the workflow guide expects to be normalized to +E.164.",
+            "inspect": "+E.164 route patterns back toward Webex Calling DIDs",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Dedicated Instance",
+            "label": "Interop",
+            "detail": "Dedicated Instance activation also builds SIP connectivity to multi-tenant calling. You still activate the interop trunk.",
+            "inspect": "Calling > Dedicated Instance",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What each model owns",
+          "paragraphs": [
+            "Multi-tenant Webex Calling hosts the users you configure with locations, numbers, and calling features in Control Hub.",
+            "Dedicated Instance is still Unified CM, Unity Connection, and Expressway, deployed by Cisco in a private instance and cross-launched from Control Hub. On-premises Unified CM stays yours, including the dial plan and the PSTN gateways you already run."
+          ],
+          "cite": {
+            "label": "Introduction to Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "The edge",
+          "paragraphs": [
+            "The configuration workflow describes the local gateway as the enterprise or partner edge for PSTN and for legacy PBX interworking, including Unified CM.",
+            "Cisco's hypothetical Dedicated Instance stories are labeled hypothetical. Use them as architecture patterns, not as claims about a named customer."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The local gateway is",
+          "choices": [
+            "The premises edge for PSTN and PBX interworking, including Unified CM",
+            "A Contact Center queue",
+            "A RedSky wiremap",
+            "A Webex bot"
+          ],
+          "answer": 0,
+          "why": "The workflow article defines the local gateway that way.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Dedicated Instance call control is",
+          "choices": [
+            "Cisco Unified CM in a Cisco-hosted private instance",
+            "Only the Webex Calling multi-tenant service",
+            "UCCX",
+            "A soft client"
+          ],
+          "answer": 0,
+          "why": "The introduction lists Unified CM as part of the add-on.",
+          "cite": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+        },
+        {
+          "q": "Calls from Webex Calling that do not match a Webex Calling destination",
+          "choices": [
+            "Are sent to the local gateway when that premises path is in use",
+            "Are dropped without a trace",
+            "Always use Cisco Calling Plan",
+            "Go to the agent desktop"
+          ],
+          "answer": 0,
+          "why": "The workflow guide states that unmatched destinations, including PSTN numbers and Unified CM extensions, go to the local gateway.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "The interop SIP trunk is",
+          "choices": [
+            "Between Dedicated Instance and multi-tenant Webex Calling",
+            "Between a bot and a webhook",
+            "Inside Flow Designer",
+            "A 933 test call"
+          ],
+          "answer": 0,
+          "why": "Activation establishes that connectivity and tells you to activate the interop trunk.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Cisco's Dedicated Instance 'customer' chapters are",
+          "choices": [
+            "Hypothetical scenarios Cisco published",
+            "Named production case studies you can quote as fact",
+            "UCCE scripts",
+            "Port numbers"
+          ],
+          "answer": 0,
+          "why": "The deployment-models article says the customers are hypothetical.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "On-premises Unified CM dial plans in the Webex Calling workflow are expected to",
+          "choices": [
+            "Normalize destinations to +E.164",
+            "Stay on 4-digit dialing end to end with no normalization",
+            "Use only 933",
+            "Use xAPI"
+          ],
+          "answer": 0,
+          "why": "The workflow guide says the Unified CM dial plan normalizes numbers to +E.164.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Multi-tenant Webex Calling",
+          "back": "Users, locations, and PSTN choices configured in Control Hub."
+        },
+        {
+          "front": "Local gateway",
+          "back": "Premises SIP edge, often a CUBE, that registers or presents a certificate trunk to Webex Calling."
+        },
+        {
+          "front": "Interop trunk",
+          "back": "SIP between Dedicated Instance and multi-tenant Webex Calling."
+        },
+        {
+          "front": "Hypothetical DI stories",
+          "back": "Cisco's deployment-model article. Do not treat them as named customers."
+        }
+      ],
+      "lab": {
+        "title": "Name the call control for each site",
+        "goal": "For three imagined sites, write which system owns the extension.",
+        "steps": [
+          {
+            "do": "Site A users live only in Control Hub",
+            "expect": "Webex Calling multi-tenant"
+          },
+          {
+            "do": "Site B still registers phones to a publisher you patch",
+            "expect": "On-premises Unified CM, reached through a local gateway"
+          },
+          {
+            "do": "Site C is a hosted Unified CM Cisco sized from the setup wizard",
+            "expect": "Dedicated Instance"
+          }
+        ],
+        "check": "Each site has one call-control home, and the gateway or interop trunk is named where two homes meet."
+      },
+      "fault": {
+        "title": "Extensions that never leave the cloud",
+        "symptom": "Webex users dial a 4-digit extension that exists only on Unified CM and get reorder.",
+        "log": "SYNTHETIC: Webex Calling CDR shows the number unknown; the cube has no INVITE.",
+        "cause": "Nothing in Webex Calling matches that extension, and no dial plan or location route sends it to the local gateway.",
+        "fix": "Add a dial plan pattern for the on-prem range, pointed at the trunk or route group, or fix the location PSTN path the workflow describes.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "sip",
+      "title": "SIP and E.164 for this cloud",
+      "level": "foundation",
+      "minutes": 15,
+      "summary": "Webex Calling speaks SIP. Numbers that cross a trunk are safest in +E.164. This lesson is the minimum signaling vocabulary the rest of the lab assumes.",
+      "uncertainty": "",
+      "objectives": [
+        "Read a SIP INVITE as a request, not a string dump",
+        "Write a number in +E.164",
+        "Know which RFC names the tel URI"
+      ],
+      "diagram": {
+        "caption": "An INVITE carries a request-URI. +E.164 is the form Unified CM and Webex Calling exchange.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "User",
+            "sub": "dials a habit",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex Calling",
+            "sub": "normalizes",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "SIP INVITE",
+            "sub": "request-URI",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "+E.164",
+            "sub": "ITU-T E.164",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "digits"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "SIP"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "tel"
+          }
+        ]
+      },
+      "flow": {
+        "title": "From a dialing habit to a SIP request",
+        "steps": [
+          {
+            "from": "Phone",
+            "to": "Webex Calling",
+            "label": "Digits",
+            "detail": "The user dials an extension, a national number, or an emergency number. The location's dialing settings decide what those digits mean.",
+            "inspect": "External dial digit, extension length, routing prefix",
+            "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Dial plan",
+            "label": "Match or miss",
+            "detail": "Enterprise dial plans match patterns and choose a trunk or route group.",
+            "inspect": "Pattern such as +1804555XXXX",
+            "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Local Gateway",
+            "label": "INVITE",
+            "detail": "SIP is the session protocol. RFC 3261 defines the request that starts a dialog.",
+            "inspect": "INVITE sip:+18045551212@gateway",
+            "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+          },
+          {
+            "from": "Gateway",
+            "to": "Unified CM",
+            "label": "+E.164",
+            "detail": "The workflow guide expects Unified CM to normalize to +E.164 so one set of route patterns covers every dialing habit.",
+            "inspect": "Called party +E.164",
+            "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "SIP is the session, not the audio",
+          "paragraphs": [
+            "RFC 3261 defines SIP methods such as INVITE, ACK, BYE, and REGISTER, and the response classes 1xx through 6xx. Media is separate, most often RTP protected with SRTP.",
+            "A local gateway failure is often a SIP failure: TLS handshake, certificate name, or a trunk that never registers. The audio codecs do not matter until the dialog exists."
+          ],
+          "cite": {
+            "label": "RFC 3711, SRTP",
+            "url": "https://www.rfc-editor.org/rfc/rfc3711"
+          }
+        },
+        {
+          "h": "E.164 and the tel URI",
+          "paragraphs": [
+            "ITU-T E.164 is the international public numbering plan. Writing a number as + followed by the country code and the national number is the form Cisco's Webex Calling workflow uses between Unified CM and the cloud.",
+            "RFC 3966 defines the tel URI. You will see both tel and sip forms in traces. Do not invent a private numbering plan and call it E.164."
+          ],
+          "cite": {
+            "label": "ITU-T E.164",
+            "url": "https://www.itu.int/rec/T-REC-E.164"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which RFC defines SIP?",
+          "choices": [
+            "RFC 3261",
+            "RFC 4119",
+            "RFC 5985",
+            "RFC 8445"
+          ],
+          "answer": 0,
+          "why": "RFC 3261 is the SIP specification. The others are location, HELD, and ICE.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+        },
+        {
+          "q": "+E.164 refers to",
+          "choices": [
+            "The ITU-T international public numbering plan, written with a leading +",
+            "A four-digit extension",
+            "A SIP response code",
+            "A RoomOS command"
+          ],
+          "answer": 0,
+          "why": "E.164 is the ITU recommendation. The Webex workflow uses the + form.",
+          "cite": "https://www.itu.int/rec/T-REC-E.164"
+        },
+        {
+          "q": "The tel URI is specified in",
+          "choices": [
+            "RFC 3966",
+            "RFC 3261 only",
+            "The FCC 911 page",
+            "Flow Designer"
+          ],
+          "answer": 0,
+          "why": "RFC 3966 is the tel URI.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3966"
+        },
+        {
+          "q": "SRTP is",
+          "choices": [
+            "Encrypted RTP, specified in RFC 3711",
+            "A dial-plan pattern",
+            "A Control Hub role",
+            "A license name"
+          ],
+          "answer": 0,
+          "why": "The port reference lists SRTP media toward Webex Calling. RFC 3711 specifies SRTP.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3711"
+        },
+        {
+          "q": "In the Unified CM integration guide, dialing habits are handled by",
+          "choices": [
+            "Normalizing to +E.164 and using one set of route patterns",
+            "A different route pattern for every possible habit with no normalization",
+            "xAPI",
+            "A bot webhook"
+          ],
+          "answer": 0,
+          "why": "The workflow article describes normalization translation patterns and +E.164 route patterns.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "A 200 response in SIP means",
+          "choices": [
+            "Success for that request",
+            "The call is an emergency",
+            "The trunk certificate is invalid",
+            "The queue is full"
+          ],
+          "answer": 0,
+          "why": "SIP response classes are part of RFC 3261. 2xx is success.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+        }
+      ],
+      "cards": [
+        {
+          "front": "INVITE",
+          "back": "The SIP request that asks to open a session."
+        },
+        {
+          "front": "+E.164",
+          "back": "Country code plus national number, with a leading plus."
+        },
+        {
+          "front": "RFC 3966",
+          "back": "The tel URI."
+        },
+        {
+          "front": "SRTP",
+          "back": "The profile that encrypts RTP. RFC 3711."
+        }
+      ],
+      "lab": {
+        "title": "Rewrite five numbers",
+        "goal": "Turn dialing habits into +E.164 and mark the ones you cannot.",
+        "steps": [
+          {
+            "do": "18045551212",
+            "expect": "+18045551212"
+          },
+          {
+            "do": "8045551212, US national",
+            "expect": "+18045551212, and say you assumed country code 1"
+          },
+          {
+            "do": "A 4-digit extension 2100",
+            "expect": "Not E.164. It stays an extension."
+          }
+        ],
+        "check": "Public numbers gained a plus and a country code. Extensions were not forced into E.164."
+      },
+      "fault": {
+        "title": "A trace full of 403",
+        "symptom": "The local gateway answers the INVITE with 403 and the call never rings.",
+        "log": "SYNTHETIC: SIP/2.0 403 Forbidden, Reason: certificate name mismatch on the trunk FQDN.",
+        "cause": "The name Webex Calling expects on the certificate is not the name presented. The trunk article shows CN or SAN must match the FQDN or SRV identity.",
+        "fix": "Present a certificate whose CN or SAN matches the trunk address, then retest one call.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "identity",
+      "title": "Identity, directory sync, and SSO",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "Control Hub is the identity service for Webex. Dedicated Instance users sync from that directory, and Cisco says that path requires single sign-on.",
+      "uncertainty": "",
+      "objectives": [
+        "Say where the Webex identity lives",
+        "Explain the SSO requirement for Dedicated Instance directory sync",
+        "Separate a user from a workspace"
+      ],
+      "diagram": {
+        "caption": "Directory sync lands in Control Hub. Dedicated Instance Unified CM syncs from there when SSO is on.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Directory",
+            "sub": "customer IdP or directory",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Control Hub",
+            "sub": "identity service",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Webex Calling",
+            "sub": "users and licenses",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Dedicated Instance",
+            "sub": "Unified CM users",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "sync"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "license"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "SSO required"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A new hire becomes a calling user",
+        "steps": [
+          {
+            "from": "Directory",
+            "to": "Control Hub",
+            "label": "Sync the user",
+            "detail": "Control Hub directory synchronization is shared by meetings, calling, and Dedicated Instance.",
+            "inspect": "User appears in the organization",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Licenses",
+            "label": "Assign Calling",
+            "detail": "A calling license is what lets you give the user a number and calling features. Professional, Standard, and Workspace are not the same.",
+            "inspect": "License assigned",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Dedicated Instance",
+            "label": "Sync onward",
+            "detail": "Dedicated Instance Unified CM synchronizes from Control Hub. Cisco says this user sync works only when SSO is enabled.",
+            "inspect": "Without SSO, directory sync is not supported",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Admin",
+            "to": "User",
+            "label": "Activation",
+            "detail": "Contact Center user actions include sending an activation email. That is a different license from Webex Calling.",
+            "inspect": "Contact Center Service Administrator duties",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "SSO is not optional for that sync",
+          "paragraphs": [
+            "The Dedicated Instance deployment-models article says end-user data is synchronized with Control Hub, and Dedicated Instance Unified CM then synchronizes from Control Hub.",
+            "The same article says the user synchronization feature functions only when single sign-on is enabled. Without SSO, directory synchronization is not supported. Native Unified CM user options still exist."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "People and places",
+          "paragraphs": [
+            "The license article assigns Webex Calling licenses to users or to workspaces. A workspace is for a shared device, not for a person's soft client, and the matrix shows soft clients as unavailable on workspace licenses.",
+            "Do not create a human as a workspace to save a license. The feature set, including shared lines and virtual lines, differs."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Dedicated Instance user sync from Control Hub requires",
+          "choices": [
+            "Single sign-on",
+            "A local gateway certificate",
+            "A 933 test call",
+            "An xAPI scope"
+          ],
+          "answer": 0,
+          "why": "The deployment-models article states the SSO requirement.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Without SSO, Cisco says Dedicated Instance directory synchronization is",
+          "choices": [
+            "Not supported",
+            "Automatic",
+            "Limited to Canada",
+            "Handled by RedSky"
+          ],
+          "answer": 0,
+          "why": "That is the article's wording.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Control Hub directory sync is",
+          "choices": [
+            "Shared across meetings, calling, and Dedicated Instance",
+            "Only for RoomOS macros",
+            "Only for UCCX",
+            "A PSTN product"
+          ],
+          "answer": 0,
+          "why": "The article calls it a shared feature across those Webex services.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "A workspace license is for",
+          "choices": [
+            "Shared devices such as common-area phones, not a person's full soft-client calling",
+            "Every executive",
+            "Only Contact Center supervisors",
+            "Only bots"
+          ],
+          "answer": 0,
+          "why": "The license article describes the workspace license as shared-use and not for an individual user's calling needs.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "A Contact Center activation email is",
+          "choices": [
+            "A user-management action for Contact Center administrators",
+            "The same click as a calling license",
+            "A dial-plan pattern",
+            "A trunk setting"
+          ],
+          "answer": 0,
+          "why": "The roles article lists sending an activation email among Contact Center user actions.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "Native Unified CM user import on Dedicated Instance",
+          "choices": [
+            "Still exists, alongside the Control Hub path",
+            "Is impossible",
+            "Replaces Control Hub",
+            "Requires RedSky"
+          ],
+          "answer": 0,
+          "why": "The article says Dedicated Instance also supports native on-premises Unified CM user sync options.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      ],
+      "cards": [
+        {
+          "front": "SSO and DI sync",
+          "back": "Cisco says Control Hub user sync into Dedicated Instance requires SSO."
+        },
+        {
+          "front": "Workspace",
+          "back": "A place license for shared devices, not a substitute for a person."
+        },
+        {
+          "front": "Control Hub identity",
+          "back": "The directory Webex services share."
+        },
+        {
+          "front": "Activation email",
+          "back": "How a Contact Center user is invited, separate from a calling license."
+        }
+      ],
+      "lab": {
+        "title": "Classify six identities",
+        "goal": "Mark each as user, workspace, or Contact Center user.",
+        "steps": [
+          {
+            "do": "Reception phone with no named person",
+            "expect": "Workspace"
+          },
+          {
+            "do": "A lawyer who needs the Webex App and a desk phone",
+            "expect": "User with a professional calling license"
+          },
+          {
+            "do": "An agent who needs the contact center desktop",
+            "expect": "Contact Center user, plus whatever calling path the voice channel uses"
+          }
+        ],
+        "check": "People, places, and agents are not one license."
+      },
+      "fault": {
+        "title": "DI users never appear",
+        "symptom": "Directory sync into Control Hub works, but Dedicated Instance Unified CM stays empty.",
+        "log": "SYNTHETIC: DI directory status, SSO disabled, sync skipped.",
+        "cause": "Cisco documents that the Control Hub user sync into Dedicated Instance is unsupported without SSO.",
+        "fix": "Enable SSO for the organization, then rerun the sync. If you cannot enable SSO yet, use the native Unified CM user option the article still allows.",
+        "cite": {
+          "label": "Dedicated Instance customer deployment models",
+          "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      }
+    },
+    {
+      "id": "ports",
+      "title": "Ports, media, and certificates",
+      "level": "foundation",
+      "minutes": 16,
+      "summary": "Certificate trunks and registration trunks do not use the same signaling port. Media has its own UDP ranges, and ICE can take the cloud relay out of the path.",
+      "uncertainty": "",
+      "objectives": [
+        "Quote the two signaling ports",
+        "Separate optimized media ports for the app and for devices",
+        "Know that a third-party SBC local gateway is certificate-based"
+      ],
+      "diagram": {
+        "caption": "TCP 5062 and TCP 8934 are different trunk types. Media is UDP.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Certificate trunk",
+            "sub": "TCP 5062",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Registration trunk",
+            "sub": "TCP 8934",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Webex Calling",
+            "sub": "SIP TLS",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Webex App media",
+            "sub": "UDP 8500-8699",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "Device media",
+            "sub": "UDP 19560-19661",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "5062"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "8934"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "ICE"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "SRTP"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Signaling first, then media",
+        "steps": [
+          {
+            "from": "Gateway",
+            "to": "Webex Calling",
+            "label": "SIP TLS",
+            "detail": "Outbound signaling uses TCP 5062 for a certificate-based trunk and TCP 8934 for a registration-based trunk.",
+            "inspect": "Port reference table",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Gateway",
+            "label": "Trunk identity",
+            "detail": "The trunk article assumes the gateway listens on TLS 5061 unless you choose another listen port, and the certificate CN or SAN must match the FQDN or SRV.",
+            "inspect": "CN/SAN table",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Webex App",
+            "to": "Webex App",
+            "label": "Optimized media",
+            "detail": "If ICE succeeds inside the organization, media can go direct. The app uses UDP 8500-8699, audio 8500-8599 and video 8600-8699.",
+            "inspect": "RFC 8445 is the ICE specification",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Phone",
+            "to": "Phone",
+            "label": "Device media",
+            "detail": "Devices that optimize media use UDP 19560-19661 in the port reference's example.",
+            "inspect": "Site firewalls must allow the range both ways",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Two trunks, two ports",
+          "paragraphs": [
+            "The port reference says TCP 5062 is required for a certificate-based trunk and TCP 8934 for a registration-based trunk. Opening only 5061 on the firewall does not satisfy either cloud destination.",
+            "The trunk guide's listen port of 5061 is the port on your gateway, not the cloud destination port. Read the column headings before you copy a number into a firewall ticket."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Third-party SBCs",
+          "paragraphs": [
+            "Cisco states that a third-party SBC acting as a local gateway is supported only with a certificate-based trunk, and only for SBCs that appear in the Control Hub device-type list.",
+            "ICE is RFC 8445. When it succeeds, the port reference says the cloud media relay is removed and the endpoints talk directly. That is why an inside firewall can still break a call that signaled correctly."
+          ],
+          "cite": {
+            "label": "RFC 8445, ICE",
+            "url": "https://www.rfc-editor.org/rfc/rfc8445"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Certificate-based trunk signaling to Webex Calling uses",
+          "choices": [
+            "TCP 5062",
+            "TCP 8934",
+            "UDP 5060",
+            "TCP 443 only"
+          ],
+          "answer": 0,
+          "why": "The port reference assigns 5062 to certificate-based trunks.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Registration-based trunk signaling uses",
+          "choices": [
+            "TCP 8934",
+            "TCP 5062",
+            "UDP 8500",
+            "TCP 22"
+          ],
+          "answer": 0,
+          "why": "The port reference assigns 8934 to registration-based trunks.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "The gateway listen port the trunk article assumes, unless you change it, is",
+          "choices": [
+            "TLS 5061 on the local gateway",
+            "UDP 53",
+            "TCP 8934 on the phone",
+            "TCP 80"
+          ],
+          "answer": 0,
+          "why": "The article says it assumes the standard TLS SIP port 5061 for the local gateway to receive signaling.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "When ICE succeeds, Webex App direct media uses",
+          "choices": [
+            "UDP 8500-8699",
+            "TCP 5062",
+            "TCP 443 only",
+            "UDP 123"
+          ],
+          "answer": 0,
+          "why": "The port reference gives that range, with audio and video splits inside it.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "A third-party SBC local gateway is supported",
+          "choices": [
+            "Only as a certificate-based trunk, and only if the SBC is in the Control Hub list",
+            "As any registration trunk",
+            "Only on UDP 5060",
+            "Only inside Contact Center"
+          ],
+          "answer": 0,
+          "why": "The trunk article states that limit.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "ICE is specified by",
+          "choices": [
+            "RFC 8445",
+            "RFC 3261",
+            "RFC 4119",
+            "RFC 3966"
+          ],
+          "answer": 0,
+          "why": "RFC 8445 is Interactive Connectivity Establishment.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc8445"
+        }
+      ],
+      "cards": [
+        {
+          "front": "TCP 5062",
+          "back": "Certificate-based trunk signaling to Webex Calling."
+        },
+        {
+          "front": "TCP 8934",
+          "back": "Registration-based trunk signaling to Webex Calling."
+        },
+        {
+          "front": "UDP 8500-8699",
+          "back": "Optimized Webex App media in the port reference."
+        },
+        {
+          "front": "Third-party SBC",
+          "back": "Certificate trunk only, and only a validated device type."
+        }
+      ],
+      "lab": {
+        "title": "Write the firewall lines",
+        "goal": "Draft the minimum signaling and media lines for one certificate trunk and the Webex App.",
+        "steps": [
+          {
+            "do": "Signaling to the cloud",
+            "expect": "TCP 5062 from the gateway"
+          },
+          {
+            "do": "Gateway listen",
+            "expect": "TLS 5061 unless the design changed it"
+          },
+          {
+            "do": "App media if ICE succeeds",
+            "expect": "UDP 8500-8699 both ways inside the site"
+          }
+        ],
+        "check": "The ticket names 5062 and 8934 as different trunks and does not collapse them into 'SIP'."
+      },
+      "fault": {
+        "title": "Registered in the lab, dead in production",
+        "symptom": "A registration trunk works on a bench and fails after the firewall tightens to 5062 only.",
+        "log": "SYNTHETIC: gateway, registration timeout, destination tcp/8934 denied.",
+        "cause": "Registration trunks need 8934. 5062 is the other trunk type.",
+        "fix": "Allow TCP 8934 to the Webex Calling signaling destinations in the port reference, or move the design to a certificate trunk and open 5062 instead. Do not open both and hope.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "licenses",
+      "title": "Professional, Standard, and Workspace",
+      "level": "foundation",
+      "minutes": 15,
+      "summary": "Webex Calling has three license options. Device counts, soft clients, shared lines, virtual lines, and call queue membership are not uniform across them.",
+      "uncertainty": "The call queue article and the license matrix do not describe the Workspace license with the same sentence. This lab reports both and does not pick a silent winner.",
+      "objectives": [
+        "Name the three license options",
+        "Read a row of the feature matrix",
+        "Notice the tension between the queue article and the workspace row"
+      ],
+      "diagram": {
+        "caption": "The license matrix, not the product brochure, decides whether a user can join a call queue.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Professional",
+            "sub": "user or workspace",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Standard",
+            "sub": "smaller user set",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Workspace",
+            "sub": "one shared device",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Call queue",
+            "sub": "agents by license",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "yes"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "no"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "see matrix"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Assign a license, then test one feature",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "User",
+            "label": "Assign Professional",
+            "detail": "The matrix shows five devices and soft clients for a professional user.",
+            "inspect": "Device count 5",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Workspace",
+            "label": "Assign Workspace",
+            "detail": "The workspace license is one device and is not for an individual user's calling.",
+            "inspect": "Soft clients marked N",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Call queue",
+            "label": "Add agents",
+            "detail": "The matrix marks call queue Yes for professional user and professional workspace, No for Standard, and Yes for the Workspace license.",
+            "inspect": "Check the row, not the product name alone",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Matrix",
+            "label": "Reconcile the articles",
+            "detail": "The call queue article also says the queue is part of the professional license. Read both pages before you promise a standard user a queue seat.",
+            "inspect": "Uncertainty is allowed",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Counts you can cite",
+          "paragraphs": [
+            "Cisco's matrix lists device entitlement as 5 for Professional user and Professional workspace, 1 for Standard, and 1 for Workspace. Shared lines are marked Yes (35) for both Professional columns and No for Standard and Workspace.",
+            "Virtual lines are marked Yes for Professional and No for Standard and Workspace. Soft clients are Yes for a Professional user, No for a Professional workspace, Yes for Standard if that user is on soft clients, and No for Workspace."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Call queue wording",
+          "paragraphs": [
+            "The same matrix marks Call Queue as Yes for Professional user, Professional workspace, and the Workspace license, and No for Standard.",
+            "The configure-call-queue article says call queue is part of the Webex Calling professional license. Those two pages do not use identical wording. Treat the matrix as the feature grid and the queue article as the configuration guide, and recheck both before a design is frozen."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many Webex Calling license options does the matrix describe?",
+          "choices": [
+            "Three: Professional, Standard, and Workspace",
+            "One",
+            "Only Workspace",
+            "Twelve"
+          ],
+          "answer": 0,
+          "why": "The article says there are three license options.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Professional user device entitlement in the matrix is",
+          "choices": [
+            "5",
+            "1",
+            "35",
+            "1000"
+          ],
+          "answer": 0,
+          "why": "The device-count row shows 5 for Professional.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Shared lines on a Standard license are",
+          "choices": [
+            "Not included",
+            "35",
+            "Unlimited",
+            "Required"
+          ],
+          "answer": 0,
+          "why": "The shared-line row is No for Standard.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "A Standard user and call queue, according to the matrix, is",
+          "choices": [
+            "No",
+            "Yes, up to 1000 agents",
+            "Yes, simultaneous only",
+            "Only in Canada"
+          ],
+          "answer": 0,
+          "why": "The Call Queue row is No under Standard.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "The call queue configuration article says the feature is",
+          "choices": [
+            "Part of the Webex Calling professional license",
+            "Free for every workspace with no license",
+            "A Contact Center only feature",
+            "An xAPI command"
+          ],
+          "answer": 0,
+          "why": "That sentence is in the queue article. Compare it with the matrix before you assign a Workspace-license agent.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Virtual lines in the matrix require",
+          "choices": [
+            "A Professional license",
+            "Any license",
+            "A bot token",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "Virtual line is marked Yes for Professional and No for Standard and Workspace.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Three licenses",
+          "back": "Professional, Standard, Workspace."
+        },
+        {
+          "front": "Shared lines",
+          "back": "35 on Professional. Not on Standard or Workspace."
+        },
+        {
+          "front": "Standard and queues",
+          "back": "The matrix says No for call queue."
+        },
+        {
+          "front": "Recheck the queue sentence",
+          "back": "The queue article says professional. The matrix also marks Workspace license as Yes."
+        }
+      ],
+      "lab": {
+        "title": "Fill a license sheet",
+        "goal": "For four people or places, pick a license and one feature they will not get.",
+        "steps": [
+          {
+            "do": "Named user, app plus two phones, needs a virtual line",
+            "expect": "Professional user"
+          },
+          {
+            "do": "Lobby phone, one device, no app",
+            "expect": "Workspace"
+          },
+          {
+            "do": "A standard user asked to be a call-queue agent",
+            "expect": "The matrix says no. Escalate the license or the design."
+          }
+        ],
+        "check": "Every row cites the matrix, and the queue conflict is written down instead of ignored."
+      },
+      "fault": {
+        "title": "Agents who cannot be added",
+        "symptom": "A standard-license user is missing from the call queue agent picker.",
+        "log": "SYNTHETIC: user license=Standard, queue agent add rejected.",
+        "cause": "The feature matrix marks call queue as unavailable on Standard.",
+        "fix": "Assign a Professional license if the user must be an agent, then add them again. Do not work around it with a workspace login for a person.",
+        "cite": {
+          "label": "Features available by license type",
+          "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "howto",
+      "title": "How to use this lab",
+      "level": "foundation",
+      "minutes": 10,
+      "summary": "Each lesson has a figure, a step-through, a quiz, cards, a lab, and a fault. Citations go to Cisco, the IETF, the ITU, or the FCC. Logs marked synthetic are not from a customer.",
+      "uncertainty": "",
+      "objectives": [
+        "Use Play, Pause, Step, and Inspect",
+        "Treat the simulators as teaching models",
+        "Find the certification pages without inventing exam codes"
+      ],
+      "diagram": {
+        "caption": "Study tools in this lab, and the public sources they point at.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Lesson",
+            "sub": "one view",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Flow player",
+            "sub": "Play Pause Step Inspect",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Studio",
+            "sub": "dial plan, flows, hub",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Sources",
+            "sub": "deep links",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "practice"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "tools"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "cite"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A study loop",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Lesson",
+            "label": "Read the figure",
+            "detail": "The drawing is a map of the section, not a screenshot of Control Hub.",
+            "inspect": "One heading for the view",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Flow",
+            "label": "Step",
+            "detail": "Play walks the arrows. Inspect shows the packet or the admin path for that step.",
+            "inspect": "Pause if narration is on",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Studio",
+            "label": "Try a tool",
+            "detail": "The dial-plan simulator and the flow designer state their limits in the trace.",
+            "inspect": "Export is a teaching JSON file",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Source",
+            "label": "Open the link",
+            "detail": "If this lab and the live page disagree, the live page wins. Exam names below are quoted from Cisco pages reviewed on 14 October 2026.",
+            "inspect": "300-830 CLCCE, CLWXCALL course",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What is official",
+          "paragraphs": [
+            "Cisco's exam page for Implementing Cisco Collaboration Cloud Customer Experience (300-830 CLCCE) describes a 90-minute exam. Passing it earns Cisco Certified Specialist - Collaboration Cloud Customer Experience and can satisfy a CCNP Collaboration concentration.",
+            "Cisco Learning Network said the first date to test was 3 February 2026. The Essentials of Webex Calling (CLWXCALL) is a course, not that exam. Confirm dates on the live pages before you book anything."
+          ],
+          "cite": {
+            "label": "Cisco certification update",
+            "url": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          }
+        },
+        {
+          "h": "What this lab refuses to invent",
+          "paragraphs": [
+            "Simulators do not claim Control Hub import compatibility. Boss logs are labeled synthetic. Hypothetical Dedicated Instance stories stay hypothetical.",
+            "When two Cisco pages use different wording, the lesson says so. That is a feature of the lab, not a broken link."
+          ],
+          "cite": {
+            "label": "Essentials of Webex Calling (CLWXCALL)",
+            "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "300-830 CLCCE is",
+          "choices": [
+            "A Cisco exam for Webex Contact Center skills that can count toward CCNP Collaboration",
+            "A local gateway command",
+            "A dial-plan pattern",
+            "A RoomOS macro"
+          ],
+          "answer": 0,
+          "why": "The exam page and the CCNP Collaboration page say this.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+        },
+        {
+          "q": "CLWXCALL is",
+          "choices": [
+            "The Essentials of Webex Calling course",
+            "The same thing as exam 300-830",
+            "A port number",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The course page describes Control Hub, calling features, PSTN, and local gateway. It is training, not the CLCCE exam.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        },
+        {
+          "q": "Cisco Learning Network's first test date for the new contact-center specialist exam was",
+          "choices": [
+            "3 February 2026",
+            "14 October 2019",
+            "1 January 2030",
+            "Not stated anywhere"
+          ],
+          "answer": 0,
+          "why": "The certification-update article states 3 February 2026. Recheck the page if you are scheduling later.",
+          "cite": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+        },
+        {
+          "q": "The flow designer export in this lab is",
+          "choices": [
+            "A teaching JSON file, not a Control Hub import",
+            "A production Webex Contact Center flow package",
+            "A CUCM backup",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "The studio labels the schema as a teaching file.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Synthetic logs are",
+          "choices": [
+            "Written for practice and marked synthetic",
+            "Copied from a customer PBX",
+            "FCC regulations",
+            "RFC text"
+          ],
+          "answer": 0,
+          "why": "The lab labels them so they are not mistaken for evidence.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "If a lesson and a live Cisco page disagree",
+          "choices": [
+            "Trust the live page and treat the lesson as dated",
+            "Trust the lesson forever",
+            "Trust a forum post",
+            "Ignore both"
+          ],
+          "answer": 0,
+          "why": "Product pages move. The lab links to them for that reason.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "300-830 CLCCE",
+          "back": "Contact Center specialist exam. Concentration option for CCNP Collaboration."
+        },
+        {
+          "front": "CLWXCALL",
+          "back": "Webex Calling course. Not the CLCCE exam."
+        },
+        {
+          "front": "3 February 2026",
+          "back": "First test date Cisco Learning Network published for that specialist exam."
+        },
+        {
+          "front": "Inspect",
+          "back": "The flow control that shows the step's packet or admin path."
+        }
+      ],
+      "lab": {
+        "title": "Bookmark the three Cisco pages",
+        "goal": "Open the exam, the CCNP page, and the CLWXCALL course page.",
+        "steps": [
+          {
+            "do": "Read the exam name out loud",
+            "expect": "Implementing Cisco Collaboration Cloud Customer Experience"
+          },
+          {
+            "do": "Find the course code",
+            "expect": "CLWXCALL"
+          },
+          {
+            "do": "Write today's date next to any price or schedule you copy",
+            "expect": "So a later reader knows it was a snapshot"
+          }
+        ],
+        "check": "You can tell the exam from the course without inventing a code."
+      },
+      "fault": {
+        "title": "A study plan with a made-up exam",
+        "symptom": "Someone adds 'CCNA Webex' to a hiring req.",
+        "log": "SYNTHETIC req: pass CCNA-WX before touching Control Hub.",
+        "cause": "That code is not on the Cisco pages this lab cites. Invented codes waste candidates' time.",
+        "fix": "Use 300-830 CLCCE, CCNP Collaboration, and CLWXCALL only as those pages describe them, and link the page.",
+        "cite": {
+          "label": "CCNP Collaboration",
+          "url": "https://learningnetwork.cisco.com/s/ccnp-collaboration"
+        }
+      }
+    }
+  ]
+}

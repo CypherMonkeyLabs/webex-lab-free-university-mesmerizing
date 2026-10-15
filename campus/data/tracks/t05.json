@@ -1,0 +1,1804 @@
+{
+  "id": "t05",
+  "title": "Local Gateway",
+  "blurb": "Certificate trunks, registration trunks, CUBE parameters, and the certificate name the cloud expects.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "what",
+      "title": "What the local gateway is",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "The local gateway is your edge for PSTN and for PBXs such as Unified CM. Control Hub turns it into a trunk and hands you parameters to put on the device.",
+      "uncertainty": "",
+      "objectives": [
+        "Define the gateway",
+        "Map parameters before typing CLI",
+        "Name a supported third-party limit"
+      ],
+      "diagram": {
+        "caption": "Control Hub parameters on the left, CUBE on the right. The workflow article draws that mapping.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "parameters",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Trunk",
+            "sub": "the cloud object",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "CUBE or SBC",
+            "sub": "the device",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "PSTN or PBX",
+            "sub": "behind it",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "create"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "map"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "SIP"
+          }
+        ]
+      },
+      "flow": {
+        "title": "From a trunk to a ringing phone",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Trunk",
+            "label": "Create",
+            "detail": "FQDN or registration, depending on the model you chose.",
+            "inspect": "Device type",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Admin",
+            "label": "Show parameters",
+            "detail": "The organization article says to map those values onto the CUBE.",
+            "inspect": "Do not freehand the first build",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Gateway",
+            "to": "Webex Calling",
+            "label": "Signal",
+            "detail": "TCP 5062 or 8934 depending on trunk type.",
+            "inspect": "Port reference",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Gateway",
+            "to": "PBX",
+            "label": "Deliver",
+            "detail": "Unified CM or the carrier sees a normal SIP call.",
+            "inspect": "Your dial peers",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Edge, not a phone",
+          "paragraphs": [
+            "The workflow guide calls the local gateway an enterprise or partner-managed edge for PSTN and for legacy PBX interworking, including Unified CM.",
+            "Phones do not register to Webex Calling through the gateway in the multi-tenant sense. The gateway registers or presents a trunk."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        },
+        {
+          "h": "Third-party devices",
+          "paragraphs": [
+            "Only certificate-based trunks, and only SBCs listed as compatible local gateways in Control Hub.",
+            "A random SBC on UDP 5060 is not a supported local gateway."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The local gateway is",
+          "choices": [
+            "The premises edge for PSTN and PBX interworking",
+            "A Webex mobile app",
+            "A report template",
+            "A skill profile"
+          ],
+          "answer": 0,
+          "why": "The workflow guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Parameters for a CUBE come from",
+          "choices": [
+            "Control Hub, to be mapped onto the device",
+            "A guess",
+            "RedSky",
+            "A flashcard"
+          ],
+          "answer": 0,
+          "why": "The organization article describes that mapping.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Third-party SBC support is",
+          "choices": [
+            "Certificate trunks, and only listed device types",
+            "Any SIP device on UDP 5060",
+            "Registration only",
+            "Macros only"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The gateway is",
+          "choices": [
+            "A trunk, not a user's phone registration",
+            "A workspace license",
+            "An agent desktop",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "It interconnects the trunk.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Unified CM connects through it when",
+          "choices": [
+            "You are integrating an on-prem PBX with Webex Calling",
+            "You only have soft clients",
+            "You disable SIP",
+            "You use a personal token"
+          ],
+          "answer": 0,
+          "why": "The workflow guide includes Unified CM.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Freehand CLI on day one is",
+          "choices": [
+            "A way to miss the parameters Control Hub generated",
+            "Required",
+            "The exam",
+            "Safer than the guide"
+          ],
+          "answer": 0,
+          "why": "Map the generated values.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Local gateway",
+          "back": "Premises SIP edge. Often a CUBE."
+        },
+        {
+          "front": "Parameters",
+          "back": "Generated in Control Hub. Mapped, not invented."
+        },
+        {
+          "front": "Third-party SBC",
+          "back": "Certificate trunk and a listed device type."
+        },
+        {
+          "front": "Not a phone",
+          "back": "The trunk is the cloud object."
+        }
+      ],
+      "lab": {
+        "title": "Label a diagram",
+        "goal": "Draw phone, Webex Calling, gateway, and PBX. Mark which hop is the trunk.",
+        "steps": [
+          {
+            "do": "Webex Calling to gateway",
+            "expect": "The trunk"
+          },
+          {
+            "do": "Gateway to PBX",
+            "expect": "Your SIP"
+          },
+          {
+            "do": "Phone of a Webex user",
+            "expect": "Does not register to the CUBE for cloud calling"
+          }
+        ],
+        "check": "The trunk hop is the one Control Hub knows about."
+      },
+      "fault": {
+        "title": "UDP 5060 to the cloud",
+        "symptom": "A gateway sends plain UDP SIP and never establishes TLS.",
+        "log": "SYNTHETIC: destination udp/5060, no TLS, trunk down.",
+        "cause": "Webex Calling signaling in the port reference is SIP TLS on 5062 or 8934.",
+        "fix": "Configure TLS to the documented port for the trunk type you created.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "cert-trunk",
+      "title": "Certificate trunks and TCP 5062",
+      "level": "core",
+      "minutes": 14,
+      "summary": "A certificate trunk signals to TCP 5062. The certificate CN or SAN has to match the FQDN or SRV name the trunk article tables out.",
+      "uncertainty": "",
+      "objectives": [
+        "Quote 5062",
+        "Match CN or SAN",
+        "Separate listen port from destination port"
+      ],
+      "diagram": {
+        "caption": "5062 is the cloud destination for certificate trunks. The name in the certificate must match the trunk identity.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "FQDN or SRV",
+            "sub": "trunk address",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Certificate",
+            "sub": "CN or SAN",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "TCP 5062",
+            "sub": "to Webex Calling",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "TLS 5061",
+            "sub": "gateway listen, if unchanged",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "match"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "TLS"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "listen"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Bring up a certificate trunk",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Trunk",
+            "label": "Enter FQDN or SRV",
+            "detail": "The trunk article tables DNS and the certificate name for each.",
+            "inspect": "A record or SRV",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Gateway",
+            "to": "Certificate",
+            "label": "Present the name",
+            "detail": "CN or SAN contains the identity the table requires.",
+            "inspect": "Not the router's prompt hostname by accident",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Gateway",
+            "to": "Cloud",
+            "label": "TCP 5062",
+            "detail": "Destination port for certificate-based trunks.",
+            "inspect": "Firewall ticket",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Cloud",
+            "to": "Gateway",
+            "label": "Inbound signaling",
+            "detail": "The article assumes the gateway listens on TLS 5061 unless you changed it.",
+            "inspect": "Different number",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The table",
+          "paragraphs": [
+            "For an FQDN trunk, the DNS A record and the certificate name are that FQDN. For an SRV trunk, the SRV name is what the certificate must carry, and the SRV target is a single A record in the article's example.",
+            "Contact headers in the table include transport=tls. UDP contact headers will not match the example."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Ports again",
+          "paragraphs": [
+            "5062 is the destination. 5061 is the usual listen port on the gateway. 8934 is the other trunk type. Three numbers, three jobs.",
+            "Write them in the change record so the next person does not 'clean up' the firewall."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Certificate trunk destination port is",
+          "choices": [
+            "TCP 5062",
+            "TCP 8934",
+            "UDP 5060",
+            "TCP 22"
+          ],
+          "answer": 0,
+          "why": "Port reference.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "The certificate must match",
+          "choices": [
+            "The CN or SAN rules in the trunk article's table",
+            "Any name",
+            "The user's email",
+            "The queue name"
+          ],
+          "answer": 0,
+          "why": "The table is the contract.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Assumed gateway listen port is",
+          "choices": [
+            "TLS 5061 unless you change it",
+            "UDP 53",
+            "TCP 8934",
+            "TCP 443 only"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "An SRV trunk's certificate identity is",
+          "choices": [
+            "The SRV name, in the article's table",
+            "The phone's MAC",
+            "A bot username",
+            "933"
+          ],
+          "answer": 0,
+          "why": "See the SRV row.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "transport=tls in the contact example means",
+          "choices": [
+            "TLS, not UDP",
+            "Any transport",
+            "Fax only",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The table shows transport=tls.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "8934 on a certificate trunk is",
+          "choices": [
+            "The wrong port. That port is for registration trunks.",
+            "Required as well",
+            "The listen port",
+            "A media port"
+          ],
+          "answer": 0,
+          "why": "Do not mix the trunk types.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "5062",
+          "back": "Certificate trunk to the cloud."
+        },
+        {
+          "front": "5061",
+          "back": "Typical gateway listen port."
+        },
+        {
+          "front": "CN/SAN",
+          "back": "Must match the trunk identity table."
+        },
+        {
+          "front": "SRV name",
+          "back": "The certificate identity for an SRV trunk."
+        }
+      ],
+      "lab": {
+        "title": "Fill the table",
+        "goal": "For london.lgw1.example.com, write DNS, certificate name, destination port, and listen port.",
+        "steps": [
+          {
+            "do": "DNS",
+            "expect": "A record of that name"
+          },
+          {
+            "do": "Certificate",
+            "expect": "That FQDN in CN or SAN"
+          },
+          {
+            "do": "Ports",
+            "expect": "Destination 5062, listen 5061 unless changed"
+          }
+        ],
+        "check": "Use example.com, not a real customer name."
+      },
+      "fault": {
+        "title": "403 after a hostname change",
+        "symptom": "The trunk FQDN was updated in Control Hub and the old certificate stayed on the router.",
+        "log": "SYNTHETIC: SIP 403, CN=old.example.com, trunk FQDN=new.example.com.",
+        "cause": "The table requires the names to match.",
+        "fix": "Issue a certificate with the new name, install it, and retry one call. Do not disable TLS verification.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "reg-trunk",
+      "title": "Registration trunks and TCP 8934",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Registration-based trunks signal to TCP 8934. They are a different object from certificate trunks. Third-party SBCs do not get this shortcut.",
+      "uncertainty": "",
+      "objectives": [
+        "Quote 8934",
+        "Refuse to mix it with 5062",
+        "Remember third-party SBCs are certificate-only"
+      ],
+      "diagram": {
+        "caption": "8934 is registration. It is not a second port you add to a certificate trunk for luck.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Registration trunk",
+            "sub": "Control Hub",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "TCP 8934",
+            "sub": "signaling",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Gateway",
+            "sub": "registers",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Certificate trunk",
+            "sub": "not this port",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "register"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "parameters"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Register",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Trunk",
+            "label": "Choose registration",
+            "detail": "Use the parameters Control Hub gives you for that model.",
+            "inspect": "Not the certificate table",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Gateway",
+            "to": "Cloud",
+            "label": "TCP 8934",
+            "detail": "The port reference's registration destination.",
+            "inspect": "Firewall",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Cloud",
+            "to": "Trunk",
+            "label": "Up",
+            "detail": "The trunk shows registered. Then place a call.",
+            "inspect": "Status before celebrations",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "SBC vendor",
+            "to": "Design",
+            "label": "Stop if unlisted",
+            "detail": "Third-party local gateways are certificate-based and must be a listed type.",
+            "inspect": "No exceptions in the article",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "One type per trunk",
+          "paragraphs": [
+            "Pick registration or certificate when you create the trunk. The ports are not a menu of both.",
+            "A firewall that opens only 5062 will pass a certificate trunk and black-hole a registration trunk."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Status is not a call",
+          "paragraphs": [
+            "A registered trunk can still fail media if UDP ranges are blocked. Signaling and media are separate rows in the port reference.",
+            "Test one call in each direction after the trunk shows up."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Registration trunk signaling uses",
+          "choices": [
+            "TCP 8934",
+            "TCP 5062",
+            "UDP 8500",
+            "TCP 80"
+          ],
+          "answer": 0,
+          "why": "Port reference.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Opening only 5062",
+          "choices": [
+            "Does not save a registration trunk",
+            "Is enough for every trunk",
+            "Is the media range",
+            "Fixes 403s on certificates"
+          ],
+          "answer": 0,
+          "why": "Different destination ports.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Third-party SBCs as local gateways",
+          "choices": [
+            "Use certificate trunks and must be listed",
+            "Use registration trunks freely",
+            "Use HTTP",
+            "Cannot speak SIP"
+          ],
+          "answer": 0,
+          "why": "Trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Registered but one-way audio points at",
+          "choices": [
+            "Media ports, not the registration port",
+            "SSO",
+            "A quiz",
+            "Caller ID only"
+          ],
+          "answer": 0,
+          "why": "SRTP uses the UDP ranges in the port reference.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "You should test after registration",
+          "choices": [
+            "One call each direction",
+            "Nothing",
+            "Only 933 from a different company",
+            "A macro compile"
+          ],
+          "answer": 0,
+          "why": "Status is not media.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "5062 and 8934 together on one trunk 'just in case'",
+          "choices": [
+            "Mixes two trunk types",
+            "Is the documented design",
+            "Is ICE",
+            "Is HELD"
+          ],
+          "answer": 0,
+          "why": "Choose the type you created.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "8934",
+          "back": "Registration trunk destination."
+        },
+        {
+          "front": "Not both",
+          "back": "Do not open the other port as superstition."
+        },
+        {
+          "front": "Listed SBC",
+          "back": "Certificate trunk only."
+        },
+        {
+          "front": "Then a call",
+          "back": "Registration is not audio."
+        }
+      ],
+      "lab": {
+        "title": "Firewall diff",
+        "goal": "Write the delta between a certificate trunk and a registration trunk.",
+        "steps": [
+          {
+            "do": "Certificate",
+            "expect": "TCP 5062 plus the name table"
+          },
+          {
+            "do": "Registration",
+            "expect": "TCP 8934"
+          },
+          {
+            "do": "Both",
+            "expect": "Media UDP ranges still apply"
+          }
+        ],
+        "check": "The diff is the signaling port and the identity method."
+      },
+      "fault": {
+        "title": "Bench versus branch",
+        "symptom": "Registration works in the lab and dies at the branch firewall.",
+        "log": "SYNTHETIC: deny tcp/8934, allow tcp/5062, trunk type=registration.",
+        "cause": "The branch copied the certificate-trunk rule.",
+        "fix": "Allow 8934 for this trunk, or rebuild it as a certificate trunk and allow 5062. Do not leave both half-configured.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "cube-map",
+      "title": "Mapping Control Hub onto the CUBE",
+      "level": "core",
+      "minutes": 14,
+      "summary": "The organization article's picture is the method: Control Hub on one side, the CUBE on the other. High availability of that router is a course topic, not a hope.",
+      "uncertainty": "",
+      "objectives": [
+        "Follow the mapping",
+        "Know HA is a documented course module",
+        "Prove with a call"
+      ],
+      "diagram": {
+        "caption": "Copy parameters across. Do not translate them from memory.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "trunk wizard",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CUBE",
+            "sub": "dial-peers and trust",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "HA pair",
+            "sub": "course topic",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Test call",
+            "sub": "both ways",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "map"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "if designed"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "prove"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Map and prove",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Wizard",
+            "label": "Copy the values",
+            "detail": "Domain, addresses, and the identity the certificate must use.",
+            "inspect": "Screenshot in the change record, secrets redacted",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Engineer",
+            "to": "CUBE",
+            "label": "Apply",
+            "detail": "Trustpoints, dial-peers, and the listen port.",
+            "inspect": "CLWXCALL covers router settings",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Engineer",
+            "to": "HA",
+            "label": "If you promised it",
+            "detail": "The Essentials of Webex Calling course includes local gateway and CUBE high availability as a topic.",
+            "inspect": "Do not invent a proprietary HA recipe here",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Tester",
+            "to": "Phone",
+            "label": "Call",
+            "detail": "Inbound and outbound, then an on-prem extension if the PBX is in scope.",
+            "inspect": "One success is not a soak",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The course is the lab manual for the CLI",
+          "paragraphs": [
+            "CLWXCALL's outline includes routers that support the local gateway, deployment scenarios, Control Hub settings, router settings, and troubleshooting.",
+            "This lab will not paste a full IOS configuration. The parameters are tenant-specific and the course plus the help article are the procedure."
+          ],
+          "cite": {
+            "label": "Essentials of Webex Calling (CLWXCALL)",
+            "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+          }
+        },
+        {
+          "h": "Redact the record",
+          "paragraphs": [
+            "Trunk credentials and certificate private keys do not belong in tickets or screenshots.",
+            "The public parameters, the FQDN, and the port do."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "CUBE values should come from",
+          "choices": [
+            "The Control Hub trunk parameters",
+            "A blog with no date",
+            "Memory",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The organization article's mapping.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "CLWXCALL includes",
+          "choices": [
+            "Local gateway and CUBE high availability as course topics",
+            "The 300-830 exam itself",
+            "Only messaging bots",
+            "Only RedSky"
+          ],
+          "answer": 0,
+          "why": "The course page lists them.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        },
+        {
+          "q": "This lab does not ship a full IOS config because",
+          "choices": [
+            "The parameters are specific to the tenant and the help article is the procedure",
+            "IOS is not real",
+            "CUBE cannot do SIP",
+            "Ports are secret"
+          ],
+          "answer": 0,
+          "why": "Copying a generic config is how name mismatches happen.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "A proof of the mapping is",
+          "choices": [
+            "A call in each direction",
+            "A ping only",
+            "A green icon only",
+            "A quiz score"
+          ],
+          "answer": 0,
+          "why": "Status without media is incomplete.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Private keys in a ticket are",
+          "choices": [
+            "An incident",
+            "Best practice",
+            "Required by RFC 3261",
+            "The ECBN"
+          ],
+          "answer": 0,
+          "why": "Redact them.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "HA, if you sold it,",
+          "choices": [
+            "Needs the design the course and Cisco's gateway docs describe",
+            "Happens automatically when you open 5062 twice",
+            "Is a license checkbox only",
+            "Is a flashcard"
+          ],
+          "answer": 0,
+          "why": "Do not invent a failover method.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Map, don't invent",
+          "back": "Control Hub parameters onto the CUBE."
+        },
+        {
+          "front": "CLWXCALL",
+          "back": "Covers gateway scenarios and HA as training."
+        },
+        {
+          "front": "No generic CLI",
+          "back": "Tenant parameters differ."
+        },
+        {
+          "front": "Redact keys",
+          "back": "FQDN and ports are the shareable parts."
+        }
+      ],
+      "lab": {
+        "title": "Redacted build sheet",
+        "goal": "List the fields you will copy, and the fields you will not paste into chat.",
+        "steps": [
+          {
+            "do": "Copy",
+            "expect": "FQDN, ports, trunk type"
+          },
+          {
+            "do": "Do not copy",
+            "expect": "Private keys and passwords"
+          },
+          {
+            "do": "Prove",
+            "expect": "Inbound and outbound call results"
+          }
+        ],
+        "check": "The sheet is safe to attach to a ticket."
+      },
+      "fault": {
+        "title": "Worked from a copied config",
+        "symptom": "A second site's CUBE was cloned and presents the first site's certificate name.",
+        "log": "SYNTHETIC: CN=site-a, trunk FQDN=site-b, 403.",
+        "cause": "The identity table failed because the config was cloned.",
+        "fix": "Generate site B's parameters from its own trunk and install a matching certificate.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "media",
+      "title": "Media after the trunk is up",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "Signaling can succeed while audio fails. ICE may remove the cloud relay. The UDP ranges in the port reference are then the whole path.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate signaling from media",
+        "Quote the optimized ranges",
+        "Know ICE's RFC"
+      ],
+      "diagram": {
+        "caption": "SRTP media is a different row from SIP TLS.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "SIP TLS",
+            "sub": "up",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "ICE",
+            "sub": "RFC 8445",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "App media",
+            "sub": "8500-8699",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Device media",
+            "sub": "19560-19661",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "then"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "direct"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "direct"
+          }
+        ]
+      },
+      "flow": {
+        "title": "One-way audio",
+        "steps": [
+          {
+            "from": "Call",
+            "to": "Signaling",
+            "label": "200 OK",
+            "detail": "The dialog exists. Users still hear nothing.",
+            "inspect": "Do not restart the trunk first",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "ICE",
+            "to": "Check",
+            "label": "Did it succeed?",
+            "detail": "The port reference says successful ICE inside the org removes the cloud media relay.",
+            "inspect": "RFC 8445",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Firewall",
+            "to": "App",
+            "label": "8500-8699",
+            "detail": "Audio 8500-8599 and video 8600-8699 in the example.",
+            "inspect": "Both directions",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Firewall",
+            "to": "Devices",
+            "label": "19560-19661",
+            "detail": "The device optimized range in the same example.",
+            "inspect": "Phones are not the app",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "SRTP",
+          "paragraphs": [
+            "The port reference lists SRTP, SRTCP, and related UDP toward Webex Calling, including ports 5004 and 9000 and the broader ranges.",
+            "RFC 3711 is the SRTP specification. You do not need to reimplement it. You need to let it through."
+          ],
+          "cite": {
+            "label": "RFC 3711, SRTP",
+            "url": "https://www.rfc-editor.org/rfc/rfc3711"
+          }
+        },
+        {
+          "h": "Inside firewalls",
+          "paragraphs": [
+            "The article's warning is specific: when media goes direct, firewalls inside the premises have to allow those source and destination ranges.",
+            "A perimeter rule that only allows the cloud subnets will not save a direct media path."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "200 OK and no audio means",
+          "choices": [
+            "Look at media, not only signaling",
+            "The trunk type is wrong always",
+            "SSO failed",
+            "The quiz is wrong"
+          ],
+          "answer": 0,
+          "why": "Dialog and media are separate.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Successful ICE inside the org",
+          "choices": [
+            "Can remove the cloud media relay",
+            "Disables SRTP",
+            "Closes 5062",
+            "Deletes the location"
+          ],
+          "answer": 0,
+          "why": "The port reference says so.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Webex App optimized audio in the example is",
+          "choices": [
+            "UDP 8500-8599",
+            "TCP 5062",
+            "TCP 8934",
+            "UDP 53"
+          ],
+          "answer": 0,
+          "why": "Video is 8600-8699 next to it.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Optimized device media in the example is",
+          "choices": [
+            "UDP 19560-19661",
+            "TCP 443",
+            "TCP 5061",
+            "UDP 123"
+          ],
+          "answer": 0,
+          "why": "The port reference example.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "ICE is",
+          "choices": [
+            "RFC 8445",
+            "RFC 3261",
+            "RFC 4119",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "Interactive Connectivity Establishment.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc8445"
+        },
+        {
+          "q": "An inside firewall can",
+          "choices": [
+            "Break direct media even when the cloud allows it",
+            "Never affect Webex",
+            "Replace the dial plan",
+            "Issue certificates"
+          ],
+          "answer": 0,
+          "why": "The port reference calls out internal firewalls.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Signaling then media",
+          "back": "A live trunk can still be silent."
+        },
+        {
+          "front": "8500-8599",
+          "back": "Example app audio when optimized."
+        },
+        {
+          "front": "19560-19661",
+          "back": "Example device media when optimized."
+        },
+        {
+          "front": "RFC 8445",
+          "back": "ICE."
+        }
+      ],
+      "lab": {
+        "title": "Write the media lines",
+        "goal": "Add them under the signaling lines from the ports lesson.",
+        "steps": [
+          {
+            "do": "App",
+            "expect": "UDP 8500-8699"
+          },
+          {
+            "do": "Devices",
+            "expect": "UDP 19560-19661"
+          },
+          {
+            "do": "Note",
+            "expect": "Only the direct path. Cloud relay ranges stay in the port reference."
+          }
+        ],
+        "check": "You did not delete the cloud media ports just because ICE exists."
+      },
+      "fault": {
+        "title": "Silent after a 'secure' firewall change",
+        "symptom": "Calls connect. Audio works at home and fails in the office.",
+        "log": "SYNTHETIC: ICE success, office firewall denies udp/8500-8699.",
+        "cause": "Direct media hits the inside firewall.",
+        "fix": "Allow the documented ranges both ways inside the site, then retest from the office network.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "lgw-ops",
+      "title": "Operating the gateway",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Once the trunk is up, changes are certificate expiry, firewall drift, and dial-plan edits. The gateway is not where you add Webex Calling users.",
+      "uncertainty": "",
+      "objectives": [
+        "Calendar the certificate",
+        "Re-check ports after firewall projects",
+        "Add users in the right tool"
+      ],
+      "diagram": {
+        "caption": "Operate the trunk. Add users in Control Hub.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Certificate expiry",
+            "sub": "calendar",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Firewall drift",
+            "sub": "ports",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dial plan",
+            "sub": "Control Hub",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Users",
+            "sub": "not the CUBE",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "watch"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "separate"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A monthly check",
+        "steps": [
+          {
+            "from": "Owner",
+            "to": "Certificate",
+            "label": "Note the expiry",
+            "detail": "A name match does not help if the certificate is expired.",
+            "inspect": "Change record",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Owner",
+            "to": "Firewall",
+            "label": "Diff the ticket",
+            "detail": "5062 or 8934, plus media.",
+            "inspect": "After every security project",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Owner",
+            "to": "Dial plan",
+            "label": "Look in Control Hub",
+            "detail": "On-prem patterns live there, not only on the CUBE.",
+            "inspect": "Trunks article",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Owner",
+            "to": "Users",
+            "label": "Control Hub",
+            "detail": "A new Webex user is a license and a number, not a dial-peer.",
+            "inspect": "License matrix",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Split the brains",
+          "paragraphs": [
+            "Webex Calling destinations are known to the cloud. The gateway sees what the cloud sends it and what the PBX sends it.",
+            "Adding a user only on the CUBE does not create a Webex Calling user."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        },
+        {
+          "h": "PBX dial plan stays",
+          "paragraphs": [
+            "Unified CM still normalizes to +E.164 in the integration guide. That work is on the cluster, on purpose.",
+            "When you migrate users off the cluster, you delete those route patterns as part of migration, not as part of gateway hygiene."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A new Webex Calling user is created",
+          "choices": [
+            "In Control Hub, with a license and a number",
+            "Only as a CUBE dial-peer",
+            "In RedSky only",
+            "In Analyzer only"
+          ],
+          "answer": 0,
+          "why": "Identity and calling are cloud objects.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Certificate expiry breaks",
+          "choices": [
+            "TLS for the trunk",
+            "Extension length",
+            "SSO by itself",
+            "Flashcards"
+          ],
+          "answer": 0,
+          "why": "The handshake needs a valid certificate.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Firewall projects should re-check",
+          "choices": [
+            "The signaling port for the trunk type and the media ranges",
+            "Only DNS TTLs",
+            "Only fonts",
+            "Only quizzes"
+          ],
+          "answer": 0,
+          "why": "Drift is how working trunks die.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "On-prem patterns for Webex Calling are",
+          "choices": [
+            "Dial plans in Control Hub",
+            "Only speed dials",
+            "Only macros",
+            "Only reports"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Unified CM +E.164 normalization lives",
+          "choices": [
+            "On the cluster, in the integration design",
+            "Inside the Webex App font",
+            "On the PSAP",
+            "In a bot"
+          ],
+          "answer": 0,
+          "why": "The workflow guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Deleting route patterns is",
+          "choices": [
+            "A migration step when users leave the cluster",
+            "Daily gateway hygiene",
+            "Required to register a trunk",
+            "A 933 substitute"
+          ],
+          "answer": 0,
+          "why": "Do not clean them up until the users have moved.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Users in Control Hub",
+          "back": "Not on the CUBE."
+        },
+        {
+          "front": "Expiry",
+          "back": "A valid name with an expired certificate still fails."
+        },
+        {
+          "front": "Drift",
+          "back": "Re-check ports after security changes."
+        },
+        {
+          "front": "Cluster dial plan",
+          "back": "Stays until migration says otherwise."
+        }
+      ],
+      "lab": {
+        "title": "Monthly card",
+        "goal": "Write three checks and the pass condition.",
+        "steps": [
+          {
+            "do": "Certificate",
+            "expect": "Not expiring this month"
+          },
+          {
+            "do": "Firewall",
+            "expect": "Matches the trunk type"
+          },
+          {
+            "do": "Test call",
+            "expect": "Both directions"
+          }
+        ],
+        "check": "The card names an owner."
+      },
+      "fault": {
+        "title": "User added on the router",
+        "symptom": "A new hire was given a dial-peer and no Control Hub user. The Webex App has no phone service.",
+        "log": "SYNTHETIC: CUBE dial-peer 2108, Control Hub user absent.",
+        "cause": "The cloud does not learn users from the gateway.",
+        "fix": "Create the user, assign the license and number, and remove the mistaken dial-peer if it hijacks a range.",
+        "cite": {
+          "label": "Features available by license type",
+          "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "lgw-review",
+      "title": "Gateway review",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "A gateway is ready when the trunk type, the name, the ports, the one-location rule, and a call in each direction all have evidence.",
+      "uncertainty": "",
+      "objectives": [
+        "Collect evidence",
+        "Fail the review without it",
+        "Hand media and emergency to the next owners"
+      ],
+      "diagram": {
+        "caption": "Evidence, not a screenshot of a prompt.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Type",
+            "sub": "5062 or 8934",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Name",
+            "sub": "CN/SAN",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Location",
+            "sub": "one trunk",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Calls",
+            "sub": "both ways",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "prove"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "prove"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "prove"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Gate the gateway",
+        "steps": [
+          {
+            "from": "Review",
+            "to": "Type",
+            "label": "Which port?",
+            "detail": "Say 5062 or 8934 out loud.",
+            "inspect": "Port reference",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Name",
+            "label": "Show the cert",
+            "detail": "CN or SAN versus the trunk FQDN or SRV. Redact the key.",
+            "inspect": "Trunk table",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Location",
+            "label": "Count trunks",
+            "detail": "One selected.",
+            "inspect": "Organization article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Calls",
+            "label": "Two results",
+            "detail": "Inbound and outbound, plus an on-prem extension if that is the job.",
+            "inspect": "Write the numbers you dialed",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Fail closed",
+          "paragraphs": [
+            "Missing evidence is a fail. A story about a call last month is not evidence.",
+            "Emergency calling and contact center premise agents are explicit follow-ups, not implied by a registered trunk."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "What you can skip",
+          "paragraphs": [
+            "You do not need a full IOS dump in the review packet.",
+            "You do need the trunk name, type, ports, certificate identity, location binding, and call results."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A review without call results is",
+          "choices": [
+            "Incomplete",
+            "Better, because calls are risky",
+            "A pass",
+            "An xAPI schema"
+          ],
+          "answer": 0,
+          "why": "Status is not proof of audio.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Certificate evidence is",
+          "choices": [
+            "The name match, not the private key",
+            "The private key pasted in chat",
+            "The user's password",
+            "The quiz answer key"
+          ],
+          "answer": 0,
+          "why": "Redact secrets.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Location binding evidence is",
+          "choices": [
+            "One trunk selected",
+            "As many as possible",
+            "None",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The one-trunk rule.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "8934 evidence means",
+          "choices": [
+            "You built a registration trunk",
+            "You built a certificate trunk",
+            "You enabled HELD",
+            "You passed CLCCE"
+          ],
+          "answer": 0,
+          "why": "Match the type to the port.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "A registered trunk implies emergency calling is done",
+          "choices": [
+            "No",
+            "Yes",
+            "Only in the EU",
+            "Only for bots"
+          ],
+          "answer": 0,
+          "why": "933 and the location toggle are separate.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Premise contact center agents are",
+          "choices": [
+            "A separate dial-plan task",
+            "Automatic",
+            "Illegal",
+            "A macro"
+          ],
+          "answer": 0,
+          "why": "Voice-channel article.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Evidence",
+          "back": "Type, name, binding, calls."
+        },
+        {
+          "front": "Redact",
+          "back": "No private keys."
+        },
+        {
+          "front": "Not implied",
+          "back": "Emergency and WxCC dial plans are their own work."
+        },
+        {
+          "front": "Fail closed",
+          "back": "No evidence, no pass."
+        }
+      ],
+      "lab": {
+        "title": "Score a packet",
+        "goal": "Mark pass or fail for a packet that has a screenshot of 'registered' and nothing else.",
+        "steps": [
+          {
+            "do": "Calls",
+            "expect": "Fail"
+          },
+          {
+            "do": "Certificate name",
+            "expect": "Fail"
+          },
+          {
+            "do": "What you would ask for",
+            "expect": "The four evidence items"
+          }
+        ],
+        "check": "Registered alone did not pass."
+      },
+      "fault": {
+        "title": "Green trunk, failed cutover",
+        "symptom": "Monday morning inbound fails. The trunk still says registered. The certificate expired Sunday.",
+        "log": "SYNTHETIC: registered=true, cert notAfter=Sunday, Monday INVITE fails.",
+        "cause": "Registration state was stale relative to the certificate.",
+        "fix": "Replace the certificate, confirm the name still matches, and place a new call. Add expiry to the monthly card.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

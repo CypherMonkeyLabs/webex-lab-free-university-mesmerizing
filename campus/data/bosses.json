@@ -1,0 +1,266 @@
+[
+  {
+    "id": "lgw-cert",
+    "title": "Certificate trunk never registers",
+    "brief": "A new local gateway points at the registration port. The trunk type in Control Hub is certificate-based.",
+    "log": "SYNTHETIC\nCUBE# show sip-ua register status\nLine not registered\nOutbound TLS destination port 8934\nControl Hub trunk: certificate-based\nFirewall log: SYN to 8934 allowed, no session to 5062",
+    "checks": [
+      {
+        "q": "Which destination port does the port reference require for a certificate-based trunk?",
+        "choices": [
+          "TCP 5062",
+          "TCP 8934",
+          "UDP 8500",
+          "TCP 443"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is 8934 for?",
+        "choices": [
+          "Registration-based trunks",
+          "HELD",
+          "Optimized app video",
+          "The voice service domain"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Point the certificate-based trunk at TCP 5062. Keep 8934 for registration-based trunks. Confirm SIP ALG is off.",
+    "cite": {
+      "label": "Port reference for Webex Calling",
+      "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+    }
+  },
+  {
+    "id": "redsky-off",
+    "title": "911 follows the PSTN because the location is not enabled",
+    "brief": "Users dial 911 and the carrier gets a call with no dispatchable location. The RedSky toggle for the location is off.",
+    "log": "SYNTHETIC\nLocation Richmond emergency calling: disabled\nHELD company ID: empty\n933 result: not placed\nPSTN CDR: 911 sent on the local gateway",
+    "checks": [
+      {
+        "q": "If enhanced emergency calling is not enabled, where does the lab send 911?",
+        "choices": [
+          "The location PSTN path",
+          "RedSky anyway",
+          "A bot",
+          "A contact center queue"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What should be tested after the location is enabled and phones resync?",
+        "choices": [
+          "933",
+          "A personal access token",
+          "CLWXCALL",
+          "A resource collection"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Enter the HELD company ID and secret, enable the location, resync MPP phones, and place a 933 test. International locations still use PSTN for emergency calling.",
+    "cite": {
+      "label": "Enhanced emergency calling for Webex Calling",
+      "url": "https://help.webex.com/en-us/article/av6oo3"
+    }
+  },
+  {
+    "id": "dial-miss",
+    "title": "A pattern that almost matches",
+    "brief": "918045551234 should use the Richmond trunk. The dial plan pattern is one digit short.",
+    "log": "SYNTHETIC\nDialed 918045551234\nLocation external digit 9\nPattern on the plan: +18045551XXX\nResult: unmatched, sent to the location local gateway as a default\nExpected pattern shape: +1804555XXXX",
+    "checks": [
+      {
+        "q": "After the external digit is stripped, the US teaching normalization of 18045551234 is",
+        "choices": [
+          "+18045551234",
+          "2100",
+          "933",
+          "A SIP port"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A dial plan's routing choice is",
+        "choices": [
+          "A trunk or a route group",
+          "A skill profile",
+          "A bot token",
+          "A voice domain"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Fix the pattern length so +18045551234 matches, and confirm the route is the intended trunk or route group. The lab simulator is not Control Hub.",
+    "cite": {
+      "label": "Trunks, route groups, and dial plans",
+      "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+    }
+  },
+  {
+    "id": "prem-cloud",
+    "title": "A premises user tries the cloud PSTN",
+    "brief": "A PBX behind the local gateway sends a call that the design hoped Cloud Connected PSTN would complete.",
+    "log": "SYNTHETIC\nOrigin: premises PBX user\nLocation PSTN: Cloud Connected PSTN\nDialed +18045551234\nResult: blocked\nNote: cloud PSTN is for Webex Calling users",
+    "checks": [
+      {
+        "q": "Who can use cloud PSTN?",
+        "choices": [
+          "Webex Calling users",
+          "Any premises PBX user",
+          "Only bots",
+          "Only Dedicated Instance phones, with no trunk"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How many trunks can a premises-PSTN location select?",
+        "choices": [
+          "One",
+          "Five",
+          "One per user",
+          "Unlimited"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Keep premises-origin calls on the local gateway. Use cloud PSTN for Webex Calling users. Do not assign two trunks to one premises location.",
+    "cite": {
+      "label": "Trunks, route groups, and dial plans",
+      "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+    }
+  },
+  {
+    "id": "queue-cap",
+    "title": "The wrong queue's agent cap",
+    "brief": "A contact center design was limited to 50 agents because someone read the Calling Simultaneous cap.",
+    "log": "SYNTHETIC design note\nProduct: Webex Contact Center queue\nCap applied: 50 (Simultaneous)\nSource pasted: Webex Calling call queue article\nStrategy wanted: LAA",
+    "checks": [
+      {
+        "q": "Circular, Top Down, Longest Idle, Weighted, and Simultaneous belong to",
+        "choices": [
+          "Webex Calling call queues",
+          "Flow Designer LAA",
+          "RedSky",
+          "xAPI"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Contact center routing strategies named in this lab are",
+        "choices": [
+          "LAA and BAA",
+          "Simultaneous and Weighted",
+          "Only a CSV",
+          "Only HELD"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Remove the Calling cap from the contact center queue. Cite the routing article for LAA or BAA. Do not invent a RONA timer.",
+    "cite": {
+      "label": "Routing and queueing in Webex Contact Center",
+      "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+    }
+  },
+  {
+    "id": "hook-off",
+    "title": "The bot webhook disabled itself",
+    "brief": "A listener crashed and returned errors. Messaging stopped calling it.",
+    "log": "SYNTHETIC\nWebhook messages created 09:00\nHTTP 500 x 100 between 09:01 and 09:04\nStatus: disabled\nSignature code: HMAC after JSON.parse and stringify\nHeader read: X-Spark-Signature case-sensitive, missed lowercase",
+    "checks": [
+      {
+        "q": "Messaging disables a webhook after",
+        "choices": [
+          "100 failed attempts within five minutes",
+          "One failure",
+          "36 months",
+          "A 933 test"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "X-Spark-Signature is",
+        "choices": [
+          "HMAC-SHA1 over the raw body",
+          "HMAC-SHA256 for contact center",
+          "A dial pattern",
+          "Optional"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Hash the raw bytes, compare in constant time, return 2xx only when the event is stored, and recreate the webhook if it is disabled. Use X-WebexCC-Signature for contact center, not this header.",
+    "cite": {
+      "label": "Webex webhooks",
+      "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+    }
+  },
+  {
+    "id": "di-trunk",
+    "title": "Dedicated Instance cannot call multi-tenant users",
+    "brief": "Activation finished. The interop SIP trunk was never activated. DNS for the phones is a separate fault, and this one is the trunk.",
+    "log": "SYNTHETIC\nCalling > Dedicated Instance > Manage: UC apps present\nInterop SIP trunk: not activated\nDI user 2100 calls multi-tenant 2200: fail\n933 on a multi-tenant phone: ok",
+    "checks": [
+      {
+        "q": "The activation article says you must",
+        "choices": [
+          "Activate the interop SIP trunk to multi-tenant",
+          "Import a UCCX script",
+          "Skip DNS forever",
+          "Use a personal access token"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Cross-launch of the UC apps is under",
+        "choices": [
+          "Services > Calling > Dedicated Instance > Manage",
+          "Flow Designer",
+          "The glossary only",
+          "Port 8500"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Activate the interop SIP trunk using Cisco's interop article. Do not confuse it with the Meetings SIP trunk described on the deployment-models page.",
+    "cite": {
+      "label": "Activate Dedicated Instance",
+      "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+    }
+  },
+  {
+    "id": "csv-errors",
+    "title": "CallQueueBulk.csv still has an Errors column",
+    "brief": "The hunt-to-queue export was uploaded without reading the notes. Control Hub rejected it.",
+    "log": "SYNTHETIC bulk result\nFile: CallQueueBulk.csv\nHeader tail: Errors,Notes\nRow 4: Location can't be derived based on the Call Queue number from UCM\nRow 5: number assigned to another user\nUpload: rejected",
+    "checks": [
+      {
+        "q": "Before upload you",
+        "choices": [
+          "Fix the errors and remove the Errors and Notes columns",
+          "Leave the columns so Control Hub can read them",
+          "Rename the file to a flow",
+          "Add a bearer token"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "These queues are",
+        "choices": [
+          "Webex Calling call queues",
+          "Flow Designer queues",
+          "UCCX scripts",
+          "RoomOS macros"
+        ],
+        "answer": 0
+      }
+    ],
+    "fix": "Fill location, language, and time zone where they were not derived, resolve number collisions, delete the Errors and Notes columns, and upload with the call queue bulk tool.",
+    "cite": {
+      "label": "Migrate devices and features from Unified CM",
+      "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "asOf": "Checked against Cisco's public exam, topics, course, and certification pages in October 2026. Prices and first-test dates are not copied into this lab. Re-open the live pages before you register or quote a date.",
+  "items": [
+    {
+      "name": "300-830 CLCCE",
+      "status": "Implementing Cisco Collaboration Cloud Customer Experience. The exam page describes a 90-minute English exam. Passing earns Cisco Certified Specialist - Collaboration Cloud Customer Experience and can meet a CCNP Collaboration concentration requirement, and it can count toward recertification. Topic weights on the Learning Network page fetched for this lab were 30%, 30%, 15%, and 25% across telephony and call routing, tenant configuration and reporting, digital channels, and advanced features and AI. Weights change. This lab does not store a price or a first-test date.",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html",
+      "also": "https://learningnetwork.cisco.com/s/clcce-exam-topics"
+    },
+    {
+      "name": "CCNP Collaboration",
+      "status": "The parent professional certification. 300-830 can be used as a concentration exam. This lab does not invent a core exam number. Read the CCNP Collaboration page for the current list.",
+      "url": "https://learningnetwork.cisco.com/s/ccnp-collaboration",
+      "also": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+    },
+    {
+      "name": "CLWXCALL",
+      "status": "Essentials of Webex Calling is a training course. It is not the 300-830 exam and it does not by itself grant the specialist certification.",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+    },
+    {
+      "name": "Program changes",
+      "status": "Cisco publishes certification-program updates on the Learning Network. If a code on a slide disagrees with that page, the page wins.",
+      "url": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+    }
+  ]
+}

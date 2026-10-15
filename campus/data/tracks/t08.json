@@ -1,0 +1,1809 @@
+{
+  "id": "t08",
+  "title": "E911 and RedSky",
+  "blurb": "Dispatchable location, HELD, RedSky, Intrado, 933, and the callback number.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "law",
+      "title": "Kari's Law and RAY BAUM's Act",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "US multi-line systems have federal 911 obligations. The FCC page is the source. This lab does not paraphrase the statute into new requirements.",
+      "uncertainty": "",
+      "objectives": [
+        "Cite the FCC page",
+        "Define dispatchable location in Cisco's words",
+        "Not invent a compliance opinion"
+      ],
+      "diagram": {
+        "caption": "The FCC's MLTS page is the legal source. Cisco's article is the product source.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "FCC",
+            "sub": "MLTS 911",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dispatchable location",
+            "sub": "street, floor, room",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Webex Calling",
+            "sub": "product behavior",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "requires"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "how"
+          }
+        ]
+      },
+      "flow": {
+        "title": "From a law to a location",
+        "steps": [
+          {
+            "from": "You",
+            "to": "FCC",
+            "label": "Read the MLTS page",
+            "detail": "Kari's Law and RAY BAUM's Act are named there.",
+            "inspect": "Do not rely on a blog",
+            "cite": "https://www.fcc.gov/mlts-911-requirements"
+          },
+          {
+            "from": "You",
+            "to": "Cisco",
+            "label": "Read the E911 article",
+            "detail": "Dispatchable location includes street address plus details such as floor and room.",
+            "inspect": "RedSky portal",
+            "cite": "https://www.fcc.gov/mlts-911-requirements"
+          },
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Enter the address",
+            "detail": "A location without a dispatchable address is not done.",
+            "inspect": "933 later",
+            "cite": "https://www.fcc.gov/mlts-911-requirements"
+          },
+          {
+            "from": "Counsel",
+            "to": "Design",
+            "label": "Own the legal conclusion",
+            "detail": "This lab teaches the product path. It is not a legal opinion.",
+            "inspect": "Mark that limit",
+            "cite": "https://www.fcc.gov/mlts-911-requirements"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What Cisco says you must be able to send",
+          "paragraphs": [
+            "The emergency article describes routing to the right PSAP with a dispatchable location, and it names RedSky as the service used for that on Webex Calling.",
+            "Intrado is also documented later in the same article as a provider. The legal obligation does not name a vendor. The product article does."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "What this lab will not say",
+          "paragraphs": [
+            "It will not say you are compliant because you clicked a toggle.",
+            "It will say which toggle Cisco documents, and it will point you at the FCC page."
+          ],
+          "cite": {
+            "label": "FCC MLTS 911 requirements",
+            "url": "https://www.fcc.gov/mlts-911-requirements"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The legal source this lab cites for US MLTS 911 is",
+          "choices": [
+            "The FCC MLTS page",
+            "A forum",
+            "A macro",
+            "RFC 3261"
+          ],
+          "answer": 0,
+          "why": "https://www.fcc.gov/mlts-911-requirements",
+          "cite": "https://www.fcc.gov/mlts-911-requirements"
+        },
+        {
+          "q": "Dispatchable location in the Cisco article includes",
+          "choices": [
+            "Street address plus details such as floor and room",
+            "Only a city name",
+            "Only a MAC address",
+            "Only a codec"
+          ],
+          "answer": 0,
+          "why": "The article's wording.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "This lab is",
+          "choices": [
+            "Not a legal opinion",
+            "A substitute for counsel",
+            "The statute",
+            "A PSAP"
+          ],
+          "answer": 0,
+          "why": "Use it to learn the product.",
+          "cite": "https://www.fcc.gov/mlts-911-requirements"
+        },
+        {
+          "q": "RedSky in the article is",
+          "choices": [
+            "The emergency service Cisco documents for Webex Calling",
+            "A dial plan",
+            "A license matrix row for Standard",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Intrado is",
+          "choices": [
+            "Also documented as an E911 provider in the same article",
+            "Illegal",
+            "A trunk port",
+            "A hunt group"
+          ],
+          "answer": 0,
+          "why": "The article has an Intrado section.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A toggle without a test is",
+          "choices": [
+            "Not evidence of a dispatchable location",
+            "Full compliance",
+            "A certificate",
+            "SSO"
+          ],
+          "answer": 0,
+          "why": "933 is the article's test.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "FCC MLTS page",
+          "back": "The legal citation."
+        },
+        {
+          "front": "Dispatchable",
+          "back": "Street plus floor and room, in Cisco's words."
+        },
+        {
+          "front": "Not legal advice",
+          "back": "The lab teaches the product path."
+        },
+        {
+          "front": "Two providers",
+          "back": "RedSky and Intrado are both in the article."
+        }
+      ],
+      "lab": {
+        "title": "Bookmark both pages",
+        "goal": "Open the FCC page and the Cisco E911 article.",
+        "steps": [
+          {
+            "do": "FCC",
+            "expect": "You can see Kari's Law and RAY BAUM named"
+          },
+          {
+            "do": "Cisco",
+            "expect": "You can see dispatchable location"
+          },
+          {
+            "do": "Write one sentence",
+            "expect": "What this lab will not certify"
+          }
+        ],
+        "check": "The sentence says the lab is not your counsel."
+      },
+      "fault": {
+        "title": "Compliance by slogan",
+        "symptom": "A slide says 'we are RAY BAUM compliant' because a location exists.",
+        "log": "SYNTHETIC slide: no 933 result, no floor, no room.",
+        "cause": "A location name is not a dispatchable location.",
+        "fix": "Enter the address detail, test 933, and let counsel describe compliance.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "held",
+      "title": "PIDF-LO and HELD",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "PIDF-LO is the location object. HELD is how a device asks a location server. Cisco maps those ideas onto MPP phones and the Webex App.",
+      "uncertainty": "",
+      "objectives": [
+        "Cite both RFCs",
+        "List what an MPP phone sends",
+        "Separate HELD from HELD+"
+      ],
+      "diagram": {
+        "caption": "The phone asks with HELD. The location rides as PIDF-LO.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Device",
+            "sub": "network IDs",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "HELD",
+            "sub": "RFC 5985",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "LIS",
+            "sub": "wiremap",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "PIDF-LO",
+            "sub": "RFC 4119",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "request"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "lookup"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "location"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A phone learns where it is",
+        "steps": [
+          {
+            "from": "Phone",
+            "to": "Network",
+            "label": "See LLDP, BSSID, or IP",
+            "detail": "The article lists what HELD MPP phones report: LLDP switch, wireless BSSID, IP, or MAC.",
+            "inspect": "Wiremap must know those",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "Phone",
+            "to": "RedSky",
+            "label": "HELD request",
+            "detail": "HTTPS to the hosts the article names, port 443.",
+            "inspect": "api.wxc.e911cloud.com and wxc.e911cloud.com",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "RedSky",
+            "to": "Wiremap",
+            "label": "Find the location",
+            "detail": "If the network element is known, the dispatchable location comes back.",
+            "inspect": "Unknown network is a different path",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "Call",
+            "to": "INVITE",
+            "label": "Carry it",
+            "detail": "PIDF-LO is the location object format. RFC 4119.",
+            "inspect": "The call is still SIP",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "HELD versus HELD+",
+          "paragraphs": [
+            "The article's table says HELD is used by MPP phones and HELD+ by the Webex App. HELD+ adds the network wiremap path for the app.",
+            "Cisco Discovery Protocol is not supported for the app's HELD+ discovery. LLDP is. A phone in the middle of a pass-through port stops LLDP."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "The hosts",
+          "paragraphs": [
+            "Allow HTTPS to https://api.wxc.e911cloud.com and https://wxc.e911cloud.com. The article says the phone and the Webex client use port 443.",
+            "Blocking 443 to those names looks like 'the network is fine' and '911 is wrong'."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "HELD is specified in",
+          "choices": [
+            "RFC 5985",
+            "RFC 3261",
+            "RFC 3711",
+            "RFC 8445"
+          ],
+          "answer": 0,
+          "why": "HTTP-Enabled Location Delivery.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+        },
+        {
+          "q": "PIDF-LO is specified in",
+          "choices": [
+            "RFC 4119",
+            "RFC 3966",
+            "The FCC page only",
+            "A Cisco patent you should not cite"
+          ],
+          "answer": 0,
+          "why": "Presence Information Data Format Location Object.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc4119"
+        },
+        {
+          "q": "MPP phones report, per the article,",
+          "choices": [
+            "LLDP, BSSID, IP, or MAC",
+            "Only GPS",
+            "Only the user's email",
+            "Only a certificate"
+          ],
+          "answer": 0,
+          "why": "The HELD paragraph.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Webex App discovery does not use",
+          "choices": [
+            "CDP",
+            "LLDP",
+            "BSSID",
+            "The gateway MAC"
+          ],
+          "answer": 0,
+          "why": "The article says CDP is not supported for that client.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "The RedSky HTTPS hosts in the article include",
+          "choices": [
+            "api.wxc.e911cloud.com and wxc.e911cloud.com",
+            "example.com",
+            "A SIP port",
+            "admin.webex.com only"
+          ],
+          "answer": 0,
+          "why": "Port 443.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A phone pass-through port",
+          "choices": [
+            "Stops LLDP from the switch",
+            "Improves HELD",
+            "Is required",
+            "Is a trunk"
+          ],
+          "answer": 0,
+          "why": "The article's warning.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "RFC 5985",
+          "back": "HELD."
+        },
+        {
+          "front": "RFC 4119",
+          "back": "PIDF-LO."
+        },
+        {
+          "front": "443",
+          "back": "To the two RedSky host names."
+        },
+        {
+          "front": "No CDP on the app",
+          "back": "LLDP, BSSID, IP, gateway MAC."
+        }
+      ],
+      "lab": {
+        "title": "Wiremap sketch",
+        "goal": "List three network IDs you would enter for one floor.",
+        "steps": [
+          {
+            "do": "Switch",
+            "expect": "LLDP chassis or port"
+          },
+          {
+            "do": "Wi-Fi",
+            "expect": "BSSID"
+          },
+          {
+            "do": "Fallback",
+            "expect": "What the article says a non-HELD device uses: caller ID"
+          }
+        ],
+        "check": "Each ID maps to a dispatchable location."
+      },
+      "fault": {
+        "title": "HTTPS blocked",
+        "symptom": "Phones never learn a location. 933 asks the user or fails the test.",
+        "log": "SYNTHETIC: firewall denies 443 to api.wxc.e911cloud.com.",
+        "cause": "The HELD request cannot leave.",
+        "fix": "Allow 443 to the documented hosts and retest 933.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "enable",
+      "title": "Enable a location",
+      "level": "core",
+      "minutes": 14,
+      "summary": "RedSky ties to the organization with a HELD company ID and secret. The service is turned on per location. The US entitlement and the Canada license are not the same sentence.",
+      "uncertainty": "",
+      "objectives": [
+        "Enter the company ID",
+        "Know the default toggles",
+        "Test 933"
+      ],
+      "diagram": {
+        "caption": "Company ID in Control Hub. Enablement on the location. 933 before you promise live 911.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "RedSky portal",
+            "sub": "company ID",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Control Hub",
+            "sub": "secret",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Location",
+            "sub": "enabled",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "933",
+            "sub": "test",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "copy"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "enable"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "prove"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Turn on one site",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "RedSky",
+            "label": "Copy the HELD company ID and secret",
+            "detail": "They correlate this organization to the RedSky customer. Cisco says it does not store your portal password. The wizard uses credentials once to obtain the ID.",
+            "inspect": "GUID",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Control Hub",
+            "label": "Match them",
+            "detail": "A mismatch warns you. Proceeding overwrites the previous account.",
+            "inspect": "Read the warning",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Enable",
+            "detail": "US or Canada locations. International stays on PSTN emergency.",
+            "inspect": "Per location",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Phone",
+            "to": "933",
+            "label": "Test",
+            "detail": "Confirm the address. The article tells you to do this before routing live emergency calls.",
+            "inspect": "Every location",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Defaults",
+          "paragraphs": [
+            "Automatic location configuration in the E911 portal is off by default for Webex Calling customers and on by default for Webex Wholesale.",
+            "Deleting a location does not delete the RedSky building."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "Entitlement",
+          "paragraphs": [
+            "US Webex Calling users are entitled to the RedSky service with their calling entitlement, per the requirements table.",
+            "Canada: obtain the RedSky license through Cisco or the partner. Do not collapse those sentences."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The HELD company ID is",
+          "choices": [
+            "The GUID that links Control Hub to the RedSky organization",
+            "A dial pattern",
+            "A trunk port",
+            "A license name"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A mismatched secret",
+          "choices": [
+            "Warns, and proceeding overwrites the old account",
+            "Is ignored",
+            "Deletes Unified CM",
+            "Is good"
+          ],
+          "answer": 0,
+          "why": "The wizard text.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Wholesale default for the automatic location toggle is",
+          "choices": [
+            "On",
+            "Off",
+            "Unset forever",
+            "933"
+          ],
+          "answer": 0,
+          "why": "The article contrasts it with Webex Calling customers, whose toggle is off by default.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Canada RedSky",
+          "choices": [
+            "Needs the license via Cisco or the partner",
+            "Is the same sentence as the US entitlement",
+            "Is impossible",
+            "Is a SIP port"
+          ],
+          "answer": 0,
+          "why": "The table.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "International locations",
+          "choices": [
+            "Use PSTN for emergency calling",
+            "Use US RedSky",
+            "Cannot dial",
+            "Use bots"
+          ],
+          "answer": 0,
+          "why": "The table.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "933 comes",
+          "choices": [
+            "Before you rely on live 911 routing",
+            "After the outage",
+            "Never",
+            "Only in the EU"
+          ],
+          "answer": 0,
+          "why": "The article's test.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Company ID",
+          "back": "Links the org to RedSky."
+        },
+        {
+          "front": "Wholesale default",
+          "back": "Automatic location toggle on."
+        },
+        {
+          "front": "Calling customer default",
+          "back": "That toggle off."
+        },
+        {
+          "front": "Canada",
+          "back": "Separate license sentence."
+        }
+      ],
+      "lab": {
+        "title": "Enablement checklist",
+        "goal": "Order the steps for one US location.",
+        "steps": [
+          {
+            "do": "ID and secret",
+            "expect": "Match"
+          },
+          {
+            "do": "Location",
+            "expect": "Enable after the wiremap exists"
+          },
+          {
+            "do": "933",
+            "expect": "Address matches the floor"
+          }
+        ],
+        "check": "International was not forced onto RedSky."
+      },
+      "fault": {
+        "title": "Wrong company ID",
+        "symptom": "933 returns another customer's building name.",
+        "log": "SYNTHETIC: company ID pasted from a lab tenant.",
+        "cause": "The GUID selects the RedSky organization.",
+        "fix": "Put the right ID and secret in, accept the overwrite warning only if you mean it, and retest 933.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "devices",
+      "title": "HELD phones, non-HELD phones, and the app",
+      "level": "core",
+      "minutes": 15,
+      "summary": "MPP phones and the Webex App can do dynamic location. Many other phones are caller-ID located. Moving them without an admin is how the PSAP gets the old building.",
+      "uncertainty": "",
+      "objectives": [
+        "Name HELD device families from the article",
+        "Treat the rest as caller-ID devices",
+        "Resync after enablement"
+      ],
+      "diagram": {
+        "caption": "Dynamic for HELD. Static caller ID for the rest.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "MPP HELD",
+            "sub": "wiremap",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex App",
+            "sub": "HELD+",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Other phones",
+            "sub": "caller ID",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "933",
+            "sub": "all of them",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "test"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "test"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "test"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Classify a device",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "List",
+            "label": "Mark HELD models",
+            "detail": "The article lists 9800 desk phones, 6800/7800/8800 MPP, the 7832 and 8832 MPP conference phones, DECT 6800 MPP, and ATA 191 and 192 among HELD-capable devices.",
+            "inspect": "Check the live supported-device list too",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Others",
+            "label": "Caller ID",
+            "detail": "Poly and Yealink models in the article's non-HELD list use the caller-ID address.",
+            "inspect": "Do not move them casually",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Resync",
+            "label": "Push config",
+            "detail": "Until the phone picks up HELD config, it does not use HELD. The article says that can take the next 24-hour check.",
+            "inspect": "Or resync now",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "User",
+            "to": "App",
+            "label": "Off-net prompt",
+            "detail": "The Webex App asks for an address when the network is unknown, for users off premises.",
+            "inspect": "Red X if they dismiss the need",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "24 hours",
+          "paragraphs": [
+            "Device management pushes HELD configuration after the location is enabled. If you do not resync, the phone may wait until its next configuration check, which the article bounds as within 24 hours.",
+            "A cutover on Friday afternoon without a resync is a weekend of caller-ID locations."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "Hang-up behavior",
+          "paragraphs": [
+            "HELD-capable MPP phones do not let the user hang up an emergency call. The far end releases it. If the far end does not, the article says a phone reset is the last option.",
+            "Tell the help desk before the first false 911."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Non-HELD phones locate by",
+          "choices": [
+            "Caller ID",
+            "LLDP always",
+            "GPS always",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Config after enablement may wait",
+          "choices": [
+            "Up to the next check, described as within 24 hours, unless you resync",
+            "One minute, guaranteed",
+            "A week, with no bound",
+            "Never"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "The Webex App off premises",
+          "choices": [
+            "Prompts for an address on an unknown network",
+            "Uses the office wiremap anyway",
+            "Cannot call",
+            "Uses CDP"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Emergency hang-up on HELD MPP",
+          "choices": [
+            "The user may be unable to hang up until the far end releases",
+            "Is instant",
+            "Is a bug you should file as if undocumented",
+            "Is a dial plan"
+          ],
+          "answer": 0,
+          "why": "The article warns the help desk case.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "ATA 191 and 192 are",
+          "choices": [
+            "In the article's HELD-capable list",
+            "Non-HELD always",
+            "Illegal",
+            "Soft clients"
+          ],
+          "answer": 0,
+          "why": "The list.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Moving a caller-ID phone to a new floor",
+          "choices": [
+            "Points 911 at the old address until an admin changes it",
+            "Updates by LLDP",
+            "Updates by Wi-Fi",
+            "Is fine"
+          ],
+          "answer": 0,
+          "why": "The article recommends they not be moved without approval.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Caller ID phones",
+          "back": "Static address. Do not move them quietly."
+        },
+        {
+          "front": "24 hours",
+          "back": "Or resync, or HELD is not active."
+        },
+        {
+          "front": "App prompt",
+          "back": "Unknown network asks for an address."
+        },
+        {
+          "front": "Far-end release",
+          "back": "MPP emergency calls may not hang up locally."
+        }
+      ],
+      "lab": {
+        "title": "Classify eight devices",
+        "goal": "HELD, HELD+, or caller ID.",
+        "steps": [
+          {
+            "do": "8845 MPP",
+            "expect": "HELD, if it is in the MPP families named"
+          },
+          {
+            "do": "Webex App",
+            "expect": "HELD+"
+          },
+          {
+            "do": "A Yealink from the article's list",
+            "expect": "Caller ID"
+          }
+        ],
+        "check": "The help desk card matches the class."
+      },
+      "fault": {
+        "title": "Moved lobby phone",
+        "symptom": "The lobby phone was carried to the new suite. 933 still says the old lobby.",
+        "log": "SYNTHETIC: device=Yealink, method=caller ID, address=old.",
+        "cause": "It is not a HELD device.",
+        "fix": "Put it back or update the caller-ID address. Prefer a HELD phone if people will move it.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "nomadic",
+      "title": "Nomadic users and the red X",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "The Webex App updates location from the network when it can, and asks the user when it cannot. A signed-in user who roams may only see a red X.",
+      "uncertainty": "The BroadWorks emergency article mentions a client configuration tag for prompt frequency. This lesson does not apply that tag to Webex Calling multi-tenant unless the Webex Calling article you are reading names it.",
+      "objectives": [
+        "Explain the red X",
+        "Explain cellular handoff",
+        "Not assume GPS"
+      ],
+      "diagram": {
+        "caption": "Unknown network: prompt at sign-in, red X if they were already signed in.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Known network",
+            "sub": "automatic",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Sign-in elsewhere",
+            "sub": "prompt",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Already signed in",
+            "sub": "red X",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "911",
+            "sub": "last confirmed address",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "user entry"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "if they ignore it"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A laptop changes buildings",
+        "steps": [
+          {
+            "from": "App",
+            "to": "Known BSSID",
+            "label": "Update silently",
+            "detail": "If RedSky knows the network, the article says the location updates automatically.",
+            "inspect": "Wiremap quality matters",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "App",
+            "to": "New network at sign-in",
+            "label": "Prompt",
+            "detail": "The user enters an address. RedSky validates and stores it.",
+            "inspect": "Dispatch address",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "App",
+            "to": "Roam while signed in",
+            "label": "Red X",
+            "detail": "The article says they are not prompted in that case. They click the red X.",
+            "inspect": "Train them",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Phone",
+            "to": "Cellular",
+            "label": "Native dialer",
+            "detail": "A soft client with cellular capability hands the emergency call to the phone. Webex never sees it.",
+            "inspect": "ECBN article",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the user must do",
+          "paragraphs": [
+            "Ignoring the red X means the next emergency call can use a stale address. The article describes that indicator in the footer.",
+            "This is a training problem as much as a network problem."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "Cellular is outside the product",
+          "paragraphs": [
+            "There is no Webex call record and no Webex ECBN.",
+            "Do not debug a missing CDR for a mobile 911 that the OS placed."
+          ],
+          "cite": {
+            "label": "Emergency Callback Number in Control Hub",
+            "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A known network on the Webex App",
+          "choices": [
+            "Can update location automatically",
+            "Always prompts",
+            "Never calls",
+            "Uses CDP"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Already signed in, unknown network",
+          "choices": [
+            "Shows a red X rather than a forced prompt",
+            "Reboots the phone",
+            "Disables calling",
+            "Sends a webhook only"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Cellular soft-client 911",
+          "choices": [
+            "Goes to the native dialer",
+            "Stays in Webex",
+            "Uses the dial plan",
+            "Uses a queue"
+          ],
+          "answer": 0,
+          "why": "ECBN article.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "A missing Webex CDR for that mobile call is",
+          "choices": [
+            "Expected",
+            "A trunk outage",
+            "A certificate fault",
+            "A queue overflow"
+          ],
+          "answer": 0,
+          "why": "Webex did not see the call.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "The red X is",
+          "choices": [
+            "A user action, not only a network ticket",
+            "A SIP 403",
+            "A license",
+            "A port"
+          ],
+          "answer": 0,
+          "why": "Train people to tap it.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Wiremap quality determines",
+          "choices": [
+            "Whether the app can stay silent and still be right",
+            "The font",
+            "The exam",
+            "The bot"
+          ],
+          "answer": 0,
+          "why": "Known networks update automatically.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Red X",
+          "back": "Already signed in, unknown place."
+        },
+        {
+          "front": "Prompt",
+          "back": "Unknown place at sign-in."
+        },
+        {
+          "front": "Native dialer",
+          "back": "Cellular emergency bypasses Webex."
+        },
+        {
+          "front": "No CDR",
+          "back": "Expected for that bypass."
+        }
+      ],
+      "lab": {
+        "title": "Script the help desk",
+        "goal": "Write the words for a user who sees a red X.",
+        "steps": [
+          {
+            "do": "What it means",
+            "expect": "The app does not trust the location"
+          },
+          {
+            "do": "What they do",
+            "expect": "Enter the address"
+          },
+          {
+            "do": "What you do not do",
+            "expect": "Open a CUBE ticket first"
+          }
+        ],
+        "check": "The script matches the article."
+      },
+      "fault": {
+        "title": "Ignored red X",
+        "symptom": "A traveler calls 911 and the PSAP is sent to yesterday's office.",
+        "log": "SYNTHETIC: app footer red X for six hours, no address update.",
+        "cause": "The signed-in roam path does not force a prompt.",
+        "fix": "User enters the address. Consider the article's note on prompting frequency if policy allows a stricter client tag. Do not invent a tag this lesson does not cite.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "intrado",
+      "title": "Intrado beside RedSky",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "The same Cisco article documents Intrado as an enhanced emergency provider, also tested with 933, also using a company ID and secret.",
+      "uncertainty": "",
+      "objectives": [
+        "Not mix credentials",
+        "Use 933 for either",
+        "Read the Intrado confirmation text"
+      ],
+      "diagram": {
+        "caption": "Two providers, one test number, different portal credentials.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "RedSky",
+            "sub": "one integration",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Intrado",
+            "sub": "another",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Company ID",
+            "sub": "do not mix",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "933",
+            "sub": "both",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "own ID"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "own ID"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "test"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Choose a provider and prove it",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Contract",
+            "label": "Which provider?",
+            "detail": "The article supports both. The contract picks one.",
+            "inspect": "Do not enable both by experiment",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Portal",
+            "label": "Copy that provider's ID",
+            "detail": "Intrado's labels in the article are Company ID (Account ID) and Secret Key (HELD WEBEX).",
+            "inspect": "Different portal",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "933",
+            "label": "Test",
+            "detail": "The article tells you to confirm 933 from the locations before routing live calls to Intrado.",
+            "inspect": "Misconfiguration can send calls to a relay center, and the article mentions charges",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "Checkbox",
+            "label": "Confirm the tests",
+            "detail": "The Intrado flow asks you to confirm you tested 933 and understand the risk.",
+            "inspect": "Do not click it early",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The warning",
+          "paragraphs": [
+            "The Intrado confirmation text says misconfiguration can send calls to a relay center and that additional charges can apply.",
+            "That sentence is why 933 exists."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "Alerts",
+          "paragraphs": [
+            "The RedSky portion of the article also describes alerts for a 933 test or a HELD request from an unknown location.",
+            "Use the alerts. They are how you see nomadic users without waiting for a real emergency."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Intrado credentials in the article are labeled",
+          "choices": [
+            "Company ID (Account ID) and Secret Key (HELD WEBEX)",
+            "The same fields as a bot token",
+            "A dial pattern",
+            "A route group"
+          ],
+          "answer": 0,
+          "why": "The Intrado section.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "933 is used for",
+          "choices": [
+            "Both providers' tests",
+            "Only RedSky",
+            "Only Intrado",
+            "Neither"
+          ],
+          "answer": 0,
+          "why": "Both sections say 933.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "The Intrado confirmation mentions",
+          "choices": [
+            "A relay center and possible charges if you are wrong",
+            "A free retry forever",
+            "A codec",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "Read it before you click.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Mixing RedSky and Intrado IDs",
+          "choices": [
+            "Points the org at the wrong provider account",
+            "Is harmless",
+            "Is required",
+            "Fixes 403s"
+          ],
+          "answer": 0,
+          "why": "The ID selects the account.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Unknown-location HELD alerts are",
+          "choices": [
+            "Documented so admins can see them",
+            "Impossible",
+            "A SIP method",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Choosing a provider is",
+          "choices": [
+            "A contract decision the article supports for both",
+            "Always RedSky with no alternative in the article",
+            "Always Intrado",
+            "A phone setting only"
+          ],
+          "answer": 0,
+          "why": "Both sections exist.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Two portals",
+          "back": "Do not mix the IDs."
+        },
+        {
+          "front": "933",
+          "back": "The test for both."
+        },
+        {
+          "front": "Relay center",
+          "back": "The Intrado warning."
+        },
+        {
+          "front": "Alerts",
+          "back": "933 and unknown HELD requests."
+        }
+      ],
+      "lab": {
+        "title": "Provider card",
+        "goal": "Fill provider, ID owner, and 933 status. Use fake IDs.",
+        "steps": [
+          {
+            "do": "Provider",
+            "expect": "RedSky or Intrado"
+          },
+          {
+            "do": "ID",
+            "expect": "Who holds it"
+          },
+          {
+            "do": "933",
+            "expect": "Not clicked until the address is right"
+          }
+        ],
+        "check": "The confirmation checkbox is still unchecked."
+      },
+      "fault": {
+        "title": "Checkbox first",
+        "symptom": "Live 911 was enabled before 933. The first real call hit a relay.",
+        "log": "SYNTHETIC: confirmation clicked, 933 count=0.",
+        "cause": "The article's order was reversed.",
+        "fix": "Disable live routing if the product allows, run 933 from each location, then confirm.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "e911-review",
+      "title": "Emergency review",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "A location is ready when the provider, the wiremap or caller-ID address, the resync, the ECBN, and a 933 result all exist.",
+      "uncertainty": "",
+      "objectives": [
+        "Demand 933 evidence",
+        "Demand ECBN",
+        "Separate international sites"
+      ],
+      "diagram": {
+        "caption": "Five pieces of evidence. A toggle is only one.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Provider",
+            "sub": "ID",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Wiremap",
+            "sub": "or caller ID",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Resync",
+            "sub": "HELD live",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "933",
+            "sub": "right address",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "ECBN",
+            "sub": "callback",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": ""
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": ""
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": ""
+          },
+          {
+            "from": "n4",
+            "to": "n3",
+            "label": ""
+          }
+        ]
+      },
+      "flow": {
+        "title": "Close the review",
+        "steps": [
+          {
+            "from": "Review",
+            "to": "Provider",
+            "label": "Which account?",
+            "detail": "RedSky or Intrado, right company ID.",
+            "inspect": "Not the lab tenant",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Review",
+            "to": "Devices",
+            "label": "Classified",
+            "detail": "HELD resynced. Caller-ID phones have a static address.",
+            "inspect": "24-hour warning",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Review",
+            "to": "933",
+            "label": "Per location",
+            "detail": "The address matches the floor.",
+            "inspect": "Save the result",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Review",
+            "to": "ECBN",
+            "label": "Callable",
+            "detail": "One of the three documented choices, and someone answers.",
+            "inspect": "60-minute note is not the design",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "International",
+          "paragraphs": [
+            "Do not fail a UK site for lacking RedSky. The article says international emergency stays on the PSTN.",
+            "Do fail it for having no PSTN emergency test of its own."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "Shared lines",
+          "paragraphs": [
+            "Review the line that will actually be selected, not the phone that happens to sit in the room.",
+            "The shared-line article is part of this review."
+          ],
+          "cite": {
+            "label": "Shared lines and virtual lines across locations",
+            "url": "https://help.webex.com/default/article/c5cgxd"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A toggle without 933 is",
+          "choices": [
+            "Incomplete",
+            "Enough",
+            "A certificate",
+            "A dial plan"
+          ],
+          "answer": 0,
+          "why": "The article's test is 933.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "ECBN must be",
+          "choices": [
+            "A documented choice that someone can answer",
+            "Any toll-free number",
+            "A bot",
+            "A pattern"
+          ],
+          "answer": 0,
+          "why": "ECBN article.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "International sites",
+          "choices": [
+            "Stay on PSTN emergency",
+            "Must use RedSky",
+            "Must use Intrado",
+            "Cannot exist"
+          ],
+          "answer": 0,
+          "why": "The table.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "HELD phones need",
+          "choices": [
+            "A resync or a wait for the config check",
+            "Nothing",
+            "A new trunk",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "The 24-hour note.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Shared-line review looks at",
+          "choices": [
+            "The selected line's location",
+            "The phone's sticker only",
+            "The codec",
+            "The font"
+          ],
+          "answer": 0,
+          "why": "Shared-line article.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "Caller-ID phones need",
+          "choices": [
+            "A static address and a rule about moving them",
+            "A wiremap they cannot use",
+            "CDP",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The non-HELD section.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Five proofs",
+          "back": "Provider, map or address, resync, 933, ECBN."
+        },
+        {
+          "front": "International",
+          "back": "PSTN emergency. Still test it."
+        },
+        {
+          "front": "Line, not handset",
+          "back": "Shared lines."
+        },
+        {
+          "front": "Answer the callback",
+          "back": "ECBN has to reach a human."
+        }
+      ],
+      "lab": {
+        "title": "Review one floor",
+        "goal": "Pass or fail with a reason.",
+        "steps": [
+          {
+            "do": "933 screenshot",
+            "expect": "Required for a US HELD site"
+          },
+          {
+            "do": "ECBN",
+            "expect": "Named person"
+          },
+          {
+            "do": "A moved Yealink",
+            "expect": "Fail until the address is updated"
+          }
+        ],
+        "check": "The fail has a fix."
+      },
+      "fault": {
+        "title": "ECBN to a closed attendant",
+        "symptom": "933 showed the right floor. The PSAP callback reached a menu that hangs up after hours.",
+        "log": "SYNTHETIC: ECBN=main AA, after-hours disconnect.",
+        "cause": "The address was right and the callback number was not answerable.",
+        "fix": "Point ECBN at a line that answers, including after hours, and place the carrier's callback test.",
+        "cite": {
+          "label": "Emergency Callback Number in Control Hub",
+          "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        }
+      }
+    }
+  ]
+}

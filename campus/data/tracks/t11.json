@@ -1,0 +1,1814 @@
+{
+  "id": "t11",
+  "title": "Flow Designer and Agent Desktop",
+  "blurb": "Activities, event flows, CRM data dips, and what the agent sees. The canvas in this lab is a teaching model.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "canvas",
+      "title": "The canvas and this lab's copy",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "Flow Designer opens with Control Hub single sign-on. The designer in Webex Lab exports a teaching schema named webex-lab-flow-1. You cannot import that file into Control Hub.",
+      "uncertainty": "",
+      "objectives": [
+        "Sign in the way the article describes",
+        "Name activities from the article",
+        "Refuse to import the lab JSON"
+      ],
+      "diagram": {
+        "caption": "Learn the activities. Do not upload the lab file.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "SSO",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Flow Designer",
+            "sub": "Cisco",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Lab canvas",
+            "sub": "teaching schema",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "JSON",
+            "sub": "download only",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "same sign-in"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "export"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "not an import"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Open the real tool and the practice tool",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Control Hub",
+            "label": "Already signed in",
+            "detail": "Flow Designer uses SSO with Cisco Identity Service. If you are in Control Hub you are not asked to sign in again.",
+            "inspect": "Otherwise SSO credentials",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Admin",
+            "to": "Flow",
+            "label": "Create a main flow",
+            "detail": "Start Flow begins it. End Flow and Disconnect Contact are how paths finish. Event flows are separate.",
+            "inspect": "Not a Calling auto attendant",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "This lab",
+            "label": "Practice on the studio canvas",
+            "detail": "Drag activities, connect ports, and simulate a test contact. The schema is webex-lab-flow-1.",
+            "inspect": "Studio > Flow designer",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "Export",
+            "label": "Keep the file local",
+            "detail": "The download is for study. The UI says it is not a Control Hub import.",
+            "inspect": "Do not open a TAC case about it",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Activities the article and this lab both name",
+          "paragraphs": [
+            "Start Flow, Business Hours, Play Message, Play Music, Menu, Collect Digits, Condition, HTTP Request, Virtual Agent, Queue Contact, Queue To Agent, Screen Pop, Callback, Blind Transfer, and Disconnect Contact.",
+            "The lab canvas uses those names so you can rehearse. Case is also a documented branching activity; the lab groups that idea with Condition so the canvas stays small. Confirm Case on the live article when you need it."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "What the export is",
+          "paragraphs": [
+            "The file records nodes, ports, and a note that the schema is a teaching model.",
+            "Cisco's import format is whatever Flow Designer currently accepts. This project does not claim to match it."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Flow Designer sign-in uses",
+          "choices": [
+            "SSO with Cisco Identity Service",
+            "A local gateway password",
+            "HELD company ID",
+            "A twelve-hour token you invent"
+          ],
+          "answer": 0,
+          "why": "If Control Hub is open, you continue.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The lab export schema is",
+          "choices": [
+            "webex-lab-flow-1, not a Control Hub import",
+            "The production Cisco schema",
+            "A CUCM BAT file",
+            "An RFC"
+          ],
+          "answer": 0,
+          "why": "Labeled in the designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Start Flow opens",
+          "choices": [
+            "The main flow",
+            "A DNS zone",
+            "A trunk",
+            "Web RTMT"
+          ],
+          "answer": 0,
+          "why": "Event flows are separate.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Play Music in the flow is",
+          "choices": [
+            "A Flow Designer activity",
+            "Calling location music on hold",
+            "SRTP",
+            "A skill profile"
+          ],
+          "answer": 0,
+          "why": "Different feature.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Disconnect Contact",
+          "choices": [
+            "Ends the contact",
+            "Parks a call",
+            "Sizes Dedicated Instance",
+            "Forwards DNS"
+          ],
+          "answer": 0,
+          "why": "An activity on the canvas.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Case on the live article",
+          "choices": [
+            "Should be confirmed there when you need that branch",
+            "Is invented by this lab as a port number",
+            "Is 5062",
+            "Is a theme"
+          ],
+          "answer": 0,
+          "why": "The lab does not pretend its canvas is complete.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "SSO",
+          "back": "Cisco Identity Service, shared with Control Hub."
+        },
+        {
+          "front": "Schema",
+          "back": "webex-lab-flow-1 is local."
+        },
+        {
+          "front": "Main flow",
+          "back": "Starts at Start Flow."
+        },
+        {
+          "front": "Case",
+          "back": "Read the live article; the lab canvas is smaller."
+        }
+      ],
+      "lab": {
+        "title": "Export and read",
+        "goal": "Build the sample flow in the studio and download it.",
+        "steps": [
+          {
+            "do": "Schema",
+            "expect": "The file says webex-lab-flow-1"
+          },
+          {
+            "do": "Note",
+            "expect": "It says it is not an import"
+          },
+          {
+            "do": "Activity",
+            "expect": "You can point at Queue Contact"
+          }
+        ],
+        "check": "You did not try to upload it."
+      },
+      "fault": {
+        "title": "Imported the lab file",
+        "symptom": "Control Hub rejects a JSON the student exported from Webex Lab.",
+        "log": "SYNTHETIC error: unknown schema webex-lab-flow-1.",
+        "cause": "The file is a teaching model.",
+        "fix": "Rebuild the flow in Flow Designer.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "hours-menu",
+      "title": "Hours, menus, and digits",
+      "level": "core",
+      "minutes": 13,
+      "summary": "Business Hours splits open and closed. Menu and Collect Digits gather what the caller presses. Unmatched input needs a port or the contact stalls.",
+      "uncertainty": "",
+      "objectives": [
+        "Wire both hour ports",
+        "Wire an unmatched menu port",
+        "Use Collect Digits for data, not for the menu itself"
+      ],
+      "diagram": {
+        "caption": "Every branch the caller can hit should land somewhere.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Business Hours",
+            "sub": "open or closed",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Menu",
+            "sub": "digits",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Other",
+            "sub": "timeout or unmatched",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Collect Digits",
+            "sub": "account",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "open"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "no match"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "matched"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A closed office and a bad keypress",
+        "steps": [
+          {
+            "from": "Start",
+            "to": "Hours",
+            "label": "Connect out to Business Hours",
+            "detail": "Open continues the service. Closed should play a message and then disconnect or transfer, on purpose.",
+            "inspect": "Do not leave closed empty",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Hours",
+            "to": "Menu",
+            "label": "Offer real choices",
+            "detail": "Each digit you announce needs a port that goes somewhere.",
+            "inspect": "The lab menu uses 1, 2, and other",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Menu",
+            "to": "Other",
+            "label": "Catch timeout and junk",
+            "detail": "The lab activity says unmatched input uses the timeout or unmatched port if you connect one.",
+            "inspect": "Silence is not a design",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Menu",
+            "to": "Digits",
+            "label": "Collect an account number on its own activity",
+            "detail": "Collect Digits is for values like an account number. A menu is for choices.",
+            "inspect": "Then a Condition can branch",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Condition after the digits",
+          "paragraphs": [
+            "Condition branches on a variable set earlier. True and false both need a next activity if both are possible.",
+            "The lab simulator treats the test contact's condition flag as that branch. It is not Cisco's expression language."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "Play Message versus Play Music",
+          "paragraphs": [
+            "Play Message plays a prompt. Play Music plays music while the contact waits. Neither one is the Calling location's music on hold.",
+            "Closed paths usually want a message, not hold music, and then Disconnect Contact."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Business Hours ports to plan for are",
+          "choices": [
+            "Open and closed",
+            "Only open",
+            "TCP and UDP",
+            "Publisher and subscriber"
+          ],
+          "answer": 0,
+          "why": "Both are on the activity.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Unmatched menu input",
+          "choices": [
+            "Needs a connected timeout or unmatched port",
+            "Hangs up by RFC",
+            "Becomes a trunk",
+            "Retries SSO"
+          ],
+          "answer": 0,
+          "why": "Connect it on purpose.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Collect Digits is for",
+          "choices": [
+            "Values such as an account number",
+            "Choosing a department by itself",
+            "DNS",
+            "Sizing a region"
+          ],
+          "answer": 0,
+          "why": "Menu is the choice activity.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The lab simulator's condition flag",
+          "choices": [
+            "Is a teaching stand-in, not Cisco's expression language",
+            "Is imported by Control Hub",
+            "Is HELD",
+            "Is the voice domain"
+          ],
+          "answer": 0,
+          "why": "Read the canvas note.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A closed path should",
+          "choices": [
+            "Play a message and end or transfer on purpose",
+            "Queue forever",
+            "Open Web RTMT",
+            "Strip the external digit"
+          ],
+          "answer": 0,
+          "why": "Disconnect Contact is available.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Play Music is",
+          "choices": [
+            "Wait music inside the flow",
+            "Location MOH",
+            "A codec",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "Keep the names straight.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Open and closed",
+          "back": "Both ports."
+        },
+        {
+          "front": "Menu other",
+          "back": "Timeout and unmatched."
+        },
+        {
+          "front": "Collect Digits",
+          "back": "Data, not the menu."
+        },
+        {
+          "front": "Condition",
+          "back": "True and false from an earlier variable."
+        }
+      ],
+      "lab": {
+        "title": "Simulate both hours",
+        "goal": "In the studio, run the sample contact open and then closed.",
+        "steps": [
+          {
+            "do": "Open",
+            "expect": "The trace reaches the menu"
+          },
+          {
+            "do": "Closed",
+            "expect": "The trace reaches the closed message"
+          },
+          {
+            "do": "Other",
+            "expect": "You can explain the unmatched port"
+          }
+        ],
+        "check": "Both runs are visible in the trace."
+      },
+      "fault": {
+        "title": "Closed port dangling",
+        "symptom": "After-hours callers sit in silence.",
+        "log": "SYNTHETIC: Business Hours closed has no edge.",
+        "cause": "The activity branched and nothing followed.",
+        "fix": "Connect closed to Play Message and Disconnect Contact.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "queue-act",
+      "title": "Queue Contact and Queue To Agent",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Queue Contact places the contact in a queue. Queue To Agent prefers one agent. Routing inside the queue is still LAA or BAA.",
+      "uncertainty": "",
+      "objectives": [
+        "Use Queue Contact for a team",
+        "Use Queue To Agent only with a real agent identity",
+        "Keep the strategy on the queue"
+      ],
+      "diagram": {
+        "caption": "Preference is not the same as a strategy.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Menu",
+            "sub": "choice",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Queue Contact",
+            "sub": "a queue",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Strategy",
+            "sub": "LAA or BAA",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Queue To Agent",
+            "sub": "one person",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "support"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "inside"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "preferred"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Most callers queue. One caller asks for Sam.",
+        "steps": [
+          {
+            "from": "Flow",
+            "to": "Queue",
+            "label": "Drop the contact in the support queue",
+            "detail": "The queue, the team, and the agents already exist.",
+            "inspect": "Previous track",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Queue",
+            "to": "Strategy",
+            "label": "LAA or BAA runs inside",
+            "detail": "The activity does not replace the routing strategy.",
+            "inspect": "Cite the routing article",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Flow",
+            "to": "Agent",
+            "label": "Queue To Agent when the caller asked for someone",
+            "detail": "The activity takes an agent id or email. A display name you hope matches is not that field.",
+            "inspect": "Confirm the identity",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Agent",
+            "to": "Desktop",
+            "label": "Offer the contact",
+            "detail": "Screen Pop can ride along. The desktop profile decides which tools exist.",
+            "inspect": "No invented RONA",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Preferred is not exclusive until the article says so",
+          "paragraphs": [
+            "Queue To Agent is documented as queueing to a preferred agent. This lab does not add overflow timers that are not in the article.",
+            "If the preferred agent is offline, follow the activity's documented failure path rather than a timer you made up."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "Calling call queues stay out",
+          "paragraphs": [
+            "Do not point Queue Contact at a Webex Calling call queue name and expect the contact center to use it.",
+            "Bulk CallQueueBulk.csv is a Calling migration file, covered later."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Queue Contact targets",
+          "choices": [
+            "A contact center queue",
+            "A Calling feature queue by the same name",
+            "A DNS name",
+            "A region"
+          ],
+          "answer": 0,
+          "why": "Create the queue first.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Queue To Agent identifies the agent by",
+          "choices": [
+            "Agent id or email",
+            "A nickname only",
+            "A MAC address",
+            "A trunk"
+          ],
+          "answer": 0,
+          "why": "The activity description.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "LAA or BAA applies",
+          "choices": [
+            "Inside the queue strategy",
+            "As a replacement for the activity",
+            "Only on local gateways",
+            "Only for chat"
+          ],
+          "answer": 0,
+          "why": "Routing article.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "This lesson does not add",
+          "choices": [
+            "An invented overflow timer",
+            "The activity names",
+            "A citation",
+            "A lab step"
+          ],
+          "answer": 0,
+          "why": "Read the live article for failure behavior.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Screen Pop is attached",
+          "choices": [
+            "In the flow, for the desktop",
+            "In the conditional forwarder",
+            "In FTSW",
+            "In the webhook secret"
+          ],
+          "answer": 0,
+          "why": "Next lessons cover the desktop.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "CallQueueBulk.csv belongs to",
+          "choices": [
+            "Webex Calling migration",
+            "Flow Designer import",
+            "RedSky",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "Do not mix the files.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Queue Contact",
+          "back": "A queue."
+        },
+        {
+          "front": "Queue To Agent",
+          "back": "Id or email."
+        },
+        {
+          "front": "Strategy",
+          "back": "Still LAA or BAA."
+        },
+        {
+          "front": "No fake timer",
+          "back": "Cite overflow or leave it out."
+        }
+      ],
+      "lab": {
+        "title": "Two branches",
+        "goal": "In the studio, add Queue To Agent beside Queue Contact and say when each runs.",
+        "steps": [
+          {
+            "do": "Queue",
+            "expect": "Menu 1"
+          },
+          {
+            "do": "Agent",
+            "expect": "A named email you invented for the lab"
+          },
+          {
+            "do": "Strategy",
+            "expect": "You wrote LAA or BAA on the queue, not on the activity"
+          }
+        ],
+        "check": "The email is fake and labeled fake."
+      },
+      "fault": {
+        "title": "Preferred agent by nickname",
+        "symptom": "Queue To Agent never matches.",
+        "log": "SYNTHETIC: agent field 'Sam' instead of an id or email.",
+        "cause": "The activity does not search nicknames.",
+        "fix": "Use the agent id or email from the contact center user.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "http",
+      "title": "HTTP dips and CRM templates",
+      "level": "core",
+      "minutes": 13,
+      "summary": "HTTP Request is the data dip. Cisco publishes templates for Salesforce, Dynamics, ServiceNow, and Zendesk. Success and error both need a path.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the four templates",
+        "Wire the error port",
+        "Avoid inventing a fifth CRM"
+      ],
+      "diagram": {
+        "caption": "The CRM answers, or the error port does.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Collect Digits",
+            "sub": "account",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "HTTP Request",
+            "sub": "template",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Success",
+            "sub": "variables",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Error",
+            "sub": "still a path",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "input"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "200"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "failure"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Look up the caller, then decide",
+        "steps": [
+          {
+            "from": "Flow",
+            "to": "HTTP",
+            "label": "Pick a published template",
+            "detail": "Salesforce, Microsoft Dynamics, ServiceNow, and Zendesk are the templates the Flow Designer material documents for this dip.",
+            "inspect": "Do not add a vendor from memory",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Digits",
+            "to": "Request",
+            "label": "Pass the account you collected",
+            "detail": "The request runs before the queue so the agent can see the result.",
+            "inspect": "Variables, then Screen Pop",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Success",
+            "to": "Condition",
+            "label": "Branch on the data",
+            "detail": "A known VIP and an unknown account should not share a silent path.",
+            "inspect": "True and false",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Error",
+            "to": "Queue or message",
+            "label": "Degrade on purpose",
+            "detail": "If the CRM times out, the contact still needs a queue or a message. The lab activity has an error port.",
+            "inspect": "Do not drop the caller",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Templates are not a custom integration",
+          "paragraphs": [
+            "Using a template means you are following Cisco's published request for that product. A home-built URL is still an HTTP Request, but you own the contract.",
+            "This lab does not ship credentials or sample secrets."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "Screen Pop uses the result",
+          "paragraphs": [
+            "The data you stored can be presented when the contact is offered.",
+            "If the HTTP error path skips the pop, the agent should still get the contact, with empty fields, if that is what you designed."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Published HTTP templates named here are",
+          "choices": [
+            "Salesforce, Dynamics, ServiceNow, and Zendesk",
+            "Any CRM you like",
+            "Only email",
+            "Only RedSky"
+          ],
+          "answer": 0,
+          "why": "Flow Designer data dips.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The error port should",
+          "choices": [
+            "Continue to a message or a queue you chose",
+            "End the process with no activity",
+            "Reboot Unified CM",
+            "Change the voice domain"
+          ],
+          "answer": 0,
+          "why": "Connect it.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A fifth CRM not on that list",
+          "choices": [
+            "Is your own HTTP contract, not a template this lab invents",
+            "Is automatically supported",
+            "Is a skill",
+            "Is SME"
+          ],
+          "answer": 0,
+          "why": "Do not add vendors.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The dip belongs before",
+          "choices": [
+            "The agent needs the data, often before queue",
+            "DNS forwarding",
+            "Region activation",
+            "License counting"
+          ],
+          "answer": 0,
+          "why": "Then Screen Pop.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Secrets in this lab",
+          "choices": [
+            "Are not included",
+            "Are in the JSON",
+            "Are the HELD secret from the article text",
+            "Are printed in the quiz"
+          ],
+          "answer": 0,
+          "why": "Use your own tenant, carefully.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Success stores",
+          "choices": [
+            "Variables the later activities can read",
+            "A certificate",
+            "A dial pattern",
+            "A forwarder"
+          ],
+          "answer": 0,
+          "why": "Condition can branch on them.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Four templates",
+          "back": "Salesforce, Dynamics, ServiceNow, Zendesk."
+        },
+        {
+          "front": "Error port",
+          "back": "Always connect it."
+        },
+        {
+          "front": "Your URL",
+          "back": "Your contract, not a Cisco template."
+        },
+        {
+          "front": "No secrets",
+          "back": "The lab does not ship them."
+        }
+      ],
+      "lab": {
+        "title": "Name the dip",
+        "goal": "Write the template you would pick and both ports.",
+        "steps": [
+          {
+            "do": "Template",
+            "expect": "One of the four"
+          },
+          {
+            "do": "Success",
+            "expect": "What the agent should see"
+          },
+          {
+            "do": "Error",
+            "expect": "The fallback activity"
+          }
+        ],
+        "check": "No password is written down."
+      },
+      "fault": {
+        "title": "Error port empty",
+        "symptom": "CRM maintenance drops every caller.",
+        "log": "SYNTHETIC: HTTP 503, no edge on error.",
+        "cause": "The failure had nowhere to go.",
+        "fix": "Connect error to a prompt and a queue.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "leave",
+      "title": "Callback, transfer, and disconnect",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Callback offers a return call. Blind Transfer releases the flow. Disconnect Contact ends it. Each one is a choice you can see on the canvas.",
+      "uncertainty": "",
+      "objectives": [
+        "Offer callback from the flow",
+        "Use Blind Transfer when the flow should let go",
+        "End with Disconnect Contact when the conversation is over"
+      ],
+      "diagram": {
+        "caption": "Leave the queue on purpose.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Queue",
+            "sub": "waiting",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Callback",
+            "sub": "offer",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Blind Transfer",
+            "sub": "release",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Disconnect",
+            "sub": "end",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "option"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "send away"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "or finish"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Three ways out",
+        "steps": [
+          {
+            "from": "Queue",
+            "to": "Callback",
+            "label": "Offer it while they wait",
+            "detail": "Callback is an activity, not a wish in the prompt text. Connect it.",
+            "inspect": "The contact leaves the wait",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Flow",
+            "to": "Transfer",
+            "label": "Blind Transfer releases the flow",
+            "detail": "The destination is responsible after the transfer. Do not expect later activities to run.",
+            "inspect": "Say the destination in the design",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Message",
+            "to": "Disconnect",
+            "label": "End after the last prompt",
+            "detail": "Closed messages, errors you will not recover, and completed callbacks need an end.",
+            "inspect": "Disconnect Contact",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "Simulator",
+            "label": "Walk a test contact",
+            "detail": "The studio simulates the ports you connected. It does not place a PSTN callback.",
+            "inspect": "Teaching model",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Blind means the flow stops owning the contact",
+          "paragraphs": [
+            "After Blind Transfer, screen pop and queue activities downstream do not run for that contact.",
+            "If you still need the desktop to update, do that before the transfer."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "Callback is not a Calling call-queue night service",
+          "paragraphs": [
+            "Webex Calling call queues have their own night service and forced forwarding. Those are Calling features.",
+            "A contact center callback is the Flow Designer activity. Configure it there."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Blind Transfer",
+          "choices": [
+            "Releases the flow",
+            "Keeps running every later activity",
+            "Opens RTMT",
+            "Sets SSO"
+          ],
+          "answer": 0,
+          "why": "Later nodes do not see the contact.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Callback is",
+          "choices": [
+            "A Flow Designer activity",
+            "The same object as Calling night service",
+            "A DNS record",
+            "A region move"
+          ],
+          "answer": 0,
+          "why": "Connect it from the wait.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Disconnect Contact",
+          "choices": [
+            "Ends the contact",
+            "Parks it",
+            "Forwards to E911 by itself",
+            "Creates a user"
+          ],
+          "answer": 0,
+          "why": "Use it on purpose.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The studio callback",
+          "choices": [
+            "Does not place a real PSTN call",
+            "Dials your phone",
+            "Updates Cisco",
+            "Burns a license"
+          ],
+          "answer": 0,
+          "why": "Simulation only.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Calling night service belongs to",
+          "choices": [
+            "Webex Calling call queues",
+            "Flow Designer Callback",
+            "HELD",
+            "xAPI command names"
+          ],
+          "answer": 0,
+          "why": "Different article.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Screen pop after a blind transfer",
+          "choices": [
+            "Does not run for that contact",
+            "Always runs",
+            "Runs twice",
+            "Changes the voice domain"
+          ],
+          "answer": 0,
+          "why": "Do the pop first.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Callback",
+          "back": "An activity while they wait."
+        },
+        {
+          "front": "Blind Transfer",
+          "back": "Flow lets go."
+        },
+        {
+          "front": "Disconnect",
+          "back": "The end."
+        },
+        {
+          "front": "Night service",
+          "back": "A Calling call-queue feature, not this."
+        }
+      ],
+      "lab": {
+        "title": "Three exits",
+        "goal": "Add the three activities to a paper flow and say what the caller hears.",
+        "steps": [
+          {
+            "do": "Callback",
+            "expect": "Offer text you would record"
+          },
+          {
+            "do": "Transfer",
+            "expect": "Destination type, not a secret number"
+          },
+          {
+            "do": "Disconnect",
+            "expect": "The last prompt"
+          }
+        ],
+        "check": "No live PSTN number is required."
+      },
+      "fault": {
+        "title": "Activities after blind transfer",
+        "symptom": "Agents never get the screen pop that was drawn after the transfer.",
+        "log": "SYNTHETIC: Screen Pop downstream of Blind Transfer.",
+        "cause": "The flow already released the contact.",
+        "fix": "Move Screen Pop before the transfer.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "desktop",
+      "title": "What the agent sees",
+      "level": "core",
+      "minutes": 13,
+      "summary": "The desktop profile and the screen pop decide the agent's view. States and timers that are not in the article are not in this lesson.",
+      "uncertainty": "",
+      "objectives": [
+        "Place Screen Pop before the offer",
+        "Match the desktop profile to the job",
+        "Leave undocumented timers out"
+      ],
+      "diagram": {
+        "caption": "Offer the contact with the data you already fetched.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Screen Pop",
+            "sub": "payload",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Desktop profile",
+            "sub": "tools",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Agent",
+            "sub": "team and skills",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "RONA",
+            "sub": "not invented here",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "on offer"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "allows"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "cite or omit"
+          }
+        ]
+      },
+      "flow": {
+        "title": "From queue to a person",
+        "steps": [
+          {
+            "from": "Flow",
+            "to": "Pop",
+            "label": "Set the screen pop from variables",
+            "detail": "Account data from HTTP, the menu choice, and the queue name are typical fields.",
+            "inspect": "No secrets",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Profile",
+            "to": "Agent",
+            "label": "Premium or Standard",
+            "detail": "The desktop profile is what lets them use the tools. A supervisor profile is not an agent profile.",
+            "inspect": "Roles article",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Queue",
+            "to": "Agent",
+            "label": "Strategy offers the contact",
+            "detail": "LAA or BAA, or Queue To Agent. The agent must be on the team and allowed to take the channel.",
+            "inspect": "Previous track",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Timer",
+            "to": "Article",
+            "label": "Look up RONA if you need a number",
+            "detail": "This lab will not print one. If your design depends on a timer, paste the sentence from the current article.",
+            "inspect": "Uncertainty",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Event flows",
+          "paragraphs": [
+            "The Flow Designer article describes event flows beside the main flow. They handle events rather than the happy path from Start Flow.",
+            "This lab's canvas is the main path. When you need an event flow, build it in Cisco's designer and cite the event you handled."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "WFO sits beside the desktop",
+          "paragraphs": [
+            "Quality management, workforce management, and analytics are the workforce optimization suite, not buttons this lesson invents on the desktop.",
+            "The next track covers that suite and the AI agent activities."
+          ],
+          "cite": {
+            "label": "Webex Workforce Optimization",
+            "url": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Screen Pop presents data",
+          "choices": [
+            "When the contact is offered",
+            "Only in DNS",
+            "Only to RedSky",
+            "After the caller has already left, by default"
+          ],
+          "answer": 0,
+          "why": "Put it on the path before the offer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Desktop tools come from",
+          "choices": [
+            "The desktop profile",
+            "The voice service domain",
+            "The conditional forwarder",
+            "A theme"
+          ],
+          "answer": 0,
+          "why": "Premium and Standard differ.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "Event flows",
+          "choices": [
+            "Are separate from the main Start Flow path",
+            "Are the same canvas with no difference",
+            "Are UCCX scripts",
+            "Are trunks"
+          ],
+          "answer": 0,
+          "why": "The article distinguishes them.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A RONA value in this lab",
+          "choices": [
+            "Is omitted on purpose",
+            "Is always 15 seconds",
+            "Is 24 hours",
+            "Is ten characters"
+          ],
+          "answer": 0,
+          "why": "Cite the current article if you use one.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "The agent must be",
+          "choices": [
+            "On the team and able to take the channel",
+            "Only a Control Hub read-only admin",
+            "A local gateway",
+            "An SME publisher"
+          ],
+          "answer": 0,
+          "why": "People track.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "WFO is",
+          "choices": [
+            "A suite covered next, not a screen-pop field",
+            "The same as Play Music",
+            "A port",
+            "A dial pattern"
+          ],
+          "answer": 0,
+          "why": "Workforce optimization landing.",
+          "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Screen Pop",
+          "back": "Data at offer time."
+        },
+        {
+          "front": "Desktop profile",
+          "back": "Tools for that agent."
+        },
+        {
+          "front": "Event flow",
+          "back": "Not the main Start Flow path."
+        },
+        {
+          "front": "No RONA number",
+          "back": "Look it up or leave it out."
+        }
+      ],
+      "lab": {
+        "title": "Pop list",
+        "goal": "List four fields a screen pop may show, and one field you will not invent.",
+        "steps": [
+          {
+            "do": "From HTTP",
+            "expect": "Account name"
+          },
+          {
+            "do": "From menu",
+            "expect": "The digit"
+          },
+          {
+            "do": "Not invented",
+            "expect": "A timer"
+          }
+        ],
+        "check": "Each field has a source activity."
+      },
+      "fault": {
+        "title": "Pop on the wrong path",
+        "symptom": "Sales contacts see the billing layout.",
+        "log": "SYNTHETIC: one Screen Pop above the menu, shared by every branch.",
+        "cause": "The pop was not per branch.",
+        "fix": "Put a Screen Pop on each branch that needs different data.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "practice",
+      "title": "Practice on the lab canvas",
+      "level": "apply",
+      "minutes": 14,
+      "summary": "The studio flow designer is the place to rehearse. Simulate a contact, read the trace, and export the teaching file.",
+      "uncertainty": "",
+      "objectives": [
+        "Open the studio designer",
+        "Run open and closed contacts",
+        "Explain why the file stays local"
+      ],
+      "diagram": {
+        "caption": "Play the contact. Then read Cisco's article again.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Palette",
+            "sub": "activities",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Ports",
+            "sub": "connected",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Simulate",
+            "sub": "test contact",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Export",
+            "sub": "local JSON",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "wire"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "run"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "save"
+          }
+        ]
+      },
+      "flow": {
+        "title": "One rehearsal",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Studio",
+            "label": "Open Flow designer",
+            "detail": "The shell loads the designer only on that route so the first page stays small.",
+            "inspect": "#/studio/flow",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "Canvas",
+            "label": "Use the sample or add a node",
+            "detail": "Connect a port. Unconnected ports are the usual reason a simulation stops.",
+            "inspect": "Hours, menu, queue",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "Simulate",
+            "label": "Set hours, digit, HTTP, and virtual agent",
+            "detail": "The sample contact is a teaching input. Change one flag and run again.",
+            "inspect": "Read the trace",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "You",
+            "to": "Export",
+            "label": "Download and stop",
+            "detail": "Confirm the schema name. Do not treat the file as a backup of a real tenant.",
+            "inspect": "Then rebuild anything real in Control Hub",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the simulator proves",
+          "paragraphs": [
+            "It proves the ports you drew connect the way you think, for the flags you set.",
+            "It does not prove Cisco will route a live contact, license an agent, or accept the JSON."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "What to do with a real tenant",
+          "paragraphs": [
+            "Sign in to Flow Designer from Control Hub, build the activities there, and attach the flow to an entry point from the voice article.",
+            "Keep this lab's file in your notes as a sketch."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The studio route for the designer is",
+          "choices": [
+            "The flow tool under Studio",
+            "The topology only",
+            "A CDN script",
+            "Dedicated Instance Manage"
+          ],
+          "answer": 0,
+          "why": "Hash route studio/flow.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A simulation that stops early usually means",
+          "choices": [
+            "A port is not connected",
+            "SSO failed inside the lab",
+            "The voice domain is long",
+            "CER is AMER"
+          ],
+          "answer": 0,
+          "why": "Check the edges.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The downloaded file",
+          "choices": [
+            "Is a teaching sketch",
+            "Restores a tenant",
+            "Is a CUCM tar",
+            "Is a certificate"
+          ],
+          "answer": 0,
+          "why": "Schema webex-lab-flow-1.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Changing the sample contact's hours flag",
+          "choices": [
+            "Changes which Business Hours port the trace takes",
+            "Changes your license",
+            "Moves a region",
+            "Edits Cisco docs"
+          ],
+          "answer": 0,
+          "why": "Run it twice.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Live routing is proven by",
+          "choices": [
+            "A test in the real Flow Designer and entry point",
+            "The lab export alone",
+            "A screenshot of the canvas",
+            "A glossary term"
+          ],
+          "answer": 0,
+          "why": "Voice article.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "First page weight stays down because",
+          "choices": [
+            "The designer loads when you open it",
+            "Three.js is inlined in the lesson",
+            "Tracks are one giant script",
+            "Fonts come from a CDN"
+          ],
+          "answer": 0,
+          "why": "Dynamic import.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Studio",
+          "back": "Rehearse here."
+        },
+        {
+          "front": "Ports",
+          "back": "Connect both outcomes."
+        },
+        {
+          "front": "Export",
+          "back": "Sketch only."
+        },
+        {
+          "front": "Real proof",
+          "back": "Control Hub Flow Designer plus a test contact."
+        }
+      ],
+      "lab": {
+        "title": "Run two traces",
+        "goal": "Simulate open with menu 1, then closed.",
+        "steps": [
+          {
+            "do": "Open",
+            "expect": "Queue is in the trace"
+          },
+          {
+            "do": "Closed",
+            "expect": "Closed message is in the trace"
+          },
+          {
+            "do": "File",
+            "expect": "Export shows the teaching schema"
+          }
+        ],
+        "check": "You can narrate the trace without the article open."
+      },
+      "fault": {
+        "title": "Sketch treated as backup",
+        "symptom": "Someone reimports the lab JSON after a tenant rebuild and the flow is missing.",
+        "log": "SYNTHETIC runbook: 'restore webex-lab-flow-1.json'.",
+        "cause": "The file was never a backup.",
+        "fix": "Rebuild in Flow Designer and store Cisco's own export if the product provides one.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    }
+  ]
+}

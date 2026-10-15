@@ -1,0 +1,227 @@
+[
+  {
+    "term": "Control Hub",
+    "def": "The admin portal for the Webex organization.",
+    "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "term": "Location",
+    "def": "A Calling site with time zone, main number, dialing habits, and one PSTN connection.",
+    "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "term": "Cisco Calling Plan",
+    "def": "Cisco-provided cloud PSTN for Webex Calling users.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "term": "Cloud Connected PSTN",
+    "def": "Partner-provided cloud PSTN. Still for Webex Calling users, not premises-origin calls.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "term": "Local gateway",
+    "def": "The premises trunk, often a Cisco CUBE or a supported third-party SBC.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "term": "Certificate-based trunk",
+    "def": "Local gateway signaling that uses destination TCP 5062.",
+    "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+  },
+  {
+    "term": "Registration-based trunk",
+    "def": "Local gateway signaling that uses destination TCP 8934.",
+    "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+  },
+  {
+    "term": "Dial plan",
+    "def": "An enterprise-wide list of patterns routed to a trunk or route group.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "term": "Route group",
+    "def": "A routing choice a dial plan can use instead of a single trunk.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "term": "External dial digit",
+    "def": "The digit a location uses before an outside number, often 9 in US examples.",
+    "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "term": "Routing prefix",
+    "def": "Digits that select another location's extensions.",
+    "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "term": "E.164",
+    "def": "The ITU-T international public telecommunication numbering plan.",
+    "cite": "https://www.itu.int/rec/T-REC-E.164"
+  },
+  {
+    "term": "tel URI",
+    "def": "RFC 3966's way to write a telephone number as a URI.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc3966"
+  },
+  {
+    "term": "SIP",
+    "def": "Session Initiation Protocol, RFC 3261.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+  },
+  {
+    "term": "SRTP",
+    "def": "Secure Real-time Transport Protocol, RFC 3711.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc3711"
+  },
+  {
+    "term": "ICE",
+    "def": "Interactive Connectivity Establishment, RFC 8445. When it succeeds, media can go direct.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc8445"
+  },
+  {
+    "term": "HELD",
+    "def": "HTTP-Enabled Location Delivery, RFC 5985.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+  },
+  {
+    "term": "PIDF-LO",
+    "def": "Presence Information Data Format Location Object, RFC 4119.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc4119"
+  },
+  {
+    "term": "RedSky",
+    "def": "The emergency service Cisco documents for enhanced emergency calling on Webex Calling.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "term": "Intrado",
+    "def": "An E911 provider also documented in the same emergency calling article.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "term": "ECBN",
+    "def": "Emergency callback number in Control Hub.",
+    "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+  },
+  {
+    "term": "933",
+    "def": "The test call for enhanced emergency calling.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "term": "Dispatchable location",
+    "def": "Street address plus detail such as floor and room, in Cisco's wording.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "term": "Dedicated Instance",
+    "def": "A private Unified CM add-on to Webex Calling, deployed and sized by Cisco.",
+    "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "term": "Voice service domain",
+    "def": "The short domain, at most ten characters, used for DI UC apps and MRA.",
+    "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "term": "Interop trunk",
+    "def": "The SIP trunk you activate between Dedicated Instance and multi-tenant calling.",
+    "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "term": "Web RTMT",
+    "def": "The browser monitoring tool launched from Dedicated Instance for specific admin roles.",
+    "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+  },
+  {
+    "term": "Call queue",
+    "def": "A Webex Calling feature under Calling > Features, with its own routing patterns and caps.",
+    "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+  },
+  {
+    "term": "Auto attendant",
+    "def": "A Webex Calling location feature with business-hours and after-hours keys.",
+    "cite": "https://help.webex.com/en-us/article/nsioxoi"
+  },
+  {
+    "term": "Contact center queue",
+    "def": "A Webex Contact Center queue reached from a flow, not the Calling feature.",
+    "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+  },
+  {
+    "term": "LAA",
+    "def": "Longest available agent, a contact center routing strategy.",
+    "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+  },
+  {
+    "term": "BAA",
+    "def": "Best available agent, a contact center routing strategy.",
+    "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+  },
+  {
+    "term": "Entry point",
+    "def": "Where a contact center channel enters a flow.",
+    "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+  },
+  {
+    "term": "Flow Designer",
+    "def": "The contact center canvas. This lab's copy is a teaching schema.",
+    "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+  },
+  {
+    "term": "Resource collection",
+    "def": "A fence around queues and other objects. Up to five on a user profile.",
+    "cite": "https://help.webex.com/en-us/article/n524f2m"
+  },
+  {
+    "term": "Virtual Agent V2",
+    "def": "The voice AI agent activity in a flow.",
+    "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+  },
+  {
+    "term": "Fulfillment",
+    "def": "The scripted AI agent's map from intent to action.",
+    "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+  },
+  {
+    "term": "WFO",
+    "def": "Workforce optimization: workforce management, quality, and analytics.",
+    "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+  },
+  {
+    "term": "Bot",
+    "def": "A Webex messaging identity. Group spaces require a mention.",
+    "cite": "https://developer.webex.com/docs/bots"
+  },
+  {
+    "term": "Integration",
+    "def": "An OAuth app that acts as a user.",
+    "cite": "https://developer.webex.com/docs/getting-started"
+  },
+  {
+    "term": "xAPI",
+    "def": "The device command language. Cloud calls use a granted POST. Macros run locally.",
+    "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+  },
+  {
+    "term": "Migration Insights",
+    "def": "The Control Hub tool that reads a Unified CM tar and optional CDR.",
+    "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+  },
+  {
+    "term": "DeviceEligibility.csv",
+    "def": "The Insights report of devices that can move to Webex Calling.",
+    "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+  },
+  {
+    "term": "CLCCE",
+    "def": "Exam 300-830, 90 minutes, Cisco Certified Specialist - Collaboration Cloud Customer Experience.",
+    "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+  },
+  {
+    "term": "CLWXCALL",
+    "def": "Essentials of Webex Calling, a course, not exam 300-830.",
+    "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+  }
+]

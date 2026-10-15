@@ -1,0 +1,1830 @@
+{
+  "id": "t15",
+  "title": "Migration from CUCM, UCCX, and UCCE",
+  "blurb": "Migration Insights, feature CSVs, the park and pickup gap, and why contact center scripts are a redesign.",
+  "level": "Advanced",
+  "lessons": [
+    {
+      "id": "prepare",
+      "title": "Start with Migration Insights",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Cisco's prepare article points you at Control Hub Migration Insights. Upload the Unified CM tar. CDR is optional, and it is required if you want the feature-usage reports.",
+      "uncertainty": "",
+      "objectives": [
+        "Find the tool",
+        "Separate tar reports from CDR reports",
+        "Keep PSTN choices to one per location"
+      ],
+      "diagram": {
+        "caption": "Tar for configuration. CDR for usage. Both are exports, not a cutover.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Unified CM",
+            "sub": "BAT tar",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CDR",
+            "sub": "optional gzip",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Insights",
+            "sub": "Control Hub",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "CSVs",
+            "sub": "analysis",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "import"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "usage"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "reports"
+          }
+        ]
+      },
+      "flow": {
+        "title": "What you upload",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Updates and Migrations",
+            "label": "Open Migration Insights",
+            "detail": "The prepare article recommends starting there. Import the Unified CM export tar and, if you want usage, the CDR files.",
+            "inspect": "Services path as the live Hub shows",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Tar",
+            "to": "Reports",
+            "label": "Read the configuration CSVs",
+            "detail": "ImportedDataBulk.csv, DeviceEligibility.csv, device-pool numbers, the shared-feature group file, hunt insight, and the shared-line report are the tar table.",
+            "inspect": "No calls required",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "CDR",
+            "to": "Reports",
+            "label": "Read usage only if you uploaded it",
+            "detail": "Feature-usage eligibility, hunt and queue usage with last date, user and workspace last usage, and DID usage need the CDR gzip files.",
+            "inspect": "Optional means the upload, not the insight",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Design",
+            "to": "PSTN",
+            "label": "One PSTN option per location",
+            "detail": "The same article says a Control Hub location is assigned to one PSTN option: Cisco Calling Plan, Cloud Connected PSTN, or premises local gateway.",
+            "inspect": "Choose before you move users",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The tar table and the CDR table",
+          "paragraphs": [
+            "Tar reports describe users, devices, eligibility, device pools, hunt and pickup grouping, hunt lines, and shared lines.",
+            "CDR reports describe usage. Uploading a tar alone will not produce last-usage dates."
+          ],
+          "cite": {
+            "label": "Migration Insights",
+            "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          }
+        },
+        {
+          "h": "Dependencies to move together",
+          "paragraphs": [
+            "The prepare article lists people who share lines, hunt pilots, pickup groups, call park numbers, intercom, and admin/exec relationships. The group CSV is how Insights shows that.",
+            "Splitting a shared line across two weekends is how Monday morning breaks."
+          ],
+          "cite": {
+            "label": "Prepare to migrate from Unified CM",
+            "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Migration Insights consumes",
+          "choices": [
+            "A Unified CM tar and optional CDR files",
+            "A Flow Designer JSON from this lab",
+            "Only a screenshot",
+            "A personal access token"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "CDR is required when",
+          "choices": [
+            "You want the feature-usage reports",
+            "You want any report at all",
+            "You want DNS",
+            "You want a bot"
+          ],
+          "answer": 0,
+          "why": "The tar still produces the configuration reports.",
+          "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        },
+        {
+          "q": "DeviceEligibility.csv comes from",
+          "choices": [
+            "The tar",
+            "Only the CDR",
+            "RedSky",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "Table of tar reports.",
+          "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        },
+        {
+          "q": "DIDUsageReport.csv comes from",
+          "choices": [
+            "Tar plus CDR",
+            "The tar alone",
+            "A macro",
+            "HELD"
+          ],
+          "answer": 0,
+          "why": "Table of CDR reports.",
+          "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        },
+        {
+          "q": "PSTN options on one location",
+          "choices": [
+            "One of Cisco Calling Plan, Cloud Connected PSTN, or local gateway",
+            "All three at once",
+            "None, ever",
+            "Only SME"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Shared-line users should be",
+          "choices": [
+            "Migrated with the group Insights identified",
+            "Split so the line is half-moved",
+            "Ignored",
+            "Turned into bots"
+          ],
+          "answer": 0,
+          "why": "The dependency list.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Tar",
+          "back": "Configuration reports."
+        },
+        {
+          "front": "CDR",
+          "back": "Usage reports. Optional upload, required for those files."
+        },
+        {
+          "front": "Eligibility",
+          "back": "DeviceEligibility.csv."
+        },
+        {
+          "front": "One PSTN",
+          "back": "Per location."
+        }
+      ],
+      "lab": {
+        "title": "Report sorter",
+        "goal": "Put eight report names into tar or CDR.",
+        "steps": [
+          {
+            "do": "Tar",
+            "expect": "ImportedDataBulk, DeviceEligibility, shared line, hunt insight"
+          },
+          {
+            "do": "CDR",
+            "expect": "Feature usage, DID usage, last usage"
+          },
+          {
+            "do": "PSTN",
+            "expect": "One option written for the pilot location"
+          }
+        ],
+        "check": "You did not invent a ninth report."
+      },
+      "fault": {
+        "title": "Usage promised without CDR",
+        "symptom": "Leadership asks for last-used dates and the folder has none.",
+        "log": "SYNTHETIC: tar uploaded, CDR skipped, FeatureUsage report missing.",
+        "cause": "Those files are in the CDR table.",
+        "fix": "Export CDR and upload it, then regenerate.",
+        "cite": {
+          "label": "Migration Insights",
+          "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        }
+      }
+    },
+    {
+      "id": "eligible",
+      "title": "Device eligibility",
+      "level": "core",
+      "minutes": 12,
+      "summary": "DeviceEligibility.csv covers IP phones, Room OS, ATAs, and third-party devices the tool knows. Eligibility is not the same as a successful registration today.",
+      "uncertainty": "",
+      "objectives": [
+        "Read DeviceEligibility.csv",
+        "Read DeviceBulkError reasons",
+        "Not guess a model"
+      ],
+      "diagram": {
+        "caption": "The CSV decides the firmware path. The phone's current registration does not.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Tar",
+            "sub": "inventory",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Eligibility",
+            "sub": "CSV",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Errors",
+            "sub": "DeviceBulkError",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "License",
+            "sub": "Professional",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "Insights"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "migrate features"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "a listed error"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A phone that works and still cannot move",
+        "steps": [
+          {
+            "from": "Insights",
+            "to": "CSV",
+            "label": "Open DeviceEligibility.csv",
+            "detail": "The prepare article says it identifies IP phones, Room OS devices, ATAs, and third-party devices eligible to migrate.",
+            "inspect": "Model not in the file is not a yes",
+            "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          },
+          {
+            "from": "Features",
+            "to": "Export",
+            "label": "Open DeviceBulk.csv and DeviceBulkError.csv",
+            "detail": "The migrate-features article says DeviceBulk needs an extra column removed before upload. The error file lists rows that failed.",
+            "inspect": "350 MB tar limit on that tool",
+            "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          },
+          {
+            "from": "Error",
+            "to": "Cause",
+            "label": "Read the error string",
+            "detail": "Documented examples include eligibility check timeout, device isn't eligible, username not found in CUCM data, no Webex Calling Professional license, and user isn't in CI.",
+            "inspect": "Fix the row, do not reupload blindly",
+            "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          },
+          {
+            "from": "Gov",
+            "to": "MAC",
+            "label": "Know the FedRAMP check",
+            "detail": "The article says commercial eligibility for FedRAMP can send the MAC to the Cisco corporate network. You can avoid the automatic send and follow Updates and Migrations instead.",
+            "inspect": "Tell the customer",
+            "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Professional license shows up as an error",
+          "paragraphs": [
+            "One documented DeviceBulkError is that the user does not have a Webex Calling Professional license.",
+            "Eligibility of the hardware and the license of the user are both required. The CSV is where they meet."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        },
+        {
+          "h": "What this lab will not do",
+          "paragraphs": [
+            "It will not publish a private model matrix. If the CSV says the device is not eligible, that is the answer until Cisco's file changes.",
+            "RoomOS on Dedicated Instance is not this multi-tenant firmware migration."
+          ],
+          "cite": {
+            "label": "Migration Insights",
+            "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "DeviceEligibility.csv identifies",
+          "choices": [
+            "Phones, Room OS, ATAs, and third-party devices the tool can judge",
+            "Only soft clients",
+            "Only bots",
+            "Only CER"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        },
+        {
+          "q": "A working phone",
+          "choices": [
+            "Can still be ineligible",
+            "Is always eligible",
+            "Skips the CSV",
+            "Is a flow"
+          ],
+          "answer": 0,
+          "why": "Registration is not the migration check.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "DeviceBulk.csv before upload",
+          "choices": [
+            "Needs the extra column removed",
+            "Is imported into Flow Designer",
+            "Is a webhook",
+            "Is a dial pattern"
+          ],
+          "answer": 0,
+          "why": "Migrate-features article.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "No Professional license",
+          "choices": [
+            "Is a documented DeviceBulkError",
+            "Is ignored",
+            "Adds a region",
+            "Opens RTMT"
+          ],
+          "answer": 0,
+          "why": "Fix the user, then the row.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "FedRAMP commercial eligibility",
+          "choices": [
+            "Can send the MAC to Cisco's corporate network",
+            "Never leaves the tenant",
+            "Uses port 933",
+            "Is a bot mention"
+          ],
+          "answer": 0,
+          "why": "The article offers another path.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Tar size on the migrate-features tool",
+          "choices": [
+            "350 MB maximum",
+            "Unlimited",
+            "Ten characters",
+            "2 KB"
+          ],
+          "answer": 0,
+          "why": "Unity zip is a different limit.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Eligibility CSV",
+          "back": "The model's yes or no."
+        },
+        {
+          "front": "Error CSV",
+          "back": "Why the row failed."
+        },
+        {
+          "front": "Professional",
+          "back": "A documented license error."
+        },
+        {
+          "front": "350 MB",
+          "back": "Tar upload cap on that tool."
+        }
+      ],
+      "lab": {
+        "title": "Triage five errors",
+        "goal": "Write the fix for each documented error string.",
+        "steps": [
+          {
+            "do": "Ineligible",
+            "expect": "Do not force it"
+          },
+          {
+            "do": "No user",
+            "expect": "Fix identity"
+          },
+          {
+            "do": "No license",
+            "expect": "Assign Professional"
+          },
+          {
+            "do": "Timeout",
+            "expect": "Rerun, do not edit the MAC"
+          },
+          {
+            "do": "Not in CI",
+            "expect": "Provision the user"
+          }
+        ],
+        "check": "You did not add a model from memory."
+      },
+      "fault": {
+        "title": "Forced an ineligible MAC",
+        "symptom": "The upload fails again after a hand edit.",
+        "log": "SYNTHETIC: Device isn't eligible, MAC overwritten to a similar model.",
+        "cause": "The tool already answered.",
+        "fix": "Leave the device on Unified CM or replace the hardware.",
+        "cite": {
+          "label": "Migrate devices and features from Unified CM",
+          "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "features",
+      "title": "Call queues and auto attendants",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Migrate features writes CallQueueBulk.csv and Auto-AttendantBulk.csv. Both can contain errors. Remove the Errors and Notes columns before you upload to Control Hub.",
+      "uncertainty": "",
+      "objectives": [
+        "Use the generated CSV, not a blank one",
+        "Fix documented errors",
+        "Upload queues and auto attendants in their own tools"
+      ],
+      "diagram": {
+        "caption": "The CSV is a draft until the error count is zero.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Hunt or AA",
+            "sub": "Unified CM or Unity",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CSV",
+            "sub": "errors and notes",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Fix",
+            "sub": "location, language, time",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Bulk",
+            "sub": "Control Hub",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "export"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "correct"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "upload"
+          }
+        ]
+      },
+      "flow": {
+        "title": "From a hunt pilot to a Calling queue",
+        "steps": [
+          {
+            "from": "Tool",
+            "to": "Export",
+            "label": "Download the zip",
+            "detail": "CallQueueBulk.csv and the optional hunt-group variant, plus Auto-AttendantBulk.csv, are in the migrate-features export.",
+            "inspect": "Unity call-handler zip is optional, up to 2 GB",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "CSV",
+            "label": "Read Errors and Notes",
+            "detail": "The article says to resolve errors before upload and then remove the Errors and Notes columns.",
+            "inspect": "They are not Calling columns",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Row",
+            "to": "Location",
+            "label": "Fill what could not be derived",
+            "detail": "Documented queue errors include the number already assigned, a derived extension in use, and location, language, or time zone that could not be derived.",
+            "inspect": "Same idea for hunt pilots",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Hub",
+            "to": "Feature",
+            "label": "Bulk manage in the feature",
+            "detail": "Call queues upload through the call queue bulk tools. Auto attendants upload through the auto attendant tools. They are not one combined export.",
+            "inspect": "Calling features, not Flow Designer",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "These are Webex Calling features",
+          "paragraphs": [
+            "The queues in these CSVs are Webex Calling call queues, with that article's routing patterns and caps. They are not contact center queues.",
+            "An auto attendant here is the Calling auto attendant, including business-hours and after-hours keys."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        },
+        {
+          "h": "Hunt groups can become queues",
+          "paragraphs": [
+            "CallQueueBulkCsvFromUCMHuntGroup.csv is the optional transform. It has the same kind of errors to fix.",
+            "HuntGroupBulk.csv exists too, if you are provisioning hunt groups rather than queues. Fix location, language, and time zone the same way."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Before upload you remove",
+          "choices": [
+            "The Errors and Notes columns",
+            "The phone number",
+            "The location",
+            "Every row that mentions Unified CM"
+          ],
+          "answer": 0,
+          "why": "After the errors are fixed.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A number already assigned in Webex Calling",
+          "choices": [
+            "Is a documented error to edit",
+            "Is ignored",
+            "Deletes the user",
+            "Opens a trunk"
+          ],
+          "answer": 0,
+          "why": "Update the number columns.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Location could not be derived means",
+          "choices": [
+            "You type the location",
+            "You skip the row always",
+            "The tar is corrupt by definition",
+            "SSO is off"
+          ],
+          "answer": 0,
+          "why": "Language and time zone have the same pattern.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Auto-AttendantBulk.csv is",
+          "choices": [
+            "A Calling auto attendant upload, after cleanup",
+            "A Flow Designer file",
+            "A contact center queue",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "Separate bulk tool.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "The optional hunt-to-queue file is",
+          "choices": [
+            "CallQueueBulkCsvFromUCMHuntGroup.csv",
+            "ImportedDataBulk.csv",
+            "A bot payload",
+            "PIDF-LO"
+          ],
+          "answer": 0,
+          "why": "Still fix errors first.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Unity call-handler zip limit on that page",
+          "choices": [
+            "2 GB",
+            "350 MB, which is the tar",
+            "10 MB",
+            "None"
+          ],
+          "answer": 0,
+          "why": "Tar and zip limits differ.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Fix, then strip",
+          "back": "Errors and Notes come off last."
+        },
+        {
+          "front": "Queue CSV",
+          "back": "Calling call queues."
+        },
+        {
+          "front": "AA CSV",
+          "back": "Calling auto attendants."
+        },
+        {
+          "front": "Derive",
+          "back": "Location, language, time zone."
+        }
+      ],
+      "lab": {
+        "title": "Clean one row",
+        "goal": "Given a fake error 'Location can't be derived', write the columns you would set.",
+        "steps": [
+          {
+            "do": "Location",
+            "expect": "A real Calling location name"
+          },
+          {
+            "do": "Language and time zone",
+            "expect": "Filled"
+          },
+          {
+            "do": "Columns removed",
+            "expect": "Errors and Notes, after the fix"
+          }
+        ],
+        "check": "You did not leave the error column in the upload."
+      },
+      "fault": {
+        "title": "Uploaded the error columns",
+        "symptom": "Bulk manage rejects the file.",
+        "log": "SYNTHETIC: header still contains Errors,Notes.",
+        "cause": "Those columns are for the admin, not for Control Hub.",
+        "fix": "Fix the rows and remove the columns.",
+        "cite": {
+          "label": "Migrate devices and features from Unified CM",
+          "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "park",
+      "title": "Park and pickup need the script",
+      "level": "advanced",
+      "minutes": 12,
+      "summary": "The migrate-features tool does not create call park and call pickup files. The Python script UserBasedUCMFeatureMigration does. It also filters by a user list.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the gap",
+        "Name the script",
+        "List the other files it writes"
+      ],
+      "diagram": {
+        "caption": "The gap is documented. The script is the documented fill.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Main tool",
+            "sub": "no park file",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Python script",
+            "sub": "UserBasedUCMFeatureMigration",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "CDR",
+            "sub": "input",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "CSVs",
+            "sub": "park and pickup",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "process"
+          },
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "filter"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "creates"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A feature the zip forgot",
+        "steps": [
+          {
+            "from": "Zip",
+            "to": "Admin",
+            "label": "Notice park and pickup are missing",
+            "detail": "The article says the script creates CallPark.csv and CallPickupgroup.csv because the migrate-features tool does not currently support them.",
+            "inspect": "Do not hand-build from rumor",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "CDR",
+            "to": "Script",
+            "label": "Point it at the CDR export",
+            "detail": "The script processes CDR collected on a server or Unified CM. The compressed result can be uploaded in Control Hub.",
+            "inspect": "Follow the migration utility script page",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Users",
+            "to": "Filter",
+            "label": "Pass a user list",
+            "detail": "It can filter the main tool's output by users and override locations with a Location column.",
+            "inspect": "People outside the list but in a group are identified",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "DN",
+            "to": "Check",
+            "label": "Read DNInMultipleDevicePool.csv",
+            "detail": "Directory numbers in more than one device pool are listed under insightDir.",
+            "inspect": "Resolve them before cutover",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the script will not invent",
+          "paragraphs": [
+            "It does not convert UCCX scripts. It is a Webex Calling feature helper.",
+            "Call park extensions also appear as CallParkExtensionBulk.csv from the main tool. Read both pages before you decide which file you are uploading."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        },
+        {
+          "h": "Groups again",
+          "paragraphs": [
+            "If a user is in a pickup group with someone who is not in the migration list, the script is how the article says you find that.",
+            "Insights had already warned you with the shared-feature CSV. Use both."
+          ],
+          "cite": {
+            "label": "Migration Insights",
+            "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "CallPark.csv and CallPickupgroup.csv are created by",
+          "choices": [
+            "UserBasedUCMFeatureMigration",
+            "The main tool, in the same zip, for those exact names",
+            "Flow Designer",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The article says the main tool does not currently support them.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "The script reads",
+          "choices": [
+            "CDR from a server or Unified CM",
+            "Only a screenshot",
+            "RedSky",
+            "RoomOS macros"
+          ],
+          "answer": 0,
+          "why": "Then you upload the compressed output.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "DNInMultipleDevicePool.csv flags",
+          "choices": [
+            "A directory number in more than one device pool",
+            "A webhook failure",
+            "A voice domain",
+            "A skill"
+          ],
+          "answer": 0,
+          "why": "insightDir.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A user list can",
+          "choices": [
+            "Filter the migration output",
+            "Delete Unified CM",
+            "Disable 911",
+            "Change RFC 3261"
+          ],
+          "answer": 0,
+          "why": "Location column overrides exist.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "CallParkExtensionBulk.csv",
+          "choices": [
+            "Is also named on the migrate-features export list",
+            "Replaces the need to read the article",
+            "Is a contact center flow",
+            "Is xAPI"
+          ],
+          "answer": 0,
+          "why": "Know which file you are holding.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "The script is not",
+          "choices": [
+            "A UCCX importer",
+            "A Calling helper",
+            "Documented",
+            "Related to CDR"
+          ],
+          "answer": 0,
+          "why": "Contact center scripts are a redesign.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Gap",
+          "back": "Main tool does not emit those park and pickup names."
+        },
+        {
+          "front": "Script",
+          "back": "UserBasedUCMFeatureMigration."
+        },
+        {
+          "front": "Multi pool",
+          "back": "DNInMultipleDevicePool.csv."
+        },
+        {
+          "front": "Not UCCX",
+          "back": "Calling features only."
+        }
+      ],
+      "lab": {
+        "title": "File checklist",
+        "goal": "Which tool produces which file.",
+        "steps": [
+          {
+            "do": "Insights",
+            "expect": "DeviceEligibility"
+          },
+          {
+            "do": "Migrate features",
+            "expect": "CallQueueBulk"
+          },
+          {
+            "do": "Python",
+            "expect": "CallPark.csv and CallPickupgroup.csv"
+          }
+        ],
+        "check": "You can say the main-tool sentence out loud."
+      },
+      "fault": {
+        "title": "Park rebuilt by hand",
+        "symptom": "Extensions collide with numbers the script would have flagged.",
+        "log": "SYNTHETIC: spreadsheet of park numbers, no DNInMultipleDevicePool check.",
+        "cause": "The documented script was skipped.",
+        "fix": "Run the script and read insightDir.",
+        "cite": {
+          "label": "Migrate devices and features from Unified CM",
+          "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "voicemail",
+      "title": "Unity Connection does not come along",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Webex Calling cannot use premises Unity Connection as its voicemail. Messages and greetings have no native migration. Call handlers can feed the Calling auto attendant tool.",
+      "uncertainty": "",
+      "objectives": [
+        "State the integration limit",
+        "State the message limit",
+        "Use the auto attendant path for handlers"
+      ],
+      "diagram": {
+        "caption": "Messages stay. Menus can be rebuilt with the tool.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Unity Connection",
+            "sub": "premises",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Messages",
+            "sub": "no native move",
+            "x": 250,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Call handlers",
+            "sub": "AA tool",
+            "x": 460,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Webex voicemail",
+            "sub": "built in",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "not native"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "configuration"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "new mailbox"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Tell users about old messages before cutover",
+        "steps": [
+          {
+            "from": "Design",
+            "to": "Voicemail",
+            "label": "Plan on Webex Calling voicemail",
+            "detail": "The prepare article says voicemail is built in and that Webex Calling cannot integrate with premises Unity Connection or Unity Connection Express.",
+            "inspect": "Dedicated Instance is the exception that still runs Unity Connection, and it is a different offer",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Users",
+            "to": "Messages",
+            "label": "Do not promise the old inbox",
+            "detail": "There is no native way to migrate Unity Connection messages or greetings. Some third-party tools can move some of that data.",
+            "inspect": "This lab does not name a tool it has not verified",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Handlers",
+            "to": "Zip",
+            "label": "Export call handlers if you are using the feature tool",
+            "detail": "Migrate features accepts a Unity call-handler zip and produces auto attendant CSV.",
+            "inspect": "2 GB limit",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Users",
+            "to": "New box",
+            "label": "Record greetings again",
+            "detail": "Shared voicemail and fax mailboxes exist on Webex Calling. They are new configuration, not a restored Unity mailbox.",
+            "inspect": "Cite the voicemail article the prepare page points at",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Dedicated Instance still has Unity Connection",
+          "paragraphs": [
+            "If the design is Dedicated Instance, Unity Connection is deployed as part of that add-on. That is not the multi-tenant Webex Calling voicemail path this lesson is about.",
+            "Do not tell a DI customer that their messages cannot exist, and do not tell a multi-tenant customer that Unity will be connected."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "UCCX and UCCE in the heading",
+          "paragraphs": [
+            "The prepare article's section heading names Unity Connection, UCCX, and UCCE. The paragraph this lab fetched is about voicemail, not a script converter.",
+            "Uncertainty: no Flow Designer import was found. Treat contact center scripts as a redesign in the next lesson."
+          ],
+          "cite": {
+            "label": "Unified Contact Center Express",
+            "url": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Premises Unity Connection and multi-tenant Webex Calling",
+          "choices": [
+            "Cannot be integrated, per the prepare article",
+            "Are required together",
+            "Share one mailbox automatically",
+            "Use HELD"
+          ],
+          "answer": 0,
+          "why": "Native voicemail is in Calling.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Messages and greetings",
+          "choices": [
+            "Have no native migration",
+            "Always move",
+            "Move if the tar is under 350 MB",
+            "Are dial plans"
+          ],
+          "answer": 0,
+          "why": "Third-party tools may do some of it.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Call handlers",
+          "choices": [
+            "Can be migrated toward Calling auto attendants with the feature tool",
+            "Become contact center flows",
+            "Become trunks",
+            "Become bots"
+          ],
+          "answer": 0,
+          "why": "Unity zip.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Dedicated Instance",
+          "choices": [
+            "Includes Unity Connection as a deployed app",
+            "Forbids voicemail",
+            "Is the same mailbox as multi-tenant",
+            "Is UCCX"
+          ],
+          "answer": 0,
+          "why": "Do not mix the offers.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "This lab names",
+          "choices": [
+            "No unverified third-party message tool",
+            "A specific converter you should buy",
+            "A script importer",
+            "A price"
+          ],
+          "answer": 0,
+          "why": "The article says some partners can.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "The UCCX heading",
+          "choices": [
+            "Does not, in the fetched paragraph, provide a script importer",
+            "Ships a converter",
+            "Is a CSV",
+            "Is a port"
+          ],
+          "answer": 0,
+          "why": "Redesign.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+        }
+      ],
+      "cards": [
+        {
+          "front": "No integration",
+          "back": "Premises Unity with multi-tenant Calling."
+        },
+        {
+          "front": "No native messages",
+          "back": "Tell users early."
+        },
+        {
+          "front": "Handlers",
+          "back": "Auto attendant tool."
+        },
+        {
+          "front": "DI",
+          "back": "Unity Connection still exists there."
+        }
+      ],
+      "lab": {
+        "title": "User notice",
+        "goal": "Draft four sentences for a cutover mail.",
+        "steps": [
+          {
+            "do": "Messages",
+            "expect": "No native move"
+          },
+          {
+            "do": "Greetings",
+            "expect": "Re-record"
+          },
+          {
+            "do": "Menus",
+            "expect": "Auto attendant, if you migrated handlers"
+          },
+          {
+            "do": "DI",
+            "expect": "You said this notice is for multi-tenant only"
+          }
+        ],
+        "check": "No third-party product is named."
+      },
+      "fault": {
+        "title": "Promised the old greeting",
+        "symptom": "Users call and hear the default greeting.",
+        "log": "SYNTHETIC mail: 'your Unity greeting moves automatically.'",
+        "cause": "There is no native greeting migration.",
+        "fix": "Send a correction and schedule re-recording.",
+        "cite": {
+          "label": "Prepare to migrate from Unified CM",
+          "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "scripts",
+      "title": "UCCX and UCCE are a redesign",
+      "level": "advanced",
+      "minutes": 13,
+      "summary": "Unified CCX and Unified CCE scripts do not import into Flow Designer in any tool this lab can cite. Rebuild the flow from the routing you still need.",
+      "uncertainty": "",
+      "objectives": [
+        "Refuse an importer you cannot cite",
+        "Map old steps to activities",
+        "Keep Enterprise and cloud docs apart"
+      ],
+      "diagram": {
+        "caption": "Keep the script as a spec. Draw a new flow.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "UCCX or UCCE",
+            "sub": "script",
+            "x": 40,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Spec",
+            "sub": "what it did",
+            "x": 250,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Flow Designer",
+            "sub": "new activities",
+            "x": 460,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Queue",
+            "sub": "LAA or BAA",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "read"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "redraw"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "not a CSV"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Translate behavior, not XML",
+        "steps": [
+          {
+            "from": "Script",
+            "to": "Notes",
+            "label": "Write the caller-visible behavior",
+            "detail": "Hours, menus, data dips, queues, and transfers. Ignore the node names that have no Flow Designer twin until you have a citation.",
+            "inspect": "Product pages for UCCX and UCCE",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Notes",
+            "to": "Canvas",
+            "label": "Place activities",
+            "detail": "Business Hours, Menu, HTTP Request, Queue Contact. Use the real designer for anything that will take calls.",
+            "inspect": "Lab canvas is a sketch",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Queue",
+            "to": "Strategy",
+            "label": "LAA or BAA",
+            "detail": "Do not paste UCCE precision-queue numbers into a design unless the Webex article states them.",
+            "inspect": "Uncertainty stays",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Enterprise",
+            "to": "Docs",
+            "label": "Stop if the target is WxCC Enterprise",
+            "detail": "The what's-new article is the Enterprise admin surface. Cloud Flow Designer steps may not apply.",
+            "inspect": "Ask which product",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Calling migration CSVs will not save you",
+          "paragraphs": [
+            "CallQueueBulk.csv builds a Webex Calling call queue. A UCCX script is not a hunt pilot, even if someone exported one.",
+            "Agents, desktop profiles, and entry points are contact center objects."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "What to tell a project plan",
+          "paragraphs": [
+            "There is a design phase. There is no converter milestone this lab can cite. If Cisco later publishes one, the live page replaces this lesson.",
+            "Mark the plan uncertain on purpose."
+          ],
+          "cite": {
+            "label": "Unified Contact Center Enterprise",
+            "url": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/series.html"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "UCCX scripts in this lab",
+          "choices": [
+            "Are redesigned in Flow Designer",
+            "Import through Migration Insights",
+            "Are dial plans",
+            "Are tar files"
+          ],
+          "answer": 0,
+          "why": "No importer is cited.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+        },
+        {
+          "q": "UCCE scripts",
+          "choices": [
+            "Are the same answer: redesign",
+            "Become Auto-AttendantBulk.csv",
+            "Become xAPI",
+            "Move with the Python park script"
+          ],
+          "answer": 0,
+          "why": "Product page plus Flow Designer.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/series.html"
+        },
+        {
+          "q": "A Calling call queue CSV",
+          "choices": [
+            "Does not recreate a contact center script",
+            "Is the importer",
+            "Sets LAA",
+            "Is HELD"
+          ],
+          "answer": 0,
+          "why": "Different queue.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Precision-queue numeric rules",
+          "choices": [
+            "Are not copied unless a Webex article states them",
+            "Always match UCCE",
+            "Are ports",
+            "Are themes"
+          ],
+          "answer": 0,
+          "why": "Mark uncertainty.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "WxCC Enterprise",
+          "choices": [
+            "Uses its own administrator docs",
+            "Is required to use the lab canvas as an import",
+            "Is a phone",
+            "Is a trunk port"
+          ],
+          "answer": 0,
+          "why": "What's new article.",
+          "cite": "https://help.webex.com/en-us/article/nhy3hvdb/What%27s-new-for-administrators-in-Webex-Contact-Center-Enterprise"
+        },
+        {
+          "q": "The lab JSON",
+          "choices": [
+            "Is not the migration format",
+            "Restores UCCX",
+            "Is a CUCM tar",
+            "Is CDR"
+          ],
+          "answer": 0,
+          "why": "Teaching schema.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "No importer",
+          "back": "Say so in the plan."
+        },
+        {
+          "front": "Spec",
+          "back": "Caller-visible behavior."
+        },
+        {
+          "front": "Activities",
+          "back": "Hours, menu, HTTP, queue."
+        },
+        {
+          "front": "Enterprise",
+          "back": "Different docs."
+        }
+      ],
+      "lab": {
+        "title": "One script, one flow",
+        "goal": "Take a three-step IVR you invent and map it.",
+        "steps": [
+          {
+            "do": "Hours",
+            "expect": "Business Hours"
+          },
+          {
+            "do": "Menu",
+            "expect": "Menu"
+          },
+          {
+            "do": "Queue",
+            "expect": "Queue Contact, and you wrote that UCCE XML is not uploaded"
+          }
+        ],
+        "check": "The map cites Flow Designer."
+      },
+      "fault": {
+        "title": "XML uploaded as a flow",
+        "symptom": "Control Hub rejects a UCCX script file.",
+        "log": "SYNTHETIC: .aef uploaded to Flow Designer.",
+        "cause": "There is no such import.",
+        "fix": "Rewrite the flow from the behavior.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "cutover",
+      "title": "Cutover checks",
+      "level": "apply",
+      "minutes": 14,
+      "summary": "Dial plan, 933, interop, and the local-gateway call budget are the checks that fail in public. CSV hygiene fails in private, earlier.",
+      "uncertainty": "",
+      "objectives": [
+        "Pilot one location",
+        "Test 933 and callback",
+        "Know the 403 when the gateway is over budget"
+      ],
+      "diagram": {
+        "caption": "Pilot a location. Test emergency. Then move the shared group.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Location",
+            "sub": "one PSTN",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dial plan",
+            "sub": "premises patterns",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "933",
+            "sub": "floor and ECBN",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Gateway",
+            "sub": "concurrent calls",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "route"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "before users"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "budget"
+          }
+        ]
+      },
+      "flow": {
+        "title": "The weekend list",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "PSTN and numbers first",
+            "detail": "Locations exist before premises PSTN. One PSTN option. Users in a shared-line group move together.",
+            "inspect": "Insights group CSV",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Dial plan",
+            "label": "Patterns for what stayed on Unified CM",
+            "detail": "Dial plans are enterprise-wide and point at a trunk or route group. The simulator in this lab is a teaching model of that idea.",
+            "inspect": "Not the live engine",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "933",
+            "label": "From the new device",
+            "detail": "Floor, room, and an ECBN that answers. Resync HELD phones.",
+            "inspect": "Cellular clients use the native dialer",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Gateway",
+            "to": "Budget",
+            "label": "Count concurrent calls",
+            "detail": "The prepare article: registration-based local gateway up to 250 concurrent calls; certificate-based more than 250 and up to 6500 depending on peering and model. Excess calls get 403 Forbidden.",
+            "inspect": "Latency under 100 ms, jitter under 10 ms, loss under 0.5 percent",
+            "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Interop if Dedicated Instance is in the picture",
+          "paragraphs": [
+            "Multi-tenant users and Dedicated Instance users need the interop SIP trunk activated.",
+            "DNS conditional forwarders are part of DI cutover, not part of the CSV upload."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "Contact center cutover is separate",
+          "paragraphs": [
+            "Entry points, flows, and agents are not done when the Calling CSV imports.",
+            "UCCX callers need the redesigned flow and a tested number."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Over the local-gateway concurrent-call budget",
+          "choices": [
+            "Calls are rejected with 403 Forbidden",
+            "Calls queue in Flow Designer",
+            "Calls become webhooks",
+            "Calls ignore the limit"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Registration-based local gateway concurrent calls",
+          "choices": [
+            "Up to 250",
+            "Unlimited",
+            "Ten",
+            "19560"
+          ],
+          "answer": 0,
+          "why": "Certificate-based is the higher, model-dependent number.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Certificate-based upper figure in that article",
+          "choices": [
+            "Up to 6500, depending on connectivity and SBC model",
+            "Always 6500 on any router",
+            "250",
+            "5"
+          ],
+          "answer": 0,
+          "why": "Do not treat 6500 as a promise for every box.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Latency guidance in that article",
+          "choices": [
+            "Not above 100 ms one way, jitter under 10 ms, loss under 0.5 percent",
+            "Any loss is fine",
+            "Only Wi-Fi RSSI",
+            "A license count"
+          ],
+          "answer": 0,
+          "why": "Between the gateway and the Webex Calling data center.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "933 happens",
+          "choices": [
+            "Before you move a building",
+            "After the all-hands",
+            "Instead of a dial plan",
+            "Only on bots"
+          ],
+          "answer": 0,
+          "why": "Emergency article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "DI plus multi-tenant needs",
+          "choices": [
+            "The interop trunk",
+            "Only a CSV",
+            "Only a macro",
+            "Only 933"
+          ],
+          "answer": 0,
+          "why": "Activation article.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      ],
+      "cards": [
+        {
+          "front": "403",
+          "back": "Gateway over its concurrent-call budget."
+        },
+        {
+          "front": "250",
+          "back": "Registration-based ceiling in that article."
+        },
+        {
+          "front": "6500",
+          "back": "Certificate-based upper figure, with conditions."
+        },
+        {
+          "front": "933 first",
+          "back": "Then the users."
+        }
+      ],
+      "lab": {
+        "title": "Weekend card",
+        "goal": "Order ten checks. Include CSV errors, 933, dial plan, and the call budget.",
+        "steps": [
+          {
+            "do": "Early",
+            "expect": "Errors column removed"
+          },
+          {
+            "do": "Network",
+            "expect": "100 ms / 10 ms / 0.5 percent"
+          },
+          {
+            "do": "Emergency",
+            "expect": "933 and ECBN"
+          },
+          {
+            "do": "Voice",
+            "expect": "If UCCX, the new flow is named"
+          }
+        ],
+        "check": "DI interop is on the card if the design has both platforms."
+      },
+      "fault": {
+        "title": "403 on Monday",
+        "symptom": "Calls fail once the office is full.",
+        "log": "SYNTHETIC: registration-based gateway, 400 active calls, 403.",
+        "cause": "The documented ceiling is 250 for that trunk type.",
+        "fix": "Move traffic or use a certificate-based design that the article's limits allow.",
+        "cite": {
+          "label": "Prepare to migrate from Unified CM",
+          "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

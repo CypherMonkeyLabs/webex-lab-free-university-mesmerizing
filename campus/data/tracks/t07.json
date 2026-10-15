@@ -1,0 +1,1804 @@
+{
+  "id": "t07",
+  "title": "Calling features",
+  "blurb": "Auto attendants, call queues, hunt groups, voicemail, and the other location features the license article lists.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "aa",
+      "title": "Auto attendants",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "An auto attendant answers and offers a menu. It has business-hours and after-hours behavior, bulk CSV, and its own reports.",
+      "uncertainty": "",
+      "objectives": [
+        "Place the attendant under Calling features",
+        "Name the three reports",
+        "Use bulk CSV when there are many"
+      ],
+      "diagram": {
+        "caption": "A menu is a calling feature with schedules and reports.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Number",
+            "sub": "on a location",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Schedule",
+            "sub": "hours and holidays",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Menu",
+            "sub": "keys",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Reports",
+            "sub": "key details",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "when"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "which menu"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "measure"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Build a front door",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Features",
+            "label": "Open Auto Attendant",
+            "detail": "Services > Calling > Features, Auto Attendant card.",
+            "inspect": "Not Flow Designer",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Admin",
+            "to": "Schedule",
+            "label": "Hours and after hours",
+            "detail": "Callers hear different menus. The reports split the same way.",
+            "inspect": "Key details",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Admin",
+            "to": "Keys",
+            "label": "Point at people or queues",
+            "detail": "A key can reach a user, a hunt group, or a call queue. Those are still calling features.",
+            "inspect": "Not a contact center flow",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Admin",
+            "to": "CSV",
+            "label": "Bulk manage",
+            "detail": "The article describes CSV import and export, including forwarding rules.",
+            "inspect": "Migration can produce AutoAttendantBulk.csv",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Reports",
+          "paragraphs": [
+            "Monitoring > Reports, Calling templates: stats summary, business-hours key details, after-hours key details.",
+            "View Analytics on the card is the other door. It is still calling analytics."
+          ],
+          "cite": {
+            "label": "Manage auto attendants",
+            "url": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        },
+        {
+          "h": "Migration",
+          "paragraphs": [
+            "The migrate-features tool can emit AutoAttendantBulk.csv, with errors you must fix before upload.",
+            "Unity Connection call handlers are in scope of that tool's story. UCCX scripts are not."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Auto attendants are managed under",
+          "choices": [
+            "Calling > Features",
+            "Flow Designer",
+            "RedSky",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "The article's path.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Business-hours key details is",
+          "choices": [
+            "A Calling report",
+            "A SIP method",
+            "A trunk port",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "Named in the article.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Bulk CSV is for",
+          "choices": [
+            "Many attendants, including forwarding rules",
+            "Certificates",
+            "ICE",
+            "Bots"
+          ],
+          "answer": 0,
+          "why": "The article describes bulk manage.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "AutoAttendantBulk.csv comes from",
+          "choices": [
+            "The Unified CM feature migration tool",
+            "A phone screenshot",
+            "A webhook",
+            "RoomOS"
+          ],
+          "answer": 0,
+          "why": "The migrate-features article.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A key that reaches a Webex Calling call queue",
+          "choices": [
+            "Stays inside calling features",
+            "Becomes a contact center flow",
+            "Needs a bot",
+            "Needs HELD"
+          ],
+          "answer": 0,
+          "why": "Different queue product.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "After-hours is",
+          "choices": [
+            "A separate menu and a separate report",
+            "Ignored",
+            "Always the same audio",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "The article splits the reports.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        }
+      ],
+      "cards": [
+        {
+          "front": "AA path",
+          "back": "Calling > Features > Auto Attendant."
+        },
+        {
+          "front": "Three reports",
+          "back": "Summary, business-hours keys, after-hours keys."
+        },
+        {
+          "front": "Bulk CSV",
+          "back": "Import and export."
+        },
+        {
+          "front": "Not UCCX",
+          "back": "The migration CSV is for calling attendants."
+        }
+      ],
+      "lab": {
+        "title": "Menu on paper",
+        "goal": "Write hours, after hours, and two keys.",
+        "steps": [
+          {
+            "do": "Key 1",
+            "expect": "A person"
+          },
+          {
+            "do": "Key 2",
+            "expect": "A calling call queue"
+          },
+          {
+            "do": "Report you will read",
+            "expect": "Business-hours key details"
+          }
+        ],
+        "check": "The menu does not mention Flow Designer."
+      },
+      "fault": {
+        "title": "Menu points at a dead extension",
+        "symptom": "Key 2 rings nowhere after a user left.",
+        "log": "SYNTHETIC: AA key 2 target=user deleted.",
+        "cause": "The key target was not updated.",
+        "fix": "Point the key at the current queue or person and place one test call. Check the key-details report the next day.",
+        "cite": {
+          "label": "Manage auto attendants",
+          "url": "https://help.webex.com/en-us/article/nsioxoi"
+        }
+      }
+    },
+    {
+      "id": "cq",
+      "title": "Call queue routing patterns",
+      "level": "core",
+      "minutes": 15,
+      "summary": "Webex Calling call queues offer circular, top down, longest idle, weighted, and simultaneous routing, with published agent caps.",
+      "uncertainty": "",
+      "objectives": [
+        "Define the five patterns",
+        "Quote the caps",
+        "Notice the professional-license sentence"
+      ],
+      "diagram": {
+        "caption": "The routing pattern sets both the order and the maximum number of agents.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Circular",
+            "sub": "1000",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Top down",
+            "sub": "1000",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Longest idle",
+            "sub": "1000",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Weighted",
+            "sub": "100",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "Simultaneous",
+            "sub": "50",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "priority-based"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": ""
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "smaller caps"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pick a pattern",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Call queue",
+            "label": "Create",
+            "detail": "Calling features, Call Queue.",
+            "inspect": "Professional license sentence in the article",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Admin",
+            "to": "Pattern",
+            "label": "Choose",
+            "detail": "Circular, top down, longest idle, weighted, or simultaneous.",
+            "inspect": "Skill-based is a second family",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Admin",
+            "to": "Agents",
+            "label": "Count",
+            "detail": "1000, 1000, 1000, 100, and 50 for those priority-based types in the article's table.",
+            "inspect": "Do not exceed them",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Admin",
+            "to": "Overflow",
+            "label": "Decide",
+            "detail": "Use the article's overflow and forwarding controls rather than inventing a second queue product.",
+            "inspect": "Then test",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Definitions",
+          "paragraphs": [
+            "Circular continues after the agent who last took a call. Top down starts at the top every time. Longest idle offers the agent idle longest, then the next.",
+            "Weighted and simultaneous are the patterns with the smaller caps in the priority-based table: 100 and 50."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        },
+        {
+          "h": "License sentence",
+          "paragraphs": [
+            "The queue article calls the feature part of the professional license. The license matrix also marks the Workspace license Yes and Standard No.",
+            "Reconcile both pages for the agent you are about to add."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Longest idle means",
+          "choices": [
+            "Offer the agent who has been idle the longest",
+            "Offer everyone at once",
+            "Always start at the top",
+            "Random"
+          ],
+          "answer": 0,
+          "why": "The article's definition.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Simultaneous priority-based cap is",
+          "choices": [
+            "50",
+            "1000",
+            "5",
+            "35"
+          ],
+          "answer": 0,
+          "why": "The table.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Weighted priority-based cap is",
+          "choices": [
+            "100",
+            "1000",
+            "50",
+            "1"
+          ],
+          "answer": 0,
+          "why": "The table.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Circular cap in that table is",
+          "choices": [
+            "1000",
+            "50",
+            "5",
+            "10"
+          ],
+          "answer": 0,
+          "why": "Same as top down and longest idle.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Top down means",
+          "choices": [
+            "Start at the top of the agent list each call",
+            "Remember the last agent",
+            "Use skills only",
+            "Use RedSky"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Standard license and call queue, in the matrix,",
+          "choices": [
+            "No",
+            "Yes",
+            "Only simultaneous",
+            "Only in Canada"
+          ],
+          "answer": 0,
+          "why": "Matrix row.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Circular",
+          "back": "Next agent after the one who last answered."
+        },
+        {
+          "front": "Longest idle",
+          "back": "Longest idle first."
+        },
+        {
+          "front": "50",
+          "back": "Simultaneous cap in the priority-based table."
+        },
+        {
+          "front": "100",
+          "back": "Weighted cap in that table."
+        }
+      ],
+      "lab": {
+        "title": "Pick patterns for three teams",
+        "goal": "A 12-person help desk, a 3-person exec line that should ring together, and a 200-person weighted overflow you cannot have.",
+        "steps": [
+          {
+            "do": "Help desk",
+            "expect": "Longest idle or circular, under 1000"
+          },
+          {
+            "do": "Exec",
+            "expect": "Simultaneous, under 50"
+          },
+          {
+            "do": "200 weighted",
+            "expect": "Not allowed. Change pattern or split."
+          }
+        ],
+        "check": "The caps changed the design."
+      },
+      "fault": {
+        "title": "Simultaneous with 80 agents",
+        "symptom": "The queue will not save the agent list.",
+        "log": "SYNTHETIC: pattern=simultaneous, agents=80, cap=50.",
+        "cause": "The table caps simultaneous at 50.",
+        "fix": "Split the queue or switch to a pattern that allows the headcount.",
+        "cite": {
+          "label": "Configure a Webex Calling call queue",
+          "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        }
+      }
+    },
+    {
+      "id": "skill",
+      "title": "Skill-based call queues",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "The same article describes a skill-based family. Do not confuse it with Webex Contact Center skills, which are a different product.",
+      "uncertainty": "Only the skill-based caps visible in the cited table are quoted. Check the live article for the rest.",
+      "objectives": [
+        "Keep the products apart",
+        "Know skill-based exists on calling queues",
+        "Still check the cap table"
+      ],
+      "diagram": {
+        "caption": "Calling skills and contact center skills share a word and not a database.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Calling queue",
+            "sub": "skill-based",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Contact Center",
+            "sub": "skill profiles",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Agents",
+            "sub": "license gated",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "calling"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "different agents"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Name the product",
+        "steps": [
+          {
+            "from": "Request",
+            "to": "Words",
+            "label": "We need skills",
+            "detail": "Ask which product.",
+            "inspect": "Calling queue or contact center",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Calling",
+            "to": "Queue",
+            "label": "Skill-based type",
+            "detail": "The article lists skill-based circular, top down, and longest idle at 1000 agents.",
+            "inspect": "Read the rest of the table before you quote a cap I did not",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Contact Center",
+            "to": "Queue",
+            "label": "Skill profile",
+            "detail": "Those skills live on the contact center queue and the agent. Different article.",
+            "inspect": "LAA or BAA",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Test",
+            "to": "One call",
+            "label": "Right desktop",
+            "detail": "A calling queue rings the Webex App or phone. A contact center queue offers the agent desktop.",
+            "inspect": "You can hear the difference",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Caps this lab will quote",
+          "paragraphs": [
+            "For skill-based, the fetched article table shows 1000 for circular, top down, and longest idle. This lab does not invent the other skill-based caps.",
+            "Open the live table before you design weighted skill-based."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        },
+        {
+          "h": "Contact center skills",
+          "paragraphs": [
+            "Dynamic skills are not assigned through skill profiles. That sentence is in the contact center routing article, and it does not apply to a calling queue.",
+            "Write the product name in the design."
+          ],
+          "cite": {
+            "label": "Routing and queueing in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Calling skill-based circular, in the article table, allows",
+          "choices": [
+            "1000 agents",
+            "50",
+            "5",
+            "1"
+          ],
+          "answer": 0,
+          "why": "The table row.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Contact center skills are",
+          "choices": [
+            "A different object from calling-queue skills",
+            "The same database",
+            "A certificate",
+            "A port"
+          ],
+          "answer": 0,
+          "why": "Different articles and desktops.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Dynamic skills",
+          "choices": [
+            "Are not assigned through contact center skill profiles",
+            "Are a CUBE command",
+            "Are ECBN",
+            "Are fonts"
+          ],
+          "answer": 0,
+          "why": "The routing article.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "A calling queue rings",
+          "choices": [
+            "The user's phone or Webex App",
+            "Only the contact center desktop",
+            "Only RedSky",
+            "Only a macro"
+          ],
+          "answer": 0,
+          "why": "It is a calling feature.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "This lab refuses to quote",
+          "choices": [
+            "Skill-based caps that were not in the table we read",
+            "Circular's 1000",
+            "The product name",
+            "The path"
+          ],
+          "answer": 0,
+          "why": "Uncertainty over invention.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "The word skill in a meeting means",
+          "choices": [
+            "Ask which product",
+            "Always contact center",
+            "Always calling",
+            "Always UCCX"
+          ],
+          "answer": 0,
+          "why": "The word is overloaded.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Ask which product",
+          "back": "Calling queue or contact center."
+        },
+        {
+          "front": "1000",
+          "back": "Skill-based circular, top down, longest idle in the table we cite."
+        },
+        {
+          "front": "Dynamic skills",
+          "back": "Not via contact center skill profiles."
+        },
+        {
+          "front": "Different desktops",
+          "back": "Phone versus agent desktop."
+        }
+      ],
+      "lab": {
+        "title": "Rewrite a requirement",
+        "goal": "Change 'skilled queue' into two explicit sentences.",
+        "steps": [
+          {
+            "do": "Calling",
+            "expect": "If they mean a calling feature"
+          },
+          {
+            "do": "Contact center",
+            "expect": "If they mean Flow Designer and the agent desktop"
+          },
+          {
+            "do": "Cap",
+            "expect": "Cite the table or say you still need to read it"
+          }
+        ],
+        "check": "The requirement names a product."
+      },
+      "fault": {
+        "title": "Skills built in the wrong place",
+        "symptom": "Agents sit in a contact center desktop while the calls ring a calling queue that has no skills.",
+        "log": "SYNTHETIC: WxCC skills populated, callers reach Calling > Call Queue.",
+        "cause": "The number was assigned to the calling feature.",
+        "fix": "Put the number on the contact center entry point and queue, or stop using contact center skills for that call.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "hunt",
+      "title": "Hunt groups and the other location features",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "The license article lists hunt groups beside call queues, plus call park, pickup, paging, voicemail groups, and music on hold. They are location features, not contact center flows.",
+      "uncertainty": "",
+      "objectives": [
+        "List features from the article",
+        "Not invent hunt algorithms",
+        "Know which migration CSV is missing"
+      ],
+      "diagram": {
+        "caption": "Location features that travel with the site.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Hunt group",
+            "sub": "location",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Call park",
+            "sub": "location",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Voicemail group",
+            "sub": "location",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Music on hold",
+            "sub": "location",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "features"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": ""
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": ""
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pick the feature",
+        "steps": [
+          {
+            "from": "Need",
+            "to": "Ring a team with no queueing story",
+            "label": "Look at hunt group",
+            "detail": "It is listed as a location feature. This lab does not invent its routing algorithms.",
+            "inspect": "Read the current hunt article before you configure",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Need",
+            "to": "Hold a call and retrieve it",
+            "label": "Call park",
+            "detail": "Park extension and park group are both in the location-feature list.",
+            "inspect": "License article",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Need",
+            "to": "A shared mailbox",
+            "label": "Voicemail group",
+            "detail": "Also in the list, next to the voice portal.",
+            "inspect": "Not Unity Connection unless you are on Dedicated Instance",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Need",
+            "to": "Hold music",
+            "label": "Music on hold",
+            "detail": "A location feature. Announcement repository is listed beside it.",
+            "inspect": "Location, not the phone's TFTP by default",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Migration gap",
+          "paragraphs": [
+            "The migrate-features article says the Control Hub tool does not currently produce call park and call pickup CSVs. A Python script in that article creates CallPark.csv and CallPickupgroup.csv.",
+            "Do not tell a program that park 'migrates with the queue CSV'."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        },
+        {
+          "h": "Unity Connection is the DI voicemail",
+          "paragraphs": [
+            "Multi-tenant calling voicemail is the calling feature. Dedicated Instance voicemail is Unity Connection, sized at activation.",
+            "Same user-visible idea. Different admin portal."
+          ],
+          "cite": {
+            "label": "Introduction to Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hunt group is",
+          "choices": [
+            "A location feature listed next to call queue",
+            "A Flow Designer activity",
+            "A certificate",
+            "A port"
+          ],
+          "answer": 0,
+          "why": "The license article's included location features.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "This lab does not invent",
+          "choices": [
+            "Hunt group routing algorithm names",
+            "The fact that hunt groups exist",
+            "The license article",
+            "The migration gap"
+          ],
+          "answer": 0,
+          "why": "Configure from the current article.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Call park CSV from the main migrate tool",
+          "choices": [
+            "Is not produced today, per the migrate-features article",
+            "Is CallQueueBulk.csv",
+            "Is automatic",
+            "Is a certificate"
+          ],
+          "answer": 0,
+          "why": "The article says the tool does not currently support it, and names a script that does.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Music on hold is",
+          "choices": [
+            "A listed location feature",
+            "An xAPI only concept",
+            "A contact center codec",
+            "Illegal"
+          ],
+          "answer": 0,
+          "why": "It is in the location-feature list.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Dedicated Instance voicemail is",
+          "choices": [
+            "Unity Connection",
+            "Always the multi-tenant voice portal only",
+            "RedSky",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "The DI introduction.",
+          "cite": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+        },
+        {
+          "q": "Voicemail group is",
+          "choices": [
+            "A multi-tenant location feature in the list",
+            "The same screen as Unity Connection",
+            "A trunk",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "Different admin tools.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Hunt group",
+          "back": "A calling location feature. Read its current article before design."
+        },
+        {
+          "front": "Park gap",
+          "back": "The main migration tool does not emit park CSV."
+        },
+        {
+          "front": "Script",
+          "back": "CallPark.csv and CallPickupgroup.csv."
+        },
+        {
+          "front": "Two voicemails",
+          "back": "Calling feature versus Unity Connection on DI."
+        }
+      ],
+      "lab": {
+        "title": "Feature inventory",
+        "goal": "Mark each Unified CM habit as a calling feature or as DI-only.",
+        "steps": [
+          {
+            "do": "Hunt pilot",
+            "expect": "Calling hunt or queue, via migration insights"
+          },
+          {
+            "do": "Call park",
+            "expect": "Calling feature, CSV via the script"
+          },
+          {
+            "do": "Unity Connection handler",
+            "expect": "AA migration tool, or stay on DI"
+          }
+        ],
+        "check": "The inventory names the tool."
+      },
+      "fault": {
+        "title": "Park assumed migrated",
+        "symptom": "Users park calls the Monday after cutover and the slot does not exist.",
+        "log": "SYNTHETIC: CallQueueBulk imported, CallPark.csv never generated.",
+        "cause": "The article says the main tool does not create that CSV.",
+        "fix": "Run the documented script path and import park, or rebuild park by hand. Test one park and retrieve.",
+        "cite": {
+          "label": "Migrate devices and features from Unified CM",
+          "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "vm",
+      "title": "Voicemail, voice portal, and music",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Voice portal, voicemail group, and music on hold are location features. Transcription and similar extras vary. This lab does not invent which regions have them.",
+      "uncertainty": "",
+      "objectives": [
+        "Pick the right voicemail system",
+        "Avoid invented transcription claims",
+        "Test message waiting"
+      ],
+      "diagram": {
+        "caption": "Leave a message in the calling feature, or in Unity Connection if the user is on Dedicated Instance.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Voice portal",
+            "sub": "users manage",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Voicemail group",
+            "sub": "shared",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Music on hold",
+            "sub": "location",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Unity Connection",
+            "sub": "DI only",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "calling"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "not the same admin"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Leave a message",
+        "steps": [
+          {
+            "from": "User",
+            "to": "No answer",
+            "label": "Forward",
+            "detail": "The user's no-answer forward points at the voicemail you actually built.",
+            "inspect": "Calling user or Unity Connection pilot",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Caller",
+            "to": "Mailbox",
+            "label": "Leave audio",
+            "detail": "Multi-tenant uses the calling voicemail. DI uses Unity Connection.",
+            "inspect": "Say which",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "User",
+            "to": "Portal",
+            "label": "Retrieve",
+            "detail": "The voice portal is the listed user-management feature.",
+            "inspect": "Or the Unity Connection phone interface on DI",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "MWI",
+            "label": "Confirm",
+            "detail": "Message waiting has to light on the phone that actually registered. A migrated phone may point at the old pilot.",
+            "inspect": "One test message",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Do not invent extras",
+          "paragraphs": [
+            "Visual voicemail and transcription exist in various Webex Calling offers. This lab does not state a region matrix it has not cited.",
+            "If a design depends on transcription, open the current feature article and attach it."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Hold music is not the contact center's play music",
+          "paragraphs": [
+            "Music on hold is a calling location feature. Play Music is a Flow Designer activity.",
+            "They can both be called music and still be different files in different products."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Voice portal is",
+          "choices": [
+            "A listed location feature",
+            "A SIP port",
+            "A bot",
+            "An exam"
+          ],
+          "answer": 0,
+          "why": "License article.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "DI users' mailboxes are",
+          "choices": [
+            "Unity Connection",
+            "Always the multi-tenant portal",
+            "RedSky",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "DI introduction.",
+          "cite": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+        },
+        {
+          "q": "Transcription availability",
+          "choices": [
+            "Must be checked on the current feature page. This lab does not invent the matrix.",
+            "Is universal and uncited",
+            "Does not exist anywhere",
+            "Is RFC 3261"
+          ],
+          "answer": 0,
+          "why": "No invented regions.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Play Music in Flow Designer is",
+          "choices": [
+            "Not the calling music-on-hold feature",
+            "The same file",
+            "A certificate",
+            "A trunk"
+          ],
+          "answer": 0,
+          "why": "Different products.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A migrated phone that still calls the old pilot",
+          "choices": [
+            "Was not repointed",
+            "Is correct",
+            "Is HELD",
+            "Is ICE"
+          ],
+          "answer": 0,
+          "why": "Test one message.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Music on hold is configured",
+          "choices": [
+            "As a location feature",
+            "Only as a macro",
+            "Only in Analyzer",
+            "Only in RedSky"
+          ],
+          "answer": 0,
+          "why": "It is in the location-feature list.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Voice portal",
+          "back": "Calling users manage voicemail there."
+        },
+        {
+          "front": "Unity Connection",
+          "back": "Dedicated Instance mailboxes."
+        },
+        {
+          "front": "Play Music",
+          "back": "A flow activity. Different feature."
+        },
+        {
+          "front": "No invented regions",
+          "back": "Cite transcription before you promise it."
+        }
+      ],
+      "lab": {
+        "title": "One message",
+        "goal": "Describe the path for a calling user and a DI user.",
+        "steps": [
+          {
+            "do": "Calling user",
+            "expect": "No-answer to calling voicemail, retrieve via voice portal"
+          },
+          {
+            "do": "DI user",
+            "expect": "Unity Connection"
+          },
+          {
+            "do": "Hold music",
+            "expect": "Location feature, not Play Music"
+          }
+        ],
+        "check": "The two paths use different admin tools."
+      },
+      "fault": {
+        "title": "MWI on the old system",
+        "symptom": "Users see a light for messages left before cutover and none for new ones.",
+        "log": "SYNTHETIC: phone MWI target=old Unity Connection, user now on multi-tenant voicemail.",
+        "cause": "The phone still points at the system that no longer owns the mailbox.",
+        "fix": "Repoint message waiting to the current voicemail and leave one new message.",
+        "cite": {
+          "label": "Introduction to Dedicated Instance",
+          "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+        }
+      }
+    },
+    {
+      "id": "bulk",
+      "title": "Bulk CSV for features",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "Queues and attendants can be imported from CSV. Migration produces those files with an error column you have to clear.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the files",
+        "Fix errors first",
+        "Use the right bulk page"
+      ],
+      "diagram": {
+        "caption": "Fix the error column, then upload. Do not upload twice.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Tool",
+            "sub": "Migrate features",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CSV",
+            "sub": "errors and notes",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Admin",
+            "sub": "fixes rows",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Bulk manage",
+            "sub": "upload",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "emit"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "fix"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "import"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Import a queue",
+        "steps": [
+          {
+            "from": "Tool",
+            "to": "CSV",
+            "label": "Emit",
+            "detail": "CallQueueBulk.csv and AutoAttendantBulk.csv include errors and notes.",
+            "inspect": "Migrate-features article",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Sheet",
+            "label": "Clear errors",
+            "detail": "The article says to correct them before upload.",
+            "inspect": "Do not upload the raw file",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Call queue",
+            "label": "Bulk manage",
+            "detail": "Services > Calling, Features, Call Queue, Manage, Bulk Manage.",
+            "inspect": "Drag the file",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Attendant",
+            "label": "Its own bulk page",
+            "detail": "Attendants do not go in the queue importer.",
+            "inspect": "Auto attendant article",
+            "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Other files",
+          "paragraphs": [
+            "Configured lines and virtual lines have their own bulk files in the same article.",
+            "Park and pickup need the script the article names, because the tool does not emit them."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        },
+        {
+          "h": "Location column",
+          "paragraphs": [
+            "The article says you can override user or device locations with the Location column, and that the tooling flags users who belong to group features but were left off the user list.",
+            "A queue without its agents is a successful import of an empty promise."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "CallQueueBulk.csv errors are",
+          "choices": [
+            "Fixed before upload",
+            "Ignored",
+            "SIP responses",
+            "Certificates"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Queue upload path is",
+          "choices": [
+            "Call Queue > Manage > Bulk Manage",
+            "Flow Designer",
+            "RedSky",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Attendants upload",
+          "choices": [
+            "On the auto attendant bulk page",
+            "In the queue CSV",
+            "As a macro",
+            "As a webhook"
+          ],
+          "answer": 0,
+          "why": "Separate feature.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Park CSV",
+          "choices": [
+            "Comes from the script, not the main tool",
+            "Is the same as CallQueueBulk",
+            "Is automatic",
+            "Is forbidden"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A queue missing its agents",
+          "choices": [
+            "Was often an incomplete user list",
+            "Is a good design",
+            "Is HELD",
+            "Is ICE"
+          ],
+          "answer": 0,
+          "why": "The tool flags group members left off the list.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Location override is",
+          "choices": [
+            "A column the article tells you about",
+            "Impossible",
+            "A certificate field",
+            "A port"
+          ],
+          "answer": 0,
+          "why": "Location column.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Fix, then upload",
+          "back": "Error column is not optional."
+        },
+        {
+          "front": "Separate importers",
+          "back": "Queues and attendants."
+        },
+        {
+          "front": "Park script",
+          "back": "Because the tool does not emit it."
+        },
+        {
+          "front": "Agents on the list",
+          "back": "Or the queue arrives empty."
+        }
+      ],
+      "lab": {
+        "title": "Reject a file",
+        "goal": "Find the reason to refuse an upload.",
+        "steps": [
+          {
+            "do": "Error column populated",
+            "expect": "Refuse"
+          },
+          {
+            "do": "Agents blank",
+            "expect": "Refuse"
+          },
+          {
+            "do": "Clean file",
+            "expect": "Upload on the queue bulk page"
+          }
+        ],
+        "check": "You did not upload the raw export."
+      },
+      "fault": {
+        "title": "Double import",
+        "symptom": "Queues exist twice because a raw file and a fixed file were both uploaded.",
+        "log": "SYNTHETIC: queue Support and Support-1, same pilots.",
+        "cause": "Nobody deleted the failed first pass.",
+        "fix": "Delete the bad objects, upload the corrected file once, and test the pilot number.",
+        "cite": {
+          "label": "Migrate devices and features from Unified CM",
+          "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "feat-review",
+      "title": "Feature review before cutover",
+      "level": "advanced",
+      "minutes": 13,
+      "summary": "Call the feature done when a person can use it, the report has a row, and the migration file is either imported or explicitly out of scope.",
+      "uncertainty": "",
+      "objectives": [
+        "Place one test call",
+        "Read one report",
+        "Waive park in writing if you skipped it"
+      ],
+      "diagram": {
+        "caption": "A test call beats a spreadsheet.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Object",
+            "sub": "exists",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Test call",
+            "sub": "a person",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Report",
+            "sub": "a row",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "CSV",
+            "sub": "imported or waived",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "prove"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "next day"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "source"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Prove a queue",
+        "steps": [
+          {
+            "from": "Tester",
+            "to": "Pilot",
+            "label": "Call the queue",
+            "detail": "Hear the right pattern. Answer on the right agent.",
+            "inspect": "Not a SIP debug first",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Tester",
+            "to": "Attendant",
+            "label": "Press the key",
+            "detail": "Land on the documented target.",
+            "inspect": "Both schedules if you can",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Admin",
+            "to": "Report",
+            "label": "Next day",
+            "detail": "Key details or queue analytics, whichever the article names.",
+            "inspect": "Empty report means the test was not seen",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          },
+          {
+            "from": "Lead",
+            "to": "Waiver",
+            "label": "Park, pickup, paging",
+            "detail": "If they are out of scope, write that. Silence is how Monday fails.",
+            "inspect": "Migration article",
+            "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Contact center is still separate",
+          "paragraphs": [
+            "A successful calling queue test says nothing about Flow Designer.",
+            "If the business meant the contact center, this whole track was the wrong product. Confirm before cutover, not after."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        },
+        {
+          "h": "Caps and licenses",
+          "paragraphs": [
+            "Re-count agents against the pattern cap and against the license matrix on the day you test, not the day you designed.",
+            "People change licenses during a migration."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Proof of a queue is",
+          "choices": [
+            "A test call answered by the right agent",
+            "A spreadsheet only",
+            "A certificate",
+            "A font"
+          ],
+          "answer": 0,
+          "why": "Use the feature.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "An empty key-details report after a test",
+          "choices": [
+            "Means the test did not land on that attendant",
+            "Is normal",
+            "Proves success",
+            "Is HELD"
+          ],
+          "answer": 0,
+          "why": "The report counts calls that reached it.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Skipping park without a waiver",
+          "choices": [
+            "Is how retrieve fails on Monday",
+            "Is best practice",
+            "Is required",
+            "Is a port"
+          ],
+          "answer": 0,
+          "why": "The CSV gap is real.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A calling test does not prove",
+          "choices": [
+            "Flow Designer",
+            "That the pilot rings",
+            "That an agent answered",
+            "That the hours are right"
+          ],
+          "answer": 0,
+          "why": "Different product.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Re-check licenses",
+          "choices": [
+            "On test day",
+            "Never",
+            "Only in RedSky",
+            "Only in IOS"
+          ],
+          "answer": 0,
+          "why": "Agents lose Professional and fall out of the matrix.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Attendant schedules need",
+          "choices": [
+            "A test in each schedule you care about",
+            "One test at noon only",
+            "No test",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "After-hours is a different menu.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Test call",
+          "back": "The proof."
+        },
+        {
+          "front": "Waiver",
+          "back": "Write down skipped features."
+        },
+        {
+          "front": "Wrong product",
+          "back": "Calling success is not contact center success."
+        },
+        {
+          "front": "Recount",
+          "back": "Caps and licenses drift."
+        }
+      ],
+      "lab": {
+        "title": "Cutover card",
+        "goal": "Fill proof, report, and waiver for one site.",
+        "steps": [
+          {
+            "do": "Queue",
+            "expect": "Who answered"
+          },
+          {
+            "do": "Attendant",
+            "expect": "Which key"
+          },
+          {
+            "do": "Park",
+            "expect": "Imported, rebuilt, or waived"
+          }
+        ],
+        "check": "The card has no blank boxes."
+      },
+      "fault": {
+        "title": "Silent scope",
+        "symptom": "Paging worked on Unified CM and was never mentioned in the Webex design. The warehouse notices at 7 a.m.",
+        "log": "SYNTHETIC: paging group absent, no waiver.",
+        "cause": "Group paging is a listed location feature and nobody owned it.",
+        "fix": "Rebuild paging or write a real waiver with the warehouse's acceptance. Do not discover it from a forklift.",
+        "cite": {
+          "label": "Features available by license type",
+          "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,898 @@
+[
+  {
+    "title": "The Webex platform map",
+    "summary": "Control Hub is the admin surface. Calling, meetings, messaging, devices, Contact Center, and Dedicated Instance are services of one organization, not separate products with separate identity stores.",
+    "keywords": "Name the admin portal Separate multi-tenant calling from Dedicated Instance Place Contact Center and devices on the same map Control Hub Dedicated Instance Calling call queue admin.webex.com",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "map"
+  },
+  {
+    "title": "Three calling models",
+    "summary": "Multi-tenant Webex Calling, Dedicated Instance, and on-premises Unified CM can all exist in one design. The local gateway is how the premises system meets the cloud.",
+    "keywords": "Contrast the three call-control homes Say what the local gateway is for Remember the interop trunk into Dedicated Instance Multi-tenant Webex Calling Local gateway Interop trunk Hypothetical DI stories",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "models"
+  },
+  {
+    "title": "SIP and E.164 for this cloud",
+    "summary": "Webex Calling speaks SIP. Numbers that cross a trunk are safest in +E.164. This lesson is the minimum signaling vocabulary the rest of the lab assumes.",
+    "keywords": "Read a SIP INVITE as a request, not a string dump Write a number in +E.164 Know which RFC names the tel URI INVITE +E.164 RFC 3966 SRTP",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "sip"
+  },
+  {
+    "title": "Identity, directory sync, and SSO",
+    "summary": "Control Hub is the identity service for Webex. Dedicated Instance users sync from that directory, and Cisco says that path requires single sign-on.",
+    "keywords": "Say where the Webex identity lives Explain the SSO requirement for Dedicated Instance directory sync Separate a user from a workspace SSO and DI sync Workspace Control Hub identity Activation email",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "identity"
+  },
+  {
+    "title": "Ports, media, and certificates",
+    "summary": "Certificate trunks and registration trunks do not use the same signaling port. Media has its own UDP ranges, and ICE can take the cloud relay out of the path.",
+    "keywords": "Quote the two signaling ports Separate optimized media ports for the app and for devices Know that a third-party SBC local gateway is certificate-based TCP 5062 TCP 8934 UDP 8500-8699 Third-party SBC",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "ports"
+  },
+  {
+    "title": "Professional, Standard, and Workspace",
+    "summary": "Webex Calling has three license options. Device counts, soft clients, shared lines, virtual lines, and call queue membership are not uniform across them.",
+    "keywords": "Name the three license options Read a row of the feature matrix Notice the tension between the queue article and the workspace row Three licenses Shared lines Standard and queues Recheck the queue sentence",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "licenses"
+  },
+  {
+    "title": "How to use this lab",
+    "summary": "Each lesson has a figure, a step-through, a quiz, cards, a lab, and a fault. Citations go to Cisco, the IETF, the ITU, or the FCC. Logs marked synthetic are not from a customer.",
+    "keywords": "Use Play, Pause, Step, and Inspect Treat the simulators as teaching models Find the certification pages without inventing exam codes 300-830 CLCCE CLWXCALL 3 February 2026 Inspect",
+    "trackTitle": "Foundations",
+    "trackId": "t01",
+    "lessonId": "howto"
+  },
+  {
+    "title": "Administrator roles that matter here",
+    "summary": "Full administrator and read-only administrator can cross-launch Dedicated Instance tools. Contact Center adds its own service administrator, and resource collections narrow what that person sees.",
+    "keywords": "Separate a full admin from a Contact Center service admin Remember who can open Web RTMT Explain a resource collection Contact Center Service Administrator Web RTMT Five collections Delegated admin",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "roles"
+  },
+  {
+    "title": "The paths you will memorize",
+    "summary": "Cisco's articles repeat a handful of click paths. Learning the paths is faster than learning every screen.",
+    "keywords": "Say the PSTN path Say the dial-plan path Say the Migration Insights path Location before PSTN Dial plan path Bulk queue import Insights path",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "paths"
+  },
+  {
+    "title": "Users, workspaces, and numbers",
+    "summary": "A person, a workspace, and a virtual line are three different places a number can live. The license decides which of those you are allowed to create.",
+    "keywords": "Put the number on a location first Choose user versus workspace Know who can host a virtual line 35 shared lines 60 minutes Line location Virtual line",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "users"
+  },
+  {
+    "title": "Reports and what they are not",
+    "summary": "Calling auto attendants have their own reports. Contact Center analytics honor resource collections. Neither report is a packet capture.",
+    "keywords": "Find the three auto attendant report names Keep Analyzer inside its collections Use CDR only for the migration tool that asks for it Three AA reports Analyzer scope DeviceEligibility.csv CDR",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "monitoring"
+  },
+  {
+    "title": "SSO, tokens, and what not to paste",
+    "summary": "SSO is an identity requirement for one sync path. API tokens are a different secret, with a 12-hour personal token that Cisco says not to use in production.",
+    "keywords": "Reject personal tokens in production Separate a bot from an integration Connect SSO to Dedicated Instance sync 12 hours Bot mention Integration Do not paste tokens",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "security"
+  },
+  {
+    "title": "A day in the practice console",
+    "summary": "The walkthrough is a practice console with the documented paths. Finishing it does not change a real organization.",
+    "keywords": "Complete the practice console Say which real article each step quotes Notice what the console refuses to pretend Practice vs portal Three PSTN choices Last step CLWXCALL",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "day"
+  },
+  {
+    "title": "A change log you can defend",
+    "summary": "Write down the article, the path, and the object name before you change a location. Future you will not remember which trunk was the one trunk.",
+    "keywords": "Log one trunk per premises location Attach a URL Keep the previous value One trunk Same trunk, many sites 933 URL in the ticket",
+    "trackTitle": "Control Hub",
+    "trackId": "t02",
+    "lessonId": "audit"
+  },
+  {
+    "title": "What a location is",
+    "summary": "A Webex Calling location is the site container: time zone, dialing, main number, and one PSTN connection. It is not a Unified CM device pool, even when you migrate from one.",
+    "keywords": "Define a location List what dialing settings it holds Refuse to attach PSTN first Location Device pool International emergency RedSky leftover",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "location"
+  },
+  {
+    "title": "Extension length, prefix, and the external digit",
+    "summary": "Internal dialing is extension length and routing prefix. The external digit is the habit people already have. These are location settings, tested in the dial-plan simulator.",
+    "keywords": "Recognize an in-site extension Recognize a routing prefix Know the simulator is a teaching model Extension length Routing prefix External digit Lab precedence",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "dialing"
+  },
+  {
+    "title": "Main numbers, caller ID, and ports",
+    "summary": "Ordering and porting numbers depends on the PSTN choice. Cisco Calling Plan can order or port. CCP partners and premises carriers do it on their own contracts.",
+    "keywords": "Match the number source to the PSTN model Keep the main number obvious Do not port a number in a simulator Cisco PSTN CCP Premises numbers ECBN",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "numbers"
+  },
+  {
+    "title": "Calling between locations",
+    "summary": "On-net calls between Webex Calling locations use routing prefixes and extensions. They are not PSTN calls, and they do not need the local gateway.",
+    "keywords": "Keep on-net calls off the PSTN Spot a prefix that matches an extension Test both directions On-net Fallthrough Both directions Prefix is not emergency",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "internal"
+  },
+  {
+    "title": "Caller ID and the emergency callback number",
+    "summary": "People you call see caller ID. A PSAP needs an ECBN that maps to an emergency service address. Webex Calling does not store that address for the PSTN path.",
+    "keywords": "Separate caller ID from ECBN Name the three ECBN choices Say who stores the address on the PSTN path ECBN ESA Native dialer Same location",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "caller"
+  },
+  {
+    "title": "Virtual lines and shared lines",
+    "summary": "Virtual lines and shared lines are Professional features in the license matrix. They change how a number appears, and they change emergency behavior.",
+    "keywords": "Gate both features on Professional Count 35 shared appearances Retest emergency after you share a line 35 5 devices Virtual line ratio Line wins",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "virtual"
+  },
+  {
+    "title": "Location review before PSTN",
+    "summary": "Before you pick a carrier, the location needs a name, an address, dialing habits, and a main number plan. PSTN is the next track, not a shortcut.",
+    "keywords": "Run the checklist Block PSTN selection until it passes Write the assumptions Gate Canada RedSky US entitlement Write assumptions",
+    "trackTitle": "Locations and numbers",
+    "trackId": "t03",
+    "lessonId": "review-loc"
+  },
+  {
+    "title": "The three PSTN models",
+    "summary": "Every location picks one connection. Cisco Calling Plan and Cloud Connected PSTN are cloud PSTN. Premises PSTN keeps your carrier or your PBX behind a local gateway.",
+    "keywords": "Name the three models State the premises-user limit Keep one trunk on a premises location Three models Premises users One trunk Reuse",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "three"
+  },
+  {
+    "title": "Cisco Calling Plan",
+    "summary": "Cisco Calling Plan is Cisco as the PSTN provider. It includes emergency calling and number ordering or porting, and it is not offered in every location.",
+    "keywords": "Quote what the plan claims to include Check availability before design Keep premises users off it Calling Plan Not everywhere Porting Still not for PBX users",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "cisco-plan"
+  },
+  {
+    "title": "Cloud Connected PSTN",
+    "summary": "CCP is a Cisco partner's cloud PSTN. It is also how some Dedicated Instance designs, in Cisco's hypothetical stories, leave the private instance toward the public network.",
+    "keywords": "Define CCP Apply the premises-user ban Read the hypothetical DI plus CCP story correctly CCP No premises borrow Hypothetical DI+CCP WxCC voice",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "ccp"
+  },
+  {
+    "title": "Premises PSTN and the single trunk",
+    "summary": "Premises PSTN means a local gateway trunk. The location selects one trunk. Route groups and dial plans are how you get more interesting routing than that single default.",
+    "keywords": "Create the trunk before you select it Use dial plans for extra routes Not select two trunks on the location Create, then select Fallthrough Route group Still one location trunk",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "premises"
+  },
+  {
+    "title": "PSTN for the contact center",
+    "summary": "Webex Contact Center voice can use Webex Calling PSTN, Cloud Connected PSTN, or a local gateway. Premise agents need an outbound dial plan.",
+    "keywords": "List the voice PSTN options the article names Build the outbound dial plan Keep Calling call queues out of this picture WxCC voice PSTN Same dial-plan screen Both habits Queue Contact",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "wxcc-pstn"
+  },
+  {
+    "title": "Choosing in a design review",
+    "summary": "Pick PSTN from facts: who owns the numbers, where the users register, and whether the call originates on premises. Everything else is taste.",
+    "keywords": "Ask the four questions Reject mixed answers Record the article you used Per location Origin rule Own the numbers Agents",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "choose"
+  },
+  {
+    "title": "PSTN fault patterns",
+    "summary": "Most PSTN incidents are an origin rule, a missing pattern, a second trunk, or an emergency path that nobody tested. The signaling ports come next, with the gateway.",
+    "keywords": "Classify the failure Pick the article Avoid changing certificates when the dial plan is the fault Origin first Then the pattern Then trunk count 911 is its own path",
+    "trackTitle": "PSTN choices",
+    "trackId": "t04",
+    "lessonId": "pstn-faults"
+  },
+  {
+    "title": "What the local gateway is",
+    "summary": "The local gateway is your edge for PSTN and for PBXs such as Unified CM. Control Hub turns it into a trunk and hands you parameters to put on the device.",
+    "keywords": "Define the gateway Map parameters before typing CLI Name a supported third-party limit Local gateway Parameters Third-party SBC Not a phone",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "what"
+  },
+  {
+    "title": "Certificate trunks and TCP 5062",
+    "summary": "A certificate trunk signals to TCP 5062. The certificate CN or SAN has to match the FQDN or SRV name the trunk article tables out.",
+    "keywords": "Quote 5062 Match CN or SAN Separate listen port from destination port 5062 5061 CN/SAN SRV name",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "cert-trunk"
+  },
+  {
+    "title": "Registration trunks and TCP 8934",
+    "summary": "Registration-based trunks signal to TCP 8934. They are a different object from certificate trunks. Third-party SBCs do not get this shortcut.",
+    "keywords": "Quote 8934 Refuse to mix it with 5062 Remember third-party SBCs are certificate-only 8934 Not both Listed SBC Then a call",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "reg-trunk"
+  },
+  {
+    "title": "Mapping Control Hub onto the CUBE",
+    "summary": "The organization article's picture is the method: Control Hub on one side, the CUBE on the other. High availability of that router is a course topic, not a hope.",
+    "keywords": "Follow the mapping Know HA is a documented course module Prove with a call Map, don't invent CLWXCALL No generic CLI Redact keys",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "cube-map"
+  },
+  {
+    "title": "Media after the trunk is up",
+    "summary": "Signaling can succeed while audio fails. ICE may remove the cloud relay. The UDP ranges in the port reference are then the whole path.",
+    "keywords": "Separate signaling from media Quote the optimized ranges Know ICE's RFC Signaling then media 8500-8599 19560-19661 RFC 8445",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "media"
+  },
+  {
+    "title": "Operating the gateway",
+    "summary": "Once the trunk is up, changes are certificate expiry, firewall drift, and dial-plan edits. The gateway is not where you add Webex Calling users.",
+    "keywords": "Calendar the certificate Re-check ports after firewall projects Add users in the right tool Users in Control Hub Expiry Drift Cluster dial plan",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "lgw-ops"
+  },
+  {
+    "title": "Gateway review",
+    "summary": "A gateway is ready when the trunk type, the name, the ports, the one-location rule, and a call in each direction all have evidence.",
+    "keywords": "Collect evidence Fail the review without it Hand media and emergency to the next owners Evidence Redact Not implied Fail closed",
+    "trackTitle": "Local Gateway",
+    "trackId": "t05",
+    "lessonId": "lgw-review"
+  },
+  {
+    "title": "Dial plans, patterns, and routing choices",
+    "summary": "A Webex Calling dial plan is enterprise-wide. It lists patterns and one routing choice, which is a trunk or a route group.",
+    "keywords": "Say the click path Define a pattern Name the two routing choices Enterprise plan Routing choice Path X",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "objects"
+  },
+  {
+    "title": "+E.164 patterns",
+    "summary": "Write patterns in the form the cloud and Unified CM will both see. The voice article shows national and +E.164 together so both habits hit the premises.",
+    "keywords": "Write an X pattern Cover both habits Keep the US +1 step labeled as a teaching example X Both habits +1 in the lab Directories",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "e164"
+  },
+  {
+    "title": "Unified CM normalization toward the cloud",
+    "summary": "The workflow guide normalizes Unified CM callers to +E.164, then uses one partition of route patterns toward the local gateway for Webex Calling DID ranges.",
+    "keywords": "Explain the partition Explain why one pattern set is enough Keep this on the cluster, not on the phone Normalize first One partition One route group Not all PSTN",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "ucm"
+  },
+  {
+    "title": "Using the dial-plan simulator",
+    "summary": "The simulator applies a labeled teaching order: emergency, external digit, extension, routing prefix, US +1 example, patterns, then fallthrough or the cloud-PSTN block.",
+    "keywords": "Run every preset Explain one trace line State what the simulator is not Teaching order Not production Two-trunk warning Presets",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "sim"
+  },
+  {
+    "title": "What this lab will not call a dial plan",
+    "summary": "Outgoing permissions, call queues, and emergency routing are adjacent. They are not dial-plan patterns. Mixing them hides the real object.",
+    "keywords": "Sort requirements into objects Keep 911 out of the ordinary pattern list Keep queues out of the dial plan Pattern Attendant 911 Permission",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "permissions"
+  },
+  {
+    "title": "Pattern misses",
+    "summary": "A miss is not automatically a failure. On premises PSTN it is fallthrough to the local gateway. On a cloud connection it is cloud PSTN, unless the origin rule blocks it.",
+    "keywords": "Predict fallthrough Predict the block Add a pattern when fallthrough is the wrong trunk Miss plus premises Miss plus private extension Miss plus Webex user plus CCP Visible ranges",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "misses"
+  },
+  {
+    "title": "Dial-plan review",
+    "summary": "A dial plan is done when every private range is explicit, both number habits match, Unified CM normalization is in place, and emergency is not hiding inside a pattern.",
+    "keywords": "Run the four checks Use the simulator as a rehearsal Leave evidence Explicit Two habits Cluster test 933",
+    "trackTitle": "Dial plans",
+    "trackId": "t06",
+    "lessonId": "dial-review"
+  },
+  {
+    "title": "Auto attendants",
+    "summary": "An auto attendant answers and offers a menu. It has business-hours and after-hours behavior, bulk CSV, and its own reports.",
+    "keywords": "Place the attendant under Calling features Name the three reports Use bulk CSV when there are many AA path Three reports Bulk CSV Not UCCX",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "aa"
+  },
+  {
+    "title": "Call queue routing patterns",
+    "summary": "Webex Calling call queues offer circular, top down, longest idle, weighted, and simultaneous routing, with published agent caps.",
+    "keywords": "Define the five patterns Quote the caps Notice the professional-license sentence Circular Longest idle 50 100",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "cq"
+  },
+  {
+    "title": "Skill-based call queues",
+    "summary": "The same article describes a skill-based family. Do not confuse it with Webex Contact Center skills, which are a different product.",
+    "keywords": "Keep the products apart Know skill-based exists on calling queues Still check the cap table Ask which product 1000 Dynamic skills Different desktops",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "skill"
+  },
+  {
+    "title": "Hunt groups and the other location features",
+    "summary": "The license article lists hunt groups beside call queues, plus call park, pickup, paging, voicemail groups, and music on hold. They are location features, not contact center flows.",
+    "keywords": "List features from the article Not invent hunt algorithms Know which migration CSV is missing Hunt group Park gap Script Two voicemails",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "hunt"
+  },
+  {
+    "title": "Voicemail, voice portal, and music",
+    "summary": "Voice portal, voicemail group, and music on hold are location features. Transcription and similar extras vary. This lab does not invent which regions have them.",
+    "keywords": "Pick the right voicemail system Avoid invented transcription claims Test message waiting Voice portal Unity Connection Play Music No invented regions",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "vm"
+  },
+  {
+    "title": "Bulk CSV for features",
+    "summary": "Queues and attendants can be imported from CSV. Migration produces those files with an error column you have to clear.",
+    "keywords": "Name the files Fix errors first Use the right bulk page Fix, then upload Separate importers Park script Agents on the list",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "bulk"
+  },
+  {
+    "title": "Feature review before cutover",
+    "summary": "Call the feature done when a person can use it, the report has a row, and the migration file is either imported or explicitly out of scope.",
+    "keywords": "Place one test call Read one report Waive park in writing if you skipped it Test call Waiver Wrong product Recount",
+    "trackTitle": "Calling features",
+    "trackId": "t07",
+    "lessonId": "feat-review"
+  },
+  {
+    "title": "Kari's Law and RAY BAUM's Act",
+    "summary": "US multi-line systems have federal 911 obligations. The FCC page is the source. This lab does not paraphrase the statute into new requirements.",
+    "keywords": "Cite the FCC page Define dispatchable location in Cisco's words Not invent a compliance opinion FCC MLTS page Dispatchable Not legal advice Two providers",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "law"
+  },
+  {
+    "title": "PIDF-LO and HELD",
+    "summary": "PIDF-LO is the location object. HELD is how a device asks a location server. Cisco maps those ideas onto MPP phones and the Webex App.",
+    "keywords": "Cite both RFCs List what an MPP phone sends Separate HELD from HELD+ RFC 5985 RFC 4119 443 No CDP on the app",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "held"
+  },
+  {
+    "title": "Enable a location",
+    "summary": "RedSky ties to the organization with a HELD company ID and secret. The service is turned on per location. The US entitlement and the Canada license are not the same sentence.",
+    "keywords": "Enter the company ID Know the default toggles Test 933 Company ID Wholesale default Calling customer default Canada",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "enable"
+  },
+  {
+    "title": "HELD phones, non-HELD phones, and the app",
+    "summary": "MPP phones and the Webex App can do dynamic location. Many other phones are caller-ID located. Moving them without an admin is how the PSAP gets the old building.",
+    "keywords": "Name HELD device families from the article Treat the rest as caller-ID devices Resync after enablement Caller ID phones 24 hours App prompt Far-end release",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "devices"
+  },
+  {
+    "title": "Nomadic users and the red X",
+    "summary": "The Webex App updates location from the network when it can, and asks the user when it cannot. A signed-in user who roams may only see a red X.",
+    "keywords": "Explain the red X Explain cellular handoff Not assume GPS Red X Prompt Native dialer No CDR",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "nomadic"
+  },
+  {
+    "title": "Intrado beside RedSky",
+    "summary": "The same Cisco article documents Intrado as an enhanced emergency provider, also tested with 933, also using a company ID and secret.",
+    "keywords": "Not mix credentials Use 933 for either Read the Intrado confirmation text Two portals 933 Relay center Alerts",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "intrado"
+  },
+  {
+    "title": "Emergency review",
+    "summary": "A location is ready when the provider, the wiremap or caller-ID address, the resync, the ECBN, and a 933 result all exist.",
+    "keywords": "Demand 933 evidence Demand ECBN Separate international sites Five proofs International Line, not handset Answer the callback",
+    "trackTitle": "E911 and RedSky",
+    "trackId": "t08",
+    "lessonId": "e911-review"
+  },
+  {
+    "title": "What Cisco deploys",
+    "summary": "Dedicated Instance is an add-on to Webex Calling. Cisco deploys Unified CM, Unity Connection, and Expressway. IM and Presence and Emergency Responder are not in every sentence of the docs.",
+    "keywords": "Name the applications activation deploys State when IM and Presence is included Quote both Emergency Responder wordings Add-on Default apps IM&P CER wording",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "stack"
+  },
+  {
+    "title": "Size it in the wizard",
+    "summary": "Professional, Standard, and Workspace counts size the region. They are not a second license pool. The voice service domain is capped and then locked.",
+    "keywords": "Enter device counts that fit the subscription Keep the voice service domain within ten characters Know that a region activation is not reversible Counts Ten characters Locked EMEA",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "size"
+  },
+  {
+    "title": "The interop SIP trunk",
+    "summary": "Activation establishes SIP connectivity between Dedicated Instance and multi-tenant Webex Calling. You still have to activate the interop SIP trunk.",
+    "keywords": "Separate platform connectivity from the trunk you activate Name the path Not invent trunk parameters Must activate Also true Meetings Hypothetical",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "interop"
+  },
+  {
+    "title": "Cross-launch and Web RTMT",
+    "summary": "Calling, Dedicated Instance, Manage opens the UC applications. Web RTMT is limited to specific administrator roles, and it is view-oriented.",
+    "keywords": "Use the documented path Name who can open Web RTMT Know the cookie and SSO limits Path Web RTMT roles 24 hours No email group",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "launch"
+  },
+  {
+    "title": "Names and conditional forwarders",
+    "summary": "Cisco gives you a name under wxc-di.webex.com. On-premises phones resolve it through a conditional forwarder to the Dedicated Instance DNS service.",
+    "keywords": "Read the FQDN format Explain the conditional forwarder Name the service-discovery suffixes Suffix Forwarder Two peers Providers",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "dns"
+  },
+  {
+    "title": "Directory sync wants SSO",
+    "summary": "End users sync to Control Hub, then Dedicated Instance Unified CM syncs from Control Hub. That path requires single sign-on. Native Unified CM user options remain.",
+    "keywords": "State the sync direction Require SSO for that feature Name the fallback the article allows SSO Direction Without SSO Shared",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "identity"
+  },
+  {
+    "title": "Hypothetical deployment models",
+    "summary": "Cisco's deployment-models article uses hypothetical customers. CCP with RedSky, multi-tenant mix, global SME, contact center, and Microsoft Teams are shapes, not logos you should copy.",
+    "keywords": "Treat the customers as hypothetical Describe CER plus RedSky for phones and the app Name SME and the Teams embedding as documented Hypothetical CER then RedSky SME CCP path",
+    "trackTitle": "Dedicated Instance",
+    "trackId": "t09",
+    "lessonId": "models"
+  },
+  {
+    "title": "Three contact centers",
+    "summary": "Webex Contact Center, Webex Contact Center Enterprise, and the on-premises UCCX and UCCE products are not one queue with three names.",
+    "keywords": "Separate cloud Webex Contact Center from Enterprise Point UCCX and UCCE at their own Cisco pages Refuse a script import that does not exist Calling queue Cloud CC Enterprise UCCX and UCCE",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "which-cc"
+  },
+  {
+    "title": "Provision before the flow",
+    "summary": "The voice article expects entry points, queues, and the people and audio around them before a flow can send a contact somewhere real.",
+    "keywords": "Name what must exist first Attach a flow to an entry point Keep Calling music separate Order Voice article Dial plan Two musics",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "before-flow"
+  },
+  {
+    "title": "Queues, LAA, and BAA",
+    "summary": "Longest available and best available are the routing strategies the routing article describes. This lab does not invent a third name or a RONA timer.",
+    "keywords": "Name LAA and BAA Refuse invented timers Separate this from Calling call-queue algorithms LAA BAA Calling caps No invented RONA",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "laa-baa"
+  },
+  {
+    "title": "Skills and dynamic skills",
+    "summary": "Skill-based routing and dynamic skills are not the same object. Dynamic skills are not assigned through skill profiles.",
+    "keywords": "Separate skills from dynamic skills Keep skill profiles for the skills they actually hold Avoid inventing caps Profile Dynamic Empty list No borrowed caps",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "skills"
+  },
+  {
+    "title": "Profiles, teams, and roles",
+    "summary": "Licensed and unlicensed administrators, supervisors, and premium or standard agents are different profiles. The Contact Center Service Administrator role is how the service is administered.",
+    "keywords": "Name the profile types the roles article uses Separate user profile from desktop profile Place agents on a team Service Administrator User profile Desktop Team",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "people"
+  },
+  {
+    "title": "Resource collections",
+    "summary": "A user profile can hold up to five resource collections. Collections decide which queues, flows, and analyzer data a person can see.",
+    "keywords": "Apply the five-collection limit Explain the default collection Remember the 15-profile and 350-resource notes Five Default Fifteen 350 / 1000",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "collections"
+  },
+  {
+    "title": "Channels and the voice path",
+    "summary": "Telephony, chat, email, and social are channels. Voice still has to meet PSTN, dial plans, and codecs the voice article cares about.",
+    "keywords": "List the channels Tie voice to Calling PSTN and dial plans Leave digital configuration to the cited articles Four channels Numbers +E.164 Codecs",
+    "trackTitle": "Contact Center routing",
+    "trackId": "t10",
+    "lessonId": "channels"
+  },
+  {
+    "title": "The canvas and this lab's copy",
+    "summary": "Flow Designer opens with Control Hub single sign-on. The designer in Webex Lab exports a teaching schema named webex-lab-flow-1. You cannot import that file into Control Hub.",
+    "keywords": "Sign in the way the article describes Name activities from the article Refuse to import the lab JSON SSO Schema Main flow Case",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "canvas"
+  },
+  {
+    "title": "Hours, menus, and digits",
+    "summary": "Business Hours splits open and closed. Menu and Collect Digits gather what the caller presses. Unmatched input needs a port or the contact stalls.",
+    "keywords": "Wire both hour ports Wire an unmatched menu port Use Collect Digits for data, not for the menu itself Open and closed Menu other Collect Digits Condition",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "hours-menu"
+  },
+  {
+    "title": "Queue Contact and Queue To Agent",
+    "summary": "Queue Contact places the contact in a queue. Queue To Agent prefers one agent. Routing inside the queue is still LAA or BAA.",
+    "keywords": "Use Queue Contact for a team Use Queue To Agent only with a real agent identity Keep the strategy on the queue Queue Contact Queue To Agent Strategy No fake timer",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "queue-act"
+  },
+  {
+    "title": "HTTP dips and CRM templates",
+    "summary": "HTTP Request is the data dip. Cisco publishes templates for Salesforce, Dynamics, ServiceNow, and Zendesk. Success and error both need a path.",
+    "keywords": "Name the four templates Wire the error port Avoid inventing a fifth CRM Four templates Error port Your URL No secrets",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "http"
+  },
+  {
+    "title": "Callback, transfer, and disconnect",
+    "summary": "Callback offers a return call. Blind Transfer releases the flow. Disconnect Contact ends it. Each one is a choice you can see on the canvas.",
+    "keywords": "Offer callback from the flow Use Blind Transfer when the flow should let go End with Disconnect Contact when the conversation is over Callback Blind Transfer Disconnect Night service",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "leave"
+  },
+  {
+    "title": "What the agent sees",
+    "summary": "The desktop profile and the screen pop decide the agent's view. States and timers that are not in the article are not in this lesson.",
+    "keywords": "Place Screen Pop before the offer Match the desktop profile to the job Leave undocumented timers out Screen Pop Desktop profile Event flow No RONA number",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "desktop"
+  },
+  {
+    "title": "Practice on the lab canvas",
+    "summary": "The studio flow designer is the place to rehearse. Simulate a contact, read the trace, and export the teaching file.",
+    "keywords": "Open the studio designer Run open and closed contacts Explain why the file stays local Studio Ports Export Real proof",
+    "trackTitle": "Flow Designer and Agent Desktop",
+    "trackId": "t11",
+    "lessonId": "practice"
+  },
+  {
+    "title": "What workforce optimization includes",
+    "summary": "Webex Workforce Optimization is the suite around the contact center: workforce management, quality management, and analytics. It is not a flow activity.",
+    "keywords": "Name the three jobs of the suite Keep them off the flow canvas Use the landing page as the index WFM Quality Analytics Not the flow",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "wfo"
+  },
+  {
+    "title": "Scripted and autonomous agents",
+    "summary": "AI Agent Studio has a scripted agent and an autonomous agent. Voice uses Virtual Agent V2. Digital uses the AI Agent node. They escalate back into the flow with metadata.",
+    "keywords": "Separate scripted from autonomous Match voice to Virtual Agent V2 Match digital to the AI Agent node Scripted Autonomous Voice Digital",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "studio-ai"
+  },
+  {
+    "title": "Fulfillment and previousIntent",
+    "summary": "Scripted fulfillment maps an intent to an action. When the contact escalates, previousIntent and the rest of the metadata tell the flow what just happened.",
+    "keywords": "Map an intent to fulfillment Read previousIntent after escalation Use a Condition on that value Fulfillment previousIntent Custom events Pop",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "fulfill"
+  },
+  {
+    "title": "More than one agent",
+    "summary": "Multi-agent orchestration hands a contact from one AI agent to another. The documented trigger variable is escalation_trigger. The flow still has the last say.",
+    "keywords": "Name the trigger the article uses Keep a human path Not invent extra variables escalation_trigger Two agents Human port Not a bot",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "multi"
+  },
+  {
+    "title": "Contact Center webhooks",
+    "summary": "Subscriptions want an HTTPS URL with no query string. The signature header is X-WebexCC-Signature, HMAC-SHA256. Events follow CloudEvents. Do not use webhooks as your only copy of the data.",
+    "keywords": "Require HTTPS without query parameters Verify X-WebexCC-Signature Keep a second way to read the data destinationUrl X-WebexCC-Signature Messaging Reconcile",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "hooks"
+  },
+  {
+    "title": "GraphQL search limits",
+    "summary": "The search API is GraphQL, regional, and bounded. The US example host is not every region. The window and the history floor are part of the contract.",
+    "keywords": "Use the regional host Pass from and to as epoch milliseconds Respect the 365-day window and the 36-month floor Scopes Host Time Bounds",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "search"
+  },
+  {
+    "title": "Put the integration together",
+    "summary": "A careful integration verifies contact center webhooks, reconciles with search, and does not borrow the messaging signature.",
+    "keywords": "Start from the API index Separate the two signature headers Schedule a search that fits the window Index Verify Reconcile PAT",
+    "trackTitle": "WFO, AI agents, and Contact Center APIs",
+    "trackId": "t12",
+    "lessonId": "api-review"
+  },
+  {
+    "title": "Bots and integrations",
+    "summary": "A bot is a member of a space. An integration acts as a user who granted OAuth. A personal access token is neither of those in production.",
+    "keywords": "Separate bots from integrations Keep personal tokens out of production Cite the getting started page for token lifetime Bot Integration 12 hours Not a virtual agent",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "two-apps"
+  },
+  {
+    "title": "What a bot is allowed to see",
+    "summary": "In a group space a bot receives messages that mention it. In a one-to-one space it receives the messages in that conversation.",
+    "keywords": "State the group mention rule State the 1:1 rule Avoid designing a silent listener Group 1:1 Membership Not a wiretap",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "mentions"
+  },
+  {
+    "title": "Messaging webhooks",
+    "summary": "Create a webhook with a secret. Verify X-Spark-Signature as HMAC-SHA1, and prefer X-Webex-Signature when the newer header is present. A listener that fails too often is disabled.",
+    "keywords": "Send a 2xx Verify the signature over raw bytes Know the disable threshold Secret SHA1 Prefer 100 / 5 min",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "msg-hook"
+  },
+  {
+    "title": "Replies without an invented card schema",
+    "summary": "Bots can post messages and, when the current guide says so, rich attachments. This lab does not freeze a card JSON that the guide might change.",
+    "keywords": "Reply with text first Treat card schemas as dated Keep secrets out of the reply Text first Cards No stale JSON Not a screen pop",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "cards"
+  },
+  {
+    "title": "Cloud xAPI commands",
+    "summary": "An authorized integration can POST a command to a device in the same organization. The URL is the Webex xAPI command resource. The device must be granted.",
+    "keywords": "Form the command URL Stay inside the organization and the grant Read RoomOS xAPI for the command name POST Catalog Grant Status",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "xapi"
+  },
+  {
+    "title": "Scopes and grants",
+    "summary": "OAuth scopes are the menu. Device grants are the specific rooms. Asking for every scope is how tokens become dangerous.",
+    "keywords": "Request only the scopes the call needs Grant devices one by one Separate this from contact center scopes Scope Grant cjp scopes No token in logs",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "scopes"
+  },
+  {
+    "title": "A small, safe bot loop",
+    "summary": "Mention, verify, reply with text, and stop. Device commands stay in a different app. Nothing in this lab calls the live API.",
+    "keywords": "Order the steps Name the disable risk Refuse to mix in xAPI Verify Text 2xx Split",
+    "trackTitle": "Webex APIs, bots, and xAPI",
+    "trackId": "t13",
+    "lessonId": "api-lab"
+  },
+  {
+    "title": "MPP, the app, and RoomOS",
+    "summary": "Control Hub claims phones, the Webex App, ATAs, and RoomOS devices into one organization. Emergency location does not use the same method on all of them.",
+    "keywords": "Place devices in Control Hub Separate HELD and HELD+ Name caller ID as the non-HELD path MPP App Non-HELD 24 hours",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "families"
+  },
+  {
+    "title": "What the phone sends",
+    "summary": "HELD is RFC 5985. The phone asks RedSky over HTTPS on port 443. The location object is PIDF-LO, RFC 4119.",
+    "keywords": "Name the hosts and port Cite both RFCs Build a wiremap before the test RFC 5985 RFC 4119 443 933",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "held-phone"
+  },
+  {
+    "title": "Soft clients, shared lines, and callback",
+    "summary": "A cellular Webex App hands 911 to the native dialer. Shared-line emergency routing follows the selected line's location. The callback number has to be answered.",
+    "keywords": "State the cellular handoff Route shared-line emergency by the selected line Choose an ECBN that answers Cellular Shared line ECBN 60 minutes",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "nomadic"
+  },
+  {
+    "title": "Media ports and ICE",
+    "summary": "When ICE succeeds, the app and the devices talk directly on documented UDP ranges. Signaling ports for trunks are a different table.",
+    "keywords": "Quote the optimized ranges Separate them from 5062 and 8934 Cite ICE and SRTP App Devices 5062 / 8934 RFC 8445",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "media"
+  },
+  {
+    "title": "RoomOS xAPI and macros",
+    "summary": "RoomOS xAPI is the on-device command language. Cloud xAPI posts a command to a granted device. A macro runs locally. Neither one should contain a cloud token.",
+    "keywords": "Look up commands instead of inventing them Keep macros local Keep tokens out of the macro Catalog Macro Cloud No 911 macro",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "roomos"
+  },
+  {
+    "title": "Day-two device checks",
+    "summary": "Registration, media, and emergency configuration fail in different ways. The port reference, the devices list, and 933 answer different questions.",
+    "keywords": "Separate signaling from media Use 933 only for location Resync after emergency changes Signaling Media 933 ALG",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "ops"
+  },
+  {
+    "title": "Device review",
+    "summary": "You can now tell HELD from caller ID, quote the media ranges, and keep macros and cloud commands apart.",
+    "keywords": "Fill a one-page site sheet Include 933 Include the trunk type Method 443 Ranges No token",
+    "trackTitle": "Devices and RoomOS",
+    "trackId": "t14",
+    "lessonId": "device-review"
+  },
+  {
+    "title": "Start with Migration Insights",
+    "summary": "Cisco's prepare article points you at Control Hub Migration Insights. Upload the Unified CM tar. CDR is optional, and it is required if you want the feature-usage reports.",
+    "keywords": "Find the tool Separate tar reports from CDR reports Keep PSTN choices to one per location Tar CDR Eligibility One PSTN",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "prepare"
+  },
+  {
+    "title": "Device eligibility",
+    "summary": "DeviceEligibility.csv covers IP phones, Room OS, ATAs, and third-party devices the tool knows. Eligibility is not the same as a successful registration today.",
+    "keywords": "Read DeviceEligibility.csv Read DeviceBulkError reasons Not guess a model Eligibility CSV Error CSV Professional 350 MB",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "eligible"
+  },
+  {
+    "title": "Call queues and auto attendants",
+    "summary": "Migrate features writes CallQueueBulk.csv and Auto-AttendantBulk.csv. Both can contain errors. Remove the Errors and Notes columns before you upload to Control Hub.",
+    "keywords": "Use the generated CSV, not a blank one Fix documented errors Upload queues and auto attendants in their own tools Fix, then strip Queue CSV AA CSV Derive",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "features"
+  },
+  {
+    "title": "Park and pickup need the script",
+    "summary": "The migrate-features tool does not create call park and call pickup files. The Python script UserBasedUCMFeatureMigration does. It also filters by a user list.",
+    "keywords": "Name the gap Name the script List the other files it writes Gap Script Multi pool Not UCCX",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "park"
+  },
+  {
+    "title": "Unity Connection does not come along",
+    "summary": "Webex Calling cannot use premises Unity Connection as its voicemail. Messages and greetings have no native migration. Call handlers can feed the Calling auto attendant tool.",
+    "keywords": "State the integration limit State the message limit Use the auto attendant path for handlers No integration No native messages Handlers DI",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "voicemail"
+  },
+  {
+    "title": "UCCX and UCCE are a redesign",
+    "summary": "Unified CCX and Unified CCE scripts do not import into Flow Designer in any tool this lab can cite. Rebuild the flow from the routing you still need.",
+    "keywords": "Refuse an importer you cannot cite Map old steps to activities Keep Enterprise and cloud docs apart No importer Spec Activities Enterprise",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "scripts"
+  },
+  {
+    "title": "Cutover checks",
+    "summary": "Dial plan, 933, interop, and the local-gateway call budget are the checks that fail in public. CSV hygiene fails in private, earlier.",
+    "keywords": "Pilot one location Test 933 and callback Know the 403 when the gateway is over budget 403 250 6500 933 first",
+    "trackTitle": "Migration from CUCM, UCCX, and UCCE",
+    "trackId": "t15",
+    "lessonId": "cutover"
+  },
+  {
+    "title": "Words that get projects in trouble",
+    "summary": "The glossary in this lab is a short list of terms with citations. The dangerous pairs are the ones people treat as synonyms.",
+    "keywords": "Separate the two queues Separate the two musics Use the glossary view Two queues Two musics Two voicemails E.164",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "glossary-work"
+  },
+  {
+    "title": "The mind map",
+    "summary": "Control Hub is the admin shell. Calling, Dedicated Instance, Contact Center, devices, and the migration sources hang off it. The map view is that picture with links.",
+    "keywords": "Open the mind map Name what is not a separate identity store Jump to a track from a node Center DI Map Topology",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "mind"
+  },
+  {
+    "title": "Certifications and the course that is not the exam",
+    "summary": "300-830 CLCCE is a 90-minute exam. Passing it earns Cisco Certified Specialist - Collaboration Cloud Customer Experience and can count as a CCNP Collaboration concentration. CLWXCALL is a course, not that exam.",
+    "keywords": "Use the official exam name and code Keep the course separate Leave price and unstated dates off your flashcards 300-830 Specialist CLWXCALL No price card",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "certs"
+  },
+  {
+    "title": "CRM dips you can cite",
+    "summary": "Flow Designer HTTP templates cover Salesforce, Dynamics, ServiceNow, and Zendesk. Microsoft Teams embedding for calling is a different sentence on the Dedicated Instance page.",
+    "keywords": "List the four templates Wire success and error Keep Teams as a separate citation Four Custom Teams calling Teams WxCC",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "crm"
+  },
+  {
+    "title": "The bridge from CUCM, UCCX, and UCCE",
+    "summary": "Unified CM can remain, move to Dedicated Instance, or migrate users to multi-tenant Calling. Contact center scripts are rebuilt. The admin door for all of the cloud pieces is Control Hub.",
+    "keywords": "Separate the three destinations Name the tool for each Keep UCCX and UCCE on their product pages until the redesign Three doors Insights Interop Scripts",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "bridge"
+  },
+  {
+    "title": "Use the studio as a capstone",
+    "summary": "The dial-plan simulator, the flow designer, the Control Hub walkthrough, and the topology are the four places to prove you can narrate a design.",
+    "keywords": "Run a dial-plan preset Simulate a flow Walk one Hub path Break one topology link and explain it Dial Flow Hub Topology",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "studio-cap"
+  },
+  {
+    "title": "What this lab will not pretend",
+    "summary": "Prices, unstated dates, RONA timers, card schemas, and customer logos are out. Citations are in. When two Cisco sentences disagree, both stay visible.",
+    "keywords": "List the known conflicts Leave invented numbers out Use the sources view Quote both No price No RONA Live page",
+    "trackTitle": "Ecosystem, certificates, and the bridge",
+    "trackId": "t16",
+    "lessonId": "honest"
+  }
+]

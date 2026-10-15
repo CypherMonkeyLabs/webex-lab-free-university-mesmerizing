@@ -1,0 +1,1809 @@
+{
+  "id": "t02",
+  "title": "Control Hub",
+  "blurb": "Roles, the customer view, and the paths you will click for calling, contact center, and Dedicated Instance.",
+  "level": "Foundation",
+  "lessons": [
+    {
+      "id": "roles",
+      "title": "Administrator roles that matter here",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Full administrator and read-only administrator can cross-launch Dedicated Instance tools. Contact Center adds its own service administrator, and resource collections narrow what that person sees.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate a full admin from a Contact Center service admin",
+        "Remember who can open Web RTMT",
+        "Explain a resource collection"
+      ],
+      "diagram": {
+        "caption": "Organization roles and Contact Center roles are related and not identical.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Full admin",
+            "sub": "organization",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Read-only",
+            "sub": "can open Web RTMT",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "CC service admin",
+            "sub": "contact center",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Resource collection",
+            "sub": "up to five",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "assign"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "scope"
+          },
+          {
+            "from": "n1",
+            "to": "n0",
+            "label": "view"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Who is allowed to click",
+        "steps": [
+          {
+            "from": "Full admin",
+            "to": "Control Hub",
+            "label": "Assign the Contact Center role",
+            "detail": "A full administrator can assign the Contact Center Service Administrator role.",
+            "inspect": "Customer or external user, with the limits in the roles article",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "CC admin",
+            "to": "Management Portal",
+            "label": "Configure the service",
+            "detail": "The role administers Contact Center features in Control Hub and the Management Portal and handles license and activation tasks.",
+            "inspect": "Not the same as a calling-only admin",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "Partner",
+            "to": "Web RTMT",
+            "label": "Monitor DI",
+            "detail": "Partner Sales Full Admin, and customer Full or Read-only admins, can cross-launch Web RTMT for Dedicated Instance.",
+            "inspect": "Calling > Dedicated Instance > Manage",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "Delegated admin",
+            "to": "Queues",
+            "label": "See a subset",
+            "detail": "A user profile can hold up to five resource collections. Flow Designer and Analyzer then show only those queues.",
+            "inspect": "Delegated admin",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Contact Center roles",
+          "paragraphs": [
+            "Cisco documents a Contact Center Service Administrator who can administer Contact Center features and perform user tasks such as sending an activation email and assigning Contact Center licenses.",
+            "The roles article is the source for which organization roles may assign that service role. Do not invent a 'queue admin' that the table does not list."
+          ],
+          "cite": {
+            "label": "Contact Center administrator roles",
+            "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        },
+        {
+          "h": "What a collection hides",
+          "paragraphs": [
+            "Resource collections hold resources such as queues. Assigning them to a user profile limits Control Hub, Flow Designer, Analyzer, and the supervisor view to those resources.",
+            "Cisco says you can assign up to five resource collections to a user profile. A person with a collection is a delegated administrator even if they also have an edit permission."
+          ],
+          "cite": {
+            "label": "Manage access in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/n524f2m"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Web RTMT for Dedicated Instance can be opened by",
+          "choices": [
+            "Partner Sales Full Admin, and customer Full or Read-only admins",
+            "Any Webex user",
+            "Only a bot",
+            "Only RedSky"
+          ],
+          "answer": 0,
+          "why": "The cross-launch article names those roles.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "A Contact Center Service Administrator can",
+          "choices": [
+            "Administer Contact Center features and assign Contact Center licenses",
+            "Rewrite the local gateway certificate",
+            "Change ITU-T E.164",
+            "Disable SIP"
+          ],
+          "answer": 0,
+          "why": "That is the role's scope in the roles article.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "Resource collections on one user profile are limited to",
+          "choices": [
+            "5",
+            "50",
+            "1000",
+            "1"
+          ],
+          "answer": 0,
+          "why": "The access article says up to five.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "A delegated admin in Flow Designer sees",
+          "choices": [
+            "Queues in their resource collections",
+            "Every queue in the tenant automatically",
+            "Only Unified CM route patterns",
+            "Only webhooks"
+          ],
+          "answer": 0,
+          "why": "The article uses Queue 1 and Queue 2 as the example of that limit.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Read-only on Dedicated Instance means",
+          "choices": [
+            "They can still be allowed to open Web RTMT",
+            "They can delete the cluster",
+            "They cannot see the Manage tab at all",
+            "They become agents"
+          ],
+          "answer": 0,
+          "why": "The cross-launch article includes Read-only Administrator for Web RTMT.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "Assigning the Contact Center service role is",
+          "choices": [
+            "An action the roles article gives to organization administrators such as Full Admin",
+            "Done on the CUBE",
+            "A dial-plan pattern",
+            "A 933 call"
+          ],
+          "answer": 0,
+          "why": "The table describes who may assign the role.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Contact Center Service Administrator",
+          "back": "Administers the contact center service and its user licenses."
+        },
+        {
+          "front": "Web RTMT",
+          "back": "Real-time monitoring for Dedicated Instance UC apps, cross-launched from Control Hub."
+        },
+        {
+          "front": "Five collections",
+          "back": "Maximum resource collections on one user profile."
+        },
+        {
+          "front": "Delegated admin",
+          "back": "A profile scoped by resource collections."
+        }
+      ],
+      "lab": {
+        "title": "Role worksheet",
+        "goal": "Give each task a role, not a shared login.",
+        "steps": [
+          {
+            "do": "Open Web RTMT on Dedicated Instance",
+            "expect": "Full, Read-only, or partner Sales Full Admin"
+          },
+          {
+            "do": "Assign Contact Center licenses",
+            "expect": "Contact Center Service Administrator or a role the table allows"
+          },
+          {
+            "do": "See only the retail queues in Analyzer",
+            "expect": "User profile with those queues in a resource collection"
+          }
+        ],
+        "check": "No task is assigned to 'just use admin'."
+      },
+      "fault": {
+        "title": "A supervisor who sees every queue",
+        "symptom": "A retail supervisor opens Analyzer and sees the bank queue.",
+        "log": "SYNTHETIC: user profile resource access = All.",
+        "cause": "All-resources is not a collection. The access article shows that collections are what narrow the view.",
+        "fix": "Put the retail queues in a collection, assign that collection to the profile, and sign in again.",
+        "cite": {
+          "label": "Manage access in Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/n524f2m"
+        }
+      }
+    },
+    {
+      "id": "paths",
+      "title": "The paths you will memorize",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "Cisco's articles repeat a handful of click paths. Learning the paths is faster than learning every screen.",
+      "uncertainty": "",
+      "objectives": [
+        "Say the PSTN path",
+        "Say the dial-plan path",
+        "Say the Migration Insights path"
+      ],
+      "diagram": {
+        "caption": "Six paths cover locations, PSTN, dial plans, features, Dedicated Instance, and migration.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Locations",
+            "sub": "Calling",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dial plans",
+            "sub": "Call routing",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Features",
+            "sub": "AA and queues",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Migrations",
+            "sub": "Insights",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "then"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "then"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "plan"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Click path for a new location",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Locations",
+            "label": "Create the location",
+            "detail": "Locations exist before premises PSTN. The organization article says to create locations and numbers first.",
+            "inspect": "Calling > Locations",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "PSTN",
+            "label": "Choose the connection",
+            "detail": "Cisco Calling Plan, Cloud Connected PSTN, or premises-based PSTN.",
+            "inspect": "Manage on the location",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Dial plans",
+            "label": "Add patterns",
+            "detail": "Calling > Call Routing > Dial Plans, then Create Dial Plan. The contact center voice article uses the same path for premise destinations.",
+            "inspect": "Name, routing choice, patterns",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Migrations",
+            "label": "Read the estate",
+            "detail": "Services > Updates & Migrations > Migration Insights, then upload the Unified CM tar.",
+            "inspect": "Optional CDR for usage",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Features live under Calling",
+          "paragraphs": [
+            "Auto attendants are managed from Services > Calling > Features, on the Auto Attendant card. Bulk manage and view analytics are on that card.",
+            "Call queue bulk import uses Services > Calling, Features, the Call Queue tab, Manage, Bulk Manage."
+          ],
+          "cite": {
+            "label": "Manage auto attendants",
+            "url": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        },
+        {
+          "h": "Dedicated Instance is still under Calling",
+          "paragraphs": [
+            "Cross-launch is Services > Calling > Dedicated Instance > Manage, then the UC application.",
+            "Migration Insights is not inside the location. It is under Updates & Migrations. Putting it on the location page is a good way to miss the tar upload."
+          ],
+          "cite": {
+            "label": "Migration Insights",
+            "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Premises PSTN is chosen",
+          "choices": [
+            "On the location, after the location exists",
+            "Before any location exists",
+            "Inside a bot",
+            "On the phone keypad"
+          ],
+          "answer": 0,
+          "why": "The organization article says locations must exist before premises PSTN.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Create Dial Plan is under",
+          "choices": [
+            "Calling > Call Routing > Dial Plans",
+            "Users > Bots",
+            "Devices > Macros",
+            "RedSky only"
+          ],
+          "answer": 0,
+          "why": "The voice-channel article spells that path.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Auto attendant analytics start from",
+          "choices": [
+            "The Auto Attendant card, Manage, View Analytics",
+            "The local gateway CLI only",
+            "xAPI",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "The auto attendant article gives that path.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Call queue CSV upload is",
+          "choices": [
+            "Calling features, Call Queue, Manage, Bulk Manage",
+            "Flow Designer export",
+            "A RoomOS macro",
+            "An ICE candidate"
+          ],
+          "answer": 0,
+          "why": "The migrate-features article gives that import path.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Migration Insights is under",
+          "choices": [
+            "Services > Updates & Migrations",
+            "Calling > Call Queue",
+            "The phone menu",
+            "RFC 3261"
+          ],
+          "answer": 0,
+          "why": "The prepare-to-migrate article and the insights article use that path.",
+          "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        },
+        {
+          "q": "Dedicated Instance apps open from",
+          "choices": [
+            "Calling > Dedicated Instance > Manage",
+            "The public internet with no role",
+            "Flow Designer",
+            "A dial pattern"
+          ],
+          "answer": 0,
+          "why": "The cross-launch article documents that path.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Location before PSTN",
+          "back": "Create the location, then assign premises PSTN."
+        },
+        {
+          "front": "Dial plan path",
+          "back": "Calling > Call Routing > Dial Plans."
+        },
+        {
+          "front": "Bulk queue import",
+          "back": "Call Queue > Manage > Bulk Manage."
+        },
+        {
+          "front": "Insights path",
+          "back": "Services > Updates & Migrations."
+        }
+      ],
+      "lab": {
+        "title": "Walk the practice console",
+        "goal": "Open the Control Hub walkthrough and complete the guided steps.",
+        "steps": [
+          {
+            "do": "Finish the location step",
+            "expect": "The coach accepts Locations"
+          },
+          {
+            "do": "Finish the dial-plan step",
+            "expect": "The coach accepts Dial plans"
+          },
+          {
+            "do": "Finish Migration Insights",
+            "expect": "The coach accepts Migrations"
+          }
+        ],
+        "check": "The practice console records the path. The real portal is still admin.webex.com."
+      },
+      "fault": {
+        "title": "PSTN with no location",
+        "symptom": "An admin tries to attach a trunk before a location exists and the task stalls.",
+        "log": "SYNTHETIC checklist: PSTN = premises, locations = 0.",
+        "cause": "Cisco says locations must exist before you add premises-based PSTN, and you create a trunk before you select it.",
+        "fix": "Create the location, create the trunk, then select that trunk for the location.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "users",
+      "title": "Users, workspaces, and numbers",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "A person, a workspace, and a virtual line are three different places a number can live. The license decides which of those you are allowed to create.",
+      "uncertainty": "",
+      "objectives": [
+        "Put the number on a location first",
+        "Choose user versus workspace",
+        "Know who can host a virtual line"
+      ],
+      "diagram": {
+        "caption": "Users and workspaces both take numbers. They do not take the same licenses.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "User",
+            "sub": "person",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Workspace",
+            "sub": "shared phone",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Virtual line",
+            "sub": "Professional only",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Number",
+            "sub": "on a location",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "assign"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "assign"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "host"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Give a new hire a number",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Own the number",
+            "detail": "Numbers belong to a location. The location also holds the emergency address context.",
+            "inspect": "Location main number and caller ID",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "User",
+            "label": "Assign the user",
+            "detail": "Assign a calling license, then the number and extension.",
+            "inspect": "Professional if they need the full matrix",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Workspace",
+            "label": "Or a place",
+            "detail": "A lobby phone is a workspace. The workspace license is a single device.",
+            "inspect": "Do not expect the Webex App",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Virtual line",
+            "label": "Only if Professional",
+            "detail": "The matrix marks virtual lines on Professional, one per Pro license, and not on Standard or Workspace.",
+            "inspect": "1:1 with the Pro license",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Shared lines are a Professional feature",
+          "paragraphs": [
+            "The matrix allows a Professional user or Professional workspace to share lines, with 35 in the shared-line row. Standard and Workspace are No.",
+            "A shared line across locations has emergency consequences: the selected line's location decides emergency routing, and HELD is a device function that does not by itself force RedSky if that line's location is not enabled."
+          ],
+          "cite": {
+            "label": "Shared lines and virtual lines across locations",
+            "url": "https://help.webex.com/default/article/c5cgxd"
+          }
+        },
+        {
+          "h": "Workspaces and emergency callback",
+          "paragraphs": [
+            "The ECBN article warns that some workspaces block inbound PSTN. Emergency callback is special: Webex Calling allows a callback that carries an emergency priority header, and it relaxes the blocking rule for 60 minutes on the device that dialed.",
+            "That 60-minute window is not a substitute for a reachable callback number. Set the ECBN."
+          ],
+          "cite": {
+            "label": "Emergency Callback Number in Control Hub",
+            "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Virtual lines in the license matrix are",
+          "choices": [
+            "Professional only",
+            "On every license",
+            "Workspace only",
+            "Standard only"
+          ],
+          "answer": 0,
+          "why": "The virtual-line row is Yes for Professional and No for Standard and Workspace.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "A Professional shared-line count in the matrix is",
+          "choices": [
+            "35",
+            "1",
+            "5",
+            "1000"
+          ],
+          "answer": 0,
+          "why": "The row reads Y (35) for Professional.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Emergency routing for a shared line follows",
+          "choices": [
+            "The location of the line selected for the call",
+            "The phone's MAC only",
+            "The agent's home address always",
+            "The bot token"
+          ],
+          "answer": 0,
+          "why": "The shared-line article says the selected line's location settings decide emergency routing.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "Inbound blocking on a workspace after an emergency call is relaxed for",
+          "choices": [
+            "60 minutes",
+            "24 hours",
+            "Forever",
+            "Five seconds"
+          ],
+          "answer": 0,
+          "why": "The ECBN article states 60 minutes.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "A workspace license soft client is",
+          "choices": [
+            "Not included",
+            "Required",
+            "The only supported phone",
+            "A virtual agent"
+          ],
+          "answer": 0,
+          "why": "The matrix marks soft clients N for Workspace.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "HELD on a device",
+          "choices": [
+            "Does not route through RedSky unless the line's location is enabled",
+            "Always forces RedSky",
+            "Replaces the dial plan",
+            "Is an xAPI macro"
+          ],
+          "answer": 0,
+          "why": "The shared-line article says HELD is independent of the lines, and routing still depends on the line location.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        }
+      ],
+      "cards": [
+        {
+          "front": "35 shared lines",
+          "back": "Professional user and Professional workspace in the matrix."
+        },
+        {
+          "front": "60 minutes",
+          "back": "Emergency callback blocking relaxation on a workspace device."
+        },
+        {
+          "front": "Line location",
+          "back": "Decides whether an emergency call uses RedSky."
+        },
+        {
+          "front": "Virtual line",
+          "back": "Professional license, one-to-one in the matrix wording."
+        }
+      ],
+      "lab": {
+        "title": "Number plan for one floor",
+        "goal": "Assign three numbers without breaking the matrix.",
+        "steps": [
+          {
+            "do": "A person with the app",
+            "expect": "User, Professional if they need shared or virtual lines"
+          },
+          {
+            "do": "A hallway phone",
+            "expect": "Workspace, one device"
+          },
+          {
+            "do": "A second number on the person's phone",
+            "expect": "Virtual line only if they are Professional"
+          }
+        ],
+        "check": "The sheet matches the matrix rows you cited."
+      },
+      "fault": {
+        "title": "Shared line on a Standard user",
+        "symptom": "The shared-line toggle is missing for a new hire.",
+        "log": "SYNTHETIC: license Standard, shared line control hidden.",
+        "cause": "The matrix marks shared lines No on Standard.",
+        "fix": "Move the user to Professional, then configure the shared line. Recheck emergency location on that line.",
+        "cite": {
+          "label": "Features available by license type",
+          "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "monitoring",
+      "title": "Reports and what they are not",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Calling auto attendants have their own reports. Contact Center analytics honor resource collections. Neither report is a packet capture.",
+      "uncertainty": "",
+      "objectives": [
+        "Find the three auto attendant report names",
+        "Keep Analyzer inside its collections",
+        "Use CDR only for the migration tool that asks for it"
+      ],
+      "diagram": {
+        "caption": "Calling reports and Contact Center Analyzer answer different questions.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Calling reports",
+            "sub": "Monitoring",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Auto attendant",
+            "sub": "key details",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Analyzer",
+            "sub": "scoped queues",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "CDR tar",
+            "sub": "Migration Insights",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "template"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "not the same"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "usage"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pull an auto attendant report",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Reports",
+            "label": "Open Monitoring",
+            "detail": "Monitoring > Reports, then Calling templates.",
+            "inspect": "Not Flow Designer",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Reports",
+            "to": "Auto attendant",
+            "label": "Pick a template",
+            "detail": "The article names stats summary, business-hours key details, and after-hours key details.",
+            "inspect": "Three templates",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Supervisor",
+            "to": "Analyzer",
+            "label": "Open a queue",
+            "detail": "If the profile has resource collections, other queues are absent. That absence is policy, not data loss.",
+            "inspect": "Up to five collections",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          },
+          {
+            "from": "Migration",
+            "to": "CDR",
+            "label": "Optional upload",
+            "detail": "Feature-usage eligibility wants the Unified CM CDR as well as the tar. Without CDR you still get the structural reports.",
+            "inspect": "FeatureUsage reports",
+            "cite": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Calling report names",
+          "paragraphs": [
+            "The auto attendant article lists Auto-attendant stats summary, Auto-attendant business hours key details, and Auto-attendant after hours key details.",
+            "View Analytics on the auto attendant card is a second entry, still under Calling features. It is not Webex Contact Center Analyzer."
+          ],
+          "cite": {
+            "label": "Manage auto attendants",
+            "url": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        },
+        {
+          "h": "Migration reports",
+          "paragraphs": [
+            "Prepare-to-migrate lists ImportedDataBulk.csv, DeviceEligibility.csv, the hunt and queue grouping file, HuntGroupMigrationInsight.csv, and the shared-line report.",
+            "Feature-usage files need CDR. Do not tell a stakeholder the usage report failed if nobody uploaded CDR."
+          ],
+          "cite": {
+            "label": "Prepare to migrate from Unified CM",
+            "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Auto-attendant business hours key details is",
+          "choices": [
+            "A Calling report template",
+            "A Flow Designer activity",
+            "A SIP method",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The auto attendant article lists it under Monitoring > Reports.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "Analyzer data for a delegated supervisor is",
+          "choices": [
+            "Limited to queues in their resource collections",
+            "Always tenant-wide",
+            "A Unified CM CDR",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "The access article says Analyzer follows the collections.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Feature-usage migration reports require",
+          "choices": [
+            "The Unified CM tar and CDR",
+            "Only a phone photo",
+            "A bot token",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "The prepare article says CDR is optional for the tool overall and required for feature-utilization analysis.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "DeviceEligibility.csv comes from",
+          "choices": [
+            "Migration Insights",
+            "Flow Designer",
+            "xAPI",
+            "RFC 5985"
+          ],
+          "answer": 0,
+          "why": "The prepare-to-migrate article names that report.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "View Analytics on an auto attendant is",
+          "choices": [
+            "Under the Calling auto attendant card",
+            "The contact center desktop",
+            "The local gateway",
+            "A macro"
+          ],
+          "answer": 0,
+          "why": "The article says Auto Attendant, Manage, View Analytics.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "A missing usage report most often means",
+          "choices": [
+            "CDR was not uploaded",
+            "SIP is illegal",
+            "The org has no name",
+            "ICE failed"
+          ],
+          "answer": 0,
+          "why": "The article ties those reports to CDR.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Three AA reports",
+          "back": "Stats summary, business-hours keys, after-hours keys."
+        },
+        {
+          "front": "Analyzer scope",
+          "back": "Resource collections filter what a delegated user sees."
+        },
+        {
+          "front": "DeviceEligibility.csv",
+          "back": "Migration Insights device report."
+        },
+        {
+          "front": "CDR",
+          "back": "Needed when you want feature-usage eligibility."
+        }
+      ],
+      "lab": {
+        "title": "Name the report",
+        "goal": "Match the question to the report.",
+        "steps": [
+          {
+            "do": "Which key do callers press at lunch?",
+            "expect": "Auto-attendant business hours or after hours key details"
+          },
+          {
+            "do": "Which phones can move?",
+            "expect": "DeviceEligibility.csv"
+          },
+          {
+            "do": "How many bank calls did this supervisor's queues take?",
+            "expect": "Analyzer, inside that supervisor's collections"
+          }
+        ],
+        "check": "You did not send a calling question to Analyzer or the reverse."
+      },
+      "fault": {
+        "title": "Empty usage file",
+        "symptom": "FeatureUsageBasedDeviceEligibilityReport.csv has no rows after a tar-only upload.",
+        "log": "SYNTHETIC: insights job, cdr=absent, usage report empty.",
+        "cause": "The article generates that report from the tar and CDR.",
+        "fix": "Export CDR from Unified CM and upload it with the tar. Structural reports can still be used meanwhile.",
+        "cite": {
+          "label": "Migration Insights",
+          "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+        }
+      }
+    },
+    {
+      "id": "security",
+      "title": "SSO, tokens, and what not to paste",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "SSO is an identity requirement for one sync path. API tokens are a different secret, with a 12-hour personal token that Cisco says not to use in production.",
+      "uncertainty": "",
+      "objectives": [
+        "Reject personal tokens in production",
+        "Separate a bot from an integration",
+        "Connect SSO to Dedicated Instance sync"
+      ],
+      "diagram": {
+        "caption": "Human SSO and API tokens solve different problems.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "SSO",
+            "sub": "users",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Personal token",
+            "sub": "12 hours",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Bot token",
+            "sub": "the bot's identity",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Integration",
+            "sub": "OAuth",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "do not ship"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "production"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pick an API identity",
+        "steps": [
+          {
+            "from": "Developer",
+            "to": "Portal",
+            "label": "Copy a personal token",
+            "detail": "Cisco says a personal access token expires 12 hours after you sign in to the developer portal.",
+            "inspect": "Bearer token",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "App",
+            "to": "Production",
+            "label": "Do not use it",
+            "detail": "The getting-started guidance says personal tokens should not be used in production. Build an integration.",
+            "inspect": "OAuth",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Bot",
+            "to": "Spaces",
+            "label": "Use a bot token",
+            "detail": "A bot acts as itself. In a group space it only sees messages that mention it.",
+            "inspect": "@mention",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Org",
+            "to": "SSO",
+            "label": "Turn on SSO",
+            "detail": "That is the Dedicated Instance directory-sync requirement, unrelated to the bot token.",
+            "inspect": "IdP",
+            "cite": "https://developer.webex.com/docs/bots"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Tokens",
+          "paragraphs": [
+            "The Webex developer pages describe three ways to call the API: a personal access token, a bot token, or an OAuth token from an integration.",
+            "A personal token acts as you and is short-lived. An integration is how an app acts for other users. A bot is its own user, with a badge in the client."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        },
+        {
+          "h": "SSO again",
+          "paragraphs": [
+            "Do not 'fix' a missing Dedicated Instance user by minting a bot. The deployment article's requirement is SSO for directory sync.",
+            "Do not paste any of these tokens into a lesson note or a screenshot."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A Webex personal access token, per the developer docs, expires",
+          "choices": [
+            "12 hours after sign-in to the developer portal",
+            "Never",
+            "After 933 is dialed",
+            "With the SIP trunk"
+          ],
+          "answer": 0,
+          "why": "The developer getting-started text says 12 hours.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+        },
+        {
+          "q": "Personal tokens in production are",
+          "choices": [
+            "Discouraged. Use an integration.",
+            "Required",
+            "The same as SSO",
+            "Stored in RedSky"
+          ],
+          "answer": 0,
+          "why": "The docs say not to use them in production.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+        },
+        {
+          "q": "A bot in a group space sees",
+          "choices": [
+            "Messages that mention it",
+            "Every message in the space",
+            "Only emergency calls",
+            "CDR files"
+          ],
+          "answer": 0,
+          "why": "The bots guide states the mention rule.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "An integration acts",
+          "choices": [
+            "On behalf of a user who authorizes it",
+            "As a phone firmware",
+            "As a dial plan",
+            "As E.164"
+          ],
+          "answer": 0,
+          "why": "The device guide contrasts bots and integrations this way.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Dedicated Instance directory sync needs",
+          "choices": [
+            "SSO",
+            "A personal access token on a laptop",
+            "UDP 5060",
+            "A menu digit"
+          ],
+          "answer": 0,
+          "why": "The deployment-models article says SSO.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "A bot token and a user's SSO session are",
+          "choices": [
+            "Different credentials for different jobs",
+            "Interchangeable",
+            "Both dial plans",
+            "Both HELD company IDs"
+          ],
+          "answer": 0,
+          "why": "One is an API identity. The other is user sign-in.",
+          "cite": "https://developer.webex.com/docs/bots"
+        }
+      ],
+      "cards": [
+        {
+          "front": "12 hours",
+          "back": "Personal access token lifetime in the developer docs."
+        },
+        {
+          "front": "Bot mention",
+          "back": "Group spaces only deliver messages that @mention the bot."
+        },
+        {
+          "front": "Integration",
+          "back": "OAuth on behalf of a user. The production path."
+        },
+        {
+          "front": "Do not paste tokens",
+          "back": "Screenshots of Bearer tokens are incidents."
+        }
+      ],
+      "lab": {
+        "title": "Choose the credential",
+        "goal": "Pick the right secret for three jobs.",
+        "steps": [
+          {
+            "do": "A script you alone run once",
+            "expect": "Personal token, and throw it away"
+          },
+          {
+            "do": "An app for many admins",
+            "expect": "Integration"
+          },
+          {
+            "do": "A helper in a space",
+            "expect": "Bot, and mention it"
+          }
+        ],
+        "check": "Production does not use the 12-hour token."
+      },
+      "fault": {
+        "title": "A bot that ignores the room",
+        "symptom": "The bot answers in 1:1 chat and stays silent in the project space.",
+        "log": "SYNTHETIC: webhook messages:created, group space, no mention, no delivery.",
+        "cause": "The bots guide says group-space messages are visible to the bot only when it is mentioned.",
+        "fix": "Mention the bot, or move the workflow to a 1:1 space. Do not widen the bot to read the room; that is not how the API works.",
+        "cite": {
+          "label": "Webex bots",
+          "url": "https://developer.webex.com/docs/bots"
+        }
+      }
+    },
+    {
+      "id": "day",
+      "title": "A day in the practice console",
+      "level": "foundation",
+      "minutes": 18,
+      "summary": "The walkthrough is a practice console with the documented paths. Finishing it does not change a real organization.",
+      "uncertainty": "",
+      "objectives": [
+        "Complete the practice console",
+        "Say which real article each step quotes",
+        "Notice what the console refuses to pretend"
+      ],
+      "diagram": {
+        "caption": "Eleven guided steps, from the organization to Migration Insights.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Overview",
+            "sub": "org",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Locations",
+            "sub": "PSTN",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Features",
+            "sub": "AA, queue",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "DI and CC",
+            "sub": "other services",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "next"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "next"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "next"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Guided click-through",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Overview",
+            "label": "Start",
+            "detail": "The console is original artwork. The labels follow Cisco's information architecture.",
+            "inspect": "Not a Cisco screenshot",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "You",
+            "to": "Locations",
+            "label": "PSTN",
+            "detail": "You choose a connection type the organization article names.",
+            "inspect": "Cisco Calling Plan, CCP, or local gateway",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "You",
+            "to": "Features",
+            "label": "Queue and attendant",
+            "detail": "You land on the feature cards the calling articles use.",
+            "inspect": "Bulk manage is a later real click",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "You",
+            "to": "Migrations",
+            "label": "Stop",
+            "detail": "The last step is Migration Insights. UCCX scripts are called out as a redesign, not an import.",
+            "inspect": "No fake success",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the console checks",
+          "paragraphs": [
+            "Each guided step asks you to open the nav item whose path matches the article: locations, dial plans, Dedicated Instance, devices, Contact Center, migrations.",
+            "A wrong click tells you the step you still owe. That is the whole point of a walkthrough."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "What it cannot do",
+          "paragraphs": [
+            "It cannot order numbers, sign a Calling Plan contract, or upload a real tar. Those stay in the live portal and the partner process.",
+            "Use it until the paths are boring. Then do one change in a lab tenant if you have one."
+          ],
+          "cite": {
+            "label": "Essentials of Webex Calling (CLWXCALL)",
+            "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The practice console is",
+          "choices": [
+            "A teaching UI with documented paths, not Control Hub",
+            "The production admin portal",
+            "A SIP proxy",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "The studio says so on the page.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The PSTN step should mention",
+          "choices": [
+            "Cisco Calling Plan, Cloud Connected PSTN, or premises PSTN",
+            "Only UCCE scripts",
+            "Only bots",
+            "Only fonts"
+          ],
+          "answer": 0,
+          "why": "Those are the three connections in the organization article.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Dedicated Instance in the console points at",
+          "choices": [
+            "Calling > Dedicated Instance > Manage",
+            "The phone keypad",
+            "A personal token",
+            "RFC 3711 only"
+          ],
+          "answer": 0,
+          "why": "That is the cross-launch path.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "The migration step is about",
+          "choices": [
+            "Unified CM insights and feature CSVs, not a UCCX importer",
+            "Automatic script conversion",
+            "Buying numbers",
+            "Changing a voice"
+          ],
+          "answer": 0,
+          "why": "The prepare article does not describe a UCCX script importer.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "A wrong nav item should",
+          "choices": [
+            "Fail the step and name the right one",
+            "Silently advance",
+            "Delete the organization",
+            "Open a trunk"
+          ],
+          "answer": 0,
+          "why": "The walkthrough checks the selected section.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "CLWXCALL helps this day because",
+          "choices": [
+            "The course outline includes Control Hub, users, devices, features, and PSTN",
+            "It is the emergency number",
+            "It is a port",
+            "It replaces SSO"
+          ],
+          "answer": 0,
+          "why": "The course page lists those topics.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Practice vs portal",
+          "back": "The console teaches paths. admin.webex.com changes the org."
+        },
+        {
+          "front": "Three PSTN choices",
+          "back": "Cisco Calling Plan, CCP, local gateway."
+        },
+        {
+          "front": "Last step",
+          "back": "Migration Insights."
+        },
+        {
+          "front": "CLWXCALL",
+          "back": "The calling course whose outline matches this day."
+        }
+      ],
+      "lab": {
+        "title": "Finish the eleven steps",
+        "goal": "Run the Control Hub walkthrough from Overview through Migrations.",
+        "steps": [
+          {
+            "do": "Pass the PSTN step",
+            "expect": "You opened PSTN"
+          },
+          {
+            "do": "Pass Dedicated Instance",
+            "expect": "You opened Dedicated Instance"
+          },
+          {
+            "do": "Pass Migrations",
+            "expect": "You opened Migrations"
+          }
+        ],
+        "check": "The console says the walkthrough is complete."
+      },
+      "fault": {
+        "title": "Muscle memory from Call Manager",
+        "symptom": "An admin looks for route patterns under Call Routing > Route/Hunt and never opens Control Hub dial plans.",
+        "log": "SYNTHETIC ticket: still in Unified CM admin, Webex location has no dial plan.",
+        "cause": "Webex Calling dial plans are a Control Hub object. Unified CM route patterns still exist, but only on the cluster that still owns those phones.",
+        "fix": "Use Calling > Call Routing > Dial Plans for Webex Calling destinations and trunks. Keep Unified CM patterns for phones that still register there.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "audit",
+      "title": "A change log you can defend",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Write down the article, the path, and the object name before you change a location. Future you will not remember which trunk was the one trunk.",
+      "uncertainty": "",
+      "objectives": [
+        "Log one trunk per premises location",
+        "Attach a URL",
+        "Keep the previous value"
+      ],
+      "diagram": {
+        "caption": "A defensible change names the object, the path, and the source.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Change",
+            "sub": "one object",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Path",
+            "sub": "where you clicked",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Source",
+            "sub": "the article",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Rollback",
+            "sub": "the previous value",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "record"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "cite"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "undo"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Record a PSTN change",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Read the current PSTN",
+            "detail": "Write down Cisco Calling Plan, CCP, or the trunk name.",
+            "inspect": "One trunk if premises",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Article",
+            "label": "Open the page",
+            "detail": "Paste the URL of the page you followed, not a memory of it.",
+            "inspect": "help.webex.com",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Change",
+            "label": "Save",
+            "detail": "Change one thing. A PSTN change and a dial-plan change on the same afternoon are two records.",
+            "inspect": "Separate rows",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Test",
+            "label": "One call",
+            "detail": "Place a known call: an internal extension, an external number, and 933 if you touched emergency calling.",
+            "inspect": "933 is the test number",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The one-trunk rule belongs in the log",
+          "paragraphs": [
+            "Cisco says you cannot choose more than one trunk for a location with premises-based PSTN. The same trunk may serve many locations.",
+            "If the log shows two trunks on one location, the design is already outside the documented model."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "933 is a test, not a drill for sport",
+          "paragraphs": [
+            "The emergency calling article tells you to test with 933 before you route live emergency calls to RedSky or Intrado.",
+            "Logging a 933 test is part of the change, including the dispatchable address you expected to see."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Premises locations and trunks",
+          "choices": [
+            "One trunk per location. One trunk may serve many locations.",
+            "As many trunks as you want on one location",
+            "No trunks",
+            "Only registration trunks"
+          ],
+          "answer": 0,
+          "why": "The organization article states the one-trunk limit.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "A useful change record includes",
+          "choices": [
+            "The object, the click path, the article URL, and the old value",
+            "Only the word done",
+            "A password",
+            "A personal token"
+          ],
+          "answer": 0,
+          "why": "You need to reproduce or undo the change.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "933 is",
+          "choices": [
+            "The emergency test number used with RedSky and Intrado",
+            "A SIP port",
+            "A license",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "The emergency calling article uses 933 as the test call.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Two changes on one afternoon should be",
+          "choices": [
+            "Two records",
+            "One vague note",
+            "Hidden",
+            "A bot message only"
+          ],
+          "answer": 0,
+          "why": "PSTN and dial plan fail differently. Split the notes.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The same trunk on two locations is",
+          "choices": [
+            "Allowed",
+            "Forbidden",
+            "A Contact Center flow",
+            "An ICE failure"
+          ],
+          "answer": 0,
+          "why": "Cisco explicitly allows the same trunk to be chosen for multiple locations.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "After an emergency-calling change, test",
+          "choices": [
+            "933 from the devices in that location",
+            "Only an internal extension",
+            "A webhook",
+            "A macro"
+          ],
+          "answer": 0,
+          "why": "The article's own test is 933.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "One trunk",
+          "back": "Maximum selected for one premises location."
+        },
+        {
+          "front": "Same trunk, many sites",
+          "back": "Allowed."
+        },
+        {
+          "front": "933",
+          "back": "Emergency test call."
+        },
+        {
+          "front": "URL in the ticket",
+          "back": "The article you actually followed."
+        }
+      ],
+      "lab": {
+        "title": "Write one change record",
+        "goal": "Pretend you switched a location from unknown PSTN to a named trunk.",
+        "steps": [
+          {
+            "do": "Old and new value",
+            "expect": "Trunk name written"
+          },
+          {
+            "do": "Article URL",
+            "expect": "The organization or trunk article"
+          },
+          {
+            "do": "Test",
+            "expect": "Internal, external, and whether 933 applies"
+          }
+        ],
+        "check": "Someone else could revert it from the note alone."
+      },
+      "fault": {
+        "title": "Two trunks selected",
+        "symptom": "Outbound calls from one site use a random gateway.",
+        "log": "SYNTHETIC: location Oak, trunks selected = 2, premises PSTN.",
+        "cause": "The product model is one trunk per premises location.",
+        "fix": "Pick the trunk that owns that site's PSTN or PBX, remove the other, and retest. Use route groups and dial plans when you need more than a single default path.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+[
+  {
+    "label": "Configure Webex Calling for your organization",
+    "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "label": "Trunks, route groups, and dial plans",
+    "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "label": "Webex Calling configuration workflow",
+    "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+  },
+  {
+    "label": "Port reference for Webex Calling",
+    "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+  },
+  {
+    "label": "Features available by license type",
+    "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+  },
+  {
+    "label": "Configure a Webex Calling call queue",
+    "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+  },
+  {
+    "label": "Manage auto attendants",
+    "url": "https://help.webex.com/en-us/article/nsioxoi"
+  },
+  {
+    "label": "Enhanced emergency calling for Webex Calling",
+    "url": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "label": "Emergency Callback Number in Control Hub",
+    "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+  },
+  {
+    "label": "Shared lines and virtual lines across locations",
+    "url": "https://help.webex.com/default/article/c5cgxd"
+  },
+  {
+    "label": "Introduction to Dedicated Instance",
+    "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+  },
+  {
+    "label": "Activate Dedicated Instance",
+    "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "label": "Dedicated Instance customer deployment models",
+    "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+  },
+  {
+    "label": "Access Dedicated Instance applications",
+    "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+  },
+  {
+    "label": "Prepare to migrate from Unified CM",
+    "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "label": "Migrate devices and features from Unified CM",
+    "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "label": "Migration Insights",
+    "url": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+  },
+  {
+    "label": "Set up voice channels for Webex Contact Center",
+    "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+  },
+  {
+    "label": "Build and manage flows with Flow Designer",
+    "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+  },
+  {
+    "label": "Routing and queueing in Webex Contact Center",
+    "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+  },
+  {
+    "label": "Contact Center administrator roles",
+    "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+  },
+  {
+    "label": "Manage access in Webex Contact Center",
+    "url": "https://help.webex.com/en-us/article/n524f2m"
+  },
+  {
+    "label": "Use AI agents for customer interactions",
+    "url": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+  },
+  {
+    "label": "Configure fulfillment for scripted AI agents",
+    "url": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+  },
+  {
+    "label": "Multi-agent orchestration",
+    "url": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+  },
+  {
+    "label": "Webex Workforce Optimization",
+    "url": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+  },
+  {
+    "label": "What's new in Webex Contact Center Enterprise",
+    "url": "https://help.webex.com/en-us/article/nhy3hvdb/What%27s-new-for-administrators-in-Webex-Contact-Center-Enterprise"
+  },
+  {
+    "label": "Webex bots",
+    "url": "https://developer.webex.com/docs/bots"
+  },
+  {
+    "label": "Webex developer getting started",
+    "url": "https://developer.webex.com/docs/getting-started"
+  },
+  {
+    "label": "Webex webhooks",
+    "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+  },
+  {
+    "label": "Device developers guide",
+    "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+  },
+  {
+    "label": "Execute an xAPI command",
+    "url": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+  },
+  {
+    "label": "RoomOS xAPI",
+    "url": "https://roomos.cisco.com/xapi"
+  },
+  {
+    "label": "Webex Contact Center APIs",
+    "url": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+  },
+  {
+    "label": "Contact Center GraphQL search",
+    "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+  },
+  {
+    "label": "Contact Center webhooks",
+    "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+  },
+  {
+    "label": "300-830 CLCCE exam",
+    "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+  },
+  {
+    "label": "CLCCE exam topics",
+    "url": "https://learningnetwork.cisco.com/s/clcce-exam-topics"
+  },
+  {
+    "label": "CCNP Collaboration",
+    "url": "https://learningnetwork.cisco.com/s/ccnp-collaboration"
+  },
+  {
+    "label": "Cisco certification update",
+    "url": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+  },
+  {
+    "label": "Essentials of Webex Calling (CLWXCALL)",
+    "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+  },
+  {
+    "label": "RFC 3261, SIP",
+    "url": "https://www.rfc-editor.org/rfc/rfc3261"
+  },
+  {
+    "label": "RFC 3966, tel URI",
+    "url": "https://www.rfc-editor.org/rfc/rfc3966"
+  },
+  {
+    "label": "ITU-T E.164",
+    "url": "https://www.itu.int/rec/T-REC-E.164"
+  },
+  {
+    "label": "RFC 4119, PIDF-LO",
+    "url": "https://www.rfc-editor.org/rfc/rfc4119"
+  },
+  {
+    "label": "RFC 5985, HELD",
+    "url": "https://www.rfc-editor.org/rfc/rfc5985"
+  },
+  {
+    "label": "RFC 8445, ICE",
+    "url": "https://www.rfc-editor.org/rfc/rfc8445"
+  },
+  {
+    "label": "RFC 3711, SRTP",
+    "url": "https://www.rfc-editor.org/rfc/rfc3711"
+  },
+  {
+    "label": "FCC MLTS 911 requirements",
+    "url": "https://www.fcc.gov/mlts-911-requirements"
+  },
+  {
+    "label": "Unified Contact Center Express",
+    "url": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+  },
+  {
+    "label": "Unified Contact Center Enterprise",
+    "url": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/series.html"
+  },
+  {
+    "label": "Unified Communications Manager",
+    "url": "https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html"
+  }
+]

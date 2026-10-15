@@ -1,0 +1,1819 @@
+{
+  "id": "t10",
+  "title": "Contact Center routing",
+  "blurb": "Entry points, queues, teams, and the difference between a Webex Calling call queue and a contact center queue.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "which-cc",
+      "title": "Three contact centers",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "Webex Contact Center, Webex Contact Center Enterprise, and the on-premises UCCX and UCCE products are not one queue with three names.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate cloud Webex Contact Center from Enterprise",
+        "Point UCCX and UCCE at their own Cisco pages",
+        "Refuse a script import that does not exist"
+      ],
+      "diagram": {
+        "caption": "Pick the product before you pick a flow.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Webex Contact Center",
+            "sub": "cloud, Flow Designer",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "WxCC Enterprise",
+            "sub": "administrator what's-new",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "UCCX",
+            "sub": "on-premises",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "UCCE",
+            "sub": "on-premises",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n2",
+            "to": "n0",
+            "label": "redesign"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "redesign"
+          },
+          {
+            "from": "n1",
+            "to": "n0",
+            "label": "not the same doc"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Name the product in the ticket",
+        "steps": [
+          {
+            "from": "Ticket",
+            "to": "Name",
+            "label": "Ask which product",
+            "detail": "A queue in Calling > Features is a Webex Calling call queue. A queue in the contact center service is not that object.",
+            "inspect": "Later tracks keep them apart",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Cloud",
+            "to": "Control Hub",
+            "label": "Webex Contact Center",
+            "detail": "Voice setup, Flow Designer, and routing articles apply here.",
+            "inspect": "Entry points and flows",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Enterprise",
+            "to": "What's new",
+            "label": "Read the Enterprise page",
+            "detail": "Webex Contact Center Enterprise has its own administrator what's-new article. Do not paste cloud Flow Designer steps into it.",
+            "inspect": "Cite cce",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Premises",
+            "to": "UCCX or UCCE",
+            "label": "Keep the scripts",
+            "detail": "Cisco's product pages are the homes for Unified CCX and Unified CCE. This lab found no importer that turns those scripts into Flow Designer.",
+            "inspect": "Uncertainty is stated in the migration track",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Why the names collide",
+          "paragraphs": [
+            "People say contact center for a hunt group, a Webex Calling call queue, cloud Webex Contact Center, and UCCE. The admin path tells you which one you are in.",
+            "Calling features and contact center routing use different licenses, different queues, and different music objects."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        },
+        {
+          "h": "Enterprise is not a footnote",
+          "paragraphs": [
+            "The what's-new article for Webex Contact Center Enterprise administrators is a separate document from the cloud Flow Designer article.",
+            "If your tenant is Enterprise, follow that documentation. This track teaches the cloud routing model Cisco documents for Webex Contact Center."
+          ],
+          "cite": {
+            "label": "What's new in Webex Contact Center Enterprise",
+            "url": "https://help.webex.com/en-us/article/nhy3hvdb/What%27s-new-for-administrators-in-Webex-Contact-Center-Enterprise"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A Webex Calling call queue lives under",
+          "choices": [
+            "Calling > Features",
+            "Flow Designer",
+            "Unified CM BAT",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "Different object from a contact center queue.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Cloud flows are documented in",
+          "choices": [
+            "The Flow Designer article",
+            "The UCCX product page alone",
+            "RFC 3711",
+            "The dial-plan article only"
+          ],
+          "answer": 0,
+          "why": "Build and manage flows.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "UCCX documentation home used here is",
+          "choices": [
+            "Cisco's Unified CCX support series",
+            "A guessed converter",
+            "A bot webhook",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "No script importer is claimed.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+        },
+        {
+          "q": "UCCE documentation home used here is",
+          "choices": [
+            "Cisco's Unified CCE support series",
+            "The auto attendant CSV",
+            "Port 5062",
+            "A glossary with no link"
+          ],
+          "answer": 0,
+          "why": "Keep premises scripts until you redesign.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/series.html"
+        },
+        {
+          "q": "Webex Contact Center Enterprise",
+          "choices": [
+            "Has its own administrator what's-new article",
+            "Is a synonym you may swap freely",
+            "Is a phone model",
+            "Is HELD"
+          ],
+          "answer": 0,
+          "why": "Do not mix the docs.",
+          "cite": "https://help.webex.com/en-us/article/nhy3hvdb/What%27s-new-for-administrators-in-Webex-Contact-Center-Enterprise"
+        },
+        {
+          "q": "This lab's stance on UCCX scripts is",
+          "choices": [
+            "Redesign, and mark that no importer was found",
+            "Import them unchanged",
+            "They are dial plans",
+            "They are certificates"
+          ],
+          "answer": 0,
+          "why": "The migration track repeats this.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Calling queue",
+          "back": "Calling > Features > Call Queue."
+        },
+        {
+          "front": "Cloud CC",
+          "back": "Flow Designer and contact center queues."
+        },
+        {
+          "front": "Enterprise",
+          "back": "Separate what's-new article."
+        },
+        {
+          "front": "UCCX and UCCE",
+          "back": "Premises products. Redesign to move."
+        }
+      ],
+      "lab": {
+        "title": "Label four queues",
+        "goal": "Give each a product name: Calling, cloud WxCC, Enterprise, UCCE.",
+        "steps": [
+          {
+            "do": "Path",
+            "expect": "You named the admin path or the product page"
+          },
+          {
+            "do": "Music",
+            "expect": "You refused to share one music object across products without a cite"
+          },
+          {
+            "do": "Scripts",
+            "expect": "UCCE stays a redesign"
+          }
+        ],
+        "check": "None of the four share a fake importer."
+      },
+      "fault": {
+        "title": "Wrong queue built",
+        "symptom": "Agents never see the call. The Calling call queue rings a hunt of users.",
+        "log": "SYNTHETIC: Flow Designer queue empty, Calling queue busy.",
+        "cause": "The contact center entry point was never pointed at a contact center queue.",
+        "fix": "Open the voice channel article and attach the flow.",
+        "cite": {
+          "label": "Set up voice channels for Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      }
+    },
+    {
+      "id": "before-flow",
+      "title": "Provision before the flow",
+      "level": "core",
+      "minutes": 13,
+      "summary": "The voice article expects entry points, queues, and the people and audio around them before a flow can send a contact somewhere real.",
+      "uncertainty": "",
+      "objectives": [
+        "Name what must exist first",
+        "Attach a flow to an entry point",
+        "Keep Calling music separate"
+      ],
+      "diagram": {
+        "caption": "A flow with nowhere to queue is a diagram.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Entry point",
+            "sub": "number or channel",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Flow",
+            "sub": "Flow Designer",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Queue",
+            "sub": "agents",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Audio",
+            "sub": "prompts",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "starts"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "queue"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "prompts"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Order the build",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Control Hub",
+            "label": "Create the queue and the team",
+            "detail": "Routing needs a queue and agents who can take it. User profiles and desktop profiles decide what those people can see.",
+            "inspect": "Roles article",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Audio",
+            "label": "Store the prompts",
+            "detail": "Play Message uses audio you have already set up. Calling music on hold is not this prompt.",
+            "inspect": "Do not mix the two music systems",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Flow Designer",
+            "label": "Build the flow",
+            "detail": "Start Flow through Queue Contact is the teaching path in this lab's designer.",
+            "inspect": "The in-app designer is not an import",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Entry point",
+            "label": "Point the number at the flow",
+            "detail": "The voice channel setup is where telephony meets the flow. A pretty flow with no entry point never rings.",
+            "inspect": "Test with a known number",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Voice channels",
+          "paragraphs": [
+            "The voice setup article is the telephony path into Webex Contact Center. It is also where premise destinations and dial plans are discussed for contact center calls that must reach a local gateway.",
+            "Create the dial plan from the same Calling > Call Routing > Dial Plans place you already know when the contact center must reach a premises destination."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "People objects",
+          "paragraphs": [
+            "Administrator roles and privileges are their own article. Access, user profiles, and resource collections are another.",
+            "An agent who cannot see the queue will look like a routing defect."
+          ],
+          "cite": {
+            "label": "Contact Center administrator roles",
+            "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A flow without an entry point",
+          "choices": [
+            "Does not receive the telephony contact",
+            "Still rings every phone",
+            "Is a trunk",
+            "Is SSO"
+          ],
+          "answer": 0,
+          "why": "Attach it in the voice setup.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Premise destinations for the contact center use",
+          "choices": [
+            "Dial plans, trunks, and route groups",
+            "Only a bot",
+            "Only HELD",
+            "A personal token"
+          ],
+          "answer": 0,
+          "why": "The voice article points at that routing.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Calling music on hold and Play Message",
+          "choices": [
+            "Are different features",
+            "Are the same file slot",
+            "Are both RFC 8445",
+            "Are Emergency Responder"
+          ],
+          "answer": 0,
+          "why": "Do not interchange them.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Who can see a queue is decided in part by",
+          "choices": [
+            "User profiles and resource access",
+            "The phone's MAC only",
+            "The external dial digit",
+            "A certificate trunk"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Entry points belong to",
+          "choices": [
+            "The contact center service",
+            "The auto attendant CSV only",
+            "RoomOS macros",
+            "ITU E.164 itself"
+          ],
+          "answer": 0,
+          "why": "Voice channel setup.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "This lab's flow canvas",
+          "choices": [
+            "Uses a teaching schema, not a Control Hub import",
+            "Is the production export format",
+            "Uploads to Cisco",
+            "Replaces the article"
+          ],
+          "answer": 0,
+          "why": "Labeled in the designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Order",
+          "back": "Queue, people, audio, flow, entry point."
+        },
+        {
+          "front": "Voice article",
+          "back": "Telephony into the contact center."
+        },
+        {
+          "front": "Dial plan",
+          "back": "Still the premises path."
+        },
+        {
+          "front": "Two musics",
+          "back": "Calling MOH is not Play Message."
+        }
+      ],
+      "lab": {
+        "title": "Write a build order",
+        "goal": "Six lines, dependencies first.",
+        "steps": [
+          {
+            "do": "Queue",
+            "expect": "Before Queue Contact"
+          },
+          {
+            "do": "Prompt",
+            "expect": "Before Play Message"
+          },
+          {
+            "do": "Entry",
+            "expect": "After the flow exists"
+          }
+        ],
+        "check": "Nothing points at an object you have not created."
+      },
+      "fault": {
+        "title": "Empty audio",
+        "symptom": "Callers hear silence and then leave.",
+        "log": "SYNTHETIC: Play Message asset missing, entry point live.",
+        "cause": "The activity was placed before the prompt existed.",
+        "fix": "Upload the audio, then place a test contact.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "laa-baa",
+      "title": "Queues, LAA, and BAA",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Longest available and best available are the routing strategies the routing article describes. This lab does not invent a third name or a RONA timer.",
+      "uncertainty": "",
+      "objectives": [
+        "Name LAA and BAA",
+        "Refuse invented timers",
+        "Separate this from Calling call-queue algorithms"
+      ],
+      "diagram": {
+        "caption": "The queue holds the contact. The strategy picks the agent.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Contact",
+            "sub": "queued",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Queue",
+            "sub": "one queue",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "LAA",
+            "sub": "longest available",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "BAA",
+            "sub": "best available",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "Queue Contact"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "or"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "or"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Choose a strategy you can cite",
+        "steps": [
+          {
+            "from": "Flow",
+            "to": "Queue",
+            "label": "Queue Contact",
+            "detail": "The activity places the contact in a contact center queue. It is not the Calling call queue.",
+            "inspect": "Flow Designer article",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "Queue",
+            "to": "Strategy",
+            "label": "Pick LAA or BAA",
+            "detail": "The routing article is the source for longest available and best available. Use its words in your design notes.",
+            "inspect": "Open the live page when you configure",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "You",
+            "to": "Timer",
+            "label": "Do not invent RONA",
+            "detail": "This lab does not publish a ring-no-answer timer. If the article you are implementing states one, cite that sentence.",
+            "inspect": "Uncertainty stays visible",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "Calling",
+            "to": "Other queue",
+            "label": "Different algorithms",
+            "detail": "Circular, Top Down, Longest Idle, Weighted, and Simultaneous belong to the Webex Calling call queue article, with the caps published there.",
+            "inspect": "Do not paste those caps onto WxCC",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Two products, two vocabularies",
+          "paragraphs": [
+            "Webex Calling call queues publish priority-based patterns and agent caps. Contact center routing publishes LAA and BAA.",
+            "Using the Calling word Circular in a contact center design review is how the wrong article gets implemented."
+          ],
+          "cite": {
+            "label": "Routing and queueing in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "What we will not add",
+          "paragraphs": [
+            "No RONA seconds, no undocumented overflow percentages, no skill-score formula that is not on the page you cite.",
+            "Queue To Agent is a different activity: it targets an agent id or email. That is preference, not LAA."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Contact center routing strategies named for this lab are",
+          "choices": [
+            "LAA and BAA",
+            "Circular and Weighted",
+            "Only Simultaneous",
+            "HELD and PIDF"
+          ],
+          "answer": 0,
+          "why": "Routing and queueing article.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Circular and Top Down belong to",
+          "choices": [
+            "Webex Calling call queues",
+            "Flow Designer LAA",
+            "RedSky",
+            "xAPI"
+          ],
+          "answer": 0,
+          "why": "With the caps on that article.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Queue To Agent targets",
+          "choices": [
+            "An agent by id or email",
+            "A PSTN trunk",
+            "A DNS forwarder",
+            "A region"
+          ],
+          "answer": 0,
+          "why": "It is not the same as Queue Contact.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "This lab's RONA timer is",
+          "choices": [
+            "Not stated, because it would be invented",
+            "30 seconds always",
+            "24 hours",
+            "Ten characters"
+          ],
+          "answer": 0,
+          "why": "Cite the live article if it specifies one.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Queue Contact sends the contact to",
+          "choices": [
+            "A contact center queue",
+            "A Calling auto attendant CSV",
+            "Dedicated Instance sizing",
+            "A webhook secret"
+          ],
+          "answer": 0,
+          "why": "Then the queue strategy applies.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Best available is documented as",
+          "choices": [
+            "A contact center routing strategy",
+            "A trunk port",
+            "A license called Workspace",
+            "An RFC"
+          ],
+          "answer": 0,
+          "why": "Pair it with longest available.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "LAA",
+          "back": "Longest available."
+        },
+        {
+          "front": "BAA",
+          "back": "Best available."
+        },
+        {
+          "front": "Calling caps",
+          "back": "Stay on the call queue article."
+        },
+        {
+          "front": "No invented RONA",
+          "back": "Cite a sentence or leave it blank."
+        }
+      ],
+      "lab": {
+        "title": "Strategy card",
+        "goal": "Write LAA and BAA in your own words and the URL you would open.",
+        "steps": [
+          {
+            "do": "LAA",
+            "expect": "Longest available, with the routing URL"
+          },
+          {
+            "do": "BAA",
+            "expect": "Best available"
+          },
+          {
+            "do": "Not this",
+            "expect": "You listed one Calling algorithm you will not use here"
+          }
+        ],
+        "check": "The card has no timer."
+      },
+      "fault": {
+        "title": "Calling cap applied to WxCC",
+        "symptom": "A design limits a contact center queue to 50 agents because Simultaneous allows 50.",
+        "log": "SYNTHETIC design note mixing the articles.",
+        "cause": "That cap is on the Webex Calling call queue page.",
+        "fix": "Re-read the routing article for the contact center queue.",
+        "cite": {
+          "label": "Configure a Webex Calling call queue",
+          "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        }
+      }
+    },
+    {
+      "id": "skills",
+      "title": "Skills and dynamic skills",
+      "level": "advanced",
+      "minutes": 12,
+      "summary": "Skill-based routing and dynamic skills are not the same object. Dynamic skills are not assigned through skill profiles.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate skills from dynamic skills",
+        "Keep skill profiles for the skills they actually hold",
+        "Avoid inventing caps"
+      ],
+      "diagram": {
+        "caption": "A profile is a bundle. A dynamic skill is applied another way.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Skill",
+            "sub": "named ability",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Skill profile",
+            "sub": "bundle",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dynamic skill",
+            "sub": "not via that profile",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Queue",
+            "sub": "uses them",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "bundle"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "separate path"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "assign"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Do not file a dynamic skill in the wrong drawer",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Skills",
+            "label": "Create the skill the queue will ask for",
+            "detail": "The routing article is the behavior source. Name skills after the work, not after a team mood.",
+            "inspect": "Cite the page",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Profile",
+            "label": "Bundle skills that belong in a profile",
+            "detail": "Skill profiles are how you group those skills for assignment.",
+            "inspect": "Resource collections can hide profiles",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Dynamic",
+            "label": "Use the dynamic path",
+            "detail": "Dynamic skills are not assigned through skill profiles. Putting them there will not do what the design said.",
+            "inspect": "Mark this in the review",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          },
+          {
+            "from": "Queue",
+            "to": "Agent",
+            "label": "Match on what was assigned",
+            "detail": "If the agent does not have the skill the queue requires, longest available cannot invent it.",
+            "inspect": "Check the user, not only the flow",
+            "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The distinction to memorize",
+          "paragraphs": [
+            "Skills can be placed in skill profiles. Dynamic skills are a different mechanism and are not assigned through those profiles.",
+            "The access article uses skill profiles as the example of a resource type you might grant without adding any to the collection, which yields an empty list."
+          ],
+          "cite": {
+            "label": "Routing and queueing in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "Caps we will not invent",
+          "paragraphs": [
+            "The Webex Calling skill-based call queue article's caps are for that product. This lab does not copy the 1000-agent circular cap onto contact center skills.",
+            "If you need a contact center limit, read it from the routing or queue article and cite the sentence."
+          ],
+          "cite": {
+            "label": "Configure a Webex Calling call queue",
+            "url": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Dynamic skills are assigned",
+          "choices": [
+            "Not through skill profiles",
+            "Only inside skill profiles",
+            "By a dial pattern",
+            "By HELD"
+          ],
+          "answer": 0,
+          "why": "Keep the mechanisms apart.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "A skill profile is",
+          "choices": [
+            "A bundle of skills for assignment",
+            "A PSTN trunk",
+            "A voice domain",
+            "An RFC"
+          ],
+          "answer": 0,
+          "why": "Empty collections hide them.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "An empty skill-profile list can mean",
+          "choices": [
+            "Edit permission without any profiles in the resource collection",
+            "SSO is off",
+            "The region locked",
+            "Port 5062 failed"
+          ],
+          "answer": 0,
+          "why": "The access article's review warning.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Calling's 1000-agent circular cap",
+          "choices": [
+            "Stays on the Calling call queue article",
+            "Is the WxCC skill limit",
+            "Is a DNS TTL",
+            "Is the voice domain length"
+          ],
+          "answer": 0,
+          "why": "Do not transplant caps.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "If the agent lacks the skill",
+          "choices": [
+            "The strategy cannot pretend they have it",
+            "LAA adds it",
+            "The trunk retries",
+            "933 fixes it"
+          ],
+          "answer": 0,
+          "why": "Check assignment.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "This lesson refuses to",
+          "choices": [
+            "Invent a dynamic-skill score formula",
+            "Cite the routing article",
+            "Name skill profiles",
+            "Mention resource collections"
+          ],
+          "answer": 0,
+          "why": "Only documented behavior.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Profile",
+          "back": "Bundle of skills."
+        },
+        {
+          "front": "Dynamic",
+          "back": "Not assigned through skill profiles."
+        },
+        {
+          "front": "Empty list",
+          "back": "Permission without collected resources."
+        },
+        {
+          "front": "No borrowed caps",
+          "back": "Calling numbers stay on Calling pages."
+        }
+      ],
+      "lab": {
+        "title": "Two columns",
+        "goal": "List three skills that belong in a profile and one fact about dynamic skills.",
+        "steps": [
+          {
+            "do": "Profile",
+            "expect": "Three named skills"
+          },
+          {
+            "do": "Dynamic",
+            "expect": "Not via skill profiles"
+          },
+          {
+            "do": "Cite",
+            "expect": "Routing article URL written out"
+          }
+        ],
+        "check": "You did not invent a score."
+      },
+      "fault": {
+        "title": "Dynamic skill in the profile",
+        "symptom": "The queue never matches the agents who were given the dynamic skill in a profile.",
+        "log": "SYNTHETIC: dynamic skill stored only on a skill profile.",
+        "cause": "That is the wrong assignment path.",
+        "fix": "Use the dynamic skill mechanism the routing article describes.",
+        "cite": {
+          "label": "Routing and queueing in Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        }
+      }
+    },
+    {
+      "id": "people",
+      "title": "Profiles, teams, and roles",
+      "level": "core",
+      "minutes": 13,
+      "summary": "Licensed and unlicensed administrators, supervisors, and premium or standard agents are different profiles. The Contact Center Service Administrator role is how the service is administered.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the profile types the roles article uses",
+        "Separate user profile from desktop profile",
+        "Place agents on a team"
+      ],
+      "diagram": {
+        "caption": "A license without a profile still cannot see the queue.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Role",
+            "sub": "Service Administrator",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "User profile",
+            "sub": "permissions",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Desktop profile",
+            "sub": "agent tools",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Team",
+            "sub": "agents",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "administers"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "with"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "uses"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Give an agent a desk they can open",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Roles",
+            "label": "Assign Contact Center Service Administrator",
+            "detail": "The roles article is the privilege source for administering the service.",
+            "inspect": "Not the same as a Full Administrator for all of Control Hub",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "Admin",
+            "to": "User profile",
+            "label": "Grant what they may change",
+            "detail": "The access article: a user profile holds permissions and resource access.",
+            "inspect": "Licensed and unlicensed administrator are different",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "Admin",
+            "to": "Desktop",
+            "label": "Choose the agent experience",
+            "detail": "Premium Agent and Standard Agent are not the same desktop. Supervisors are their own profile.",
+            "inspect": "Cite the roles page for the matrix",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          },
+          {
+            "from": "Admin",
+            "to": "Team",
+            "label": "Put the agent on a team",
+            "detail": "Queues route to agents through the team and skill setup. A user with no team looks idle forever.",
+            "inspect": "Then test a contact",
+            "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Names to keep straight",
+          "paragraphs": [
+            "The access and roles articles discuss Licensed Administrator, Unlicensed Administrator, Supervisor, Premium Agent, and Standard Agent. Use those names when you match a person to a job.",
+            "A Webex Calling Professional license does not by itself make someone a Premium Agent."
+          ],
+          "cite": {
+            "label": "Contact Center administrator roles",
+            "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        },
+        {
+          "h": "Activation mail",
+          "paragraphs": [
+            "Contact center administrator setup includes the user actions Cisco documents for the Contact Center Service Administrator, including the activation path in Control Hub.",
+            "If the administrator cannot open the contact center, check the role before you rebuild flows."
+          ],
+          "cite": {
+            "label": "Contact Center administrator roles",
+            "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Contact center administration uses",
+          "choices": [
+            "The Contact Center Service Administrator role",
+            "Only a Calling Workspace license",
+            "A local gateway trunk",
+            "Port 8934"
+          ],
+          "answer": 0,
+          "why": "Roles and privileges article.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "User profiles hold",
+          "choices": [
+            "Permissions and resource access",
+            "SIP certificates",
+            "DNS forwarders",
+            "Emergency callback numbers"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Premium Agent and Standard Agent are",
+          "choices": [
+            "Different contact center profiles",
+            "Two names for Calling Professional",
+            "Trunk types",
+            "Themes in this lab"
+          ],
+          "answer": 0,
+          "why": "Do not collapse them.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "A supervisor profile is",
+          "choices": [
+            "Its own contact center profile",
+            "Automatically every Full Administrator",
+            "A dial plan",
+            "A RedSky secret"
+          ],
+          "answer": 0,
+          "why": "See the roles article.",
+          "cite": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        },
+        {
+          "q": "An agent with no team",
+          "choices": [
+            "Is not a routing target for that team",
+            "Receives every queue",
+            "Becomes SME",
+            "Owns the voice domain"
+          ],
+          "answer": 0,
+          "why": "Put them on the team, then retest.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "A Calling Professional license",
+          "choices": [
+            "Does not by itself create a Premium Agent",
+            "Is the desktop profile",
+            "Is LAA",
+            "Is the flow schema"
+          ],
+          "answer": 0,
+          "why": "Different products.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Service Administrator",
+          "back": "The contact center admin role."
+        },
+        {
+          "front": "User profile",
+          "back": "Permissions plus resource access."
+        },
+        {
+          "front": "Desktop",
+          "back": "What the agent sees."
+        },
+        {
+          "front": "Team",
+          "back": "Where the agent sits for routing."
+        }
+      ],
+      "lab": {
+        "title": "Seat one agent",
+        "goal": "Write the four objects you would create or assign.",
+        "steps": [
+          {
+            "do": "Role or profile",
+            "expect": "Named from the article"
+          },
+          {
+            "do": "Desktop",
+            "expect": "Premium or Standard, chosen on purpose"
+          },
+          {
+            "do": "Team",
+            "expect": "Named and tied to a queue"
+          }
+        ],
+        "check": "No object is just called stuff."
+      },
+      "fault": {
+        "title": "Right license, wrong profile",
+        "symptom": "The new hire has a Calling license and cannot open the contact center desktop.",
+        "log": "SYNTHETIC: no Premium or Standard agent profile, no team.",
+        "cause": "The contact center profile was never assigned.",
+        "fix": "Assign the user profile, desktop profile, and team.",
+        "cite": {
+          "label": "Contact Center administrator roles",
+          "url": "https://help.webex.com/en-us/article/n5jdj19/Webex-Contact-Center-administrator-roles-and-privileges"
+        }
+      }
+    },
+    {
+      "id": "collections",
+      "title": "Resource collections",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "A user profile can hold up to five resource collections. Collections decide which queues, flows, and analyzer data a person can see.",
+      "uncertainty": "",
+      "objectives": [
+        "Apply the five-collection limit",
+        "Explain the default collection",
+        "Remember the 15-profile and 350-resource notes"
+      ],
+      "diagram": {
+        "caption": "Five collections on the profile. The default collection catches what they create.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "User profile",
+            "sub": "up to 5",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Collection",
+            "sub": "queues and teams",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Default",
+            "sub": "new objects land here",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Analyzer",
+            "sub": "same fence",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "assign"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "one default"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "limits data"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Why an admin sees two queues and not twenty",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Collection",
+            "label": "Group the resources",
+            "detail": "The access article allows up to five resource collections on a user profile. That fences Control Hub, Flow Designer, Analyzer, and Desktop.",
+            "inspect": "Example: only Queue 1 and Queue 2",
+            "cite": "https://help.webex.com/en-us/article/n524f2m"
+          },
+          {
+            "from": "Admin",
+            "to": "Default",
+            "label": "Pick one",
+            "detail": "If they can create a resource but cannot choose a collection, it is added to the default so they do not lose it.",
+            "inspect": "Still assign a default",
+            "cite": "https://help.webex.com/en-us/article/n524f2m"
+          },
+          {
+            "from": "Limit",
+            "to": "Mapping",
+            "label": "Watch 15 and 350",
+            "detail": "A collection cannot be added to a user profile if it is already on 15 other profiles. A collection can hold up to 350 selected resources. An organization can have up to 1,000 collections.",
+            "inspect": "The article's numbers",
+            "cite": "https://help.webex.com/en-us/article/n524f2m"
+          },
+          {
+            "from": "Supervisor",
+            "to": "View",
+            "label": "Same fence",
+            "detail": "Teams in the collection are the teams they see. Analyzer data follows the same queues.",
+            "inspect": "Not a reporting bug",
+            "cite": "https://help.webex.com/en-us/article/n524f2m"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What All resources means",
+          "paragraphs": [
+            "All resources is different from a list of collections. Someone with all resources and edit access can create collections. Someone limited to selected collections cannot create new ones even with edit access.",
+            "Deleting a resource requires a profile with All resources. A delegated admin who only removes it from the collection then loses access to it."
+          ],
+          "cite": {
+            "label": "Manage access in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/n524f2m"
+          }
+        },
+        {
+          "h": "The review screen",
+          "paragraphs": [
+            "If you grant view or edit on a type such as skill profiles but add none to the collection, the navigation entry appears and the list is empty. The article says you are warned and not blocked.",
+            "Fix the collection. Do not debug Flow Designer for an empty list that access control explains."
+          ],
+          "cite": {
+            "label": "Manage access in Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/n524f2m"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Resource collections per user profile",
+          "choices": [
+            "Up to 5",
+            "Up to 100 always",
+            "Exactly 1",
+            "Unlimited"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "The default collection exists so that",
+          "choices": [
+            "Creators do not lose objects they cannot file elsewhere",
+            "DNS resolves",
+            "911 routes",
+            "Certificates renew"
+          ],
+          "answer": 0,
+          "why": "Explained in the resource collection section.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "A collection already on 15 user profiles",
+          "choices": [
+            "Cannot be added to another",
+            "Must be deleted",
+            "Becomes a trunk",
+            "Ignores permissions"
+          ],
+          "answer": 0,
+          "why": "The mapping limit.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Selected resources in one collection",
+          "choices": [
+            "Up to 350",
+            "Up to 5",
+            "Up to 10 characters",
+            "One"
+          ],
+          "answer": 0,
+          "why": "And up to 1,000 collections in the org.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Analyzer data for a fenced admin",
+          "choices": [
+            "Follows the queues in their collections",
+            "Shows every queue",
+            "Shows only Calling CDR",
+            "Shows RedSky"
+          ],
+          "answer": 0,
+          "why": "The article's example.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "Deleting a resource requires",
+          "choices": [
+            "A user profile with All resources",
+            "Any agent",
+            "A local gateway",
+            "A conditional forwarder"
+          ],
+          "answer": 0,
+          "why": "Delegated admins can lose access by removing it.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Five",
+          "back": "Collections on one user profile."
+        },
+        {
+          "front": "Default",
+          "back": "Catches creates when they cannot choose."
+        },
+        {
+          "front": "Fifteen",
+          "back": "User profiles per collection, maximum."
+        },
+        {
+          "front": "350 / 1000",
+          "back": "Resources in a collection, collections in the org."
+        }
+      ],
+      "lab": {
+        "title": "Fence a supervisor",
+        "goal": "Describe two collections and who sees which queue.",
+        "steps": [
+          {
+            "do": "Five",
+            "expect": "You used fewer than five"
+          },
+          {
+            "do": "Default",
+            "expect": "You named it"
+          },
+          {
+            "do": "Analyzer",
+            "expect": "You said the report matches the fence"
+          }
+        ],
+        "check": "You did not grant All resources by accident."
+      },
+      "fault": {
+        "title": "Empty navigation",
+        "symptom": "Skill profiles shows in the menu and the list is blank.",
+        "log": "SYNTHETIC: edit permission, collection has no skill profiles.",
+        "cause": "The review warning describes this.",
+        "fix": "Add the profiles to the collection or remove the permission.",
+        "cite": {
+          "label": "Manage access in Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/n524f2m"
+        }
+      }
+    },
+    {
+      "id": "channels",
+      "title": "Channels and the voice path",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Telephony, chat, email, and social are channels. Voice still has to meet PSTN, dial plans, and codecs the voice article cares about.",
+      "uncertainty": "",
+      "objectives": [
+        "List the channels",
+        "Tie voice to Calling PSTN and dial plans",
+        "Leave digital configuration to the cited articles"
+      ],
+      "diagram": {
+        "caption": "Digital channels do not configure the local gateway for you.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Telephony",
+            "sub": "entry point",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Chat",
+            "sub": "digital",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Email",
+            "sub": "digital",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Social",
+            "sub": "digital",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "PSTN",
+            "sub": "LGW or cloud",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n4",
+            "to": "n0",
+            "label": "numbers"
+          },
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "same org"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A phone call still needs a number",
+        "steps": [
+          {
+            "from": "Caller",
+            "to": "PSTN",
+            "label": "Reach a number you own",
+            "detail": "Voice uses the PSTN connection and numbers from Webex Calling. Premises and cloud PSTN rules still apply.",
+            "inspect": "Locations first",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Number",
+            "to": "Entry point",
+            "label": "Map it",
+            "detail": "The voice setup article connects that number to the contact center entry point and flow.",
+            "inspect": "Test the mapping",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Flow",
+            "to": "Queue",
+            "label": "Treat it as a contact",
+            "detail": "From here LAA or BAA and the agent desktop take over. Screen pop is a flow activity, not a channel.",
+            "inspect": "Next track",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Digital",
+            "to": "Same service",
+            "label": "Chat, email, social",
+            "detail": "They are channels of the same contact center, with their own entry setup. Do not assume a voice queue name is a chat queue.",
+            "inspect": "Cite the channel page you use",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Codecs and the local gateway",
+          "paragraphs": [
+            "When a local gateway sends calls into Webex Contact Center, the voice article tells you to use the codec and DTMF types it specifies. An SBC may have to negotiate that.",
+            "This lab does not copy a codec list from memory. Open the article when you configure the SBC."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "+E.164",
+          "paragraphs": [
+            "The voice article says Webex Contact Center supports +E.164 number formats so multinational dial plans and PBX interop stay simpler.",
+            "That support does not remove the need for a dial plan when the destination is still on premises."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Channels named for Webex Contact Center include",
+          "choices": [
+            "Telephony, chat, email, and social",
+            "Only SIP trunks",
+            "Only HELD",
+            "Only SME"
+          ],
+          "answer": 0,
+          "why": "Digital and voice are both in the service.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Voice numbers come from",
+          "choices": [
+            "Webex Calling PSTN and numbering",
+            "A bot's display name",
+            "The voice domain's ten characters only",
+            "RTMT charts"
+          ],
+          "answer": 0,
+          "why": "Then map them to an entry point.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "+E.164 in the voice article",
+          "choices": [
+            "Is supported for contact center numbers",
+            "Is forbidden",
+            "Replaces queues",
+            "Is a skill"
+          ],
+          "answer": 0,
+          "why": "Multinational dial plans are the reason given.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Local gateway media into the contact center must follow",
+          "choices": [
+            "The codec and DTMF requirements in the voice article",
+            "Any codec",
+            "Only G.711 invented here",
+            "RFC 5985"
+          ],
+          "answer": 0,
+          "why": "Read the article at configure time.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "A voice queue name",
+          "choices": [
+            "Is not automatically a chat queue",
+            "Opens every channel",
+            "Is a trunk",
+            "Is CER"
+          ],
+          "answer": 0,
+          "why": "Configure the channel you mean.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Screen pop is",
+          "choices": [
+            "A flow activity",
+            "A PSTN type",
+            "A DNS record",
+            "A license count"
+          ],
+          "answer": 0,
+          "why": "Covered with the designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Four channels",
+          "back": "Voice, chat, email, social."
+        },
+        {
+          "front": "Numbers",
+          "back": "Calling PSTN, then an entry point."
+        },
+        {
+          "front": "+E.164",
+          "back": "Supported, per the voice article."
+        },
+        {
+          "front": "Codecs",
+          "back": "Read the voice article, do not memorize a guess."
+        }
+      ],
+      "lab": {
+        "title": "Channel map",
+        "goal": "One number, one entry point, one flow, one queue.",
+        "steps": [
+          {
+            "do": "PSTN",
+            "expect": "Cloud or local gateway, named"
+          },
+          {
+            "do": "Entry",
+            "expect": "Mapped"
+          },
+          {
+            "do": "Digital",
+            "expect": "You wrote that chat is a separate setup"
+          }
+        ],
+        "check": "The map has a test call step."
+      },
+      "fault": {
+        "title": "Chat queue used for voice",
+        "symptom": "Callers sit in a voice flow that queues to a chat-only queue.",
+        "log": "SYNTHETIC: entry point correct, queue channel wrong.",
+        "cause": "The queue does not take the contact's channel.",
+        "fix": "Point Queue Contact at a voice queue.",
+        "cite": {
+          "label": "Set up voice channels for Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      }
+    }
+  ]
+}

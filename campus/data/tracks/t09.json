@@ -1,0 +1,1829 @@
+{
+  "id": "t09",
+  "title": "Dedicated Instance",
+  "blurb": "The private Unified CM add-on: what Cisco deploys, how activation sizes it, and how you reach it from Control Hub.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "stack",
+      "title": "What Cisco deploys",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Dedicated Instance is an add-on to Webex Calling. Cisco deploys Unified CM, Unity Connection, and Expressway. IM and Presence and Emergency Responder are not in every sentence of the docs.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the applications activation deploys",
+        "State when IM and Presence is included",
+        "Quote both Emergency Responder wordings"
+      ],
+      "diagram": {
+        "caption": "Activation deploys the UC applications. The access article lists what you can cross-launch.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Unified CM",
+            "sub": "call control",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Unity Connection",
+            "sub": "voicemail",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Expressway",
+            "sub": "Core and Edge",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "IM and Presence",
+            "sub": "only if selected",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "Emergency Responder",
+            "sub": "region wording differs",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "with"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "MRA"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "optional"
+          },
+          {
+            "from": "n0",
+            "to": "n4",
+            "label": "region"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Read the application list twice",
+        "steps": [
+          {
+            "from": "Order",
+            "to": "FTSW",
+            "label": "Activate the add-on",
+            "detail": "Dedicated Instance is purchased before activation. You can activate in the First-Time Setup Wizard or later.",
+            "inspect": "Calling > Dedicated Instance > Status",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Cisco",
+            "to": "Region",
+            "label": "Deploy the core apps",
+            "detail": "Unified CM, Unity Connection, and Expressway-Core and Edge are deployed and sized from the counts you enter.",
+            "inspect": "Per region",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "You",
+            "to": "FTSW",
+            "label": "Choose Legacy Jabber or not",
+            "detail": "IM and Presence is no longer deployed by default. It is deployed only if you selected Legacy Jabber for calling, messaging, and presence.",
+            "inspect": "Do not assume Jabber",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Docs",
+            "to": "CER",
+            "label": "Notice the region words",
+            "detail": "The activation article says Emergency Responder only in the AMER region. The deployment-models introduction says CER for U.S. customers, and a later paragraph says North American customers.",
+            "inspect": "Quote the page you are using",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The activation list",
+          "paragraphs": [
+            "As part of service activation, Cisco deploys and sizes Unified CM, Unity Connection, Expressway-Core and Edge, and Emergency Responder only in the AMER region.",
+            "Cisco Unified IM and Presence is deployed only when the First-Time Setup Wizard option for Legacy Jabber is selected. The access article still lists IM and Presence and optional Session Management Edition among the applications you can cross-launch when they exist."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "Three sentences about Emergency Responder",
+          "paragraphs": [
+            "Activation: only in the AMER region. Access from Control Hub: only for AMER. The deployment-models introduction says U.S. customers, and the activation paragraph on that same page says North American customers.",
+            "This lab does not pick a winner. When you design a region, read the page that matches the task and ask Cisco if the wording still conflicts."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Dedicated Instance is",
+          "choices": [
+            "An optional add-on to Webex Calling",
+            "A replacement name for multi-tenant only",
+            "A bot",
+            "A dial-plan pattern"
+          ],
+          "answer": 0,
+          "why": "You purchase it before activation.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "IM and Presence is deployed when",
+          "choices": [
+            "You selected Legacy Jabber in the First-Time Setup Wizard",
+            "Every activation includes it by default",
+            "You create a call queue",
+            "You upload a CSV"
+          ],
+          "answer": 0,
+          "why": "The activation article changed the default.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Expressway in activation is",
+          "choices": [
+            "Core and Edge",
+            "Only a phone",
+            "A webhook",
+            "A RedSky host"
+          ],
+          "answer": 0,
+          "why": "Listed with the UC applications.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "The activation article places Emergency Responder",
+          "choices": [
+            "Only in the AMER region",
+            "In every region",
+            "Only in EMEA",
+            "Only on the phone"
+          ],
+          "answer": 0,
+          "why": "Quote that sentence.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "The deployment-models introduction places CER with",
+          "choices": [
+            "U.S. customers",
+            "Every country",
+            "Bots only",
+            "Flow Designer"
+          ],
+          "answer": 0,
+          "why": "A later paragraph on that page says North American customers. Mark the tension.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Session Management Edition is",
+          "choices": [
+            "Optional, and listed in the access article",
+            "Required on every phone",
+            "A license named Standard",
+            "A PSTN provider"
+          ],
+          "answer": 0,
+          "why": "The cluster is listed under the publisher region.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Add-on",
+          "back": "Purchase Dedicated Instance, then activate."
+        },
+        {
+          "front": "Default apps",
+          "back": "Unified CM, Unity Connection, Expressway."
+        },
+        {
+          "front": "IM&P",
+          "back": "Only with the Legacy Jabber selection."
+        },
+        {
+          "front": "CER wording",
+          "back": "AMER, U.S., and North America appear on different pages."
+        }
+      ],
+      "lab": {
+        "title": "Make a region checklist",
+        "goal": "Write the applications you expect in one region and the sentence you are trusting.",
+        "steps": [
+          {
+            "do": "AMER or not",
+            "expect": "You quoted the activation sentence"
+          },
+          {
+            "do": "IM&P",
+            "expect": "You wrote whether Legacy Jabber was selected"
+          },
+          {
+            "do": "Conflict",
+            "expect": "You noted the U.S. versus North America wording"
+          }
+        ],
+        "check": "The checklist names a source for each line."
+      },
+      "fault": {
+        "title": "Assumed IM and Presence",
+        "symptom": "Jabber users have no presence cluster after activation.",
+        "log": "SYNTHETIC: FTSW saved without the Legacy Jabber option.",
+        "cause": "IM and Presence is not deployed by default.",
+        "fix": "Confirm the wizard choice before activation. The UC application domain cannot be modified after the service is submitted.",
+        "cite": {
+          "label": "Activate Dedicated Instance",
+          "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      }
+    },
+    {
+      "id": "size",
+      "title": "Size it in the wizard",
+      "level": "core",
+      "minutes": 13,
+      "summary": "Professional, Standard, and Workspace counts size the region. They are not a second license pool. The voice service domain is capped and then locked.",
+      "uncertainty": "",
+      "objectives": [
+        "Enter device counts that fit the subscription",
+        "Keep the voice service domain within ten characters",
+        "Know that a region activation is not reversible"
+      ],
+      "diagram": {
+        "caption": "Counts size the cluster. The subscription still owns the licenses.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Subscription",
+            "sub": "license quantity",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "FTSW counts",
+            "sub": "per region",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "UC apps",
+            "sub": "sized by Cisco",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Voice domain",
+            "sub": "ten characters",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "cannot exceed"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "size"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "domain"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Activate a region without painting yourself in",
+        "steps": [
+          {
+            "from": "Partner",
+            "to": "CCW",
+            "label": "Use the welcome email",
+            "detail": "The provisioning contact gets the email. The partner administrator email in the wizard is mandatory and receives UC access details.",
+            "inspect": "Same email must sign in to the Webex App",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Admin",
+            "to": "FTSW",
+            "label": "Enter counts",
+            "detail": "Specify Professional, Standard, and Workspace devices per region. The sum across regions cannot exceed the subscription.",
+            "inspect": "Standard appears only if it was ordered",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Admin",
+            "to": "Domain",
+            "label": "Check ten characters",
+            "detail": "The voice service domain becomes editable after a region is selected. It is filled from the SIP address and must not exceed ten characters.",
+            "inspect": "It applies to UC apps and MRA",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Cisco",
+            "to": "Region",
+            "label": "Lock the choice",
+            "detail": "Once a region is activated it cannot be reversed or moved. There are no new Dedicated Instance deployments in EMEA; choose EU or UK.",
+            "inspect": "Later regions reuse the same voice domain",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the counts are for",
+          "paragraphs": [
+            "The parameters size the Dedicated Instance UC applications for that region. Cisco's deployment-models page says Cisco is responsible for cluster sizing based on the licenses purchased and the First Time Setup Wizard input.",
+            "Do not treat the wizard counts as extra licenses. They have to fit inside the Webex Calling subscription."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "What you cannot undo",
+          "paragraphs": [
+            "The voice service domain used for the first region applies to later regions in the same organization. The UC applications domain cannot be modified after the service is submitted or activated.",
+            "Skipping regions is allowed: leave them unselected and finish later from Calling > Dedicated Instance > Status."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Wizard counts are used to",
+          "choices": [
+            "Size the UC applications for that region",
+            "Replace the subscription",
+            "Create Flow Designer queues",
+            "Set a dial pattern"
+          ],
+          "answer": 0,
+          "why": "See Dedicated Instance Sizing, which the article points at.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "The sum of counts across regions",
+          "choices": [
+            "Cannot exceed the subscription quantities",
+            "Can be any number",
+            "Ignores Workspace",
+            "Is a port"
+          ],
+          "answer": 0,
+          "why": "Professional, Standard, and Workspace are called out.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "The Standard row appears when",
+          "choices": [
+            "The standard license was ordered",
+            "Always",
+            "Never",
+            "Only for bots"
+          ],
+          "answer": 0,
+          "why": "The article states that condition.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Voice service domain length",
+          "choices": [
+            "Must not exceed ten characters",
+            "Must be an E.164 number",
+            "Is a MAC address",
+            "Is unlimited"
+          ],
+          "answer": 0,
+          "why": "It is used for UC applications and MRA.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "After activation, the region",
+          "choices": [
+            "Cannot be reversed or moved",
+            "Can be dragged to another region",
+            "Becomes a call queue",
+            "Deletes Control Hub"
+          ],
+          "answer": 0,
+          "why": "Plan the region before you submit.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "New Dedicated Instance deployments in EMEA",
+          "choices": [
+            "Are not offered; choose EU or UK",
+            "Are required",
+            "Use only RedSky",
+            "Skip DNS"
+          ],
+          "answer": 0,
+          "why": "The activation article, June 19, 2025 version fetched for this lab.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Counts",
+          "back": "Size the region. They do not add licenses."
+        },
+        {
+          "front": "Ten characters",
+          "back": "Voice service domain cap."
+        },
+        {
+          "front": "Locked",
+          "back": "Region and domain stay after submit."
+        },
+        {
+          "front": "EMEA",
+          "back": "No new deployments; EU or UK."
+        }
+      ],
+      "lab": {
+        "title": "Draft one region",
+        "goal": "Write counts and a domain that would pass the wizard rules.",
+        "steps": [
+          {
+            "do": "Counts",
+            "expect": "The three sums fit a pretend subscription you wrote down"
+          },
+          {
+            "do": "Domain",
+            "expect": "Ten characters or fewer"
+          },
+          {
+            "do": "Region",
+            "expect": "Not a new EMEA deployment"
+          }
+        ],
+        "check": "A second person can check the domain length."
+      },
+      "fault": {
+        "title": "Domain too long",
+        "symptom": "The wizard will not take the SIP name as the voice domain.",
+        "log": "SYNTHETIC: voice domain 'richmond-hq-east' (16 characters).",
+        "cause": "The field must not exceed ten characters, and it locks after activation.",
+        "fix": "Shorten it before the first region is submitted.",
+        "cite": {
+          "label": "Activate Dedicated Instance",
+          "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      }
+    },
+    {
+      "id": "interop",
+      "title": "The interop SIP trunk",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Activation establishes SIP connectivity between Dedicated Instance and multi-tenant Webex Calling. You still have to activate the interop SIP trunk.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate platform connectivity from the trunk you activate",
+        "Name the path",
+        "Not invent trunk parameters"
+      ],
+      "diagram": {
+        "caption": "Two platforms, one organization, a trunk you still turn on.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Dedicated Instance",
+            "sub": "Unified CM",
+            "x": 40,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Interop trunk",
+            "sub": "you activate",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Multi-tenant",
+            "sub": "Webex Calling",
+            "x": 460,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Meetings",
+            "sub": "internal SIP",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "activate"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "calls"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "documented path"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A DI user calls a multi-tenant user",
+        "steps": [
+          {
+            "from": "Activation",
+            "to": "Platforms",
+            "label": "SIP connectivity is established",
+            "detail": "The activation article says SIP connectivity is established between Dedicated Instance and the multi-tenant platform for interop calls.",
+            "inspect": "That sentence is not the whole task",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "Admin",
+            "to": "Article",
+            "label": "Activate the interop trunk",
+            "detail": "The next sentence says you must activate the interop SIP trunk. It points to Activate inter-op SIP trunk to Webex Calling multi-tenant.",
+            "inspect": "This lab does not paste unpublished CLI",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "DI user",
+            "to": "Multi-tenant user",
+            "label": "Call across",
+            "detail": "Without that trunk, the two calling platforms in one organization do not complete the interop call.",
+            "inspect": "Watch the trunk in Web RTMT after it exists",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          },
+          {
+            "from": "DI",
+            "to": "Meetings",
+            "label": "A different trunk",
+            "detail": "The deployment-models page describes a SIP trunk between Dedicated Instance Unified CM and Webex for Meetings call-me and call-in. Do not confuse it with the multi-tenant interop trunk.",
+            "inspect": "Hypothetical customers on that page",
+            "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Two sentences, both required",
+          "paragraphs": [
+            "Activation says connectivity is established as part of activation, and then says you must activate the interop SIP trunk and follow that article.",
+            "If calls from a Dedicated Instance directory number to a multi-tenant user fail, check that activation step before you redesign the dial plan."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        },
+        {
+          "h": "Meetings audio is a separate description",
+          "paragraphs": [
+            "On the deployment-models page, Meetings integration uses a SIP trunk on the Webex network. Call-me and call-in are described as flowing through Dedicated Instance.",
+            "That page's customers are hypothetical. Use it for the shape of the design, not as a customer reference."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Interop calls need",
+          "choices": [
+            "The interop SIP trunk activated to multi-tenant",
+            "Only a location name",
+            "A bot token",
+            "933"
+          ],
+          "answer": 0,
+          "why": "The activation article points at the interop article.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "The activation article also says",
+          "choices": [
+            "SIP connectivity is established during activation",
+            "Nothing about SIP",
+            "Trunks are forbidden",
+            "Use only SCCP"
+          ],
+          "answer": 0,
+          "why": "Read both sentences.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Meetings call-me on the deployment-models page uses",
+          "choices": [
+            "A SIP trunk between Dedicated Instance and Webex",
+            "A call queue",
+            "Personal access tokens",
+            "HELD only"
+          ],
+          "answer": 0,
+          "why": "Do not merge that with the multi-tenant interop trunk.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The customers on the deployment-models page are",
+          "choices": [
+            "Hypothetical",
+            "Named production tenants you should copy",
+            "Exam codes",
+            "RFC authors"
+          ],
+          "answer": 0,
+          "why": "The introduction says so.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "This lab does not include",
+          "choices": [
+            "Unpublished gateway command lines",
+            "The name of the trunk task",
+            "The Control Hub path",
+            "The citation"
+          ],
+          "answer": 0,
+          "why": "Follow Cisco's interop article for parameters.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "A failed DI to multi-tenant call is first checked against",
+          "choices": [
+            "Whether the interop trunk was activated",
+            "The font size",
+            "A hunt group algorithm",
+            "An interactive card"
+          ],
+          "answer": 0,
+          "why": "Then look at dial plan.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Must activate",
+          "back": "Interop SIP trunk to multi-tenant."
+        },
+        {
+          "front": "Also true",
+          "back": "Activation establishes SIP connectivity."
+        },
+        {
+          "front": "Meetings",
+          "back": "A different SIP trunk description."
+        },
+        {
+          "front": "Hypothetical",
+          "back": "Deployment-model customers are examples."
+        }
+      ],
+      "lab": {
+        "title": "Write the two trunks",
+        "goal": "On paper, separate interop from Meetings.",
+        "steps": [
+          {
+            "do": "Interop",
+            "expect": "Dedicated Instance to multi-tenant"
+          },
+          {
+            "do": "Meetings",
+            "expect": "Call-me and call-in description"
+          },
+          {
+            "do": "Source",
+            "expect": "Each line names diact or dimodels"
+          }
+        ],
+        "check": "You did not invent IP addresses."
+      },
+      "fault": {
+        "title": "Trunk never activated",
+        "symptom": "Dedicated Instance users cannot reach multi-tenant extensions after go-live.",
+        "log": "SYNTHETIC: activation complete, interop trunk still disabled.",
+        "cause": "Connectivity during activation does not replace the activate-the-trunk step.",
+        "fix": "Open the interop article and complete that activation.",
+        "cite": {
+          "label": "Activate Dedicated Instance",
+          "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      }
+    },
+    {
+      "id": "launch",
+      "title": "Cross-launch and Web RTMT",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Calling, Dedicated Instance, Manage opens the UC applications. Web RTMT is limited to specific administrator roles, and it is view-oriented.",
+      "uncertainty": "",
+      "objectives": [
+        "Use the documented path",
+        "Name who can open Web RTMT",
+        "Know the cookie and SSO limits"
+      ],
+      "diagram": {
+        "caption": "Control Hub is the door. The UC portal is still the UC portal.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "Manage",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "UC portal",
+            "sub": "new tab",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Web RTMT",
+            "sub": "publisher",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Alerts",
+            "sub": "Control Hub channel",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "cross-launch"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "Launch WebRTMT"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "not email groups"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Open Unified CM without a VPN",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Control Hub",
+            "label": "Services > Calling > Dedicated Instance > Manage",
+            "detail": "Select the UC application and click Manage. The built-in portal opens in a new tab. The browser must allow cookies.",
+            "inspect": "Supported: Firefox, Chrome, Edge, Safari",
+            "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          },
+          {
+            "from": "SSO app",
+            "to": "Recovery URL",
+            "label": "Local admin login",
+            "detail": "For SSO-enabled UC applications the recovery URL opens. SSO itself cannot be configured through cross-launch.",
+            "inspect": "Configure SSO on the application page",
+            "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          },
+          {
+            "from": "Role",
+            "to": "Web RTMT",
+            "label": "Launch from the publisher",
+            "detail": "Partner Sales Full Administrator, or a customer Full Administrator or Read-only Administrator. Allow cookies for https://apps.ucmgmt.cisco.com.",
+            "inspect": "Subscriber logs are chosen after launch",
+            "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          },
+          {
+            "from": "Alerts",
+            "to": "Control Hub",
+            "label": "Do not expect a WebRTMT email group",
+            "detail": "Configuring an email group for WebRTMT alerts is not supported in Dedicated Instance. Use a Control Hub delivery channel.",
+            "inspect": "Metrics on the overview are view only",
+            "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What the right pane shows",
+          "paragraphs": [
+            "Version, server FQDN, internal IP, publisher or subscriber role, activated services, datacenter, voice service domain, and the Expressway Edge public IP.",
+            "Application changes sync to Control Hub on a 24-hour schedule. A change you just made may not be on that pane yet."
+          ],
+          "cite": {
+            "label": "Access Dedicated Instance applications",
+            "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          }
+        },
+        {
+          "h": "Who watches the cluster",
+          "paragraphs": [
+            "Web RTMT monitors Unified CM, IM and Presence, and Unity Connection for the roles named above. The cross-launch is over the top and does not require VPN.",
+            "Replication states you can read there include INIT, INCORRECT, GOOD, SUSPECT, and FAILED. INIT lasting more than an hour may mean setup failed."
+          ],
+          "cite": {
+            "label": "Access Dedicated Instance applications",
+            "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The cross-launch path is",
+          "choices": [
+            "Services > Calling > Dedicated Instance > Manage",
+            "Calling > Features > Call Queue",
+            "A personal access token",
+            "Devices only"
+          ],
+          "answer": 0,
+          "why": "Then Manage on the right pane.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "Web RTMT for a customer admin requires",
+          "choices": [
+            "Full Administrator or Read-only Administrator",
+            "Any user",
+            "A bot",
+            "Standard calling license only"
+          ],
+          "answer": 0,
+          "why": "Partners need Sales Full Administrator.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "WebRTMT email groups in Dedicated Instance",
+          "choices": [
+            "Are not supported",
+            "Are required",
+            "Replace Control Hub",
+            "Send certificates"
+          ],
+          "answer": 0,
+          "why": "Use Control Hub alert delivery.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "UC application changes show in Control Hub",
+          "choices": [
+            "On a 24-hour sync",
+            "Instantly, always",
+            "Never",
+            "Only after a CSV upload"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "SSO for the UC applications is configured",
+          "choices": [
+            "On the UC administration page, not by cross-launch",
+            "Only in Flow Designer",
+            "By a dial plan",
+            "By 933"
+          ],
+          "answer": 0,
+          "why": "Cross-launch opens the recovery URL.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "A replication status of FAILED means",
+          "choices": [
+            "No active logical connection for database tables",
+            "The trunk is perfect",
+            "Users are licensed",
+            "DNS is done"
+          ],
+          "answer": 0,
+          "why": "The access article defines the states.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Path",
+          "back": "Calling > Dedicated Instance > Manage."
+        },
+        {
+          "front": "Web RTMT roles",
+          "back": "Sales Full, or customer Full or Read-only."
+        },
+        {
+          "front": "24 hours",
+          "back": "Application sync back to Control Hub."
+        },
+        {
+          "front": "No email group",
+          "back": "WebRTMT alerts use Control Hub channels."
+        }
+      ],
+      "lab": {
+        "title": "Role check",
+        "goal": "List who on your team could open Web RTMT and who could not.",
+        "steps": [
+          {
+            "do": "Partner",
+            "expect": "Sales Full Administrator"
+          },
+          {
+            "do": "Customer",
+            "expect": "Full or Read-only"
+          },
+          {
+            "do": "Cookie",
+            "expect": "apps.ucmgmt.cisco.com"
+          }
+        ],
+        "check": "You did not grant a standard user the tool."
+      },
+      "fault": {
+        "title": "401 on cross-launch",
+        "symptom": "Firefox returns HTTP 401 when opening Unified CM.",
+        "log": "SYNTHETIC: cookies blocked for the UC host.",
+        "cause": "The article tells you to allow cookies and, for that Firefox case, custom cookie settings.",
+        "fix": "Allow cookies, reload, and use a supported browser before calling TAC.",
+        "cite": {
+          "label": "Access Dedicated Instance applications",
+          "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      }
+    },
+    {
+      "id": "dns",
+      "title": "Names and conditional forwarders",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Cisco gives you a name under wxc-di.webex.com. On-premises phones resolve it through a conditional forwarder to the Dedicated Instance DNS service.",
+      "uncertainty": "",
+      "objectives": [
+        "Read the FQDN format",
+        "Explain the conditional forwarder",
+        "Name the service-discovery suffixes"
+      ],
+      "diagram": {
+        "caption": "Internal DNS forwards only that suffix.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Phone",
+            "sub": "on-premises",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Your DNS",
+            "sub": "conditional forwarder",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "DI DNS",
+            "sub": "Cisco",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "FQDN",
+            "sub": "customer.region.wxc-di.webex.com",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "query"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "forward"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "answer"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A desk phone looks up its cluster",
+        "steps": [
+          {
+            "from": "Cisco",
+            "to": "You",
+            "label": "Provide the FQDN",
+            "detail": "The format on the deployment-models page is customer.region.wxc-di.webex.com, for example xyz.amer.wxc-di.webex.com.",
+            "inspect": "The page shows a stray space in one sentence; the example does not",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "You",
+            "to": "Internal DNS",
+            "label": "Add a conditional forwarder",
+            "detail": "The name must resolve from the customer's internal DNS. Forward that FQDN to the Dedicated Instance DNS service.",
+            "inspect": "Not the whole internet",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Region",
+            "to": "Suffix",
+            "label": "Use the service-discovery domain",
+            "detail": "The same page lists .amer.wxc-di.webex.com, .emea.wxc-di.webex.com, and .apjc.wxc-di.webex.com.",
+            "inspect": "Match the region you activated",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "MRA",
+            "to": "Expressway",
+            "label": "Still needs the name",
+            "detail": "Phones off site use Expressway, but the voice service domain is still the domain from activation.",
+            "inspect": "Public IP is for Expressway Edge",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Why a forwarder instead of a local zone",
+          "paragraphs": [
+            "Cisco hosts the records. Your DNS only has to send queries for that suffix to Cisco's Dedicated Instance DNS.",
+            "If the forwarder is missing, on-premises devices cannot resolve the service name even when the WAN is up."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "Peering is a separate choice",
+          "paragraphs": [
+            "The same article describes Edge Connect at Equinix or Megaport, with peering at two sites in a region. Over-the-top still exists for cross-launch.",
+            "This lab does not invent circuit IDs or POP lists beyond those two providers."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The FQDN example on the deployment-models page is",
+          "choices": [
+            "xyz.amer.wxc-di.webex.com",
+            "admin.webex.com",
+            "A SIP port",
+            "example.local only"
+          ],
+          "answer": 0,
+          "why": "Format: name under wxc-di.webex.com.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "On-premises devices resolve it through",
+          "choices": [
+            "A conditional forwarder to Dedicated Instance DNS",
+            "A hosts file you must not document",
+            "Only LLMNR",
+            "A call queue"
+          ],
+          "answer": 0,
+          "why": "The domain section.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Service discovery suffixes on that page include",
+          "choices": [
+            "amer, emea, and apjc under wxc-di.webex.com",
+            "Only .com",
+            "Only RedSky",
+            "RFC 3261"
+          ],
+          "answer": 0,
+          "why": "Listed in the global SME section.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Edge Connect providers named for North America peering",
+          "choices": [
+            "Equinix or Megaport",
+            "Any ISP",
+            "Only a certificate trunk",
+            "Flow Designer"
+          ],
+          "answer": 0,
+          "why": "Two sites in the region.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Expressway Edge public IP is shown",
+          "choices": [
+            "On the Manage right pane",
+            "Inside a quiz answer only",
+            "Never",
+            "On the phone label"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "A missing forwarder looks like",
+          "choices": [
+            "Phones that cannot resolve the Dedicated Instance name",
+            "A perfect registration",
+            "An SSO success",
+            "A 933 pass"
+          ],
+          "answer": 0,
+          "why": "Check DNS before the trunk.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Suffix",
+          "back": "wxc-di.webex.com"
+        },
+        {
+          "front": "Forwarder",
+          "back": "Internal DNS to Dedicated Instance DNS."
+        },
+        {
+          "front": "Two peers",
+          "back": "Edge Connect at two sites."
+        },
+        {
+          "front": "Providers",
+          "back": "Equinix or Megaport, as named."
+        }
+      ],
+      "lab": {
+        "title": "Draw the query",
+        "goal": "Sketch phone, internal DNS, and Dedicated Instance DNS for one region.",
+        "steps": [
+          {
+            "do": "Name",
+            "expect": "A legal-looking customer.region.wxc-di.webex.com"
+          },
+          {
+            "do": "Forwarder",
+            "expect": "Only that suffix"
+          },
+          {
+            "do": "Region",
+            "expect": "amer, emea, or apjc as listed"
+          }
+        ],
+        "check": "The sketch does not forward all DNS."
+      },
+      "fault": {
+        "title": "Split horizon forgotten",
+        "symptom": "Remote offices time out registering. HQ works.",
+        "log": "SYNTHETIC: branch DNS has no conditional forwarder.",
+        "cause": "Only the HQ resolvers were updated.",
+        "fix": "Add the forwarder on every internal DNS the phones use.",
+        "cite": {
+          "label": "Dedicated Instance customer deployment models",
+          "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      }
+    },
+    {
+      "id": "identity",
+      "title": "Directory sync wants SSO",
+      "level": "core",
+      "minutes": 12,
+      "summary": "End users sync to Control Hub, then Dedicated Instance Unified CM syncs from Control Hub. That path requires single sign-on. Native Unified CM user options remain.",
+      "uncertainty": "",
+      "objectives": [
+        "State the sync direction",
+        "Require SSO for that feature",
+        "Name the fallback the article allows"
+      ],
+      "diagram": {
+        "caption": "Control Hub is the identity service in the middle.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Directory",
+            "sub": "your users",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Control Hub",
+            "sub": "identity",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "SSO",
+            "sub": "required for this path",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Unified CM",
+            "sub": "Dedicated Instance",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "sync"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "auth"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "then"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A new hire reaches the cluster",
+        "steps": [
+          {
+            "from": "Directory",
+            "to": "Control Hub",
+            "label": "Sync end-user data",
+            "detail": "The deployment-models page says customer end-user data is synchronized with Control Hub, also called the identity service.",
+            "inspect": "Shared with Meetings and Calling",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Control Hub",
+            "to": "Unified CM",
+            "label": "Sync onward",
+            "detail": "Dedicated Instance Unified CM then synchronizes from Control Hub.",
+            "inspect": "Not the other way as the primary story",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "SSO",
+            "to": "Feature",
+            "label": "Turn it on or lose the feature",
+            "detail": "User synchronization functions only when SSO is enabled. Without SSO, directory synchronization is not supported.",
+            "inspect": "Do not promise sync without it",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Admin",
+            "to": "Native options",
+            "label": "Still possible",
+            "detail": "The same page says Dedicated Instance supports native user data synchronization options available with on-premises Unified CM.",
+            "inspect": "That is the unsupported-SSO alternative",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "One sentence you can say in a design review",
+          "paragraphs": [
+            "Directory sync from Control Hub into Dedicated Instance requires SSO. Without SSO the feature is not supported, and native Unified CM user options still exist.",
+            "Control Hub directory synchronization is shared across Meetings, Webex Calling, and Dedicated Instance."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "What this is not",
+          "paragraphs": [
+            "It is not a statement that every Dedicated Instance feature requires SSO. Cross-launch of an SSO-enabled UC app uses the recovery URL and local admin credentials.",
+            "It is not a promise about contact-center agent sync. That is a different service."
+          ],
+          "cite": {
+            "label": "Access Dedicated Instance applications",
+            "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Directory synchronization into Dedicated Instance works when",
+          "choices": [
+            "SSO is enabled",
+            "SSO is off",
+            "Only 911 is on",
+            "A bot is created"
+          ],
+          "answer": 0,
+          "why": "Without SSO the feature is not supported.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The sync direction in the article is",
+          "choices": [
+            "Control Hub, then Dedicated Instance Unified CM",
+            "Phones write users into Control Hub",
+            "RTMT creates users",
+            "CSV only from Unity"
+          ],
+          "answer": 0,
+          "why": "End-user data lands in the identity service first.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Without SSO you can still",
+          "choices": [
+            "Use native Unified CM user synchronization options",
+            "Use Control Hub directory sync",
+            "Skip DNS",
+            "Ignore licenses"
+          ],
+          "answer": 0,
+          "why": "The article says the native options remain.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The identity store in that paragraph is",
+          "choices": [
+            "Control Hub",
+            "A local spreadsheet",
+            "RedSky",
+            "Flow Designer"
+          ],
+          "answer": 0,
+          "why": "Also called the identity service.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "This requirement is shared with",
+          "choices": [
+            "Meetings and Webex Calling",
+            "Only Emergency Responder",
+            "Only bots",
+            "Only hunt groups"
+          ],
+          "answer": 0,
+          "why": "The page says so.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "SSO configuration of the UC apps is done",
+          "choices": [
+            "On the UC administration page",
+            "Only by cross-launch",
+            "In a dial plan",
+            "By the conditional forwarder"
+          ],
+          "answer": 0,
+          "why": "The access article.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      ],
+      "cards": [
+        {
+          "front": "SSO",
+          "back": "Required for Control Hub directory sync."
+        },
+        {
+          "front": "Direction",
+          "back": "Directory to Control Hub to Unified CM."
+        },
+        {
+          "front": "Without SSO",
+          "back": "Native Unified CM user options."
+        },
+        {
+          "front": "Shared",
+          "back": "Meetings, Calling, Dedicated Instance."
+        }
+      ],
+      "lab": {
+        "title": "Write the identity path",
+        "goal": "One diagram, four boxes, for a customer who refuses SSO.",
+        "steps": [
+          {
+            "do": "Path",
+            "expect": "You marked Control Hub sync unsupported"
+          },
+          {
+            "do": "Alternative",
+            "expect": "Native Unified CM options"
+          },
+          {
+            "do": "Admin SSO",
+            "expect": "You separated end-user sync from UC admin SSO"
+          }
+        ],
+        "check": "The diagram does not claim both at once."
+      },
+      "fault": {
+        "title": "Users never appear",
+        "symptom": "Control Hub has the users. Dedicated Instance does not.",
+        "log": "SYNTHETIC: SSO disabled, directory sync expected anyway.",
+        "cause": "The feature is not supported without SSO.",
+        "fix": "Enable SSO or plan native Unified CM user management.",
+        "cite": {
+          "label": "Dedicated Instance customer deployment models",
+          "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      }
+    },
+    {
+      "id": "models",
+      "title": "Hypothetical deployment models",
+      "level": "advanced",
+      "minutes": 15,
+      "summary": "Cisco's deployment-models article uses hypothetical customers. CCP with RedSky, multi-tenant mix, global SME, contact center, and Microsoft Teams are shapes, not logos you should copy.",
+      "uncertainty": "",
+      "objectives": [
+        "Treat the customers as hypothetical",
+        "Describe CER plus RedSky for phones and the app",
+        "Name SME and the Teams embedding as documented"
+      ],
+      "diagram": {
+        "caption": "Learn the shape. Do not invent a company name.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Hypothetical",
+            "sub": "not a logo",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CCP and RedSky",
+            "sub": "CER plus HELD+",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "SME",
+            "sub": "across regions",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Teams",
+            "sub": "Webex app inside Teams",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "example"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "example"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "example"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Read a case without naming a firm",
+        "steps": [
+          {
+            "from": "Reader",
+            "to": "Introduction",
+            "label": "See the word hypothetical",
+            "detail": "The page says the customers are hypothetical and chosen to show flexibility.",
+            "inspect": "Do not put a real company name in your notes",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Phones",
+            "to": "CER",
+            "label": "Then RedSky",
+            "detail": "On-premises phones are tracked with Emergency Responder, which sets the dispatchable location, then the call goes to RedSky. Webex App users are tracked in RedSky with HELD+.",
+            "inspect": "This is the DI description, still tied to E911 articles",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Regions",
+            "to": "SME",
+            "label": "Route across regions",
+            "detail": "A global example uses Session Management Edition to route calls across regions. Service-discovery domains are listed per region.",
+            "inspect": "SME publisher region is where Manage lists it",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          },
+          {
+            "from": "Teams",
+            "to": "Webex",
+            "label": "Embedded calling",
+            "detail": "One bullet says the Webex Calling app inside Microsoft Teams lets users place and receive business calls in Teams, with call logs, voicemail, and directory sync.",
+            "inspect": "Confirm the live Teams article before you sell a feature",
+            "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "CCP in the hypothetical",
+          "paragraphs": [
+            "PSTN calls in that example leave Dedicated Instance through multi-tenant Webex Calling to a Cloud Connected PSTN provider. MRA users are included in that aggregate.",
+            "Cloud PSTN still follows the rule you learned earlier: it serves Webex Calling users. Do not invent a new premises-to-cloud exception from a hypothetical."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "Contact center on that page",
+          "paragraphs": [
+            "There is a Dedicated Instance customer (Contact Center) section. It is still a hypothetical. Webex Contact Center itself is configured in its own service, which later tracks cover.",
+            "Uncertainty: this lab does not restate contact-center sizing numbers from the hypothetical as requirements."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The customers in the deployment-models article are",
+          "choices": [
+            "Hypothetical",
+            "Your production tenant",
+            "Required logos",
+            "Exam vouchers"
+          ],
+          "answer": 0,
+          "why": "The introduction.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "On-premises phones in the RedSky DI description are tracked by",
+          "choices": [
+            "Emergency Responder, then handed to RedSky",
+            "Only a bot",
+            "Only caller ID in every case",
+            "A CSV column"
+          ],
+          "answer": 0,
+          "why": "Webex App uses HELD+ in that paragraph.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "SME in the global example",
+          "choices": [
+            "Routes calls across regions",
+            "Replaces DNS",
+            "Is a webhook secret",
+            "Is 933"
+          ],
+          "answer": 0,
+          "why": "Optional application, listed in the access article too.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "CCP in that hypothetical",
+          "choices": [
+            "Carries PSTN from Dedicated Instance through multi-tenant",
+            "Blocks all PSTN",
+            "Is a phone model",
+            "Is IM and Presence"
+          ],
+          "answer": 0,
+          "why": "Including MRA users in the description.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The Teams bullet describes",
+          "choices": [
+            "The Webex Calling app embedded in Microsoft Teams",
+            "A replacement for Unified CM with no citation",
+            "Flow Designer",
+            "A hunt group"
+          ],
+          "answer": 0,
+          "why": "Call logs, voicemail, and directory sync are named.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "You should copy from the page",
+          "choices": [
+            "The architecture shape and the citations",
+            "A fictional company as if it were a reference",
+            "Unstated user counts as your design",
+            "A price"
+          ],
+          "answer": 0,
+          "why": "User counts on that page belong to the hypothetical.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Hypothetical",
+          "back": "Do not name a real customer from this article."
+        },
+        {
+          "front": "CER then RedSky",
+          "back": "Phones. HELD+ for the app."
+        },
+        {
+          "front": "SME",
+          "back": "Cross-region call routing in the global example."
+        },
+        {
+          "front": "CCP path",
+          "back": "DI through multi-tenant to the provider."
+        }
+      ],
+      "lab": {
+        "title": "Retell one model",
+        "goal": "Explain the CCP and RedSky hypothetical in four sentences without a company name.",
+        "steps": [
+          {
+            "do": "PSTN",
+            "expect": "CCP through multi-tenant"
+          },
+          {
+            "do": "911 phones",
+            "expect": "CER then RedSky"
+          },
+          {
+            "do": "911 app",
+            "expect": "HELD+"
+          }
+        ],
+        "check": "A listener cannot tell which firm you mean."
+      },
+      "fault": {
+        "title": "Copied the hypothetical user count",
+        "symptom": "A proposal says the customer has 25,000 users because the article did.",
+        "log": "SYNTHETIC proposal: 'Cisco says you are the 25,000-user CCP customer.'",
+        "cause": "That count is the hypothetical's data point.",
+        "fix": "Use the customer's order and the activation article.",
+        "cite": {
+          "label": "Dedicated Instance customer deployment models",
+          "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      }
+    }
+  ]
+}

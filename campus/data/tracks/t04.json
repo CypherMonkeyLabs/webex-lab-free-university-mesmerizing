@@ -1,0 +1,1822 @@
+{
+  "id": "t04",
+  "title": "PSTN choices",
+  "blurb": "Cisco Calling Plan, Cloud Connected PSTN, and premises PSTN through a local gateway. Cloud PSTN does not serve premises-originated calls.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "three",
+      "title": "The three PSTN models",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Every location picks one connection. Cisco Calling Plan and Cloud Connected PSTN are cloud PSTN. Premises PSTN keeps your carrier or your PBX behind a local gateway.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the three models",
+        "State the premises-user limit",
+        "Keep one trunk on a premises location"
+      ],
+      "diagram": {
+        "caption": "One location, one PSTN connection type.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Cisco Calling Plan",
+            "sub": "Cisco PSTN",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CCP",
+            "sub": "partner",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Local Gateway",
+            "sub": "premises",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Location",
+            "sub": "chooses one",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "or"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "or"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "or"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Choose a connection",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Open PSTN",
+            "detail": "The connection is per location.",
+            "inspect": "Manage",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Cisco or CCP",
+            "label": "Cloud",
+            "detail": "Both are cloud PSTN. Cisco's article says cloud PSTN serves Webex Calling users.",
+            "inspect": "Not premises users",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Premises",
+            "label": "Select a trunk",
+            "detail": "Create the trunk first. Only one trunk for that location.",
+            "inspect": "Same trunk may be reused elsewhere",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Premises PBX",
+            "to": "Cloud PSTN",
+            "label": "Blocked",
+            "detail": "Calls that originate from premises users cannot access cloud PSTN.",
+            "inspect": "Trunk article",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Cloud versus premises",
+          "paragraphs": [
+            "Cisco PSTN is the Calling Plan: emergency, inbound, outbound, and number order or port where it is offered. CCP is the partner cloud option.",
+            "Premises PSTN is how you keep a provider or connect a non-cloud site. The local gateway becomes the trunk."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Who may use cloud PSTN",
+          "paragraphs": [
+            "The trunk article says cloud PSTN, whether Cisco PSTN or CCP, can only provide PSTN access for Webex Calling users. Calls originating from premises users cannot access cloud PSTN.",
+            "A factory PBX does not borrow the headquarters Calling Plan for its outbound calls. Give that PBX its own trunks."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many PSTN connection types does the organization article center on?",
+          "choices": [
+            "Cisco Calling Plan, Cloud Connected PSTN, and premises-based PSTN",
+            "Only PRI",
+            "Only bots",
+            "Twelve codecs"
+          ],
+          "answer": 0,
+          "why": "Those three are the documented choices.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Cloud PSTN may be used by",
+          "choices": [
+            "Webex Calling users",
+            "Any premises PBX user",
+            "Anonymous internet callers",
+            "RoomOS macros"
+          ],
+          "answer": 0,
+          "why": "The trunk article limits cloud PSTN to Webex Calling users.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Premises-originated calls and cloud PSTN",
+          "choices": [
+            "Cannot use it",
+            "Always use it",
+            "Use it only on Sunday",
+            "Use UDP 5060"
+          ],
+          "answer": 0,
+          "why": "The article states the prohibition.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Trunks on one premises location",
+          "choices": [
+            "One",
+            "Unlimited",
+            "Zero, always",
+            "Exactly three"
+          ],
+          "answer": 0,
+          "why": "You cannot choose more than one.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The same trunk on many locations is",
+          "choices": [
+            "Allowed",
+            "Forbidden",
+            "A license violation",
+            "An ICE error"
+          ],
+          "answer": 0,
+          "why": "Cisco allows reuse across locations.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "CCP stands for",
+          "choices": [
+            "Cloud Connected PSTN",
+            "Cisco Call Park",
+            "Contact Center Phone",
+            "Certificate Control Protocol"
+          ],
+          "answer": 0,
+          "why": "That is the product name in the articles.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Three models",
+          "back": "Calling Plan, CCP, local gateway."
+        },
+        {
+          "front": "Premises users",
+          "back": "Cannot use cloud PSTN."
+        },
+        {
+          "front": "One trunk",
+          "back": "Per premises location."
+        },
+        {
+          "front": "Reuse",
+          "back": "One trunk may serve many locations."
+        }
+      ],
+      "lab": {
+        "title": "Pick a model per site",
+        "goal": "Assign HQ, a branch with a PRI, and a small office.",
+        "steps": [
+          {
+            "do": "HQ wants Cisco to own the numbers",
+            "expect": "Calling Plan if offered"
+          },
+          {
+            "do": "Branch keeps a PRI",
+            "expect": "Local gateway"
+          },
+          {
+            "do": "Small office in a country without the Calling Plan",
+            "expect": "CCP or premises"
+          }
+        ],
+        "check": "No site is left as 'cloud, somehow'."
+      },
+      "fault": {
+        "title": "PBX users dial out the Calling Plan",
+        "symptom": "A Unified CM user's national calls fail after someone removes the PRI and points the route pattern at Webex Calling cloud PSTN.",
+        "log": "SYNTHETIC: origin=premises, route=CCP, result=rejected.",
+        "cause": "Premises-originated calls cannot access cloud PSTN.",
+        "fix": "Keep a premises trunk for those users, or move the users themselves onto Webex Calling. The simulator preset 'Premises to cloud PSTN' demonstrates the block.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "cisco-plan",
+      "title": "Cisco Calling Plan",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "Cisco Calling Plan is Cisco as the PSTN provider. It includes emergency calling and number ordering or porting, and it is not offered in every location.",
+      "uncertainty": "",
+      "objectives": [
+        "Quote what the plan claims to include",
+        "Check availability before design",
+        "Keep premises users off it"
+      ],
+      "diagram": {
+        "caption": "Cisco PSTN is a full replacement only where the plan exists.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "order",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Cisco PSTN",
+            "sub": "cloud",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Numbers",
+            "sub": "new or ported",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Emergency",
+            "sub": "included in the description",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "select"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "provide"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "route"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Turn on Cisco PSTN for a location",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Offer",
+            "label": "Check the country",
+            "detail": "Do not design around a plan the article says may be unavailable.",
+            "inspect": "Location dependent",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Select Cisco PSTN",
+            "detail": "The organization article describes it as cloud PSTN from Cisco.",
+            "inspect": "Emergency, in, out",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Numbers",
+            "label": "Order or port",
+            "detail": "That ability is part of the article's description of Cisco PSTN.",
+            "inspect": "Carrier timelines still apply",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Test",
+            "to": "Call",
+            "label": "In and out",
+            "detail": "Plus the emergency test method for that country. US and Canada may use the enhanced service. International locations stay on PSTN emergency.",
+            "inspect": "See the E911 article",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What is promised",
+          "paragraphs": [
+            "The organization article says Cisco PSTN provides emergency calling, inbound and outbound domestic and international calling, and number order or port.",
+            "Availability is part of the design. CCP exists specifically for places and packages the Calling Plan does not cover."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "What is not promised",
+          "paragraphs": [
+            "It does not become the outbound path for a premises PBX. The trunk article's cloud-PSTN limit still applies.",
+            "It does not import UCCX scripts or replace Dedicated Instance."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Cisco PSTN includes, per the organization article,",
+          "choices": [
+            "Emergency, inbound, outbound, and number order or port",
+            "Only internal extensions",
+            "Only chat",
+            "Only macros"
+          ],
+          "answer": 0,
+          "why": "That is the article's list.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The plan is",
+          "choices": [
+            "Not guaranteed in every location",
+            "Universal with no exceptions",
+            "A phone model",
+            "A codec"
+          ],
+          "answer": 0,
+          "why": "CCP is the documented alternative when it is not available.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "A premises PBX using this plan for its own users is",
+          "choices": [
+            "Outside the cloud PSTN rule",
+            "The recommended design",
+            "Required",
+            "An xAPI feature"
+          ],
+          "answer": 0,
+          "why": "Premises-originated calls cannot access cloud PSTN.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "International emergency calling on Webex Calling",
+          "choices": [
+            "Continues to use PSTN",
+            "Uses US RedSky everywhere",
+            "Is disabled",
+            "Uses a bot"
+          ],
+          "answer": 0,
+          "why": "The E911 requirements table says this.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Number porting under this plan is",
+          "choices": [
+            "A Cisco PSTN capability described in the article, with real carrier lead time",
+            "Instant and guaranteed",
+            "Done with a macro",
+            "Illegal"
+          ],
+          "answer": 0,
+          "why": "The article includes porting. Dates are still operational.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "CCP versus Calling Plan",
+          "choices": [
+            "CCP is the partner cloud option",
+            "CCP is a phone",
+            "They are the same SKU with no difference",
+            "CCP is Unified CM"
+          ],
+          "answer": 0,
+          "why": "The articles describe them as the two cloud choices.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Calling Plan",
+          "back": "Cisco is the cloud PSTN provider."
+        },
+        {
+          "front": "Not everywhere",
+          "back": "Check the offer before you publish a date."
+        },
+        {
+          "front": "Porting",
+          "back": "Described as part of Cisco PSTN."
+        },
+        {
+          "front": "Still not for PBX users",
+          "back": "Cloud PSTN limit remains."
+        }
+      ],
+      "lab": {
+        "title": "Availability note",
+        "goal": "Write a one-page assumption for two countries.",
+        "steps": [
+          {
+            "do": "Country A, plan offered",
+            "expect": "Select Cisco PSTN and list the numbers to order"
+          },
+          {
+            "do": "Country B, plan not offered",
+            "expect": "Name CCP or premises instead"
+          },
+          {
+            "do": "Premises users",
+            "expect": "State they need their own trunk"
+          }
+        ],
+        "check": "The page does not say 'Cisco PSTN worldwide'."
+      },
+      "fault": {
+        "title": "Designed on an unavailable plan",
+        "symptom": "Cutover week discovers the Calling Plan is not sold for that site.",
+        "log": "SYNTHETIC: location set to Cisco PSTN, provider rejects the country.",
+        "cause": "Availability is a precondition in the article's own framing of CCP.",
+        "fix": "Move the location to CCP or premises PSTN. Do not leave users with a connection that cannot complete.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "ccp",
+      "title": "Cloud Connected PSTN",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "CCP is a Cisco partner's cloud PSTN. It is also how some Dedicated Instance designs, in Cisco's hypothetical stories, leave the private instance toward the public network.",
+      "uncertainty": "",
+      "objectives": [
+        "Define CCP",
+        "Apply the premises-user ban",
+        "Read the hypothetical DI plus CCP story correctly"
+      ],
+      "diagram": {
+        "caption": "CCP peers with Webex Calling. Premises users still cannot ride it.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "CCP partner",
+            "sub": "cloud PSTN",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex Calling",
+            "sub": "multi-tenant",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dedicated Instance",
+            "sub": "hypothetical CCP exit",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Premises PBX",
+            "sub": "no cloud PSTN",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "PSTN"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "interop then CCP"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "blocked"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Attach a partner",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Select CCP",
+            "detail": "Choose the partner the article's flow allows for that location.",
+            "inspect": "Cloud Connected PSTN",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Partner",
+            "to": "Numbers",
+            "label": "Provide DIDs",
+            "detail": "The partner, not a CUBE template, owns the cloud numbers.",
+            "inspect": "Order in the partner process",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Webex user",
+            "to": "PSTN",
+            "label": "Call out",
+            "detail": "This is a Webex Calling user, so cloud PSTN is allowed.",
+            "inspect": "Allowed origin",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "PBX user",
+            "to": "PSTN",
+            "label": "Call out",
+            "detail": "The simulator blocks this origin. The trunk article is the source.",
+            "inspect": "Blocked",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Partner, not a trunk you build",
+          "paragraphs": [
+            "CCP does not require the local gateway hardware the premises option needs. That is the point of the cloud choice in the trunk article.",
+            "You still have a partner contract, number management, and emergency obligations. Cloud does not mean unattended."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "The hypothetical DI story",
+          "paragraphs": [
+            "Cisco's deployment-models article describes a hypothetical enterprise whose Dedicated Instance PSTN exits through multi-tenant Webex Calling to CCP, including MRA users.",
+            "The article labels the customers hypothetical. Use the pattern. Do not invent a company name."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "CCP is",
+          "choices": [
+            "Cloud PSTN from a Cisco partner",
+            "A local gateway command",
+            "A hunt group",
+            "A certificate type"
+          ],
+          "answer": 0,
+          "why": "The trunk and organization articles define it.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "CCP hardware on premises is",
+          "choices": [
+            "Not required for the cloud PSTN itself",
+            "Always a CUBE",
+            "Always a PRI",
+            "A Room Kit"
+          ],
+          "answer": 0,
+          "why": "The cloud option is the one without local PSTN hardware.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "A premises-originated call toward CCP is",
+          "choices": [
+            "Not allowed to use cloud PSTN",
+            "The main design",
+            "An ICE success",
+            "A 933 test"
+          ],
+          "answer": 0,
+          "why": "The trunk article forbids it.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Cisco's DI plus CCP chapter is",
+          "choices": [
+            "A hypothetical deployment model",
+            "A named customer you may cite as fact",
+            "A UCCX script",
+            "An exam voucher"
+          ],
+          "answer": 0,
+          "why": "The article says the scenarios are hypothetical.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "In that hypothetical, MRA users' PSTN",
+          "choices": [
+            "Aggregates through the CCP service via the multi-tenant path",
+            "Uses a private PRI at each home",
+            "Is disabled",
+            "Uses bots"
+          ],
+          "answer": 0,
+          "why": "The article describes that aggregation.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Webex Contact Center can also use",
+          "choices": [
+            "Cloud Connected PSTN as a voice-channel option",
+            "Only smoke signals",
+            "Only macros",
+            "Only personal tokens"
+          ],
+          "answer": 0,
+          "why": "The voice-channel article lists CCP among the PSTN choices.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "CCP",
+          "back": "Partner cloud PSTN."
+        },
+        {
+          "front": "No premises borrow",
+          "back": "PBX users do not use it."
+        },
+        {
+          "front": "Hypothetical DI+CCP",
+          "back": "Cisco's published pattern. Not a named logo."
+        },
+        {
+          "front": "WxCC voice",
+          "back": "The voice article includes CCP."
+        }
+      ],
+      "lab": {
+        "title": "Explain CCP to a PBX admin",
+        "goal": "Write four sentences they cannot misunderstand.",
+        "steps": [
+          {
+            "do": "What CCP is",
+            "expect": "Partner cloud PSTN for Webex Calling users"
+          },
+          {
+            "do": "What it is not",
+            "expect": "An outbound trunk for the PBX"
+          },
+          {
+            "do": "DI story",
+            "expect": "Hypothetical, cited"
+          },
+          {
+            "do": "WxCC",
+            "expect": "Also a documented voice option"
+          }
+        ],
+        "check": "A PBX admin could not leave thinking their phones will use the partner."
+      },
+      "fault": {
+        "title": "Double PSTN",
+        "symptom": "A location is set to CCP and someone also sends its DID range out a local PRI, so inbound calls split.",
+        "log": "SYNTHETIC: DID 2125550100 on CCP and on the PRI.",
+        "cause": "One location has one connection type. A number should have one owner.",
+        "fix": "Choose the owner, remove the duplicate route, and place one inbound test.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "premises",
+      "title": "Premises PSTN and the single trunk",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Premises PSTN means a local gateway trunk. The location selects one trunk. Route groups and dial plans are how you get more interesting routing than that single default.",
+      "uncertainty": "",
+      "objectives": [
+        "Create the trunk before you select it",
+        "Use dial plans for extra routes",
+        "Not select two trunks on the location"
+      ],
+      "diagram": {
+        "caption": "The location points at one trunk. Dial plans point at a trunk or a route group.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Location",
+            "sub": "premises PSTN",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "One trunk",
+            "sub": "LGW",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Route group",
+            "sub": "dial plan choice",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "PBX or PSTN",
+            "sub": "behind the gateway",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "select"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "patterns"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "SIP"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Select the trunk",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Trunks",
+            "label": "Create",
+            "detail": "The organization article says to create a trunk before premises PSTN.",
+            "inspect": "FQDN or registration",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Select it",
+            "detail": "One trunk. Acknowledge the warning the UI makes you accept when you manage PSTN.",
+            "inspect": "Continue",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Dial plan",
+            "label": "Extra routes",
+            "detail": "A dial plan's routing choice is a trunk or a route group, for patterns such as on-prem extensions.",
+            "inspect": "Enterprise-wide plan",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Gateway",
+            "to": "Carrier",
+            "label": "Complete the call",
+            "detail": "The gateway, not Control Hub, talks to the PRI or the PBX.",
+            "inspect": "CUBE or supported SBC",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Default path versus patterns",
+          "paragraphs": [
+            "Unmatched Webex Calling destinations go to the local gateway. That is the default premises fallthrough in the workflow guide.",
+            "Specific on-prem ranges should still be explicit dial-plan patterns so you can see them and aim them at a route group when a single trunk is the wrong tool."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        },
+        {
+          "h": "Route groups",
+          "paragraphs": [
+            "The trunk article says dial plans route to trunks or route groups. Route groups are how more than one trunk participates without violating the one-trunk location rule.",
+            "The location still has one premises trunk selected. The dial plan can name a route group as its routing choice."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A premises location selects",
+          "choices": [
+            "One trunk",
+            "Every trunk in the org",
+            "A bot",
+            "A skill"
+          ],
+          "answer": 0,
+          "why": "The organization article is unambiguous.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The trunk is created",
+          "choices": [
+            "Before you select it on the location",
+            "After the first failed call",
+            "By 933",
+            "By a macro"
+          ],
+          "answer": 0,
+          "why": "That is the documented order.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Dial-plan routing choices are",
+          "choices": [
+            "A trunk or a route group",
+            "Only a user",
+            "Only a codec",
+            "Only SSO"
+          ],
+          "answer": 0,
+          "why": "The trunk article says so.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Unmatched calls on a premises path",
+          "choices": [
+            "Go to the local gateway",
+            "Go to a bot",
+            "Are queued in Analyzer",
+            "Become texts"
+          ],
+          "answer": 0,
+          "why": "The workflow guide describes that fallthrough.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Route groups help when",
+          "choices": [
+            "You need a routing choice that is richer than the location's single trunk",
+            "You want two trunks selected on the location",
+            "You disable SIP",
+            "You store tokens"
+          ],
+          "answer": 0,
+          "why": "They are the documented routing choice alongside a trunk.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The gateway's job toward the carrier is",
+          "choices": [
+            "On the premises device, using the parameters Control Hub generated",
+            "Inside a browser tab only",
+            "An xAPI macro",
+            "A flashcard"
+          ],
+          "answer": 0,
+          "why": "Control Hub gives you parameters to map onto the CUBE or SBC.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Create, then select",
+          "back": "Trunk exists before the location uses it."
+        },
+        {
+          "front": "Fallthrough",
+          "back": "Unknown destinations go to the local gateway."
+        },
+        {
+          "front": "Route group",
+          "back": "A dial-plan routing choice."
+        },
+        {
+          "front": "Still one location trunk",
+          "back": "Route groups do not cancel that rule."
+        }
+      ],
+      "lab": {
+        "title": "Draw default versus pattern",
+        "goal": "One location, one trunk, one extra pattern.",
+        "steps": [
+          {
+            "do": "Location PSTN",
+            "expect": "Trunk LGW-Richmond"
+          },
+          {
+            "do": "Pattern +1804555XXXX",
+            "expect": "Same trunk or a route group, written down"
+          },
+          {
+            "do": "A second trunk on the location",
+            "expect": "Rejected. Say why."
+          }
+        ],
+        "check": "The picture has one selected trunk."
+      },
+      "fault": {
+        "title": "Two trunks checked",
+        "symptom": "Outbound calls from one office take two different carriers.",
+        "log": "SYNTHETIC: location trunk count 2.",
+        "cause": "The model allows one.",
+        "fix": "Leave one trunk selected. Move the other path into a route group used by a dial plan, if you still need it.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "wxcc-pstn",
+      "title": "PSTN for the contact center",
+      "level": "intermediate",
+      "minutes": 14,
+      "summary": "Webex Contact Center voice can use Webex Calling PSTN, Cloud Connected PSTN, or a local gateway. Premise agents need an outbound dial plan.",
+      "uncertainty": "",
+      "objectives": [
+        "List the voice PSTN options the article names",
+        "Build the outbound dial plan",
+        "Keep Calling call queues out of this picture"
+      ],
+      "diagram": {
+        "caption": "Contact center voice reuses Webex Calling PSTN choices, then adds a dial plan for premise destinations.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Entry point",
+            "sub": "voice",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex Calling",
+            "sub": "CCP or LGW",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dial plan",
+            "sub": "premise agents",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Agent",
+            "sub": "on premises or cloud",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "voice channel"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "patterns"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "route"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Route a contact center call to a premise agent",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Voice channel",
+            "label": "Pick PSTN",
+            "detail": "The voice article lists Webex Calling PSTN choices, including CCP and the local gateway.",
+            "inspect": "Region limits exist. Read the page.",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Admin",
+            "to": "Dial plans",
+            "label": "Create",
+            "detail": "Calling > Call Routing > Dial Plans. Name, routing choice, patterns.",
+            "inspect": "Same path as calling",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Pattern",
+            "to": "Premise range",
+            "label": "Match",
+            "detail": "The article's example covers a premise range written both as national and as +E.164 so either habit routes.",
+            "inspect": "+1 and the national form",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Agent",
+            "to": "Phone",
+            "label": "Rings",
+            "detail": "The agent is an on-prem destination, not a Webex Calling call queue.",
+            "inspect": "Flow still queues in Contact Center",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Patterns for humans and for +E.164",
+          "paragraphs": [
+            "The voice article shows patterns so agents can dial the way they prefer and so globalized +E.164 address books still reach the premises.",
+            "Copy that idea: one range, the habits you actually use, pointed at the premises routing choice."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "Do not mix queue products",
+          "paragraphs": [
+            "The contact center queue is where the flow's Queue Contact activity sends the caller. The PSTN dial plan only gets the call to the agent's phone or to the carrier.",
+            "A Webex Calling call queue will not run a Flow Designer flow."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Contact center voice PSTN options include",
+          "choices": [
+            "Webex Calling local gateway and Cloud Connected PSTN",
+            "Only UCCX CTI ports",
+            "Only bots",
+            "Only 933"
+          ],
+          "answer": 0,
+          "why": "The voice-channel article lists those.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "The dial plan path in that article is",
+          "choices": [
+            "Calling > Call Routing > Dial Plans",
+            "Devices > Macros",
+            "Users > Tokens",
+            "RedSky > Wiremap"
+          ],
+          "answer": 0,
+          "why": "The steps say to create the dial plan there.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "The article's example patterns cover",
+          "choices": [
+            "National and +E.164 forms of a premise range",
+            "Only four-digit extensions with no PSTN",
+            "Only emergency numbers",
+            "Only SIP URIs with no numbers"
+          ],
+          "answer": 0,
+          "why": "It shows both habits for the same range.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Queue Contact belongs to",
+          "choices": [
+            "Flow Designer",
+            "The Webex Calling call queue feature",
+            "The local gateway CLI",
+            "SSO"
+          ],
+          "answer": 0,
+          "why": "Queue Contact is a flow activity.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A premise agent who cannot be dialed usually lacks",
+          "choices": [
+            "A dial plan pattern for that destination",
+            "A personal access token",
+            "A RoomOS macro",
+            "An exam voucher"
+          ],
+          "answer": 0,
+          "why": "The voice article builds the dial plan for that reason.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Webex Calling call queues and contact center queues",
+          "choices": [
+            "Remain different products",
+            "Are merged by the voice article",
+            "Share one CSV",
+            "Are both hunt pilots"
+          ],
+          "answer": 0,
+          "why": "Keep them separate.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        }
+      ],
+      "cards": [
+        {
+          "front": "WxCC voice PSTN",
+          "back": "Calling Plan path, CCP, or local gateway, as the voice article lists."
+        },
+        {
+          "front": "Same dial-plan screen",
+          "back": "Calling > Call Routing > Dial Plans."
+        },
+        {
+          "front": "Both habits",
+          "back": "National and +E.164 for the premise range."
+        },
+        {
+          "front": "Queue Contact",
+          "back": "The contact center queue. Not the calling feature."
+        }
+      ],
+      "lab": {
+        "title": "Write two patterns",
+        "goal": "For the article's style of range, write the national and +E.164 patterns.",
+        "steps": [
+          {
+            "do": "+1804555XXXX",
+            "expect": "Routing choice = premises trunk or route group"
+          },
+          {
+            "do": "The dial habit your agents actually use",
+            "expect": "A second pattern if it differs"
+          },
+          {
+            "do": "Say what this does not configure",
+            "expect": "The Flow Designer queue"
+          }
+        ],
+        "check": "Both patterns share a routing choice. The flow is a separate task."
+      },
+      "fault": {
+        "title": "Agents ring, callers do not",
+        "symptom": "Outbound from the contact center to a premise phone fails, while Webex app users on the same PBX work.",
+        "log": "SYNTHETIC: WxCC voice, dial plan empty, premise DID unroutable.",
+        "cause": "The voice article requires an outbound dial plan for premise destinations.",
+        "fix": "Create the dial plan with the national and +E.164 patterns and the premises routing choice.",
+        "cite": {
+          "label": "Set up voice channels for Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      }
+    },
+    {
+      "id": "choose",
+      "title": "Choosing in a design review",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "Pick PSTN from facts: who owns the numbers, where the users register, and whether the call originates on premises. Everything else is taste.",
+      "uncertainty": "",
+      "objectives": [
+        "Ask the four questions",
+        "Reject mixed answers",
+        "Record the article you used"
+      ],
+      "diagram": {
+        "caption": "Four questions decide the connection type.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Who owns numbers?",
+            "sub": "carrier",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Where do users register?",
+            "sub": "cloud or PBX",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Origin of outbound",
+            "sub": "Webex or premises",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Connection",
+            "sub": "one answer",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": ""
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": ""
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": ""
+          }
+        ]
+      },
+      "flow": {
+        "title": "Four questions",
+        "steps": [
+          {
+            "from": "Review",
+            "to": "Numbers",
+            "label": "Who owns them?",
+            "detail": "Cisco, a partner, or the current carrier.",
+            "inspect": "Port is a project, not a checkbox",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Users",
+            "label": "Where do they register?",
+            "detail": "Webex Calling, Dedicated Instance, or the PBX you still run.",
+            "inspect": "Three models from foundations",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Origin",
+            "label": "Who places the outbound call?",
+            "detail": "If the answer is premises, cloud PSTN is off the table.",
+            "inspect": "Trunk article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Write",
+            "label": "One connection",
+            "detail": "Plus the trunk name or the partner name.",
+            "inspect": "Change log",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Mixed designs are normal. Mixed rules are not.",
+          "paragraphs": [
+            "A company can use Calling Plan at HQ and a local gateway at a factory. Each location has its own connection.",
+            "What you cannot do is let the factory's PBX users consume the HQ Calling Plan. That is the origin rule, not a style preference."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Contact center is a consumer of the same PSTN",
+          "paragraphs": [
+            "Add the voice-channel article when agents or entry points are in Webex Contact Center. The dial plan for premise agents is part of the choice, not a follow-up surprise.",
+            "Emergency calling is still per calling location. Do not assume the contact center entry point replaced 933 testing."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Two locations may use",
+          "choices": [
+            "Different PSTN connections",
+            "Only one connection for the whole company, always",
+            "No PSTN",
+            "Only bots"
+          ],
+          "answer": 0,
+          "why": "The connection is per location.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The origin rule blocks",
+          "choices": [
+            "Premises users from cloud PSTN",
+            "Webex users from Webex users",
+            "933",
+            "SSO"
+          ],
+          "answer": 0,
+          "why": "That is the trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Number ownership decides",
+          "choices": [
+            "Whether you are ordering, porting, or keeping a carrier",
+            "The font",
+            "The exam",
+            "The macro runtime"
+          ],
+          "answer": 0,
+          "why": "Cisco, CCP, and premises source numbers differently.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Dedicated Instance plus CCP in Cisco's story is",
+          "choices": [
+            "A hypothetical pattern where PSTN exits through multi-tenant CCP",
+            "Mandatory for every DI customer",
+            "Illegal",
+            "A UCCX script"
+          ],
+          "answer": 0,
+          "why": "Keep the hypothetical label.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "Premise contact center agents need",
+          "choices": [
+            "An outbound dial plan",
+            "A personal token",
+            "A new codec only",
+            "No configuration"
+          ],
+          "answer": 0,
+          "why": "The voice article says so.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "933 testing is",
+          "choices": [
+            "Still required for the calling locations you enabled",
+            "Replaced by the contact center",
+            "Optional trivia",
+            "A license row"
+          ],
+          "answer": 0,
+          "why": "Emergency calling is a location feature.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Per location",
+          "back": "PSTN is not one switch for the company."
+        },
+        {
+          "front": "Origin rule",
+          "back": "Premises callers do not use cloud PSTN."
+        },
+        {
+          "front": "Own the numbers",
+          "back": "Order, port, or keep."
+        },
+        {
+          "front": "Agents",
+          "back": "Add a dial plan if they are on premises."
+        }
+      ],
+      "lab": {
+        "title": "Score a proposal",
+        "goal": "A proposal says 'CCP everywhere, including the factory PBX'. Mark it.",
+        "steps": [
+          {
+            "do": "Factory PBX outbound",
+            "expect": "Fail the origin rule"
+          },
+          {
+            "do": "HQ Webex users",
+            "expect": "CCP can be valid"
+          },
+          {
+            "do": "Rewrite the proposal",
+            "expect": "PBX keeps a premises trunk"
+          }
+        ],
+        "check": "The rewrite cites the trunk article."
+      },
+      "fault": {
+        "title": "One PPT for five countries",
+        "symptom": "Every site is drawn with the Calling Plan logo. Two countries have no offer, and one site is a PBX.",
+        "log": "SYNTHETIC slide: PSTN = Cisco Calling Plan, global.",
+        "cause": "Availability and the origin rule were skipped.",
+        "fix": "Split the slide by location. Name the real connection and the number owner.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "pstn-faults",
+      "title": "PSTN fault patterns",
+      "level": "advanced",
+      "minutes": 15,
+      "summary": "Most PSTN incidents are an origin rule, a missing pattern, a second trunk, or an emergency path that nobody tested. The signaling ports come next, with the gateway.",
+      "uncertainty": "",
+      "objectives": [
+        "Classify the failure",
+        "Pick the article",
+        "Avoid changing certificates when the dial plan is the fault"
+      ],
+      "diagram": {
+        "caption": "Four fault shapes you can recognize from a trace.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Origin block",
+            "sub": "premises to cloud",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "No pattern",
+            "sub": "fallthrough",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Two trunks",
+            "sub": "illegal",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "No 933",
+            "sub": "emergency unknown",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "trace"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "trace"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "test"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Sort a failed outbound call",
+        "steps": [
+          {
+            "from": "Trace",
+            "to": "Origin",
+            "label": "Who called?",
+            "detail": "Premises PBX versus Webex user. The block only applies to the premises origin on cloud PSTN.",
+            "inspect": "Simulator preset",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Trace",
+            "to": "Pattern",
+            "label": "Did a pattern match?",
+            "detail": "If not, premises fallthrough uses the location trunk. Cloud uses cloud PSTN.",
+            "inspect": "Dial plan list",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Config",
+            "to": "Trunk count",
+            "label": "How many selected?",
+            "detail": "Two is already a fault on a premises location.",
+            "inspect": "Location PSTN",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Test",
+            "to": "933",
+            "label": "If the call was emergency",
+            "detail": "Do not debug a dial plan pattern for 911 until you know whether the location is enabled for RedSky or Intrado.",
+            "inspect": "Emergency track",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Order of questions",
+          "paragraphs": [
+            "Origin, then pattern, then trunk count, then emergency. Certificate errors look like timeouts and 403s, which you will meet on the gateway track.",
+            "A 403 with a name mismatch is not a dial-plan miss. Read the SIP response before you edit patterns."
+          ],
+          "cite": {
+            "label": "RFC 3261, SIP",
+            "url": "https://www.rfc-editor.org/rfc/rfc3261"
+          }
+        },
+        {
+          "h": "Contact center voice adds one question",
+          "paragraphs": [
+            "Was the caller a contact center flow trying to reach a premise phone? Then the voice-channel dial plan is in scope.",
+            "Was the caller a Webex user dialing a teammate? Then location prefixes are in scope. Different articles."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Premises user, CCP location, outbound PSTN",
+          "choices": [
+            "Blocked by the cloud PSTN rule",
+            "A certificate success",
+            "A queue overflow",
+            "An SSO error"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Webex user, premises location, unknown external number",
+          "choices": [
+            "Falls through to the local gateway",
+            "Is sent to a bot",
+            "Is a 933 test always",
+            "Deletes the user"
+          ],
+          "answer": 0,
+          "why": "The workflow guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Two selected trunks",
+          "choices": [
+            "Violate the one-trunk rule",
+            "Are a route group",
+            "Are required",
+            "Are HELD"
+          ],
+          "answer": 0,
+          "why": "The organization article.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "911 before you know if RedSky is enabled",
+          "choices": [
+            "Is premature. Check the location toggle and 933.",
+            "Should start with a codec change",
+            "Is an xAPI issue",
+            "Is a license row"
+          ],
+          "answer": 0,
+          "why": "Emergency routing depends on that enablement.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A SIP 403 name mismatch is",
+          "choices": [
+            "A certificate identity problem, not a missing X digit",
+            "A dial-plan miss",
+            "A flashcard",
+            "A report template"
+          ],
+          "answer": 0,
+          "why": "The trunk article's CN/SAN table is the next place you look.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Contact center premise agents",
+          "choices": [
+            "Need the voice-channel dial plan",
+            "Use only the user's speed dial",
+            "Use RedSky for every call",
+            "Use personal tokens"
+          ],
+          "answer": 0,
+          "why": "The voice article.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Origin first",
+          "back": "Premises versus Webex user."
+        },
+        {
+          "front": "Then the pattern",
+          "back": "Match or fallthrough."
+        },
+        {
+          "front": "Then trunk count",
+          "back": "One on a premises location."
+        },
+        {
+          "front": "911 is its own path",
+          "back": "Check enablement and 933."
+        }
+      ],
+      "lab": {
+        "title": "Sort eight simulator runs",
+        "goal": "Run every preset and write the rule name from the trace.",
+        "steps": [
+          {
+            "do": "Internal",
+            "expect": "Extension"
+          },
+          {
+            "do": "933 enabled",
+            "expect": "RedSky or Intrado"
+          },
+          {
+            "do": "Premises to CCP",
+            "expect": "Blocked"
+          },
+          {
+            "do": "Two trunks",
+            "expect": "Warning"
+          }
+        ],
+        "check": "Each preset maps to one article."
+      },
+      "fault": {
+        "title": "Everyone edits the CUBE",
+        "symptom": "Outbound fails and the gateway config is rewritten three times. The location is CCP and the caller is on Unified CM.",
+        "log": "SYNTHETIC: origin premises, pstn CCP, gateway untouched, calls fail.",
+        "cause": "The origin rule rejects the call before a premises gateway matters.",
+        "fix": "Move those callers onto a premises trunk, or move the users to Webex Calling. Stop editing the CUBE for a call that is not sent there.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

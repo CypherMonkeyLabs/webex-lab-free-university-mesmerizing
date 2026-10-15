@@ -1,0 +1,1829 @@
+{
+  "id": "t16",
+  "title": "Ecosystem, certificates, and the bridge",
+  "blurb": "Glossary, the mind map, certifications you can cite, and how CUCM, UCCX, UCCE, and Webex sit together.",
+  "level": "Capstone",
+  "lessons": [
+    {
+      "id": "glossary-work",
+      "title": "Words that get projects in trouble",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "The glossary in this lab is a short list of terms with citations. The dangerous pairs are the ones people treat as synonyms.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate the two queues",
+        "Separate the two musics",
+        "Use the glossary view"
+      ],
+      "diagram": {
+        "caption": "If two features share a noun, look at the admin path.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Calling queue",
+            "sub": "Features",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CC queue",
+            "sub": "Flow Designer",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "MOH",
+            "sub": "location",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Play Music",
+            "sub": "flow",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "not the same"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "not the same"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Stop a meeting when the noun is ambiguous",
+        "steps": [
+          {
+            "from": "Someone",
+            "to": "Meeting",
+            "label": "Says queue",
+            "detail": "Ask whether they mean Calling > Features > Call Queue or a contact center queue.",
+            "inspect": "The path is the definition",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Someone",
+            "to": "Meeting",
+            "label": "Says music",
+            "detail": "Calling music on hold is a location feature. Play Music is a flow activity.",
+            "inspect": "Do not reuse the file without checking both articles",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Someone",
+            "to": "Meeting",
+            "label": "Says voicemail",
+            "detail": "Multi-tenant Calling voicemail is not Unity Connection. Dedicated Instance still deploys Unity Connection.",
+            "inspect": "Offer decides",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "You",
+            "to": "Glossary",
+            "label": "Open the lab glossary",
+            "detail": "Each term has a source URL. If the live page renamed it, trust the page.",
+            "inspect": "#/glossary",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "More pairs",
+          "paragraphs": [
+            "Trunk and route group. Dial plan and location dialing. Bot and virtual agent. Personal token and integration. HELD and caller ID.",
+            "The glossary is not exhaustive. It is the list this lab is willing to define."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "E.164 and tel",
+          "paragraphs": [
+            "ITU-T E.164 is the numbering plan. RFC 3966 is the tel URI. Webex Calling dial plans and the contact center voice article both care about +E.164.",
+            "A four-digit extension is not an E.164 number until a plan says how it maps."
+          ],
+          "cite": {
+            "label": "ITU-T E.164",
+            "url": "https://www.itu.int/rec/T-REC-E.164"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Calling call queue and contact center queue",
+          "choices": [
+            "Are different objects",
+            "Are synonyms",
+            "Are both Flow Designer activities",
+            "Are both CSVs from UCCX"
+          ],
+          "answer": 0,
+          "why": "Admin path tells you.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "Play Music",
+          "choices": [
+            "Is a flow activity",
+            "Is location MOH",
+            "Is SRTP",
+            "Is a license"
+          ],
+          "answer": 0,
+          "why": "Flow Designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Multi-tenant voicemail",
+          "choices": [
+            "Is not premises Unity Connection",
+            "Requires Unity Connection",
+            "Is a bot",
+            "Is SME"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Dedicated Instance voicemail app",
+          "choices": [
+            "Includes Unity Connection",
+            "Is forbidden",
+            "Is only Dubber",
+            "Is a webhook"
+          ],
+          "answer": 0,
+          "why": "Activation list.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "E.164 is",
+          "choices": [
+            "The ITU-T numbering recommendation",
+            "A Cisco SKU",
+            "A port",
+            "A theme"
+          ],
+          "answer": 0,
+          "why": "RFC 3966 is the tel URI.",
+          "cite": "https://www.itu.int/rec/T-REC-E.164"
+        },
+        {
+          "q": "The lab glossary",
+          "choices": [
+            "Cites a source per term",
+            "Is a closed private standard",
+            "Replaces Cisco docs",
+            "Has no links"
+          ],
+          "answer": 0,
+          "why": "Trust the live page if they differ.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Two queues",
+          "back": "Calling features versus contact center."
+        },
+        {
+          "front": "Two musics",
+          "back": "Location MOH versus Play Music."
+        },
+        {
+          "front": "Two voicemails",
+          "back": "Multi-tenant versus Unity on DI."
+        },
+        {
+          "front": "E.164",
+          "back": "ITU-T. tel is RFC 3966."
+        }
+      ],
+      "lab": {
+        "title": "Pair quiz",
+        "goal": "Write the admin path for four ambiguous nouns.",
+        "steps": [
+          {
+            "do": "Queue",
+            "expect": "Both paths"
+          },
+          {
+            "do": "Music",
+            "expect": "Both features"
+          },
+          {
+            "do": "Bot",
+            "expect": "Messaging versus virtual agent"
+          }
+        ],
+        "check": "Each path has a URL."
+      },
+      "fault": {
+        "title": "One music file",
+        "symptom": "Hold music changes the contact center prompt.",
+        "log": "SYNTHETIC: same WAV uploaded to location MOH and Play Message.",
+        "cause": "They are different systems even if the audio happens to match.",
+        "fix": "Treat them as two releases.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "mind",
+      "title": "The mind map",
+      "level": "foundation",
+      "minutes": 11,
+      "summary": "Control Hub is the admin shell. Calling, Dedicated Instance, Contact Center, devices, and the migration sources hang off it. The map view is that picture with links.",
+      "uncertainty": "",
+      "objectives": [
+        "Open the mind map",
+        "Name what is not a separate identity store",
+        "Jump to a track from a node"
+      ],
+      "diagram": {
+        "caption": "One organization. Several services.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Control Hub",
+            "sub": "center",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Calling",
+            "sub": "locations and PSTN",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "DI",
+            "sub": "add-on",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Contact Center",
+            "sub": "flows",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n4",
+            "label": "Devices",
+            "sub": "claimed",
+            "x": 250,
+            "y": 170,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "service"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "add-on"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "service"
+          },
+          {
+            "from": "n0",
+            "to": "n4",
+            "label": "inventory"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Walk the map",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Map",
+            "label": "Open Ecosystem mind map",
+            "detail": "The SVG is a guide. The cards under it open tracks.",
+            "inspect": "#/mind",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Hub",
+            "to": "Calling",
+            "label": "Locations, PSTN, features",
+            "detail": "Dedicated Instance is under Calling as well, as Manage.",
+            "inspect": "Not a second Hub",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Hub",
+            "to": "Contact Center",
+            "label": "Flows and WFO",
+            "detail": "AI agents and webhooks hang off that service.",
+            "inspect": "Not a Calling call queue",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "CUCM",
+            "to": "Migration",
+            "label": "Source, not the destination by itself",
+            "detail": "The map links Unified CM and UCCX toward the migration track.",
+            "inspect": "Redesign the scripts",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Identity",
+          "paragraphs": [
+            "Control Hub directory sync is shared by Meetings, Calling, and Dedicated Instance, and it wants SSO for that path.",
+            "Devices and contact center users still need their own licenses and profiles."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "What the picture leaves out",
+          "paragraphs": [
+            "It does not draw every port. The topology view does that with failure toggles.",
+            "It does not draw a customer logo. Deployment-model customers are hypothetical."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The mind map centers",
+          "choices": [
+            "Control Hub",
+            "A local gateway",
+            "A single phone",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "Services hang off it.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Dedicated Instance is reached under",
+          "choices": [
+            "Calling > Dedicated Instance",
+            "Flow Designer",
+            "A personal token",
+            "RFC 8445"
+          ],
+          "answer": 0,
+          "why": "Manage tab.",
+          "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        },
+        {
+          "q": "Contact center flows are",
+          "choices": [
+            "Not Calling call queues",
+            "The same CSV",
+            "DNS records",
+            "Themes"
+          ],
+          "answer": 0,
+          "why": "Voice and flow articles.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Directory sync across Calling and DI",
+          "choices": [
+            "Is a Control Hub feature and wants SSO",
+            "Works without SSO",
+            "Is a macro",
+            "Is 933"
+          ],
+          "answer": 0,
+          "why": "Deployment-models page.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The topology view",
+          "choices": [
+            "Adds failure toggles the mind map does not",
+            "Replaces citations",
+            "Is a CDN game",
+            "Imports UCCX"
+          ],
+          "answer": 0,
+          "why": "Certificate trunk, HELD, interop, and others.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Hypothetical customers",
+          "choices": [
+            "Stay off the map as logos",
+            "Are required labels",
+            "Are exam codes",
+            "Are tokens"
+          ],
+          "answer": 0,
+          "why": "Deployment-models introduction.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Center",
+          "back": "Control Hub."
+        },
+        {
+          "front": "DI",
+          "back": "Under Calling."
+        },
+        {
+          "front": "Map",
+          "back": "#/mind."
+        },
+        {
+          "front": "Topology",
+          "back": "The failure toggles."
+        }
+      ],
+      "lab": {
+        "title": "Trace one user",
+        "goal": "From Hub to a Calling location to a device to 933.",
+        "steps": [
+          {
+            "do": "Hub",
+            "expect": "The service"
+          },
+          {
+            "do": "PSTN",
+            "expect": "One option"
+          },
+          {
+            "do": "911",
+            "expect": "The method for that device"
+          }
+        ],
+        "check": "Contact center is a separate trace if they are an agent."
+      },
+      "fault": {
+        "title": "Second identity store",
+        "symptom": "A team builds users only in Unified CM and waits for multi-tenant phones to learn them.",
+        "log": "SYNTHETIC: SSO off, directory sync expected.",
+        "cause": "The shared sync needs SSO, and native CUCM options do not fill Webex Calling by themselves.",
+        "fix": "Pick the offer and the identity path.",
+        "cite": {
+          "label": "Dedicated Instance customer deployment models",
+          "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        }
+      }
+    },
+    {
+      "id": "certs",
+      "title": "Certifications and the course that is not the exam",
+      "level": "core",
+      "minutes": 13,
+      "summary": "300-830 CLCCE is a 90-minute exam. Passing it earns Cisco Certified Specialist - Collaboration Cloud Customer Experience and can count as a CCNP Collaboration concentration. CLWXCALL is a course, not that exam.",
+      "uncertainty": "",
+      "objectives": [
+        "Use the official exam name and code",
+        "Keep the course separate",
+        "Leave price and unstated dates off your flashcards"
+      ],
+      "diagram": {
+        "caption": "Exam page, topics page, course page. Three URLs.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "300-830",
+            "sub": "90 minutes",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Specialist",
+            "sub": "Cloud Customer Experience",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "CCNP Collaboration",
+            "sub": "concentration",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "CLWXCALL",
+            "sub": "a course",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "passing"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "can count"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "not the same code"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Read the exam page before you book",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Exam page",
+            "label": "Read 300-830 CLCCE",
+            "detail": "The exam page says it is 90 minutes, in English, and that passing earns the specialist certification and can meet a CCNP Collaboration concentration.",
+            "inspect": "Topics: telephony and call routing, tenant configuration and reporting, digital channels, advanced features and AI",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Topics",
+            "label": "Open the learning network topics",
+            "detail": "The topics page this lab fetched lists 1.0 Telephony and Call Routing 30%, 2.0 Tenant Configuration and Reporting 30%, 3.0 Digital Channels 15%, 4.0 Advanced Features and AI 25%.",
+            "inspect": "Weights can change. Re-check",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Course",
+            "label": "Open CLWXCALL separately",
+            "detail": "Essentials of Webex Calling is a course. It is not the 300-830 exam.",
+            "inspect": "Do not put the course code on the exam registration",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          },
+          {
+            "from": "You",
+            "to": "Price and dates",
+            "label": "Look them up live",
+            "detail": "The exam page shows a price. This lab does not put that number on a flashcard, because prices change. This lab also does not state a first-test date it could not read from the exam overview.",
+            "inspect": "Uncertainty: confirm dates on the live page",
+            "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What passing means",
+          "paragraphs": [
+            "Cisco Certified Specialist - Collaboration Cloud Customer Experience, and it can be used toward CCNP Collaboration and recertification, per the exam page.",
+            "The CCNP Collaboration page is the parent certification. This lab does not invent a core-exam code."
+          ],
+          "cite": {
+            "label": "CCNP Collaboration",
+            "url": "https://learningnetwork.cisco.com/s/ccnp-collaboration"
+          }
+        },
+        {
+          "h": "What this lab is",
+          "paragraphs": [
+            "A study aid with citations. It is not an official course and it does not include exam items.",
+            "The certification update article is where Cisco announces program changes. Read it when a code looks unfamiliar."
+          ],
+          "cite": {
+            "label": "Cisco certification update",
+            "url": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "300-830 CLCCE lasts",
+          "choices": [
+            "90 minutes",
+            "Ten characters",
+            "24 hours",
+            "As long as you like"
+          ],
+          "answer": 0,
+          "why": "Exam page.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+        },
+        {
+          "q": "Passing earns",
+          "choices": [
+            "Cisco Certified Specialist - Collaboration Cloud Customer Experience",
+            "A Webex Calling license",
+            "A local gateway",
+            "A bot"
+          ],
+          "answer": 0,
+          "why": "It can also count toward CCNP Collaboration.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+        },
+        {
+          "q": "CLWXCALL is",
+          "choices": [
+            "A course, Essentials of Webex Calling",
+            "The exam code",
+            "A port",
+            "A CSV"
+          ],
+          "answer": 0,
+          "why": "Course page.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        },
+        {
+          "q": "Topic weights on the page fetched for this lab",
+          "choices": [
+            "30, 30, 15, and 25 percent for sections 1 through 4",
+            "Four equal 25s",
+            "Unpublished",
+            "A price"
+          ],
+          "answer": 0,
+          "why": "Re-check the live topics page.",
+          "cite": "https://learningnetwork.cisco.com/s/clcce-exam-topics"
+        },
+        {
+          "q": "Exam price in this lab",
+          "choices": [
+            "Is not memorized; it is on the exam page",
+            "Is a quiz answer",
+            "Is zero",
+            "Is a license count"
+          ],
+          "answer": 0,
+          "why": "Prices change.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+        },
+        {
+          "q": "A core exam code for CCNP Collaboration",
+          "choices": [
+            "Is not invented here",
+            "Is 300-830",
+            "Is CLWXCALL",
+            "Is 5062"
+          ],
+          "answer": 0,
+          "why": "Read the CCNP page.",
+          "cite": "https://learningnetwork.cisco.com/s/ccnp-collaboration"
+        }
+      ],
+      "cards": [
+        {
+          "front": "300-830",
+          "back": "90-minute CLCCE exam."
+        },
+        {
+          "front": "Specialist",
+          "back": "Collaboration Cloud Customer Experience."
+        },
+        {
+          "front": "CLWXCALL",
+          "back": "Course, not the exam."
+        },
+        {
+          "front": "No price card",
+          "back": "Read the live exam page."
+        }
+      ],
+      "lab": {
+        "title": "Three bookmarks",
+        "goal": "Exam, topics, course.",
+        "steps": [
+          {
+            "do": "Exam",
+            "expect": "cisco.com CLCCE page"
+          },
+          {
+            "do": "Topics",
+            "expect": "Learning Network"
+          },
+          {
+            "do": "Course",
+            "expect": "CLWXCALL, labeled as a course"
+          }
+        ],
+        "check": "You did not write a price or a date."
+      },
+      "fault": {
+        "title": "Course code on the form",
+        "symptom": "The candidate studies CLWXCALL and registers as if it were 300-830.",
+        "log": "SYNTHETIC calendar: exam CLWXCALL.",
+        "cause": "The course is not the exam.",
+        "fix": "Register 300-830 from the exam page.",
+        "cite": {
+          "label": "Essentials of Webex Calling (CLWXCALL)",
+          "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+        }
+      }
+    },
+    {
+      "id": "crm",
+      "title": "CRM dips you can cite",
+      "level": "core",
+      "minutes": 12,
+      "summary": "Flow Designer HTTP templates cover Salesforce, Dynamics, ServiceNow, and Zendesk. Microsoft Teams embedding for calling is a different sentence on the Dedicated Instance page.",
+      "uncertainty": "",
+      "objectives": [
+        "List the four templates",
+        "Wire success and error",
+        "Keep Teams as a separate citation"
+      ],
+      "diagram": {
+        "caption": "Four templates. Everything else is your HTTP contract.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Salesforce",
+            "sub": "template",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dynamics",
+            "sub": "template",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "ServiceNow",
+            "sub": "template",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Zendesk",
+            "sub": "template",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "same activity"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "HTTP Request"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "error port"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A data dip with a name",
+        "steps": [
+          {
+            "from": "Flow",
+            "to": "HTTP",
+            "label": "Choose a template",
+            "detail": "Salesforce, Microsoft Dynamics, ServiceNow, Zendesk.",
+            "inspect": "No fifth logo",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Error",
+            "to": "Queue",
+            "label": "Degrade",
+            "detail": "The CRM will be down someday.",
+            "inspect": "Connect the port",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Pop",
+            "to": "Agent",
+            "label": "Show the fields you stored",
+            "detail": "previousIntent if an AI agent ran first.",
+            "inspect": "No secrets on the pop",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          },
+          {
+            "from": "Teams",
+            "to": "Article",
+            "label": "Read the DI bullet before you sell embedding",
+            "detail": "The deployment-models page says the Webex Calling app can be embedded in Microsoft Teams for business calls, with logs, voicemail, and directory sync.",
+            "inspect": "Hypothetical context. Confirm the current Teams article",
+            "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Contact center voice and Teams",
+          "paragraphs": [
+            "The voice channel article says Microsoft Teams integration for Webex Contact Center needs +E.164 on the local gateway and the full Control Hub trunk, route group, and location routing.",
+            "That is a gateway requirement, not one of the four CRM templates."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "WFO and CRM",
+          "paragraphs": [
+            "Quality and analytics do not replace the HTTP dip. They describe the contact after the fact.",
+            "Do not claim a CRM connector inside WFO unless that landing page says so."
+          ],
+          "cite": {
+            "label": "Webex Workforce Optimization",
+            "url": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The four HTTP templates are",
+          "choices": [
+            "Salesforce, Dynamics, ServiceNow, and Zendesk",
+            "Any SaaS product",
+            "Only email",
+            "Only RedSky"
+          ],
+          "answer": 0,
+          "why": "Flow Designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "A CRM not on the list",
+          "choices": [
+            "Is a custom HTTP Request",
+            "Is automatically a template",
+            "Is a trunk",
+            "Is an exam"
+          ],
+          "answer": 0,
+          "why": "You own the contract.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Teams embedding on the DI models page",
+          "choices": [
+            "Is a documented bullet about the Webex Calling app inside Teams",
+            "Is one of the four CRM templates",
+            "Is UCCX import",
+            "Is a price"
+          ],
+          "answer": 0,
+          "why": "Confirm the current article.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "WxCC Teams on the voice article needs",
+          "choices": [
+            "+E.164 and full local-gateway routing objects",
+            "Only a bot mention",
+            "Only a macro",
+            "No gateway ever"
+          ],
+          "answer": 0,
+          "why": "Voice article.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Error port",
+          "choices": [
+            "Must be connected",
+            "Is optional decoration",
+            "Is HELD",
+            "Is the voice domain"
+          ],
+          "answer": 0,
+          "why": "Degrade on purpose.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "WFO",
+          "choices": [
+            "Does not become a CRM template by wish",
+            "Includes all four automatically",
+            "Is the HTTP activity",
+            "Is 300-830"
+          ],
+          "answer": 0,
+          "why": "Landing page.",
+          "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Four",
+          "back": "Salesforce, Dynamics, ServiceNow, Zendesk."
+        },
+        {
+          "front": "Custom",
+          "back": "Your URL, your contract."
+        },
+        {
+          "front": "Teams calling",
+          "back": "DI models bullet. Confirm live."
+        },
+        {
+          "front": "Teams WxCC",
+          "back": "+E.164 and local gateway routing."
+        }
+      ],
+      "lab": {
+        "title": "Template card",
+        "goal": "One CRM, both ports, no credentials.",
+        "steps": [
+          {
+            "do": "Name",
+            "expect": "One of the four"
+          },
+          {
+            "do": "Success",
+            "expect": "Fields for the pop"
+          },
+          {
+            "do": "Error",
+            "expect": "Queue or message"
+          }
+        ],
+        "check": "Teams is a second card if the design uses it."
+      },
+      "fault": {
+        "title": "Invented connector",
+        "symptom": "A design says the WFO suite includes a native ticket create for a CRM the landing page does not name.",
+        "log": "SYNTHETIC architecture slide.",
+        "cause": "That connector was not cited.",
+        "fix": "Use HTTP Request and the template list, or drop the claim.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "bridge",
+      "title": "The bridge from CUCM, UCCX, and UCCE",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "Unified CM can remain, move to Dedicated Instance, or migrate users to multi-tenant Calling. Contact center scripts are rebuilt. The admin door for all of the cloud pieces is Control Hub.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate the three destinations",
+        "Name the tool for each",
+        "Keep UCCX and UCCE on their product pages until the redesign"
+      ],
+      "diagram": {
+        "caption": "Three destinations. Do not pretend they are one project.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Unified CM",
+            "sub": "source",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Multi-tenant",
+            "sub": "CSV and LGW",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Dedicated Instance",
+            "sub": "hosted CM",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "WxCC",
+            "sub": "new flows",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "migrate features"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "add-on"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "redesign"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pick the destination first",
+        "steps": [
+          {
+            "from": "Source",
+            "to": "Insights",
+            "label": "Read the tar",
+            "detail": "Users, devices, shared groups, eligibility. CDR if you need usage.",
+            "inspect": "Prepare article",
+            "cite": "https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html"
+          },
+          {
+            "from": "Destination",
+            "to": "Calling",
+            "label": "CSV, locations, PSTN, 933",
+            "detail": "Park and pickup may need the Python script. Voicemail messages do not come along.",
+            "inspect": "One PSTN per location",
+            "cite": "https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html"
+          },
+          {
+            "from": "Destination",
+            "to": "DI",
+            "label": "Activate, DNS, interop, cross-launch",
+            "detail": "Unity Connection exists here. CER wording depends on the page. Hypothetical models are not a customer.",
+            "inspect": "FTSW counts size the region",
+            "cite": "https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html"
+          },
+          {
+            "from": "Destination",
+            "to": "WxCC",
+            "label": "New flow, new queues, new desktop",
+            "detail": "No cited script import. Enterprise has its own docs.",
+            "inspect": "Entry point last",
+            "cite": "https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Product pages",
+          "paragraphs": [
+            "Unified Communications Manager, Unified CCX, and Unified CCE keep their own Cisco support series. Webex does not retire those pages because a cloud offer exists.",
+            "Link them when the source system is still in production."
+          ],
+          "cite": {
+            "label": "Unified Contact Center Enterprise",
+            "url": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/series.html"
+          }
+        },
+        {
+          "h": "One organization can hold more than one destination",
+          "paragraphs": [
+            "The deployment-models page describes mixes of multi-tenant and Dedicated Instance. That mix needs the interop trunk.",
+            "Contact center can sit beside both. It is still not a Calling call queue."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Multi-tenant user migration uses",
+          "choices": [
+            "Migration Insights and the feature CSVs",
+            "A UCCX import",
+            "Only xAPI",
+            "Only a macro"
+          ],
+          "answer": 0,
+          "why": "Prepare and migrate-features articles.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Dedicated Instance is",
+          "choices": [
+            "An add-on that deploys Unified CM and the rest of the activation list",
+            "A CSV of hunt groups",
+            "A bot",
+            "A course code"
+          ],
+          "answer": 0,
+          "why": "Activation article.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "UCCX to Webex Contact Center",
+          "choices": [
+            "Is a redesign",
+            "Is DeviceBulk.csv",
+            "Is automatic",
+            "Is CLWXCALL"
+          ],
+          "answer": 0,
+          "why": "No importer cited.",
+          "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+        },
+        {
+          "q": "A mix of DI and multi-tenant needs",
+          "choices": [
+            "The interop SIP trunk",
+            "Only 933",
+            "Only a glossary",
+            "A personal token"
+          ],
+          "answer": 0,
+          "why": "Activation article.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Unity messages into multi-tenant Calling",
+          "choices": [
+            "Have no native migration",
+            "Always move with the tar",
+            "Move with the bot",
+            "Are dial patterns"
+          ],
+          "answer": 0,
+          "why": "Prepare article.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Control Hub is",
+          "choices": [
+            "The admin shell for the cloud services",
+            "A replacement for every UCCE script node",
+            "An RFC",
+            "A phone"
+          ],
+          "answer": 0,
+          "why": "Organization configuration.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Three doors",
+          "back": "Multi-tenant, DI, WxCC."
+        },
+        {
+          "front": "Insights",
+          "back": "Before the CSV."
+        },
+        {
+          "front": "Interop",
+          "back": "If both calling platforms exist."
+        },
+        {
+          "front": "Scripts",
+          "back": "Redraw them."
+        }
+      ],
+      "lab": {
+        "title": "One-page bridge",
+        "goal": "For a pretend site, pick a destination per user group.",
+        "steps": [
+          {
+            "do": "HQ",
+            "expect": "DI or multi-tenant, with a reason you can cite"
+          },
+          {
+            "do": "Agents",
+            "expect": "WxCC redesign, no XML import"
+          },
+          {
+            "do": "911",
+            "expect": "Method named"
+          }
+        ],
+        "check": "Shared lines are not split."
+      },
+      "fault": {
+        "title": "One plan for three products",
+        "symptom": "The cutover weekend imports a tar and expects UCCX to answer.",
+        "log": "SYNTHETIC runbook: step 9, UCCX follows the phones.",
+        "cause": "The script was never a Calling feature.",
+        "fix": "Split the plans and test the new flow on its own number.",
+        "cite": {
+          "label": "Build and manage flows with Flow Designer",
+          "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        }
+      }
+    },
+    {
+      "id": "studio-cap",
+      "title": "Use the studio as a capstone",
+      "level": "apply",
+      "minutes": 14,
+      "summary": "The dial-plan simulator, the flow designer, the Control Hub walkthrough, and the topology are the four places to prove you can narrate a design.",
+      "uncertainty": "",
+      "objectives": [
+        "Run a dial-plan preset",
+        "Simulate a flow",
+        "Walk one Hub path",
+        "Break one topology link and explain it"
+      ],
+      "diagram": {
+        "caption": "Four tools. All of them labeled as teaching models.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Dial plan",
+            "sub": "simulator",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Flow",
+            "sub": "teaching schema",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Hub",
+            "sub": "walkthrough",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Topology",
+            "sub": "toggles",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n2",
+            "to": "n0",
+            "label": "path"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "not a queue"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "ports"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Narrate a site without the live tenant",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Dial",
+            "label": "Run 918045551234 and 933",
+            "detail": "The simulator strips the external digit, matches a pattern, and treats 933 as emergency when the location is enabled. It says it is not Control Hub.",
+            "inspect": "#/studio/dial",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Flow",
+            "label": "Simulate open and closed",
+            "detail": "Export stays local.",
+            "inspect": "#/studio/flow",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Hub",
+            "label": "Click Dedicated Instance and Migration",
+            "detail": "The paths match the articles: Manage, and the migration tools.",
+            "inspect": "#/studio/hub",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Map",
+            "label": "Toggle certificate trunk and HELD",
+            "detail": "5062 versus a RedSky failure. Reduced motion still shows the SVG.",
+            "inspect": "#/topology",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What a pass looks like",
+          "paragraphs": [
+            "You can say which article a toggle represents. You can say why a premises user cannot use cloud PSTN. You can say why the flow file is not an import.",
+            "You do not need a tenant for that."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Interview desk",
+          "paragraphs": [
+            "The interview view is a set of short answers with sources. Use it after this capstone, not instead of the articles.",
+            "If a card and a live page disagree, the page wins."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The dial simulator is",
+          "choices": [
+            "A teaching model",
+            "The Control Hub routing engine",
+            "A tariff",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "The trace says so.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "933 in the simulator when emergency is enabled",
+          "choices": [
+            "Goes to the enhanced emergency provider",
+            "Goes to a hunt group",
+            "Is dropped",
+            "Is a webhook"
+          ],
+          "answer": 0,
+          "why": "RedSky or Intrado as selected.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A premises-origin call to cloud PSTN",
+          "choices": [
+            "Is blocked in the simulator, matching the documented rule",
+            "Is allowed",
+            "Becomes HELD",
+            "Sizes a region"
+          ],
+          "answer": 0,
+          "why": "Trunks article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The flow export",
+          "choices": [
+            "Is webex-lab-flow-1",
+            "Is a CUCM tar",
+            "Is CDR",
+            "Is a license"
+          ],
+          "answer": 0,
+          "why": "Not an import.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Certificate trunk signaling port",
+          "choices": [
+            "5062",
+            "8934, which is registration",
+            "443",
+            "8500"
+          ],
+          "answer": 0,
+          "why": "Topology toggle.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "If a card disagrees with a live page",
+          "choices": [
+            "The page wins",
+            "The card wins",
+            "The theme wins",
+            "The simulator wins"
+          ],
+          "answer": 0,
+          "why": "Citations are the point.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Dial",
+          "back": "External digit, pattern, emergency, premises block."
+        },
+        {
+          "front": "Flow",
+          "back": "Ports and a local export."
+        },
+        {
+          "front": "Hub",
+          "back": "Paths from the articles."
+        },
+        {
+          "front": "Topology",
+          "back": "Break one thing and name the article."
+        }
+      ],
+      "lab": {
+        "title": "Capstone circuit",
+        "goal": "Do all four tools and write one sentence each.",
+        "steps": [
+          {
+            "do": "Dial",
+            "expect": "The route you got"
+          },
+          {
+            "do": "Flow",
+            "expect": "Open versus closed"
+          },
+          {
+            "do": "Hub",
+            "expect": "The path you clicked"
+          },
+          {
+            "do": "Topology",
+            "expect": "The toggle and the port or host"
+          }
+        ],
+        "check": "None of the sentences claim the tool is the product."
+      },
+      "fault": {
+        "title": "Simulator as production",
+        "symptom": "A change window uses the lab trace as the approved dial plan.",
+        "log": "SYNTHETIC ticket: 'lab said 918045551234 matches, so production will.'",
+        "cause": "The lab is a teaching model with a stated precedence.",
+        "fix": "Build the dial plan in Control Hub and test it there.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "honest",
+      "title": "What this lab will not pretend",
+      "level": "apply",
+      "minutes": 12,
+      "summary": "Prices, unstated dates, RONA timers, card schemas, and customer logos are out. Citations are in. When two Cisco sentences disagree, both stay visible.",
+      "uncertainty": "",
+      "objectives": [
+        "List the known conflicts",
+        "Leave invented numbers out",
+        "Use the sources view"
+      ],
+      "diagram": {
+        "caption": "Uncertainty is a feature of the notes, not a gap you should fill in.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Page",
+            "sub": "live",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Lesson",
+            "sub": "cited",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Conflict",
+            "sub": "quoted",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "You",
+            "sub": "re-check",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "source"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "if needed"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "wins"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Before you repeat a number",
+        "steps": [
+          {
+            "from": "CER",
+            "to": "Wording",
+            "label": "AMER, U.S., and North America",
+            "detail": "Activation and access say AMER. The models introduction says U.S. customers and another paragraph says North American customers.",
+            "inspect": "Quote the page for the task",
+            "cite": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          },
+          {
+            "from": "Queue license",
+            "to": "Wording",
+            "label": "The call queue article and the license matrix",
+            "detail": "Read both before you tell someone a Standard user can or cannot join a Calling queue.",
+            "inspect": "License article and queue article",
+            "cite": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          },
+          {
+            "from": "Timers and prices",
+            "to": "Habit",
+            "label": "Look them up",
+            "detail": "No RONA seconds and no exam price in the flashcards.",
+            "inspect": "Exam page for the price",
+            "cite": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          },
+          {
+            "from": "Sources",
+            "to": "View",
+            "label": "Open the list",
+            "detail": "Every article this curriculum cites is linked from Sources.",
+            "inspect": "#/sources",
+            "cite": "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Conflicts to remember",
+          "paragraphs": [
+            "Emergency Responder region words. Calling queue license sentences if they do not match the matrix. Skill-based caps that belong only to the Calling article.",
+            "The lab keeps both sentences rather than silently picking one."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Your job on a real tenant",
+          "paragraphs": [
+            "The simulators do not change Cisco. Control Hub, Flow Designer, and the devices do.",
+            "When a guide updates, prefer it over this text and, if you maintain a fork, change the lesson."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "When two Cisco pages disagree",
+          "choices": [
+            "Quote both and say which task you are doing",
+            "Pick the shorter one",
+            "Average them",
+            "Delete the citation"
+          ],
+          "answer": 0,
+          "why": "CER is the example.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Exam price",
+          "choices": [
+            "Stays on the exam page",
+            "Is a flashcard in this lab",
+            "Is 90 minutes",
+            "Is a port"
+          ],
+          "answer": 0,
+          "why": "90 minutes is the duration, not the price.",
+          "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+        },
+        {
+          "q": "RONA",
+          "choices": [
+            "Has no number in this lab",
+            "Is always 30 seconds",
+            "Is 100 failures",
+            "Is 6500"
+          ],
+          "answer": 0,
+          "why": "Cite a sentence or omit it.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Card JSON",
+          "choices": [
+            "Comes from the current developer guide, not from this lesson",
+            "Is frozen here",
+            "Is a tar",
+            "Is E.164"
+          ],
+          "answer": 0,
+          "why": "Bots guide.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Hypothetical DI customers",
+          "choices": [
+            "Are not references you can name",
+            "Are case studies you should attribute to a firm",
+            "Are exam items",
+            "Are tokens"
+          ],
+          "answer": 0,
+          "why": "Deployment-models page.",
+          "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+        },
+        {
+          "q": "The sources view",
+          "choices": [
+            "Lists the cited URLs",
+            "Hides them",
+            "Replaces them with search ads",
+            "Is the topology"
+          ],
+          "answer": 0,
+          "why": "Use it.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Quote both",
+          "back": "CER region words."
+        },
+        {
+          "front": "No price",
+          "back": "On a card."
+        },
+        {
+          "front": "No RONA",
+          "back": "Without a sentence."
+        },
+        {
+          "front": "Live page",
+          "back": "Wins."
+        }
+      ],
+      "lab": {
+        "title": "Uncertainty list",
+        "goal": "Write three things you would re-check on a live page before a design review.",
+        "steps": [
+          {
+            "do": "CER",
+            "expect": "Which article's region word"
+          },
+          {
+            "do": "License",
+            "expect": "Queue article versus matrix"
+          },
+          {
+            "do": "Exam",
+            "expect": "Topics percentages"
+          }
+        ],
+        "check": "You did not fill the blanks with guesses."
+      },
+      "fault": {
+        "title": "Smoothed the conflict",
+        "symptom": "A design says Emergency Responder is in every region because a summary said Americas.",
+        "log": "SYNTHETIC: one sentence, three pages ignored.",
+        "cause": "The pages do not match.",
+        "fix": "Quote the activation sentence for the region you are activating, and note the others.",
+        "cite": {
+          "label": "Activate Dedicated Instance",
+          "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1826 @@
+{
+  "id": "t06",
+  "title": "Dial plans",
+  "blurb": "Enterprise dial plans, +E.164 patterns, Unified CM normalization, and the simulator's teaching order.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "objects",
+      "title": "Dial plans, patterns, and routing choices",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "A Webex Calling dial plan is enterprise-wide. It lists patterns and one routing choice, which is a trunk or a route group.",
+      "uncertainty": "",
+      "objectives": [
+        "Say the click path",
+        "Define a pattern",
+        "Name the two routing choices"
+      ],
+      "diagram": {
+        "caption": "Patterns match. The routing choice is a trunk or a route group.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Dial plan",
+            "sub": "enterprise",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Patterns",
+            "sub": "on-prem destinations",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Trunk",
+            "sub": "routing choice",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Route group",
+            "sub": "routing choice",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "contains"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "or"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "or"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Create a dial plan",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Call routing",
+            "label": "Open dial plans",
+            "detail": "Calling > Call Routing > Dial Plans.",
+            "inspect": "Voice article and trunk article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Plan",
+            "label": "Name it",
+            "detail": "The plan applies across the enterprise, not to one phone.",
+            "inspect": "Trunk article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Choice",
+            "label": "Trunk or route group",
+            "detail": "That is where matching calls go.",
+            "inspect": "One choice",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Patterns",
+            "label": "Add the ranges",
+            "detail": "Patterns represent on-premises extensions or, in the voice article, premise number ranges.",
+            "inspect": "X is the wildcard in this lab's simulator",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Enterprise scope",
+          "paragraphs": [
+            "The trunk article says dial plans are configured globally for the enterprise and apply to all users, regardless of location.",
+            "Location dialing (extension length and prefix) is a different control. You need both."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "What a pattern is for",
+          "paragraphs": [
+            "The trunk article says a dial pattern represents on-premises extensions.",
+            "The contact center voice article also uses patterns for premise PSTN ranges, including +E.164. Use the pattern for destinations the cloud should hand to a trunk."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Dial plans apply",
+          "choices": [
+            "To the enterprise, regardless of location",
+            "To one phone only",
+            "Only on Sunday",
+            "Only to bots"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "A routing choice is",
+          "choices": [
+            "A trunk or a route group",
+            "A user name",
+            "A codec",
+            "A theme"
+          ],
+          "answer": 0,
+          "why": "The trunk article.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The click path is",
+          "choices": [
+            "Calling > Call Routing > Dial Plans",
+            "Devices > Macros",
+            "Users > SSO only",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "The voice article spells it out.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "Location prefixes and dial plans are",
+          "choices": [
+            "Both required. They do different jobs.",
+            "The same field",
+            "Illegal together",
+            "Licenses"
+          ],
+          "answer": 0,
+          "why": "Prefixes are location dialing. Plans are enterprise routing.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Patterns in the trunk article represent",
+          "choices": [
+            "On-premises extensions",
+            "Font sizes",
+            "Exam codes",
+            "Webhooks"
+          ],
+          "answer": 0,
+          "why": "That is the sentence.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The lab wildcard X means",
+          "choices": [
+            "One digit, in the simulator",
+            "A certificate",
+            "A trunk",
+            "A location"
+          ],
+          "answer": 0,
+          "why": "The simulator documents that match rule.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Enterprise plan",
+          "back": "All users, not one location."
+        },
+        {
+          "front": "Routing choice",
+          "back": "Trunk or route group."
+        },
+        {
+          "front": "Path",
+          "back": "Calling > Call Routing > Dial Plans."
+        },
+        {
+          "front": "X",
+          "back": "One digit in the lab simulator."
+        }
+      ],
+      "lab": {
+        "title": "Create a paper plan",
+        "goal": "Name, routing choice, two patterns.",
+        "steps": [
+          {
+            "do": "Name",
+            "expect": "Premise-Richmond"
+          },
+          {
+            "do": "Choice",
+            "expect": "Trunk LGW-Richmond"
+          },
+          {
+            "do": "Patterns",
+            "expect": "+1804555XXXX and the extension pattern you need"
+          }
+        ],
+        "check": "The plan is enterprise-scoped in the note."
+      },
+      "fault": {
+        "title": "A plan on the wrong trunk",
+        "symptom": "Calls to the factory PBX land on the headquarters PRI.",
+        "log": "SYNTHETIC: pattern +1804555XXXX choice=HQ-PRI, phones live on Factory-GW.",
+        "cause": "The routing choice, not the pattern text, selects the trunk.",
+        "fix": "Point the pattern at the factory trunk or route group and test one number.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "e164",
+      "title": "+E.164 patterns",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Write patterns in the form the cloud and Unified CM will both see. The voice article shows national and +E.164 together so both habits hit the premises.",
+      "uncertainty": "",
+      "objectives": [
+        "Write an X pattern",
+        "Cover both habits",
+        "Keep the US +1 step labeled as a teaching example"
+      ],
+      "diagram": {
+        "caption": "One range, two habits, one routing choice.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "User habit",
+            "sub": "9-1-804…",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "+E.164",
+            "sub": "+1804…",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Pattern",
+            "sub": "X wildcard",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Trunk",
+            "sub": "premises",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "normalize"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "match"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "route"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Match +18045551234",
+        "steps": [
+          {
+            "from": "User",
+            "to": "Phone",
+            "label": "Dial with a 9",
+            "detail": "The location external digit comes off in the simulator.",
+            "inspect": "Teaching strip",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Cloud",
+            "to": "Normalize",
+            "label": "Show +1",
+            "detail": "The simulator says this is a US example, not a worldwide rule.",
+            "inspect": "Uncertainty on the page",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Plan",
+            "to": "Pattern",
+            "label": "+1804555XXXX",
+            "detail": "Four X digits. The number matches.",
+            "inspect": "Routing choice fires",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          },
+          {
+            "from": "Address book",
+            "to": "+E.164",
+            "label": "Also matches",
+            "detail": "The voice article wants the globalized form to work without a second design.",
+            "inspect": "Same choice",
+            "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Why both forms",
+          "paragraphs": [
+            "People dial habits. Directories store +E.164. The voice article builds patterns so both reach the same premises range.",
+            "If you only program the habit, click-to-call from a directory misses."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "The simulator's +1",
+          "paragraphs": [
+            "Ten-digit numbers become +1 only inside the lab's US example, and the trace says so.",
+            "A UK location needs its own normalization story. Do not copy +1 into it."
+          ],
+          "cite": {
+            "label": "ITU-T E.164",
+            "url": "https://www.itu.int/rec/T-REC-E.164"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "+1804555XXXX matches",
+          "choices": [
+            "+18045551234",
+            "+448004445555",
+            "2100",
+            "933"
+          ],
+          "answer": 0,
+          "why": "X is one digit. Four X's match four digits.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The voice article wants",
+          "choices": [
+            "National and +E.164 habits for the same range",
+            "Only extensions",
+            "Only 911",
+            "Only SIP URIs"
+          ],
+          "answer": 0,
+          "why": "So agents and address books both work.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "The simulator's +1 rule is",
+          "choices": [
+            "A US teaching example, labeled as such",
+            "ITU law for every country",
+            "A trunk port",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The trace says it is not a worldwide Webex rule.",
+          "cite": "https://www.itu.int/rec/T-REC-E.164"
+        },
+        {
+          "q": "Directories usually store",
+          "choices": [
+            "+E.164",
+            "Four-digit extensions only",
+            "MAC addresses",
+            "Bot tokens"
+          ],
+          "answer": 0,
+          "why": "That is why the globalized pattern exists.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "A pattern with the wrong number of X digits",
+          "choices": [
+            "Does not match",
+            "Always matches",
+            "Matches 911",
+            "Opens a trunk"
+          ],
+          "answer": 0,
+          "why": "Length is part of the match.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Click-to-call failures often mean",
+          "choices": [
+            "The +E.164 form has no pattern",
+            "SSO is off",
+            "The font is small",
+            "The exam expired"
+          ],
+          "answer": 0,
+          "why": "The habit pattern exists and the directory form does not.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "X",
+          "back": "One digit in the simulator."
+        },
+        {
+          "front": "Both habits",
+          "back": "National and +E.164."
+        },
+        {
+          "front": "+1 in the lab",
+          "back": "US example only."
+        },
+        {
+          "front": "Directories",
+          "back": "They dial the plus form."
+        }
+      ],
+      "lab": {
+        "title": "Write the pair",
+        "goal": "For 804-555-0100 through 0199, write both patterns.",
+        "steps": [
+          {
+            "do": "Plus",
+            "expect": "+180455501XX"
+          },
+          {
+            "do": "Habit",
+            "expect": "Whatever the external digit plus national number is, after strip"
+          },
+          {
+            "do": "Choice",
+            "expect": "The premises trunk"
+          }
+        ],
+        "check": "0100 matches. 0200 does not."
+      },
+      "fault": {
+        "title": "Directory calls fail",
+        "symptom": "Handset dialing works. Outlook click-to-call does not.",
+        "log": "SYNTHETIC: pattern 91804555XXXX only, directory sends +18045550100.",
+        "cause": "The plus form was never a pattern.",
+        "fix": "Add the +E.164 pattern with the same routing choice.",
+        "cite": {
+          "label": "Set up voice channels for Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        }
+      }
+    },
+    {
+      "id": "ucm",
+      "title": "Unified CM normalization toward the cloud",
+      "level": "core",
+      "minutes": 15,
+      "summary": "The workflow guide normalizes Unified CM callers to +E.164, then uses one partition of route patterns toward the local gateway for Webex Calling DID ranges.",
+      "uncertainty": "",
+      "objectives": [
+        "Explain the partition",
+        "Explain why one pattern set is enough",
+        "Keep this on the cluster, not on the phone"
+      ],
+      "diagram": {
+        "caption": "Habits become +E.164 on Unified CM. One route list points at the gateway.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Endpoint",
+            "sub": "any habit",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Translation",
+            "sub": "to +E.164",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Partition",
+            "sub": "Webex Calling",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Route group",
+            "sub": "trunk to LGW",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "normalize"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "route pattern"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "one member"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A Unified CM phone calls a Webex Calling DID",
+        "steps": [
+          {
+            "from": "Phone",
+            "to": "Unified CM",
+            "label": "Dial a habit",
+            "detail": "Translation patterns or inbound transformations produce +E.164.",
+            "inspect": "Workflow guide",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Unified CM",
+            "to": "Partition",
+            "label": "Match the DID range",
+            "detail": "A partition representing Webex Calling destinations holds a +E.164 route pattern per DID range.",
+            "inspect": "Named in the guide",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Route pattern",
+            "to": "Route list",
+            "label": "One member",
+            "detail": "The route group that contains the SIP trunk to the local gateway.",
+            "inspect": "No extra members in the guide's description",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Gateway",
+            "to": "Webex Calling",
+            "label": "Deliver",
+            "detail": "The cloud rings the Webex Calling user.",
+            "inspect": "Return path is the cloud dial plan",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Why normalization pays",
+          "paragraphs": [
+            "Because every habit becomes +E.164, the guide says one set of route patterns is enough, independent of how the user dialed.",
+            "Skipping normalization means a pattern per habit, and they drift."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        },
+        {
+          "h": "PSTN calls are a different pattern",
+          "paragraphs": [
+            "The same cluster still sends true PSTN out its own gateway or, if you chose premises PSTN for Webex users, via the local gateway from the cloud side.",
+            "Do not point every pattern at Webex Calling. Only the ranges that live there."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The guide's partition represents",
+          "choices": [
+            "Webex Calling destinations",
+            "All PSTN in the world",
+            "Bots",
+            "Fonts"
+          ],
+          "answer": 0,
+          "why": "That is the name in the article.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Patterns in that partition are",
+          "choices": [
+            "+E.164 route patterns for each DID range",
+            "Four-digit only",
+            "MAC filters",
+            "Webhooks"
+          ],
+          "answer": 0,
+          "why": "The guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "The route list has",
+          "choices": [
+            "One member: the route group of the SIP trunk to the local gateway",
+            "Every gateway in the company",
+            "A bot",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "The guide says one member.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Normalization lets you",
+          "choices": [
+            "Use one pattern set for every dialing habit",
+            "Skip SIP",
+            "Skip licenses",
+            "Skip 933"
+          ],
+          "answer": 0,
+          "why": "That is the stated benefit.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "PSTN ranges that do not belong to Webex Calling",
+          "choices": [
+            "Stay on the cluster's own PSTN path",
+            "Must all move into the Webex partition",
+            "Become macros",
+            "Become tokens"
+          ],
+          "answer": 0,
+          "why": "Only Webex Calling DID ranges go in that partition.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "This configuration lives",
+          "choices": [
+            "On Unified CM",
+            "In a RoomOS macro",
+            "In the quiz database only",
+            "On the PSAP"
+          ],
+          "answer": 0,
+          "why": "It is a cluster dial plan.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Normalize first",
+          "back": "Habits become +E.164."
+        },
+        {
+          "front": "One partition",
+          "back": "Webex Calling destinations."
+        },
+        {
+          "front": "One route group",
+          "back": "The trunk to the local gateway."
+        },
+        {
+          "front": "Not all PSTN",
+          "back": "Only ranges that live in Webex Calling."
+        }
+      ],
+      "lab": {
+        "title": "Write the route pattern",
+        "goal": "For DID +18045551000 to 1099, describe the pattern and the route list.",
+        "steps": [
+          {
+            "do": "Pattern",
+            "expect": "+180455510XX"
+          },
+          {
+            "do": "Partition",
+            "expect": "Webex Calling"
+          },
+          {
+            "do": "Member",
+            "expect": "Route group of the local-gateway trunk"
+          }
+        ],
+        "check": "A 4-digit dial still works because translation happens first."
+      },
+      "fault": {
+        "title": "Only 4-digit works",
+        "symptom": "Handsets that dial 10 digits never reach Webex Calling users. 4-digit dialing does.",
+        "log": "SYNTHETIC: translation missing for 10-digit, route pattern is +E.164 only.",
+        "cause": "The guide depends on normalization. Without it, the habit never equals the pattern.",
+        "fix": "Add the translation pattern, then test both habits.",
+        "cite": {
+          "label": "Webex Calling configuration workflow",
+          "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      }
+    },
+    {
+      "id": "sim",
+      "title": "Using the dial-plan simulator",
+      "level": "core",
+      "minutes": 16,
+      "summary": "The simulator applies a labeled teaching order: emergency, external digit, extension, routing prefix, US +1 example, patterns, then fallthrough or the cloud-PSTN block.",
+      "uncertainty": "",
+      "objectives": [
+        "Run every preset",
+        "Explain one trace line",
+        "State what the simulator is not"
+      ],
+      "diagram": {
+        "caption": "Read the trace. The rule name is the lesson.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Emergency",
+            "sub": "911 or 933",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Internal",
+            "sub": "length or prefix",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Pattern",
+            "sub": "X match",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Fallthrough",
+            "sub": "gateway or cloud",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "else"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "else"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "else"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Run a preset",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Preset",
+            "label": "933 to RedSky",
+            "detail": "Enabled locations leave the ordinary dial plan.",
+            "inspect": "E911 article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Preset",
+            "label": "Internal and other location",
+            "detail": "Extension length and prefix.",
+            "inspect": "Organization article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Preset",
+            "label": "Pattern to trunk",
+            "detail": "9 plus the national number matches +1804555XXXX.",
+            "inspect": "Teaching +1",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "You",
+            "to": "Preset",
+            "label": "Premises to cloud",
+            "detail": "The trace blocks it.",
+            "inspect": "Trunk article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Order is a model",
+          "paragraphs": [
+            "Cisco documents the objects. The simulator's sequence is this lab's teaching order, printed in the trace.",
+            "If a real call disagrees with the simulator, believe the call and the current Control Hub behavior, then file the difference."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Warnings",
+          "paragraphs": [
+            "Two trunks on a premises location produce a warning even when a route is chosen.",
+            "The warning cites the one-trunk rule. It does not mean the call 'kind of works' in production."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "933 with emergency enabled, in the simulator,",
+          "choices": [
+            "Routes to RedSky or Intrado",
+            "Uses the dial pattern first",
+            "Is a license check",
+            "Is SSO"
+          ],
+          "answer": 0,
+          "why": "Emergency is handled before the ordinary plan.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Premises origin and CCP",
+          "choices": [
+            "Blocked",
+            "Sent to the partner",
+            "Sent to a queue",
+            "Ignored"
+          ],
+          "answer": 0,
+          "why": "The origin rule.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Two trunks produce",
+          "choices": [
+            "A warning about the one-trunk rule",
+            "A successful certificate",
+            "A bot message",
+            "An exam pass"
+          ],
+          "answer": 0,
+          "why": "The organization article.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The simulator is not",
+          "choices": [
+            "The Control Hub routing engine",
+            "A teaching model",
+            "Able to show a trace",
+            "Able to match X"
+          ],
+          "answer": 0,
+          "why": "The page says so.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "A 10-digit US example becomes",
+          "choices": [
+            "+1 plus those digits, and the trace says it is an example",
+            "A UK number",
+            "An extension always",
+            "A certificate"
+          ],
+          "answer": 0,
+          "why": "Labeled teaching normalization.",
+          "cite": "https://www.itu.int/rec/T-REC-E.164"
+        },
+        {
+          "q": "Unmatched premises calls",
+          "choices": [
+            "Fall through to the local gateway",
+            "Always fail",
+            "Go to Analyzer",
+            "Go to a bot"
+          ],
+          "answer": 0,
+          "why": "The workflow guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Teaching order",
+          "back": "Emergency, internal, pattern, fallthrough."
+        },
+        {
+          "front": "Not production",
+          "back": "Control Hub wins an argument."
+        },
+        {
+          "front": "Two-trunk warning",
+          "back": "Still a failed design."
+        },
+        {
+          "front": "Presets",
+          "back": "Use them before you invent a dial string."
+        }
+      ],
+      "lab": {
+        "title": "Narrate four traces",
+        "goal": "Run four presets and read the rule name aloud.",
+        "steps": [
+          {
+            "do": "933",
+            "expect": "Emergency"
+          },
+          {
+            "do": "222100",
+            "expect": "Routing prefix"
+          },
+          {
+            "do": "Premises to CCP",
+            "expect": "Blocked"
+          },
+          {
+            "do": "Unmatched",
+            "expect": "Local gateway"
+          }
+        ],
+        "check": "You can point at the cite on each line."
+      },
+      "fault": {
+        "title": "Simulator says yes, cutover says no",
+        "symptom": "The lab matched a pattern. Production has no such pattern.",
+        "log": "SYNTHETIC: simulator pattern present, Control Hub dial plan empty.",
+        "cause": "The simulator does not read your tenant.",
+        "fix": "Create the pattern in Control Hub, then place the real call.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "permissions",
+      "title": "What this lab will not call a dial plan",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Outgoing permissions, call queues, and emergency routing are adjacent. They are not dial-plan patterns. Mixing them hides the real object.",
+      "uncertainty": "Calling permissions exist in the product. This lesson does not invent the current permission names. Check Control Hub and the calling feature docs for the control you will actually set.",
+      "objectives": [
+        "Sort requirements into objects",
+        "Keep 911 out of the ordinary pattern list",
+        "Keep queues out of the dial plan"
+      ],
+      "diagram": {
+        "caption": "Permissions, features, and emergency sit beside the dial plan.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Permissions",
+            "sub": "who may call out",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dial plan",
+            "sub": "where it goes",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Features",
+            "sub": "queues and attendants",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Emergency",
+            "sub": "its own path",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "both"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "not a pattern"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "not a pattern"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Classify a requirement",
+        "steps": [
+          {
+            "from": "Request",
+            "to": "Classify",
+            "label": "Block international",
+            "detail": "That is a calling permission, documented with the user and location calling settings. Confirm the current control in Control Hub.",
+            "inspect": "Do not fake it with a pattern that drops the call",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Request",
+            "to": "Classify",
+            "label": "Send a range to the PBX",
+            "detail": "That is a dial plan.",
+            "inspect": "Trunk or route group",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Request",
+            "to": "Classify",
+            "label": "Answer with a menu",
+            "detail": "That is an auto attendant.",
+            "inspect": "Features",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Request",
+            "to": "Classify",
+            "label": "Route 911",
+            "detail": "That is emergency calling for the location.",
+            "inspect": "Not a pattern of last resort",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Adjacent is not the same",
+          "paragraphs": [
+            "A user who cannot dial internationally may still match a dial plan when they dial a local PSTN number. Fix the permission, not the pattern.",
+            "An auto attendant number is a feature with a number. It can also be a target of dialing. Building the menu is not a pattern edit."
+          ],
+          "cite": {
+            "label": "Manage auto attendants",
+            "url": "https://help.webex.com/en-us/article/nsioxoi"
+          }
+        },
+        {
+          "h": "Emergency first",
+          "paragraphs": [
+            "The simulator short-circuits 911 and 933. That mirrors the idea that emergency is not just another pattern.",
+            "The real mechanism is the location's emergency configuration, RedSky or Intrado or the PSTN provider."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Sending an on-prem range to a trunk is",
+          "choices": [
+            "A dial plan",
+            "An auto attendant",
+            "A license",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "Patterns plus a routing choice.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "A phone menu is",
+          "choices": [
+            "An auto attendant",
+            "A dial pattern",
+            "A certificate",
+            "ICE"
+          ],
+          "answer": 0,
+          "why": "The auto attendant article.",
+          "cite": "https://help.webex.com/en-us/article/nsioxoi"
+        },
+        {
+          "q": "911 configuration is",
+          "choices": [
+            "Emergency calling on the location",
+            "Just another X pattern",
+            "A bot",
+            "A report"
+          ],
+          "answer": 0,
+          "why": "The E911 article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "International restrict is",
+          "choices": [
+            "A permission problem, not a pattern you invent to black-hole calls",
+            "Always a route group",
+            "A codec",
+            "A macro"
+          ],
+          "answer": 0,
+          "why": "Keep the objects separate. Confirm the current permission control in Control Hub.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "A feature with a number",
+          "choices": [
+            "Can be dialed, and is still configured as that feature",
+            "Is only a pattern",
+            "Cannot have a DID",
+            "Is a trunk"
+          ],
+          "answer": 0,
+          "why": "Attendants and queues have numbers and their own pages.",
+          "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+        },
+        {
+          "q": "The simulator treats 911",
+          "choices": [
+            "Before ordinary patterns",
+            "After every pattern",
+            "As a license",
+            "As SSO"
+          ],
+          "answer": 0,
+          "why": "See the emergency branch.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Pattern",
+          "back": "Where a matched destination goes."
+        },
+        {
+          "front": "Attendant",
+          "back": "A feature, even if it has a number."
+        },
+        {
+          "front": "911",
+          "back": "Location emergency configuration."
+        },
+        {
+          "front": "Permission",
+          "back": "Who is allowed to place the class of call."
+        }
+      ],
+      "lab": {
+        "title": "Sort six requests",
+        "goal": "Mark each as permission, dial plan, feature, or emergency.",
+        "steps": [
+          {
+            "do": "Block premium numbers",
+            "expect": "Permission"
+          },
+          {
+            "do": "+1804555 range to the PBX",
+            "expect": "Dial plan"
+          },
+          {
+            "do": "Business-hours menu",
+            "expect": "Auto attendant"
+          },
+          {
+            "do": "933 tests",
+            "expect": "Emergency"
+          }
+        ],
+        "check": "None of them were solved by editing a certificate."
+      },
+      "fault": {
+        "title": "911 as a pattern of last resort",
+        "symptom": "A dial plan sends 911 to the data center PRI. The branch has RedSky enabled and is ignored.",
+        "log": "SYNTHETIC: pattern 911 choice=DC-PRI, location emergency=RedSky.",
+        "cause": "Emergency enablement is supposed to take the RedSky path. A homemade pattern fights it.",
+        "fix": "Remove the homemade 911 pattern. Test 933 on the enabled location.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "misses",
+      "title": "Pattern misses",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "A miss is not automatically a failure. On premises PSTN it is fallthrough to the local gateway. On a cloud connection it is cloud PSTN, unless the origin rule blocks it.",
+      "uncertainty": "",
+      "objectives": [
+        "Predict fallthrough",
+        "Predict the block",
+        "Add a pattern when fallthrough is the wrong trunk"
+      ],
+      "diagram": {
+        "caption": "No pattern. The location's PSTN connection decides the rest.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "No match",
+            "sub": "patterns",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Premises",
+            "sub": "local gateway",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Cloud user",
+            "sub": "cloud PSTN",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Premises user",
+            "sub": "blocked if cloud",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "lgw"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "ccp or cisco"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "origin"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Decide a miss",
+        "steps": [
+          {
+            "from": "Call",
+            "to": "Plan",
+            "label": "No match",
+            "detail": "Say so explicitly in the ticket.",
+            "inspect": "List the patterns you checked",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Location",
+            "to": "Premises",
+            "label": "Fallthrough",
+            "detail": "The workflow guide sends unknown destinations to the local gateway.",
+            "inspect": "That may be the right PRI or the wrong one",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Location",
+            "to": "Cloud",
+            "label": "Cloud PSTN",
+            "detail": "Fine for a Webex user and a real public number.",
+            "inspect": "Not fine for a private extension",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          },
+          {
+            "from": "Origin",
+            "to": "Premises PBX",
+            "label": "Stop",
+            "detail": "Cloud PSTN will not take the call.",
+            "inspect": "Give them a premises path",
+            "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Private extensions must be patterns",
+          "paragraphs": [
+            "An on-prem extension that is not a Webex Calling destination will fall through. If the location trunk is a PSTN carrier, the carrier will reject a private extension.",
+            "That is the bug the dial-plan object exists to prevent."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Explicit is kinder than fallthrough",
+          "paragraphs": [
+            "Even when fallthrough would reach the right gateway, a pattern documents the range.",
+            "The next admin can see it. Fallthrough is invisible."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A miss on premises PSTN",
+          "choices": [
+            "Goes to the local gateway",
+            "Is always dropped",
+            "Becomes a chat",
+            "Opens RedSky"
+          ],
+          "answer": 0,
+          "why": "Workflow guide.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "A private extension with no pattern, location trunk = carrier PRI,",
+          "choices": [
+            "Is sent toward the carrier and will not be a private extension anymore",
+            "Rings the PBX automatically",
+            "Becomes a license",
+            "Matches X"
+          ],
+          "answer": 0,
+          "why": "The fallthrough target is the location trunk, whatever it is.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "A Webex user calling a public number with no pattern, on CCP,",
+          "choices": [
+            "Uses cloud PSTN",
+            "Is blocked",
+            "Needs a certificate",
+            "Needs a bot"
+          ],
+          "answer": 0,
+          "why": "Cloud PSTN is for those users.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "A premises user doing the same on CCP",
+          "choices": [
+            "Is blocked",
+            "Uses CCP",
+            "Uses HELD",
+            "Uses a queue"
+          ],
+          "answer": 0,
+          "why": "Origin rule.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Adding a pattern when fallthrough already works is",
+          "choices": [
+            "Still useful, because the range becomes visible",
+            "Forbidden",
+            "A license change",
+            "An emergency test"
+          ],
+          "answer": 0,
+          "why": "Operations need to see the range.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "The simulator preset for a miss is",
+          "choices": [
+            "Unmatched to gateway",
+            "933",
+            "Internal extension",
+            "Two trunks only"
+          ],
+          "answer": 0,
+          "why": "Use that preset.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Miss plus premises",
+          "back": "Local gateway fallthrough."
+        },
+        {
+          "front": "Miss plus private extension",
+          "back": "Dangerous if the trunk is a carrier."
+        },
+        {
+          "front": "Miss plus Webex user plus CCP",
+          "back": "Cloud PSTN."
+        },
+        {
+          "front": "Visible ranges",
+          "back": "Prefer a pattern."
+        }
+      ],
+      "lab": {
+        "title": "Predict three misses",
+        "goal": "Write the route before you click Simulate.",
+        "steps": [
+          {
+            "do": "917035550100, premises, pattern only matches 804",
+            "expect": "Local gateway"
+          },
+          {
+            "do": "Same number, CCP, Webex user",
+            "expect": "Cloud PSTN"
+          },
+          {
+            "do": "Same number, CCP, premises origin",
+            "expect": "Blocked"
+          }
+        ],
+        "check": "Your prediction matched the trace."
+      },
+      "fault": {
+        "title": "Private extensions hit the carrier",
+        "symptom": "4-digit dialing from Webex users is billed as a failed PSTN call.",
+        "log": "SYNTHETIC: no extension pattern, location trunk=carrier, dialed 4410.",
+        "cause": "Fallthrough sent a private extension to the carrier.",
+        "fix": "Add a dial plan for the PBX extension range, aimed at the PBX trunk or route group.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "dial-review",
+      "title": "Dial-plan review",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "A dial plan is done when every private range is explicit, both number habits match, Unified CM normalization is in place, and emergency is not hiding inside a pattern.",
+      "uncertainty": "",
+      "objectives": [
+        "Run the four checks",
+        "Use the simulator as a rehearsal",
+        "Leave evidence"
+      ],
+      "diagram": {
+        "caption": "Four checks before you call the dial plan finished.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Private ranges",
+            "sub": "explicit",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Both habits",
+            "sub": "+ and national",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Unified CM",
+            "sub": "normalized",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "911",
+            "sub": "not a pattern",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "and"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "and"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "and"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Review",
+        "steps": [
+          {
+            "from": "Review",
+            "to": "Ranges",
+            "label": "List PBX extensions",
+            "detail": "Each range has a pattern and a routing choice.",
+            "inspect": "No fallthrough for private numbers",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Habits",
+            "label": "Dial and click-to-call",
+            "detail": "National and +E.164.",
+            "inspect": "Voice article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "Cluster",
+            "label": "One test from a Unified CM phone",
+            "detail": "The +E.164 partition hits the gateway.",
+            "inspect": "Workflow guide",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          },
+          {
+            "from": "Review",
+            "to": "911",
+            "label": "Separate evidence",
+            "detail": "933 result, not a dial-plan screenshot.",
+            "inspect": "E911 article",
+            "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Evidence",
+          "paragraphs": [
+            "Patterns exported or read back from Control Hub, a call from a handset, a call from a directory, a call from Unified CM, and a 933 result.",
+            "The simulator trace can be attached as rehearsal. It is not the evidence."
+          ],
+          "cite": {
+            "label": "Set up voice channels for Webex Contact Center",
+            "url": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+          }
+        },
+        {
+          "h": "DI interop",
+          "paragraphs": [
+            "Dedicated Instance uses its own Unified CM dial plan plus the interop trunk. Do not assume the multi-tenant dial plan covers DI extensions.",
+            "That is the next architecture over, and it has its own activation step."
+          ],
+          "cite": {
+            "label": "Activate Dedicated Instance",
+            "url": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Private ranges should be",
+          "choices": [
+            "Explicit patterns",
+            "Left to fallthrough",
+            "Stored in a macro",
+            "Stored in a bot"
+          ],
+          "answer": 0,
+          "why": "Fallthrough hides them and may hit a carrier.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Directory calls prove",
+          "choices": [
+            "The +E.164 pattern",
+            "The certificate private key",
+            "SSO",
+            "The font"
+          ],
+          "answer": 0,
+          "why": "Directories use the plus form.",
+          "cite": "https://help.webex.com/en-us/article/2dputx/Set-up-voice-channels-for-Webex-Contact-Center"
+        },
+        {
+          "q": "A Unified CM test proves",
+          "choices": [
+            "Normalization and the Webex Calling partition",
+            "That CCP is free",
+            "That 933 is done",
+            "That the bot works"
+          ],
+          "answer": 0,
+          "why": "The workflow guide's path.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "933 evidence is",
+          "choices": [
+            "Not a dial-plan screenshot",
+            "Optional if the dial plan is pretty",
+            "A license",
+            "A token"
+          ],
+          "answer": 0,
+          "why": "Emergency is its own configuration.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Simulator output is",
+          "choices": [
+            "Rehearsal",
+            "Tenant evidence",
+            "A certificate",
+            "A port reference"
+          ],
+          "answer": 0,
+          "why": "It does not read Control Hub.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "Dedicated Instance extensions",
+          "choices": [
+            "Need the DI dial plan and the interop trunk",
+            "Are covered automatically by the multi-tenant plan",
+            "Are Flow Designer activities",
+            "Are webhooks"
+          ],
+          "answer": 0,
+          "why": "Activation tells you to turn on interop.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Explicit",
+          "back": "Private ranges get patterns."
+        },
+        {
+          "front": "Two habits",
+          "back": "Handset and directory."
+        },
+        {
+          "front": "Cluster test",
+          "back": "Proves normalization."
+        },
+        {
+          "front": "933",
+          "back": "Separate from the dial plan."
+        }
+      ],
+      "lab": {
+        "title": "Build the packet",
+        "goal": "List the five pieces of evidence and mark which you have.",
+        "steps": [
+          {
+            "do": "Patterns",
+            "expect": "From Control Hub"
+          },
+          {
+            "do": "Handset call",
+            "expect": "Result"
+          },
+          {
+            "do": "Directory call",
+            "expect": "Result"
+          },
+          {
+            "do": "933",
+            "expect": "Result or explicitly out of scope"
+          }
+        ],
+        "check": "Gaps are written as open items, not as passes."
+      },
+      "fault": {
+        "title": "Pretty spreadsheet, wrong trunk",
+        "symptom": "Every range is listed. All of them point at a decommissioned gateway.",
+        "log": "SYNTHETIC: routing choice LGW-old, device powered off.",
+        "cause": "The review checked pattern text and skipped the routing choice.",
+        "fix": "Repoint the plans at the live trunk or route group and place one call per range.",
+        "cite": {
+          "label": "Trunks, route groups, and dial plans",
+          "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      }
+    }
+  ]
+}

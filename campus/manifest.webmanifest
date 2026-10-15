@@ -1,0 +1,9 @@
+{
+  "name": "Webex Lab",
+  "short_name": "Webex Lab",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07120f",
+  "theme_color": "#0b6e4a",
+  "lang": "en"
+}

@@ -1,0 +1,1814 @@
+{
+  "id": "t12",
+  "title": "WFO, AI agents, and Contact Center APIs",
+  "blurb": "Workforce optimization, scripted and autonomous agents, and the webhook and search contracts.",
+  "level": "Advanced",
+  "lessons": [
+    {
+      "id": "wfo",
+      "title": "What workforce optimization includes",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "Webex Workforce Optimization is the suite around the contact center: workforce management, quality management, and analytics. It is not a flow activity.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the three jobs of the suite",
+        "Keep them off the flow canvas",
+        "Use the landing page as the index"
+      ],
+      "diagram": {
+        "caption": "WFO sits beside the desktop. It does not replace the queue.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "WFM",
+            "sub": "schedules",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Quality",
+            "sub": "evaluation",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Analytics",
+            "sub": "what happened",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Desktop",
+            "sub": "the work",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "staff"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "measure"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Plan, listen, measure",
+        "steps": [
+          {
+            "from": "Planner",
+            "to": "WFM",
+            "label": "Schedule people to the queues you already built",
+            "detail": "The workforce optimization landing is the index. Product names inside it move; follow the live page.",
+            "inspect": "Do not invent a module",
+            "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          },
+          {
+            "from": "Supervisor",
+            "to": "Quality",
+            "label": "Evaluate recorded contacts",
+            "detail": "Quality management is part of the suite. Recording rules belong to that documentation, not to a guessed retention number.",
+            "inspect": "No invented retention",
+            "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          },
+          {
+            "from": "Analyst",
+            "to": "Analytics",
+            "label": "Read what the queues did",
+            "detail": "Analyzer access still follows resource collections. A fenced supervisor does not see every queue.",
+            "inspect": "Access article",
+            "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          },
+          {
+            "from": "Agent",
+            "to": "Desktop",
+            "label": "Keep taking contacts",
+            "detail": "WFO does not change LAA or BAA. It observes and plans around them.",
+            "inspect": "Routing stays put",
+            "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The landing page is the map",
+          "paragraphs": [
+            "Cisco's Webex Workforce Optimization landing groups the agent-facing and administrator material. Use it to find WFM, quality, and analytics rather than a single magic SKU name from memory.",
+            "Uncertainty: module names on that landing change. This lesson does not freeze a submenu that the page might rename."
+          ],
+          "cite": {
+            "label": "Webex Workforce Optimization",
+            "url": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+          }
+        },
+        {
+          "h": "What it is not",
+          "paragraphs": [
+            "It is not Flow Designer, not the Calling call queue, and not Dedicated Instance RTMT.",
+            "A screen pop is still a flow activity. A schedule is still WFM."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "WFO in this lab means",
+          "choices": [
+            "Workforce optimization: WFM, quality, and analytics",
+            "A local gateway",
+            "A dial pattern",
+            "Emergency Responder"
+          ],
+          "answer": 0,
+          "why": "Start from the landing page.",
+          "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+        },
+        {
+          "q": "Analyzer visibility follows",
+          "choices": [
+            "Resource collections",
+            "The voice domain length",
+            "Port 5062",
+            "A bot mention"
+          ],
+          "answer": 0,
+          "why": "Access article.",
+          "cite": "https://help.webex.com/en-us/article/n524f2m"
+        },
+        {
+          "q": "WFO does not replace",
+          "choices": [
+            "LAA or BAA",
+            "The need to cite sources",
+            "Queues",
+            "Teams"
+          ],
+          "answer": 0,
+          "why": "Routing article.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Recording retention in this lesson",
+          "choices": [
+            "Is not invented",
+            "Is always 30 days",
+            "Is ten characters",
+            "Is 24 hours"
+          ],
+          "answer": 0,
+          "why": "Read the current quality article.",
+          "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+        },
+        {
+          "q": "Screen pop remains",
+          "choices": [
+            "A Flow Designer activity",
+            "A WFM schedule",
+            "A DNS forwarder",
+            "A trunk"
+          ],
+          "answer": 0,
+          "why": "Different object.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "The landing page",
+          "choices": [
+            "Is the index, and it can be reorganized",
+            "Is an RFC",
+            "Is the exam",
+            "Is a CSV"
+          ],
+          "answer": 0,
+          "why": "Re-check names.",
+          "cite": "https://help.webex.com/landing/ld-nf7q1hbb-WebexWorkforceOptimization(WFO)/Agents?subTab=Webex-Contact-Center&type=complex"
+        }
+      ],
+      "cards": [
+        {
+          "front": "WFM",
+          "back": "Schedules."
+        },
+        {
+          "front": "Quality",
+          "back": "Evaluation and recording docs."
+        },
+        {
+          "front": "Analytics",
+          "back": "Fenced by collections."
+        },
+        {
+          "front": "Not the flow",
+          "back": "WFO does not queue the contact."
+        }
+      ],
+      "lab": {
+        "title": "Three sticky notes",
+        "goal": "Label WFM, quality, and analytics with a question each would answer.",
+        "steps": [
+          {
+            "do": "WFM",
+            "expect": "Who is scheduled"
+          },
+          {
+            "do": "Quality",
+            "expect": "Was the contact handled as designed"
+          },
+          {
+            "do": "Analytics",
+            "expect": "Which queue, and can this user see it"
+          }
+        ],
+        "check": "Each note names the landing page as the index."
+      },
+      "fault": {
+        "title": "Report looks empty",
+        "symptom": "A supervisor says analytics is broken.",
+        "log": "SYNTHETIC: user profile has two collections, report filtered to a queue in neither.",
+        "cause": "The fence is working.",
+        "fix": "Add the queue to a collection on that profile or use a profile with All resources.",
+        "cite": {
+          "label": "Manage access in Webex Contact Center",
+          "url": "https://help.webex.com/en-us/article/n524f2m"
+        }
+      }
+    },
+    {
+      "id": "studio-ai",
+      "title": "Scripted and autonomous agents",
+      "level": "core",
+      "minutes": 13,
+      "summary": "AI Agent Studio has a scripted agent and an autonomous agent. Voice uses Virtual Agent V2. Digital uses the AI Agent node. They escalate back into the flow with metadata.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate scripted from autonomous",
+        "Match voice to Virtual Agent V2",
+        "Match digital to the AI Agent node"
+      ],
+      "diagram": {
+        "caption": "The agent handles the turn. The flow still owns the escalation.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Scripted",
+            "sub": "fulfillment",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Autonomous",
+            "sub": "goals",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Virtual Agent V2",
+            "sub": "voice",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "AI Agent node",
+            "sub": "digital",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "voice"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "voice"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "digital"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Pick the agent type before the channel",
+        "steps": [
+          {
+            "from": "Designer",
+            "to": "Studio",
+            "label": "Choose scripted or autonomous",
+            "detail": "The AI agent article is the product description. Scripted agents follow fulfillment you configure. Autonomous agents follow the goal-oriented setup on that page.",
+            "inspect": "Do not swap the words",
+            "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          },
+          {
+            "from": "Voice flow",
+            "to": "Virtual Agent V2",
+            "label": "Drop the voice activity",
+            "detail": "The flow canvas in this lab labels it Virtual Agent V2. Escalation returns control with metadata.",
+            "inspect": "Connect the escalated port",
+            "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          },
+          {
+            "from": "Digital",
+            "to": "AI Agent node",
+            "label": "Use the digital node",
+            "detail": "Chat and the other digital channels use the AI Agent node rather than the voice activity.",
+            "inspect": "Channel still matters",
+            "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          },
+          {
+            "from": "Flow",
+            "to": "Queue",
+            "label": "Take the human path",
+            "detail": "Escalation metadata is how the flow knows the agent gave up. Then Queue Contact or Queue To Agent.",
+            "inspect": "previousIntent comes next",
+            "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Two activities, two channels",
+          "paragraphs": [
+            "Virtual Agent V2 is the voice activity. The AI Agent node is the digital activity. Using the voice activity on a chat entry point is the wrong object.",
+            "Both can be scripted or autonomous depending on the agent you built in the studio."
+          ],
+          "cite": {
+            "label": "Use AI agents for customer interactions",
+            "url": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          }
+        },
+        {
+          "h": "The lab simulator",
+          "paragraphs": [
+            "The studio test contact has a virtual-agent flag of done or escalated. That flag is a teaching input.",
+            "It does not call a model and it does not spend tokens."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Scripted and autonomous are",
+          "choices": [
+            "The two AI agent styles in the article",
+            "Trunk types",
+            "License counts",
+            "DNS suffixes"
+          ],
+          "answer": 0,
+          "why": "AI agents article.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "Voice flows use",
+          "choices": [
+            "Virtual Agent V2",
+            "Only the digital AI Agent node",
+            "Blind Transfer for every turn",
+            "Web RTMT"
+          ],
+          "answer": 0,
+          "why": "Connect done and escalated.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "Digital flows use",
+          "choices": [
+            "The AI Agent node",
+            "Only Virtual Agent V2",
+            "A conditional forwarder",
+            "SME"
+          ],
+          "answer": 0,
+          "why": "Match the channel.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "Escalation",
+          "choices": [
+            "Returns control to the flow with metadata",
+            "Deletes the contact",
+            "Sizes a region",
+            "Opens a trunk"
+          ],
+          "answer": 0,
+          "why": "Then queue a person.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "The lab's virtual-agent flag",
+          "choices": [
+            "Is a simulator input",
+            "Calls a live model",
+            "Is a secret",
+            "Is the exam price"
+          ],
+          "answer": 0,
+          "why": "No tokens.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Fulfillment belongs to",
+          "choices": [
+            "Scripted agents",
+            "Autonomous agents only, with no article",
+            "Local gateways",
+            "Dial plans"
+          ],
+          "answer": 0,
+          "why": "Next lesson.",
+          "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Scripted",
+          "back": "Fulfillment you configure."
+        },
+        {
+          "front": "Autonomous",
+          "back": "The goal-oriented agent."
+        },
+        {
+          "front": "Voice",
+          "back": "Virtual Agent V2."
+        },
+        {
+          "front": "Digital",
+          "back": "AI Agent node."
+        }
+      ],
+      "lab": {
+        "title": "Channel pick",
+        "goal": "Write one voice design and one chat design.",
+        "steps": [
+          {
+            "do": "Voice",
+            "expect": "Virtual Agent V2 plus escalated port"
+          },
+          {
+            "do": "Chat",
+            "expect": "AI Agent node"
+          },
+          {
+            "do": "Human",
+            "expect": "Queue Contact on escalation"
+          }
+        ],
+        "check": "The two activities are not swapped."
+      },
+      "fault": {
+        "title": "Voice activity on chat",
+        "symptom": "Digital contacts never reach the agent.",
+        "log": "SYNTHETIC: chat entry point, Virtual Agent V2 only.",
+        "cause": "The channel and the activity do not match.",
+        "fix": "Use the AI Agent node for digital.",
+        "cite": {
+          "label": "Use AI agents for customer interactions",
+          "url": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        }
+      }
+    },
+    {
+      "id": "fulfill",
+      "title": "Fulfillment and previousIntent",
+      "level": "advanced",
+      "minutes": 13,
+      "summary": "Scripted fulfillment maps an intent to an action. When the contact escalates, previousIntent and the rest of the metadata tell the flow what just happened.",
+      "uncertainty": "",
+      "objectives": [
+        "Map an intent to fulfillment",
+        "Read previousIntent after escalation",
+        "Use a Condition on that value"
+      ],
+      "diagram": {
+        "caption": "The intent is data for the next activity.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Intent",
+            "sub": "recognized",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Fulfillment",
+            "sub": "action",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Escalate",
+            "sub": "metadata",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "previousIntent",
+            "sub": "flow variable",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "maps"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "gives up"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "handed back"
+          }
+        ]
+      },
+      "flow": {
+        "title": "The flow remembers why the agent escalated",
+        "steps": [
+          {
+            "from": "Studio",
+            "to": "Intent",
+            "label": "Write the utterance and the intent",
+            "detail": "The fulfillment article is the configuration source for scripted agents.",
+            "inspect": "Cite it in the design",
+            "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+          },
+          {
+            "from": "Intent",
+            "to": "Fulfillment",
+            "label": "Attach the action",
+            "detail": "A billing intent can dip HTTP or play a message. The article is the list of actions, not this paragraph.",
+            "inspect": "Open it while configuring",
+            "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+          },
+          {
+            "from": "Agent",
+            "to": "Flow",
+            "label": "Escalate with metadata",
+            "detail": "The AI article describes escalation metadata so the flow can branch.",
+            "inspect": "Connect the escalated port",
+            "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+          },
+          {
+            "from": "Flow",
+            "to": "Condition",
+            "label": "Branch on previousIntent",
+            "detail": "A billing escalation and a sales escalation should not share one generic queue if you already know the intent.",
+            "inspect": "Then Screen Pop the intent",
+            "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What to put on the screen pop",
+          "paragraphs": [
+            "previousIntent, the menu digit, and the HTTP result are enough for a useful pop. Do not dump the whole transcript unless the article and your privacy review allow it.",
+            "This lab does not define a retention period for transcripts."
+          ],
+          "cite": {
+            "label": "Configure fulfillment for scripted AI agents",
+            "url": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+          }
+        },
+        {
+          "h": "Custom events",
+          "paragraphs": [
+            "The AI agent material describes custom events the flow can receive. Handle the ones you subscribed to. Ignore names you did not configure.",
+            "Uncertainty: event payloads change. Read the current article before you parse a field."
+          ],
+          "cite": {
+            "label": "Use AI agents for customer interactions",
+            "url": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Fulfillment maps",
+          "choices": [
+            "An intent to an action",
+            "A MAC address to a building by itself",
+            "A region to a license",
+            "A port to a codec"
+          ],
+          "answer": 0,
+          "why": "Scripted agents article.",
+          "cite": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+        },
+        {
+          "q": "previousIntent is useful because",
+          "choices": [
+            "The flow can branch after escalation",
+            "It replaces SSO",
+            "It is a trunk",
+            "It sizes clusters"
+          ],
+          "answer": 0,
+          "why": "Put it on the screen pop if appropriate.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "Custom events",
+          "choices": [
+            "Are handled only if you configured them",
+            "Always mean 911",
+            "Are dial plans",
+            "Are CSV files"
+          ],
+          "answer": 0,
+          "why": "Re-read the payload before you parse.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "Transcript retention",
+          "choices": [
+            "Is not set by this lab",
+            "Is 12 hours",
+            "Is 36 months for every field",
+            "Is ten characters"
+          ],
+          "answer": 0,
+          "why": "Privacy review plus the product doc.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "A Condition after escalation",
+          "choices": [
+            "Can choose a queue from the intent",
+            "Changes the voice domain",
+            "Activates interop",
+            "Forwards DNS"
+          ],
+          "answer": 0,
+          "why": "Billing versus sales.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Autonomous agents",
+          "choices": [
+            "Are not configured only as fulfillment maps",
+            "Ignore the AI article",
+            "Are local gateways",
+            "Are hunt groups"
+          ],
+          "answer": 0,
+          "why": "They are the other style.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Fulfillment",
+          "back": "Intent to action."
+        },
+        {
+          "front": "previousIntent",
+          "back": "Why it escalated."
+        },
+        {
+          "front": "Custom events",
+          "back": "Only the ones you configured."
+        },
+        {
+          "front": "Pop",
+          "back": "Intent, not an unbounded transcript."
+        }
+      ],
+      "lab": {
+        "title": "Two intents",
+        "goal": "Map billing and outage to two queues.",
+        "steps": [
+          {
+            "do": "Billing",
+            "expect": "Fulfillment plus billing queue"
+          },
+          {
+            "do": "Outage",
+            "expect": "A different queue"
+          },
+          {
+            "do": "Pop",
+            "expect": "previousIntent on both"
+          }
+        ],
+        "check": "The condition uses the metadata, not a guess."
+      },
+      "fault": {
+        "title": "Generic queue",
+        "symptom": "Billing escalations reach a sales team.",
+        "log": "SYNTHETIC: escalated port goes to one queue, Condition unused.",
+        "cause": "previousIntent was ignored.",
+        "fix": "Branch on previousIntent before Queue Contact.",
+        "cite": {
+          "label": "Configure fulfillment for scripted AI agents",
+          "url": "https://help.webex.com/en-us/article/mzpuseb/Configure-fulfillment-for-scripted-AI-agents"
+        }
+      }
+    },
+    {
+      "id": "multi",
+      "title": "More than one agent",
+      "level": "advanced",
+      "minutes": 12,
+      "summary": "Multi-agent orchestration hands a contact from one AI agent to another. The documented trigger variable is escalation_trigger. The flow still has the last say.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the trigger the article uses",
+        "Keep a human path",
+        "Not invent extra variables"
+      ],
+      "diagram": {
+        "caption": "One agent escalates to another agent before a human.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Agent A",
+            "sub": "first",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "escalation_trigger",
+            "sub": "variable",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Agent B",
+            "sub": "specialist",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Human queue",
+            "sub": "still there",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "sets"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "orchestrate"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "if needed"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A specialist agent, then a person",
+        "steps": [
+          {
+            "from": "Studio",
+            "to": "Agents",
+            "label": "Build two agents with different jobs",
+            "detail": "The multi-agent article describes orchestration between them.",
+            "inspect": "Scripted or autonomous as designed",
+            "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+          },
+          {
+            "from": "Agent A",
+            "to": "Trigger",
+            "label": "Set escalation_trigger",
+            "detail": "The article uses that variable so the orchestration knows to move. The lab refers to it as $.escalation_trigger when the page uses that form.",
+            "inspect": "Confirm the live field path",
+            "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+          },
+          {
+            "from": "Orchestration",
+            "to": "Agent B",
+            "label": "Hand off",
+            "detail": "Agent B sees the context the article says is passed. Do not assume every variable moves unless the page lists it.",
+            "inspect": "Uncertainty on unlisted fields",
+            "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+          },
+          {
+            "from": "Agent B",
+            "to": "Queue",
+            "label": "Humans remain the escape",
+            "detail": "If both agents escalate, Queue Contact still needs a port.",
+            "inspect": "Do not trap the caller",
+            "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The variable to remember",
+          "paragraphs": [
+            "Multi-agent orchestration documents escalation_trigger as the handoff signal. Treat other variable names as unconfirmed until you see them on the page.",
+            "The flow's own escalated port is still how a voice activity returns to activities you drew."
+          ],
+          "cite": {
+            "label": "Multi-agent orchestration",
+            "url": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+          }
+        },
+        {
+          "h": "This is not a bot webhook",
+          "paragraphs": [
+            "Agent-to-agent handoff inside the contact center is not the messaging bot @mention rule.",
+            "Webhooks later in this track are for your application, not for this handoff."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The multi-agent handoff signal documented here is",
+          "choices": [
+            "escalation_trigger",
+            "a dial pattern",
+            "the HELD secret",
+            "port 8934"
+          ],
+          "answer": 0,
+          "why": "Confirm the field path on the live page.",
+          "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+        },
+        {
+          "q": "Unlisted variables",
+          "choices": [
+            "Are not assumed to pass",
+            "Always pass",
+            "Become licenses",
+            "Change regions"
+          ],
+          "answer": 0,
+          "why": "The page lists what it lists.",
+          "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+        },
+        {
+          "q": "The human path",
+          "choices": [
+            "Stays connected",
+            "Is removed by orchestration",
+            "Is a forwarder",
+            "Is SME"
+          ],
+          "answer": 0,
+          "why": "Queue Contact remains.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Messaging @mentions",
+          "choices": [
+            "Are a different product rule",
+            "Trigger multi-agent orchestration",
+            "Are LAA",
+            "Are CER"
+          ],
+          "answer": 0,
+          "why": "Bots article.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Virtual Agent V2 still",
+          "choices": [
+            "Returns to the flow on its escalated port",
+            "Cannot be used with two agents",
+            "Replaces orchestration",
+            "Is a CSV"
+          ],
+          "answer": 0,
+          "why": "Wire the port.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "This lesson invents",
+          "choices": [
+            "No extra trigger names",
+            "Three more variables",
+            "A price",
+            "A timer"
+          ],
+          "answer": 0,
+          "why": "Only the documented one.",
+          "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+        }
+      ],
+      "cards": [
+        {
+          "front": "escalation_trigger",
+          "back": "The handoff signal."
+        },
+        {
+          "front": "Two agents",
+          "back": "Different jobs."
+        },
+        {
+          "front": "Human port",
+          "back": "Still required."
+        },
+        {
+          "front": "Not a bot",
+          "back": "Messaging mentions are separate."
+        }
+      ],
+      "lab": {
+        "title": "Draw the handoff",
+        "goal": "Agent A, trigger, Agent B, human queue.",
+        "steps": [
+          {
+            "do": "Trigger",
+            "expect": "escalation_trigger"
+          },
+          {
+            "do": "Unknowns",
+            "expect": "You listed one field you will not assume"
+          },
+          {
+            "do": "Human",
+            "expect": "A queue name"
+          }
+        ],
+        "check": "The sketch cites the multi-agent article."
+      },
+      "fault": {
+        "title": "No human port",
+        "symptom": "Both agents escalate and the contact ends.",
+        "log": "SYNTHETIC: orchestration loop, escalated port empty.",
+        "cause": "The escape was never drawn.",
+        "fix": "Connect the last escalation to Queue Contact.",
+        "cite": {
+          "label": "Multi-agent orchestration",
+          "url": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+        }
+      }
+    },
+    {
+      "id": "hooks",
+      "title": "Contact Center webhooks",
+      "level": "advanced",
+      "minutes": 14,
+      "summary": "Subscriptions want an HTTPS URL with no query string. The signature header is X-WebexCC-Signature, HMAC-SHA256. Events follow CloudEvents. Do not use webhooks as your only copy of the data.",
+      "uncertainty": "",
+      "objectives": [
+        "Require HTTPS without query parameters",
+        "Verify X-WebexCC-Signature",
+        "Keep a second way to read the data"
+      ],
+      "diagram": {
+        "caption": "Verify the signature, then still reconcile.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Subscription",
+            "sub": "HTTPS URL",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "POST",
+            "sub": "CloudEvent",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Signature",
+            "sub": "HMAC-SHA256",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Your store",
+            "sub": "reconcile",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "notify"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "verify"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "not the only copy"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A contact event hits your server",
+        "steps": [
+          {
+            "from": "App",
+            "to": "Subscribe",
+            "label": "Register a destinationUrl",
+            "detail": "The contact center webhooks guide requires HTTPS. Query parameters on that URL are not accepted.",
+            "inspect": "Publicly reachable",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          },
+          {
+            "from": "Webex",
+            "to": "You",
+            "label": "POST the event",
+            "detail": "The body is a CloudEvent. Parse the raw bytes for the signature before you re-serialize JSON.",
+            "inspect": "Do not trust a proxy that rewrites the body",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          },
+          {
+            "from": "You",
+            "to": "Header",
+            "label": "Check X-WebexCC-Signature",
+            "detail": "HMAC-SHA256 with the secret. Compare in constant time.",
+            "inspect": "This is not the messaging HMAC-SHA1 header",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          },
+          {
+            "from": "You",
+            "to": "API",
+            "label": "Reconcile",
+            "detail": "The guide says not to rely solely on webhooks. Use the search or task APIs when an event may have been missed.",
+            "inspect": "Next lesson",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "A different signature from messaging",
+          "paragraphs": [
+            "Messaging webhooks use X-Spark-Signature as HMAC-SHA1 when you supply a secret, and may also send X-Webex-Signature as HMAC-SHA256 or HMAC-SHA512.",
+            "Contact center subscriptions use X-WebexCC-Signature. Mixing the headers fails verification."
+          ],
+          "cite": {
+            "label": "Webex webhooks",
+            "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          }
+        },
+        {
+          "h": "Delivery is not a database",
+          "paragraphs": [
+            "If your listener is down, you need another way to notice. The webhooks guide is explicit that webhooks are not the only source you should trust.",
+            "Answer with a 2xx when you accept the event, or the delivery is not successful."
+          ],
+          "cite": {
+            "label": "Contact Center webhooks",
+            "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A contact center webhook URL must be",
+          "choices": [
+            "HTTPS, without query parameters",
+            "Any HTTP URL",
+            "A SIP URI",
+            "An IP with a query string"
+          ],
+          "answer": 0,
+          "why": "destinationUrl rules.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        },
+        {
+          "q": "The contact center signature header is",
+          "choices": [
+            "X-WebexCC-Signature, HMAC-SHA256",
+            "X-Spark-Signature only",
+            "A cookie",
+            "Port 5062"
+          ],
+          "answer": 0,
+          "why": "Different product, different header.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        },
+        {
+          "q": "Messaging HMAC-SHA1 uses",
+          "choices": [
+            "X-Spark-Signature",
+            "X-WebexCC-Signature",
+            "PIDF-LO",
+            "The voice domain"
+          ],
+          "answer": 0,
+          "why": "Compatibility path on the messaging guide.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "X-Webex-Signature on messaging can be",
+          "choices": [
+            "HMAC-SHA256 or HMAC-SHA512 when that header is present",
+            "Only SHA1",
+            "A trunk",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "Prefer it when the guide says it is available.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "You should also",
+          "choices": [
+            "Reconcile with an API, not webhooks alone",
+            "Trust only the webhook",
+            "Disable HTTPS",
+            "Store the secret in the lab"
+          ],
+          "answer": 0,
+          "why": "The using-webhooks guide.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        },
+        {
+          "q": "Verify over",
+          "choices": [
+            "The raw request bytes",
+            "A re-pretty-printed JSON",
+            "The URL only",
+            "The agent's name"
+          ],
+          "answer": 0,
+          "why": "Same discipline as messaging.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        }
+      ],
+      "cards": [
+        {
+          "front": "destinationUrl",
+          "back": "HTTPS, no query."
+        },
+        {
+          "front": "X-WebexCC-Signature",
+          "back": "HMAC-SHA256."
+        },
+        {
+          "front": "Messaging",
+          "back": "X-Spark-Signature is SHA1."
+        },
+        {
+          "front": "Reconcile",
+          "back": "Webhooks are not the only copy."
+        }
+      ],
+      "lab": {
+        "title": "Header cheat sheet",
+        "goal": "Write both products' signature headers.",
+        "steps": [
+          {
+            "do": "WxCC",
+            "expect": "X-WebexCC-Signature, SHA256"
+          },
+          {
+            "do": "Messaging",
+            "expect": "X-Spark-Signature SHA1, and X-Webex-Signature when present"
+          },
+          {
+            "do": "URL",
+            "expect": "HTTPS, no query, for the contact center subscription"
+          }
+        ],
+        "check": "The sheet does not include a real secret."
+      },
+      "fault": {
+        "title": "SHA1 on a contact center event",
+        "symptom": "Every notification fails verification.",
+        "log": "SYNTHETIC: code uses X-Spark-Signature on a WxCC subscription.",
+        "cause": "The header and algorithm belong to messaging.",
+        "fix": "Verify X-WebexCC-Signature as HMAC-SHA256 over the raw body.",
+        "cite": {
+          "label": "Contact Center webhooks",
+          "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        }
+      }
+    },
+    {
+      "id": "search",
+      "title": "GraphQL search limits",
+      "level": "advanced",
+      "minutes": 13,
+      "summary": "The search API is GraphQL, regional, and bounded. The US example host is not every region. The window and the history floor are part of the contract.",
+      "uncertainty": "",
+      "objectives": [
+        "Use the regional host",
+        "Pass from and to as epoch milliseconds",
+        "Respect the 365-day window and the 36-month floor"
+      ],
+      "diagram": {
+        "caption": "Ask for a window the API allows.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "App",
+            "sub": "OAuth scope",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Region host",
+            "sub": "not one global URL",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "from and to",
+            "sub": "epoch milliseconds",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Tasks",
+            "sub": "inside the window",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "call"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "bounds"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "result"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Find yesterday's contacts",
+        "steps": [
+          {
+            "from": "App",
+            "to": "Scope",
+            "label": "Ask for cjp:config or cjp:config_read",
+            "detail": "The search reference lists those scopes. A messaging token with no contact center scope will not do.",
+            "inspect": "Least privilege: read if you only search",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          },
+          {
+            "from": "App",
+            "to": "Host",
+            "label": "Use the region",
+            "detail": "The example host api.wxcc-us1.cisco.com is the US1 example. Other regions have their own hosts. Do not hardcode US1 for a European tenant.",
+            "inspect": "The API index says the host is regional",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          },
+          {
+            "from": "Query",
+            "to": "Window",
+            "label": "from and to in epoch milliseconds",
+            "detail": "from must not be older than 36 months. The window cannot exceed 365 days.",
+            "inspect": "Split a long history into windows",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          },
+          {
+            "from": "Result",
+            "to": "Webhook gap",
+            "label": "Fill what a missed event skipped",
+            "detail": "Search is one way to reconcile. It is not a license to ignore the window.",
+            "inspect": "Cite the search page",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Numbers to keep",
+          "paragraphs": [
+            "Epoch milliseconds, not seconds. A 365-day maximum window. from no older than 36 months. Those limits are from the search reference this lab cites.",
+            "If the live page changes the numbers, the page wins. The lesson states them so you know what to look for."
+          ],
+          "cite": {
+            "label": "Contact Center GraphQL search",
+            "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          }
+        },
+        {
+          "h": "What this API is not",
+          "paragraphs": [
+            "It is not the messaging REST API and not the xAPI command endpoint.",
+            "The contact center API overview is the index. Getting started for general Webex tokens is a different page and is not the contact center guide."
+          ],
+          "cite": {
+            "label": "Webex Contact Center APIs",
+            "url": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Search scopes on the reference include",
+          "choices": [
+            "cjp:config and cjp:config_read",
+            "spark:all only",
+            "A dial-plan pattern",
+            "None"
+          ],
+          "answer": 0,
+          "why": "Use the read scope when you can.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "api.wxcc-us1.cisco.com is",
+          "choices": [
+            "A regional example, not every tenant's host",
+            "The only host",
+            "A SIP proxy",
+            "RedSky"
+          ],
+          "answer": 0,
+          "why": "Pick the tenant's region.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "from and to are",
+          "choices": [
+            "Epoch milliseconds",
+            "Epoch seconds",
+            "ISO dates only, in this reference's required form as taught here",
+            "Extension lengths"
+          ],
+          "answer": 0,
+          "why": "The search reference.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "The maximum window taught from that page is",
+          "choices": [
+            "365 days",
+            "Ten characters",
+            "Five minutes",
+            "Unlimited"
+          ],
+          "answer": 0,
+          "why": "Split longer searches.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "from may not be older than",
+          "choices": [
+            "36 months",
+            "36 minutes",
+            "One hour",
+            "A voice domain"
+          ],
+          "answer": 0,
+          "why": "The history floor.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "General Webex getting started",
+          "choices": [
+            "Is not the contact center API guide",
+            "Is the same URL as the search reference",
+            "Lists LAA",
+            "Sets RONA"
+          ],
+          "answer": 0,
+          "why": "Different docs.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Scopes",
+          "back": "cjp:config or cjp:config_read."
+        },
+        {
+          "front": "Host",
+          "back": "Regional. US1 is an example."
+        },
+        {
+          "front": "Time",
+          "back": "Epoch milliseconds."
+        },
+        {
+          "front": "Bounds",
+          "back": "365-day window, 36-month floor."
+        }
+      ],
+      "lab": {
+        "title": "Write one query plan",
+        "goal": "A 400-day question, split legally.",
+        "steps": [
+          {
+            "do": "Windows",
+            "expect": "Two windows, each within 365 days"
+          },
+          {
+            "do": "Floor",
+            "expect": "Neither from is older than 36 months"
+          },
+          {
+            "do": "Host",
+            "expect": "You refused to assume US1"
+          }
+        ],
+        "check": "The plan has no access token in it."
+      },
+      "fault": {
+        "title": "Seconds not milliseconds",
+        "symptom": "The API returns an empty or rejected window.",
+        "log": "SYNTHETIC: from=1710000000, ten digits.",
+        "cause": "That is seconds.",
+        "fix": "Send epoch milliseconds and keep the window inside 365 days.",
+        "cite": {
+          "label": "Contact Center GraphQL search",
+          "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        }
+      }
+    },
+    {
+      "id": "api-review",
+      "title": "Put the integration together",
+      "level": "apply",
+      "minutes": 13,
+      "summary": "A careful integration verifies contact center webhooks, reconciles with search, and does not borrow the messaging signature.",
+      "uncertainty": "",
+      "objectives": [
+        "Start from the API index",
+        "Separate the two signature headers",
+        "Schedule a search that fits the window"
+      ],
+      "diagram": {
+        "caption": "Index page first. Then the webhook guide and the search reference.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "API index",
+            "sub": "developer.webex.com",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webhook",
+            "sub": "verify",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Search",
+            "sub": "reconcile",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Flow",
+            "sub": "still the runtime",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "subscribe"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "gap"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "events"
+          }
+        ]
+      },
+      "flow": {
+        "title": "An event and a daily reconcile",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Index",
+            "label": "Open the contact center docs",
+            "detail": "The overview lists guides and APIs. Do not start from a blog.",
+            "inspect": "wxcc cite",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+          },
+          {
+            "from": "You",
+            "to": "Listener",
+            "label": "Verify then store",
+            "detail": "HMAC over raw bytes, constant-time compare, then 2xx.",
+            "inspect": "Reject on mismatch",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+          },
+          {
+            "from": "You",
+            "to": "Job",
+            "label": "Search the last day",
+            "detail": "One window, epoch milliseconds, regional host, read scope.",
+            "inspect": "Inside 365 days",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+          },
+          {
+            "from": "You",
+            "to": "Flow",
+            "label": "Leave routing in Flow Designer",
+            "detail": "The API observes and integrates. It does not secretly become the routing strategy.",
+            "inspect": "LAA and BAA stay",
+            "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "A minimum viable listener",
+          "paragraphs": [
+            "HTTPS endpoint, no query string, signature check, durable store, and a reconcile job.",
+            "Log the event id you accepted. Do not log the secret."
+          ],
+          "cite": {
+            "label": "Contact Center webhooks",
+            "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          }
+        },
+        {
+          "h": "Production tokens",
+          "paragraphs": [
+            "Contact center APIs use the integration and scopes the developer docs describe. A twelve-hour personal access token from the general Webex getting started page is a developer convenience, not a production design.",
+            "The getting started page is not the contact center guide. Confirm the current personal-token lifetime there before you quote a number of hours."
+          ],
+          "cite": {
+            "label": "Webex developer getting started",
+            "url": "https://developer.webex.com/docs/getting-started"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The contact center API index is",
+          "choices": [
+            "The Webex Contact Center developer docs",
+            "The port reference",
+            "The FCC page",
+            "RFC 3261"
+          ],
+          "answer": 0,
+          "why": "Start there.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+        },
+        {
+          "q": "On signature mismatch",
+          "choices": [
+            "Reject the event",
+            "Queue the caller",
+            "Activate a region",
+            "Strip a digit"
+          ],
+          "answer": 0,
+          "why": "Then investigate.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        },
+        {
+          "q": "A daily reconcile uses",
+          "choices": [
+            "A search window inside the documented limits",
+            "All history in one call",
+            "A dial plan",
+            "HELD"
+          ],
+          "answer": 0,
+          "why": "Epoch milliseconds.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "Personal access tokens",
+          "choices": [
+            "Are a getting-started convenience, not the production plan",
+            "Are required in production by this lab",
+            "Last ten characters",
+            "Are trunks"
+          ],
+          "answer": 0,
+          "why": "Confirm the lifetime on that page.",
+          "cite": "https://developer.webex.com/docs/getting-started"
+        },
+        {
+          "q": "Routing strategy remains",
+          "choices": [
+            "In the contact center queue",
+            "Inside the webhook handler by default",
+            "In DNS",
+            "In RTMT"
+          ],
+          "answer": 0,
+          "why": "Do not reimplement LAA.",
+          "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+        },
+        {
+          "q": "Secrets in logs",
+          "choices": [
+            "Do not belong there",
+            "Are useful",
+            "Are the screen pop",
+            "Are the schema"
+          ],
+          "answer": 0,
+          "why": "Log event ids.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Index",
+          "back": "Contact center developer docs."
+        },
+        {
+          "front": "Verify",
+          "back": "Raw body, SHA256, WxCC header."
+        },
+        {
+          "front": "Reconcile",
+          "back": "Search within the window."
+        },
+        {
+          "front": "PAT",
+          "back": "Not the production design."
+        }
+      ],
+      "lab": {
+        "title": "One-page design",
+        "goal": "Listener plus nightly search, no secrets.",
+        "steps": [
+          {
+            "do": "URL",
+            "expect": "HTTPS, no query"
+          },
+          {
+            "do": "Header",
+            "expect": "X-WebexCC-Signature"
+          },
+          {
+            "do": "Job",
+            "expect": "Regional host and a one-day window"
+          }
+        ],
+        "check": "A teammate can implement it without guessing the product."
+      },
+      "fault": {
+        "title": "Webhook only",
+        "symptom": "A weekend outage loses contacts and nobody notices.",
+        "log": "SYNTHETIC: no reconcile job, listener 502 for two days.",
+        "cause": "The guide says not to rely on webhooks alone.",
+        "fix": "Add a search job and alert when the listener fails.",
+        "cite": {
+          "label": "Contact Center webhooks",
+          "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        }
+      }
+    }
+  ]
+}

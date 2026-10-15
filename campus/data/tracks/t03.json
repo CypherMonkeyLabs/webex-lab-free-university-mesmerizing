@@ -1,0 +1,1799 @@
+{
+  "id": "t03",
+  "title": "Locations and numbers",
+  "blurb": "Locations hold dialing habits, the main number, and the PSTN connection. Numbers and extensions live there.",
+  "level": "Foundation",
+  "lessons": [
+    {
+      "id": "location",
+      "title": "What a location is",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "A Webex Calling location is the site container: time zone, dialing, main number, and one PSTN connection. It is not a Unified CM device pool, even when you migrate from one.",
+      "uncertainty": "",
+      "objectives": [
+        "Define a location",
+        "List what dialing settings it holds",
+        "Refuse to attach PSTN first"
+      ],
+      "diagram": {
+        "caption": "Users and numbers hang off a location. The PSTN connection is a property of that location.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Location",
+            "sub": "site",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dialing",
+            "sub": "extension, prefix, external digit",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "PSTN",
+            "sub": "one connection",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Users",
+            "sub": "numbers",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "habits"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "pstn"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "assign"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Create a location before anything else",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Calling",
+            "label": "Add a location",
+            "detail": "Name, time zone, and address. The address matters later for emergency calling.",
+            "inspect": "Location wizard",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Dialing",
+            "label": "Set habits",
+            "detail": "Extension length, routing prefix, and internal versus external dialing. The organization article calls these the dial plan controls.",
+            "inspect": "Organization dialing section",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Numbers",
+            "label": "Add the main number",
+            "detail": "The location main number is the default face of the site.",
+            "inspect": "Caller ID context",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "PSTN",
+            "label": "Then connect",
+            "detail": "Only after the location exists. Premises PSTN also needs a trunk created first.",
+            "inspect": "One trunk",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Not a device pool",
+          "paragraphs": [
+            "Migration Insights can group numbers by device pool, but the destination object is a Webex Calling location. People who share a device pool do not automatically share a location.",
+            "Decide locations by PSTN, dialing habits, and emergency address, not by the old cluster's device-pool name alone."
+          ],
+          "cite": {
+            "label": "Prepare to migrate from Unified CM",
+            "url": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+          }
+        },
+        {
+          "h": "Emergency starts here",
+          "paragraphs": [
+            "Enhanced emergency calling is enabled per location. Deleting a location does not delete the building inside RedSky, because buildings can still be tied to network elements.",
+            "US and Canada locations can use the E911 integration. The article says international locations continue to use PSTN for emergency calling."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A Webex Calling location owns",
+          "choices": [
+            "Dialing habits, numbers, and the PSTN connection",
+            "Only the user's laptop name",
+            "Only Flow Designer",
+            "Only SSO"
+          ],
+          "answer": 0,
+          "why": "The organization article configures those on the location.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Premises PSTN comes",
+          "choices": [
+            "After the location and the trunk exist",
+            "Before any location",
+            "Inside a quiz only",
+            "From a bot"
+          ],
+          "answer": 0,
+          "why": "The article orders the tasks that way.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "International locations and the RedSky-style E911 service",
+          "choices": [
+            "Continue to use PSTN for emergency calling",
+            "Must use RedSky",
+            "Cannot place calls",
+            "Use xAPI"
+          ],
+          "answer": 0,
+          "why": "The requirements table in the emergency article says this.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Deleting a location in Control Hub",
+          "choices": [
+            "Does not automatically delete the RedSky building",
+            "Wipes RedSky immediately",
+            "Deletes Unified CM",
+            "Revokes SSO"
+          ],
+          "answer": 0,
+          "why": "The article warns about that leftover building.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Device pools and locations",
+          "choices": [
+            "Are different objects. Insights can list device-pool numbers to help you choose.",
+            "Are always 1:1",
+            "Are SIP methods",
+            "Are licenses"
+          ],
+          "answer": 0,
+          "why": "DevicePoolNumbers.txt is a migration report, not a location.",
+          "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+        },
+        {
+          "q": "Routing prefixes are",
+          "choices": [
+            "A location dialing control for reaching another location",
+            "A certificate",
+            "A webhook secret",
+            "A codec"
+          ],
+          "answer": 0,
+          "why": "The organization article includes routing prefixes in dialing settings.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Location",
+          "back": "Site container for dialing, numbers, and PSTN."
+        },
+        {
+          "front": "Device pool",
+          "back": "A Unified CM object. Not a Webex location."
+        },
+        {
+          "front": "International emergency",
+          "back": "PSTN, per the E911 requirements table."
+        },
+        {
+          "front": "RedSky leftover",
+          "back": "Deleting the location does not delete the RedSky building."
+        }
+      ],
+      "lab": {
+        "title": "Name three locations",
+        "goal": "For a company with a US office, a US warehouse, and a UK office, decide locations.",
+        "steps": [
+          {
+            "do": "US office and warehouse share a dialing habit and PSTN",
+            "expect": "They might still be two locations if emergency addresses differ"
+          },
+          {
+            "do": "UK office",
+            "expect": "Its own location. Emergency stays on PSTN."
+          },
+          {
+            "do": "Write the extension length",
+            "expect": "One length per location in this lab model"
+          }
+        ],
+        "check": "Emergency address, not the device pool, decided the split."
+      },
+      "fault": {
+        "title": "One location for a country",
+        "symptom": "A national main number hides three different street addresses, and 933 returns the wrong floor.",
+        "log": "SYNTHETIC: 933 test, expected dock, got HQ lobby.",
+        "cause": "Dispatchable location is per place. One Control Hub location with one address cannot describe three buildings.",
+        "fix": "Split locations or use the RedSky wiremap for HELD devices, and retest 933 from each place.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "dialing",
+      "title": "Extension length, prefix, and the external digit",
+      "level": "foundation",
+      "minutes": 14,
+      "summary": "Internal dialing is extension length and routing prefix. The external digit is the habit people already have. These are location settings, tested in the dial-plan simulator.",
+      "uncertainty": "Cisco documents the dialing controls. This lab's simulator order is explicitly a teaching model.",
+      "objectives": [
+        "Recognize an in-site extension",
+        "Recognize a routing prefix",
+        "Know the simulator is a teaching model"
+      ],
+      "diagram": {
+        "caption": "2100 stays inside the site. 222100 crosses to the site whose prefix is 22.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Extension",
+            "sub": "length",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Prefix",
+            "sub": "other site",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "External digit",
+            "sub": "often 9",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Simulator",
+            "sub": "teaching model",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "test"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "test"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "strip"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Dial 222100",
+        "steps": [
+          {
+            "from": "User",
+            "to": "Location",
+            "label": "Dial 2100",
+            "detail": "If the extension length is 4, the simulator treats 2100 as an extension in this location.",
+            "inspect": "Teaching rule",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "User",
+            "to": "Other site",
+            "label": "Dial prefix plus extension",
+            "detail": "A dial string that starts with another location's routing prefix, with the remainder equal to that extension length, stays inside Webex Calling.",
+            "inspect": "Organization dialing",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "User",
+            "to": "PSTN",
+            "label": "Dial 9 then the number",
+            "detail": "The external digit is stripped when the remainder is long enough to be an outside number.",
+            "inspect": "Not a global law. A location setting.",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Simulator",
+            "label": "Read the trace",
+            "detail": "The trace names the rule and the article. Precedence is labeled as a lab model.",
+            "inspect": "Open #/studio/dial",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What Cisco lets you customize",
+          "paragraphs": [
+            "The organization article says you customize extension lengths, routing prefixes, and internal and external dialing preferences so they match existing habits.",
+            "It does not publish a single worldwide external digit. If a design assumes 9 everywhere, write that assumption down."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "What the simulator adds",
+          "paragraphs": [
+            "The lab simulator strips one configured external digit, matches extension length, then routing prefixes, then +E.164 patterns. Cisco's articles describe the objects, not this exact evaluation order.",
+            "Use the trace to learn the objects. Confirm order in Control Hub when you build a real plan."
+          ],
+          "cite": {
+            "label": "Trunks, route groups, and dial plans",
+            "url": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Routing prefixes exist so that",
+          "choices": [
+            "Users can reach another location with a short dialing habit",
+            "Certificates validate",
+            "Bots read messages",
+            "Queues overflow"
+          ],
+          "answer": 0,
+          "why": "They are part of the dialing controls in the organization article.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Extension length is",
+          "choices": [
+            "A per-location dialing setting",
+            "Always 4 worldwide",
+            "A SIP port",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "The article tells you to customize it.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The external dialing digit is",
+          "choices": [
+            "A location preference, not a protocol constant",
+            "Always 9 in RFC 3261",
+            "TCP 5062",
+            "933"
+          ],
+          "answer": 0,
+          "why": "RFC 3261 does not define a PSTN access digit.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "The lab simulator's precedence is",
+          "choices": [
+            "A teaching model, called out as such",
+            "Guaranteed to match every Control Hub build",
+            "A Cisco patent",
+            "An xAPI schema"
+          ],
+          "answer": 0,
+          "why": "The simulator page says the order is a lab model.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        },
+        {
+          "q": "2100 with extension length 4, in the simulator, is",
+          "choices": [
+            "An internal extension",
+            "A country code",
+            "An emergency call",
+            "A trunk name"
+          ],
+          "answer": 0,
+          "why": "The length match is the internal rule.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "You should confirm real evaluation order",
+          "choices": [
+            "In Control Hub against the dialing and dial-plan articles",
+            "On a forum",
+            "In a macro",
+            "By guessing"
+          ],
+          "answer": 0,
+          "why": "The lab does not claim to be the production engine.",
+          "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Extension length",
+          "back": "How long an in-site extension is."
+        },
+        {
+          "front": "Routing prefix",
+          "back": "The digits that select another location."
+        },
+        {
+          "front": "External digit",
+          "back": "The leading digit people dial for the outside."
+        },
+        {
+          "front": "Lab precedence",
+          "back": "Documented objects, teaching order."
+        }
+      ],
+      "lab": {
+        "title": "Three dials",
+        "goal": "Run the simulator presets for an internal extension, another location, and an external pattern.",
+        "steps": [
+          {
+            "do": "2100",
+            "expect": "Stays in Richmond"
+          },
+          {
+            "do": "222100",
+            "expect": "Goes to Austin"
+          },
+          {
+            "do": "918045551234",
+            "expect": "Matches +1804555XXXX after the 9 is stripped"
+          }
+        ],
+        "check": "The trace cites a rule for each."
+      },
+      "fault": {
+        "title": "Prefix collision",
+        "symptom": "Users in site 21 reach the wrong building when they dial 2100.",
+        "log": "SYNTHETIC: location Austin prefix 21, Richmond extensions also start with 21, length 4.",
+        "cause": "A routing prefix that is also the start of a local extension is ambiguous in the teaching model and painful in production.",
+        "fix": "Give each location a prefix that is not a local extension, and retest both dials.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "numbers",
+      "title": "Main numbers, caller ID, and ports",
+      "level": "foundation",
+      "minutes": 13,
+      "summary": "Ordering and porting numbers depends on the PSTN choice. Cisco Calling Plan can order or port. CCP partners and premises carriers do it on their own contracts.",
+      "uncertainty": "",
+      "objectives": [
+        "Match the number source to the PSTN model",
+        "Keep the main number obvious",
+        "Do not port a number in a simulator"
+      ],
+      "diagram": {
+        "caption": "The PSTN provider, not Control Hub alone, owns the port order.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Cisco Calling Plan",
+            "sub": "order or port",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "CCP partner",
+            "sub": "partner numbers",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Premises carrier",
+            "sub": "your current PSTN",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Location",
+            "sub": "receives the number",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "numbers"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "numbers"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "via LGW"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Add a number to a location",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "PSTN choice",
+            "label": "Read the contract",
+            "detail": "Cisco Calling Plan is Cisco as the cloud PSTN, including number orders and ports where the plan is offered.",
+            "inspect": "Not available in every location",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "CCP",
+            "label": "Or a partner",
+            "detail": "Cloud Connected PSTN is a partner when you want that coverage or when Cisco Calling Plan is not offered.",
+            "inspect": "Partner portal plus Control Hub",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Premises",
+            "label": "Keep the carrier",
+            "detail": "Premises PSTN keeps the current provider. Numbers stay on that carrier and arrive through the local gateway.",
+            "inspect": "No cloud port",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "Location",
+            "label": "Assign",
+            "detail": "Put the number on the location and then on a user, workspace, or feature.",
+            "inspect": "Main number and caller ID",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Three sources",
+          "paragraphs": [
+            "The organization article describes Cisco PSTN as Cisco's cloud PSTN with emergency calling, inbound and outbound calling, and the ability to order or port numbers.",
+            "CCP is the cloud alternative from a partner. Premises PSTN keeps your provider or connects non-cloud sites. Pick the source before you promise a port date."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "Caller ID is not the ECBN",
+          "paragraphs": [
+            "The number people see on an ordinary outbound call is caller ID. The number emergency services see for callback is the ECBN, chosen from the line number, the location default, or another user or virtual line in the same location.",
+            "Changing caller ID does not by itself change the emergency callback number."
+          ],
+          "cite": {
+            "label": "Emergency Callback Number in Control Hub",
+            "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Cisco Calling Plan number orders are",
+          "choices": [
+            "Part of Cisco PSTN where that plan is available",
+            "Always done on the CUBE",
+            "A Flow Designer activity",
+            "Free of any PSTN choice"
+          ],
+          "answer": 0,
+          "why": "The organization article describes ordering and porting under Cisco PSTN.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Premises PSTN numbers",
+          "choices": [
+            "Stay with the current provider and route through the local gateway",
+            "Must be ported to Cisco",
+            "Live only in RedSky",
+            "Are bot tokens"
+          ],
+          "answer": 0,
+          "why": "Premises PSTN is the keep-your-provider option.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "ECBN can be",
+          "choices": [
+            "The line number, the location default, or another user or virtual line in the same location",
+            "Any number worldwide",
+            "A SIP port",
+            "A skill"
+          ],
+          "answer": 0,
+          "why": "The ECBN article lists those three.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "Caller ID and ECBN are",
+          "choices": [
+            "Different settings",
+            "Always the same field",
+            "Both codecs",
+            "Both webhooks"
+          ],
+          "answer": 0,
+          "why": "Ordinary identity and emergency callback are configured separately.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "CCP is chosen when",
+          "choices": [
+            "You want a partner cloud PSTN, including where Cisco Calling Plan is not offered",
+            "You want to keep a PRI with no cloud",
+            "You have no location",
+            "You are writing a macro"
+          ],
+          "answer": 0,
+          "why": "That is the organization article's CCP description.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "A number is assigned",
+          "choices": [
+            "To a location, then to a user, workspace, or feature",
+            "Only to a bot",
+            "Only to ICE",
+            "Only to a certificate"
+          ],
+          "answer": 0,
+          "why": "Location is the container.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Cisco PSTN",
+          "back": "Order or port, where the Calling Plan exists."
+        },
+        {
+          "front": "CCP",
+          "back": "Partner cloud PSTN."
+        },
+        {
+          "front": "Premises numbers",
+          "back": "Stay on your carrier, via the local gateway."
+        },
+        {
+          "front": "ECBN",
+          "back": "The callback number emergency services get."
+        }
+      ],
+      "lab": {
+        "title": "Source each DID",
+        "goal": "Mark ten imagined numbers as Cisco, CCP, or premises.",
+        "steps": [
+          {
+            "do": "A new US DID you want Cisco to provide",
+            "expect": "Cisco Calling Plan, if offered there"
+          },
+          {
+            "do": "A UK range your carrier already owns and you will keep",
+            "expect": "Premises, through the local gateway"
+          },
+          {
+            "do": "A country where the Calling Plan is not offered",
+            "expect": "CCP or premises. Do not promise Cisco PSTN."
+          }
+        ],
+        "check": "Every number has a provider before it has a user."
+      },
+      "fault": {
+        "title": "Port promised on a premises site",
+        "symptom": "A project plan says Control Hub will port the PRI numbers next Tuesday.",
+        "log": "SYNTHETIC plan: PSTN=local gateway, task=port to Cisco.",
+        "cause": "Premises PSTN keeps the current provider. Porting to Cisco is a Calling Plan or partner activity, and it is a different connection type.",
+        "fix": "Either keep the numbers on the gateway, or start a real port with the PSTN product you switched to. Update the location connection when the port completes.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "internal",
+      "title": "Calling between locations",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "On-net calls between Webex Calling locations use routing prefixes and extensions. They are not PSTN calls, and they do not need the local gateway.",
+      "uncertainty": "",
+      "objectives": [
+        "Keep on-net calls off the PSTN",
+        "Spot a prefix that matches an extension",
+        "Test both directions"
+      ],
+      "diagram": {
+        "caption": "Site prefix plus extension stays inside Webex Calling.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Richmond",
+            "sub": "prefix 21",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex Calling",
+            "sub": "on-net",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Austin",
+            "sub": "prefix 22",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "222100"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "extension"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Richmond dials Austin",
+        "steps": [
+          {
+            "from": "Richmond",
+            "to": "Handset",
+            "label": "Dial 222100",
+            "detail": "Prefix 22 selects Austin. 2100 is the extension.",
+            "inspect": "Location dialing",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Webex Calling",
+            "to": "Austin",
+            "label": "Ring the user",
+            "detail": "Both users are Webex Calling destinations, so the call does not fall through to the local gateway.",
+            "inspect": "Workflow: unmatched calls are the ones that leave",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Austin",
+            "to": "Richmond",
+            "label": "Dial back",
+            "detail": "The return prefix is 21. One-way prefixes are a classic fault.",
+            "inspect": "Test both ways",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Admin",
+            "to": "CDR",
+            "label": "Confirm on-net",
+            "detail": "A PSTN carrier record for this call means the prefix was not recognized.",
+            "inspect": "No carrier INVITE",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "On-net versus fallthrough",
+          "paragraphs": [
+            "The workflow guide sends calls that are not Webex Calling destinations to the local gateway. Another location's user is a Webex Calling destination once the dialing habit resolves.",
+            "If the prefix is wrong, the digits look like an external number and may leave via PSTN or fail the dial plan."
+          ],
+          "cite": {
+            "label": "Webex Calling configuration workflow",
+            "url": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+          }
+        },
+        {
+          "h": "Shared lines do not move the location",
+          "paragraphs": [
+            "A shared line still evaluates emergency services from the selected line's location, even if the phone sits somewhere else.",
+            "On-net dialing and emergency dialing are different decisions. Test them separately."
+          ],
+          "cite": {
+            "label": "Shared lines and virtual lines across locations",
+            "url": "https://help.webex.com/default/article/c5cgxd"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A call to another Webex Calling location, once the prefix matches, is",
+          "choices": [
+            "On-net",
+            "Always a PSTN call",
+            "An xAPI command",
+            "A 933 test"
+          ],
+          "answer": 0,
+          "why": "The destination is a Webex Calling user.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "Unmatched destinations go to",
+          "choices": [
+            "The local gateway, on a premises path",
+            "Analyzer",
+            "A bot",
+            "SSO"
+          ],
+          "answer": 0,
+          "why": "The workflow guide says so.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        },
+        {
+          "q": "A one-way prefix shows up as",
+          "choices": [
+            "One direction rings, the return does not",
+            "A certificate error",
+            "A license error",
+            "A webhook disable"
+          ],
+          "answer": 0,
+          "why": "Each location needs a prefix the other side can dial.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Emergency handling on a shared line uses",
+          "choices": [
+            "The line's location, not the other site's prefix",
+            "The routing prefix",
+            "The bot",
+            "The codec"
+          ],
+          "answer": 0,
+          "why": "The shared-line article separates these.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "Extension length must agree with",
+          "choices": [
+            "The digits left after the prefix",
+            "The TCP port",
+            "The token lifetime",
+            "The queue weight"
+          ],
+          "answer": 0,
+          "why": "Otherwise the string is not an extension.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Carrier CDRs for an 'internal' call mean",
+          "choices": [
+            "The dialing habit did not resolve on-net",
+            "ICE is perfect",
+            "SSO failed",
+            "The exam was booked"
+          ],
+          "answer": 0,
+          "why": "The call left the cloud.",
+          "cite": "https://help.webex.com/article/32gfts/Webex-Calling-Configuration-Workflow"
+        }
+      ],
+      "cards": [
+        {
+          "front": "On-net",
+          "back": "Both ends are Webex Calling destinations."
+        },
+        {
+          "front": "Fallthrough",
+          "back": "Unknown destinations go to the local gateway."
+        },
+        {
+          "front": "Both directions",
+          "back": "Test the prefix each way."
+        },
+        {
+          "front": "Prefix is not emergency",
+          "back": "Emergency follows the line location."
+        }
+      ],
+      "lab": {
+        "title": "Both directions",
+        "goal": "In the simulator, dial Austin from Richmond and describe the return.",
+        "steps": [
+          {
+            "do": "222100",
+            "expect": "Austin extension"
+          },
+          {
+            "do": "Write the return dial",
+            "expect": "212100 if Richmond's prefix is 21 and the extension is 2100"
+          },
+          {
+            "do": "Say what a miss does",
+            "expect": "It can fall through to the gateway"
+          }
+        ],
+        "check": "Both dial strings are written down."
+      },
+      "fault": {
+        "title": "Hairpin to the carrier",
+        "symptom": "Site-to-site calls show up on the PSTN bill.",
+        "log": "SYNTHETIC: carrier CDR, called=222100, no Webex location prefix 22.",
+        "cause": "22 was never configured as Austin's routing prefix, so Webex Calling did not treat it as on-net.",
+        "fix": "Set the routing prefix, republish dialing, and place one call each way. Confirm the carrier CDR stops.",
+        "cite": {
+          "label": "Configure Webex Calling for your organization",
+          "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        }
+      }
+    },
+    {
+      "id": "caller",
+      "title": "Caller ID and the emergency callback number",
+      "level": "intermediate",
+      "minutes": 13,
+      "summary": "People you call see caller ID. A PSAP needs an ECBN that maps to an emergency service address. Webex Calling does not store that address for the PSTN path.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate caller ID from ECBN",
+        "Name the three ECBN choices",
+        "Say who stores the address on the PSTN path"
+      ],
+      "diagram": {
+        "caption": "Caller ID, ECBN, and the emergency service address are three different facts.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Caller ID",
+            "sub": "ordinary calls",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "ECBN",
+            "sub": "callback",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "ESA",
+            "sub": "held by the PSTN provider",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "RedSky",
+            "sub": "dispatchable location",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "not the same"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "PSTN maps"
+          },
+          {
+            "from": "n3",
+            "to": "n1",
+            "label": "when enabled"
+          }
+        ]
+      },
+      "flow": {
+        "title": "An emergency call presents a callback number",
+        "steps": [
+          {
+            "from": "User",
+            "to": "PSTN",
+            "label": "Ordinary call",
+            "detail": "Caller ID is the outbound identity for normal calls.",
+            "inspect": "Not automatically the ECBN",
+            "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          },
+          {
+            "from": "User",
+            "to": "Emergency",
+            "label": "Dial",
+            "detail": "Webex Calling presents the ECBN configuration to the PSTN provider.",
+            "inspect": "Line, location default, or another line in the location",
+            "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          },
+          {
+            "from": "PSTN",
+            "to": "PSAP",
+            "label": "Map the address",
+            "detail": "The ECBN article says Webex Calling does not store the emergency service address. The provider maps the ECBN.",
+            "inspect": "Static mapping on that path",
+            "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          },
+          {
+            "from": "RedSky",
+            "to": "PSAP",
+            "label": "Or the enabled path",
+            "detail": "When the location is enabled, dispatchable location comes from RedSky or Intrado instead of that static map.",
+            "inspect": "933 first",
+            "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Three ECBN choices",
+          "paragraphs": [
+            "The shared-line and ECBN articles allow the line's own number, the location default ECBN, or another user or virtual line in the same location.",
+            "A number from a different location is not one of those choices."
+          ],
+          "cite": {
+            "label": "Emergency Callback Number in Control Hub",
+            "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        },
+        {
+          "h": "Soft clients with a cellular radio",
+          "paragraphs": [
+            "The ECBN article says soft clients on a non-fixed device with cellular capability pass the emergency call to the native dialer. Webex Calling does not see that call.",
+            "There is then no Webex ECBN and no Webex call record. Tell users that, especially on mobile."
+          ],
+          "cite": {
+            "label": "Emergency Callback Number in Control Hub",
+            "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Webex Calling and the emergency service address, on the PSTN path,",
+          "choices": [
+            "Does not store it. The PSTN provider maps the ECBN.",
+            "Stores every floor plan",
+            "Ignores ECBN",
+            "Uses a bot"
+          ],
+          "answer": 0,
+          "why": "The ECBN article says this directly.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "ECBN choices are",
+          "choices": [
+            "Line number, location default, or another user or virtual line in the same location",
+            "Any DID in the company",
+            "Only 933",
+            "Only the main number of another country"
+          ],
+          "answer": 0,
+          "why": "That is the documented set.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "A cellular soft client emergency call",
+          "choices": [
+            "Goes to the native dialer. Webex Calling does not process it.",
+            "Always uses RedSky",
+            "Uses the dial plan",
+            "Uses a queue"
+          ],
+          "answer": 0,
+          "why": "The ECBN article describes that handoff.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "Caller ID changes",
+          "choices": [
+            "Do not by themselves change ECBN",
+            "Always change ECBN",
+            "Delete the location",
+            "Open 5062"
+          ],
+          "answer": 0,
+          "why": "They are separate settings.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "933",
+          "choices": [
+            "Tests the emergency address presentation",
+            "Is a call queue",
+            "Is a license",
+            "Is SSO"
+          ],
+          "answer": 0,
+          "why": "Both RedSky and Intrado sections use 933.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A different location's number as ECBN is",
+          "choices": [
+            "Outside the three documented choices",
+            "The preferred design",
+            "Required for CCP",
+            "An xAPI command"
+          ],
+          "answer": 0,
+          "why": "The articles keep the alternate number inside the same location.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        }
+      ],
+      "cards": [
+        {
+          "front": "ECBN",
+          "back": "Emergency callback number."
+        },
+        {
+          "front": "ESA",
+          "back": "Emergency service address. The PSTN provider maps it on that path."
+        },
+        {
+          "front": "Native dialer",
+          "back": "Cellular soft clients hand emergency calls to the phone OS."
+        },
+        {
+          "front": "Same location",
+          "back": "The alternate ECBN has to be a user or virtual line there."
+        }
+      ],
+      "lab": {
+        "title": "Fill the three fields",
+        "goal": "For one user, write caller ID, ECBN choice, and who stores the address.",
+        "steps": [
+          {
+            "do": "Caller ID",
+            "expect": "The outbound number"
+          },
+          {
+            "do": "ECBN",
+            "expect": "One of the three choices"
+          },
+          {
+            "do": "Address owner",
+            "expect": "PSTN provider, or RedSky/Intrado if the location is enabled"
+          }
+        ],
+        "check": "The three fields are not copies of each other."
+      },
+      "fault": {
+        "title": "Beautiful caller ID, no callback",
+        "symptom": "Marketing sets caller ID to a main number that cannot be called back, and ECBN follows it by mistake.",
+        "log": "SYNTHETIC: ECBN=800 main, queue closed, PSAP callback fails.",
+        "cause": "ECBN has to reach a person. A published main number that lands on a closed attendant fails the callback.",
+        "fix": "Set ECBN to the line or to a staffed number in the same location. Place a test with the carrier's method, and 933 if RedSky is on.",
+        "cite": {
+          "label": "Emergency Callback Number in Control Hub",
+          "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        }
+      }
+    },
+    {
+      "id": "virtual",
+      "title": "Virtual lines and shared lines",
+      "level": "intermediate",
+      "minutes": 14,
+      "summary": "Virtual lines and shared lines are Professional features in the license matrix. They change how a number appears, and they change emergency behavior.",
+      "uncertainty": "",
+      "objectives": [
+        "Gate both features on Professional",
+        "Count 35 shared appearances",
+        "Retest emergency after you share a line"
+      ],
+      "diagram": {
+        "caption": "A virtual line is another number on a Professional user. A shared line is the same number on more than one endpoint.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Professional",
+            "sub": "required",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Virtual line",
+            "sub": "1:1",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Shared line",
+            "sub": "35",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Emergency",
+            "sub": "line location",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "hosts"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "shares"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "routes 911"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Add a second number",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "License",
+            "label": "Check Professional",
+            "detail": "Standard and Workspace are No for virtual lines and for shared lines.",
+            "inspect": "Matrix",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Virtual line",
+            "label": "Create it",
+            "detail": "The matrix describes a 1:1 ratio per Pro license.",
+            "inspect": "Hosted on the user or workspace device",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Shared line",
+            "label": "Appear it",
+            "detail": "Up to 35 shared-line appearances on Professional, from the matrix row.",
+            "inspect": "Including a Professional workspace",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "933 or carrier test",
+            "label": "Retest",
+            "detail": "The line you select is the line whose location routes the emergency call.",
+            "inspect": "HELD does not override a non-RedSky location",
+            "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Counts",
+          "paragraphs": [
+            "Professional users get five devices in the device-count row. A Professional workspace also lists five assigned devices, separate from the shared-line count, and the article says the primary line can still be shared with additional multiline endpoints up to the shared-line limit.",
+            "Do not add those two numbers together and call it forty phones."
+          ],
+          "cite": {
+            "label": "Features available by license type",
+            "url": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Emergency after you share",
+          "paragraphs": [
+            "Sharing a line onto a phone in another building does not move the line's location. Emergency routing follows the line.",
+            "If that location is not RedSky-enabled, a HELD phone still will not force the RedSky path. The shared-line article is explicit."
+          ],
+          "cite": {
+            "label": "Shared lines and virtual lines across locations",
+            "url": "https://help.webex.com/default/article/c5cgxd"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Shared-line maximum in the Professional row is",
+          "choices": [
+            "35",
+            "5",
+            "1",
+            "1000"
+          ],
+          "answer": 0,
+          "why": "The matrix says Y (35).",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Virtual lines on Standard are",
+          "choices": [
+            "Not available",
+            "Unlimited",
+            "Required",
+            "The same as call park"
+          ],
+          "answer": 0,
+          "why": "The row is No.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Device count and shared-line count are",
+          "choices": [
+            "Separate rows",
+            "The same number",
+            "Both 5062",
+            "Both tokens"
+          ],
+          "answer": 0,
+          "why": "Five devices is not 35 shares.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        },
+        {
+          "q": "Emergency calls on a shared line use",
+          "choices": [
+            "The selected line's location",
+            "The furthest phone",
+            "The codec",
+            "The bot"
+          ],
+          "answer": 0,
+          "why": "The shared-line article says so.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "HELD plus a non-RedSky line location",
+          "choices": [
+            "Does not switch the call onto RedSky",
+            "Always uses RedSky",
+            "Drops the call",
+            "Uses a queue"
+          ],
+          "answer": 0,
+          "why": "The article says location information alone does not trigger RedSky routing.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "A Professional workspace can",
+          "choices": [
+            "Host devices and, per the matrix, use shared lines and virtual lines",
+            "Run the Webex App",
+            "Be a Standard user",
+            "Sign webhooks"
+          ],
+          "answer": 0,
+          "why": "Soft clients are No. Several calling features are Yes. Read the row you need.",
+          "cite": "https://help.webex.com/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "35",
+          "back": "Professional shared-line count in the matrix."
+        },
+        {
+          "front": "5 devices",
+          "back": "Professional device entitlement. A different row."
+        },
+        {
+          "front": "Virtual line ratio",
+          "back": "1:1 per Pro license, in the matrix wording."
+        },
+        {
+          "front": "Line wins",
+          "back": "Emergency routing follows the line's location."
+        }
+      ],
+      "lab": {
+        "title": "Design one executive",
+        "goal": "Give them a primary line, a virtual line, and a shared appearance on an assistant's phone.",
+        "steps": [
+          {
+            "do": "License",
+            "expect": "Professional"
+          },
+          {
+            "do": "Virtual line",
+            "expect": "Within the 1:1 note"
+          },
+          {
+            "do": "933 plan",
+            "expect": "Name which line location will be tested"
+          }
+        ],
+        "check": "The assistant's building is not assumed to be the emergency address."
+      },
+      "fault": {
+        "title": "911 from the assistant's phone",
+        "symptom": "The assistant answers a shared line and the PSAP is sent to the executive's site.",
+        "log": "SYNTHETIC: shared line location=HQ, phone sits in the branch, 933 shows HQ.",
+        "cause": "The line location is doing what Cisco documented.",
+        "fix": "If the branch must be the dispatchable location, do not place that emergency call on the HQ line. Give the branch its own line and location, or use a HELD wiremap on a line whose location is enabled.",
+        "cite": {
+          "label": "Shared lines and virtual lines across locations",
+          "url": "https://help.webex.com/default/article/c5cgxd"
+        }
+      }
+    },
+    {
+      "id": "review-loc",
+      "title": "Location review before PSTN",
+      "level": "intermediate",
+      "minutes": 12,
+      "summary": "Before you pick a carrier, the location needs a name, an address, dialing habits, and a main number plan. PSTN is the next track, not a shortcut.",
+      "uncertainty": "",
+      "objectives": [
+        "Run the checklist",
+        "Block PSTN selection until it passes",
+        "Write the assumptions"
+      ],
+      "diagram": {
+        "caption": "A location checklist that survives a design review.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Address",
+            "sub": "emergency",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Dialing",
+            "sub": "habits",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Numbers",
+            "sub": "source",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "PSTN",
+            "sub": "next track",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "ready"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "ready"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "ready"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Gate review",
+        "steps": [
+          {
+            "from": "Reviewer",
+            "to": "Address",
+            "label": "Ask where 933 should land",
+            "detail": "If nobody knows, the location boundary is wrong.",
+            "inspect": "Split or wiremap",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Reviewer",
+            "to": "Dialing",
+            "label": "Ask for length and prefix",
+            "detail": "Both directions, no collision with extensions.",
+            "inspect": "Simulator",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Reviewer",
+            "to": "Numbers",
+            "label": "Ask who owns them",
+            "detail": "Cisco, a CCP partner, or the premises carrier.",
+            "inspect": "No orphan DIDs",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          },
+          {
+            "from": "Reviewer",
+            "to": "PSTN",
+            "label": "Only then",
+            "detail": "One connection type. One trunk if premises.",
+            "inspect": "Next track",
+            "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The gate",
+          "paragraphs": [
+            "The organization article's order is the gate: locations and their settings, then PSTN. Trunks are created before you select premises PSTN.",
+            "A design that starts with a CUBE template and invents locations afterward will redo the emergency and dialing work."
+          ],
+          "cite": {
+            "label": "Configure Webex Calling for your organization",
+            "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+          }
+        },
+        {
+          "h": "Assumptions to write",
+          "paragraphs": [
+            "Country code for the simulator's +1 step. External digit. Whether Cisco Calling Plan is sold for that site. Whether the site is in the US or Canada for the RedSky entitlement note.",
+            "The emergency article says US users are entitled with Webex Calling, and Canada obtains the RedSky license through Cisco or the partner. Do not assume they are the same paperwork."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The right order is",
+          "choices": [
+            "Location, then PSTN",
+            "PSTN, then invent a location",
+            "Bot, then location",
+            "Queue, then location"
+          ],
+          "answer": 0,
+          "why": "The article builds the location first.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Canada RedSky licensing, per the emergency article,",
+          "choices": [
+            "Is obtained through Cisco or the partner, unlike the US entitlement note",
+            "Is identical paperwork to the US with no extra step",
+            "Does not exist",
+            "Is a SIP port"
+          ],
+          "answer": 0,
+          "why": "The requirements table distinguishes the US entitlement from the Canada license.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A premises location with two selected trunks is",
+          "choices": [
+            "Outside the documented model",
+            "Required",
+            "A route group",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "One trunk per premises location.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Prefix collisions are found by",
+          "choices": [
+            "Comparing prefixes with extension patterns",
+            "Reading a certificate",
+            "Opening Analyzer",
+            "Sending a webhook"
+          ],
+          "answer": 0,
+          "why": "The dialing plan has to be unambiguous.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "Number source must be",
+          "choices": [
+            "Named before cutover",
+            "Decided by the phone user",
+            "Always Cisco",
+            "Always premises"
+          ],
+          "answer": 0,
+          "why": "The three PSTN models source numbers differently.",
+          "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+        },
+        {
+          "q": "933 expectations belong in",
+          "choices": [
+            "The location review",
+            "The bot review only",
+            "The font settings",
+            "The exam voucher"
+          ],
+          "answer": 0,
+          "why": "You are about to enable emergency calling per location.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Gate",
+          "back": "Location before PSTN."
+        },
+        {
+          "front": "Canada RedSky",
+          "back": "License through Cisco or the partner, per the article."
+        },
+        {
+          "front": "US entitlement",
+          "back": "The article says US Webex Calling users are entitled to the RedSky service."
+        },
+        {
+          "front": "Write assumptions",
+          "back": "Country code, external digit, PSTN offer."
+        }
+      ],
+      "lab": {
+        "title": "Run the gate on paper",
+        "goal": "Score a location pass or fail.",
+        "steps": [
+          {
+            "do": "Address known",
+            "expect": "Pass or split the location"
+          },
+          {
+            "do": "Prefix tested both ways",
+            "expect": "Simulator or a table"
+          },
+          {
+            "do": "Number owner named",
+            "expect": "Cisco, CCP, or carrier"
+          }
+        ],
+        "check": "Fail closes the gate. PSTN waits."
+      },
+      "fault": {
+        "title": "PSTN chosen for a nameless site",
+        "symptom": "A trunk is live and nobody can say which street it serves.",
+        "log": "SYNTHETIC: trunk LGW-1, location address blank, 933 not tested.",
+        "cause": "The location address and the emergency test were skipped.",
+        "fix": "Stop outbound cutover. Fill the address, place 933 or the carrier's emergency test, then reopen the gate.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    }
+  ]
+}

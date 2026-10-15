@@ -1,0 +1,676 @@
+{
+  "tracks": [
+    {
+      "id": "t01",
+      "title": "Foundations",
+      "blurb": "What sits in a Webex organization, which protocols the calling path actually uses, and which documents this lab will trust.",
+      "level": "Foundation",
+      "lessons": [
+        {
+          "id": "map",
+          "title": "The Webex platform map"
+        },
+        {
+          "id": "models",
+          "title": "Three calling models"
+        },
+        {
+          "id": "sip",
+          "title": "SIP and E.164 for this cloud"
+        },
+        {
+          "id": "identity",
+          "title": "Identity, directory sync, and SSO"
+        },
+        {
+          "id": "ports",
+          "title": "Ports, media, and certificates"
+        },
+        {
+          "id": "licenses",
+          "title": "Professional, Standard, and Workspace"
+        },
+        {
+          "id": "howto",
+          "title": "How to use this lab"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t02",
+      "title": "Control Hub",
+      "blurb": "Roles, the customer view, and the paths you will click for calling, contact center, and Dedicated Instance.",
+      "level": "Foundation",
+      "lessons": [
+        {
+          "id": "roles",
+          "title": "Administrator roles that matter here"
+        },
+        {
+          "id": "paths",
+          "title": "The paths you will memorize"
+        },
+        {
+          "id": "users",
+          "title": "Users, workspaces, and numbers"
+        },
+        {
+          "id": "monitoring",
+          "title": "Reports and what they are not"
+        },
+        {
+          "id": "security",
+          "title": "SSO, tokens, and what not to paste"
+        },
+        {
+          "id": "day",
+          "title": "A day in the practice console"
+        },
+        {
+          "id": "audit",
+          "title": "A change log you can defend"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t03",
+      "title": "Locations and numbers",
+      "blurb": "Locations hold dialing habits, the main number, and the PSTN connection. Numbers and extensions live there.",
+      "level": "Foundation",
+      "lessons": [
+        {
+          "id": "location",
+          "title": "What a location is"
+        },
+        {
+          "id": "dialing",
+          "title": "Extension length, prefix, and the external digit"
+        },
+        {
+          "id": "numbers",
+          "title": "Main numbers, caller ID, and ports"
+        },
+        {
+          "id": "internal",
+          "title": "Calling between locations"
+        },
+        {
+          "id": "caller",
+          "title": "Caller ID and the emergency callback number"
+        },
+        {
+          "id": "virtual",
+          "title": "Virtual lines and shared lines"
+        },
+        {
+          "id": "review-loc",
+          "title": "Location review before PSTN"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t04",
+      "title": "PSTN choices",
+      "blurb": "Cisco Calling Plan, Cloud Connected PSTN, and premises PSTN through a local gateway. Cloud PSTN does not serve premises-originated calls.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "three",
+          "title": "The three PSTN models"
+        },
+        {
+          "id": "cisco-plan",
+          "title": "Cisco Calling Plan"
+        },
+        {
+          "id": "ccp",
+          "title": "Cloud Connected PSTN"
+        },
+        {
+          "id": "premises",
+          "title": "Premises PSTN and the single trunk"
+        },
+        {
+          "id": "wxcc-pstn",
+          "title": "PSTN for the contact center"
+        },
+        {
+          "id": "choose",
+          "title": "Choosing in a design review"
+        },
+        {
+          "id": "pstn-faults",
+          "title": "PSTN fault patterns"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t05",
+      "title": "Local Gateway",
+      "blurb": "Certificate trunks, registration trunks, CUBE parameters, and the certificate name the cloud expects.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "what",
+          "title": "What the local gateway is"
+        },
+        {
+          "id": "cert-trunk",
+          "title": "Certificate trunks and TCP 5062"
+        },
+        {
+          "id": "reg-trunk",
+          "title": "Registration trunks and TCP 8934"
+        },
+        {
+          "id": "cube-map",
+          "title": "Mapping Control Hub onto the CUBE"
+        },
+        {
+          "id": "media",
+          "title": "Media after the trunk is up"
+        },
+        {
+          "id": "lgw-ops",
+          "title": "Operating the gateway"
+        },
+        {
+          "id": "lgw-review",
+          "title": "Gateway review"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t06",
+      "title": "Dial plans",
+      "blurb": "Enterprise dial plans, +E.164 patterns, Unified CM normalization, and the simulator's teaching order.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "objects",
+          "title": "Dial plans, patterns, and routing choices"
+        },
+        {
+          "id": "e164",
+          "title": "+E.164 patterns"
+        },
+        {
+          "id": "ucm",
+          "title": "Unified CM normalization toward the cloud"
+        },
+        {
+          "id": "sim",
+          "title": "Using the dial-plan simulator"
+        },
+        {
+          "id": "permissions",
+          "title": "What this lab will not call a dial plan"
+        },
+        {
+          "id": "misses",
+          "title": "Pattern misses"
+        },
+        {
+          "id": "dial-review",
+          "title": "Dial-plan review"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t07",
+      "title": "Calling features",
+      "blurb": "Auto attendants, call queues, hunt groups, voicemail, and the other location features the license article lists.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "aa",
+          "title": "Auto attendants"
+        },
+        {
+          "id": "cq",
+          "title": "Call queue routing patterns"
+        },
+        {
+          "id": "skill",
+          "title": "Skill-based call queues"
+        },
+        {
+          "id": "hunt",
+          "title": "Hunt groups and the other location features"
+        },
+        {
+          "id": "vm",
+          "title": "Voicemail, voice portal, and music"
+        },
+        {
+          "id": "bulk",
+          "title": "Bulk CSV for features"
+        },
+        {
+          "id": "feat-review",
+          "title": "Feature review before cutover"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t08",
+      "title": "E911 and RedSky",
+      "blurb": "Dispatchable location, HELD, RedSky, Intrado, 933, and the callback number.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "law",
+          "title": "Kari's Law and RAY BAUM's Act"
+        },
+        {
+          "id": "held",
+          "title": "PIDF-LO and HELD"
+        },
+        {
+          "id": "enable",
+          "title": "Enable a location"
+        },
+        {
+          "id": "devices",
+          "title": "HELD phones, non-HELD phones, and the app"
+        },
+        {
+          "id": "nomadic",
+          "title": "Nomadic users and the red X"
+        },
+        {
+          "id": "intrado",
+          "title": "Intrado beside RedSky"
+        },
+        {
+          "id": "e911-review",
+          "title": "Emergency review"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t09",
+      "title": "Dedicated Instance",
+      "blurb": "The private Unified CM add-on: what Cisco deploys, how activation sizes it, and how you reach it from Control Hub.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "stack",
+          "title": "What Cisco deploys"
+        },
+        {
+          "id": "size",
+          "title": "Size it in the wizard"
+        },
+        {
+          "id": "interop",
+          "title": "The interop SIP trunk"
+        },
+        {
+          "id": "launch",
+          "title": "Cross-launch and Web RTMT"
+        },
+        {
+          "id": "dns",
+          "title": "Names and conditional forwarders"
+        },
+        {
+          "id": "identity",
+          "title": "Directory sync wants SSO"
+        },
+        {
+          "id": "models",
+          "title": "Hypothetical deployment models"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t10",
+      "title": "Contact Center routing",
+      "blurb": "Entry points, queues, teams, and the difference between a Webex Calling call queue and a contact center queue.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "which-cc",
+          "title": "Three contact centers"
+        },
+        {
+          "id": "before-flow",
+          "title": "Provision before the flow"
+        },
+        {
+          "id": "laa-baa",
+          "title": "Queues, LAA, and BAA"
+        },
+        {
+          "id": "skills",
+          "title": "Skills and dynamic skills"
+        },
+        {
+          "id": "people",
+          "title": "Profiles, teams, and roles"
+        },
+        {
+          "id": "collections",
+          "title": "Resource collections"
+        },
+        {
+          "id": "channels",
+          "title": "Channels and the voice path"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t11",
+      "title": "Flow Designer and Agent Desktop",
+      "blurb": "Activities, event flows, CRM data dips, and what the agent sees. The canvas in this lab is a teaching model.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "canvas",
+          "title": "The canvas and this lab's copy"
+        },
+        {
+          "id": "hours-menu",
+          "title": "Hours, menus, and digits"
+        },
+        {
+          "id": "queue-act",
+          "title": "Queue Contact and Queue To Agent"
+        },
+        {
+          "id": "http",
+          "title": "HTTP dips and CRM templates"
+        },
+        {
+          "id": "leave",
+          "title": "Callback, transfer, and disconnect"
+        },
+        {
+          "id": "desktop",
+          "title": "What the agent sees"
+        },
+        {
+          "id": "practice",
+          "title": "Practice on the lab canvas"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t12",
+      "title": "WFO, AI agents, and Contact Center APIs",
+      "blurb": "Workforce optimization, scripted and autonomous agents, and the webhook and search contracts.",
+      "level": "Advanced",
+      "lessons": [
+        {
+          "id": "wfo",
+          "title": "What workforce optimization includes"
+        },
+        {
+          "id": "studio-ai",
+          "title": "Scripted and autonomous agents"
+        },
+        {
+          "id": "fulfill",
+          "title": "Fulfillment and previousIntent"
+        },
+        {
+          "id": "multi",
+          "title": "More than one agent"
+        },
+        {
+          "id": "hooks",
+          "title": "Contact Center webhooks"
+        },
+        {
+          "id": "search",
+          "title": "GraphQL search limits"
+        },
+        {
+          "id": "api-review",
+          "title": "Put the integration together"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t13",
+      "title": "Webex APIs, bots, and xAPI",
+      "blurb": "Bots, integrations, messaging webhooks, and cloud xAPI commands against devices you are allowed to touch.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "two-apps",
+          "title": "Bots and integrations"
+        },
+        {
+          "id": "mentions",
+          "title": "What a bot is allowed to see"
+        },
+        {
+          "id": "msg-hook",
+          "title": "Messaging webhooks"
+        },
+        {
+          "id": "cards",
+          "title": "Replies without an invented card schema"
+        },
+        {
+          "id": "xapi",
+          "title": "Cloud xAPI commands"
+        },
+        {
+          "id": "scopes",
+          "title": "Scopes and grants"
+        },
+        {
+          "id": "api-lab",
+          "title": "A small, safe bot loop"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t14",
+      "title": "Devices and RoomOS",
+      "blurb": "Phones, RoomOS, HELD versus caller ID, media ports, and macros that stay on the device.",
+      "level": "Core",
+      "lessons": [
+        {
+          "id": "families",
+          "title": "MPP, the app, and RoomOS"
+        },
+        {
+          "id": "held-phone",
+          "title": "What the phone sends"
+        },
+        {
+          "id": "nomadic",
+          "title": "Soft clients, shared lines, and callback"
+        },
+        {
+          "id": "media",
+          "title": "Media ports and ICE"
+        },
+        {
+          "id": "roomos",
+          "title": "RoomOS xAPI and macros"
+        },
+        {
+          "id": "ops",
+          "title": "Day-two device checks"
+        },
+        {
+          "id": "device-review",
+          "title": "Device review"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t15",
+      "title": "Migration from CUCM, UCCX, and UCCE",
+      "blurb": "Migration Insights, feature CSVs, the park and pickup gap, and why contact center scripts are a redesign.",
+      "level": "Advanced",
+      "lessons": [
+        {
+          "id": "prepare",
+          "title": "Start with Migration Insights"
+        },
+        {
+          "id": "eligible",
+          "title": "Device eligibility"
+        },
+        {
+          "id": "features",
+          "title": "Call queues and auto attendants"
+        },
+        {
+          "id": "park",
+          "title": "Park and pickup need the script"
+        },
+        {
+          "id": "voicemail",
+          "title": "Unity Connection does not come along"
+        },
+        {
+          "id": "scripts",
+          "title": "UCCX and UCCE are a redesign"
+        },
+        {
+          "id": "cutover",
+          "title": "Cutover checks"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    },
+    {
+      "id": "t16",
+      "title": "Ecosystem, certificates, and the bridge",
+      "blurb": "Glossary, the mind map, certifications you can cite, and how CUCM, UCCX, UCCE, and Webex sit together.",
+      "level": "Capstone",
+      "lessons": [
+        {
+          "id": "glossary-work",
+          "title": "Words that get projects in trouble"
+        },
+        {
+          "id": "mind",
+          "title": "The mind map"
+        },
+        {
+          "id": "certs",
+          "title": "Certifications and the course that is not the exam"
+        },
+        {
+          "id": "crm",
+          "title": "CRM dips you can cite"
+        },
+        {
+          "id": "bridge",
+          "title": "The bridge from CUCM, UCCX, and UCCE"
+        },
+        {
+          "id": "studio-cap",
+          "title": "Use the studio as a capstone"
+        },
+        {
+          "id": "honest",
+          "title": "What this lab will not pretend"
+        }
+      ],
+      "counts": {
+        "lessons": 7,
+        "quiz": 42,
+        "labs": 7,
+        "faults": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "q": "Where do you administer a Webex organization?",
+    "a": "Control Hub at admin.webex.com. Calling, devices, contact center, and Dedicated Instance are services of that organization.",
+    "cite": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+  },
+  {
+    "q": "Name the three PSTN options.",
+    "a": "Cisco Calling Plan, Cloud Connected PSTN, and premises PSTN through a local gateway. One location gets one option.",
+    "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "q": "Who can use cloud PSTN?",
+    "a": "Webex Calling users. Calls that originate from premises users cannot.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "q": "How many trunks on a premises location?",
+    "a": "One. The same trunk may serve many locations.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "q": "What does a dial plan point at?",
+    "a": "A trunk or a route group, with patterns for on-premises destinations. Plans are enterprise-wide.",
+    "cite": "https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling"
+  },
+  {
+    "q": "Certificate trunk port versus registration trunk port?",
+    "a": "TCP 5062 for certificate-based, TCP 8934 for registration-based.",
+    "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+  },
+  {
+    "q": "Optimized media ports when ICE succeeds?",
+    "a": "Webex App UDP 8500-8699, audio 8500-8599 and video 8600-8699. Devices UDP 19560-19661.",
+    "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+  },
+  {
+    "q": "What is HELD?",
+    "a": "RFC 5985. MPP phones use it toward RedSky on port 443. PIDF-LO is RFC 4119.",
+    "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+  },
+  {
+    "q": "What is 933?",
+    "a": "The emergency calling test in Cisco's article, used after the location is enabled.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "q": "Cellular Webex App and 911?",
+    "a": "The article says the call is handed to the native dialer.",
+    "cite": "https://help.webex.com/en-us/article/av6oo3"
+  },
+  {
+    "q": "What is an ECBN?",
+    "a": "Emergency callback number: the line, the location default, or another user or virtual line in the same location. It has to answer.",
+    "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+  },
+  {
+    "q": "What does Dedicated Instance deploy by default?",
+    "a": "Unified CM, Unity Connection, and Expressway-Core and Edge. Emergency Responder only in AMER on the activation page. IM and Presence only if Legacy Jabber was selected.",
+    "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "q": "Does directory sync into Dedicated Instance require SSO?",
+    "a": "Yes. Without SSO that feature is not supported. Native Unified CM user options remain.",
+    "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+  },
+  {
+    "q": "Dedicated Instance DNS?",
+    "a": "A name such as xyz.amer.wxc-di.webex.com, resolved with a conditional forwarder to Dedicated Instance DNS.",
+    "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+  },
+  {
+    "q": "Who can open Web RTMT?",
+    "a": "A partner Sales Full Administrator, or a customer Full Administrator or Read-only Administrator.",
+    "cite": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+  },
+  {
+    "q": "What must you still activate after DI service activation?",
+    "a": "The interop SIP trunk to multi-tenant Webex Calling.",
+    "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+  },
+  {
+    "q": "Calling call queue versus contact center queue?",
+    "a": "Calling > Features > Call Queue is not a Flow Designer queue. Different articles, different caps, different strategies.",
+    "cite": "https://help.webex.com/en-us/article/nzkg083/Configure-Call-Queue"
+  },
+  {
+    "q": "Name LAA and BAA.",
+    "a": "Longest available and best available, the contact center routing strategies. Do not borrow Calling's Simultaneous cap.",
+    "cite": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center"
+  },
+  {
+    "q": "How many resource collections on a user profile?",
+    "a": "Up to five. A collection maps to at most 15 user profiles in the access article's rule.",
+    "cite": "https://help.webex.com/en-us/article/n524f2m"
+  },
+  {
+    "q": "Flow Designer sign-in?",
+    "a": "SSO with Cisco Identity Service. If you are already in Control Hub you continue.",
+    "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+  },
+  {
+    "q": "Name four HTTP templates.",
+    "a": "Salesforce, Microsoft Dynamics, ServiceNow, and Zendesk.",
+    "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+  },
+  {
+    "q": "What is webex-lab-flow-1?",
+    "a": "This lab's teaching schema. It is not a Control Hub import.",
+    "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+  },
+  {
+    "q": "Scripted versus autonomous?",
+    "a": "The two AI agent styles. Voice uses Virtual Agent V2. Digital uses the AI Agent node.",
+    "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+  },
+  {
+    "q": "Contact center webhook signature?",
+    "a": "X-WebexCC-Signature, HMAC-SHA256, HTTPS destination with no query string. Do not rely on webhooks alone.",
+    "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+  },
+  {
+    "q": "Messaging webhook signature?",
+    "a": "X-Spark-Signature is HMAC-SHA1. X-Webex-Signature can carry SHA256 and SHA512. One hundred failures in five minutes disables it.",
+    "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+  },
+  {
+    "q": "What does a bot see in a group space?",
+    "a": "Messages that mention it. In a 1:1 space it sees the conversation.",
+    "cite": "https://developer.webex.com/docs/bots"
+  },
+  {
+    "q": "Personal access token lifetime?",
+    "a": "Twelve hours on the Webex developer getting started page. Not for production.",
+    "cite": "https://developer.webex.com/docs/getting-started"
+  },
+  {
+    "q": "Cloud xAPI command URL?",
+    "a": "POST https://webexapis.com/v1/xapi/command/{commandName}, same org, device granted.",
+    "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+  },
+  {
+    "q": "Where do command names come from?",
+    "a": "roomos.cisco.com/xapi. Do not invent macro APIs.",
+    "cite": "https://roomos.cisco.com/xapi"
+  },
+  {
+    "q": "What does Migration Insights want?",
+    "a": "A Unified CM tar, plus CDR if you need feature-usage reports.",
+    "cite": "https://help.webex.com/default/article/svoi86/Migration-Insights"
+  },
+  {
+    "q": "What do you remove from CallQueueBulk.csv?",
+    "a": "The Errors and Notes columns, after you fix the rows.",
+    "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "q": "Who creates CallPark.csv?",
+    "a": "The Python script UserBasedUCMFeatureMigration, because the main tool does not currently support those files.",
+    "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "q": "Do Unity Connection messages migrate natively?",
+    "a": "No. Webex Calling also cannot integrate with premises Unity Connection. Dedicated Instance still deploys Unity Connection.",
+    "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "q": "Do UCCX scripts import into Flow Designer?",
+    "a": "This lab found no importer. Redesign the flow and mark that as uncertain if Cisco later ships a tool.",
+    "cite": "https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-express/series.html"
+  },
+  {
+    "q": "What is 300-830?",
+    "a": "A 90-minute exam, CLCCE. Passing earns Cisco Certified Specialist - Collaboration Cloud Customer Experience and can count toward CCNP Collaboration.",
+    "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcce.html"
+  },
+  {
+    "q": "What is CLWXCALL?",
+    "a": "Essentials of Webex Calling, a course. It is not the exam.",
+    "cite": "https://www.cisco.com/site/us/en/learn/training-certifications/training/courses/clwxcall.html"
+  },
+  {
+    "q": "Registration-based local gateway call limit in the prepare article?",
+    "a": "Up to 250 concurrent calls. Above the documented budget the call is 403 Forbidden.",
+    "cite": "https://help.webex.com/en-us/article/4yz2zd/Prepare-to-migrate-from-Unified-CM-to-Webex-Calling"
+  },
+  {
+    "q": "Why are deployment-model customers hypothetical?",
+    "a": "The article says so. Do not attach a real company name to those user counts.",
+    "cite": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+  }
+]

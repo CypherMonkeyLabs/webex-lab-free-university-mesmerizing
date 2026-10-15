@@ -1,0 +1,1818 @@
+{
+  "id": "t13",
+  "title": "Webex APIs, bots, and xAPI",
+  "blurb": "Bots, integrations, messaging webhooks, and cloud xAPI commands against devices you are allowed to touch.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "two-apps",
+      "title": "Bots and integrations",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "A bot is a member of a space. An integration acts as a user who granted OAuth. A personal access token is neither of those in production.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate bots from integrations",
+        "Keep personal tokens out of production",
+        "Cite the getting started page for token lifetime"
+      ],
+      "diagram": {
+        "caption": "Pick the actor before you pick the URL.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Bot",
+            "sub": "its own identity",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Integration",
+            "sub": "OAuth user",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Personal token",
+            "sub": "12-hour developer tool",
+            "x": 460,
+            "y": 36,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "API",
+            "sub": "webexapis.com",
+            "x": 40,
+            "y": 170,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "bot token"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "user token"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "not production"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Who is calling the API",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Developer portal",
+            "label": "Create a bot when the actor is the bot",
+            "detail": "The bot has a name, a username, and a token. People add it to spaces.",
+            "inspect": "Bots guide",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "You",
+            "to": "Integration",
+            "label": "Use OAuth when the actor is a person",
+            "detail": "The integration requests scopes. The token represents that user.",
+            "inspect": "Not a copied personal token",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "You",
+            "to": "Getting started",
+            "label": "Read the personal token rules",
+            "detail": "The Webex developer getting started page describes personal access tokens for trying the API, including a 12-hour expiry. That page is not the contact center guide.",
+            "inspect": "Do not ship one",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "App",
+            "to": "API",
+            "label": "Call with the right token",
+            "detail": "A bot token sees bot-scoped data. A user token sees what that user may see.",
+            "inspect": "Scopes still apply",
+            "cite": "https://developer.webex.com/docs/bots"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Twelve hours, from the general guide",
+          "paragraphs": [
+            "Personal access tokens expire 12 hours after they are issued, on the getting started page this lab uses. Confirm the live sentence before you quote it in a runbook, and do not put one in a server.",
+            "Contact center production access uses the contact center scopes and integration model, not this shortcut."
+          ],
+          "cite": {
+            "label": "Webex developer getting started",
+            "url": "https://developer.webex.com/docs/getting-started"
+          }
+        },
+        {
+          "h": "What a bot is not",
+          "paragraphs": [
+            "A bot is not an agent desktop profile and not a virtual agent. Those are contact center objects.",
+            "A bot is not an xAPI command. xAPI is how an authorized app talks to a device."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A bot acts as",
+          "choices": [
+            "The bot's own identity",
+            "Whichever user last clicked",
+            "The local gateway",
+            "Emergency Responder"
+          ],
+          "answer": 0,
+          "why": "It has its own token.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "An integration acts as",
+          "choices": [
+            "The user who completed OAuth",
+            "Always the bot",
+            "The PSTN provider",
+            "A queue"
+          ],
+          "answer": 0,
+          "why": "Scopes limit it.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Personal access tokens on the getting started page",
+          "choices": [
+            "Expire in 12 hours and are not for production",
+            "Last forever",
+            "Are contact center webhooks",
+            "Are dial plans"
+          ],
+          "answer": 0,
+          "why": "Confirm the live page.",
+          "cite": "https://developer.webex.com/docs/getting-started"
+        },
+        {
+          "q": "That getting started page",
+          "choices": [
+            "Is not the contact center API guide",
+            "Lists LAA",
+            "Replaces Flow Designer",
+            "Sizes Dedicated Instance"
+          ],
+          "answer": 0,
+          "why": "Different docs.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center"
+        },
+        {
+          "q": "A virtual agent is",
+          "choices": [
+            "A contact center AI agent, not a messaging bot",
+            "The same object as a Webex bot",
+            "A trunk",
+            "A theme"
+          ],
+          "answer": 0,
+          "why": "AI article.",
+          "cite": "https://help.webex.com/en-us/article/s0qro1/Use-AI-agents-for-customer-interactions"
+        },
+        {
+          "q": "xAPI is",
+          "choices": [
+            "The device command interface",
+            "A bot mention",
+            "A CSV",
+            "A region"
+          ],
+          "answer": 0,
+          "why": "Later lessons.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Bot",
+          "back": "Its own membership."
+        },
+        {
+          "front": "Integration",
+          "back": "OAuth on behalf of a user."
+        },
+        {
+          "front": "12 hours",
+          "back": "Personal token lifetime on the getting started page."
+        },
+        {
+          "front": "Not a virtual agent",
+          "back": "Different product."
+        }
+      ],
+      "lab": {
+        "title": "Choose an actor",
+        "goal": "For three jobs, pick bot, integration, or neither.",
+        "steps": [
+          {
+            "do": "Notify a space",
+            "expect": "Bot"
+          },
+          {
+            "do": "List my meetings as me",
+            "expect": "Integration"
+          },
+          {
+            "do": "Cron on a laptop token",
+            "expect": "Neither, because of the 12-hour token"
+          }
+        ],
+        "check": "You wrote why."
+      },
+      "fault": {
+        "title": "Token in production",
+        "symptom": "A weekend job starts failing every twelve hours.",
+        "log": "SYNTHETIC: Authorization bearer is a personal access token from Friday.",
+        "cause": "That token expired.",
+        "fix": "Use an integration or a bot token, and rotate it as the portal describes.",
+        "cite": {
+          "label": "Webex developer getting started",
+          "url": "https://developer.webex.com/docs/getting-started"
+        }
+      }
+    },
+    {
+      "id": "mentions",
+      "title": "What a bot is allowed to see",
+      "level": "core",
+      "minutes": 12,
+      "summary": "In a group space a bot receives messages that mention it. In a one-to-one space it receives the messages in that conversation.",
+      "uncertainty": "",
+      "objectives": [
+        "State the group mention rule",
+        "State the 1:1 rule",
+        "Avoid designing a silent listener"
+      ],
+      "diagram": {
+        "caption": "No mention, no group message.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Group space",
+            "sub": "many people",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "@bot",
+            "sub": "mention",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "1:1",
+            "sub": "the bot and one person",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Your server",
+            "sub": "webhook or poll",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "required"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "event"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "messages"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Why the bot ignored the room",
+        "steps": [
+          {
+            "from": "Person",
+            "to": "Group",
+            "label": "Talks without a mention",
+            "detail": "The bot does not get that message. The bots guide describes this limit.",
+            "inspect": "Not a bug",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Person",
+            "to": "Group",
+            "label": "Writes @bot",
+            "detail": "Now the bot can see it and can reply in the space.",
+            "inspect": "Mention the username",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Person",
+            "to": "1:1",
+            "label": "Writes without a mention",
+            "detail": "In a direct space the bot receives the messages. Do not require an @ there.",
+            "inspect": "Different rule",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Bot",
+            "to": "Room",
+            "label": "Reply in public",
+            "detail": "The reply is visible to the space. Do not echo secrets back.",
+            "inspect": "Design the reply",
+            "cite": "https://developer.webex.com/docs/bots"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Design around the rule",
+          "paragraphs": [
+            "If you need every message in a large space, a bot is the wrong tool. The guide does not give the bot a hidden transcript of the room.",
+            "Ask people to mention the bot, or use a different architecture the API actually allows."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        },
+        {
+          "h": "Membership",
+          "paragraphs": [
+            "The bot has to be in the space. A mention of a bot that was never added does not create a webhook.",
+            "Removing the bot stops the conversation."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In a group space the bot receives",
+          "choices": [
+            "Messages that mention it",
+            "Every message",
+            "Only files over a private channel",
+            "Dialed digits"
+          ],
+          "answer": 0,
+          "why": "Bots guide.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "In a 1:1 space the bot receives",
+          "choices": [
+            "The messages in that conversation",
+            "Nothing unless mentioned",
+            "Only webhooks from contact center",
+            "Only xAPI"
+          ],
+          "answer": 0,
+          "why": "Different rule.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "A bot not in the space",
+          "choices": [
+            "Does not see the mention as membership",
+            "Becomes an admin",
+            "Opens RTMT",
+            "Forwards DNS"
+          ],
+          "answer": 0,
+          "why": "Add the bot.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "A silent group listener",
+          "choices": [
+            "Is not what the bot model provides",
+            "Is the default",
+            "Is HELD",
+            "Is a call queue"
+          ],
+          "answer": 0,
+          "why": "Do not promise it.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Replies in a group",
+          "choices": [
+            "Are visible to the space",
+            "Are private to the sender always",
+            "Are SIP",
+            "Are certificates"
+          ],
+          "answer": 0,
+          "why": "Do not echo secrets.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "This rule is about",
+          "choices": [
+            "Messaging bots",
+            "Multi-agent escalation_trigger",
+            "Local gateways",
+            "Emergency Responder"
+          ],
+          "answer": 0,
+          "why": "Different article.",
+          "cite": "https://help.webex.com/en-us/article/5a07xcb/Multi-agent-orchestration"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Group",
+          "back": "Mention required."
+        },
+        {
+          "front": "1:1",
+          "back": "Messages in that chat."
+        },
+        {
+          "front": "Membership",
+          "back": "The bot must be in the space."
+        },
+        {
+          "front": "Not a wiretap",
+          "back": "No hidden group transcript."
+        }
+      ],
+      "lab": {
+        "title": "Two test messages",
+        "goal": "Write what happens with and without a mention.",
+        "steps": [
+          {
+            "do": "Group without @",
+            "expect": "Bot sees nothing"
+          },
+          {
+            "do": "Group with @",
+            "expect": "Bot may reply"
+          },
+          {
+            "do": "1:1",
+            "expect": "No mention required"
+          }
+        ],
+        "check": "You did not log message text in the lab notes."
+      },
+      "fault": {
+        "title": "Bot looks broken",
+        "symptom": "It answers in 1:1 and ignores the project space.",
+        "log": "SYNTHETIC: users type 'status' with no mention.",
+        "cause": "The group rule is working.",
+        "fix": "Tell the room to mention the bot.",
+        "cite": {
+          "label": "Webex bots",
+          "url": "https://developer.webex.com/docs/bots"
+        }
+      }
+    },
+    {
+      "id": "msg-hook",
+      "title": "Messaging webhooks",
+      "level": "core",
+      "minutes": 14,
+      "summary": "Create a webhook with a secret. Verify X-Spark-Signature as HMAC-SHA1, and prefer X-Webex-Signature when the newer header is present. A listener that fails too often is disabled.",
+      "uncertainty": "",
+      "objectives": [
+        "Send a 2xx",
+        "Verify the signature over raw bytes",
+        "Know the disable threshold"
+      ],
+      "diagram": {
+        "caption": "Raw bytes, then a 2xx.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Create",
+            "sub": "secret",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "POST",
+            "sub": "JSON",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "SHA1 header",
+            "sub": "X-Spark-Signature",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Newer header",
+            "sub": "X-Webex-Signature",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "event"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "compatibility"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "prefer when present"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Accept one message event",
+        "steps": [
+          {
+            "from": "You",
+            "to": "API",
+            "label": "Create the webhook with a secret",
+            "detail": "The target URL must be reachable by Webex. The secret is what you verify with.",
+            "inspect": "Store it outside the repo",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "Webex",
+            "to": "You",
+            "label": "POST the notification",
+            "detail": "Respond in the 2xx range. The guide disables a webhook after 100 failed attempts within five minutes.",
+            "inspect": "Failures include timeouts and non-2xx",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "You",
+            "to": "SHA1",
+            "label": "Check X-Spark-Signature",
+            "detail": "HMAC-SHA1 over the unmodified raw body. Header names are case-insensitive. HTTP/2 may deliver the header in lowercase.",
+            "inspect": "Constant-time compare",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "You",
+            "to": "SHA256",
+            "label": "Prefer X-Webex-Signature when it is present",
+            "detail": "The guide says that header carries HMAC-SHA256 and HMAC-SHA512 for supported types. Use the algorithm the header indicates.",
+            "inspect": "SHA1 remains the compatibility path",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Do not re-encode first",
+          "paragraphs": [
+            "Compute the HMAC before parsing or re-serializing JSON. A pretty printer changes the bytes and the signature fails.",
+            "The messaging guide says this explicitly, and it says HMAC-SHA1 is documented because it is the header contract, not as general cryptographic advice."
+          ],
+          "cite": {
+            "label": "Webex webhooks",
+            "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          }
+        },
+        {
+          "h": "Contact center is the other header",
+          "paragraphs": [
+            "X-WebexCC-Signature is HMAC-SHA256 for contact center subscriptions. Do not reuse this messaging function unchanged.",
+            "The disable rule in this lesson is the messaging rule: 100 failures in five minutes."
+          ],
+          "cite": {
+            "label": "Contact Center webhooks",
+            "url": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "X-Spark-Signature is",
+          "choices": [
+            "HMAC-SHA1 over the raw body",
+            "HMAC-SHA256 always",
+            "A SIP header",
+            "Optional decoration"
+          ],
+          "answer": 0,
+          "why": "When the webhook was created with a secret.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "X-Webex-Signature",
+          "choices": [
+            "Carries SHA256 and SHA512 for supported types",
+            "Is the contact center header",
+            "Is PIDF-LO",
+            "Is a license"
+          ],
+          "answer": 0,
+          "why": "Prefer it when present.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "The webhook is disabled after",
+          "choices": [
+            "100 failed attempts within five minutes",
+            "One failure",
+            "36 months",
+            "Ten characters"
+          ],
+          "answer": 0,
+          "why": "Return 2xx when you accept it.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "Header lookup should be",
+          "choices": [
+            "Case-insensitive",
+            "Case-sensitive only",
+            "Skipped",
+            "Done after you reformat JSON"
+          ],
+          "answer": 0,
+          "why": "HTTP/2 may lowercase it.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "Compare signatures",
+          "choices": [
+            "In constant time, before you trust the payload",
+            "With a normal string equals after parsing",
+            "By length only",
+            "Never"
+          ],
+          "answer": 0,
+          "why": "The guide.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "X-WebexCC-Signature belongs to",
+          "choices": [
+            "Contact center subscriptions",
+            "Messaging SHA1",
+            "Devices only",
+            "DNS"
+          ],
+          "answer": 0,
+          "why": "Do not mix the verifiers.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/using-webhooks"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Secret",
+          "back": "Set it at create time."
+        },
+        {
+          "front": "SHA1",
+          "back": "X-Spark-Signature, raw body."
+        },
+        {
+          "front": "Prefer",
+          "back": "X-Webex-Signature when present."
+        },
+        {
+          "front": "100 / 5 min",
+          "back": "Then the webhook is disabled."
+        }
+      ],
+      "lab": {
+        "title": "Failure budget",
+        "goal": "Write how your listener stays under the disable threshold.",
+        "steps": [
+          {
+            "do": "2xx",
+            "expect": "After a valid signature"
+          },
+          {
+            "do": "Invalid",
+            "expect": "You reject without looping retries at Webex"
+          },
+          {
+            "do": "Logs",
+            "expect": "No secret"
+          }
+        ],
+        "check": "You named both headers."
+      },
+      "fault": {
+        "title": "Pretty-printed HMAC",
+        "symptom": "Valid events all fail verification.",
+        "log": "SYNTHETIC: HMAC computed after JSON.stringify of a parsed object.",
+        "cause": "The bytes changed.",
+        "fix": "Hash the raw request body.",
+        "cite": {
+          "label": "Webex webhooks",
+          "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        }
+      }
+    },
+    {
+      "id": "cards",
+      "title": "Replies without an invented card schema",
+      "level": "core",
+      "minutes": 11,
+      "summary": "Bots can post messages and, when the current guide says so, rich attachments. This lab does not freeze a card JSON that the guide might change.",
+      "uncertainty": "",
+      "objectives": [
+        "Reply with text first",
+        "Treat card schemas as dated",
+        "Keep secrets out of the reply"
+      ],
+      "diagram": {
+        "caption": "Send text you can defend. Look up cards on the day you build them.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Event",
+            "sub": "mention",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Your logic",
+            "sub": "small",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Message",
+            "sub": "text",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Attachment",
+            "sub": "see the live guide",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "verify"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "reply"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "only if documented"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Answer a mention",
+        "steps": [
+          {
+            "from": "Event",
+            "to": "Code",
+            "label": "Verify the webhook",
+            "detail": "No reply on a bad signature.",
+            "inspect": "Previous lesson",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Code",
+            "to": "Space",
+            "label": "Post a short text reply",
+            "detail": "The bots guide shows how a bot posts a message. Start there.",
+            "inspect": "In the same space",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Code",
+            "to": "Card",
+            "label": "Open the current attachment guide",
+            "detail": "Interactive cards exist in Webex messaging. This lab will not embed a sample payload, because copying a stale schema is how bots ship broken UI.",
+            "inspect": "Uncertainty: follow the live example",
+            "cite": "https://developer.webex.com/docs/bots"
+          },
+          {
+            "from": "Code",
+            "to": "Logs",
+            "label": "Redact",
+            "detail": "The mention text may contain data you should not store. Decide that before you log it.",
+            "inspect": "Privacy",
+            "cite": "https://developer.webex.com/docs/bots"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Why there is no sample card",
+          "paragraphs": [
+            "A card payload is an API schema. The honest way to teach it is to point at the developer page that currently publishes the example.",
+            "If you need a card, copy it from that page on the day you build, and cite the URL in your commit."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        },
+        {
+          "h": "What you can still practice",
+          "paragraphs": [
+            "Mention in, text out, signature checked, 2xx returned. That loop is the whole lesson.",
+            "Contact center screen pop is not a messaging card."
+          ],
+          "cite": {
+            "label": "Build and manage flows with Flow Designer",
+            "url": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "This lab omits a card payload because",
+          "choices": [
+            "The live schema should be copied from the current guide",
+            "Cards are forbidden",
+            "Cards are SIP",
+            "Cards are licenses"
+          ],
+          "answer": 0,
+          "why": "Do not freeze a stale example.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "The first reply to practice is",
+          "choices": [
+            "A text message in the space",
+            "An xAPI command",
+            "A dial plan",
+            "A tar upload"
+          ],
+          "answer": 0,
+          "why": "Bots guide.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "A bad signature means",
+          "choices": [
+            "No reply",
+            "Reply anyway",
+            "Create a queue",
+            "Enable RedSky"
+          ],
+          "answer": 0,
+          "why": "Verify first.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "Screen pop is",
+          "choices": [
+            "Not a messaging card",
+            "The same JSON",
+            "A webhook secret",
+            "A region"
+          ],
+          "answer": 0,
+          "why": "Flow Designer.",
+          "cite": "https://help.webex.com/en-us/article/nhovcy4/Build-and-manage-flows-with-Flow-Designer"
+        },
+        {
+          "q": "Mention text in logs",
+          "choices": [
+            "Needs a privacy decision",
+            "Should always be stored raw",
+            "Is the HELD secret",
+            "Is public by RFC"
+          ],
+          "answer": 0,
+          "why": "Redact.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "The bot posts as",
+          "choices": [
+            "Itself",
+            "The user who mentioned it, automatically",
+            "The partner admin",
+            "Dedicated Instance"
+          ],
+          "answer": 0,
+          "why": "Its own token.",
+          "cite": "https://developer.webex.com/docs/bots"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Text first",
+          "back": "A message you can explain."
+        },
+        {
+          "front": "Cards",
+          "back": "Copy the current guide."
+        },
+        {
+          "front": "No stale JSON",
+          "back": "This lesson refuses a sample."
+        },
+        {
+          "front": "Not a screen pop",
+          "back": "Different product."
+        }
+      ],
+      "lab": {
+        "title": "Reply script",
+        "goal": "Write the four steps from mention to text, with no card body.",
+        "steps": [
+          {
+            "do": "Verify",
+            "expect": "Raw HMAC"
+          },
+          {
+            "do": "Membership",
+            "expect": "Group mention or 1:1"
+          },
+          {
+            "do": "Reply",
+            "expect": "Text only"
+          },
+          {
+            "do": "Cite",
+            "expect": "The bots URL"
+          }
+        ],
+        "check": "A card is listed as a follow-up, not as code."
+      },
+      "fault": {
+        "title": "Stale card",
+        "symptom": "The client shows a broken attachment after an API change.",
+        "log": "SYNTHETIC: payload copied from a 2022 blog.",
+        "cause": "The schema moved and the lab warned you.",
+        "fix": "Replace it from the current developer page.",
+        "cite": {
+          "label": "Webex bots",
+          "url": "https://developer.webex.com/docs/bots"
+        }
+      }
+    },
+    {
+      "id": "xapi",
+      "title": "Cloud xAPI commands",
+      "level": "core",
+      "minutes": 13,
+      "summary": "An authorized integration can POST a command to a device in the same organization. The URL is the Webex xAPI command resource. The device must be granted.",
+      "uncertainty": "",
+      "objectives": [
+        "Form the command URL",
+        "Stay inside the organization and the grant",
+        "Read RoomOS xAPI for the command name"
+      ],
+      "diagram": {
+        "caption": "Same org. Granted device. One command.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Integration",
+            "sub": "device scopes",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "POST",
+            "sub": "xapi/command",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Device",
+            "sub": "same organization",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Result",
+            "sub": "status or error",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "token"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "granted"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "response"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Ask a room device for its status",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Docs",
+            "label": "Find the command on RoomOS xAPI",
+            "detail": "roomos.cisco.com/xapi is the command catalog. Do not invent a command name.",
+            "inspect": "Device developer guide for the cloud path",
+            "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+          },
+          {
+            "from": "You",
+            "to": "API",
+            "label": "POST /v1/xapi/command/{commandName}",
+            "detail": "The execute-command guide documents that URL on https://webexapis.com.",
+            "inspect": "Body as the guide shows",
+            "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+          },
+          {
+            "from": "Cloud",
+            "to": "Device",
+            "label": "The device must be in your org and granted to the app",
+            "detail": "The device developer guide limits bots and integrations to devices they are allowed to control.",
+            "inspect": "A MAC you can see is not permission",
+            "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+          },
+          {
+            "from": "Device",
+            "to": "You",
+            "label": "Read the result",
+            "detail": "Errors include auth, missing grant, and a device that is offline. The status commands are a different resource from commands.",
+            "inspect": "Do not retry forever",
+            "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Commands versus status",
+          "paragraphs": [
+            "The execute-command page is for commands. Status is a different xAPI surface. Mixing them produces a 404 that looks like an outage.",
+            "Macros that run on the device itself are yet another path, covered with devices."
+          ],
+          "cite": {
+            "label": "Device developers guide",
+            "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          }
+        },
+        {
+          "h": "Bots are narrower",
+          "paragraphs": [
+            "A bot can be used where the device guide allows it, still only in the same organization and only on granted devices.",
+            "A bot that can talk in a space cannot automatically pan a camera."
+          ],
+          "cite": {
+            "label": "Device developers guide",
+            "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The command URL path is",
+          "choices": [
+            "/v1/xapi/command/{commandName} on webexapis.com",
+            "A SIP INVITE",
+            "admin.webex.com/xapi",
+            "A webhook"
+          ],
+          "answer": 0,
+          "why": "Execute an xAPI command.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        },
+        {
+          "q": "The command name comes from",
+          "choices": [
+            "The RoomOS xAPI reference",
+            "A guessed string",
+            "The dial plan",
+            "The FCC page"
+          ],
+          "answer": 0,
+          "why": "roomos.cisco.com/xapi.",
+          "cite": "https://roomos.cisco.com/xapi"
+        },
+        {
+          "q": "The device must be",
+          "choices": [
+            "In the same organization and granted",
+            "Any device on the internet",
+            "A local gateway only",
+            "A contact center queue"
+          ],
+          "answer": 0,
+          "why": "Device developer guide.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Status and command",
+          "choices": [
+            "Are different resources",
+            "Are the same POST",
+            "Are both CSV files",
+            "Are both HELD"
+          ],
+          "answer": 0,
+          "why": "A 404 may mean the wrong one.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        },
+        {
+          "q": "A messaging bot",
+          "choices": [
+            "Does not automatically gain device control",
+            "Can pan every camera",
+            "Is Virtual Agent V2",
+            "Is SME"
+          ],
+          "answer": 0,
+          "why": "Grant it, if the guide allows that app type.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Macros on the device",
+          "choices": [
+            "Are a separate path from cloud xAPI",
+            "Are this POST",
+            "Are webhooks",
+            "Are licenses"
+          ],
+          "answer": 0,
+          "why": "Next track.",
+          "cite": "https://roomos.cisco.com/xapi"
+        }
+      ],
+      "cards": [
+        {
+          "front": "POST",
+          "back": "/v1/xapi/command/{commandName}."
+        },
+        {
+          "front": "Catalog",
+          "back": "roomos.cisco.com/xapi."
+        },
+        {
+          "front": "Grant",
+          "back": "Same org, allowed device."
+        },
+        {
+          "front": "Status",
+          "back": "Different resource."
+        }
+      ],
+      "lab": {
+        "title": "One command on paper",
+        "goal": "Pick a real command from the xAPI reference and write the URL.",
+        "steps": [
+          {
+            "do": "Name",
+            "expect": "Copied from the reference, not invented"
+          },
+          {
+            "do": "URL",
+            "expect": "webexapis.com path"
+          },
+          {
+            "do": "Grant",
+            "expect": "You wrote same org and granted"
+          }
+        ],
+        "check": "You did not include a token."
+      },
+      "fault": {
+        "title": "Wrong org",
+        "symptom": "The command returns an authorization error for a device you can see in a screenshot.",
+        "log": "SYNTHETIC: device belongs to another organization.",
+        "cause": "Visibility is not a grant, and the org must match.",
+        "fix": "Use a device in the token's organization that the integration is allowed to control.",
+        "cite": {
+          "label": "Device developers guide",
+          "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        }
+      }
+    },
+    {
+      "id": "scopes",
+      "title": "Scopes and grants",
+      "level": "core",
+      "minutes": 12,
+      "summary": "OAuth scopes are the menu. Device grants are the specific rooms. Asking for every scope is how tokens become dangerous.",
+      "uncertainty": "",
+      "objectives": [
+        "Request only the scopes the call needs",
+        "Grant devices one by one",
+        "Separate this from contact center scopes"
+      ],
+      "diagram": {
+        "caption": "Least scope, then an explicit device.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Scopes",
+            "sub": "what kind",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Grant",
+            "sub": "which device",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Token",
+            "sub": "that app",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Audit",
+            "sub": "what it did",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "allows"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "limits"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "log"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Issue a token you could explain",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Portal",
+            "label": "Read the scope list",
+            "detail": "The device developer guide names the scopes for cloud xAPI. Copy from there.",
+            "inspect": "No spark:all out of habit",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "You",
+            "to": "Device",
+            "label": "Grant the room",
+            "detail": "Same organization. The grant is the allow-list.",
+            "inspect": "Remove it when the pilot ends",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "App",
+            "to": "Call",
+            "label": "Send one command",
+            "detail": "Log the command name and the device id, not the token.",
+            "inspect": "Handle offline",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "You",
+            "to": "Review",
+            "label": "Remove unused integrations",
+            "detail": "A token that can post messages and move cameras is two jobs. Split them if the portal lets you.",
+            "inspect": "Bots stay bots",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Contact center scopes are a different list",
+          "paragraphs": [
+            "cjp:config and cjp:config_read belong to the contact center search reference. They do not grant xAPI.",
+            "A single integration can request several families only if you mean to. Prefer two apps."
+          ],
+          "cite": {
+            "label": "Contact Center GraphQL search",
+            "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+          }
+        },
+        {
+          "h": "Workspace admin is not this token",
+          "paragraphs": [
+            "Control Hub device admin and an API token are different doors. Being a full administrator does not paste a scope onto a bot.",
+            "Cross-launch of Dedicated Instance is a third door."
+          ],
+          "cite": {
+            "label": "Access Dedicated Instance applications",
+            "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Device scopes are documented in",
+          "choices": [
+            "The device developer guide",
+            "The FCC MLTS page",
+            "The call queue CSV",
+            "RFC 3966"
+          ],
+          "answer": 0,
+          "why": "Copy them from there.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "A grant names",
+          "choices": [
+            "Which device the app may control",
+            "Every device on the internet",
+            "A PSTN provider",
+            "A flow"
+          ],
+          "answer": 0,
+          "why": "Same organization.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "cjp:config_read",
+          "choices": [
+            "Does not grant xAPI",
+            "Pans a camera",
+            "Is a dial plan",
+            "Is HELD"
+          ],
+          "answer": 0,
+          "why": "Contact center search.",
+          "cite": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search"
+        },
+        {
+          "q": "Logs should contain",
+          "choices": [
+            "Command name and device id, not the token",
+            "The bearer token",
+            "The webhook secret",
+            "The HELD secret"
+          ],
+          "answer": 0,
+          "why": "Redact.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        },
+        {
+          "q": "Full administrator in Control Hub",
+          "choices": [
+            "Is not an API scope by itself",
+            "Equals spark:all",
+            "Opens xAPI for every bot",
+            "Sets the voice domain"
+          ],
+          "answer": 0,
+          "why": "Different door.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Two jobs should be",
+          "choices": [
+            "Two apps, when you can split them",
+            "One token with every scope",
+            "A personal access token",
+            "A macro with the token inside"
+          ],
+          "answer": 0,
+          "why": "Least privilege.",
+          "cite": "https://developer.webex.com/docs/bots"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Scope",
+          "back": "The kind of call."
+        },
+        {
+          "front": "Grant",
+          "back": "The device."
+        },
+        {
+          "front": "cjp scopes",
+          "back": "Not xAPI."
+        },
+        {
+          "front": "No token in logs",
+          "back": "Command and device id only."
+        }
+      ],
+      "lab": {
+        "title": "Scope list",
+        "goal": "Write the smallest set you would request for a status command.",
+        "steps": [
+          {
+            "do": "Source",
+            "expect": "Device developer guide URL"
+          },
+          {
+            "do": "Not included",
+            "expect": "A contact center scope"
+          },
+          {
+            "do": "Grant",
+            "expect": "One lab device"
+          }
+        ],
+        "check": "The list is short on purpose."
+      },
+      "fault": {
+        "title": "Token in a macro",
+        "symptom": "A room device contains a cloud token in a macro that was emailed around.",
+        "log": "SYNTHETIC: macro source includes a bearer token.",
+        "cause": "The device does not need your cloud token to run a local macro, and the token is now copied.",
+        "fix": "Revoke the token and load a macro with no secret.",
+        "cite": {
+          "label": "Device developers guide",
+          "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        }
+      }
+    },
+    {
+      "id": "api-lab",
+      "title": "A small, safe bot loop",
+      "level": "apply",
+      "minutes": 13,
+      "summary": "Mention, verify, reply with text, and stop. Device commands stay in a different app. Nothing in this lab calls the live API.",
+      "uncertainty": "",
+      "objectives": [
+        "Order the steps",
+        "Name the disable risk",
+        "Refuse to mix in xAPI"
+      ],
+      "diagram": {
+        "caption": "The loop fits on a card.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Mention",
+            "sub": "group or 1:1",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Verify",
+            "sub": "raw HMAC",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Reply",
+            "sub": "text",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "2xx",
+            "sub": "keep the webhook",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "POST"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "ok"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "ack"
+          }
+        ]
+      },
+      "flow": {
+        "title": "The only loop this lesson wants",
+        "steps": [
+          {
+            "from": "Webex",
+            "to": "Listener",
+            "label": "Deliver the event",
+            "detail": "Group events are mentions. 1:1 events are the conversation.",
+            "inspect": "Bot is a member",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "Listener",
+            "to": "Crypto",
+            "label": "Verify before parsing",
+            "detail": "X-Spark-Signature or X-Webex-Signature as the guide prefers.",
+            "inspect": "Mismatch: no reply",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "Listener",
+            "to": "API",
+            "label": "Post text as the bot",
+            "detail": "No card until you have copied a current example. No secrets in the text.",
+            "inspect": "Same space",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          },
+          {
+            "from": "Listener",
+            "to": "Webex",
+            "label": "Return 2xx promptly",
+            "detail": "100 failures in five minutes disables the webhook.",
+            "inspect": "Alert on your own errors",
+            "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Leave devices out",
+          "paragraphs": [
+            "Camera controls are a second integration with device scopes and grants.",
+            "A webhook handler that also sends xAPI is how a mention moves a camera. Split the processes."
+          ],
+          "cite": {
+            "label": "Execute an xAPI command",
+            "url": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+          }
+        },
+        {
+          "h": "This campus does not call Webex",
+          "paragraphs": [
+            "There is no token in the lab and no outbound API. The studio tools are simulators.",
+            "When you build the real bot, use your own developer portal and the guides cited here."
+          ],
+          "cite": {
+            "label": "Webex bots",
+            "url": "https://developer.webex.com/docs/bots"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The safe order is",
+          "choices": [
+            "Verify, reply, 2xx",
+            "Reply, then verify if you remember",
+            "xAPI, then maybe verify",
+            "Disable the webhook first"
+          ],
+          "answer": 0,
+          "why": "Raw signature first.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "100 failures in five minutes",
+          "choices": [
+            "Disables the messaging webhook",
+            "Deletes the organization",
+            "Moves a region",
+            "Is the search window"
+          ],
+          "answer": 0,
+          "why": "Return 2xx for real accepts.",
+          "cite": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        },
+        {
+          "q": "xAPI in the same handler",
+          "choices": [
+            "Is a privilege problem",
+            "Is required",
+            "Is HELD",
+            "Is a dial plan"
+          ],
+          "answer": 0,
+          "why": "Split the app.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        },
+        {
+          "q": "This lab",
+          "choices": [
+            "Does not call the live API",
+            "Ships a bot token",
+            "Needs your password",
+            "Imports flows"
+          ],
+          "answer": 0,
+          "why": "Simulators only.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Group events without a mention",
+          "choices": [
+            "Do not arrive",
+            "Always arrive",
+            "Are CloudEvents for WxCC",
+            "Are CER"
+          ],
+          "answer": 0,
+          "why": "Bots guide.",
+          "cite": "https://developer.webex.com/docs/bots"
+        },
+        {
+          "q": "Cards",
+          "choices": [
+            "Wait for the current guide",
+            "Are included as a frozen schema",
+            "Are CSV files",
+            "Are trunks"
+          ],
+          "answer": 0,
+          "why": "Previous lesson.",
+          "cite": "https://developer.webex.com/docs/bots"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Verify",
+          "back": "Before any reply."
+        },
+        {
+          "front": "Text",
+          "back": "Before any card."
+        },
+        {
+          "front": "2xx",
+          "back": "Or the webhook dies."
+        },
+        {
+          "front": "Split",
+          "back": "Devices are another app."
+        }
+      ],
+      "lab": {
+        "title": "Index card",
+        "goal": "Write the loop from memory, then check the cites.",
+        "steps": [
+          {
+            "do": "Signature",
+            "expect": "Which header"
+          },
+          {
+            "do": "Mention",
+            "expect": "Group versus 1:1"
+          },
+          {
+            "do": "Disable",
+            "expect": "100 in five minutes"
+          }
+        ],
+        "check": "The card has no token and no card JSON."
+      },
+      "fault": {
+        "title": "Retry storm",
+        "symptom": "The listener crashes, Webex retries, and the webhook disables itself.",
+        "log": "SYNTHETIC: 100 HTTP 500 responses in four minutes.",
+        "cause": "Failures counted.",
+        "fix": "Return 2xx only after you have safely stored a valid event, and alert before the hundredth failure.",
+        "cite": {
+          "label": "Webex webhooks",
+          "url": "https://developer.webex.com/messaging/docs/api/guides/webhooks"
+        }
+      }
+    }
+  ]
+}

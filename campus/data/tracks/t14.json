@@ -1,0 +1,1809 @@
+{
+  "id": "t14",
+  "title": "Devices and RoomOS",
+  "blurb": "Phones, RoomOS, HELD versus caller ID, media ports, and macros that stay on the device.",
+  "level": "Core",
+  "lessons": [
+    {
+      "id": "families",
+      "title": "MPP, the app, and RoomOS",
+      "level": "foundation",
+      "minutes": 12,
+      "summary": "Control Hub claims phones, the Webex App, ATAs, and RoomOS devices into one organization. Emergency location does not use the same method on all of them.",
+      "uncertainty": "",
+      "objectives": [
+        "Place devices in Control Hub",
+        "Separate HELD and HELD+",
+        "Name caller ID as the non-HELD path"
+      ],
+      "diagram": {
+        "caption": "One inventory. More than one location method.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "MPP",
+            "sub": "HELD",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Webex App",
+            "sub": "HELD+",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "RoomOS",
+            "sub": "cloud and xAPI",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Non-HELD",
+            "sub": "caller ID",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "different HELD"
+          },
+          {
+            "from": "n2",
+            "to": "n1",
+            "label": "same org"
+          },
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "not the same"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Claim a device, then ask how it reports location",
+        "steps": [
+          {
+            "from": "Admin",
+            "to": "Devices",
+            "label": "Claim the hardware",
+            "detail": "Phones and room devices show up in the same organization as Calling and the contact center.",
+            "inspect": "Devices list",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "MPP",
+            "to": "RedSky",
+            "label": "HELD",
+            "detail": "The emergency article lists LLDP, wireless BSSID, IP, or MAC for MPP phones.",
+            "inspect": "Wiremap must know them",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "App",
+            "to": "RedSky",
+            "label": "HELD+",
+            "detail": "The Webex App uses HELD+. CDP is not supported for that discovery. LLDP is.",
+            "inspect": "A pass-through phone port stops LLDP",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Other phones",
+            "to": "Caller ID",
+            "label": "Non-HELD",
+            "detail": "The article describes non-HELD devices, including lists such as Poly and Yealink, as using caller ID rather than HELD.",
+            "inspect": "Confirm the model on the live list",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Resync after you enable emergency calling",
+          "paragraphs": [
+            "HELD-capable MPP phones need a resync or reinitialization, or they pick up the configuration on the next check. The article allows that the check can take up to 24 hours.",
+            "A phone that has not resynced still looks registered and still has the old emergency behavior."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "RoomOS is still a device",
+          "paragraphs": [
+            "Room devices are claimed in Control Hub and expose xAPI. Macros run on the device. Cloud commands use the granted xAPI path.",
+            "Do not assume a room device is an MPP phone for HELD. Check the emergency article for that model."
+          ],
+          "cite": {
+            "label": "Device developers guide",
+            "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "MPP phones in the emergency article report location with",
+          "choices": [
+            "HELD, using LLDP, BSSID, IP, or MAC",
+            "Only GPS",
+            "Only a CSV",
+            "Only SSO"
+          ],
+          "answer": 0,
+          "why": "Wiremap those identifiers.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "The Webex App uses",
+          "choices": [
+            "HELD+",
+            "The same sentence as every Poly phone",
+            "Only caller ID in the HELD+ paragraph",
+            "A trunk"
+          ],
+          "answer": 0,
+          "why": "CDP is not supported for the app.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Non-HELD devices in that article use",
+          "choices": [
+            "Caller ID",
+            "HELD by default",
+            "xAPI macros",
+            "SME"
+          ],
+          "answer": 0,
+          "why": "Poly and Yealink are examples on the list. Check the live list.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Configuration pickup can take",
+          "choices": [
+            "Up to 24 hours if you do not resync",
+            "Ten characters",
+            "Five minutes always",
+            "A year"
+          ],
+          "answer": 0,
+          "why": "Resync or reinitialize.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "RoomOS cloud control uses",
+          "choices": [
+            "Granted xAPI",
+            "A personal access token on the touch panel",
+            "CallQueueBulk.csv",
+            "A conditional forwarder only"
+          ],
+          "answer": 0,
+          "why": "Device developer guide.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "A pass-through port",
+          "choices": [
+            "Stops LLDP from the switch",
+            "Improves HELD+",
+            "Is required for 911",
+            "Is a dial plan"
+          ],
+          "answer": 0,
+          "why": "The emergency article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "MPP",
+          "back": "HELD."
+        },
+        {
+          "front": "App",
+          "back": "HELD+, no CDP."
+        },
+        {
+          "front": "Non-HELD",
+          "back": "Caller ID. Check the model list."
+        },
+        {
+          "front": "24 hours",
+          "back": "Or resync."
+        }
+      ],
+      "lab": {
+        "title": "Inventory three endpoints",
+        "goal": "One MPP, one app, one non-HELD model you looked up.",
+        "steps": [
+          {
+            "do": "MPP",
+            "expect": "Which ID you would wiremap"
+          },
+          {
+            "do": "App",
+            "expect": "HELD+"
+          },
+          {
+            "do": "Other",
+            "expect": "You confirmed caller ID on the article, not from memory"
+          }
+        ],
+        "check": "Each row names the article."
+      },
+      "fault": {
+        "title": "Waited without a resync",
+        "symptom": "Morning 933 tests fail on phones enabled last night.",
+        "log": "SYNTHETIC: no resync, check interval not elapsed.",
+        "cause": "The new emergency configuration is not on the phone yet.",
+        "fix": "Resync or reinitialize, then test 933.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "held-phone",
+      "title": "What the phone sends",
+      "level": "core",
+      "minutes": 12,
+      "summary": "HELD is RFC 5985. The phone asks RedSky over HTTPS on port 443. The location object is PIDF-LO, RFC 4119.",
+      "uncertainty": "",
+      "objectives": [
+        "Name the hosts and port",
+        "Cite both RFCs",
+        "Build a wiremap before the test"
+      ],
+      "diagram": {
+        "caption": "Allow the two host names. Map the network.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Phone",
+            "sub": "network IDs",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "HTTPS 443",
+            "sub": "RedSky hosts",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Wiremap",
+            "sub": "your data",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "PIDF-LO",
+            "sub": "RFC 4119",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "HELD"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "lookup"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "location"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A registration is not a location",
+        "steps": [
+          {
+            "from": "Phone",
+            "to": "Network",
+            "label": "Learn LLDP or BSSID or IP",
+            "detail": "Whatever the model reports has to exist in the wiremap.",
+            "inspect": "Unknown network, different result",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "Phone",
+            "to": "RedSky",
+            "label": "HTTPS to the documented hosts",
+            "detail": "api.wxc.e911cloud.com and wxc.e911cloud.com, port 443.",
+            "inspect": "Firewall tickets go here",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "RedSky",
+            "to": "LIS",
+            "label": "Return the dispatchable location",
+            "detail": "Street, floor, and room, as the emergency article describes.",
+            "inspect": "PIDF-LO carries it",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          },
+          {
+            "from": "You",
+            "to": "933",
+            "label": "Test before you promise 911",
+            "detail": "933 is the test pattern in the emergency article.",
+            "inspect": "Not a legal opinion",
+            "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "The RFCs",
+          "paragraphs": [
+            "RFC 5985 is HELD. RFC 4119 is PIDF-LO. Cisco's article is how Webex uses them, not a replacement for the RFCs.",
+            "SIP itself remains RFC 3261. Location is an extra object, not a new call-control protocol."
+          ],
+          "cite": {
+            "label": "RFC 4119, PIDF-LO",
+            "url": "https://www.rfc-editor.org/rfc/rfc4119"
+          }
+        },
+        {
+          "h": "Company ID",
+          "paragraphs": [
+            "The HELD company ID and secret in Control Hub tie the organization to the RedSky customer. Cisco says it does not store your portal password.",
+            "A mismatch warns you. Proceeding overwrites the previous account."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "HELD is",
+          "choices": [
+            "RFC 5985",
+            "RFC 3261",
+            "RFC 3711",
+            "A license"
+          ],
+          "answer": 0,
+          "why": "HTTP-Enabled Location Delivery.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc5985"
+        },
+        {
+          "q": "PIDF-LO is",
+          "choices": [
+            "RFC 4119",
+            "A CSV column",
+            "A bot",
+            "Port 8934"
+          ],
+          "answer": 0,
+          "why": "The location object.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc4119"
+        },
+        {
+          "q": "The RedSky hosts in the article include",
+          "choices": [
+            "api.wxc.e911cloud.com and wxc.e911cloud.com",
+            "Only admin.webex.com",
+            "wxc-di.webex.com",
+            "example.com"
+          ],
+          "answer": 0,
+          "why": "TCP 443.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "933 is",
+          "choices": [
+            "The test",
+            "The production PSAP in every country",
+            "A skill",
+            "A scope"
+          ],
+          "answer": 0,
+          "why": "Place it after the wiremap exists.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "The portal password",
+          "choices": [
+            "Is not stored by Cisco, per the article",
+            "Is the webhook secret",
+            "Is the voice domain",
+            "Is printed in RTMT"
+          ],
+          "answer": 0,
+          "why": "The wizard uses credentials to obtain the ID.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "SIP is still",
+          "choices": [
+            "RFC 3261",
+            "Replaced by HELD",
+            "RFC 5985",
+            "Optional"
+          ],
+          "answer": 0,
+          "why": "Location rides with the call.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3261"
+        }
+      ],
+      "cards": [
+        {
+          "front": "RFC 5985",
+          "back": "HELD."
+        },
+        {
+          "front": "RFC 4119",
+          "back": "PIDF-LO."
+        },
+        {
+          "front": "443",
+          "back": "Two RedSky host names."
+        },
+        {
+          "front": "933",
+          "back": "Test."
+        }
+      ],
+      "lab": {
+        "title": "Wiremap one switch",
+        "goal": "Write the LLDP identity and the floor it should return.",
+        "steps": [
+          {
+            "do": "ID",
+            "expect": "Chassis or port"
+          },
+          {
+            "do": "Floor",
+            "expect": "Dispatchable detail"
+          },
+          {
+            "do": "Host",
+            "expect": "Both names, port 443"
+          }
+        ],
+        "check": "You did not include the secret."
+      },
+      "fault": {
+        "title": "443 blocked",
+        "symptom": "Phones register and 933 cannot resolve a location.",
+        "log": "SYNTHETIC: firewall denies api.wxc.e911cloud.com.",
+        "cause": "HELD never leaves.",
+        "fix": "Allow HTTPS to the documented hosts.",
+        "cite": {
+          "label": "Enhanced emergency calling for Webex Calling",
+          "url": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      }
+    },
+    {
+      "id": "nomadic",
+      "title": "Soft clients, shared lines, and callback",
+      "level": "advanced",
+      "minutes": 13,
+      "summary": "A cellular Webex App hands 911 to the native dialer. Shared-line emergency routing follows the selected line's location. The callback number has to be answered.",
+      "uncertainty": "",
+      "objectives": [
+        "State the cellular handoff",
+        "Route shared-line emergency by the selected line",
+        "Choose an ECBN that answers"
+      ],
+      "diagram": {
+        "caption": "The handset, the line, and the callback are three checks.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Cellular app",
+            "sub": "native dialer",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Shared line",
+            "sub": "selected line's site",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "ECBN",
+            "sub": "must answer",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Workspace",
+            "sub": "60-minute inbound",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "still need a plan"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "location"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Three ways 911 surprises people",
+        "steps": [
+          {
+            "from": "App",
+            "to": "Phone",
+            "label": "On a cellular client, 911 goes to the native dialer",
+            "detail": "The emergency article describes that handoff. The Webex location is not what the carrier sees for that call.",
+            "inspect": "Tell users",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "User",
+            "to": "Shared line",
+            "label": "Select a line",
+            "detail": "Emergency routing follows the selected line's location, not HELD alone.",
+            "inspect": "Shared lines article and the emergency article",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Admin",
+            "to": "ECBN",
+            "label": "Pick a number that answers",
+            "detail": "Line number, location default, or another user or virtual line in the same location. An auto attendant that hangs up after hours is a bad callback.",
+            "inspect": "ECBN article",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          },
+          {
+            "from": "Workspace",
+            "to": "Policy",
+            "label": "Inbound block relaxes after an emergency call",
+            "detail": "The article describes a 60-minute relaxation of the workspace inbound block after an emergency call.",
+            "inspect": "Do not invent a longer window",
+            "cite": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "What Webex Calling does not store",
+          "paragraphs": [
+            "The emergency article says Webex Calling does not store the emergency service address on the PSTN path. RedSky or the PSTN path you configured is doing that job.",
+            "International locations use the PSTN for emergency calling. Enhanced emergency calling in the article is not a claim about every country."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        },
+        {
+          "h": "MPP calls stay up",
+          "paragraphs": [
+            "The article says an MPP emergency call cannot be hung up locally. Plan for that in training.",
+            "933 is still the test, not a live PSAP drill, unless you have arranged one."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Cellular Webex App 911",
+          "choices": [
+            "Is handed to the native dialer",
+            "Uses only HELD+",
+            "Uses only the desk wiremap",
+            "Is a webhook"
+          ],
+          "answer": 0,
+          "why": "The article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Shared-line emergency routing follows",
+          "choices": [
+            "The selected line's location",
+            "HELD alone, ignoring the line",
+            "The user's home city from a guess",
+            "The bot"
+          ],
+          "answer": 0,
+          "why": "Read the shared-line and emergency pages.",
+          "cite": "https://help.webex.com/default/article/c5cgxd"
+        },
+        {
+          "q": "ECBN may be",
+          "choices": [
+            "The line, the location default, or another user or virtual line in the same location",
+            "Any number worldwide",
+            "A trunk port",
+            "A skill"
+          ],
+          "answer": 0,
+          "why": "It has to be answered.",
+          "cite": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        },
+        {
+          "q": "Workspace inbound blocking after an emergency call",
+          "choices": [
+            "Relaxes for 60 minutes",
+            "Relaxes for 24 hours",
+            "Never changes",
+            "Deletes the location"
+          ],
+          "answer": 0,
+          "why": "The article's window.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "MPP emergency calls",
+          "choices": [
+            "Cannot be hung up locally",
+            "Can be cleared like any other call",
+            "Are email",
+            "Are macros"
+          ],
+          "answer": 0,
+          "why": "Train people.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "ESA on the PSTN path",
+          "choices": [
+            "Is not stored by Webex Calling, per the article",
+            "Is a dial pattern",
+            "Is the voice domain",
+            "Is a scope"
+          ],
+          "answer": 0,
+          "why": "RedSky or the PSTN arrangement holds the address.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Cellular",
+          "back": "Native dialer."
+        },
+        {
+          "front": "Shared line",
+          "back": "Selected line's location."
+        },
+        {
+          "front": "ECBN",
+          "back": "A number that answers."
+        },
+        {
+          "front": "60 minutes",
+          "back": "Workspace inbound relaxation."
+        }
+      ],
+      "lab": {
+        "title": "Callback drill on paper",
+        "goal": "Pick an ECBN and say who answers at 02:00.",
+        "steps": [
+          {
+            "do": "Choice",
+            "expect": "One of the three allowed kinds"
+          },
+          {
+            "do": "After hours",
+            "expect": "A person or service that answers"
+          },
+          {
+            "do": "Cellular",
+            "expect": "You wrote the native-dialer sentence"
+          }
+        ],
+        "check": "You did not use the main auto attendant that hangs up."
+      },
+      "fault": {
+        "title": "ECBN is the night menu",
+        "symptom": "The PSAP calls back and gets a disconnect.",
+        "log": "SYNTHETIC: ECBN is the main auto attendant, after-hours greeting hangs up.",
+        "cause": "The address can be right while the callback is useless.",
+        "fix": "Point ECBN at a line that answers, including after hours.",
+        "cite": {
+          "label": "Emergency Callback Number in Control Hub",
+          "url": "https://help.webex.com/en-us/article/nzqvtyq/Emergency-Callback-Number-in-Cisco-Webex-Control-Hub"
+        }
+      }
+    },
+    {
+      "id": "media",
+      "title": "Media ports and ICE",
+      "level": "core",
+      "minutes": 13,
+      "summary": "When ICE succeeds, the app and the devices talk directly on documented UDP ranges. Signaling ports for trunks are a different table.",
+      "uncertainty": "",
+      "objectives": [
+        "Quote the optimized ranges",
+        "Separate them from 5062 and 8934",
+        "Cite ICE and SRTP"
+      ],
+      "diagram": {
+        "caption": "Optimized media is a port range, not a wish.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "ICE",
+            "sub": "RFC 8445",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "App media",
+            "sub": "8500-8699",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Device media",
+            "sub": "19560-19661",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "SRTP",
+            "sub": "RFC 3711",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "if it succeeds"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "if it succeeds"
+          },
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "encrypted"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Two phones in one office",
+        "steps": [
+          {
+            "from": "App",
+            "to": "App",
+            "label": "ICE succeeds",
+            "detail": "The port reference says the cloud media relay is removed and the apps send media on 8500-8699. Audio is 8500-8599 and video is 8600-8699.",
+            "inspect": "Allow it inside the network too",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Device",
+            "to": "Device",
+            "label": "ICE succeeds",
+            "detail": "Devices use 19560-19661 for that direct path.",
+            "inspect": "VG400 ATA is a wider range in the same table. Do not collapse them",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Gateway",
+            "to": "Cloud",
+            "label": "Signaling is TCP",
+            "detail": "Certificate-based trunks need 5062. Registration-based trunks need 8934. Those are not media ports.",
+            "inspect": "Local gateway listen port is customer-chosen",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Media",
+            "to": "SRTP",
+            "label": "Encrypt the media",
+            "detail": "RFC 3711 is SRTP. The port reference describes SRTP over UDP toward Webex Calling.",
+            "inspect": "Do not disable it to make a test pass",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "When ICE does not succeed",
+          "paragraphs": [
+            "Media stays on the cloud relay path the port reference lists, including the broader destination ranges.",
+            "A firewall that allows only the direct ranges will pass optimized calls and fail the rest. Allow what the table says for both cases."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "NAT",
+          "paragraphs": [
+            "Phones may reuse SIP source ports in 5060-5280. The port reference tells you not to pin source ports on the NAT if that stops translation.",
+            "The September 07, 2026 note on that article expanded the phone source range from 5060-5080 to 5060-5280."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Optimized Webex App media uses",
+          "choices": [
+            "UDP 8500-8699, audio 8500-8599 and video 8600-8699",
+            "TCP 5062",
+            "TCP 443 only",
+            "Port 10"
+          ],
+          "answer": 0,
+          "why": "When ICE succeeds.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Optimized device media uses",
+          "choices": [
+            "UDP 19560-19661",
+            "UDP 8500-8599",
+            "TCP 8934",
+            "SIP 5060 only"
+          ],
+          "answer": 0,
+          "why": "Devices, when ICE succeeds.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Certificate trunk signaling to Webex Calling uses",
+          "choices": [
+            "TCP 5062",
+            "UDP 8500",
+            "HELD",
+            "A CSV"
+          ],
+          "answer": 0,
+          "why": "Registration trunks use 8934.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "ICE is",
+          "choices": [
+            "RFC 8445",
+            "RFC 4119",
+            "A license",
+            "A queue strategy"
+          ],
+          "answer": 0,
+          "why": "Interactive Connectivity Establishment.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc8445"
+        },
+        {
+          "q": "SRTP is",
+          "choices": [
+            "RFC 3711",
+            "RFC 5985",
+            "A bot",
+            "A region"
+          ],
+          "answer": 0,
+          "why": "Do not turn it off for a test.",
+          "cite": "https://www.rfc-editor.org/rfc/rfc3711"
+        },
+        {
+          "q": "Phone SIP source ports in the 2026 note",
+          "choices": [
+            "5060-5280",
+            "Only 5062",
+            "19560-19661",
+            "Ten characters"
+          ],
+          "answer": 0,
+          "why": "NAT must be able to translate overlaps.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "App",
+          "back": "8500-8599 audio, 8600-8699 video."
+        },
+        {
+          "front": "Devices",
+          "back": "19560-19661 when ICE succeeds."
+        },
+        {
+          "front": "5062 / 8934",
+          "back": "Certificate versus registration signaling."
+        },
+        {
+          "front": "RFC 8445",
+          "back": "ICE."
+        }
+      ],
+      "lab": {
+        "title": "Two firewall lines",
+        "goal": "Write the direct media ranges and the trunk signaling ports.",
+        "steps": [
+          {
+            "do": "Apps",
+            "expect": "8500-8699"
+          },
+          {
+            "do": "Devices",
+            "expect": "19560-19661"
+          },
+          {
+            "do": "Trunks",
+            "expect": "5062 and 8934 as destination signaling"
+          }
+        ],
+        "check": "You also wrote that non-optimized media uses the broader table."
+      },
+      "fault": {
+        "title": "Only the direct range is open",
+        "symptom": "Calls fail unless both parties are on the LAN.",
+        "log": "SYNTHETIC: firewall allows 19560-19661 and blocks the cloud media destinations.",
+        "cause": "ICE does not always succeed.",
+        "fix": "Allow the cloud media path from the port reference as well.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "roomos",
+      "title": "RoomOS xAPI and macros",
+      "level": "core",
+      "minutes": 12,
+      "summary": "RoomOS xAPI is the on-device command language. Cloud xAPI posts a command to a granted device. A macro runs locally. Neither one should contain a cloud token.",
+      "uncertainty": "",
+      "objectives": [
+        "Look up commands instead of inventing them",
+        "Keep macros local",
+        "Keep tokens out of the macro"
+      ],
+      "diagram": {
+        "caption": "Catalog on the device. Grant in the cloud. Secret in neither.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "xAPI catalog",
+            "sub": "roomos.cisco.com",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Macro",
+            "sub": "on the device",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Cloud POST",
+            "sub": "granted",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Control Hub",
+            "sub": "inventory",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "local"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "names"
+          },
+          {
+            "from": "n3",
+            "to": "n2",
+            "label": "grant"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A macro and a cloud command",
+        "steps": [
+          {
+            "from": "You",
+            "to": "Catalog",
+            "label": "Search the xAPI reference",
+            "detail": "Command and status names come from roomos.cisco.com/xapi.",
+            "inspect": "The device developer guide is the cloud wrapper",
+            "cite": "https://roomos.cisco.com/xapi"
+          },
+          {
+            "from": "Device",
+            "to": "Macro",
+            "label": "Run locally",
+            "detail": "A macro can call xAPI on that device. It does not need your Webex bot token to do that.",
+            "inspect": "No bearer string",
+            "cite": "https://roomos.cisco.com/xapi"
+          },
+          {
+            "from": "Integration",
+            "to": "Cloud",
+            "label": "POST a command if you must",
+            "detail": "Same organization, device granted, scope from the developer guide.",
+            "inspect": "Status is a different resource",
+            "cite": "https://roomos.cisco.com/xapi"
+          },
+          {
+            "from": "Admin",
+            "to": "Hub",
+            "label": "Confirm the device is online",
+            "detail": "An offline device fails the cloud command. The macro, if loaded, is a separate question.",
+            "inspect": "Devices list",
+            "cite": "https://roomos.cisco.com/xapi"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Do not invent macro APIs",
+          "paragraphs": [
+            "If a function is not in the xAPI reference, this lab will not pretend a JavaScript helper exists.",
+            "Copy examples from the current RoomOS documentation when you write a macro."
+          ],
+          "cite": {
+            "label": "RoomOS xAPI",
+            "url": "https://roomos.cisco.com/xapi"
+          }
+        },
+        {
+          "h": "Emergency calling is not a macro",
+          "paragraphs": [
+            "933 and HELD are Control Hub and RedSky behavior. A macro that intercepts calls is a good way to break emergency calling.",
+            "Do not put 911 logic in a macro unless the emergency article tells you to, which it does not."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Command names come from",
+          "choices": [
+            "roomos.cisco.com/xapi",
+            "This lesson's imagination",
+            "A hunt group CSV",
+            "RFC 3966"
+          ],
+          "answer": 0,
+          "why": "Look them up.",
+          "cite": "https://roomos.cisco.com/xapi"
+        },
+        {
+          "q": "A macro runs",
+          "choices": [
+            "On the device",
+            "In Control Hub as a webhook",
+            "In Flow Designer",
+            "On the PSAP"
+          ],
+          "answer": 0,
+          "why": "No cloud token inside.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "Cloud xAPI requires",
+          "choices": [
+            "Same org and a grant",
+            "Only a macro",
+            "A personal token from a screenshot",
+            "Port 933"
+          ],
+          "answer": 0,
+          "why": "Device developer guide.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "A function absent from the xAPI reference",
+          "choices": [
+            "Is not taught here",
+            "Is fine to call",
+            "Is HELD",
+            "Is LAA"
+          ],
+          "answer": 0,
+          "why": "Do not invent it.",
+          "cite": "https://roomos.cisco.com/xapi"
+        },
+        {
+          "q": "911 logic in a macro",
+          "choices": [
+            "Is not what the emergency article asks for",
+            "Is required",
+            "Replaces RedSky",
+            "Replaces ECBN"
+          ],
+          "answer": 0,
+          "why": "Leave emergency to the documented path.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Status versus command",
+          "choices": [
+            "Different resources in the cloud API",
+            "The same POST",
+            "Both are macros",
+            "Both are CSV"
+          ],
+          "answer": 0,
+          "why": "Execute-command guide.",
+          "cite": "https://developer.webex.com/devices/docs/api/v1/xapi/execute-command"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Catalog",
+          "back": "roomos.cisco.com/xapi."
+        },
+        {
+          "front": "Macro",
+          "back": "Local. No token."
+        },
+        {
+          "front": "Cloud",
+          "back": "Grant plus POST."
+        },
+        {
+          "front": "No 911 macro",
+          "back": "Use RedSky and ECBN."
+        }
+      ],
+      "lab": {
+        "title": "Split the work",
+        "goal": "One behavior as a macro, one as a cloud command, both with real command names you looked up.",
+        "steps": [
+          {
+            "do": "Macro",
+            "expect": "A local status the reference lists"
+          },
+          {
+            "do": "Cloud",
+            "expect": "The POST path"
+          },
+          {
+            "do": "Excluded",
+            "expect": "Anything about 911"
+          }
+        ],
+        "check": "Names are from the catalog."
+      },
+      "fault": {
+        "title": "Token in the macro",
+        "symptom": "The macro file in email includes a bearer token.",
+        "log": "SYNTHETIC: const token = '...' inside the macro.",
+        "cause": "The device does not need it, and the secret has leaked.",
+        "fix": "Revoke the token and reload a clean macro.",
+        "cite": {
+          "label": "Device developers guide",
+          "url": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        }
+      }
+    },
+    {
+      "id": "ops",
+      "title": "Day-two device checks",
+      "level": "apply",
+      "minutes": 12,
+      "summary": "Registration, media, and emergency configuration fail in different ways. The port reference, the devices list, and 933 answer different questions.",
+      "uncertainty": "",
+      "objectives": [
+        "Separate signaling from media",
+        "Use 933 only for location",
+        "Resync after emergency changes"
+      ],
+      "diagram": {
+        "caption": "One symptom, one table.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Register",
+            "sub": "8934 or trunk",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Media",
+            "sub": "ICE or relay",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "933",
+            "sub": "location",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Hub",
+            "sub": "inventory",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n0",
+            "label": "see it"
+          },
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "then audio"
+          },
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "then location"
+          }
+        ]
+      },
+      "flow": {
+        "title": "A phone with no audio",
+        "steps": [
+          {
+            "from": "Phone",
+            "to": "Cloud",
+            "label": "Check registration",
+            "detail": "Devices use signaling source ports 5060-5280 toward 8934 in the QoS table. Local gateways use 5062 or 8934 depending on trunk type.",
+            "inspect": "NAT source-port pinning breaks this",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Call",
+            "to": "Media",
+            "label": "Check the UDP ranges",
+            "detail": "Direct ranges only apply when ICE succeeds. Otherwise use the relay ranges.",
+            "inspect": "Port reference",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "933",
+            "label": "Test location separately",
+            "detail": "A call with audio can still have the wrong floor.",
+            "inspect": "Wiremap",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          },
+          {
+            "from": "Admin",
+            "to": "Resync",
+            "label": "After emergency changes",
+            "detail": "Do not wait 24 hours if you can resync.",
+            "inspect": "Then retest 933",
+            "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "SIP ALG",
+          "paragraphs": [
+            "The port reference recommends turning off SIP ALG. It can break encrypted signaling even though you think it is helping.",
+            "Check the firewall vendor's instructions. This lab does not invent CLI."
+          ],
+          "cite": {
+            "label": "Port reference for Webex Calling",
+            "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+          }
+        },
+        {
+          "h": "Third-party phones",
+          "paragraphs": [
+            "Non-HELD phones use caller ID for emergency location, per the article's list. They can still register and pass audio.",
+            "Eligibility for migration is a later topic. A working phone is not automatically a migratable phone."
+          ],
+          "cite": {
+            "label": "Enhanced emergency calling for Webex Calling",
+            "url": "https://help.webex.com/en-us/article/av6oo3"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "No audio, registration up, often means",
+          "choices": [
+            "Media ports or ICE",
+            "A wrong ECBN only",
+            "A missing mention",
+            "A skill profile"
+          ],
+          "answer": 0,
+          "why": "Check the port table.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "933 tests",
+          "choices": [
+            "Location",
+            "Codec preference",
+            "OAuth scopes",
+            "Webhook signatures"
+          ],
+          "answer": 0,
+          "why": "Audio can be fine and the floor wrong.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "SIP ALG should be",
+          "choices": [
+            "Disabled, per the port reference",
+            "Enabled always",
+            "Set to 933",
+            "Used as a trunk"
+          ],
+          "answer": 0,
+          "why": "Vendor CLI is theirs, not this lab's.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Certificate trunk destination port",
+          "choices": [
+            "5062",
+            "19560",
+            "8500",
+            "443 for SIP"
+          ],
+          "answer": 0,
+          "why": "8934 is registration-based.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "After enabling HELD",
+          "choices": [
+            "Resync or wait for the configuration check",
+            "Reboot Control Hub",
+            "Delete the location",
+            "Change the voice domain"
+          ],
+          "answer": 0,
+          "why": "Up to 24 hours.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "A registered non-HELD phone",
+          "choices": [
+            "Can still be caller-ID emergency, not HELD",
+            "Is automatically HELD",
+            "Is a RoomOS macro",
+            "Is SME"
+          ],
+          "answer": 0,
+          "why": "Check the model list.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Signaling",
+          "back": "5062 or 8934, depending."
+        },
+        {
+          "front": "Media",
+          "back": "Direct only if ICE works."
+        },
+        {
+          "front": "933",
+          "back": "Location test."
+        },
+        {
+          "front": "ALG",
+          "back": "Turn it off."
+        }
+      ],
+      "lab": {
+        "title": "Triage card",
+        "goal": "Three symptoms and the first document.",
+        "steps": [
+          {
+            "do": "No register",
+            "expect": "Port reference signaling"
+          },
+          {
+            "do": "No audio",
+            "expect": "Media ranges"
+          },
+          {
+            "do": "Wrong floor",
+            "expect": "Emergency article and 933"
+          }
+        ],
+        "check": "SIP ALG is on the card."
+      },
+      "fault": {
+        "title": "ALG enabled",
+        "symptom": "TLS signaling fails in ways that look random.",
+        "log": "SYNTHETIC: SIP ALG on, certificate trunk flaps.",
+        "cause": "The port reference warns about this.",
+        "fix": "Disable SIP ALG and retest registration.",
+        "cite": {
+          "label": "Port reference for Webex Calling",
+          "url": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        }
+      }
+    },
+    {
+      "id": "device-review",
+      "title": "Device review",
+      "level": "apply",
+      "minutes": 12,
+      "summary": "You can now tell HELD from caller ID, quote the media ranges, and keep macros and cloud commands apart.",
+      "uncertainty": "",
+      "objectives": [
+        "Fill a one-page site sheet",
+        "Include 933",
+        "Include the trunk type"
+      ],
+      "diagram": {
+        "caption": "Inventory, location method, ports, control path.",
+        "nodes": [
+          {
+            "id": "n0",
+            "label": "Inventory",
+            "sub": "Control Hub",
+            "x": 40,
+            "y": 36,
+            "tone": 1,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n1",
+            "label": "Location method",
+            "sub": "HELD or caller ID",
+            "x": 250,
+            "y": 36,
+            "tone": 2,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n2",
+            "label": "Ports",
+            "sub": "signal and media",
+            "x": 460,
+            "y": 36,
+            "tone": 3,
+            "w": 168,
+            "h": 66
+          },
+          {
+            "id": "n3",
+            "label": "Control",
+            "sub": "macro or cloud",
+            "x": 40,
+            "y": 170,
+            "tone": 4,
+            "w": 168,
+            "h": 66
+          }
+        ],
+        "edges": [
+          {
+            "from": "n0",
+            "to": "n1",
+            "label": "per model"
+          },
+          {
+            "from": "n0",
+            "to": "n2",
+            "label": "per path"
+          },
+          {
+            "from": "n0",
+            "to": "n3",
+            "label": "if RoomOS"
+          }
+        ]
+      },
+      "flow": {
+        "title": "Accept a site",
+        "steps": [
+          {
+            "from": "Sheet",
+            "to": "Models",
+            "label": "List MPP, app, RoomOS, and any non-HELD",
+            "detail": "Location method on each row.",
+            "inspect": "Live model list",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "Sheet",
+            "to": "Network",
+            "label": "Hosts, 443, media, signaling",
+            "detail": "RedSky names and the port-reference ranges.",
+            "inspect": "ALG off",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "Sheet",
+            "to": "933",
+            "label": "Who places it and what floor they expect",
+            "detail": "ECBN answers after hours.",
+            "inspect": "Not the night menu",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          },
+          {
+            "from": "Sheet",
+            "to": "Control",
+            "label": "Macros without tokens, grants listed",
+            "detail": "Command names from the catalog.",
+            "inspect": "No 911 macro",
+            "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "h": "Dedicated Instance phones are a different registration",
+          "paragraphs": [
+            "Phones on Dedicated Instance register to that Unified CM, with the voice service domain and DNS forwarder from that track.",
+            "Multi-tenant MPP registration uses the Webex Calling port table. Say which phone is which."
+          ],
+          "cite": {
+            "label": "Dedicated Instance customer deployment models",
+            "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models"
+          }
+        },
+        {
+          "h": "Migration eligibility is not this sheet",
+          "paragraphs": [
+            "A phone can be healthy and still be ineligible for the firmware migration. That check is the migration track.",
+            "Do not mark a model eligible from memory."
+          ],
+          "cite": {
+            "label": "Migrate devices and features from Unified CM",
+            "url": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Each model row needs",
+          "choices": [
+            "A location method",
+            "A bot token",
+            "A price",
+            "A skill"
+          ],
+          "answer": 0,
+          "why": "HELD, HELD+, or caller ID.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "RedSky HTTPS is",
+          "choices": [
+            "443 to the two documented hosts",
+            "5062",
+            "UDP 8500",
+            "A CSV"
+          ],
+          "answer": 0,
+          "why": "Emergency article.",
+          "cite": "https://help.webex.com/en-us/article/av6oo3"
+        },
+        {
+          "q": "Optimized app audio is",
+          "choices": [
+            "8500-8599",
+            "19560-19661",
+            "5062",
+            "10 characters"
+          ],
+          "answer": 0,
+          "why": "Video is 8600-8699.",
+          "cite": "https://help.webex.com/article/b2exve/Port-Reference-Information-for-Webex-Calling"
+        },
+        {
+          "q": "Macros must not contain",
+          "choices": [
+            "Cloud bearer tokens",
+            "xAPI calls that exist in the catalog",
+            "Local logic",
+            "Comments"
+          ],
+          "answer": 0,
+          "why": "Revoke if they do.",
+          "cite": "https://developer.webex.com/devices/docs/api/guides/device-developers-guide"
+        },
+        {
+          "q": "DI phones",
+          "choices": [
+            "Use the Dedicated Instance registration path",
+            "Always use multi-tenant 8934 only",
+            "Are Flow Designer",
+            "Are webhooks"
+          ],
+          "answer": 0,
+          "why": "DNS and voice domain.",
+          "cite": "https://help.webex.com/en-us/article/nefkee9/Activate-Dedicated-Instance"
+        },
+        {
+          "q": "Eligibility",
+          "choices": [
+            "Is a migration check, not this health sheet",
+            "Equals registration",
+            "Equals 933",
+            "Equals ICE"
+          ],
+          "answer": 0,
+          "why": "Next track.",
+          "cite": "https://help.webex.com/en-us/article/d2lemv/Migration-of-Devices-and-Features-from-Unified-CM-to-Webex-Calling"
+        }
+      ],
+      "cards": [
+        {
+          "front": "Method",
+          "back": "HELD, HELD+, or caller ID."
+        },
+        {
+          "front": "443",
+          "back": "RedSky hosts."
+        },
+        {
+          "front": "Ranges",
+          "back": "8500-8699 and 19560-19661 when optimized."
+        },
+        {
+          "front": "No token",
+          "back": "Not in the macro."
+        }
+      ],
+      "lab": {
+        "title": "Site sheet",
+        "goal": "Complete the four rows for a pretend floor.",
+        "steps": [
+          {
+            "do": "Models",
+            "expect": "Three methods labeled"
+          },
+          {
+            "do": "Ports",
+            "expect": "Signaling and media"
+          },
+          {
+            "do": "933",
+            "expect": "Expected floor and ECBN"
+          }
+        ],
+        "check": "ALG and resync are mentioned."
+      },
+      "fault": {
+        "title": "One port rule for two platforms",
+        "symptom": "Dedicated Instance phones were opened only toward multi-tenant 8934.",
+        "log": "SYNTHETIC: DI voice domain does not resolve, firewall ticket cites only 8934.",
+        "cause": "Those phones need the DI DNS and Expressway path.",
+        "fix": "Split the inventory and follow the DI access and DNS articles.",
+        "cite": {
+          "label": "Access Dedicated Instance applications",
+          "url": "https://help.webex.com/en-us/article/n2hzeox/access-dedicated-instance-applications-from-control-hub"
+        }
+      }
+    }
+  ]
+}

@@ -876,7 +876,7 @@ function dockBottom() {
     var bar = document.querySelector(".phone-dock");
     if (bar && getComputedStyle(bar).display !== "none") dock = Math.round(bar.getBoundingClientRect().height) || 84;
   }
-  var bottom = saved == null ? Math.round(window.innerHeight * 0.34) : saved;
+  var bottom = saved == null ? dock + 28 : saved;
   if (bottom < dock + 12) bottom = dock + 12;
   var max = Math.max(dock + 12, window.innerHeight - 132);
   if (bottom > max) bottom = max;
@@ -898,11 +898,17 @@ function place() {
     var greetW = 168;
     var greetH = 196;
     var greetRight = Math.max(8, Math.round((window.innerWidth - greetW) / 2));
-    var greetBottom = Math.max(12, Math.round((window.innerHeight - greetH) / 2));
+    var greetBottom = Math.max(24, Math.round(window.innerHeight * 0.16));
+    var heading = document.querySelector(".world-title, main h1, h1");
+    if (heading) {
+      var headingBox = heading.getBoundingClientRect();
+      var monkeyTop = window.innerHeight - greetBottom - greetH;
+      if (monkeyTop < headingBox.bottom + 8) greetBottom = Math.max(16, Math.round(window.innerHeight - headingBox.bottom - greetH - 20));
+    }
     host.style.setProperty("--cg-right", greetRight + "px");
     host.style.setProperty("--cg-bottom", greetBottom + "px");
-    host.style.setProperty("--cg-nudge-right", Math.max(8, greetRight - 20) + "px");
-    host.style.setProperty("--cg-nudge-bottom", (greetBottom + greetH + 8) + "px");
+    host.style.setProperty("--cg-nudge-right", (greetRight + greetW + 16) + "px");
+    host.style.setProperty("--cg-nudge-bottom", (greetBottom + 36) + "px");
     return;
   }
   var width = 132;
@@ -910,6 +916,15 @@ function place() {
   var needSlot = !panel.hidden || !nudge.hidden;
   var right = 8;
   var bottom = dockBottom();
+  var footerMark = document.querySelector(".brand-icons");
+  if (footerMark) {
+    var footerBox = footerMark.getBoundingClientRect();
+    if (footerBox.top < window.innerHeight && footerBox.bottom > 0) {
+      var lift = Math.round(window.innerHeight - footerBox.top + 16);
+      var cap = Math.max(lift, window.innerHeight - 180);
+      if (lift > bottom) bottom = Math.min(lift, cap);
+    }
+  }
   var monkeyBox = boxAt(right, bottom, width, height);
   var chosen = { right: right, bottom: bottom, slot: needSlot ? findSlot(monkeyBox, boxes.concat(story)) : null };
   host.style.setProperty("--cg-right", chosen.right + "px");

@@ -122,7 +122,7 @@
     var item = STEPS[step];
     card.querySelector("[data-ob-num]").textContent = String(step + 1);
     card.querySelector("h2").textContent = item.title;
-    card.querySelector("p").textContent = item.body;
+    card.querySelector(".ob-body").textContent = item.body;
     card.querySelector("[data-ob-count]").textContent = (step + 1) + " of " + STEPS.length;
     var next = card.querySelector("[data-ob-next]");
     next.textContent = step === STEPS.length - 1 ? "OK" : "Next";
@@ -153,7 +153,7 @@
     layer.setAttribute("aria-modal", "true");
     layer.setAttribute("aria-labelledby", "ob-title");
     layer.innerHTML =
-      '<div class="ob-card"><p class="ob-count"><span class="ob-num" data-ob-num>1</span> <span data-ob-count></span></p><h2 id="ob-title"></h2><p></p>' +
+      '<div class="ob-card"><p class="ob-count"><span class="ob-num" data-ob-num>1</span> <span data-ob-count></span></p><h2 id="ob-title"></h2><p class="ob-body"></p>' +
       '<div class="ob-actions">' +
       '<button type="button" data-ob-sound aria-pressed="false">Sound off</button>' +
       '<button type="button" data-ob-back hidden>Back</button>' +

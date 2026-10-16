@@ -79,6 +79,7 @@ function barFor(section) {
 }
 
 function mountExports() {
+  if (document.body.classList.contains("home-world")) return;
   document.querySelectorAll("main section[id]").forEach(barFor);
 }
 

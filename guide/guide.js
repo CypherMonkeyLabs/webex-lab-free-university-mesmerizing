@@ -18,6 +18,9 @@ var session = loadSession();
 var guide = null;
 var kbPromise = null;
 var nudged = false;
+var along = { active: false, paused: false, sections: [], index: 0, sentence: 0 };
+var alongToken = 0;
+var ambience = { ctx: null, nodes: [] };
 
 var host = document.createElement("div");
 host.className = "cg-root";
@@ -44,21 +47,48 @@ panel.setAttribute("role", "dialog");
 panel.setAttribute("aria-modal", "true");
 panel.setAttribute("aria-labelledby", "cg-title");
 panel.innerHTML =
+  '<button type="button" class="cg-handle" data-sheet-handle aria-label="Drag to resize the guide"></button>' +
   '<header class="cg-bar">' +
   '<div class="cg-who"><span class="cg-avatar" aria-hidden="true">' + avatarSvg() + '</span>' +
   '<div class="cg-id"><h2 id="cg-title">Canon</h2><p class="cg-status"><i class="cg-dot" aria-hidden="true"></i> In the notes</p></div></div>' +
+  '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
+  '</header>' +
+  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
+  '<div class="cg-offers" data-offers></div>' +
+  '<details class="cg-more"><summary>Sound, voice, and type size</summary>' +
   '<div class="cg-tools">' +
   '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
   '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
   '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read</button>' +
-  '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
-  '</div></header>' +
+  '</div>' +
   '<div class="cg-voice" data-voice-row hidden>' +
   '<label>Voice <select data-voice-name aria-label="Speaking voice"></select></label>' +
   '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
-  '<option value="0.85">0.85×</option><option value="1" selected>1×</option>' +
-  '<option value="1.15">1.15×</option><option value="1.3">1.3×</option></select></label></div>' +
-  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
+  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
+  '<option value="1.08">1.08×</option></select></label>' +
+  '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
+  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
+  '<div class="cg-transport" role="group" aria-label="Playback">' +
+  '<button type="button" data-voice-pause>Pause</button>' +
+  '<button type="button" data-voice-resume>Resume</button>' +
+  '<button type="button" data-voice-stop>Stop</button></div></div>' +
+  '<div class="cg-along" role="group" aria-label="Read along">' +
+  '<button type="button" data-along-start>Read along</button>' +
+  '<button type="button" data-along-pause>Pause</button>' +
+  '<button type="button" data-along-resume>Resume</button>' +
+  '<button type="button" data-along-next>Next section</button></div>' +
+  '<label class="cg-amb">Sound theme <select data-ambience aria-label="Sound theme">' +
+  '<option value="" selected>Off</option><option value="pad">Soft pad</option><option value="rain">Soft rain</option></select></label>' +
+  '</details>' +
+  '<section class="cg-talk" data-talk hidden>' +
+  '<p class="cg-talk-status" data-talk-status>Voice input is ready when this browser supports it.</p>' +
+  '<p class="cg-transcript" data-transcript aria-live="polite"></p>' +
+  '<p class="cg-spoken" data-spoken hidden></p>' +
+  '<div class="cg-talk-actions">' +
+  '<button type="button" data-talk-send>Send what I said</button>' +
+  '<button type="button" data-talk-close>Close voice input</button></div>' +
+  '<p class="cg-talk-fallback" data-talk-fallback hidden>This browser has no speech recognition. Type in the box. Read-aloud still uses the speech voices this browser offers.</p></section>' +
+  '<ol class="cg-outline" data-outline hidden></ol>' +
   '<div class="cg-live" aria-live="polite" aria-atomic="true"></div>' +
   '<div class="cg-chips" role="group" aria-label="Quick replies"></div>' +
   '<form class="cg-form"><button type="button" class="cg-mic" data-mic hidden aria-label="Voice input">Mic</button>' +
@@ -84,7 +114,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css";
+css.href = guideBase + "guide/guide.css?v=15";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -96,7 +126,13 @@ var voiceBtn = panel.querySelector("[data-voice]");
 var voiceRow = panel.querySelector("[data-voice-row]");
 var voiceName = panel.querySelector("[data-voice-name]");
 var voiceRate = panel.querySelector("[data-voice-rate]");
+var voicePitch = panel.querySelector("[data-voice-pitch]");
 var micBtn = panel.querySelector("[data-mic]");
+var talk = panel.querySelector("[data-talk]");
+var talkStatus = panel.querySelector("[data-talk-status]");
+var transcriptEl = panel.querySelector("[data-transcript]");
+var spokenEl = panel.querySelector("[data-spoken]");
+var talkFallback = panel.querySelector("[data-talk-fallback]");
 var tourState = null;
 var targetEl = null;
 var greetedPath = "";
@@ -260,12 +296,13 @@ function streakDays() {
 }
 
 function loadVoice() {
-  var pref = { on: false, rate: "1", uri: "" };
+  var pref = { on: false, rate: "0.92", pitch: "0.95", uri: "" };
   try {
     var saved = JSON.parse(localStorage.getItem("cg-voice") || "null");
     if (saved && typeof saved === "object") {
       pref.on = !!saved.on;
       if (saved.rate) pref.rate = String(saved.rate);
+      if (saved.pitch) pref.pitch = String(saved.pitch);
       if (saved.uri) pref.uri = saved.uri;
     }
   } catch (error) {
@@ -448,6 +485,10 @@ function setChips(labels, extra) {
 
 function deliver(reply) {
   if (!reply) return;
+  if (reply.correct === true) setPose("yes");
+  else if (reply.correct === false) setPose("no");
+  else if (reply.kind === "fallback") setPose("think");
+  else setPose("greet");
   if (reply.kind === "voice") applyVoice(reply.voice === "on");
   if (reply.kind === "tour" && reply.tour) {
     say(reply.text, reply.links, "bot");
@@ -464,11 +505,67 @@ function deliver(reply) {
   setChips(reply.chips, reply.extraChips);
 }
 
+function pageClip() {
+  var title = document.body.getAttribute("data-room-title") || document.querySelector("h1");
+  var name = title && title.textContent ? title.textContent.trim() : String(title || document.title);
+  var lede = document.querySelector("main .lede, .world-lede");
+  var bits = [];
+  document.querySelectorAll(".takeaways li").forEach(function (li, index) {
+    if (index < 3) bits.push(li.textContent.replace(/\s+/g, " ").trim());
+  });
+  var line = "One-minute clip for " + name + ". ";
+  if (lede) line += lede.textContent.replace(/\s+/g, " ").trim() + " ";
+  if (bits.length) line += bits.join(" ");
+  else line += "Open Start here, then a room. I only read what is already on the page.";
+  say(line, [{ href: "start.html", title: "Start here" }], "bot");
+}
+
+function pageTrailer() {
+  var names = [];
+  document.querySelectorAll(".track-card h2, .track-code").forEach(function (node) {
+    var text = node.textContent.replace(/\s+/g, " ").trim();
+    if (text && names.length < 8) names.push(text);
+  });
+  var line = names.length
+    ? "Ten-minute trailer. The tracks on this page are: " + names.join(". ") + ". Start with Control Hub, then Calling, then a contact-center track. Each room has a diagram, a worked example, and a quiz."
+    : "Ten-minute trailer. This lab has eight written tracks: Control Hub, Webex Calling, multi-tenant contact center, Contact Center Enterprise, Dedicated Instance, migrations, SIP and queues, then flows and troubleshooting. Start at Control Hub. I do not add facts that are not in the rooms.";
+  say(line, [{ href: "start.html", title: "Start here" }, { href: "index.html#rooms", title: "All rooms" }], "bot");
+}
+
 function submitText(text) {
   var value = String(text || "").trim();
   if (!value) return;
   hideNudge(false);
+  if (/^read along$/i.test(value) || /read this page/i.test(value)) {
+    say(value, [], "user");
+    startAlong();
+    return;
+  }
+  if (/1-minute clip/i.test(value)) {
+    say(value, [], "user");
+    pageClip();
+    return;
+  }
+  if (/10-minute trailer/i.test(value)) {
+    say(value, [], "user");
+    pageTrailer();
+    return;
+  }
+  if (/mute me and just read/i.test(value)) {
+    say(value, [], "user");
+    applyVoice(false);
+    say("Voice stays off. Read the page. The Help room explains the menu, the course, and downloads.", [{ href: "help.html", title: "Help" }], "bot");
+    return;
+  }
+  if (/1-hour guided walk/i.test(value)) value = "Start the 1-hour course";
+  if (/teach me this room/i.test(value)) value = "Teach me this room";
+  if (/interview practice/i.test(value)) {
+    say(value, [], "user");
+    say("Interview practice lives on the interview page. The answers there are generic study examples with citations. I do not invent anyone's work history.", [{ href: "interviews.html", title: "Interview prep" }], "bot");
+    return;
+  }
   say(value, [], "user");
+  setPose("think");
   var pending = document.createElement("div");
   pending.className = "cg-bubble is-bot";
   pending.innerHTML = '<p><span class="cg-typing" aria-hidden="true"><i></i><i></i><i></i></span></p>';
@@ -489,16 +586,46 @@ function openPanel() {
   hideNudge(false);
   if (greetedPath !== location.pathname) {
     greetedPath = location.pathname;
-    var room = document.body.getAttribute("data-room-title");
-    var title = document.title.replace(/\s*[·|].*$/, "");
-    var line = room
-      ? "You're in " + room + ". I can walk this room with you. I only repeat the notes. Start the 1-hour course when you want every track, with a checkpoint at the end of each one."
-      : "You're on " + title + ". Ask how to use this page. I only repeat the notes. Start the 1-hour course when you want every track, with a checkpoint at the end of each one.";
-    if (session.covered && session.covered.length) {
-      line += " So far this session we've touched " + session.covered.length + " room" + (session.covered.length === 1 ? "" : "s") + ".";
-    }
-    say(line, [], "bot");
-    setChips(["Start the 1-hour course", "How do I use this?", "Quiz me", "Flashcards", "My progress"]);
+    setPose("greet");
+    say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.", [], "bot");
+    var choices = [
+      ["1-minute clip", "Give me the 1-minute clip", "clip"],
+      ["10-minute trailer", "Play the 10-minute trailer", "film"],
+      ["1-hour guided walk", "Start the 1-hour guided walk", "clock"],
+      ["Cheat codes", "Open cheat codes", "spark"],
+      ["Quiz me", "Quiz me", "quiz"],
+      ["Teach me this room", "Teach me this room", "book"],
+      ["Interview practice", "Interview practice", "mic"],
+      ["Games", "Play a game", "game"],
+      ["Read this page", "Read this page", "read"],
+      ["Mute me and just read", "Mute me and just read", "mute"]
+    ];
+    var row = document.createElement("div");
+    row.className = "cg-choices";
+    choices.forEach(function (choice) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "cg-choice cg-choice-" + choice[2];
+      button.innerHTML = choiceIcon(choice[2]) + "<span>" + choice[0] + "</span>";
+      button.addEventListener("click", function () {
+        if (choice[0] === "Cheat codes") {
+          location.href = abs("downloads.html");
+          return;
+        }
+        if (choice[0] === "Games") {
+          location.href = abs("play.html");
+          return;
+        }
+        if (choice[0] === "Read this page") {
+          startAlong();
+          return;
+        }
+        submitText(choice[1]);
+      });
+      row.appendChild(button);
+    });
+    panel.querySelector("[data-offers]").appendChild(row);
+    scrollLog();
   }
   host.classList.toggle("is-open", true);
   input.focus();
@@ -530,9 +657,23 @@ function applyVoice(on) {
   if (voicePref.on) fillVoices();
 }
 
+function voiceRank(voice) {
+  var name = String(voice.name || "").toLowerCase();
+  var lang = String(voice.lang || "").toLowerCase();
+  var score = 0;
+  if (lang.indexOf("en") === 0) score += 40;
+  else score -= 30;
+  if (/natural|neural|enhanced|premium|online/.test(name)) score += 55;
+  if (/aria|jenny|guy|sonia|libby|ryan|sara|michelle|emma|brian|andrew|ava|serena/.test(name)) score += 36;
+  if (/samantha|daniel|karen|moira|fiona|alex|victoria|allison/.test(name)) score += 16;
+  if (/compact|espeak|zarvox|bad news|bells|boing/.test(name)) score -= 40;
+  if (voice.localService === false) score += 10;
+  return score;
+}
+
 function fillVoices() {
   if (!window.speechSynthesis) return;
-  var voices = window.speechSynthesis.getVoices();
+  var voices = window.speechSynthesis.getVoices().slice().sort(function (a, b) { return voiceRank(b) - voiceRank(a); });
   if (!voices.length) return;
   var current = voiceName.value || voicePref.uri;
   voiceName.innerHTML = "";
@@ -543,44 +684,95 @@ function fillVoices() {
     voiceName.appendChild(option);
   });
   var match = voices.some(function (voice) { return voice.voiceURI === current; });
-  voiceName.value = match ? current : (voices.filter(function (voice) { return /^en/i.test(voice.lang); })[0] || voices[0]).voiceURI;
+  voiceName.value = match ? current : voices[0].voiceURI;
   voicePref.uri = voiceName.value;
+  if (!voicePref.rate) voicePref.rate = "0.92";
+  if (!voicePref.pitch) voicePref.pitch = "0.95";
   saveVoice();
 }
 
-function speak(text) {
-  if (!voicePref.on || !window.speechSynthesis) return;
-  var plain = String(text || "").replace(/\s+/g, " ").trim();
-  if (!plain) return;
-  window.speechSynthesis.cancel();
-  var utter = new SpeechSynthesisUtterance(plain);
-  var rate = Number(voicePref.rate || voiceRate.value || 1);
-  utter.rate = rate > 0 ? rate : 1;
-  var voices = window.speechSynthesis.getVoices();
+function splitSentences(text) {
+  return String(text || "").replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+/).filter(function (part) { return part.length > 0; });
+}
+
+function showSpoken(parts, index) {
+  if (!spokenEl) return;
+  spokenEl.hidden = false;
+  spokenEl.innerHTML = parts.map(function (part, at) {
+    return (at === index ? "<mark>" : "<span>") + part.replace(/[&<>]/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[ch];
+    }) + (at === index ? "</mark>" : "</span>");
+  }).join(" ");
+}
+
+function chosenVoice() {
+  var voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
   var chosen = null;
   voices.forEach(function (voice) {
     if (!chosen && voice.voiceURI === voicePref.uri) chosen = voice;
   });
-  if (chosen) utter.voice = chosen;
-  window.speechSynthesis.speak(utter);
+  if (!chosen && voices.length) {
+    voices = voices.slice().sort(function (a, b) { return voiceRank(b) - voiceRank(a); });
+    chosen = voices[0];
+  }
+  return chosen;
+}
+
+function speak(text) {
+  if (along.active) return;
+  if (!voicePref.on || !window.speechSynthesis) return;
+  var parts = splitSentences(text);
+  if (!parts.length) return;
+  window.speechSynthesis.cancel();
+  var voice = chosenVoice();
+  var rate = Number(voicePref.rate || (voiceRate && voiceRate.value) || 0.92);
+  var pitch = Number(voicePref.pitch || (voicePitch && voicePitch.value) || 0.95);
+  var index = 0;
+  function next() {
+    if (!voicePref.on || index >= parts.length) {
+      if (spokenEl) spokenEl.hidden = true;
+      setPose("idle");
+      return;
+    }
+    showSpoken(parts, index);
+    var utter = new SpeechSynthesisUtterance(parts[index]);
+    utter.rate = rate > 0 ? rate : 0.92;
+    utter.pitch = pitch > 0 ? pitch : 0.95;
+    if (voice) utter.voice = voice;
+    utter.onend = function () { index += 1; next(); };
+    utter.onerror = function () { if (spokenEl) spokenEl.hidden = true; };
+    window.speechSynthesis.speak(utter);
+  }
+  next();
 }
 
 function setupMic() {
   var Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  micBtn.hidden = false;
   if (!Rec) {
-    micBtn.hidden = true;
+    recognition = null;
     return;
   }
-  micBtn.hidden = false;
   recognition = new Rec();
   recognition.lang = document.documentElement.lang || "en-US";
-  recognition.interimResults = false;
+  recognition.interimResults = true;
   recognition.onresult = function (event) {
-    var said = event.results && event.results[0] && event.results[0][0] ? event.results[0][0].transcript : "";
-    if (said) submitText(said);
+    var said = "";
+    for (var i = 0; i < event.results.length; i += 1) {
+      said += event.results[i][0].transcript + " ";
+    }
+    said = said.trim();
+    if (transcriptEl) transcriptEl.textContent = said;
+    input.value = said;
+    setPose("listen");
   };
   recognition.onend = function () {
     micBtn.setAttribute("aria-pressed", "false");
+    if (talkStatus && !talk.hidden) talkStatus.textContent = "Stopped. Send the transcript or tap the mic again.";
+  };
+  recognition.onerror = function () {
+    if (talkStatus) talkStatus.textContent = "The mic did not start. Type in the box instead.";
+    if (talkFallback) talkFallback.hidden = false;
   };
 }
 
@@ -671,58 +863,85 @@ function findSlot(monkeyBox, boxes) {
 
 function contentBoxes() {
   var boxes = [];
-  document.querySelectorAll(".world-title, .world-lede, .world-kicker, .hero-copy, .hero-actions, main h1").forEach(function (el) {
+  document.querySelectorAll(".world-title, .world-lede, .world-kicker, .hero-copy, .hero-actions, main h1, main h2").forEach(function (el) {
     var rect = onScreen(el);
     if (rect) boxes.push(rect);
   });
   return boxes;
 }
 
+function dockBottom() {
+  var saved = null;
+  try {
+    var data = JSON.parse(localStorage.getItem("cg-dock") || "null");
+    if (data && typeof data.bottom === "number") saved = data.bottom;
+  } catch (error) { saved = null; }
+  var dock = 0;
+  if (window.matchMedia("(max-width: 720px)").matches) {
+    var bar = document.querySelector(".phone-dock");
+    if (bar && getComputedStyle(bar).display !== "none") dock = Math.round(bar.getBoundingClientRect().height) || 84;
+  }
+  var bottom = saved == null ? dock + 28 : saved;
+  if (bottom < dock + 12) bottom = dock + 12;
+  var max = Math.max(dock + 12, window.innerHeight - monkeySize().height - 8);
+  if (bottom > max) bottom = max;
+  return bottom;
+}
+
+function monkeySize() {
+  if (window.matchMedia("(max-width: 720px)").matches) return { width: 156, height: 184 };
+  return { width: 200, height: 236 };
+}
+
+function phoneDockHeight() {
+  if (!window.matchMedia("(max-width: 720px)").matches) return 0;
+  var bar = document.querySelector(".phone-dock");
+  if (!bar || getComputedStyle(bar).display === "none") return 0;
+  return Math.round(bar.getBoundingClientRect().height) || 84;
+}
+
+function syncMenuHide() {
+  var away = document.body.classList.contains("edge-open") || document.body.classList.contains("phone-menu-open");
+  host.classList.toggle("is-menu-away", away);
+}
+
 function place() {
   syncFont();
+  syncMenuHide();
+  if (host.dataset.dragging === "1") return;
   var boxes = obstacleBoxes();
   var story = contentBoxes();
-  var width = 104;
-  var height = 120;
+  if (host.classList.contains("is-greeting")) return;
+  var size = monkeySize();
+  var width = size.width;
+  var height = size.height;
   var needSlot = !panel.hidden || !nudge.hidden;
-  var chosen = null;
-  var clearMonkey = null;
-  var bottom = 12;
-  var right = 12;
-  for (bottom = 12; bottom < window.innerHeight - height && !chosen; bottom += 12) {
-    var rightLimit = window.innerWidth - width - 6;
-    for (right = 12; right <= rightLimit && !chosen; right += 12) {
-      var monkeyBox = boxAt(right, bottom, width, height);
-      if (!fits(monkeyBox, boxes)) continue;
-      if (!clearMonkey) clearMonkey = { right: right, bottom: bottom };
-      if (!needSlot) {
-        chosen = { right: right, bottom: bottom, slot: null };
-        break;
-      }
-      var slot = findSlot(monkeyBox, boxes.concat(story));
-      if (slot) chosen = { right: right, bottom: bottom, slot: slot };
+  var right = 8;
+  var bottom = dockBottom();
+  var footerMark = document.querySelector(".brand-icons");
+  if (footerMark) {
+    var footerBox = footerMark.getBoundingClientRect();
+    if (footerBox.top < window.innerHeight && footerBox.bottom > 0) {
+      var lift = Math.round(window.innerHeight - footerBox.top + 16);
+      var cap = Math.max(lift, window.innerHeight - 180);
+      if (lift > bottom) bottom = Math.min(lift, cap);
     }
   }
-  if (!chosen && clearMonkey) chosen = { right: clearMonkey.right, bottom: clearMonkey.bottom, slot: null };
-  if (!chosen) chosen = { right: 12, bottom: 12, slot: null };
+  var monkeyBox = boxAt(right, bottom, width, height);
+  var chosen = { right: right, bottom: bottom, slot: needSlot ? findSlot(monkeyBox, boxes.concat(story)) : null };
   host.style.setProperty("--cg-right", chosen.right + "px");
   host.style.setProperty("--cg-bottom", chosen.bottom + "px");
+  host.style.setProperty("--cg-nudge-right", (chosen.right + 4) + "px");
+  host.style.setProperty("--cg-nudge-bottom", (chosen.bottom + height + 10) + "px");
   var sheet = window.innerWidth <= 720 && !panel.hidden;
   host.classList.toggle("is-sheet", sheet);
   host.classList.toggle("is-open", !panel.hidden);
   if (sheet) {
-    var panelBottom = chosen.bottom + height + 12;
-    var topLimit = 64;
-    var bar = document.querySelector(".topbar");
-    if (bar) {
-      var barBox = bar.getBoundingClientRect();
-      if (barBox.height > 20 && barBox.bottom > 0 && barBox.top < 160) topLimit = Math.round(barBox.bottom + 8);
-    }
-    var panelMax = Math.max(280, window.innerHeight - panelBottom - topLimit);
-    host.style.setProperty("--cg-panel-right", "0px");
-    host.style.setProperty("--cg-panel-bottom", panelBottom + "px");
-    host.style.setProperty("--cg-panel-width", "100vw");
-    host.style.setProperty("--cg-panel-max", panelMax + "px");
+    var dockH = phoneDockHeight();
+    host.style.setProperty("--cg-panel-right", "8px");
+    host.style.setProperty("--cg-panel-bottom", (dockH + 8) + "px");
+    host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
+    host.style.setProperty("--cg-panel-max", "min(58vh, calc(100dvh - " + (dockH + 16) + "px))");
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {
@@ -744,54 +963,114 @@ function place() {
   }
 }
 
-function hideNudge(persist) {
+function hideNudge() {
   nudge.hidden = true;
-  if (persist) {
-    try { localStorage.setItem("cg-nudge-off", "1"); } catch (error) { return; }
+  nudge.className = "cg-nudge";
+}
+
+function pokeStopped() {
+  try { return localStorage.getItem("cg-poke-off") === "1"; } catch (error) { return true; }
+}
+
+function pokeCount() {
+  try { return Number(localStorage.getItem("cg-poke-count") || "0") || 0; } catch (error) { return 3; }
+}
+
+function showPoke() {
+  if (pokeStopped() || pokeCount() >= 3) return;
+  if (!panel.hidden || !tourLayer.hidden || document.body.classList.contains("onboard-open") || host.classList.contains("is-greeting") || host.classList.contains("is-menu-away")) {
+    window.setTimeout(showPoke, 20000);
+    return;
   }
+  try { localStorage.setItem("cg-poke-count", String(pokeCount() + 1)); } catch (error) { return; }
+  nudge.innerHTML = "";
+  nudge.className = "cg-nudge cg-poke";
+  var copy = document.createElement("p");
+  copy.textContent = "I can read this page with you, or stay quiet.";
+  var actions = document.createElement("div");
+  actions.className = "cg-nudge-actions";
+  function add(label, fn) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.addEventListener("click", fn);
+    actions.appendChild(button);
+  }
+  add("Read this page", function () {
+    hideNudge();
+    startAlong();
+  });
+  add("Not now", function () {
+    hideNudge();
+    if (pokeCount() < 3 && !pokeStopped()) window.setTimeout(showPoke, 180000);
+  });
+  add("Stop offering", function () {
+    try { localStorage.setItem("cg-poke-off", "1"); } catch (error) { /* storage off */ }
+    hideNudge();
+  });
+  nudge.appendChild(copy);
+  nudge.appendChild(actions);
+  nudge.hidden = false;
+  place();
 }
 
 function scheduleNudge() {
-  var off = false;
-  try { off = localStorage.getItem("cg-nudge-off") === "1" || sessionStorage.getItem("cg-nudge-shown") === "1"; } catch (error) { off = true; }
-  if (off) return;
-  window.setTimeout(function () {
-    if (nudged || !panel.hidden || !tourLayer.hidden) return;
-    try {
-      if (localStorage.getItem("cg-nudge-off") === "1") return;
-      sessionStorage.setItem("cg-nudge-shown", "1");
-    } catch (error) {
+  if (pokeStopped() || pokeCount() >= 3) return;
+  window.setTimeout(showPoke, 150000);
+}
+
+function beginGreet() {
+  try {
+    if (localStorage.getItem("cg-greet-done") === "1") return;
+    localStorage.setItem("cg-greet-done", "1");
+  } catch (error) { return; }
+  var closed = false;
+  host.classList.add("is-greeting");
+  setPose("greet");
+  host._finishGreet = finish;
+  nudge.innerHTML = "";
+  nudge.className = "cg-nudge cg-greet";
+  var copy = document.createElement("p");
+  copy.textContent = "Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.";
+  var actions = document.createElement("div");
+  actions.className = "cg-nudge-actions";
+  var hear = document.createElement("button");
+  hear.type = "button";
+  hear.textContent = "Hear it";
+  var dock = document.createElement("button");
+  dock.type = "button";
+  dock.textContent = "Dock on the right";
+  hear.addEventListener("click", function () {
+    if (!window.speechSynthesis) {
+      copy.textContent = "This browser has no speech synthesis. The words stay on screen.";
       return;
     }
-    nudged = true;
-    var room = document.body.getAttribute("data-room");
-    nudge.innerHTML = "";
-    var copy = document.createElement("p");
-    copy.textContent = room ? "Want a 2-minute tour of this room?" : "Want a 2-minute tour of this page?";
-    var actions = document.createElement("div");
-    actions.className = "cg-nudge-actions";
-    var yes = document.createElement("button");
-    yes.type = "button";
-    yes.textContent = "Yes";
-    var no = document.createElement("button");
-    no.type = "button";
-    no.textContent = "Not now";
-    yes.addEventListener("click", function () {
-      hideNudge(true);
-      openPanel();
-      submitText(room ? "tour this room" : "tour this page");
-    });
-    no.addEventListener("click", function () { hideNudge(true); });
-    actions.appendChild(yes);
-    actions.appendChild(no);
-    nudge.appendChild(copy);
-    nudge.appendChild(actions);
-    nudge.hidden = false;
+    window.speechSynthesis.cancel();
+    var utter = new SpeechSynthesisUtterance("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.");
+    utter.rate = 0.92;
+    utter.pitch = 0.95;
+    var voice = chosenVoice();
+    if (voice) utter.voice = voice;
+    window.speechSynthesis.speak(utter);
+  });
+  function finish() {
+    if (closed) return;
+    closed = true;
+    host._finishGreet = null;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    host.classList.remove("is-greeting");
+    hideNudge();
+    setPose("idle");
     place();
-    window.setTimeout(function () {
-      if (!nudge.hidden) hideNudge(false);
-    }, 20000);
-  }, 16000);
+  }
+  dock.addEventListener("click", finish);
+  actions.appendChild(hear);
+  actions.appendChild(dock);
+  nudge.appendChild(copy);
+  nudge.appendChild(actions);
+  nudge.hidden = false;
+  place();
+  window.setTimeout(finish, 8000);
 }
 
 function clearTarget() {
@@ -898,8 +1177,317 @@ function resumeTour() {
   window.setTimeout(function () { beginTour(saved.steps, saved.index); }, 350);
 }
 
+function sectionBits(section) {
+  var bits = [];
+  section.querySelectorAll("h1, h2, h3, p, li, dd, figcaption").forEach(function (node) {
+    if (node.closest("svg, .export-bar, .studio-ideas")) return;
+    var text = node.textContent.replace(/\s+/g, " ").trim();
+    if (text) bits.push(text);
+  });
+  return bits.join(" ");
+}
+
+function collectSections() {
+  var list = [];
+  document.querySelectorAll("main section[id]").forEach(function (section) {
+    if (section.closest(".cg-root")) return;
+    var heading = section.querySelector("h1, h2, h3");
+    var title = heading ? heading.textContent.replace(/\s+/g, " ").trim() : section.id;
+    var sentences = splitSentences(sectionBits(section));
+    if (!sentences.length) return;
+    list.push({ id: section.id, title: title, el: section, sentences: sentences });
+  });
+  return list;
+}
+
+function clearSpokenMark() {
+  if (window.CSS && CSS.highlights) CSS.highlights.delete("spoken");
+  document.querySelectorAll(".is-read-along").forEach(function (el) { el.classList.remove("is-read-along"); });
+  document.querySelectorAll(".toc a.is-reading, .cg-outline .is-reading").forEach(function (el) { el.classList.remove("is-reading"); });
+}
+
+function findRange(root, sentence) {
+  var target = String(sentence || "").replace(/\s+/g, " ").trim();
+  if (!target || target.length < 8) return null;
+  var records = [];
+  var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: function (node) {
+      if (!node.parentElement || node.parentElement.closest("svg, script, style, .export-bar")) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  var plain = "";
+  while (walker.nextNode()) {
+    var value = walker.currentNode.nodeValue.replace(/\s+/g, " ");
+    records.push({ node: walker.currentNode, start: plain.length, value: value, raw: walker.currentNode.nodeValue });
+    plain += value;
+  }
+  var at = plain.indexOf(target);
+  var length = target.length;
+  if (at < 0) {
+    var snippet = target.slice(0, 48);
+    at = plain.indexOf(snippet);
+    length = snippet.length;
+  }
+  if (at < 0) return null;
+  function point(index) {
+    var i;
+    for (i = 0; i < records.length; i += 1) {
+      var rec = records[i];
+      if (index <= rec.start + rec.value.length) {
+        return { node: rec.node, offset: Math.max(0, Math.min(rec.raw.length, index - rec.start)) };
+      }
+    }
+    var last = records[records.length - 1];
+    return { node: last.node, offset: last.raw.length };
+  }
+  var range = document.createRange();
+  var start = point(at);
+  var end = point(at + length);
+  range.setStart(start.node, start.offset);
+  range.setEnd(end.node, end.offset);
+  return range;
+}
+
+function markSentence(section, sentence) {
+  if (!(window.CSS && CSS.highlights && window.Highlight)) return;
+  try {
+    var range = findRange(section.el, sentence);
+    if (!range) return;
+    CSS.highlights.set("spoken", new Highlight(range));
+  } catch (error) { /* the outline still shows the sentence */ }
+}
+
+function markSection(section) {
+  clearSpokenMark();
+  section.el.classList.add("is-read-along");
+  var link = document.querySelector('.toc a[href="#' + section.id + '"]');
+  if (link) {
+    link.classList.add("is-reading");
+    try { link.scrollIntoView({ block: "nearest", inline: "nearest" }); } catch (error) { /* older browsers */ }
+  }
+  var reduce = document.documentElement.dataset.motion === "reduce" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  try { section.el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); } catch (error) { section.el.scrollIntoView(); }
+}
+
+function paintOutline() {
+  var list = panel.querySelector("[data-outline]");
+  if (!list) return;
+  list.hidden = !along.sections.length;
+  list.innerHTML = "";
+  along.sections.forEach(function (section, index) {
+    var item = document.createElement("li");
+    var button = document.createElement("button");
+    button.type = "button";
+    button.textContent = section.title;
+    if (index === along.index) {
+      button.className = "is-reading";
+      item.className = "is-reading";
+    }
+    button.addEventListener("click", function () {
+      along.active = true;
+      along.paused = false;
+      along.index = index;
+      along.sentence = 0;
+      alongToken += 1;
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      speakSection();
+    });
+    item.appendChild(button);
+    list.appendChild(item);
+  });
+}
+
+function finishAlong() {
+  along.active = false;
+  along.paused = false;
+  alongToken += 1;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  clearSpokenMark();
+  if (spokenEl) spokenEl.hidden = true;
+  setPose("idle");
+}
+
+function speakSentence() {
+  if (!along.active || along.paused) return;
+  var section = along.sections[along.index];
+  if (!section) { finishAlong(); return; }
+  if (along.sentence >= section.sentences.length) {
+    along.index += 1;
+    along.sentence = 0;
+    speakSection();
+    return;
+  }
+  var sentence = section.sentences[along.sentence];
+  markSentence(section, sentence);
+  showSpoken(section.sentences, along.sentence);
+  setPose("listen");
+  if (!window.speechSynthesis) return;
+  var token = ++alongToken;
+  window.speechSynthesis.cancel();
+  var utter = new SpeechSynthesisUtterance(sentence);
+  var voice = chosenVoice();
+  utter.rate = Number(voicePref.rate || 0.92) || 0.92;
+  utter.pitch = Number(voicePref.pitch || 0.95) || 0.95;
+  if (voice) utter.voice = voice;
+  utter.onend = function () {
+    if (token !== alongToken || !along.active || along.paused) return;
+    along.sentence += 1;
+    speakSentence();
+  };
+  window.speechSynthesis.speak(utter);
+}
+
+function speakSection() {
+  if (!along.active) return;
+  var section = along.sections[along.index];
+  if (!section) { finishAlong(); return; }
+  markSection(section);
+  paintOutline();
+  speakSentence();
+}
+
+function startAlong(id) {
+  along.sections = collectSections();
+  if (!along.sections.length) {
+    say("This page has no sections I can read aloud. Open a room.", [{ href: "index.html#rooms", title: "Rooms" }], "bot");
+    return;
+  }
+  var start = 0;
+  if (id) along.sections.forEach(function (section, index) { if (section.id === id) start = index; });
+  along.active = true;
+  along.paused = false;
+  along.index = start;
+  along.sentence = 0;
+  if (panel.hidden) openPanel();
+  paintOutline();
+  var note = window.speechSynthesis
+    ? "Reading this page aloud. Pause, Resume, and Next section are the buttons above the outline."
+    : "This browser has no speech synthesis. The outline still follows the section. Use Next section.";
+  say(note, [], "bot");
+  speakSection();
+}
+
+function stopAmbience() {
+  ambience.nodes.forEach(function (node) {
+    try { node.stop && node.stop(); } catch (error) { /* already stopped */ }
+    try { node.disconnect(); } catch (error) { /* already disconnected */ }
+  });
+  ambience.nodes = [];
+}
+
+function startAmbience(name) {
+  stopAmbience();
+  if (!name) return;
+  var Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) {
+    say("This browser cannot play a generated sound theme.", [], "bot");
+    return;
+  }
+  if (!ambience.ctx) ambience.ctx = new Ctx();
+  ambience.ctx.resume();
+  var gain = ambience.ctx.createGain();
+  gain.gain.value = 0.02;
+  gain.connect(ambience.ctx.destination);
+  ambience.nodes.push(gain);
+  if (name === "pad") {
+    [196, 247, 294].forEach(function (freq) {
+      var osc = ambience.ctx.createOscillator();
+      osc.type = "sine";
+      osc.frequency.value = freq;
+      osc.connect(gain);
+      osc.start();
+      ambience.nodes.push(osc);
+    });
+    return;
+  }
+  var length = ambience.ctx.sampleRate * 2;
+  var buffer = ambience.ctx.createBuffer(1, length, ambience.ctx.sampleRate);
+  var data = buffer.getChannelData(0);
+  for (var i = 0; i < length; i += 1) data[i] = Math.random() * 2 - 1;
+  var noise = ambience.ctx.createBufferSource();
+  noise.buffer = buffer;
+  noise.loop = true;
+  var filter = ambience.ctx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 900;
+  noise.connect(filter);
+  filter.connect(gain);
+  noise.start();
+  ambience.nodes.push(noise, filter);
+}
+
 function bind() {
-  monkey.addEventListener("click", function () {
+  var drag = { id: null, moved: false, y: 0, bottom: 0 };
+  monkey.addEventListener("pointerdown", function (event) {
+    if (event.button != null && event.button !== 0) return;
+    drag.id = event.pointerId;
+    drag.moved = false;
+    drag.y = event.clientY;
+    drag.bottom = parseFloat(host.style.getPropertyValue("--cg-bottom")) || dockBottom();
+    try { monkey.setPointerCapture(event.pointerId); } catch (error) { /* pointer capture is optional */ }
+  });
+  monkey.addEventListener("pointermove", function (event) {
+    if (drag.id !== event.pointerId) return;
+    if (!drag.moved && Math.abs(event.clientY - drag.y) < 8) return;
+    drag.moved = true;
+    host.dataset.dragging = "1";
+    var next = drag.bottom + (drag.y - event.clientY);
+    var floor = window.matchMedia("(max-width: 720px)").matches ? 96 : 12;
+    var max = window.innerHeight - monkeySize().height - 8;
+    if (next < floor) next = floor;
+    if (next > max) next = max;
+    host.style.setProperty("--cg-right", "8px");
+    host.style.setProperty("--cg-bottom", Math.round(next) + "px");
+  });
+  function endDrag(event) {
+    if (drag.id !== event.pointerId) return;
+    drag.id = null;
+    host.dataset.dragging = "0";
+    if (!drag.moved) return;
+    var bottom = parseFloat(host.style.getPropertyValue("--cg-bottom")) || dockBottom();
+    try { localStorage.setItem("cg-dock", JSON.stringify({ bottom: bottom })); } catch (error) { /* storage off */ }
+  }
+  monkey.addEventListener("pointerup", endDrag);
+  monkey.addEventListener("pointercancel", endDrag);
+  host.addEventListener("click", function (event) {
+    if (!host.classList.contains("is-greeting") || typeof host._finishGreet !== "function") return;
+    if (event.target.closest(".cg-monkey, .cg-nudge")) return;
+    host._finishGreet();
+  });
+  var sheetDrag = { id: null, y: 0, h: 0 };
+  var handle = panel.querySelector("[data-sheet-handle]");
+  handle.addEventListener("pointerdown", function (event) {
+    if (!host.classList.contains("is-sheet")) return;
+    sheetDrag.id = event.pointerId;
+    sheetDrag.y = event.clientY;
+    sheetDrag.h = panel.getBoundingClientRect().height;
+    try { handle.setPointerCapture(event.pointerId); } catch (error) { /* optional */ }
+  });
+  handle.addEventListener("pointermove", function (event) {
+    if (sheetDrag.id !== event.pointerId) return;
+    var dockH = phoneDockHeight();
+    var max = Math.round(window.innerHeight * 0.6);
+    var room = window.innerHeight - dockH - 16;
+    if (max > room) max = room;
+    var min = Math.round(window.innerHeight * 0.34);
+    var next = sheetDrag.h + (sheetDrag.y - event.clientY);
+    if (next < min) next = min;
+    if (next > max) next = max;
+    host.style.setProperty("--cg-sheet-h", Math.round(next) + "px");
+  });
+  handle.addEventListener("pointerup", function (event) {
+    if (sheetDrag.id !== event.pointerId) return;
+    sheetDrag.id = null;
+  });
+  handle.addEventListener("pointercancel", function () { sheetDrag.id = null; });
+  monkey.addEventListener("click", function (event) {
+    if (drag.moved) {
+      drag.moved = false;
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
     boop();
     if (panel.hidden) {
       openPanel();
@@ -939,24 +1527,69 @@ function bind() {
     voicePref.rate = voiceRate.value;
     saveVoice();
   });
+  if (voicePitch) {
+    voicePitch.value = voicePref.pitch || "0.95";
+    voicePitch.addEventListener("change", function () {
+      voicePref.pitch = voicePitch.value;
+      saveVoice();
+    });
+  }
+  panel.querySelector("[data-voice-pause]").addEventListener("click", function () {
+    if (window.speechSynthesis) window.speechSynthesis.pause();
+  });
+  panel.querySelector("[data-voice-resume]").addEventListener("click", function () {
+    if (window.speechSynthesis) window.speechSynthesis.resume();
+  });
+  panel.querySelector("[data-voice-stop]").addEventListener("click", function () {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (spokenEl) spokenEl.hidden = true;
+    setPose("idle");
+  });
   if (window.speechSynthesis) {
     fillVoices();
     window.speechSynthesis.addEventListener("voiceschanged", fillVoices);
-    voiceRate.value = voicePref.rate || "1";
+    voiceRate.value = voicePref.rate || "0.92";
     applyVoice(voicePref.on);
   } else {
     voiceBtn.disabled = true;
     voiceBtn.title = "Read aloud isn't available in this browser.";
   }
   setupMic();
-  micBtn.addEventListener("click", function () {
-    if (!recognition) return;
+  function openTalk() {
+    talk.hidden = false;
+    setPose("listen");
+    if (!recognition) {
+      talkFallback.hidden = false;
+      talkStatus.textContent = "Voice input is not in this browser. Type below and send.";
+      input.focus();
+      return;
+    }
+    talkFallback.hidden = true;
+    talkStatus.textContent = "Listening. Speak, then send the transcript.";
     try {
       micBtn.setAttribute("aria-pressed", "true");
       recognition.start();
     } catch (error) {
-      micBtn.setAttribute("aria-pressed", "false");
+      talkStatus.textContent = "The mic is already on, or this page blocked it. You can still type.";
     }
+  }
+  micBtn.addEventListener("click", openTalk);
+  panel.querySelector("[data-talk-close]").addEventListener("click", function () {
+    talk.hidden = true;
+    if (recognition) {
+      try { recognition.stop(); } catch (error) { /* already stopped */ }
+    }
+    micBtn.setAttribute("aria-pressed", "false");
+    setPose("idle");
+  });
+  panel.querySelector("[data-talk-send]").addEventListener("click", function () {
+    var said = (transcriptEl.textContent || input.value || "").trim();
+    if (!said) {
+      talkStatus.textContent = "Nothing to send yet. Speak again or type in the box.";
+      return;
+    }
+    talk.hidden = true;
+    submitText(said);
   });
   tourLayer.querySelector("[data-tour-next]").addEventListener("click", function () {
     if (!tourState) return;
@@ -977,6 +1610,41 @@ function bind() {
     if (!tourLayer.hidden) endTour();
     else if (!panel.hidden) closePanel();
   });
+  panel.querySelector("[data-along-start]").addEventListener("click", function () { startAlong(); });
+  panel.querySelector("[data-along-pause]").addEventListener("click", function () {
+    along.paused = true;
+    if (window.speechSynthesis) window.speechSynthesis.pause();
+    setPose("think");
+  });
+  panel.querySelector("[data-along-resume]").addEventListener("click", function () {
+    if (!along.active) { startAlong(); return; }
+    along.paused = false;
+    if (window.speechSynthesis && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      setPose("listen");
+      return;
+    }
+    speakSentence();
+  });
+  panel.querySelector("[data-along-next]").addEventListener("click", function () {
+    if (!along.active) { startAlong(); return; }
+    along.paused = false;
+    along.index += 1;
+    along.sentence = 0;
+    alongToken += 1;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    speakSection();
+  });
+  panel.querySelector("[data-ambience]").addEventListener("change", function (event) {
+    startAmbience(event.target.value);
+  });
+  document.addEventListener("canon-read-section", function (event) {
+    var id = event.detail && event.detail.id;
+    startAlong(id);
+  });
+  document.addEventListener("canon-tour-finished", function () { beginGreet(); });
+  var menuWatch = new MutationObserver(syncMenuHide);
+  menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });
   window.addEventListener("resize", queuePlace);
   window.setTimeout(queuePlace, 400);
@@ -987,40 +1655,76 @@ function bind() {
 }
 
 function avatarSvg() {
-  return '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="18" fill="#f6b73c"/>' +
-    '<circle cx="18" cy="30" r="6" fill="#f6b73c"/><circle cx="46" cy="30" r="6" fill="#f6b73c"/>' +
-    '<ellipse cx="26" cy="33" rx="3" ry="3.4" fill="#fff"/><ellipse cx="38" cy="33" rx="3" ry="3.4" fill="#fff"/>' +
-    '<circle cx="26.6" cy="33.4" r="1.4" fill="#1c1917"/><circle cx="38.6" cy="33.4" r="1.4" fill="#1c1917"/>' +
-    '<path d="M26 40c2.4 3 9.6 3 12 0" fill="none" stroke="#1c1917" stroke-width="1.6" stroke-linecap="round"/>' +
-    '<path d="M16 24c4-8 28-8 32 0" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/></svg>';
+  return '<svg viewBox="0 0 64 64" aria-hidden="true">' +
+    '<circle cx="14" cy="30" r="9" fill="#f5a524"/><circle cx="14" cy="30" r="4.5" fill="#fb7185"/>' +
+    '<circle cx="50" cy="30" r="9" fill="#f5a524"/><circle cx="50" cy="30" r="4.5" fill="#fb7185"/>' +
+    '<circle cx="32" cy="34" r="18" fill="#f5a524"/>' +
+    '<ellipse cx="32" cy="40" rx="10" ry="8" fill="#ffe7b0"/>' +
+    '<ellipse cx="25" cy="33" rx="4" ry="4.6" fill="#fff"/><ellipse cx="39" cy="33" rx="4" ry="4.6" fill="#fff"/>' +
+    '<circle cx="26.2" cy="33.6" r="2" fill="#1c1917"/><circle cx="40.2" cy="33.6" r="2" fill="#1c1917"/>' +
+    '<circle cx="25" cy="33" r="6.2" fill="none" stroke="#7c3aed" stroke-width="1.7"/>' +
+    '<circle cx="39" cy="33" r="6.2" fill="none" stroke="#22d3ee" stroke-width="1.7"/>' +
+    '<path d="M31 33h2" stroke="#7c3aed" stroke-width="1.6"/>' +
+    '<path d="M26 44c2.2 2.4 9.6 2.4 12 0" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"/>' +
+    '</svg>';
+}
+
+function choiceIcon(kind) {
+  var paths = {
+    clip: '<path d="M7 4.5v11l9-5.5z"/>',
+    film: '<rect x="3" y="5" width="14" height="10" rx="1.5"/><path d="M3 8.5h14M3 12h14"/>',
+    clock: '<circle cx="10" cy="10" r="6.5"/><path d="M10 7v3.5l2.4 1.6"/>',
+    spark: '<path d="M10 2.5l1.3 4.2h4.4l-3.5 2.6 1.3 4.2L10 11.2 6.5 13.5l1.3-4.2L4.3 6.7h4.4z"/>',
+    quiz: '<circle cx="10" cy="10" r="6.5"/><path d="M8 8.2a2 2 0 1 1 2.6 1.9c-.7.4-.9.8-.9 1.6M10 14.2h.01"/>',
+    book: '<path d="M4 4.5h5.2v11H4zM10.8 4.5H16v11h-5.2z"/>',
+    mic: '<rect x="8" y="3" width="4" height="8" rx="2"/><path d="M6.5 9.2a3.5 3.5 0 0 0 7 0M10 12.8V16"/>',
+    game: '<rect x="3" y="7" width="14" height="7.5" rx="3"/><path d="M7 10.8h2.2M8.1 9.7v2.2M13 10h.01M15 11.6h.01"/>',
+    read: '<path d="M3.5 5h6v10.5h-6zM10.5 5h6v10.5h-6z"/>',
+    mute: '<path d="M4 8h2.8l3.4-2.6v9.2L6.8 12H4zM14 8.2l3.6 3.6M17.6 8.2 14 11.8"/>'
+  };
+  return '<svg class="cg-choice-ico" viewBox="0 0 20 20" aria-hidden="true">' + (paths[kind] || paths.spark) + "</svg>";
 }
 
 function monkeySvg() {
-  return '<span class="cg-aura" aria-hidden="true"></span>' +
-    '<span class="cg-glow" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:0deg;--d:0s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:60deg;--d:-1.1s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:120deg;--d:-2.2s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:180deg;--d:-3.2s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:240deg;--d:-4.3s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:300deg;--d:-5.4s" aria-hidden="true"></span>' +
-    '<span class="cg-float" aria-hidden="true"><svg viewBox="0 0 120 140" role="img" aria-hidden="true">' +
-    '<ellipse cx="60" cy="126" rx="28" ry="8" fill="#020617" opacity=".35"/>' +
-    '<path d="M92 96c16 8 18 22 8 28" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +
-    '<path d="M34 78c-16 6-18 22-6 28" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +
-    '<path d="M86 76c14 2 16 16 8 22" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +
-    '<rect x="38" y="74" width="44" height="40" rx="18" fill="#f6b73c"/>' +
-    '<circle cx="28" cy="58" r="10" fill="#f6b73c"/><circle cx="92" cy="58" r="10" fill="#f6b73c"/>' +
-    '<circle cx="28" cy="58" r="5" fill="#7c4a12"/><circle cx="92" cy="58" r="5" fill="#7c4a12"/>' +
-    '<circle cx="60" cy="58" r="30" fill="#f6b73c"/>' +
-    '<ellipse cx="60" cy="66" rx="16" ry="13" fill="#ffe7a3"/>' +
-    '<g class="cg-eye"><ellipse cx="50" cy="56" rx="5" ry="6" fill="#fff"/><circle cx="51" cy="57" r="2.4" fill="#1c1917"/></g>' +
-    '<g class="cg-eye"><ellipse cx="70" cy="56" rx="5" ry="6" fill="#fff"/><circle cx="71" cy="57" r="2.4" fill="#1c1917"/></g>' +
-    '<path d="M50 72c4 6 16 6 20 0" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round"/>' +
-    '<path d="M30 42c8-16 52-16 60 0" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>' +
-    '<rect x="18" y="46" width="14" height="18" rx="6" fill="#0f172a"/>' +
-    '<rect x="88" y="46" width="14" height="18" rx="6" fill="#0f172a"/>' +
-    '<path d="M96 64c8 10 4 22-6 24" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linecap="round"/>' +
-    '<circle cx="88" cy="90" r="3" fill="#22d3ee"/>' +
+  return '<span class="cg-float" aria-hidden="true"><svg viewBox="0 0 220 260" role="img" aria-hidden="true">' +
+    "<defs>" +
+    '<radialGradient id="cgfur" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#ffe08a"/><stop offset=".48" stop-color="#f5a524"/><stop offset="1" stop-color="#c2410c"/></radialGradient>' +
+    '<radialGradient id="cgmuz" cx="50%" cy="28%" r="80%"><stop offset="0" stop-color="#fff7dc"/><stop offset="1" stop-color="#f0c27a"/></radialGradient>' +
+    '<radialGradient id="cgear" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fecdd3"/><stop offset="1" stop-color="#e11d48"/></radialGradient>' +
+    '<linearGradient id="cgglass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#f472b6"/></linearGradient>' +
+    '<linearGradient id="cgscarf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset=".34" stop-color="#a78bfa"/><stop offset=".67" stop-color="#f472b6"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>' +
+    "</defs>" +
+    '<ellipse cx="110" cy="248" rx="58" ry="8" fill="#1e1b4b" opacity=".2"/>' +
+    '<path class="cg-tail" d="M172 200c26 6 34 26 16 38-16 10-30-4-24-16" fill="none" stroke="#ea580c" stroke-width="12" stroke-linecap="round"/>' +
+    '<path d="M74 168c6 22 22 48 36 52s32-16 38-40c2 22-10 52-40 56s-46-20-34-68z" fill="url(#cgfur)"/>' +
+    '<path class="cg-scarf" d="M80 162h62c-2 16-16 24-32 24s-28-8-30-24z" fill="url(#cgscarf)"/>' +
+    '<g class="cg-head">' +
+    '<circle class="cg-ear" cx="46" cy="92" r="30" fill="url(#cgfur)"/><circle cx="46" cy="92" r="16" fill="url(#cgear)"/>' +
+    '<circle class="cg-ear" cx="174" cy="92" r="30" fill="url(#cgfur)"/><circle cx="174" cy="92" r="16" fill="url(#cgear)"/>' +
+    '<circle cx="110" cy="102" r="64" fill="url(#cgfur)"/>' +
+    '<ellipse cx="110" cy="122" rx="38" ry="30" fill="url(#cgmuz)"/>' +
+    '<ellipse cx="76" cy="116" rx="11" ry="7" fill="#fb7185" opacity=".7"/>' +
+    '<ellipse cx="144" cy="116" rx="11" ry="7" fill="#fb7185" opacity=".7"/>' +
+    '<g class="cg-eye"><ellipse cx="86" cy="96" rx="14" ry="16" fill="#fff"/><circle cx="90" cy="98" r="7" fill="#1c1917"/><circle cx="93" cy="95" r="2.6" fill="#fff"/></g>' +
+    '<g class="cg-eye"><ellipse cx="134" cy="96" rx="14" ry="16" fill="#fff"/><circle cx="138" cy="98" r="7" fill="#1c1917"/><circle cx="141" cy="95" r="2.6" fill="#fff"/></g>' +
+    '<g class="cg-glasses" fill="none" stroke="url(#cgglass)" stroke-width="5" stroke-linecap="round">' +
+    '<circle cx="86" cy="96" r="20"/><circle cx="134" cy="96" r="20"/><path d="M106 96h12"/>' +
+    '<path d="M66 92c-10-2-16 4-16 10M154 92c10-2 16 4 16 10"/>' +
+    "</g>" +
+    '<ellipse cx="110" cy="120" rx="8" ry="5.5" fill="#9a3412"/>' +
+    '<path class="cg-mouth" d="M90 136c8 12 32 12 40 0" fill="none" stroke="#7c2d12" stroke-width="4" stroke-linecap="round"/>' +
+    "</g>" +
+    '<g class="cg-arm cg-arm-left"><path d="M76 172v40" fill="none" stroke="#ea580c" stroke-width="16" stroke-linecap="round"/>' +
+    '<circle cx="76" cy="218" r="14" fill="url(#cgfur)"/><circle cx="76" cy="218" r="7" fill="url(#cgmuz)"/></g>' +
+    '<g class="cg-arm cg-arm-right"><path d="M146 172v40" fill="none" stroke="#ea580c" stroke-width="16" stroke-linecap="round"/>' +
+    '<circle cx="146" cy="218" r="14" fill="url(#cgfur)"/><circle cx="146" cy="218" r="7" fill="url(#cgmuz)"/></g>' +
+    '<g class="cg-pop" aria-hidden="true"><path d="M186 36l2.2 6.2 6.4.2-5 4 1.8 6.2-5.4-3.6-5.4 3.6 1.8-6.2-5-4 6.4-.2z" fill="#fde047"/>' +
+    '<path d="M34 40l1.6 4.4 4.6.2-3.6 2.8 1.3 4.4-3.9-2.6-3.9 2.6 1.3-4.4-3.6-2.8 4.6-.2z" fill="#22d3ee"/></g>' +
     '</svg></span>';
+}
+
+function setPose(name) {
+  if (name === "yes") name = "celebrate";
+  if (name === "no") name = "encourage";
+  host.dataset.pose = name || "idle";
 }

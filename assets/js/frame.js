@@ -78,8 +78,8 @@
     { id: "start", label: "Start Here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
     { id: "resources", label: "Resources", href: "resources.html", icon: "link", desc: "Official Webex, Cisco Live, DevNet, cert, and community links that resolved." },
     { id: "rooms", label: "All Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
-    { id: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "28 custom SVGs. 23 are call, signal, or data flows." },
-    { id: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "23 call, signal, and data flows with a moving packet." },
+    { id: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "60 custom SVGs. 39 are call, signal, or data flows." },
+    { id: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "39 call, signal, and data flows with a moving packet." },
     { id: "charts", label: "Charts", href: "charts.html", icon: "sliders", desc: "Counts from this repository. No traffic or revenue." },
     { id: "cheat", label: "Cheat Codes", href: "downloads.html", icon: "cards", desc: "One-page sheets, a card deck, and a zip of this site." },
     { id: "play", label: "Play", href: "play.html", icon: "spark", desc: "A port game, a flow map, a sandbox, and badges in this browser." },
@@ -96,7 +96,9 @@
     { id: "regions", label: "Countries", href: "regions.html", icon: "flag", desc: "Flags mark regions named in the Canon." },
     { id: "mastery", label: "Mastery", href: "mastery.html", icon: "map", desc: "Fundamentals through the hard edges. Unverified stays marked." },
     { id: "ports", label: "Ports", href: "ports.html", icon: "radio", desc: "Webex Calling port reference captured 2026-10-15." },
-    { id: "certs", label: "Certifications", href: "certs.html", icon: "check", desc: "Study notes beside certification names." }
+    { id: "certs", label: "Certifications", href: "certs.html", icon: "check", desc: "Study notes beside certification names." },
+    { id: "help", label: "Help", href: "help.html", icon: "book", desc: "How to use the menu, the course, the guide, and downloads." },
+    { id: "legal", label: "Legal", href: "legal.html", icon: "check", desc: "Disclaimer, copyright, privacy, and how to ask for a correction." }
   ];
   var THEMES = [
     ["bloom", "Bloom"],
@@ -108,19 +110,11 @@
     ["paper", "Light"],
     ["contrast", "Contrast"]
   ];
-  /* Offline copy of assets/data/socials.json. Append a network in both places. */
-  var SOCIALS = [
-    { id: "github", label: "GitHub profile", href: "https://github.com/cipher0x9" },
-    { id: "x", label: "X", href: "https://x.com/Cypher0x9" },
-    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/luckylakshmanucwebex" },
-    { id: "huggingface", label: "Hugging Face", href: "https://huggingface.co/Cypher0x9" }
-  ];
+  /* Brand links are the website, the GitHub organization, and Linktree. */
   var BRAND = {
-    github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>',
-    x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.6 3h3.2l-7 8L19.2 21h-3.3l-5.1-6.2L6.4 21H3.2l7.4-8.5L4.4 3h3.4l4.6 5.7L14.6 3zm-1.1 16.2h1.8L7.6 4.7H5.8l7.7 14.5z"/></svg>',
-    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.7 3.3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6zM3.2 8.4h3v12.2h-3zM10 8.4h2.9v1.7h.1c.4-.8 1.4-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8v7.4h-3v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.7H10z"/></svg>',
-    huggingface: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFD21F"/><circle cx="8.2" cy="10.2" r="1.35" fill="#1c1917"/><circle cx="15.8" cy="10.2" r="1.35" fill="#1c1917"/><path d="M8 14.7c1.1 1.4 2.4 2.1 4 2.1s2.9-.7 4-2.1" fill="none" stroke="#1c1917" stroke-width="1.4" stroke-linecap="round"/></svg>'
+    github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>'
   };
+  var GLOW_IDS = { diagrams: true, play: true, downloads: true };
   function brandIcon(id) {
     return BRAND[id] || svg("globe");
   }
@@ -164,38 +158,84 @@
       requestAnimationFrame(tick);
     });
   }
-  function mountBanner() {
-    var chips = SECTIONS.map(function (item) {
+  function chipHtml() {
+    return SECTIONS.map(function (item) {
       var current = isCurrent(item.href);
-      return '<a class="section-chip' + (current ? " is-current" : "") + '" href="' + esc(fromRoot(item.href)) + '"' +
+      return '<a class="section-chip' + (current ? " is-current" : "") + (GLOW_IDS[item.id] ? " glow-ico" : "") + '" href="' + esc(fromRoot(item.href)) + '"' +
         (current ? ' aria-current="page"' : "") + ' title="' + esc(item.desc) + '">' +
         '<span class="chip-ico" aria-hidden="true">' + svg(item.icon) + "</span>" +
         "<span>" + esc(item.label) + "</span></a>";
     }).join("");
+  }
+  function wireBanner(banner) {
+    if (!banner) return;
+    var rail = banner.querySelector(".section-rail");
+    if (rail && !rail.querySelector(".section-chip")) rail.innerHTML = chipHtml();
+    if (!banner.querySelector(".identity-line")) {
+      var line = document.createElement("p");
+      line.className = "identity-line";
+      line.textContent = "A student's open lab: learning and sharing, free for everyone.";
+      banner.appendChild(line);
+    }
+    if (!banner.querySelector(".banner-scroll") && rail) {
+      var scroller = document.createElement("div");
+      scroller.className = "banner-scroll";
+      rail.parentNode.insertBefore(scroller, rail);
+      scroller.appendChild(rail);
+    }
+    var scrollerBox = banner.querySelector(".banner-scroll");
+    if (scrollerBox && rail && !scrollerBox.querySelector("[data-banner-prev]")) {
+      var prev = document.createElement("button");
+      prev.type = "button";
+      prev.className = "banner-arrow";
+      prev.setAttribute("data-banner-prev", "");
+      prev.setAttribute("aria-label", "Previous sections");
+      prev.textContent = "‹";
+      var next = document.createElement("button");
+      next.type = "button";
+      next.className = "banner-arrow";
+      next.setAttribute("data-banner-next", "");
+      next.setAttribute("aria-label", "Next sections");
+      next.textContent = "›";
+      scrollerBox.insertBefore(prev, rail);
+      scrollerBox.appendChild(next);
+    }
+    var prevBtn = banner.querySelector("[data-banner-prev]");
+    var nextBtn = banner.querySelector("[data-banner-next]");
+    function nudge(dir) {
+      if (!rail) return;
+      var reduce = root.dataset.motion === "reduce" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      rail.scrollBy({ left: dir * Math.max(180, rail.clientWidth * 0.62), behavior: reduce ? "auto" : "smooth" });
+    }
+    if (prevBtn && !prevBtn.dataset.wired) {
+      prevBtn.dataset.wired = "1";
+      prevBtn.addEventListener("click", function () { nudge(-1); });
+    }
+    if (nextBtn && !nextBtn.dataset.wired) {
+      nextBtn.dataset.wired = "1";
+      nextBtn.addEventListener("click", function () { nudge(1); });
+    }
+    riseCounts(banner);
+  }
+  function mountBanner() {
     var existing = document.querySelector(".canon-banner");
     if (existing) {
-      var rail = existing.querySelector(".section-rail");
-      if (rail && !rail.querySelector(".section-chip")) rail.innerHTML = chips;
-      if (!existing.querySelector(".identity-line")) {
-        var line = document.createElement("p");
-        line.className = "identity-line";
-        line.textContent = "A student's open lab: learning and sharing, free for everyone.";
-        existing.appendChild(line);
-      }
+      wireBanner(existing);
       return;
     }
     var stage = document.querySelector(".v4-stage") || document.body;
     var banner = document.createElement("div");
     banner.className = "canon-banner";
+    banner.setAttribute("data-banner-hold", "");
     banner.innerHTML =
-      '<nav class="section-rail" aria-label="Sections">' + chips + "</nav>" +
+      '<div class="banner-scroll"><button type="button" class="banner-arrow" data-banner-prev aria-label="Previous sections">‹</button>' +
+      '<nav class="section-rail" aria-label="Sections"></nav>' +
+      '<button type="button" class="banner-arrow" data-banner-next aria-label="Next sections">›</button></div>' +
       "<p class=\"identity-line\">A student's open lab: learning and sharing, free for everyone.</p>";
     var topbar = stage.querySelector(".topbar");
-    var links = stage.querySelector(".lab-links");
-    if (links && links.parentNode) links.parentNode.insertBefore(banner, links.nextSibling);
-    else if (topbar && topbar.parentNode) topbar.parentNode.insertBefore(banner, topbar);
+    if (topbar && topbar.parentNode) topbar.parentNode.insertBefore(banner, topbar);
     else stage.insertBefore(banner, stage.firstChild);
-    riseCounts(banner);
+    wireBanner(banner);
   }
 
   function syncThemeButtons(name) {
@@ -260,7 +300,7 @@
       }).join("") +
       "</div>" +
       '<button type="button" class="a11y-motion" data-motion-toggle aria-pressed="' + (motionOn() ? "true" : "false") + '">Reduce motion</button>' +
-      '<p class="display-stats">63 rooms · 483 prompts · 842 cards · 28 diagrams</p>' +
+      '<p class="display-stats">63 rooms · 483 prompts · 842 cards · 60 diagrams</p>' +
       "</div>";
     if (bar) bar.appendChild(dock);
     else document.body.insertBefore(dock, document.body.firstChild);
@@ -301,88 +341,137 @@
 
   function mountEdge() {
     if (document.querySelector(".edge-rail")) return;
-    var rail = document.createElement("div");
-    rail.className = "edge-rail";
-    var items = SECTIONS.map(function (item) {
+    var byId = {};
+    SECTIONS.forEach(function (item) { byId[item.id] = item; });
+    var groups = [
+      ["Start here", ["home", "start", "resources"]],
+      ["Study", ["rooms", "diagrams", "flows", "charts", "ecosystem", "atlas"]],
+      ["Practice", ["play", "quizzes", "cards", "labs", "cases", "interviews"]],
+      ["Reference", ["cheat", "downloads", "glossary", "ports", "certs", "careers", "regions", "mastery", "help", "legal"]]
+    ];
+    function itemHtml(item) {
       var current = isCurrent(item.href);
-      return '<li><a href="' + esc(fromRoot(item.href)) + '"' + (current ? ' class="is-current" aria-current="page"' : "") + ">" +
+      return '<li><a href="' + esc(fromRoot(item.href)) + '"' + (current || GLOW_IDS[item.id] ? ' class="' + (current ? "is-current" : "") + (GLOW_IDS[item.id] ? " glow-ico" : "") + '"' : "") + (current ? ' aria-current="page"' : "") + ">" +
         '<span class="edge-ico" aria-hidden="true">' + svg(item.icon) + "</span>" +
         '<span class="edge-copy"><span class="edge-label">' + esc(item.label) + "</span>" +
         '<span class="edge-desc">' + esc(item.desc) + "</span></span></a></li>";
+    }
+    var grouped = groups.map(function (group) {
+      return '<p class="edge-group">' + esc(group[0]) + "</p><ul class=\"edge-list\">" +
+        group[1].map(function (id) { return byId[id] ? itemHtml(byId[id]) : ""; }).join("") + "</ul>";
     }).join("");
+    var rail = document.createElement("div");
+    rail.className = "edge-rail";
     rail.innerHTML =
-      '<button type="button" class="edge-tab" aria-expanded="false" aria-controls="edge-menu">' +
-      '<svg class="edge-wheel" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">' +
-      '<circle cx="12" cy="12" r="3"/><path d="M12 2.5v2.8M12 18.7v2.8M2.5 12h2.8M18.7 12h2.8M5.1 5.1l2 2M16.9 16.9l2 2M18.9 5.1l-2 2M7.1 16.9l-2 2"/></svg>' +
-      '<span class="edge-name">Menu</span><span class="sr">Open sections</span></button>' +
       '<button type="button" class="edge-scrim" hidden aria-label="Close sections"></button>' +
       '<nav id="edge-menu" class="edge-menu" hidden aria-label="All sections">' +
-      '<div class="edge-menu-bar"><p>Sections</p><button type="button" class="edge-close">Close</button></div>' +
-      '<ul class="edge-list">' + items + "</ul></nav>";
+      '<div class="edge-menu-bar"><p>Start here</p><button type="button" class="edge-close">Close</button></div>' +
+      '<label class="edge-search"><span class="sr">Search sections</span><input type="search" data-edge-filter placeholder="Search sections" aria-label="Search sections" autocomplete="off"></label>' +
+      grouped + "</nav>";
     document.body.appendChild(rail);
-    var tab = rail.querySelector(".edge-tab");
+    var bar = document.querySelector(".topbar .bar-inner");
+    var headerBtn = document.querySelector(".header-menu");
+    if (!headerBtn && bar) {
+      headerBtn = document.createElement("button");
+      headerBtn.type = "button";
+      headerBtn.className = "header-menu glow-ico";
+      headerBtn.setAttribute("aria-controls", "edge-menu");
+      headerBtn.innerHTML = '<span class="header-burger" aria-hidden="true"></span><span>Menu</span>';
+      bar.insertBefore(headerBtn, bar.firstChild);
+    }
+    if (headerBtn) {
+      headerBtn.setAttribute("aria-expanded", "false");
+      headerBtn.setAttribute("aria-controls", "edge-menu");
+    }
     var menu = rail.querySelector(".edge-menu");
     var scrim = rail.querySelector(".edge-scrim");
     var closeBtn = rail.querySelector(".edge-close");
     var links = Array.prototype.slice.call(menu.querySelectorAll("a"));
     var open = false;
+    var hideTimer = 0;
+    function focusBack() {
+      if (headerBtn) headerBtn.focus();
+    }
     function setOpen(next, focusMenu) {
       open = next;
-      menu.hidden = !next;
-      scrim.hidden = !next;
-      tab.setAttribute("aria-expanded", next ? "true" : "false");
+      if (headerBtn) headerBtn.setAttribute("aria-expanded", next ? "true" : "false");
       document.body.classList.toggle("edge-open", next);
-      if (next && focusMenu) {
-        var current = menu.querySelector(".is-current") || links[0];
-        if (current) current.focus();
+      window.clearTimeout(hideTimer);
+      if (next) {
+        menu.hidden = false;
+        scrim.hidden = false;
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(function () {
+            menu.classList.add("is-open");
+            scrim.classList.add("is-open");
+          });
+        });
+        if (focusMenu) {
+          var current = menu.querySelector(".is-current") || menu.querySelector("input") || links[0];
+          if (current) current.focus();
+        }
+      } else {
+        menu.classList.remove("is-open");
+        scrim.classList.remove("is-open");
+        hideTimer = window.setTimeout(function () {
+          if (open) return;
+          menu.hidden = true;
+          scrim.hidden = true;
+        }, root.dataset.motion === "reduce" ? 0 : 360);
       }
     }
-    tab.addEventListener("click", function () { setOpen(!open, true); });
-    closeBtn.addEventListener("click", function () { setOpen(false); tab.focus(); });
-    scrim.addEventListener("click", function () { setOpen(false); tab.focus(); });
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      tab.addEventListener("mouseenter", function () { setOpen(true, false); });
-      rail.addEventListener("mouseleave", function () {
-        if (menu.contains(document.activeElement)) return;
-        setOpen(false);
+    function toggleFromHeader() {
+      if (window.matchMedia("(max-width: 720px)").matches) {
+        var dockBtn = document.querySelector(".phone-dock [data-open-menu]");
+        if (dockBtn) {
+          dockBtn.click();
+          return;
+        }
+      }
+      setOpen(!open, true);
+    }
+    if (headerBtn) headerBtn.addEventListener("click", toggleFromHeader);
+    closeBtn.addEventListener("click", function () { setOpen(false); focusBack(); });
+    scrim.addEventListener("click", function () { setOpen(false); focusBack(); });
+    var filter = menu.querySelector("[data-edge-filter]");
+    if (filter) {
+      filter.addEventListener("input", function () {
+        var q = filter.value.trim().toLowerCase();
+        menu.querySelectorAll(".edge-list li").forEach(function (li) {
+          li.hidden = !!(q && (li.textContent || "").toLowerCase().indexOf(q) === -1);
+        });
       });
     }
     document.addEventListener("pointerdown", function (event) {
-      if (!open || rail.contains(event.target)) return;
+      if (!open || rail.contains(event.target) || (headerBtn && headerBtn.contains(event.target))) return;
       setOpen(false);
     });
     menu.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         event.preventDefault();
         setOpen(false);
-        tab.focus();
+        focusBack();
         return;
       }
       if (event.key !== "ArrowDown" && event.key !== "ArrowUp" && event.key !== "Home" && event.key !== "End") return;
-      var index = links.indexOf(document.activeElement);
+      var visible = links.filter(function (link) { return !link.closest("li[hidden]"); });
+      var index = visible.indexOf(document.activeElement);
       if (index < 0) index = 0;
-      if (event.key === "ArrowDown") index = (index + 1) % links.length;
-      if (event.key === "ArrowUp") index = (index - 1 + links.length) % links.length;
+      if (event.key === "ArrowDown") index = (index + 1) % visible.length;
+      if (event.key === "ArrowUp") index = (index - 1 + visible.length) % visible.length;
       if (event.key === "Home") index = 0;
-      if (event.key === "End") index = links.length - 1;
+      if (event.key === "End") index = visible.length - 1;
       event.preventDefault();
-      links[index].focus();
+      if (visible[index]) visible[index].focus();
     });
     document.addEventListener("keydown", function (event) {
       if (event.key !== "Escape" || !open) return;
-      if (document.querySelector(".settings-panel:not([hidden]), .phone-menu:not([hidden])")) return;
+      if (document.querySelector(".settings-panel:not([hidden]), .phone-menu.is-open")) return;
       setOpen(false);
-      tab.focus();
+      focusBack();
     });
   }
 
-  function renderSocials(list, panel) {
-    panel.innerHTML = list.map(function (item) {
-      if (!item || !item.href || !item.label) return "";
-      return '<a href="' + esc(item.href) + '" target="_blank" rel="noopener noreferrer">' +
-        brandIcon(item.id) + "<span>" + esc(item.label) + "</span></a>";
-    }).join("");
-  }
   function mountFooter() {
     if (document.querySelector(".site-footer[data-canon-footer]")) return;
     var slot = document.querySelector("[data-float-badges]");
@@ -398,42 +487,7 @@
     slot.innerHTML =
       '<a class="float-badge badge-cyan" href="https://cyphermonkeylabs.com"><span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">CypherMonkey Labs</span></a>' +
       '<a class="float-badge badge-violet" href="https://github.com/CypherMonkeyLabs"><span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">GitHub organization</span></a>' +
-      '<div class="badge-wrap"><button type="button" class="float-badge badge-pink" aria-expanded="false" aria-controls="social-panel">' +
-      '<span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">Socials</span></button>' +
-      '<div id="social-panel" class="social-panel" hidden></div></div>';
-    var panel = slot.querySelector(".social-panel");
-    var button = slot.querySelector("button.float-badge");
-    renderSocials(SOCIALS, panel);
-    function setPanel(show) {
-      panel.hidden = !show;
-      button.setAttribute("aria-expanded", show ? "true" : "false");
-      document.body.classList.toggle("social-open", !!show);
-      if (show) {
-        var first = panel.querySelector("a");
-        if (first) first.focus();
-      }
-    }
-    button.addEventListener("click", function () { setPanel(panel.hidden); });
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && !panel.hidden) {
-        setPanel(false);
-        button.focus();
-      }
-    });
-    document.addEventListener("pointerdown", function (event) {
-      if (panel.hidden) return;
-      if (panel.contains(event.target) || button.contains(event.target)) return;
-      setPanel(false);
-    });
-    fetch(fromRoot("assets/data/socials.json")).then(function (response) {
-      if (!response.ok) return null;
-      return response.json();
-    }).then(function (data) {
-      var list = data && data.networks;
-      if (!list || !list.length) return;
-      SOCIALS = list;
-      renderSocials(list, panel);
-    }).catch(function () { /* offline copy stays */ });
+      '<a class="float-badge badge-pink" href="https://linktr.ee/cyphermonkey"><span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">Linktree</span></a>';
   }
 
   function formatSize(bytes) {
@@ -539,17 +593,12 @@
   function placeGuide() {
     var footer = document.querySelector(".site-footer");
     var base = dockHeight() + 16;
-    var lift = base;
     var hide = false;
     if (footer) {
       var rect = footer.getBoundingClientRect();
-      if (rect.top < window.innerHeight - base) {
-        var needed = window.innerHeight - rect.top + 16;
-        if (needed > window.innerHeight * 0.42) hide = true;
-        else lift = Math.max(base, needed);
-      }
+      if (rect.top < window.innerHeight - base - 8) hide = true;
     }
-    root.style.setProperty("--guide-bottom", lift + "px");
+    root.style.setProperty("--guide-bottom", base + "px");
     root.classList.toggle("guide-clear", hide);
   }
   function ensureMount() {

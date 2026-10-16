@@ -58,7 +58,8 @@
     var attrs = item.button
       ? ' type="button"' + (item.attr || "")
       : ' href="' + esc(item.abs ? item.href : href(item.href)) + '"';
-    return open + ' class="menu-item"' + attrs + ' data-menu-text="' + esc(text) + '">' +
+    var glow = item.key === "diagrams" || item.key === "play" || item.key === "downloads" || item.key === "listen" ? " glow-ico" : "";
+    return open + ' class="menu-item' + glow + '"' + attrs + ' data-menu-text="' + esc(text) + '">' +
       '<span class="menu-ico" aria-hidden="true">' + svg(item.icon) + "</span>" +
       '<span class="menu-copy"><span class="menu-label"' + (item.key ? ' data-i18n="' + item.key + '"' : "") + ">" + esc(item.label) + "</span>" +
       '<span class="menu-desc">' + esc(item.desc) + "</span></span>" + close;
@@ -90,8 +91,8 @@
     { key: "start", label: "Start here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
     { key: "resources", label: "Resources", href: "resources.html", icon: "link", desc: "Official Webex, Cisco Live, DevNet, cert, and community links that resolved." },
     { key: "rooms", label: "Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
-    { key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "28 custom SVGs. 23 are call, signal, or data flows." },
-    { key: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "23 call, signal, and data flows with a moving packet." },
+    { key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "60 custom SVGs. 39 are call, signal, or data flows." },
+    { key: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "39 call, signal, and data flows with a moving packet." },
     { key: "charts", label: "Charts", href: "charts.html", icon: "sliders", desc: "Counts from this repository. No traffic or revenue." },
     { key: "cheat", label: "Cheat Codes", href: "downloads.html", icon: "cards", desc: "One-page sheets, a card deck, and a zip of this site." },
     { key: "play", label: "Play", href: "play.html", icon: "spark", desc: "A port game, a flow map, a sandbox, and badges in this browser." },
@@ -105,7 +106,9 @@
     { key: "cases", label: "Cases", href: "drills.html", icon: "wrench", desc: "A decision with a cited consequence. Scores stay here." },
     { key: "interviews", label: "Interviews", href: "interviews.html", icon: "mic", desc: "Calling, contact center, and migration questions with citations." },
     { key: "regions", label: "Countries and residency", href: "regions.html", icon: "flag", desc: "Flags mark regions named in the Canon. No invented dial plans." },
-    { key: "mastery", label: "Mastery", href: "mastery.html", icon: "map", desc: "Fundamentals through the hard edges. Unverified stays marked." }
+    { key: "mastery", label: "Mastery", href: "mastery.html", icon: "map", desc: "Fundamentals through the hard edges. Unverified stays marked." },
+    { key: "help", label: "Help", href: "help.html", icon: "book", desc: "How to use the menu, the course, the guide, and downloads." },
+    { key: "legal", label: "Legal", href: "legal.html", icon: "check", desc: "Disclaimer, copyright, privacy, and how to ask for a correction." }
   ];
 
   var bar = document.querySelector(".topbar .bar-inner");
@@ -178,7 +181,8 @@
     var open = item.button ? "<button" : "<a";
     var close = item.button ? "</button>" : "</a>";
     var attrs = item.button ? ' type="button"' + (item.attr || "") : ' href="' + esc(href(item.href)) + '"';
-    return open + ' class="dock-item"' + attrs + '><span class="menu-ico" aria-hidden="true">' + svg(item.icon) + '</span><span class="dock-label" data-i18n="' + item.key + '">' + esc(item.label) + "</span>" + close;
+    var glow = item.key === "menu" || item.key === "diagrams" || item.key === "play" || item.key === "listen" ? " glow-ico" : "";
+    return open + ' class="dock-item' + glow + '"' + attrs + '><span class="menu-ico" aria-hidden="true">' + svg(item.icon) + '</span><span class="dock-label" data-i18n="' + item.key + '">' + esc(item.label) + "</span>" + close;
   }
   dock.innerHTML =
     dockItem({ key: "menu", label: "Menu", icon: "menu", button: true, attr: " data-open-menu" }) +
@@ -262,11 +266,16 @@
     });
   }
   function openMenu(from) {
-    if (!menu.hidden) return;
+    if (!menu.hidden && menu.classList.contains("is-open")) return;
     lastFocus = from || document.activeElement;
     menu.hidden = false;
     document.body.classList.add("phone-menu-open");
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () { menu.classList.add("is-open"); });
+    });
     if (opener) opener.setAttribute("aria-expanded", "true");
+    var headerBtn = document.querySelector(".header-menu");
+    if (headerBtn) headerBtn.setAttribute("aria-expanded", "true");
     var closeBtn = menu.querySelector(".phone-menu-close");
     if (closeBtn) closeBtn.focus();
     if (!pushed) {
@@ -275,10 +284,15 @@
     }
   }
   function closeMenu(fromPop) {
-    if (menu.hidden) return;
-    menu.hidden = true;
+    if (menu.hidden && !menu.classList.contains("is-open")) return;
+    menu.classList.remove("is-open");
     document.body.classList.remove("phone-menu-open");
+    window.setTimeout(function () {
+      if (!menu.classList.contains("is-open")) menu.hidden = true;
+    }, root.dataset.motion === "reduce" ? 0 : 360);
     if (opener) opener.setAttribute("aria-expanded", "false");
+    var headerBtn = document.querySelector(".header-menu");
+    if (headerBtn) headerBtn.setAttribute("aria-expanded", "false");
     if (!fromPop && pushed) {
       pushed = false;
       history.back();

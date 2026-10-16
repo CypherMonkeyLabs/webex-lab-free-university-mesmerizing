@@ -40,7 +40,7 @@ const diagrams = readdirSync(join(root, "assets/diagrams/university")).filter((n
 const sheets = readdirSync(join(root, "downloads/sheets")).filter((name) => name.endsWith(".html"));
 const cards = JSON.parse(readFileSync(join(root, "downloads/flashcards.json"), "utf8")).cards;
 const animated = diagrams.filter((name) => readFileSync(join(root, "assets/diagrams/university", name), "utf8").includes("animateMotion"));
-const flows = diagrams.filter((name) => ["calling-registration", "certificate-trunk", "registration-trunk", "lgw-media", "app-media", "device-media", "e911-held", "recording-path", "e2ee-path", "flow-designer", "ai-handoff", "migration", "number-port", "nat-sip", "firewall-lanes", "survivability", "wxcc-path", "crm-pop", "identity-sync", "cscan", "pstn-choices", "di-peering", "wfm-loop"].includes(name.replace(/\.svg$/, "")));
+const flows = diagrams.filter((name) => ["calling-registration", "certificate-trunk", "registration-trunk", "lgw-media", "app-media", "device-media", "e911-held", "recording-path", "e2ee-path", "flow-designer", "ai-handoff", "migration", "number-port", "nat-sip", "firewall-lanes", "survivability", "wxcc-path", "crm-pop", "identity-sync", "cscan", "pstn-choices", "di-peering", "wfm-loop", "queue-routing", "agent-state", "wxcc-callback", "wxcc-ivr", "wxcc-recording", "wxcce-bridge", "cucm-bridge", "dial-plan", "location-gateway", "voicemail-path", "hunt-group", "call-queue", "consult-transfer", "contact-entry", "barge-path", "callback-offer"].includes(name.replace(/\.svg$/, "")));
 if (diagrams.length < 25) throw new Error("need 25 diagrams, have " + diagrams.length);
 if (animated.length < 12) throw new Error("need 12 animated flows, have " + animated.length);
 if (flows.length < 12) throw new Error("need 12 tagged flows, have " + flows.length);
@@ -50,9 +50,10 @@ for (const name of sheets) {
   if (!existsSync(join(root, "downloads/sheets", stem + ".pdf"))) throw new Error("missing pdf " + stem);
   if (!existsSync(join(root, "downloads/sheets", stem + ".png"))) throw new Error("missing png " + stem);
   const sheet = readFileSync(join(root, "downloads/sheets", name), "utf8");
-  for (const bit of ["cyphermonkeylabs.com/#contact", "github.com/CypherMonkeyLabs", "x.com/Cypher0x9", "huggingface.co/Cypher0x9", "linkedin.com/in/luckylakshmanucwebex", "CC BY-NC-SA", "data-canon-footer"]) {
+  for (const bit of ["cyphermonkeylabs.com/#contact", "github.com/CypherMonkeyLabs", "linktr.ee/cyphermonkey", "CC BY-NC-SA", "data-canon-footer"]) {
     if (!sheet.includes(bit)) throw new Error(name + " missing " + bit);
   }
+  if (/x\.com\/Cypher|linkedin\.com\/in\/lucky|huggingface\.co\/Cypher|github\.com\/cipher0x9/.test(sheet)) throw new Error(name + " social brand link");
 }
 if (cards.length < 200) throw new Error("need 200 flashcards, have " + cards.length);
 const charts = readFileSync(join(root, "charts.html"), "utf8");
@@ -84,9 +85,10 @@ if (!frameJs.includes("A student's open lab: learning and sharing, free for ever
 if (!frameJs.includes("guide-mount")) throw new Error("guide mount");
 if (!readFileSync(join(root, "assets/css/shell.css"), "utf8").includes('data-theme="contrast"')) throw new Error("contrast theme");
 const socials = readFileSync(join(root, "assets/data/socials.json"), "utf8");
-for (const bit of ["github.com/cipher0x9", "x.com/Cypher0x9", "huggingface.co/Cypher0x9", "linkedin.com/in/luckylakshmanucwebex"]) {
+for (const bit of ["cyphermonkeylabs.com", "github.com/CypherMonkeyLabs", "linktr.ee/cyphermonkey"]) {
   if (!socials.includes(bit)) throw new Error("socials missing " + bit);
 }
+if (/x\.com\/|linkedin\.com|huggingface\.co|cipher0x9/.test(socials)) throw new Error("socials still lists a removed network");
 if (/@/.test(uni.match(/mailto:[^"']+/) || "")) throw new Error("email in chrome");
 
 function walk(dir, out) {
@@ -114,8 +116,9 @@ for (const file of htmlFiles) {
   const text = readFileSync(file, "utf8");
   // Round 3 rules: disclaimer + brand icons on every page, red-flag scan.
   if (!text.includes("data-canon-footer") || !text.includes("learning-only student project") || !text.includes("© 2026 CypherMonkeyLabs 🐒")) broken.push(file + " footer/disclaimer missing");
-  for (const bit of ["brand-web", "brand-gh", "brand-x", "brand-li", "brand-hf", "cyphermonkeylabs.com/#contact"]) if (!text.includes(bit)) broken.push(file + " footer missing " + bit);
-  if (/mailto:|dev\.to|linktr\.ee/i.test(text)) broken.push(file + " red-flag link");
+  for (const bit of ["brand-web", "brand-gh", "brand-lt", "cyphermonkeylabs.com/#contact"]) if (!text.includes(bit)) broken.push(file + " footer missing " + bit);
+  if (/mailto:|dev\.to/i.test(text)) broken.push(file + " red-flag link");
+  for (const hit of text.match(/linktr\.ee[^"'\s]*/g) || []) if (hit !== "linktr.ee/cyphermonkey") broken.push(file + " linktree " + hit);
   if (/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/.test(text.replace(/<script[\s\S]*?<\/script>/g, ""))) broken.push(file + " email-shaped text");
   if (/class="lab-links"/.test(text)) broken.push(file + " utility strip");
   let match;
@@ -136,5 +139,33 @@ if (broken.length) {
   console.error(broken.slice(0, 40).join("\n"));
   console.error("broken", broken.length);
   process.exit(1);
+}
+
+function allowedBrand(href) {
+  let url;
+  try { url = new URL(href); } catch { return true; }
+  const host = url.hostname.replace(/^www\./, "");
+  if (host === "cyphermonkeylabs.com") return true;
+  if (host === "github.com" && (url.pathname === "/CypherMonkeyLabs" || url.pathname.startsWith("/CypherMonkeyLabs/"))) return true;
+  if (host === "linktr.ee" && url.pathname.replace(/\/$/, "") === "/cyphermonkey") return true;
+  if (host === "127.0.0.1" || host === "localhost") return true;
+  return false;
+}
+function urlsIn(text) {
+  return text.match(/https?:\/\/[^"'\s<>)]+/g) || [];
+}
+const brandProblems = [];
+for (const file of htmlFiles) {
+  const text = readFileSync(file, "utf8");
+  const chrome = text.replace(/<main[\s\S]*?<\/main>/gi, "").replace(/<article[\s\S]*?<\/article>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
+  for (const href of urlsIn(chrome)) if (!allowedBrand(href)) brandProblems.push(file + " chrome " + href);
+}
+for (const file of ["README.md", "assets/js/frame.js", "assets/js/polish.js", "assets/js/university.js", "assets/js/phone-nav.js", "assets/js/brand.js", "assets/js/onboard.js", "assets/js/studio.js", "assets/data/socials.json", "embed/widget.js"]) {
+  const text = readFileSync(join(root, file), "utf8");
+  for (const href of urlsIn(text)) if (!allowedBrand(href)) brandProblems.push(file + " " + href);
+}
+if (brandProblems.length) {
+  console.error(brandProblems.slice(0, 30).join("\n"));
+  throw new Error("brand hosts " + brandProblems.length);
 }
 console.log("ok", htmlFiles.length, "html", diagrams.length, "diagrams", animated.length, "animated", flows.length, "flows", sheets.length, "sheets", cards.length, "cards", chartCount, "charts");

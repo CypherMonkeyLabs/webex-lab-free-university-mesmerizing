@@ -710,6 +710,8 @@ html[data-motion="reduce"] .v4-reveal { opacity: 1 !important; transform: none !
   overflow-x: hidden;
   overflow-y: auto;
 }
+.phone-menu { transform: translateX(-100%); transition: transform 0.34s ease; }
+.phone-menu.is-open { transform: translateX(0); }
 .phone-menu[hidden] { display: none !important; }
 .phone-menu-bar, .settings-bar {
   display: flex;

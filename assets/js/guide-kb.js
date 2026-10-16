@@ -188,7 +188,7 @@ window.CANON_GUIDE_KB = {
       "id": "diagrams",
       "title": "Diagrams",
       "href": "diagrams.html",
-      "summary": "28 custom SVGs. 28 use animateMotion. 23 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
+      "summary": "60 custom SVGs. 60 use animateMotion. 39 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
       "keywords": [
         "diagrams",
         "svg",
@@ -206,7 +206,7 @@ window.CANON_GUIDE_KB = {
       "id": "flows",
       "title": "Flows",
       "href": "flows.html",
-      "summary": "23 call, signal, and data flows. Each one is a custom SVG with a moving packet. Architecture diagrams stay on the atlas.",
+      "summary": "39 call, signal, and data flows. Each one is a custom SVG with a moving packet. Architecture diagrams stay on the atlas.",
       "keywords": [
         "flows",
         "packet",
@@ -387,12 +387,12 @@ window.CANON_GUIDE_KB = {
       "id": "svgs",
       "question": "What does the Diagrams page say about its files?",
       "choices": [
-        "28 custom SVGs, and 23 are tagged as call, signal, or data flows",
+        "60 custom SVGs, and 39 are tagged as call, signal, or data flows",
         "A live packet capture",
         "Architecture diagrams, which stay on the atlas"
       ],
       "answer": 0,
-      "why": "28 custom SVGs. 28 use animateMotion. 23 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
+      "why": "60 custom SVGs. 60 use animateMotion. 39 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
       "href": "diagrams.html"
     },
     {

@@ -339,6 +339,19 @@
   guideJs.type = "module";
   guideJs.src = rootPrefix + "guide/guide.js";
   document.body.appendChild(guideJs);
+  if (!document.querySelector('link[rel="manifest"]')) {
+    var manifestLink = document.createElement("link");
+    manifestLink.rel = "manifest";
+    manifestLink.href = rootPrefix + "manifest.webmanifest";
+    document.head.appendChild(manifestLink);
+  }
+  var onboardJs = document.createElement("script");
+  onboardJs.src = rootPrefix + "assets/js/onboard.js";
+  document.body.appendChild(onboardJs);
+  var studioJs = document.createElement("script");
+  studioJs.type = "module";
+  studioJs.src = rootPrefix + "assets/js/studio.js";
+  document.body.appendChild(studioJs);
 
   document.dispatchEvent(new CustomEvent("university-ready"));
 })();

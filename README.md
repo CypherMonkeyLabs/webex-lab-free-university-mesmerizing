@@ -10,7 +10,9 @@ The written curriculum is the CypherWebex Canon: 8 tracks and 63 rooms. The olde
 npm start
 ```
 
-Open [http://127.0.0.1:8741/](http://127.0.0.1:8741/). `npm run verify` checks that local links resolve, the port diagrams and cheat sheets exist, and the chrome does not point at LinkedIn or an email address.
+Open [http://127.0.0.1:8741/](http://127.0.0.1:8741/). `npm run verify` checks that local links resolve, the port diagrams and cheat sheets exist, and the chrome does not contain an email address.
+
+The only outbound brand links in the app chrome, the about block, and this file are the CypherMonkey Labs website at https://cyphermonkeylabs.com , the GitHub organization at https://github.com/CypherMonkeyLabs , and Linktree at https://linktr.ee/cyphermonkey . Contact goes to the website contact section, https://cyphermonkeylabs.com/#contact . The reusable header, menu, bot, footer, and tour are described in [docs/KIT.md](docs/KIT.md).
 
 GitHub Pages can publish this branch from `/`. There is no build step for reading. `npm run build:university` regenerates the atlas diagrams, cheat sheets, and play-lab page.
 

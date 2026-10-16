@@ -2,6 +2,10 @@
 (function () {
   var root = document.documentElement;
   var B = window.CANON_BRAND || {};
+  function brandArt(value, key) {
+    if (!value) return "";
+    return typeof value === "function" ? value(key) : value;
+  }
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { /* storage off */ } return null; }
 
   document.querySelectorAll(".lab-links").forEach(function (n) { n.remove(); });
@@ -9,11 +13,11 @@
   /* About: website, GitHub organization, Linktree icon. Nothing else. */
   function aboutHtml(k) {
     return '<section class="about-block" aria-label="About CypherMonkey Labs"><h3>About</h3>' +
-      '<a class="about-site" href="https://cyphermonkeylabs.com" target="_blank" rel="noopener noreferrer">' + (B.monkey ? B.monkey("ab" + k) : "") +
+      '<a class="about-site" href="https://cyphermonkeylabs.com" target="_blank" rel="noopener noreferrer">' + brandArt(B.monkey, "ab" + k) +
       '<span><strong>CypherMonkey Labs</strong><small>Visit the website</small></span></a>' +
       '<div class="about-row">' +
-      '<a class="about-gh" href="https://github.com/CypherMonkeyLabs" target="_blank" rel="noopener noreferrer" aria-label="CypherMonkeyLabs GitHub organization" title="GitHub organization">' + (B.github || "") + "</a>" +
-      '<a class="about-lt" href="https://linktr.ee/cyphermonkey" target="_blank" rel="noopener noreferrer" aria-label="CypherMonkey on Linktree" title="Linktree">' + (B.linktree || "") + "</a>" +
+      '<a class="about-gh" href="https://github.com/CypherMonkeyLabs" target="_blank" rel="noopener noreferrer" aria-label="CypherMonkeyLabs GitHub organization" title="GitHub organization">' + brandArt(B.github, "gh") + "</a>" +
+      '<a class="about-lt" href="https://linktr.ee/cyphermonkey" target="_blank" rel="noopener noreferrer" aria-label="CypherMonkey on Linktree" title="Linktree">' + brandArt(B.linktree, "lt" + k) + "</a>" +
       "</div></section>";
   }
   function mountAbout() {
@@ -62,26 +66,8 @@
     syncInk();
   }
 
-  /* Phones: first-visit hint on the Menu button, with a short how-to. */
-  function mountHint() {
-    if (!window.matchMedia("(max-width: 720px)").matches) return;
-    if (ls("canon-nav-hint") === "1" || document.querySelector(".nav-hint")) return;
-    var dock = document.querySelector(".phone-dock");
-    if (!dock) return;
-    var hint = document.createElement("div");
-    hint.className = "nav-hint";
-    hint.setAttribute("role", "dialog");
-    hint.setAttribute("aria-label", "How to get around");
-    hint.innerHTML = '<b>Tap for menu</b> (bottom left). It lists every section.<ul>' +
-      "<li><b>Learn</b>: the rooms</li><li><b>Diagrams</b>: moving pictures</li><li><b>Play</b>: games</li><li><b>Listen</b>: audio</li><li><b>Monkey</b>: ask the guide</li></ul>" +
-      '<button type="button">Got it</button>';
-    document.body.appendChild(hint);
-    function close() { hint.remove(); ls("canon-nav-hint", "1"); }
-    hint.querySelector("button").addEventListener("click", close);
-    var open = dock.querySelector("[data-open-menu]");
-    if (open) open.addEventListener("click", close);
-    setTimeout(function () { if (hint.parentNode) hint.style.opacity = "0.98"; }, 0);
-  }
+  /* The numbered first-open tour in onboard.js covers the phone hint. */
+  function mountHint() { return; }
 
   function mountHero() {
     var host = document.querySelector(".world-hero") || document.querySelector(".hero-copy");

@@ -4,13 +4,14 @@
 
 .cg-root {
   position: fixed;
+  transition: right 0.55s ease, bottom 0.55s ease;
   /* Above the page mascot (70) and the bar (40). Under the phone menu,
      settings, and help layers (80+), so those stay clickable. */
   z-index: 71;
   right: var(--cg-right, 12px);
   bottom: var(--cg-bottom, 12px);
-  width: 104px;
-  height: 120px;
+  width: 132px;
+  height: 156px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -32,8 +33,8 @@
 
 .cg-monkey {
   position: relative;
-  width: 104px;
-  height: 120px;
+  width: 132px;
+  height: 156px;
   padding: 0;
   border: 0;
   border-radius: 36px;
@@ -554,4 +555,120 @@ html[data-motion="reduce"] .cg-root * {
 .monkey-note,
 .hud-mascot {
   display: none !important;
+}
+
+.cg-root.is-greeting {
+  width: 168px;
+  height: 196px;
+  z-index: 74;
+}
+
+.cg-root.is-greeting .cg-monkey {
+  width: 168px;
+  height: 196px;
+}
+
+.cg-root.is-menu-away {
+  transform: translateX(140%);
+}
+
+.cg-root.is-menu-away,
+.cg-root.is-menu-away * {
+  pointer-events: none !important;
+}
+
+.cg-root[data-pose="greet"] .cg-wave {
+  transform-origin: 96px 88px;
+  animation: cg-wave 0.9s ease-in-out infinite;
+}
+
+.cg-root[data-pose="think"] .cg-float {
+  animation: none;
+  transform: rotate(-8deg) translateY(4px);
+}
+
+.cg-root[data-pose="listen"] .cg-glow {
+  opacity: 1;
+  animation-duration: 1.1s;
+}
+
+.cg-root[data-pose="yes"] .cg-float {
+  animation: cg-boop 0.6s ease;
+}
+
+.cg-root[data-pose="no"] .cg-float {
+  animation: cg-shake 0.45s ease;
+}
+
+.cg-along,
+.cg-outline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cg-outline {
+  display: block;
+  max-height: 140px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cg-outline button,
+.cg-along button,
+.cg-poke button,
+.cg-greet button {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  background: #ede9fe;
+  color: #3b0764;
+}
+
+.cg-outline .is-reading button,
+.cg-outline button.is-reading {
+  background: #7c3aed;
+  color: #fff;
+  box-shadow: 0 0 12px #c4b5fd;
+}
+
+.is-read-along {
+  border-radius: 16px;
+  box-shadow: 0 0 0 3px #fde047, 0 0 28px rgba(167, 139, 250, 0.85);
+  scroll-margin: 120px;
+}
+
+.toc a.is-reading {
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #c4b5fd;
+}
+
+::highlight(spoken) {
+  background: #fde68a;
+  color: #1b1340;
+}
+
+.cg-nudge.cg-poke,
+.cg-nudge.cg-greet {
+  width: min(280px, calc(100vw - 24px));
+  border: 2px solid #c4b5fd;
+  box-shadow: 0 12px 30px rgba(49, 10, 90, 0.28);
+}
+
+@keyframes cg-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(18deg); }
+}
+
+@keyframes cg-shake {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-6px); }
+  60% { transform: translateX(6px); }
 }

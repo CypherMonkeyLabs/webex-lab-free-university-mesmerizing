@@ -178,8 +178,8 @@
     ["ecosystem-atlas.html", "globe", "Ecosystem Atlas", "Study drawings of Calling, Contact Center, Meetings, and more."],
     ["mastery.html", "map", "Mastery Map", "Fundamentals through the hard edges. Unverified stays marked."],
     ["ports.html", "radio", "Ports & Protocols", "Webex Calling port reference captured 2026-10-15."],
-    ["diagrams.html", "image", "Diagrams", "28 custom SVGs. 23 are call, signal, or data flows."],
-    ["flows.html", "flow", "Flows", "23 call, signal, and data flows with a moving packet."],
+    ["diagrams.html", "image", "Diagrams", "60 custom SVGs. 39 are call, signal, or data flows."],
+    ["flows.html", "flow", "Flows", "39 call, signal, and data flows with a moving packet."],
     ["charts.html", "sliders", "Charts", "Counts from this repository. No traffic or revenue."],
     ["downloads.html", "cards", "Cheat Codes", "One-page sheets, a card deck, and a zip of this site."],
     ["play.html", "spark", "Play Lab", "A port game, a flow map, a sandbox, and badges in this browser."],
@@ -748,6 +748,16 @@
     }
     if (item.caption) cap.appendChild(document.createTextNode(item.caption));
     if (!title && !item.caption) cap.textContent = String(item.type || "Media");
+    var src = String(item.src || item.href || item.file || "");
+    if (/\.svg($|\?)/i.test(src)) {
+      var download = document.createElement("a");
+      download.className = "media-dl";
+      download.href = mediaUrl(src);
+      download.setAttribute("download", "");
+      download.textContent = "SVG";
+      cap.appendChild(document.createTextNode(" "));
+      cap.appendChild(download);
+    }
     return cap;
   }
   function frameFor(item) {

@@ -159,7 +159,7 @@
   bottom: var(--cg-panel-bottom, calc(var(--cg-bottom, 12px) + 128px));
   width: var(--cg-panel-width, min(400px, calc(100vw - 24px)));
   height: auto;
-  max-height: var(--cg-panel-max, min(680px, 74vh));
+  max-height: min(var(--cg-panel-max, 74vh), calc(100dvh - var(--cg-panel-bottom, 140px) - 12px));
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -206,8 +206,9 @@
   right: 8px;
   width: auto;
   height: var(--cg-sheet-h, auto);
-  max-height: min(60vh, var(--cg-panel-max, 58vh));
+  max-height: min(62vh, var(--cg-panel-max, 62vh));
   border-radius: 22px;
+  padding-bottom: 10px;
 }
 
 .cg-root.is-sheet .cg-monkey {
@@ -726,6 +727,7 @@ html[data-motion="reduce"] .cg-root * {
   bottom: auto !important;
   width: 200px;
   height: 236px;
+  z-index: 3;
   pointer-events: auto;
 }
 
@@ -758,7 +760,25 @@ html[data-motion="reduce"] .cg-root * {
     height: 100vh !important;
   }
   .cg-root, .cg-monkey { width: 156px; height: 184px; }
-  .cg-root.is-greeting .cg-monkey { width: 168px; height: 198px; }
+  .cg-root.is-greeting .cg-monkey { width: 148px; height: 172px; }
+  .cg-root.is-greeting .cg-nudge {
+    max-height: 150px;
+    overflow: hidden;
+    padding: 8px 10px;
+  }
+  .cg-root.is-greeting .cg-nudge p {
+    margin: 0 0 6px;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .cg-root.is-greeting .cg-nudge button {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
 }
 
 .cg-root.is-menu-away {
@@ -825,6 +845,9 @@ html[data-motion="reduce"] .cg-root * {
   border-radius: 16px;
   background: #f5f3ff;
   border: 2px solid #c4b5fd;
+  position: sticky;
+  top: 0;
+  z-index: 4;
 }
 
 .cg-voice-live {
@@ -871,11 +894,16 @@ html[data-motion="reduce"] .cg-root * {
 }
 
 .is-read-along {
-  border-radius: 16px;
-  outline: 3px solid #fde047;
-  outline-offset: 4px;
-  background: color-mix(in srgb, #fde68a 35%, transparent);
-  box-shadow: 0 0 0 6px rgba(253, 224, 71, 0.55), 0 0 36px #a78bfa;
+  scroll-margin: 140px;
+}
+
+.is-read-along-head {
+  border-radius: 12px;
+  outline: 4px solid #facc15;
+  outline-offset: 6px;
+  background: #fef9c3 !important;
+  color: #1b1340 !important;
+  box-shadow: 0 0 0 8px rgba(250, 204, 21, 0.65), 0 0 28px #c4b5fd;
   scroll-margin: 140px;
 }
 

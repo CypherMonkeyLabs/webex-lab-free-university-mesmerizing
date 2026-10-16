@@ -670,9 +670,9 @@ html[data-motion="reduce"] .v4-reveal { opacity: 1 !important; transform: none !
 
 :root { --dock: calc(78px + env(safe-area-inset-bottom)); }
 @media (min-width: 721px) {
-  :root { --dock: 0px; }
-  .phone-menu-btn,
-  .phone-dock { display: none !important; }
+  :root { --dock: 96px; }
+  .phone-menu-btn { display: none !important; }
+  .phone-dock { display: grid !important; }
 }
 .phone-menu-btn {
   margin-inline-start: auto;

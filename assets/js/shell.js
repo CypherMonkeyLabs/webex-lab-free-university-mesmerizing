@@ -38,7 +38,14 @@
     root.dataset.theme = next;
     try { localStorage.setItem("canon-theme", next); } catch (err) { /* storage off */ }
     document.querySelectorAll("[data-set-theme]").forEach(function (btn) {
-      btn.setAttribute("aria-checked", btn.getAttribute("data-set-theme") === next ? "true" : "false");
+      var on = btn.getAttribute("data-set-theme") === next;
+      var role = btn.getAttribute("role");
+      if (role === "menuitemradio" || role === "radio" || role === "switch") {
+        btn.setAttribute("aria-checked", on ? "true" : "false");
+      } else {
+        btn.removeAttribute("aria-checked");
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+      }
     });
     document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: next } }));
   }

@@ -420,7 +420,14 @@
       root.dataset.theme = theme;
       try { localStorage.setItem("canon-theme", theme); } catch (err) { /* storage off */ }
       document.querySelectorAll("[data-set-theme]").forEach(function (peer) {
-        peer.setAttribute("aria-checked", peer.getAttribute("data-set-theme") === theme ? "true" : "false");
+        var on = peer.getAttribute("data-set-theme") === theme;
+        var role = peer.getAttribute("role");
+        if (role === "menuitemradio" || role === "radio" || role === "switch") {
+          peer.setAttribute("aria-checked", on ? "true" : "false");
+        } else {
+          peer.removeAttribute("aria-checked");
+          peer.setAttribute("aria-pressed", on ? "true" : "false");
+        }
       });
       document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: theme } }));
     });

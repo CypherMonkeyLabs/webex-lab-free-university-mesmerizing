@@ -135,12 +135,10 @@
     document.body.classList.remove("onboard-open");
     if (layer) layer.remove();
     layer = null;
-    if (finished === "done") {
-      ls(KEY, "1");
+    if (finished === "done" || finished === "skip") {
+      ls(KEY, finished === "done" ? "1" : "skip");
       document.dispatchEvent(new CustomEvent("canon-tour-finished"));
-      return;
     }
-    if (finished === "skip") ls(KEY, "skip");
   }
 
   function open() {

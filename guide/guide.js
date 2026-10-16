@@ -115,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=16";
+css.href = guideBase + "guide/guide.css?v=21";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -920,50 +920,74 @@ function intersects(a, b, pad) {
 
 function placeGreeting() {
   var phone = window.matchMedia("(max-width: 720px)").matches;
-  var monkeyW = phone ? 168 : 200;
-  var monkeyH = phone ? 198 : 236;
-  var cardW = Math.min(420, window.innerWidth - 24);
-  var cardH = Math.max(120, Math.round(nudge.getBoundingClientRect().height) || 150);
-  var blockW = Math.max(cardW, monkeyW);
-  var blockH = monkeyH + 8 + cardH;
+  var monkeyW = phone ? 148 : 200;
+  var monkeyH = phone ? 172 : 236;
+  var cardW = Math.min(phone ? 230 : 420, window.innerWidth - monkeyW - 28);
+  if (!phone) cardW = Math.min(420, window.innerWidth - 24);
+  var cardH = Math.max(112, Math.round(nudge.getBoundingClientRect().height) || 140);
   var dock = phoneDockHeight();
+  if (phone && dock < 64) dock = 76;
+  if (phone) {
+    var cardFixed = 150;
+    var cardTop = window.innerHeight - dock - cardFixed - 8;
+    var cardWidth = Math.max(168, window.innerWidth - monkeyW - 22);
+    host.dataset.greetLayout = "overlay";
+    host.style.setProperty("--cg-greet-card-left", "10px");
+    host.style.setProperty("--cg-greet-card-top", Math.round(cardTop) + "px");
+    host.style.setProperty("--cg-greet-card-width", Math.round(cardWidth) + "px");
+    host.style.setProperty("--cg-greet-left", Math.round(window.innerWidth - monkeyW - 8) + "px");
+    host.style.setProperty("--cg-greet-top", Math.round(cardTop + cardFixed - monkeyH - 14) + "px");
+    return;
+  }
   var obstacles = [];
-  document.querySelectorAll(".track-tile, .hud-panel, .hero-actions a, .stat, .world-title, .canon-banner, .topbar, .phone-dock, .tile-art").forEach(function (el) {
+  document.querySelectorAll(".track-tile, .hud-panel, .hud-stats, .uni-menu a, .hero-actions a, .stat, .world-title, .world-lede, .canon-banner, .topbar, .phone-dock, .hero-live h1").forEach(function (el) {
     var rect = el.getBoundingClientRect();
     if (rect.width < 8 || rect.height < 8) return;
     if (rect.bottom < 0 || rect.top > window.innerHeight) return;
     obstacles.push(rect);
   });
-  var cols = [12, Math.round((window.innerWidth - blockW) / 2), Math.round(window.innerWidth - blockW - 12)];
-  var rows = [];
-  var y = window.innerHeight - dock - blockH - 12;
-  while (y > 64) {
-    rows.push(y);
-    y -= 36;
+  function clearOf(box) {
+    return !obstacles.some(function (ob) { return intersects(box, ob, 8); });
   }
+  var layout = "stack";
+  var stackW = Math.max(phone ? cardW : Math.min(420, window.innerWidth - 24), monkeyW);
+  var stackCardW = phone ? cardW : Math.min(420, window.innerWidth - 24);
+  var stackH = monkeyH + 8 + cardH;
+  var cols = [12, Math.round((window.innerWidth - stackW) / 2), Math.round(window.innerWidth - stackW - 12)];
   var chosen = null;
-  var r;
-  var c;
-  for (r = 0; r < rows.length && !chosen; r += 1) {
+  var y = window.innerHeight - dock - stackH - 12;
+  var guard = 0;
+  while (!chosen && y > 64 && guard < 24) {
+    var c;
     for (c = 0; c < cols.length && !chosen; c += 1) {
-      var left = Math.max(8, Math.min(cols[c], window.innerWidth - blockW - 8));
-      var top = rows[r];
-      var box = { left: left, top: top, right: left + blockW, bottom: top + blockH };
-      var hit = obstacles.some(function (ob) { return intersects(box, ob, 8); });
-      if (!hit) chosen = { left: left, top: top };
+      var left = Math.max(8, Math.min(cols[c], window.innerWidth - stackW - 8));
+      var box = { left: left, top: y, right: left + stackW, bottom: y + stackH };
+      if (clearOf(box)) chosen = { left: left, top: y, layout: "stack", cardW: stackCardW, monkeyW: monkeyW, monkeyH: monkeyH };
     }
+    y -= 28;
+    guard += 1;
   }
   if (!chosen) {
-    chosen = {
-      left: Math.max(8, Math.round((window.innerWidth - blockW) / 2)),
-      top: Math.max(64, window.innerHeight - dock - blockH - 8)
-    };
+    var rowTop = Math.max(72, window.innerHeight - dock - Math.max(monkeyH, cardH) - 12);
+    var rowCardW = Math.max(160, window.innerWidth - monkeyW - 28);
+    var rowBox = { left: 8, top: rowTop, right: window.innerWidth - 8, bottom: rowTop + Math.max(monkeyH, cardH) };
+    layout = "row";
+    chosen = clearOf(rowBox) ? { left: 8, top: rowTop, layout: "row", cardW: rowCardW, monkeyW: monkeyW, monkeyH: monkeyH } : { left: 8, top: rowTop, layout: "row", cardW: rowCardW, monkeyW: monkeyW, monkeyH: monkeyH };
+  } else layout = "stack";
+  host.dataset.greetLayout = chosen.layout;
+  if (chosen.layout === "row") {
+    host.style.setProperty("--cg-greet-left", Math.round(window.innerWidth - chosen.monkeyW - 10) + "px");
+    host.style.setProperty("--cg-greet-top", Math.round(chosen.top) + "px");
+    host.style.setProperty("--cg-greet-card-left", "10px");
+    host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + Math.max(0, (chosen.monkeyH - cardH) / 2)) + "px");
+    host.style.setProperty("--cg-greet-card-width", Math.round(chosen.cardW) + "px");
+    return;
   }
-  host.style.setProperty("--cg-greet-left", Math.round(chosen.left + (blockW - monkeyW) / 2) + "px");
+  host.style.setProperty("--cg-greet-left", Math.round(chosen.left + (stackW - chosen.monkeyW) / 2) + "px");
   host.style.setProperty("--cg-greet-top", Math.round(chosen.top) + "px");
-  host.style.setProperty("--cg-greet-card-left", Math.round(chosen.left + (blockW - cardW) / 2) + "px");
-  host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + monkeyH + 8) + "px");
-  host.style.setProperty("--cg-greet-card-width", Math.round(cardW) + "px");
+  host.style.setProperty("--cg-greet-card-left", Math.round(chosen.left + (stackW - chosen.cardW) / 2) + "px");
+  host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + chosen.monkeyH + 8) + "px");
+  host.style.setProperty("--cg-greet-card-width", Math.round(chosen.cardW) + "px");
 }
 
 function place() {
@@ -1003,9 +1027,11 @@ function place() {
   if (sheet) {
     var dockH = phoneDockHeight();
     host.style.setProperty("--cg-panel-right", "8px");
-    host.style.setProperty("--cg-panel-bottom", (dockH + 8) + "px");
+    if (dockH < 64) dockH = 76;
+    var sheetGap = 12;
+    host.style.setProperty("--cg-panel-bottom", (dockH + sheetGap) + "px");
     host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
-    host.style.setProperty("--cg-panel-max", "min(58vh, calc(100dvh - " + (dockH + 16) + "px))");
+    host.style.setProperty("--cg-panel-max", "min(62vh, calc(100dvh - " + (dockH + sheetGap) + "px))");
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {
@@ -1267,7 +1293,10 @@ function collectSections() {
 
 function clearSpokenMark() {
   if (window.CSS && CSS.highlights) CSS.highlights.delete("spoken");
-  document.querySelectorAll(".is-read-along").forEach(function (el) { el.classList.remove("is-read-along"); });
+  document.querySelectorAll(".is-read-along, .is-read-along-head").forEach(function (el) {
+    el.classList.remove("is-read-along");
+    el.classList.remove("is-read-along-head");
+  });
   document.querySelectorAll(".toc a.is-reading, .cg-outline .is-reading").forEach(function (el) { el.classList.remove("is-reading"); });
 }
 
@@ -1326,13 +1355,16 @@ function markSentence(section, sentence) {
 function markSection(section) {
   clearSpokenMark();
   section.el.classList.add("is-read-along");
+  var heading = section.el.querySelector("h1, h2, h3");
+  if (heading) heading.classList.add("is-read-along-head");
   var link = document.querySelector('.toc a[href="#' + section.id + '"]');
   if (link) {
     link.classList.add("is-reading");
     try { link.scrollIntoView({ block: "nearest", inline: "nearest" }); } catch (error) { /* older browsers */ }
   }
   var reduce = document.documentElement.dataset.motion === "reduce" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  try { section.el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); } catch (error) { section.el.scrollIntoView(); }
+  var focus = heading || section.el;
+  try { focus.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); } catch (error) { focus.scrollIntoView(); }
 }
 
 function paintOutline() {
@@ -1708,6 +1740,11 @@ function bind() {
     startAlong(id);
   });
   document.addEventListener("canon-tour-finished", function () { beginGreet(); });
+  window.setTimeout(function () {
+    var tour = "";
+    try { tour = localStorage.getItem("canon-tour-done") || ""; } catch (error) { tour = ""; }
+    if (tour === "1" || tour === "skip") beginGreet();
+  }, 900);
   var menuWatch = new MutationObserver(syncMenuHide);
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });

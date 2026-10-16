@@ -14,8 +14,10 @@ var PALETTES = {
   contrast: { fog: 0x000000, a: 0xffe600, b: 0xffffff, c: 0x00e5ff, d: 0xffe600 }
 };
 
+PALETTES.bloom = { fog: 0xfde7f6, a: 0x7c3aed, b: 0xec4899, c: 0x22d3ee, d: 0xfacc15 };
+
 function palette() {
-  var name = document.documentElement.dataset.theme || "aurora";
+  var name = document.documentElement.dataset.theme || "bloom";
   return PALETTES[name] || PALETTES.aurora;
 }
 

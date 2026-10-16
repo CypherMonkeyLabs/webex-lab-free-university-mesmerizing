@@ -14,6 +14,7 @@
   if (!reduce) root.classList.add("v4-motion");
 
   var THEMES = [
+    ["bloom", "Bloom", "Bright"],
     ["aurora", "Aurora", "Night"],
     ["neon", "Neon", "Night"],
     ["holographic", "Holographic", "Night"],
@@ -30,7 +31,7 @@
     if (next === "dark") return "aurora";
     if (next === "light") return "paper";
     if (THEME_NAMES.indexOf(next) !== -1) return next;
-    return "aurora";
+    return "bloom";
   }
   function applyTheme(next) {
     next = canonTheme(next);
@@ -41,7 +42,7 @@
     });
     document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: next } }));
   }
-  applyTheme(root.dataset.theme || "aurora");
+  applyTheme(root.dataset.theme || "bloom");
 
   function prefix() {
     var nodes = document.querySelectorAll("script[src]");
@@ -884,6 +885,7 @@
     if (reduce) return;
     (scope || document).querySelectorAll("svg").forEach(function (svg) {
       if (svg.classList.contains("canon-svg") || svg.querySelector(".pkt, .packet")) return;
+      if (svg.getAttribute("aria-hidden") === "true" || svg.closest(".site-footer, .about-block, .brand-icons, .display-control")) return;
       var path = svg.querySelector("path.packet-lane") || svg.querySelector("path[d]");
       if (!path) return;
       var d = path.getAttribute("d") || "";

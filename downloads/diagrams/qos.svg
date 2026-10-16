@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" data-layout="slash" role="img" aria-label="QoS marks"><title>Qos</title>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#312e81"/><stop offset="0.55" stop-color="#4338ca"/><stop offset="1" stop-color="#9d174d"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="15s" repeatCount="indefinite"/>
+<circle cx="394" cy="150" r="110" fill="#818cf8" opacity="0.22"/>
+<circle cx="926" cy="240" r="80" fill="#fb7185" opacity="0.2"/>
+<circle cx="640" cy="780" r="130" fill="#fde68a" opacity="0.14"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; -16 10; 0 0" dur="18s" repeatCount="indefinite"/>
+<g opacity="0.35"><circle cx="80" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="170" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="260" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="350" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="440" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="530" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="620" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="710" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="800" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="890" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="980" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="1070" cy="180" r="3" fill="#c7d2fe"/>
+<circle cx="80" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="170" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="260" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="350" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="440" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="530" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="620" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="710" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="800" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="890" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="980" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="1070" cy="270" r="3" fill="#c7d2fe"/>
+<circle cx="80" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="170" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="260" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="350" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="440" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="530" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="620" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="710" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="800" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="890" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="980" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="1070" cy="360" r="3" fill="#c7d2fe"/>
+<circle cx="80" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="170" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="260" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="350" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="440" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="530" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="620" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="710" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="800" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="890" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="980" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="1070" cy="450" r="3" fill="#c7d2fe"/>
+<circle cx="80" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="170" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="260" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="350" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="440" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="530" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="620" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="710" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="800" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="890" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="980" cy="540" r="3" fill="#c7d2fe"/>
+<circle cx="1070" cy="540" r="3" fill="#c7d2fe"/></g>
+</g>
+<text x="64" y="68" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">QoS marks</text>
+<text x="64" y="104" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">b2exve QoS table. Windows source-port split for audio versus video needs the port-range</text>
+<text x="64" y="128" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">feature enabled.</text>
+<path d="M 280 300 L 500 420 L 720 540 L 940 680" fill="none" stroke="#c084fc" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g class="hop"><rect x="163.0" y="264.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="155.0" y="252.0" width="250" height="96" rx="20" fill="#818cf8"/><rect x="155.0" y="252.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="280" y="306.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">App audio EF 46</text><text x="280" y="330.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="383.0" y="384.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="375.0" y="372.0" width="250" height="96" rx="20" fill="#fb7185"/><rect x="375.0" y="372.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="500" y="426.0" text-anchor="middle" fill="#082f49" font-size="17" font-family="system-ui,sans-serif" font-weight="800">App video AF41 34</text><text x="500" y="450.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="603.0" y="504.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="595.0" y="492.0" width="250" height="96" rx="20" fill="#fde68a"/><rect x="595.0" y="492.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="720" y="546.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Signaling</text><text x="720" y="570.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="823.0" y="644.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="815.0" y="632.0" width="250" height="96" rx="20" fill="#c084fc"/><rect x="815.0" y="632.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="940" y="686.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Device CS3 24</text><text x="940" y="710.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="5.9s" repeatCount="indefinite" path="M 280 300 L 500 420 L 720 540 L 940 680"/>
+<circle r="16" fill="#c084fc" opacity="0.55"/>
+<circle r="7" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
+</svg>

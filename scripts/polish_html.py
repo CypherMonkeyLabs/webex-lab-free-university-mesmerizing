@@ -1,0 +1,146 @@
+#!/usr/bin/env python3
+"""Idempotent post-process for every Canon html page (round 3 polish).
+Writes assets/js/brand.js, then per page: drops the utility strip, bakes the
+shared footer (disclaimer, copyright, brand icons, lab cards), links polish.css/js,
+and sets the bright default theme. Run: python3 scripts/polish_html.py"""
+import json, re, pathlib, html
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+CONTACT = "https://cyphermonkeylabs.com/#contact"
+
+def monkey(k):
+    return f'''<svg viewBox="0 0 64 64" aria-hidden="true" class="monkey-icon"><defs>
+<radialGradient id="mh{k}" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#ffd9a0"/><stop offset=".45" stop-color="#e8903a"/><stop offset="1" stop-color="#8a3f10"/></radialGradient>
+<radialGradient id="mf{k}" cx="45%" cy="35%" r="70%"><stop offset="0" stop-color="#fff4dc"/><stop offset="1" stop-color="#f3c98b"/></radialGradient>
+<radialGradient id="ml{k}" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#7dd3fc" stop-opacity=".25"/></radialGradient>
+<linearGradient id="mg{k}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde047"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>
+<g class="mk-stars" fill="#fde047"><path d="M8 10l1.4 3.2L12.6 14.6 9.4 16 8 19.2 6.6 16 3.4 14.6 6.6 13.2z"/><path d="M56 8l1.1 2.5 2.5 1.1-2.5 1.1L56 15.2l-1.1-2.5-2.5-1.1 2.5-1.1z"/><path d="M57 46l1.1 2.5 2.5 1.1-2.5 1.1L57 53.2l-1.1-2.5-2.5-1.1 2.5-1.1z" fill="#f0abfc"/><path d="M6 44l1 2.2 2.2 1-2.2 1L6 50.4l-1-2.2-2.2-1 2.2-1z" fill="#67e8f9"/></g>
+<circle cx="13" cy="33" r="7.5" fill="url(#mh{k})"/><circle cx="13" cy="33" r="4" fill="#f3c98b"/>
+<circle cx="51" cy="33" r="7.5" fill="url(#mh{k})"/><circle cx="51" cy="33" r="4" fill="#f3c98b"/>
+<circle cx="32" cy="32" r="19.5" fill="url(#mh{k})"/>
+<path d="M32 20c-7 0-11 4.5-11 10 0 3 1.4 4.6 3 6 1.6 1.4 3 1.6 8 1.6s6.400-.2 8-1.6c1.6-1.4 3-3 3-6 0-5.500-4-10-11-10z" fill="url(#mf{k})"/>
+<ellipse cx="32" cy="42" rx="9.5" ry="7" fill="url(#mf{k})"/>
+<circle cx="26" cy="31" r="2" fill="#2a1406"/><circle cx="38" cy="31" r="2" fill="#2a1406"/><circle cx="26.6" cy="30.3" r=".7" fill="#fff"/><circle cx="38.6" cy="30.3" r=".7" fill="#fff"/>
+<circle cx="26" cy="31" r="6.2" fill="url(#ml{k})" stroke="url(#mg{k})" stroke-width="1.8"/><circle cx="38" cy="31" r="6.2" fill="url(#ml{k})" stroke="url(#mg{k})" stroke-width="1.8"/>
+<path d="M32.200 30.400q-.2-1.200-0-0" stroke="url(#mg{k})" stroke-width="1.8" fill="none"/><path d="M31.500 30.200h1" stroke="url(#mg{k})" stroke-width="1.8"/><path d="M19.800 30l-3.500-1.500M44.200 30l3.500-1.500" stroke="url(#mg{k})" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="30.500" cy="39.500" rx=".9" ry="1.2" fill="#8a3f10"/><ellipse cx="33.500" cy="39.500" rx=".9" ry="1.2" fill="#8a3f10"/>
+<path d="M27.500 43.500q4.500 3.500 9 0" fill="none" stroke="#8a3f10" stroke-width="1.600" stroke-linecap="round"/>
+<ellipse cx="25" cy="17" rx="7" ry="3" fill="#fff" opacity=".28" transform="rotate(-25 25 17)"/></svg>'''
+
+GITHUB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>'
+X = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.6 3h3.2l-7 8L19.2 21h-3.3l-5.1-6.2L6.4 21H3.2l7.4-8.5L4.4 3h3.4l4.6 5.7L14.6 3zm-1.1 16.2h1.8L7.6 4.7H5.8l7.7 14.5z"/></svg>'
+LINKEDIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.7 3.3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6zM3.2 8.4h3v12.2h-3zM10 8.4h2.9v1.7h.1c.4-.8 1.4-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8v7.4h-3v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.7H10z"/></svg>'
+HF = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFD21F"/><circle cx="8.2" cy="10.2" r="1.35" fill="#1c1917"/><circle cx="15.8" cy="10.2" r="1.35" fill="#1c1917"/><path d="M7.200 12.500c.5 2.600 2.300 4 4.800 4s4.300-1.400 4.800-4z" fill="#7a2e12"/><path d="M8 14.700c1.100 1.400 2.400 2.100 4 2.100s2.900-.7 4-2.100" fill="none" stroke="#1c1917" stroke-width="1.2" stroke-linecap="round"/><path d="M4.600 14.200c-1.500-.6-1.300-2.300.2-2.700M19.400 14.200c1.500-.6 1.300-2.300-.2-2.700" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/></svg>'
+LINKTREE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.2 2.5h-2.4v5.1L7 3.9 5.300 5.600l3.900 3.900H3.600v2.400h5.700L5.300 15.900l1.700 1.700 4-4v7.900h2.400v-7.900l4 4 1.700-1.700-4-4h5.700V9.500h-5.600l3.900-3.900L17 3.900l-3.800 3.700z"/></svg>'
+
+def brand_js():
+    data = {"monkey": monkey("X").replace('X"', 'X"'), "github": GITHUB, "x": X, "linkedin": LINKEDIN, "huggingface": HF, "linktree": LINKTREE}
+    # monkey id suffix is substituted at call time
+    js = "/* Generated by scripts/polish_html.py. Brand icons, drawn inline. */\n(function(){\nvar M=" + json.dumps(monkey("@@")) + ";\n" \
+        "window.CANON_BRAND={monkey:function(k){return M.split('@@').join(k||'a');},github:" + json.dumps(GITHUB) + ",x:" + json.dumps(X) + ",linkedin:" + json.dumps(LINKEDIN) + ",huggingface:" + json.dumps(HF) + ",linktree:" + json.dumps(LINKTREE) + "};\n})();\n"
+    (ROOT / "assets/js/brand.js").write_text(js)
+
+LABS = [
+ ("UC Lab", "uc-lab", "Webex, CUCM, and unified communications paths.", "☎"),
+ ("AI Lab", "ai-lab", "Agents, retrieval, and voice AI study notes.", "✨"),
+ ("Amazon Connect", "amazon-connect-lab", "Flows, queues, and Contact Lens in plain steps.", "🎧"),
+ ("Microsoft Voice", "microsoft-voice-cc-lab", "Teams Phone and contact center routing.", "🔷"),
+ ("Five9", "five9-lab", "Campaigns, skills, and agent desktop notes.", "🟣"),
+ ("Genesys Cloud", "genesys-cloud-lab", "Architect flows and routing, explained.", "🟠"),
+ ("NICE CXone", "nice-cxone-lab", "Studio scripts and ACD concepts.", "🟢"),
+ ("SIP Universe", "sip-universe-lab", "SIP, RTP, and NAT, one signal at a time.", "📡"),
+]
+COLORS = ["#0ea5e9", "#8b5cf6", "#f59e0b", "#10b981", "#ec4899", "#f97316", "#14b8a6", "#6366f1"]
+
+def footer_html(meta=""):
+    cards = "".join(
+        f'<a class="lab-card" style="--c:{COLORS[i]}" href="https://cyphermonkeylabs.com/{r}-free-university-mesmerizing/"><span class="lab-card-ico" aria-hidden="true">{e}</span><span class="lab-card-copy"><strong>{n}</strong><small>{d}</small></span></a>'
+        for i, (n, r, d, e) in enumerate(LABS))
+    icons = [
+        ("CypherMonkey Labs website", "https://cyphermonkeylabs.com", monkey("f"), "brand-web"),
+        ("CypherMonkeyLabs on GitHub", "https://github.com/CypherMonkeyLabs", GITHUB, "brand-gh"),
+        ("CypherMonkey on X", "https://x.com/Cypher0x9", X, "brand-x"),
+        ("Lucky Lakshman on LinkedIn", "https://www.linkedin.com/in/luckylakshmanucwebex", LINKEDIN, "brand-li"),
+        ("Cypher0x9 on Hugging Face", "https://huggingface.co/Cypher0x9", HF, "brand-hf"),
+    ]
+    ic = "".join(f'<a class="brand-icon {c}" href="{h}" target="_blank" rel="noopener noreferrer" aria-label="{l}" title="{l}">{s}</a>' for l, h, s, c in icons)
+    shield = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.500 5.500v5.800c0 4.600 3.100 8.600 7.500 10.200 4.400-1.600 7.500-5.600 7.500-10.200V5.500z" fill="currentColor" opacity=".18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 16.800s-3.700-2.300-3.700-4.800c0-1.400 1-2.300 2.100-2.300.7 0 1.300.4 1.600 1 .3-.6.9-1 1.600-1 1.100 0 2.100.9 2.100 2.300 0 2.500-3.700 4.800-3.700 4.800z" fill="#e11d48"/></svg>'
+    return (f'<footer class="site-footer lab-footer wrap" data-canon-footer>'
+        f'{meta}'
+        f'<aside class="disclaimer-panel" aria-labelledby="disc-title"><span class="disclaimer-ico">{shield}</span><div>'
+        f'<h2 id="disc-title">A note from the student behind this lab</h2>'
+        f'<p>This is an <strong>independent, free, learning-only student project</strong>. It respects every company and vendor, and every trademark belongs to its owner. It is <strong>not affiliated with or endorsed by</strong> any of them.</p>'
+        f'<p>If anyone has a concern, the content will be removed or corrected promptly: please write via <a href="{CONTACT}">{CONTACT}</a>. Nothing here is sold, and I am happy to volunteer for any organization.</p>'
+        f'</div></aside>'
+        f'<p class="site-copy">© 2026 CypherMonkeyLabs 🐒</p>'
+        f'<p class="footer-brand">CypherMonkey Labs</p>'
+        f'<nav class="brand-icons" aria-label="CypherMonkey Labs links">{ic}</nav>'
+        f'<nav class="next-labs" aria-label="More labs"><h2 class="next-title">More free labs</h2><div class="lab-cards">{cards}</div></nav>'
+        f'<p class="footer-license">MIT code. CC BY-NC-SA content.</p>'
+        f'</footer>')
+
+THEME_RE = re.compile(r'<script>try\{var t=localStorage\.getItem\("canon-theme"\).*?</script>', re.S)
+NEW_THEME = ('<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";'
+  'if(["bloom","aurora","futuristic","gaming","neon","sunset","paper","holographic","cyberpunk","contrast"].indexOf(t)<0)t="bloom";'
+  'document.documentElement.dataset.theme=t;var f=localStorage.getItem("canon-font");if(f==="sm"||f==="md"||f==="lg")document.documentElement.dataset.font=f;'
+  'var m=localStorage.getItem("canon-motion");if(m==="reduce"||m==="full")document.documentElement.dataset.motion=m;'
+  'var ink=localStorage.getItem("canon-ink");if(ink&&/^#[0-9a-f]{6}$/i.test(ink))document.documentElement.style.setProperty("--ink",ink);'
+  'var ac=localStorage.getItem("canon-accent");if(ac&&/^#[0-9a-f]{6}$/i.test(ac))document.documentElement.style.setProperty("--accent",ac);'
+  'if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="bloom";}</script>')
+
+def process(path):
+    s = path.read_text()
+    o = s
+    rel = path.relative_to(ROOT)
+    depth = len(rel.parts) - 1
+    pre = "../" * depth
+    s = re.sub(r'<nav class="lab-links".*?</nav>\n?', '', s, flags=re.S)
+    s = THEME_RE.sub(lambda m: NEW_THEME, s)
+    is_site = 'assets/css/canon.css' in s
+    if is_site:
+        if 'footer.css' not in s:
+            s = s.replace('</head>', f'<link rel="stylesheet" href="{pre}assets/css/footer.css">\n</head>', 1)
+        if 'polish.css' not in s:
+            s = s.replace('</head>', f'<link rel="stylesheet" href="{pre}assets/css/polish.css">\n</head>', 1)
+        if 'brand.js' not in s:
+            s = s.replace('</body>', f'<script defer src="{pre}assets/js/brand.js"></script>\n<script defer src="{pre}assets/js/polish.js"></script>\n</body>', 1)
+        m = re.search(r'<footer class="site-footer[^>]*>(.*?)</footer>', s, re.S)
+        meta = ""
+        if m and 'data-canon-footer' not in m.group(0):
+            inner = m.group(1)
+            if 'CypherWebex Canon ·' not in inner and '<div class="lab-footer' not in inner:
+                meta = f'<div class="footer-meta">{inner}</div>'
+        new = footer_html(meta)
+        if m:
+            if 'data-canon-footer' in m.group(0):
+                keep = re.search(r'<div class="footer-meta">.*?</div>', m.group(0), re.S)
+                new = footer_html(keep.group(0) if keep else "")
+            s = s[:m.start()] + new + s[m.end():]
+        else:
+            s = s.replace('</main>', '</main>\n' + new, 1)
+    else:
+        # standalone printable pages (cheat sheets, flashcards)
+        s = re.sub(r'<nav aria-label="CypherMonkey">.*?</nav>\n?', '', s, flags=re.S)
+        if 'footer.css' not in s:
+            s = s.replace('</head>', f'<link rel="stylesheet" href="{pre}assets/css/footer.css">\n</head>', 1)
+        s = re.sub(r'<footer>.*?</footer>', lambda m: footer_html(), s, flags=re.S)
+        s = s.replace('<footer class="site-footer lab-footer wrap" data-canon-footer>', '<footer class="site-footer lab-footer standalone-footer" data-canon-footer>')
+    if s != o:
+        path.write_text(s)
+        return True
+    return False
+
+def main():
+    brand_js()
+    n = 0
+    total = 0
+    for p in sorted(ROOT.rglob("*.html")):
+        rel = p.relative_to(ROOT).parts
+        if rel[0] in ("archive", ".git", "node_modules") or rel[:2] == ("downloads", "diagrams"):
+            continue
+        total += 1
+        n += process(p)
+    print(f"{total} pages, {n} changed")
+
+if __name__ == "__main__":
+    main()

@@ -132,14 +132,7 @@
     menuItem({ key: "settings", label: "Settings", icon: "gear", desc: "Theme, language, sound, and motion.", button: true, attr: " data-open-settings" }),
     menuItem({ key: "browse", label: "Browse rooms", icon: "list", desc: "Open the track list.", button: true, attr: " data-open-rooms" })
   ].join("");
-  var extraLinks = [
-    menuItem({ label: "GitHub", href: "https://github.com/cipher0x9", icon: "github", desc: "Visit my GitHub.", abs: true }),
-    menuItem({ label: "Labs org", href: "https://github.com/CypherMonkeyLabs", icon: "github", desc: "Visit the Labs org.", abs: true }),
-    menuItem({ label: "Labs home", href: "https://cyphermonkeylabs.com", icon: "globe", desc: "Visit Cypher Monkey Labs.", abs: true }),
-    menuItem({ label: "X", href: "https://x.com/Cypher0x9", icon: "spark", desc: "Visit X.", abs: true }),
-    menuItem({ label: "Hugging Face", href: "https://huggingface.co/Cypher0x9", icon: "spark", desc: "Visit Hugging Face.", abs: true }),
-    menuItem({ label: "Rate, comment, help", href: "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true })
-  ].join("");
+  var extraLinks = "";
   menu.innerHTML =
     '<div class="phone-menu-bar">' +
     '<p id="phone-menu-title" data-i18n="menu">Menu</p>' +
@@ -150,9 +143,7 @@
     "</label>" +
     '<p class="menu-empty" hidden>No menu pages match.</p>' +
     '<nav class="phone-menu-list" aria-label="University">' + sectionLinks + actionLinks + "</nav>" +
-    '<nav class="phone-menu-extra" aria-label="CypherMonkey">' + extraLinks +
-    '<div class="site-social" aria-label="Cypher Monkey Labs">' + (window.CANON_SOCIAL_HTML || "") + "</div>" +
-    "</nav>";
+    '<div data-about-mount></div>';
   document.body.appendChild(menu);
 
   document.querySelectorAll(".uni-menu").forEach(function (nav) {
@@ -190,10 +181,10 @@
     return open + ' class="dock-item"' + attrs + '><span class="menu-ico" aria-hidden="true">' + svg(item.icon) + '</span><span class="dock-label" data-i18n="' + item.key + '">' + esc(item.label) + "</span>" + close;
   }
   dock.innerHTML =
+    dockItem({ key: "menu", label: "Menu", icon: "menu", button: true, attr: " data-open-menu" }) +
     dockItem({ key: "learn", label: "Learn", href: "index.html", icon: "home" }) +
     dockItem({ key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image" }) +
     dockItem({ key: "play", label: "Play", href: "play.html", icon: "spark" }) +
-    dockItem({ key: "menu", label: "Menu", icon: "menu", button: true, attr: " data-open-menu" }) +
     dockItem({ key: "listen", label: "Listen", icon: "headphones", button: true, attr: " data-listen" });
   document.body.appendChild(dock);
 
@@ -208,6 +199,7 @@
     '<div class="settings-bar"><h2 id="settings-title" data-i18n="settings">Settings</h2>' +
     '<button type="button" class="settings-close" data-i18n="close">Close</button></div>' +
     '<fieldset class="settings-themes"><legend data-i18n="themeWord">Theme</legend>' +
+    '<button type="button" data-set-theme="bloom">Bloom</button>' +
     '<button type="button" data-set-theme="aurora">Aurora</button>' +
     '<button type="button" data-set-theme="neon">Neon</button>' +
     '<button type="button" data-set-theme="holographic">Holographic</button>' +

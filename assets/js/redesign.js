@@ -6,21 +6,21 @@
   function canonTheme(next) {
     if (next === "dark") return "aurora";
     if (next === "light") return "paper";
-    if (next === "aurora" || next === "neon" || next === "holographic" || next === "cyberpunk" || next === "sunset" || next === "futuristic" || next === "gaming" || next === "paper" || next === "contrast") return next;
-    return "aurora";
+    if (next === "bloom" || next === "aurora" || next === "neon" || next === "holographic" || next === "cyberpunk" || next === "sunset" || next === "futuristic" || next === "gaming" || next === "paper" || next === "contrast") return next;
+    return "bloom";
   }
   function setTheme(next) {
     root.dataset.theme = canonTheme(next);
     try { localStorage.setItem("canon-theme", root.dataset.theme); } catch (err) { /* storage off */ }
     document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
       if (btn.hasAttribute("data-theme-lock")) return;
-      var dark = root.dataset.theme !== "paper";
+      var dark = root.dataset.theme !== "paper" && root.dataset.theme !== "bloom";
       btn.setAttribute("aria-pressed", dark ? "true" : "false");
       btn.textContent = dark ? "☀️" : "🌙";
       btn.setAttribute("aria-label", dark ? "Switch to Paper" : "Switch to Aurora");
     });
   }
-  setTheme(root.dataset.theme || "aurora");
+  setTheme(root.dataset.theme || "bloom");
   document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
     if (btn.hasAttribute("data-theme-lock")) return;
     btn.addEventListener("click", function () {

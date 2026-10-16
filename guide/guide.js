@@ -126,10 +126,8 @@ function abs(href) {
 }
 
 function motionReduced() {
-  var root = document.documentElement;
-  if (root.dataset.motion === "reduce") return true;
-  if (root.dataset.motion === "full") return false;
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true;
+  return document.documentElement.dataset.motion === "reduce";
 }
 
 function syncFont() {
@@ -484,7 +482,7 @@ function openPanel() {
     setChips(["How do I use this?", "Quiz me", "Flashcards", "Teach me", "Daily challenge", "My progress"]);
   }
   input.focus();
-  queuePlace();
+  place();
 }
 
 function closePanel() {
@@ -567,7 +565,7 @@ function onScreen(el) {
   if (!el || el.hidden || el.closest(".cg-root")) return null;
   if (el.matches(".v4-toc, .toc, .section-dock") && !el.querySelector("a, button")) return null;
   var style = window.getComputedStyle(el);
-  if (style.display === "none" || style.visibility === "hidden") return null;
+  if (style.display === "none" || style.visibility === "hidden" || style.pointerEvents === "none") return null;
   var rect = el.getBoundingClientRect();
   if (rect.width < 12 || rect.height < 12) return null;
   if (rect.bottom <= 0 || rect.top >= window.innerHeight || rect.right <= 0 || rect.left >= window.innerWidth) return null;
@@ -588,43 +586,107 @@ function queuePlace() {
   });
 }
 
-function place() {
-  syncFont();
-  var width = 104;
-  var height = 120;
-  var gap = 8;
+function obstacleBoxes() {
   var boxes = [];
-  var selectors = [".topbar", ".nav-panel", ".phone-dock", ".phone-menu", ".site-footer", ".lab-footer", ".v4-toc", ".toc", ".section-dock", ".hud-panel", ".to-top", ".settings-panel", ".uni-menu", ".lab-links", ".v4-sidebar"];
+  var selectors = [
+    ".topbar", ".nav-panel", ".phone-dock", ".phone-menu", ".phone-menu-btn",
+    ".site-footer", ".lab-footer", ".v4-toc", ".toc", ".section-dock",
+    ".hud-panel", ".hud-sheet-toggle", ".to-top", ".settings-panel",
+    ".uni-menu", ".lab-links", ".v4-sidebar", ".monkey", ".monkey-note",
+    ".v4-suggest", ".theme-pop", ".v4-menu"
+  ];
   selectors.forEach(function (selector) {
     document.querySelectorAll(selector).forEach(function (el) {
       if (selector === ".to-top" && !el.classList.contains("show")) return;
-      if (selector === ".nav-panel" && el.hidden) return;
-      if ((selector === ".phone-menu" || selector === ".settings-panel") && el.hidden) return;
       var rect = onScreen(el);
       if (rect) boxes.push(rect);
     });
   });
-  var chosen = null;
-  for (var bottom = 12; bottom < window.innerHeight - height && !chosen; bottom += 18) {
-    for (var right = 12; right < Math.min(window.innerWidth - width, 480); right += 18) {
-      var box = {
-        left: window.innerWidth - right - width,
-        right: window.innerWidth - right,
-        top: window.innerHeight - bottom - height,
-        bottom: window.innerHeight - bottom
-      };
-      var hit = boxes.some(function (obstacle) { return overlap(box, obstacle, gap); });
-      if (!hit) {
-        chosen = { right: right, bottom: bottom };
-        break;
+  return boxes;
+}
+
+function boxAt(right, bottom, width, height) {
+  return {
+    left: window.innerWidth - right - width,
+    right: window.innerWidth - right,
+    top: window.innerHeight - bottom - height,
+    bottom: window.innerHeight - bottom
+  };
+}
+
+function fits(box, boxes) {
+  if (box.left < 6 || box.top < 6 || box.right > window.innerWidth - 6 || box.bottom > window.innerHeight - 6) return false;
+  return !boxes.some(function (obstacle) { return overlap(box, obstacle, 14); });
+}
+
+function findSlot(monkeyBox, boxes) {
+  var heights = [Math.min(520, Math.round(window.innerHeight * 0.62)), 420, 360, 300, 260, 220, 180, 156];
+  var anchors = [
+    { bottom: window.innerHeight - (monkeyBox.top - 18), right: window.innerWidth - monkeyBox.right },
+    { bottom: window.innerHeight - monkeyBox.bottom, right: window.innerWidth - (monkeyBox.left - 16) }
+  ];
+  var anchorIndex = 0;
+  var shift = 0;
+  var heightIndex = 0;
+  for (anchorIndex = 0; anchorIndex < anchors.length; anchorIndex += 1) {
+    for (shift = 0; shift <= 320; shift += 32) {
+      for (heightIndex = 0; heightIndex < heights.length; heightIndex += 1) {
+        var right = anchors[anchorIndex].right + shift;
+        var bottom = anchors[anchorIndex].bottom;
+        var width = Math.min(380, window.innerWidth - right - 8);
+        var height = heights[heightIndex];
+        if (width < 240) continue;
+        var slot = boxAt(right, bottom, width, height);
+        if (overlap(slot, monkeyBox, 2)) continue;
+        if (!fits(slot, boxes)) continue;
+        return { right: right, bottom: bottom, width: width, height: height };
       }
     }
   }
-  if (!chosen) chosen = { right: 12, bottom: 96 };
+  return null;
+}
+
+function place() {
+  syncFont();
+  var boxes = obstacleBoxes();
+  var width = 104;
+  var height = 120;
+  var needSlot = !panel.hidden || !nudge.hidden;
+  var chosen = null;
+  var clearMonkey = null;
+  var bottom = 12;
+  var right = 12;
+  for (bottom = 12; bottom < window.innerHeight - height && !chosen; bottom += 12) {
+    var rightLimit = window.innerWidth - width - 6;
+    for (right = 12; right <= rightLimit && !chosen; right += 12) {
+      var monkeyBox = boxAt(right, bottom, width, height);
+      if (!fits(monkeyBox, boxes)) continue;
+      if (!clearMonkey) clearMonkey = { right: right, bottom: bottom };
+      if (!needSlot) {
+        chosen = { right: right, bottom: bottom, slot: null };
+        break;
+      }
+      var slot = findSlot(monkeyBox, boxes);
+      if (slot) chosen = { right: right, bottom: bottom, slot: slot };
+    }
+  }
+  if (!chosen && clearMonkey) chosen = { right: clearMonkey.right, bottom: clearMonkey.bottom, slot: null };
+  if (!chosen) chosen = { right: 12, bottom: 12, slot: null };
   host.style.setProperty("--cg-right", chosen.right + "px");
   host.style.setProperty("--cg-bottom", chosen.bottom + "px");
-  var panelMax = Math.max(180, window.innerHeight - chosen.bottom - height - 72);
-  host.style.setProperty("--cg-panel-max", panelMax + "px");
+  if (chosen.slot) {
+    host.style.setProperty("--cg-panel-right", chosen.slot.right + "px");
+    host.style.setProperty("--cg-panel-bottom", chosen.slot.bottom + "px");
+    host.style.setProperty("--cg-panel-width", chosen.slot.width + "px");
+    host.style.setProperty("--cg-panel-max", chosen.slot.height + "px");
+    host.style.setProperty("--cg-nudge-right", chosen.slot.right + "px");
+    host.style.setProperty("--cg-nudge-bottom", chosen.slot.bottom + "px");
+  } else {
+    host.style.setProperty("--cg-panel-right", chosen.right + "px");
+    host.style.setProperty("--cg-panel-bottom", (chosen.bottom + height + 8) + "px");
+    host.style.setProperty("--cg-panel-width", Math.min(380, window.innerWidth - chosen.right - 8) + "px");
+    host.style.setProperty("--cg-panel-max", Math.max(180, window.innerHeight - chosen.bottom - height - 24) + "px");
+  }
 }
 
 function hideNudge(persist) {
@@ -670,6 +732,7 @@ function scheduleNudge() {
     nudge.appendChild(copy);
     nudge.appendChild(actions);
     nudge.hidden = false;
+    place();
     window.setTimeout(function () {
       if (!nudge.hidden) hideNudge(false);
     }, 20000);

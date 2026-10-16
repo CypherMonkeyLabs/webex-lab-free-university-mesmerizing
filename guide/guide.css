@@ -4,7 +4,9 @@
 
 .cg-root {
   position: fixed;
-  z-index: 46;
+  /* Above the page mascot (70) and the bar (40). Under the phone menu,
+     settings, and help layers (80+), so those stay clickable. */
+  z-index: 71;
   right: var(--cg-right, 12px);
   bottom: var(--cg-bottom, 12px);
   width: 104px;
@@ -103,10 +105,12 @@
 
 .cg-nudge {
   position: fixed;
-  z-index: 57;
-  right: var(--cg-right, 12px);
-  bottom: calc(var(--cg-bottom, 12px) + 128px);
-  width: min(260px, calc(100vw - var(--cg-right, 12px) - 16px));
+  z-index: 2;
+  right: var(--cg-nudge-right, var(--cg-right, 12px));
+  bottom: var(--cg-nudge-bottom, calc(var(--cg-bottom, 12px) + 128px));
+  width: min(260px, var(--cg-panel-width, 260px));
+  max-height: min(220px, var(--cg-panel-max, 220px));
+  overflow: auto;
   padding: 12px;
   border-radius: 16px;
   border: 1px solid var(--line-strong, rgba(255, 255, 255, 0.28));
@@ -138,12 +142,19 @@
   align-items: center;
 }
 
+.cg-chips {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 42%;
+  overflow: auto;
+}
+
 .cg-panel {
   position: fixed;
-  z-index: 58;
-  right: var(--cg-right, 12px);
-  bottom: calc(var(--cg-bottom, 12px) + 128px);
-  width: min(400px, calc(100vw - var(--cg-right, 12px) - 12px));
+  z-index: 3;
+  right: var(--cg-panel-right, var(--cg-right, 12px));
+  bottom: var(--cg-panel-bottom, calc(var(--cg-bottom, 12px) + 128px));
+  width: var(--cg-panel-width, min(400px, calc(100vw - 24px)));
   max-height: var(--cg-panel-max, 62vh);
   display: flex;
   flex-direction: column;
@@ -151,10 +162,16 @@
   padding: 12px;
   border-radius: 20px;
   border: 1px solid var(--line-strong, rgba(255, 255, 255, 0.28));
-  background: color-mix(in srgb, var(--card-bg, #0b1020) 94%, transparent);
-  color: var(--ink, #e8eefc);
+  background: color-mix(in srgb, var(--card-bg, #ffffff) 96%, transparent);
+  color: var(--ink, #16182b);
   box-shadow: var(--shadow, 0 18px 48px rgba(0, 0, 0, 0.38));
   font-size: 1em;
+  overflow: hidden;
+}
+
+.cg-bar,
+.cg-form {
+  flex: 0 0 auto;
 }
 
 .cg-bar {
@@ -172,7 +189,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 120px;
+  min-height: 0;
   flex: 1 1 auto;
   padding: 2px;
 }

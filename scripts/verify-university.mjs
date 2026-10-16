@@ -69,6 +69,49 @@ for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
     throw new Error(id + " missing counters");
   }
 }
+const roomFiles = readdirSync(join(root, "rooms")).filter((name) => name.endsWith(".html"));
+const roomCount = roomFiles.length;
+const spelled = { 63: "Sixty-three" };
+const words = spelled[roomCount];
+if (!words) throw new Error("spell the room count " + roomCount + " in the hero, meta, and README");
+const canon = JSON.parse(readFileSync(join(root, "assets/js/search-index.js"), "utf8").replace(/^window\.CANON_INDEX\s*=\s*/, "").replace(/;\s*$/, ""));
+const indexed = canon.tracks.reduce((sum, track) => sum + track.rooms.length, 0);
+if (indexed !== roomCount) throw new Error("search index has " + indexed + " rooms, files have " + roomCount);
+const listed = (home.match(/data-code="/g) || []).length;
+if (listed !== roomCount) throw new Error("home lists " + listed + " rooms, files have " + roomCount);
+const tileSum = [...home.matchAll(/<p>(\d+) rooms<\/p>/g)].reduce((sum, match) => sum + Number(match[1]), 0);
+if (tileSum !== roomCount) throw new Error("track tiles sum to " + tileSum + ", files have " + roomCount);
+for (const bit of [words + " rooms", 'data-count="' + roomCount + '">' + roomCount + "</b> rooms", "written rooms of " + roomCount]) {
+  if (!home.includes(bit)) throw new Error("home missing " + bit);
+}
+if (/data-count="\d+">0</.test(home)) throw new Error("home counter still starts at 0");
+const description = (home.match(/name="description" content="([^"]*)"/) || [])[1] || "";
+const og = (home.match(/property="og:description" content="([^"]*)"/) || [])[1] || "";
+if (!description.includes(words) || !og.includes(words)) throw new Error("meta room count");
+if (!readFileSync(join(root, "manifest.webmanifest"), "utf8").includes(words)) throw new Error("manifest room count");
+if (!readFileSync(join(root, "README.md"), "utf8").includes(roomCount + " rooms")) throw new Error("README room count");
+const kb = JSON.parse(readFileSync(join(root, "guide/kb/index.json"), "utf8"));
+if (kb.counts.rooms !== roomCount || kb.counts.lessons !== roomCount) throw new Error("guide kb room count");
+const guideData = readFileSync(join(root, "assets/data/guide-kb.json"), "utf8");
+if (!guideData.includes(words) || !guideData.includes(roomCount + " rooms")) throw new Error("guide data room count");
+const chartJson = JSON.parse((charts.match(/<script type="application\/json" id="chart-data">([\s\S]*?)<\/script>/) || [, "{}"])[1]);
+const chartRooms = (chartJson.tracks || []).reduce((sum, track) => sum + track.rooms, 0);
+if (chartRooms !== roomCount) throw new Error("charts sum to " + chartRooms);
+if (readFileSync(join(root, "assets/js/redesign.js"), "utf8").includes("Math.pow(1 - t, 3)")) {
+  throw new Error("room counter still counts up through a false total");
+}
+for (const file of ["assets/js/wow.js", "assets/js/frame.js", "assets/js/phone-nav.js", "assets/js/shell.js", "assets/js/guide-kb.js", "play.html", "ecosystem.html", "audio/scripts/how-to-use.md", "archive/webex-lab-v1/campus/index.html"]) {
+  const text = readFileSync(join(root, file), "utf8");
+  if (!text.includes(String(roomCount)) && !text.toLowerCase().includes(words.toLowerCase())) throw new Error(file + " room count");
+}
+if (!readFileSync(join(root, "assets/js/university.js"), "utf8").includes("opened >= " + roomCount)) throw new Error("all-rooms badge threshold");
+for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
+  const track = readFileSync(join(root, "tracks", id, "index.html"), "utf8");
+  const local = canon.tracks.find((item) => item.id === id).rooms.length;
+  if (!track.includes('data-count="' + roomCount + '">' + roomCount + "</b>")) throw new Error(id + " Canon room counter");
+  if (!track.includes('data-count="' + local + '">' + local + "</b>")) throw new Error(id + " track room counter");
+  if (/data-count="\d+">0</.test(track)) throw new Error(id + " counter still starts at 0");
+}
 const archive = readFileSync(join(root, "archive/webex-lab-v1/campus/index.html"), "utf8");
 for (const bit of ["Diagrams", "Cheat Codes", "Careers", "CC BY-NC-SA"]) {
   if (!archive.includes(bit)) throw new Error("archive missing " + bit);

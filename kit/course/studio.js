@@ -28,6 +28,25 @@ function plain(section) {
   return lines.join("\n\n");
 }
 
+function deeperBundle() {
+  var block = document.querySelector("#go-deeper");
+  if (!block) {
+    return {
+      html: "<section id=\"go-deeper\" class=\"go-deeper\"><h2>Sources and go deeper</h2><p>confirm</p></section>",
+      markdown: "## Sources and go deeper\n\nconfirm\n",
+      plain: "Sources and go deeper\nconfirm"
+    };
+  }
+  var lines = [];
+  block.querySelectorAll("li").forEach(function (li) {
+    var text = li.textContent.replace(/\s+/g, " ").trim();
+    if (text) lines.push(text);
+  });
+  var plain = ["Sources and go deeper"].concat(lines).join("\n");
+  var markdown = "## Sources and go deeper\n\n" + lines.map(function (line) { return "- " + line; }).join("\n") + "\n";
+  return { html: block.outerHTML, markdown: markdown, plain: plain };
+}
+
 function barFor(section) {
   if (section.querySelector(":scope > .export-bar")) return;
   var heading = section.querySelector("h1, h2, h3");
@@ -45,16 +64,20 @@ function barFor(section) {
   button("HTML", "html", function () {
     var clone = section.cloneNode(true);
     clone.querySelectorAll(".export-bar").forEach(function (node) { node.remove(); });
-    download(slug(title) + ".html", standaloneDocument(title, clone.innerHTML), "text/html");
+    var deeper = deeperBundle();
+    download(slug(title) + ".html", standaloneDocument(title, clone.innerHTML, deeper.html), "text/html");
   });
   button("MD", "md", function () {
-    download(slug(title) + ".md", markdownDocument(title, plain(section)), "text/markdown");
+    var deeper = deeperBundle();
+    download(slug(title) + ".md", markdownDocument(title, plain(section), deeper.markdown), "text/markdown");
   });
   button("DOCX", "docx", function () {
-    download(slug(title) + ".docx", docxDocument(title, plain(section)), "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+    var deeper = deeperBundle();
+    download(slug(title) + ".docx", docxDocument(title, plain(section), deeper.plain), "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
   });
   button("PPTX", "pptx", function () {
-    download(slug(title) + ".pptx", pptxDocument(title, plain(section)), "application/vnd.openxmlformats-officedocument.presentationml.presentation");
+    var deeper = deeperBundle();
+    download(slug(title) + ".pptx", pptxDocument(title, plain(section), deeper.plain), "application/vnd.openxmlformats-officedocument.presentationml.presentation");
   });
   if (section.id === "quiz" || section.querySelector(".qcard, [data-quiz]")) {
     button("JSON", "json", function () {

@@ -16,14 +16,15 @@ export const BRAND_LINKS =
   '<a href="https://github.com/CypherMonkeyLabs">GitHub organization</a> ' +
   '<a href="https://linktr.ee/cyphermonkey">Linktree</a></nav>';
 
-export function standaloneDocument(title, bodyHtml) {
+export function standaloneDocument(title, bodyHtml, sourcesHtml) {
   var name = String(title || "Export").replace(/[<>]/g, "");
   return "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\">" +
     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
     "<title>" + name + "</title>" +
     "<style>body{font:18px/1.5 system-ui,sans-serif;margin:24px;color:#1b1340;background:#f8f5ff}" +
-    "a{color:#5b21b6}footer{margin-top:32px;padding:16px;border:2px solid #0f766e;border-radius:16px;background:#ecfdf5}" +
-    "</style></head><body><article>" + (bodyHtml || "") + "</article>" +
+    "a{color:#5b21b6}.go-deeper{margin-top:28px;padding:16px;border:2px solid #134e4a;border-radius:16px;background:#f0fdfa;color:#042f2e}" +
+    ".src-confirm{font-weight:800;color:#9a3412}footer{margin-top:32px;padding:16px;border:2px solid #0f766e;border-radius:16px;background:#ecfdf5}" +
+    "</style></head><body><article>" + (bodyHtml || "") + (sourcesHtml || "") + "</article>" +
     '<footer data-canon-footer><p class="footer-brand">CypherMonkey Labs</p>' +
     DISCLAIMER_HTML +
     "<p>© 2026 CypherMonkeyLabs 🐒</p>" +
@@ -31,8 +32,10 @@ export function standaloneDocument(title, bodyHtml) {
     "<p>MIT code. CC BY-NC-SA content.</p></footer></body></html>";
 }
 
-export function markdownDocument(title, body) {
-  return "# " + String(title || "Export") + "\n\n" + String(body || "") + "\n\n---\n\n" +
+export function markdownDocument(title, body, sources) {
+  return "# " + String(title || "Export") + "\n\n" + String(body || "") + "\n\n" +
+    (sources ? String(sources).trim() + "\n\n" : "") +
+    "---\n\n" +
     "Independent, free, learning-only student project. Not affiliated with or endorsed by any vendor. " +
     "Trademarks belong to their owners. Concerns: https://cyphermonkeylabs.com/#contact\n\n" +
     "CypherMonkey Labs\n\n© 2026 CypherMonkeyLabs\n\n" +
@@ -126,13 +129,15 @@ var NOTE = [
   "https://linktr.ee/cyphermonkey"
 ];
 
-function paragraphs(title, body) {
-  var lines = [String(title || "Section")].concat(String(body || "").split(/\n+/), NOTE);
+function paragraphs(title, body, sources) {
+  var lines = [String(title || "Section")].concat(String(body || "").split(/\n+/));
+  if (sources) lines = lines.concat(String(sources).split(/\n+/));
+  lines = lines.concat(NOTE);
   return lines.map(function (line) { return line.replace(/\s+/g, " ").trim(); }).filter(Boolean);
 }
 
-export function docxDocument(title, body) {
-  var lines = paragraphs(title, body);
+export function docxDocument(title, body, sources) {
+  var lines = paragraphs(title, body, sources);
   var bodyXml = lines.map(function (line, index) {
     var props = index === 0 ? "<w:rPr><w:b/><w:sz w:val=\"32\"/></w:rPr>" : "";
     return "<w:p><w:r>" + props + "<w:t xml:space=\"preserve\">" + xmlEscape(line) + "</w:t></w:r></w:p>";
@@ -185,8 +190,8 @@ function slideXml(lines) {
     "</p:txBody></p:sp></p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
 }
 
-export function pptxDocument(title, body) {
-  var lines = paragraphs(title, body).slice(0, 14);
+export function pptxDocument(title, body, sources) {
+  var lines = paragraphs(title, body, sources);
   var files = PPTX_PARTS.map(function (part) { return { name: part.name, text: part.text }; });
   files.push({ name: "ppt/slides/slide1.xml", text: slideXml(lines) });
   return zipStore(files);

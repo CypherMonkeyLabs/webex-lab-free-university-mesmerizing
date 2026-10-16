@@ -168,4 +168,34 @@ if (brandProblems.length) {
   console.error(brandProblems.slice(0, 30).join("\n"));
   throw new Error("brand hosts " + brandProblems.length);
 }
+const sourceGaps = [];
+for (const file of readdirSync(join(root, "rooms")).filter((name) => name.endsWith(".html"))) {
+  const html = readFileSync(join(root, "rooms", file), "utf8");
+  const id = (html.match(/data-room="([^"]+)"/) || [0, ""])[1];
+  if (!html.includes("Sources and go deeper")) sourceGaps.push(file + " missing sources block");
+  const jsonPath = join(root, "rooms/sources", id, "sources.json");
+  if (!existsSync(jsonPath)) sourceGaps.push(file + " missing sources.json");
+  else {
+    const doc = JSON.parse(readFileSync(jsonPath, "utf8"));
+    for (const item of doc.items || []) {
+      if (item.status === "confirm" && item.href) sourceGaps.push(id + " confirm has URL");
+      if (item.status === "checked" && (!item.href || !/^\d{4}-\d{2}$/.test(item.lastChecked || ""))) sourceGaps.push(id + " checked row incomplete");
+    }
+  }
+}
+for (const file of ["downloads/flashcards-print.html", "flashcards.html"]) {
+  if (!readFileSync(join(root, file), "utf8").includes("Sources and go deeper")) sourceGaps.push(file + " missing sources block");
+}
+for (const name of readdirSync(join(root, "downloads/sheets"))) {
+  if (!/\.(html|svg|md)$/.test(name)) continue;
+  if (!readFileSync(join(root, "downloads/sheets", name), "utf8").includes("Sources and go deeper")) sourceGaps.push("sheet " + name);
+}
+for (const track of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
+  const chapter = readFileSync(join(root, "tracks", track, "chapter.md"), "utf8");
+  if (!chapter.includes("Sources and go deeper") || !chapter.includes("last checked")) sourceGaps.push(track + " chapter.md");
+}
+if (sourceGaps.length) {
+  console.error(sourceGaps.slice(0, 20).join("\n"));
+  throw new Error("sources " + sourceGaps.length);
+}
 console.log("ok", htmlFiles.length, "html", diagrams.length, "diagrams", animated.length, "animated", flows.length, "flows", sheets.length, "sheets", cards.length, "cards", chartCount, "charts");

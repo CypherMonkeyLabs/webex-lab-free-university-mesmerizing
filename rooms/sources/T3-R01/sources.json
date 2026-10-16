@@ -1,0 +1,336 @@
+{
+  "id": "T3-R01",
+  "title": "WxCC Multi-tenant Overview",
+  "checked": "2026-10",
+  "items": [
+    {
+      "kind": "wikipedia",
+      "label": "Webex (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Webex",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "Webex Help Center",
+      "href": "https://help.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer documentation",
+      "href": "https://developer.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer getting started",
+      "href": "https://developer.webex.com/docs/getting-started",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "community",
+      "label": "Webex community",
+      "href": "https://help.webex.com/community",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "srnd",
+      "label": "Cisco Collaboration design zone",
+      "href": "https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-collaboration/index.html",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3261 SIP: Session Initiation Protocol",
+      "href": "https://www.rfc-editor.org/rfc/rfc3261",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "IANA service name and port number registry",
+      "href": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "Port reference for Webex Calling",
+      "href": "https://help.webex.com/article/b2exve",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Call centre (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Call_centre",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Interactive voice response (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Interactive_voice_response",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "release",
+      "label": "What's new for administrators in Webex Contact Center",
+      "href": "https://help.webex.com/article/nv7abhz",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article utqcm7",
+      "href": "https://help.webex.com/article/utqcm7",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "ciscolive.com global-event 2024 PDF",
+      "href": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/PSOCCT-1014.pdf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "ciscolive.com global-event 2025 PDF",
+      "href": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCCT-2031.pdf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n5595zd",
+      "href": "https://help.webex.com/en-us/article/n5595zd/Webex-Contact-Center-Setup-and-Administration-Guide",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article fs78p5",
+      "href": "https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article np2fdx",
+      "href": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com/webex-contact-center/docs/webex-contact-center",
+      "href": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com/docs/contact-center",
+      "href": "https://developer.webex.com/docs/contact-center",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article ubg5qd",
+      "href": "https://help.webex.com/en-us/article/ubg5qd/Create-queues-and-configure-routing-patterns",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com …/api/v1/search/search",
+      "href": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com/webex-contact-center/docs/api/",
+      "href": "https://developer.webex.com/webex-contact-center/docs/api/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nmhk7ve",
+      "href": "https://help.webex.com/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-integration",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article dyidod",
+      "href": "https://help.webex.com/article/dyidod",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n1lsqvu",
+      "href": "https://help.webex.com/article/n1lsqvu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article ny83tx0",
+      "href": "https://help.webex.com/article/ny83tx0",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n6gaghu",
+      "href": "https://help.webex.com/article/n6gaghu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n9lk3t6",
+      "href": "https://help.webex.com/article/n9lk3t6",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n3v7ldh",
+      "href": "https://help.webex.com/article/n3v7ldh",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article py6u9h",
+      "href": "https://help.webex.com/article/py6u9h",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com bring-your-own-virtual-agent",
+      "href": "https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article av6oo3",
+      "href": "https://help.webex.com/article/av6oo3",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nj0abhbb",
+      "href": "https://help.webex.com/article/nj0abhbb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article lfu88u",
+      "href": "https://help.webex.com/article/lfu88u",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article zqvufbb",
+      "href": "https://help.webex.com/article/zqvufbb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nhvl4hw",
+      "href": "https://help.webex.com/article/nhvl4hw",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nyx7kubb",
+      "href": "https://help.webex.com/article/nyx7kubb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nbedetf",
+      "href": "https://help.webex.com/article/nbedetf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n1ku0vfb",
+      "href": "https://help.webex.com/article/n1ku0vfb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article tajemk",
+      "href": "https://help.webex.com/article/tajemk",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n6m0w9z",
+      "href": "https://help.webex.com/article/n6m0w9z",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article s0qro1",
+      "href": "https://help.webex.com/article/s0qro1",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nvfbjts",
+      "href": "https://help.webex.com/article/nvfbjts",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article oybc4fb",
+      "href": "https://help.webex.com/article/oybc4fb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n0p6xa1",
+      "href": "https://help.webex.com/article/n0p6xa1",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n7s6ed7",
+      "href": "https://help.webex.com/article/n7s6ed7",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    }
+  ]
+}

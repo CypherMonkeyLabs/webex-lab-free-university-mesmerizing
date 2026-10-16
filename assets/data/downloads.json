@@ -1,0 +1,232 @@
+{
+  "groups": [
+    {
+      "id": "bundle",
+      "title": "Offline zip",
+      "items": [
+        {
+          "label": "Offline bundle",
+          "href": "downloads/webex-university-offline.zip",
+          "bytes": 11755843,
+          "kind": "ZIP",
+          "blurb": "The whole site, saved for offline reading."
+        }
+      ]
+    },
+    {
+      "id": "deck",
+      "title": "Card deck",
+      "items": [
+        {
+          "label": "Flashcard deck",
+          "href": "downloads/flashcards-print.pdf",
+          "bytes": 1786013,
+          "kind": "PDF",
+          "blurb": "Printable deck harvested from the rooms."
+        },
+        {
+          "label": "Flashcards JSON",
+          "href": "downloads/flashcards.json",
+          "bytes": 313131,
+          "kind": "JSON",
+          "blurb": "The same cards as data."
+        },
+        {
+          "label": "Printable flashcards",
+          "href": "downloads/flashcards-print.html",
+          "bytes": 268604,
+          "kind": "HTML",
+          "blurb": "The deck as HTML."
+        }
+      ]
+    },
+    {
+      "id": "sheets",
+      "title": "Cheat sheet PDFs",
+      "items": [
+        {
+          "label": "ai agents",
+          "href": "downloads/sheets/ai-agents.pdf",
+          "bytes": 48218,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "analyzer reports",
+          "href": "downloads/sheets/analyzer-reports.pdf",
+          "bytes": 57452,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "call flows",
+          "href": "downloads/sheets/call-flows.pdf",
+          "bytes": 46161,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "careers certs",
+          "href": "downloads/sheets/careers-certs.pdf",
+          "bytes": 57251,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "config checklist",
+          "href": "downloads/sheets/config-checklist.pdf",
+          "bytes": 47804,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "control hub roles",
+          "href": "downloads/sheets/control-hub-roles.pdf",
+          "bytes": 59425,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "crm apis",
+          "href": "downloads/sheets/crm-apis.pdf",
+          "bytes": 47802,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "dedicated instance",
+          "href": "downloads/sheets/dedicated-instance.pdf",
+          "bytes": 57390,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "devices provisioning",
+          "href": "downloads/sheets/devices-provisioning.pdf",
+          "bytes": 57141,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "dial plan",
+          "href": "downloads/sheets/dial-plan.pdf",
+          "bytes": 57138,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "e911",
+          "href": "downloads/sheets/e911.pdf",
+          "bytes": 47842,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "flow designer",
+          "href": "downloads/sheets/flow-designer.pdf",
+          "bytes": 60778,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "glossary",
+          "href": "downloads/sheets/glossary.pdf",
+          "bytes": 47063,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "identity sync",
+          "href": "downloads/sheets/identity-sync.pdf",
+          "bytes": 56827,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "licensing certs",
+          "href": "downloads/sheets/licensing-certs.pdf",
+          "bytes": 47684,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "media nat",
+          "href": "downloads/sheets/media-nat.pdf",
+          "bytes": 57506,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "migration cutover",
+          "href": "downloads/sheets/migration-cutover.pdf",
+          "bytes": 47209,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "number porting",
+          "href": "downloads/sheets/number-porting.pdf",
+          "bytes": 61542,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "ports protocols",
+          "href": "downloads/sheets/ports-protocols.pdf",
+          "bytes": 49532,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "pstn byoc",
+          "href": "downloads/sheets/pstn-byoc.pdf",
+          "bytes": 48281,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "recording qm",
+          "href": "downloads/sheets/recording-qm.pdf",
+          "bytes": 48322,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "security",
+          "href": "downloads/sheets/security.pdf",
+          "bytes": 47186,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "survivability",
+          "href": "downloads/sheets/survivability.pdf",
+          "bytes": 57232,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "troubleshooting",
+          "href": "downloads/sheets/troubleshooting.pdf",
+          "bytes": 47569,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "wfm",
+          "href": "downloads/sheets/wfm.pdf",
+          "bytes": 47163,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        },
+        {
+          "label": "wxcc routing",
+          "href": "downloads/sheets/wxcc-routing.pdf",
+          "bytes": 57456,
+          "kind": "PDF",
+          "blurb": "One-page cheat sheet."
+        }
+      ]
+    }
+  ]
+}

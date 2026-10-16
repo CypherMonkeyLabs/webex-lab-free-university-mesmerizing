@@ -107,7 +107,6 @@ def sheet_footer():
 <a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> ·
 <a href="https://github.com/cipher0x9">github.com/cipher0x9</a> · <a href="https://github.com/CypherMonkeyLabs">github.com/CypherMonkeyLabs</a> ·
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">repo</a> ·
-<a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
 <a href="https://x.com/Cypher0x9">X</a> ·
 <a href="https://cyphermonkeylabs.com">Report a concern</a> ·
@@ -156,7 +155,6 @@ footer a {{ color: #0f766e; }}
 <a href="https://cyphermonkeylabs.com">Labs home</a> ·
 <a href="https://github.com/cipher0x9">GitHub</a> · <a href="https://github.com/CypherMonkeyLabs">Labs org</a> ·
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Repo</a> ·
-<a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
 <a href="https://x.com/Cypher0x9">X</a>
 </nav>
@@ -199,7 +197,6 @@ def page(title, body, effects=False):
 <a href="https://cyphermonkeylabs.com">Labs home</a>
 <a href="https://github.com/cipher0x9">GitHub</a> · <a href="https://github.com/CypherMonkeyLabs">Labs org</a>
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
-<a href="https://dev.to/cyphermonkey">dev.to</a>
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
 <a href="https://x.com/Cypher0x9">X</a>
 <button type="button" data-offline-save>Save for offline</button>

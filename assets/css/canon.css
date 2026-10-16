@@ -84,6 +84,9 @@ body[data-track="T8"] { --accent: var(--t8); --accent-2: #f0abfc; --accent-ink: 
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html[data-font="sm"] body { font-size: 15px; }
+html[data-font="md"] body { font-size: 16.5px; }
+html[data-font="lg"] body { font-size: 19px; }
 body {
   margin: 0;
   min-height: 100vh;

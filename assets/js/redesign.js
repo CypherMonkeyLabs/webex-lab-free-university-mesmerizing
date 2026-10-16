@@ -6,7 +6,7 @@
   function canonTheme(next) {
     if (next === "dark") return "aurora";
     if (next === "light") return "paper";
-    if (next === "aurora" || next === "neon" || next === "sunset" || next === "paper") return next;
+    if (next === "aurora" || next === "neon" || next === "holographic" || next === "cyberpunk" || next === "sunset" || next === "futuristic" || next === "gaming" || next === "paper" || next === "contrast") return next;
     return "aurora";
   }
   function setTheme(next) {
@@ -574,5 +574,71 @@
     }
     if (filter) filter.addEventListener("input", draw);
     draw();
+    mountGlossaryCheck(terms);
+  }
+  function mountGlossaryCheck(terms) {
+    var host = document.getElementById("glossary-check");
+    if (!host) return;
+    var pool = terms.filter(function (item) { return item && item.term && item.def; });
+    if (pool.length < 2) return;
+    var order = pool.slice();
+    for (var i = order.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var swap = order[i];
+      order[i] = order[j];
+      order[j] = swap;
+    }
+    var round = order.slice(0, Math.min(5, order.length));
+    var step = 0;
+    var revealed = false;
+    var seen = 0;
+    function paint() {
+      var item = round[step];
+      host.replaceChildren();
+      var term = document.createElement("p");
+      term.className = "check-term";
+      term.textContent = item.term;
+      var def = document.createElement("p");
+      def.className = "check-def";
+      def.hidden = !revealed;
+      def.textContent = item.def;
+      var actions = document.createElement("div");
+      actions.className = "check-actions";
+      var button = document.createElement("button");
+      button.type = "button";
+      if (!revealed) {
+        button.textContent = "Show the definition";
+        button.addEventListener("click", function () {
+          revealed = true;
+          seen += 1;
+          paint();
+        });
+      } else if (step + 1 < round.length) {
+        button.textContent = "Next term";
+        button.addEventListener("click", function () {
+          step += 1;
+          revealed = false;
+          paint();
+        });
+      } else {
+        button.textContent = "Check five more";
+        button.addEventListener("click", function () { mountGlossaryCheck(terms); });
+      }
+      actions.appendChild(button);
+      if (item.href) {
+        var room = document.createElement("a");
+        room.href = item.href;
+        room.textContent = item.room ? item.room : "Open the room";
+        actions.appendChild(room);
+      }
+      var meta = document.createElement("p");
+      meta.className = "check-meta";
+      meta.textContent = (step + 1) + " of " + round.length + " · " + seen + " revealed";
+      host.appendChild(term);
+      host.appendChild(def);
+      host.appendChild(actions);
+      host.appendChild(meta);
+    }
+    paint();
   }
 })();

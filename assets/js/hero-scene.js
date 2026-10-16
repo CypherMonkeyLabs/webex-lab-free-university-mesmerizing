@@ -10,7 +10,8 @@ var PALETTES = {
   sunset: { fog: 0x1c0a12, a: 0xfb7185, b: 0xf59e0b, c: 0xfde68a, d: 0xc084fc },
   paper: { fog: 0xe8eefc, a: 0x0891b2, b: 0x4f46e5, c: 0xdb2777, d: 0xd97706 },
   futuristic: { fog: 0x07111f, a: 0x38bdf8, b: 0xc4b5fd, c: 0x22d3ee, d: 0xe0f2fe },
-  gaming: { fog: 0x07140c, a: 0x4ade80, b: 0xfacc15, c: 0x22c55e, d: 0xfef08a }
+  gaming: { fog: 0x07140c, a: 0x4ade80, b: 0xfacc15, c: 0x22c55e, d: 0xfef08a },
+  contrast: { fog: 0x000000, a: 0xffe600, b: 0xffffff, c: 0x00e5ff, d: 0xffe600 }
 };
 
 function palette() {
@@ -45,7 +46,8 @@ function bootScene() {
   var hero = canvas && canvas.closest("[data-world]");
   if (!canvas || !hero) return;
   var reduce = motionReduced();
-  if (reduce) {
+  var phone = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  if (reduce || phone) {
     document.documentElement.dataset.hero = "flat";
     canvas.hidden = true;
     return;

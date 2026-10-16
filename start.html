@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk"&&t!=="contrast")t="aurora";document.documentElement.dataset.theme=t;var f=localStorage.getItem("canon-font");if(f==="sm"||f==="md"||f==="lg")document.documentElement.dataset.font=f;var m=localStorage.getItem("canon-motion");if(m==="reduce"||m==="full")document.documentElement.dataset.motion=m;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="Start here · CypherWebex Canon">
@@ -60,6 +60,15 @@
 
 <section id="path">
 <h2>Fundamentals, then the hard edges</h2>
+<ol class="path-rail">
+<li><a href="rooms/T1-R01-control-hub-foundations.html"><span>01</span><b>Fundamentals</b><small>Control Hub, then where troubleshooting history lives.</small></a></li>
+<li><a href="rooms/T2-R02-local-gateway-pstn.html"><span>02</span><b>Calling</b><small>PSTN, dial plan, security, then SIP.</small></a></li>
+<li><a href="rooms/T3-R01-wxcc-multitenant-overview.html"><span>03</span><b>Contact center</b><small>Overview, queues, desktop, Analyzer, flows.</small></a></li>
+<li><a href="rooms/T4-R01-wxcc-enterprise-overview.html"><span>04</span><b>Enterprise</b><small>Which product you are migrating, and what stays marked.</small></a></li>
+<li><a href="rooms/T5-R02-di-architecture-peering.html"><span>05</span><b>Peering and APIs</b><small>Dedicated Instance links, then Connect and webhooks.</small></a></li>
+<li class="path-split"><span>06</span><b>Check</b><small>Reveal five glossary definitions, then read the certification map.</small><a href="glossary.html#check">Glossary check</a><a href="certs.html#map">Certification map</a></li>
+</ol>
+<p>Official pages that resolved on 2026-10-16 are listed on <a href="resources.html">Resources</a>. The table under this rail is the same study order.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Stage</th><th>Rooms that exist</th><th>What you can defend after</th></tr></thead>
 <tbody>

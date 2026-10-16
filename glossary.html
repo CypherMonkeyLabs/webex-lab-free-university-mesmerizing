@@ -7,7 +7,7 @@
 <meta property="og:description" content="CypherWebex Canon. Offline study for Webex Calling, Control Hub, and contact center.">
 <meta property="og:image" content="assets/og-card.svg">
 <title>Glossary · CypherWebex Canon</title>
-<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk"&&t!=="contrast")t="aurora";document.documentElement.dataset.theme=t;var f=localStorage.getItem("canon-font");if(f==="sm"||f==="md"||f==="lg")document.documentElement.dataset.font=f;var m=localStorage.getItem("canon-motion");if(m==="reduce"||m==="full")document.documentElement.dataset.motion=m;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
 <link rel="stylesheet" href="assets/css/canon.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any">
@@ -35,6 +35,11 @@
 <p class="kicker">📖 Terms from the rooms</p>
 <h1>Glossary</h1>
 <p class="lede">Every term collected from the written rooms. Open a term to land in the room that defines it. The citation links live in that room.</p>
+<section id="check" class="glossary-check">
+<h2>Glossary check</h2>
+<p>Five terms already in this glossary. Reveal the definition the room uses, then take the next one. The score stays in this browser.</p>
+<div id="glossary-check" data-glossary-check></div>
+</section>
 <div class="glossary-tools">
 <input id="glossary-q" type="search" placeholder="Filter terms" aria-label="Filter glossary terms" autocomplete="off">
 <div class="search-meta" data-glossary-count>Loading</div>

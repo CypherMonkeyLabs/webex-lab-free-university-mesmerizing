@@ -356,6 +356,7 @@
     var groups = [
       ["Start here", ["home", "start", "resources"]],
       ["Study", ["rooms", "diagrams", "flows", "charts", "ecosystem", "atlas"]],
+      ["Chapters", ["t9", "t10", "t11"]],
       ["Practice", ["play", "quizzes", "cards", "labs", "cases", "interviews"]],
       ["Reference", ["cheat", "downloads", "glossary", "ports", "certs", "careers", "regions", "mastery", "help", "legal"]]
     ];

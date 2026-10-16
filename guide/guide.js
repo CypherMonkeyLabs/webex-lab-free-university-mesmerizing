@@ -53,30 +53,31 @@ panel.innerHTML =
   '<div class="cg-id"><h2 id="cg-title">Canon</h2><p class="cg-status"><i class="cg-dot" aria-hidden="true"></i> In the notes</p></div></div>' +
   '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
   '</header>' +
-  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
-  '<div class="cg-offers" data-offers></div>' +
-  '<details class="cg-more"><summary>Sound, voice, and type size</summary>' +
-  '<div class="cg-tools">' +
-  '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
-  '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
-  '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read</button>' +
-  '</div>' +
-  '<div class="cg-voice" data-voice-row hidden>' +
-  '<label>Voice <select data-voice-name aria-label="Speaking voice"></select></label>' +
-  '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
-  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
-  '<option value="1.08">1.08×</option></select></label>' +
-  '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
-  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
-  '<div class="cg-transport" role="group" aria-label="Playback">' +
-  '<button type="button" data-voice-pause>Pause</button>' +
-  '<button type="button" data-voice-resume>Resume</button>' +
-  '<button type="button" data-voice-stop>Stop</button></div></div>' +
+  '<div class="cg-readbar">' +
   '<div class="cg-along" role="group" aria-label="Read along">' +
   '<button type="button" data-along-start>Read along</button>' +
   '<button type="button" data-along-pause>Pause</button>' +
   '<button type="button" data-along-resume>Resume</button>' +
   '<button type="button" data-along-next>Next section</button></div>' +
+  '<div class="cg-voice cg-voice-live" data-voice-row>' +
+  '<label>Voice <select data-voice-name aria-label="Speaking voice"><option value="">Browser default</option></select></label>' +
+  '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
+  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
+  '<option value="1.08">1.08×</option></select></label>' +
+  '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
+  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
+  '</div></div>' +
+  '<div class="cg-offers" data-offers></div>' +
+  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
+  '<details class="cg-more"><summary>Sound and type size</summary>' +
+  '<div class="cg-tools">' +
+  '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
+  '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
+  '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read chat</button>' +
+  '<button type="button" data-voice-pause>Pause</button>' +
+  '<button type="button" data-voice-resume>Resume</button>' +
+  '<button type="button" data-voice-stop>Stop</button>' +
+  '</div>' +
   '<label class="cg-amb">Sound theme <select data-ambience aria-label="Sound theme">' +
   '<option value="" selected>Off</option><option value="pad">Soft pad</option><option value="rain">Soft rain</option></select></label>' +
   '</details>' +
@@ -114,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=15";
+css.href = guideBase + "guide/guide.css?v=21";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -652,9 +653,9 @@ function applyVoice(on) {
   voicePref.on = !!on;
   saveVoice();
   voiceBtn.setAttribute("aria-pressed", voicePref.on ? "true" : "false");
-  voiceRow.hidden = !voicePref.on;
-  if (!voicePref.on && window.speechSynthesis) window.speechSynthesis.cancel();
-  if (voicePref.on) fillVoices();
+  if (voiceRow) voiceRow.hidden = false;
+  if (!voicePref.on && window.speechSynthesis && !along.active) window.speechSynthesis.cancel();
+  fillVoices();
 }
 
 function voiceRank(voice) {
@@ -672,9 +673,17 @@ function voiceRank(voice) {
 }
 
 function fillVoices() {
-  if (!window.speechSynthesis) return;
+  if (!window.speechSynthesis || !voiceName) return;
   var voices = window.speechSynthesis.getVoices().slice().sort(function (a, b) { return voiceRank(b) - voiceRank(a); });
-  if (!voices.length) return;
+  if (!voices.length) {
+    if (!voiceName.options.length) {
+      var fallback = document.createElement("option");
+      fallback.value = "";
+      fallback.textContent = "Browser default";
+      voiceName.appendChild(fallback);
+    }
+    return;
+  }
   var current = voiceName.value || voicePref.uri;
   voiceName.innerHTML = "";
   voices.forEach(function (voice) {
@@ -905,13 +914,92 @@ function syncMenuHide() {
   host.classList.toggle("is-menu-away", away);
 }
 
+function intersects(a, b, pad) {
+  return a.left < b.right + pad && a.right > b.left - pad && a.top < b.bottom + pad && a.bottom > b.top - pad;
+}
+
+function placeGreeting() {
+  var phone = window.matchMedia("(max-width: 720px)").matches;
+  var monkeyW = phone ? 148 : 200;
+  var monkeyH = phone ? 172 : 236;
+  var cardW = Math.min(phone ? 230 : 420, window.innerWidth - monkeyW - 28);
+  if (!phone) cardW = Math.min(420, window.innerWidth - 24);
+  var cardH = Math.max(112, Math.round(nudge.getBoundingClientRect().height) || 140);
+  var dock = phoneDockHeight();
+  if (phone && dock < 64) dock = 76;
+  if (phone) {
+    var cardFixed = 150;
+    var cardTop = window.innerHeight - dock - cardFixed - 8;
+    var cardWidth = Math.max(168, window.innerWidth - monkeyW - 22);
+    host.dataset.greetLayout = "overlay";
+    host.style.setProperty("--cg-greet-card-left", "10px");
+    host.style.setProperty("--cg-greet-card-top", Math.round(cardTop) + "px");
+    host.style.setProperty("--cg-greet-card-width", Math.round(cardWidth) + "px");
+    host.style.setProperty("--cg-greet-left", Math.round(window.innerWidth - monkeyW - 8) + "px");
+    host.style.setProperty("--cg-greet-top", Math.round(cardTop + cardFixed - monkeyH - 14) + "px");
+    return;
+  }
+  var obstacles = [];
+  document.querySelectorAll(".track-tile, .hud-panel, .hud-stats, .uni-menu a, .hero-actions a, .stat, .world-title, .world-lede, .canon-banner, .topbar, .phone-dock, .hero-live h1").forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.width < 8 || rect.height < 8) return;
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    obstacles.push(rect);
+  });
+  function clearOf(box) {
+    return !obstacles.some(function (ob) { return intersects(box, ob, 8); });
+  }
+  var layout = "stack";
+  var stackW = Math.max(phone ? cardW : Math.min(420, window.innerWidth - 24), monkeyW);
+  var stackCardW = phone ? cardW : Math.min(420, window.innerWidth - 24);
+  var stackH = monkeyH + 8 + cardH;
+  var cols = [12, Math.round((window.innerWidth - stackW) / 2), Math.round(window.innerWidth - stackW - 12)];
+  var chosen = null;
+  var y = window.innerHeight - dock - stackH - 12;
+  var guard = 0;
+  while (!chosen && y > 64 && guard < 24) {
+    var c;
+    for (c = 0; c < cols.length && !chosen; c += 1) {
+      var left = Math.max(8, Math.min(cols[c], window.innerWidth - stackW - 8));
+      var box = { left: left, top: y, right: left + stackW, bottom: y + stackH };
+      if (clearOf(box)) chosen = { left: left, top: y, layout: "stack", cardW: stackCardW, monkeyW: monkeyW, monkeyH: monkeyH };
+    }
+    y -= 28;
+    guard += 1;
+  }
+  if (!chosen) {
+    var rowTop = Math.max(72, window.innerHeight - dock - Math.max(monkeyH, cardH) - 12);
+    var rowCardW = Math.max(160, window.innerWidth - monkeyW - 28);
+    var rowBox = { left: 8, top: rowTop, right: window.innerWidth - 8, bottom: rowTop + Math.max(monkeyH, cardH) };
+    layout = "row";
+    chosen = clearOf(rowBox) ? { left: 8, top: rowTop, layout: "row", cardW: rowCardW, monkeyW: monkeyW, monkeyH: monkeyH } : { left: 8, top: rowTop, layout: "row", cardW: rowCardW, monkeyW: monkeyW, monkeyH: monkeyH };
+  } else layout = "stack";
+  host.dataset.greetLayout = chosen.layout;
+  if (chosen.layout === "row") {
+    host.style.setProperty("--cg-greet-left", Math.round(window.innerWidth - chosen.monkeyW - 10) + "px");
+    host.style.setProperty("--cg-greet-top", Math.round(chosen.top) + "px");
+    host.style.setProperty("--cg-greet-card-left", "10px");
+    host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + Math.max(0, (chosen.monkeyH - cardH) / 2)) + "px");
+    host.style.setProperty("--cg-greet-card-width", Math.round(chosen.cardW) + "px");
+    return;
+  }
+  host.style.setProperty("--cg-greet-left", Math.round(chosen.left + (stackW - chosen.monkeyW) / 2) + "px");
+  host.style.setProperty("--cg-greet-top", Math.round(chosen.top) + "px");
+  host.style.setProperty("--cg-greet-card-left", Math.round(chosen.left + (stackW - chosen.cardW) / 2) + "px");
+  host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + chosen.monkeyH + 8) + "px");
+  host.style.setProperty("--cg-greet-card-width", Math.round(chosen.cardW) + "px");
+}
+
 function place() {
   syncFont();
   syncMenuHide();
   if (host.dataset.dragging === "1") return;
+  if (host.classList.contains("is-greeting")) {
+    placeGreeting();
+    return;
+  }
   var boxes = obstacleBoxes();
   var story = contentBoxes();
-  if (host.classList.contains("is-greeting")) return;
   var size = monkeySize();
   var width = size.width;
   var height = size.height;
@@ -939,9 +1027,11 @@ function place() {
   if (sheet) {
     var dockH = phoneDockHeight();
     host.style.setProperty("--cg-panel-right", "8px");
-    host.style.setProperty("--cg-panel-bottom", (dockH + 8) + "px");
+    if (dockH < 64) dockH = 76;
+    var sheetGap = 12;
+    host.style.setProperty("--cg-panel-bottom", (dockH + sheetGap) + "px");
     host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
-    host.style.setProperty("--cg-panel-max", "min(58vh, calc(100dvh - " + (dockH + 16) + "px))");
+    host.style.setProperty("--cg-panel-max", "min(62vh, calc(100dvh - " + (dockH + sheetGap) + "px))");
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {
@@ -1070,6 +1160,7 @@ function beginGreet() {
   nudge.appendChild(actions);
   nudge.hidden = false;
   place();
+  window.requestAnimationFrame(function () { place(); });
   window.setTimeout(finish, 8000);
 }
 
@@ -1202,7 +1293,10 @@ function collectSections() {
 
 function clearSpokenMark() {
   if (window.CSS && CSS.highlights) CSS.highlights.delete("spoken");
-  document.querySelectorAll(".is-read-along").forEach(function (el) { el.classList.remove("is-read-along"); });
+  document.querySelectorAll(".is-read-along, .is-read-along-head").forEach(function (el) {
+    el.classList.remove("is-read-along");
+    el.classList.remove("is-read-along-head");
+  });
   document.querySelectorAll(".toc a.is-reading, .cg-outline .is-reading").forEach(function (el) { el.classList.remove("is-reading"); });
 }
 
@@ -1261,13 +1355,16 @@ function markSentence(section, sentence) {
 function markSection(section) {
   clearSpokenMark();
   section.el.classList.add("is-read-along");
+  var heading = section.el.querySelector("h1, h2, h3");
+  if (heading) heading.classList.add("is-read-along-head");
   var link = document.querySelector('.toc a[href="#' + section.id + '"]');
   if (link) {
     link.classList.add("is-reading");
     try { link.scrollIntoView({ block: "nearest", inline: "nearest" }); } catch (error) { /* older browsers */ }
   }
   var reduce = document.documentElement.dataset.motion === "reduce" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  try { section.el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); } catch (error) { section.el.scrollIntoView(); }
+  var focus = heading || section.el;
+  try { focus.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); } catch (error) { focus.scrollIntoView(); }
 }
 
 function paintOutline() {
@@ -1643,6 +1740,11 @@ function bind() {
     startAlong(id);
   });
   document.addEventListener("canon-tour-finished", function () { beginGreet(); });
+  window.setTimeout(function () {
+    var tour = "";
+    try { tour = localStorage.getItem("canon-tour-done") || ""; } catch (error) { tour = ""; }
+    if (tour === "1" || tour === "skip") beginGreet();
+  }, 900);
   var menuWatch = new MutationObserver(syncMenuHide);
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });

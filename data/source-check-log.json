@@ -1,0 +1,1373 @@
+{
+  "checked": "2026-10",
+  "results": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3261",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3263",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3264",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3550",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3711",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4566",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4733",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8446",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Session_Initiation_Protocol",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Webex",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cisco_Unified_Communications_Manager",
+      "ok": false,
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Real-time_Transport_Protocol",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Call_centre",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Interactive_voice_response",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/docs/getting-started",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/community",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://community.cisco.com/",
+      "ok": false,
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-collaboration/index.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/solutions/PA/webex-calling/Webex-Calling-PA.html",
+      "ok": false,
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/278bz2",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nv7abhz",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/b2exve",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nkhozs6/Get-Started-with-Control-Hub",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/ajh6iy",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nuylwki/Control-Hub",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/z3elky/Devices-page-in-Control-Hub",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/docs/api/v1/workspace-locations",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/x7l1qbb/Customized-roles-in-Control-Hub",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/zqvufbb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/lfu88u",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/3211gv",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n0rlwxe",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nyx7kubb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/16gmxfb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nbedetf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n1ku0vfb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/760wbi",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ngp4sr8",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/oybc4fb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n3ijtao",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/njvdjf2",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/9dmqgv",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nvzzj7k",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n8iptxg",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ajh6iy",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n0xb944",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/d68vi1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/fs78p5",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/frj1efb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/z84p2bb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/wej14b",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/s0lk5g",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/WBX28754",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/0xvuwab",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/t9xctu/Get-started-with-Local-Gateway",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/jr1i3r",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCOL-2312.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nousk9ab",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.webex.com/content/dam/wbx/us/aag/webex_calling_pstn_options_cm-5770.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/noei0ug",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/BRKCOL-2812.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/jwkbt2",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/n4cprps/Prepare-Your-Environment-for-Webex-Calling",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/utqcm7",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-integration",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/av6oo3",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nj0abhbb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nhvl4hw",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/calling/docs/api/v1/emergency-services-settings",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/calling/docs/call-control",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/admin/docs/api/v1/events/list-events",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nvfbjts",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/mwjlgk",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html",
+      "ok": false,
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n9r1aac",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ndb7w0db",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/1mqb9cb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/o6rfjeb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nzkg083",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nsioxoi",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/tll322",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/0zgzwj",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/5h5d8ab",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/py6u9h",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/tajemk",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n1lsqvu",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/s0qro1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nvvv1zb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n6gaghu",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n0l9q2z",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/dgjdi9",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/w0qmeu",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n5zr85e",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/configuration/guide/ucce_b_serviceability-guide-for-cisco-unified-icm-contact-center-enterprise-release-15-0/product_architecture.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/PSOCCT-1014.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCCT-2031.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/n5595zd/Webex-Contact-Center-Setup-and-Administration-Guide",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/np2fdx/Understand-Routing-and-Queueing-in-Webex-Contact-Center",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-contact-center/docs/webex-contact-center",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/docs/contact-center",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/ubg5qd/Create-queues-and-configure-routing-patterns",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/search/search",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-contact-center/docs/api/",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/dyidod",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ny83tx0",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n9lk3t6",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n3v7ldh",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n6m0w9z",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n0p6xa1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n7s6ed7",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nee1mb6",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/np2fdx",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ubg5qd",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nfrs2adb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nhovcy4",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ewuay1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/t137o3",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n6lmci8",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/mqf72s",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/xceh0k",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/5k9gxcb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/60x9ji",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/2dputx",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/gsmsaeb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n954r0k",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nrelvg3",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/11dtv5",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ioqbvd",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nqpc4zf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/okxzd1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/6m6r3fb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nmzg380",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nmhk7ve",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nyosarq",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ny65x1bb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/configuration/guide/ucce_b_1501_configuration-guide-for-cisco-unified-icm-enterprise-release/ucce_m_1501_routing-a-call.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_scripting-and-media-routing-guide-for-cisco-unified-icm-contact-center-enterprise-release-15_0/common_task.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_scripting-and-media-routing-guide-for-cisco-unified-icm-contact-center-enterprise-release-15_0/network_vrus.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/vxml_server_configuration.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_non-reference-designs_15_0.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/user/guide/ccvp_b_1501_user-guide-for-unified-cvp-vxml-server-and-unified-cvp-call-studio-release/vxml_server_configuration.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nhy3hvdb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-desktop-layout.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.cisco.com/docs/finesse/layoutconfig/",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-third-party-gadgets.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_cisco-finesse-failover-mechanisms.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-system-settings.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_cisco-unified-contact-center-enterprise-reporting-user-guide-release1501/ucce_b_cisco-unified-contact-center-enterprise-1261_chapter_01.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/intelligence_suite/intelligence_suite_150/user/guide/cuic_b_1501_user-guide/cuic_m_1501_reports.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/support/docs/contact-center/unified-intelligence-center/214983-how-to-verify-version-of-stock-cuic-repo.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/2vpf1/Dedicated-Instance-for-Webex-Calling-Base-Configuration",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nefkee9",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n2hzeox",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n68tcpb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/tf6kpq",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nx91ljh",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/0ppivs",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/74f47cb/Dedicated-Instance-Partner-Connect",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/v8jhcv/Dedicated-Instance-Virtual-Connect",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nlh9lde/Responsibility-assignment-matrix",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/ntqlhe1/Partner-operations-guide",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nvfve88/How-to-raise-a-service-request",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nuk5o63/Dedicated-Instance-Tier-1-Support",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/ofrt6u/Activate-inter-op-SIP-trunk-to-Webex-Calling-multi-tenant",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/2vpf1/dedicated-instance-for-webex-calling---base-configuration",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ny65x1bb/Dedicated-Instance-%E2%80%93-customer-deployment-models",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/tf6kpq/Best-practices-in-preparation-and-migration-process-to-Webex-Calling---DedicatedInstance",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/r1ueuw/Pre-migration-assistant-for-Dedicated-Instance-using-Setup-Assist",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/9jw4mab",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/t9xctu",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nb2ve0e",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/4yz2zd",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nw9po3o",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/q0pgpb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/x974bd",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/d2lemv",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n19c71",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/32gfts",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/trouble/12_5_1/cucm_b_troubleshooting-guide-1251/cucm_b_troubleshooting-guide-1251_chapter_0101.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/x974bd",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/d2lemv",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/n19c71",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/r1ueuw",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/q0pgpb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/0hd75db",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n2puc5z",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ncs9r37",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/2dputx",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-Integration",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/ny65x1bb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/nqojzwt",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/01sijg/Cisco-Calling-Plan-number-porting-guidelines-and-policies",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/en-us/article/wsk3m9",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nqojzwt",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/2vpf1",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/ofrt6u",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/jr1i3r",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/support/docs/voice/ip-telephony-voice-over-ip-voip/211306-In-Depth-Explanation-of-Cisco-IOS-and-IO.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/2zx7fg",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/support/docs/voice/call-routing-dial-plans/64020-number-voice-translation-profiles.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/voice/cube/ios-xe/config/ios-xe-book/m_cube-dp.html",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise/unified-border-element-cube/connecting-cisco-webex-calling-to-lumen-sip-trunk-via-a-certificate-based-local-gateway-on-cisco-unified-border-element-cube-v14-5-ios-xe-17-8-1a.pdf",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nt6eyxb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/njwkamr",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/upg0eu",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nve6qddb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/nmzsthj",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/mmcf7p",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/a1gx3h",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-connect/docs/webex-connect",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://developer.webex.com/messaging/docs/webhooks",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/n4hssfr",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/g1gtsdb",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/o6f77s",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    },
+    {
+      "url": "https://help.webex.com/article/2oxxgm",
+      "ok": true,
+      "status": 200,
+      "error": ""
+    }
+  ]
+}

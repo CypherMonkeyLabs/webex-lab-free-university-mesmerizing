@@ -1,5 +1,7 @@
 /** Standalone exports. The disclaimer matches the site footer. No network. */
 
+import { PPTX_PARTS } from "./office-parts.mjs";
+
 export const DISCLAIMER_HTML =
   "<p>This is an <strong>independent, free, learning-only student project</strong>. " +
   "It respects every company and vendor, and every trademark belongs to its owner. " +
@@ -14,14 +16,15 @@ export const BRAND_LINKS =
   '<a href="https://github.com/CypherMonkeyLabs">GitHub organization</a> ' +
   '<a href="https://linktr.ee/cyphermonkey">Linktree</a></nav>';
 
-export function standaloneDocument(title, bodyHtml) {
+export function standaloneDocument(title, bodyHtml, sourcesHtml) {
   var name = String(title || "Export").replace(/[<>]/g, "");
   return "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\">" +
     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
     "<title>" + name + "</title>" +
     "<style>body{font:18px/1.5 system-ui,sans-serif;margin:24px;color:#1b1340;background:#f8f5ff}" +
-    "a{color:#5b21b6}footer{margin-top:32px;padding:16px;border:2px solid #0f766e;border-radius:16px;background:#ecfdf5}" +
-    "</style></head><body><article>" + (bodyHtml || "") + "</article>" +
+    "a{color:#5b21b6}.go-deeper{margin-top:28px;padding:16px;border:2px solid #134e4a;border-radius:16px;background:#f0fdfa;color:#042f2e}" +
+    ".src-confirm{font-weight:800;color:#9a3412}footer{margin-top:32px;padding:16px;border:2px solid #0f766e;border-radius:16px;background:#ecfdf5}" +
+    "</style></head><body><article>" + (bodyHtml || "") + (sourcesHtml || "") + "</article>" +
     '<footer data-canon-footer><p class="footer-brand">CypherMonkey Labs</p>' +
     DISCLAIMER_HTML +
     "<p>© 2026 CypherMonkeyLabs 🐒</p>" +
@@ -29,8 +32,10 @@ export function standaloneDocument(title, bodyHtml) {
     "<p>MIT code. CC BY-NC-SA content.</p></footer></body></html>";
 }
 
-export function markdownDocument(title, body) {
-  return "# " + String(title || "Export") + "\n\n" + String(body || "") + "\n\n---\n\n" +
+export function markdownDocument(title, body, sources) {
+  return "# " + String(title || "Export") + "\n\n" + String(body || "") + "\n\n" +
+    (sources ? String(sources).trim() + "\n\n" : "") +
+    "---\n\n" +
     "Independent, free, learning-only student project. Not affiliated with or endorsed by any vendor. " +
     "Trademarks belong to their owners. Concerns: https://cyphermonkeylabs.com/#contact\n\n" +
     "CypherMonkey Labs\n\n© 2026 CypherMonkeyLabs\n\n" +
@@ -124,65 +129,70 @@ var NOTE = [
   "https://linktr.ee/cyphermonkey"
 ];
 
-function paragraphs(title, body) {
-  var lines = [String(title || "Section")].concat(String(body || "").split(/\n+/), NOTE);
+function paragraphs(title, body, sources) {
+  var lines = [String(title || "Section")].concat(String(body || "").split(/\n+/));
+  if (sources) lines = lines.concat(String(sources).split(/\n+/));
+  lines = lines.concat(NOTE);
   return lines.map(function (line) { return line.replace(/\s+/g, " ").trim(); }).filter(Boolean);
 }
 
-export function docxDocument(title, body) {
-  var bodyXml = paragraphs(title, body).map(function (line) {
-    return "<w:p><w:r><w:t xml:space=\"preserve\">" + xmlEscape(line) + "</w:t></w:r></w:p>";
+export function docxDocument(title, body, sources) {
+  var lines = paragraphs(title, body, sources);
+  var bodyXml = lines.map(function (line, index) {
+    var props = index === 0 ? "<w:rPr><w:b/><w:sz w:val=\"32\"/></w:rPr>" : "";
+    return "<w:p><w:r>" + props + "<w:t xml:space=\"preserve\">" + xmlEscape(line) + "</w:t></w:r></w:p>";
   }).join("");
   var documentXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
     "<w:document xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"><w:body>" +
-    bodyXml + "<w:sectPr/></w:body></w:document>";
+    bodyXml +
+    "<w:sectPr><w:pgSz w:w=\"12240\" w:h=\"15840\"/>" +
+    "<w:pgMar w:top=\"1440\" w:right=\"1440\" w:bottom=\"1440\" w:left=\"1440\" w:header=\"720\" w:footer=\"720\" w:gutter=\"0\"/>" +
+    "</w:sectPr></w:body></w:document>";
+  var stylesXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+    "<w:styles xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\">" +
+    "<w:docDefaults><w:rPrDefault><w:rPr><w:sz w:val=\"22\"/><w:szCs w:val=\"22\"/></w:rPr></w:rPrDefault></w:docDefaults>" +
+    "<w:style w:type=\"paragraph\" w:default=\"1\" w:styleId=\"Normal\"><w:name w:val=\"Normal\"/><w:qFormat/></w:style>" +
+    "</w:styles>";
   return zipStore([
     { name: "[Content_Types].xml", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
       "<Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\">" +
       "<Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/>" +
       "<Default Extension=\"xml\" ContentType=\"application/xml\"/>" +
       "<Override PartName=\"/word/document.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml\"/>" +
+      "<Override PartName=\"/word/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml\"/>" +
       "</Types>" },
     { name: "_rels/.rels", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
       "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">" +
       "<Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"word/document.xml\"/>" +
       "</Relationships>" },
+    { name: "word/_rels/document.xml.rels", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+      "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">" +
+      "<Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles\" Target=\"styles.xml\"/>" +
+      "</Relationships>" },
+    { name: "word/styles.xml", text: stylesXml },
     { name: "word/document.xml", text: documentXml }
   ]);
 }
 
-export function pptxDocument(title, body) {
-  var lines = paragraphs(title, body).slice(0, 12);
-  var shapes = lines.map(function (line, index) {
-    var y = 200000 + index * 420000;
-    return "<p:sp><p:nvSpPr><p:cNvPr id=\"" + (index + 2) + "\" name=\"Line " + (index + 1) + "\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>" +
-      "<p:spPr><a:xfrm><a:off x=\"360000\" y=\"" + y + "\"/><a:ext cx=\"8400000\" cy=\"380000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr>" +
-      "<p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang=\"en-US\" sz=\"" + (index === 0 ? "2800" : "1600") + "\" dirty=\"0\"/>" +
-      "<a:t>" + xmlEscape(line) + "</a:t></a:r></a:p></p:txBody></p:sp>";
+function slideXml(lines) {
+  var paras = lines.map(function (line, index) {
+    var size = index === 0 ? " sz=\"2800\" b=\"1\"" : " sz=\"1600\"";
+    return "<a:p><a:r><a:rPr lang=\"en-US\"" + size + "/><a:t>" + xmlEscape(line) + "</a:t></a:r></a:p>";
   }).join("");
-  var slide = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-    "<p:sld xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\">" +
+  return "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+    "<p:sld xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\">" +
     "<p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id=\"1\" name=\"\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr/>" +
-    shapes + "</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
-  return zipStore([
-    { name: "[Content_Types].xml", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-      "<Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\">" +
-      "<Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/>" +
-      "<Default Extension=\"xml\" ContentType=\"application/xml\"/>" +
-      "<Override PartName=\"/ppt/presentation.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml\"/>" +
-      "<Override PartName=\"/ppt/slides/slide1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.presentationml.slide+xml\"/>" +
-      "</Types>" },
-    { name: "_rels/.rels", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-      "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">" +
-      "<Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"ppt/presentation.xml\"/>" +
-      "</Relationships>" },
-    { name: "ppt/presentation.xml", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-      "<p:presentation xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\">" +
-      "<p:sldIdLst><p:sldId id=\"256\" r:id=\"rId1\"/></p:sldIdLst><p:sldSz cx=\"9144000\" cy=\"6858000\"/></p:presentation>" },
-    { name: "ppt/_rels/presentation.xml.rels", text: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-      "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">" +
-      "<Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide\" Target=\"slides/slide1.xml\"/>" +
-      "</Relationships>" },
-    { name: "ppt/slides/slide1.xml", text: slide }
-  ]);
+    "<p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr>" +
+    "<p:spPr><a:xfrm><a:off x=\"457200\" y=\"365760\"/><a:ext cx=\"8229600\" cy=\"5943600\"/></a:xfrm>" +
+    "<a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/></p:spPr>" +
+    "<p:txBody><a:bodyPr wrap=\"square\"><a:spAutoFit/></a:bodyPr><a:lstStyle/>" +
+    paras +
+    "</p:txBody></p:sp></p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
+}
+
+export function pptxDocument(title, body, sources) {
+  var lines = paragraphs(title, body, sources);
+  var files = PPTX_PARTS.map(function (part) { return { name: part.name, text: part.text }; });
+  files.push({ name: "ppt/slides/slide1.xml", text: slideXml(lines) });
+  return zipStore(files);
 }

@@ -1,0 +1,168 @@
+{
+  "id": "T2-R05",
+  "title": "Call Features",
+  "checked": "2026-10",
+  "items": [
+    {
+      "kind": "wikipedia",
+      "label": "Webex (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Webex",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "Webex Help Center",
+      "href": "https://help.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer documentation",
+      "href": "https://developer.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer getting started",
+      "href": "https://developer.webex.com/docs/getting-started",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "community",
+      "label": "Webex community",
+      "href": "https://help.webex.com/community",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "srnd",
+      "label": "Cisco Collaboration design zone",
+      "href": "https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-collaboration/index.html",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3261 SIP: Session Initiation Protocol",
+      "href": "https://www.rfc-editor.org/rfc/rfc3261",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "IANA service name and port number registry",
+      "href": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "Port reference for Webex Calling",
+      "href": "https://help.webex.com/article/b2exve",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3263 Locating SIP Servers",
+      "href": "https://www.rfc-editor.org/rfc/rfc3263",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3264 An Offer/Answer Model with SDP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3264",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Session Initiation Protocol (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Session_Initiation_Protocol",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3550 RTP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3550",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3711 SRTP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3711",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 4566 SDP",
+      "href": "https://www.rfc-editor.org/rfc/rfc4566",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 4733 RTP payload for DTMF",
+      "href": "https://www.rfc-editor.org/rfc/rfc4733",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Real-time Transport Protocol (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Real-time_Transport_Protocol",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "release",
+      "label": "What's new in Webex Calling",
+      "href": "https://help.webex.com/article/278bz2",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article o6rfjeb",
+      "href": "https://help.webex.com/article/o6rfjeb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nzkg083",
+      "href": "https://help.webex.com/article/nzkg083",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nsioxoi",
+      "href": "https://help.webex.com/article/nsioxoi",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article tll322",
+      "href": "https://help.webex.com/article/tll322",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 0zgzwj",
+      "href": "https://help.webex.com/article/0zgzwj",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    }
+  ]
+}

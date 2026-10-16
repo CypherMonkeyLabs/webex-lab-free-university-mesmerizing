@@ -34,8 +34,6 @@
   var REPO = "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing";
   var GITHUB_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>';
   var WEB_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 12h18M12 3c2.5 2.7 3.8 6.1 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6.1-3.8-9S9.5 5.7 12 3z"/></svg>';
-  var X_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.6 3h3.2l-7 8L19.2 21h-3.3l-5.1-6.2L6.4 21H3.2l7.4-8.5L4.4 3h3.4l4.6 5.7L14.6 3zm-1.1 16.2h1.8L7.6 4.7H5.8l7.7 14.5z"/></svg>';
-  var HF_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFD21F"/><circle cx="8.2" cy="10.2" r="1.35" fill="#1c1917"/><circle cx="15.8" cy="10.2" r="1.35" fill="#1c1917"/><path d="M8 14.7c1.1 1.4 2.4 2.1 4 2.1s2.9-.7 4-2.1" fill="none" stroke="#1c1917" stroke-width="1.4" stroke-linecap="round"/><path d="M4.5 9.3c1.4-1.9 2.5-1.6 3.1.2M19.5 9.3c-1.4-1.9-2.5-1.6-3.1.2" fill="none" stroke="#1c1917" stroke-width="1.3" stroke-linecap="round"/></svg>';
   function socialLink(href, label, icon) {
     return '<a class="site-social-link" href="' + href + '" title="' + label + '" aria-label="' + label + '" target="_blank" rel="noopener noreferrer">' + icon + "</a>";
   }
@@ -229,7 +227,14 @@
       document.documentElement.dataset.theme = theme;
       try { localStorage.setItem("canon-theme", theme); } catch (err) { /* storage off */ }
       document.querySelectorAll("[data-set-theme]").forEach(function (peer) {
-        peer.setAttribute("aria-checked", peer.getAttribute("data-set-theme") === theme ? "true" : "false");
+        var on = peer.getAttribute("data-set-theme") === theme;
+        var role = peer.getAttribute("role");
+        if (role === "menuitemradio" || role === "radio" || role === "switch") {
+          peer.setAttribute("aria-checked", on ? "true" : "false");
+        } else {
+          peer.removeAttribute("aria-checked");
+          peer.setAttribute("aria-pressed", on ? "true" : "false");
+        }
       });
       document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: theme } }));
     });
@@ -240,7 +245,7 @@
       var y = window.scrollY || 0;
       spark.querySelectorAll("[data-depth]").forEach(function (layer) {
         var depth = Number(layer.getAttribute("data-depth")) || 0.3;
-        layer.style.transform = "translateY(" + (y * depth * 0.08).toFixed(1) + "px)";
+        layer.style.transform = "translateY(" + (y * depth * 0.16).toFixed(1) + "px)";
       });
     }, { passive: true });
   }
@@ -352,6 +357,66 @@
   studioJs.type = "module";
   studioJs.src = rootPrefix + "assets/js/studio.js";
   document.body.appendChild(studioJs);
+
+  function motionOff() {
+    if (root.dataset.motion === "reduce") return true;
+    if (root.dataset.motion === "full") return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+  function mountParticles() {
+    var stage = document.querySelector(".world-hero, .stage-banner");
+    if (!stage || stage.querySelector(".mesmer-field")) return;
+    var canvas = document.createElement("canvas");
+    canvas.className = "mesmer-field";
+    canvas.setAttribute("aria-hidden", "true");
+    stage.appendChild(canvas);
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    var dots = [];
+    var i;
+    for (i = 0; i < 28; i += 1) {
+      dots.push({
+        x: Math.random(),
+        y: Math.random(),
+        r: 1.2 + Math.random() * 2.4,
+        s: 0.06 + Math.random() * 0.16,
+        hue: [186, 262, 320, 45][i % 4]
+      });
+    }
+    function resize() {
+      var box = stage.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(box.width));
+      canvas.height = Math.max(1, Math.round(box.height));
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    var frame = 0;
+    function draw() {
+      frame = 0;
+      if (motionOff()) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dots.forEach(function (dot) {
+        dot.y -= dot.s / 500;
+        if (dot.y < 0) dot.y = 1;
+        ctx.beginPath();
+        ctx.fillStyle = "hsla(" + dot.hue + ", 92%, 68%, 0.72)";
+        ctx.arc(dot.x * canvas.width, dot.y * canvas.height, dot.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      frame = window.requestAnimationFrame(draw);
+    }
+    document.addEventListener("canon-motion", function () {
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+      if (!motionOff()) frame = window.requestAnimationFrame(draw);
+      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+    if (!motionOff()) frame = window.requestAnimationFrame(draw);
+  }
+  mountParticles();
 
   document.dispatchEvent(new CustomEvent("university-ready"));
 })();

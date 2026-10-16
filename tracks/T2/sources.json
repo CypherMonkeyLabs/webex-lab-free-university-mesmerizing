@@ -1,0 +1,469 @@
+{
+  "id": "T2",
+  "title": "T2 chapter",
+  "checked": "2026-10",
+  "items": [
+    {
+      "kind": "wikipedia",
+      "label": "Webex (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Webex",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "Webex Help Center",
+      "href": "https://help.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer documentation",
+      "href": "https://developer.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer getting started",
+      "href": "https://developer.webex.com/docs/getting-started",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "community",
+      "label": "Webex community",
+      "href": "https://help.webex.com/community",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "srnd",
+      "label": "Cisco Collaboration design zone",
+      "href": "https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-collaboration/index.html",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3261 SIP: Session Initiation Protocol",
+      "href": "https://www.rfc-editor.org/rfc/rfc3261",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "IANA service name and port number registry",
+      "href": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "Port reference for Webex Calling",
+      "href": "https://help.webex.com/article/b2exve",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3263 Locating SIP Servers",
+      "href": "https://www.rfc-editor.org/rfc/rfc3263",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3264 An Offer/Answer Model with SDP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3264",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Session Initiation Protocol (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Session_Initiation_Protocol",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3550 RTP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3550",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3711 SRTP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3711",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 4566 SDP",
+      "href": "https://www.rfc-editor.org/rfc/rfc4566",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 4733 RTP payload for DTMF",
+      "href": "https://www.rfc-editor.org/rfc/rfc4733",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Real-time Transport Protocol (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Real-time_Transport_Protocol",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "release",
+      "label": "What's new in Webex Calling",
+      "href": "https://help.webex.com/article/278bz2",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nbedetf",
+      "href": "https://help.webex.com/article/nbedetf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 0xvuwab",
+      "href": "https://help.webex.com/article/0xvuwab",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n0xb944",
+      "href": "https://help.webex.com/article/n0xb944",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article njvdjf2",
+      "href": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article t9xctu",
+      "href": "https://help.webex.com/en-us/article/t9xctu/Get-started-with-Local-Gateway",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article jr1i3r",
+      "href": "https://help.webex.com/en-us/article/jr1i3r",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "ciscolive.com global-event 2025 PDF",
+      "href": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2025/pdf/BRKCOL-2312.pdf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nousk9ab",
+      "href": "https://help.webex.com/article/nousk9ab",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "webex.com content dam … cm-5770.pdf",
+      "href": "https://www.webex.com/content/dam/wbx/us/aag/webex_calling_pstn_options_cm-5770.pdf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article noei0ug",
+      "href": "https://help.webex.com/article/noei0ug",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "ciscolive.com global-event 2024 PDF",
+      "href": "https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2024/pdf/BRKCOL-2812.pdf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article jwkbt2",
+      "href": "https://help.webex.com/article/jwkbt2",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n4cprps",
+      "href": "https://help.webex.com/en-us/article/n4cprps/Prepare-Your-Environment-for-Webex-Calling",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article utqcm7",
+      "href": "https://help.webex.com/article/utqcm7",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nmhk7ve",
+      "href": "https://help.webex.com/article/nmhk7ve/Webex-Dedicated-Instance-Contact-Center-integration",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article av6oo3",
+      "href": "https://help.webex.com/article/av6oo3",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nj0abhbb",
+      "href": "https://help.webex.com/article/nj0abhbb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nhvl4hw",
+      "href": "https://help.webex.com/article/nhvl4hw",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com calling emergency-services-settings",
+      "href": "https://developer.webex.com/calling/docs/api/v1/emergency-services-settings",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "developer.webex.com calling call-control",
+      "href": "https://developer.webex.com/calling/docs/call-control",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "list events",
+      "href": "https://developer.webex.com/admin/docs/api/v1/events/list-events",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n1ku0vfb",
+      "href": "https://help.webex.com/article/n1ku0vfb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nvfbjts",
+      "href": "https://help.webex.com/article/nvfbjts",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article mwjlgk",
+      "href": "https://help.webex.com/article/mwjlgk",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article njvdjf2",
+      "href": "https://help.webex.com/article/njvdjf2",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n9r1aac",
+      "href": "https://help.webex.com/article/n9r1aac",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article ndb7w0db",
+      "href": "https://help.webex.com/article/ndb7w0db",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 1mqb9cb",
+      "href": "https://help.webex.com/article/1mqb9cb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article o6rfjeb",
+      "href": "https://help.webex.com/article/o6rfjeb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nzkg083",
+      "href": "https://help.webex.com/article/nzkg083",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nsioxoi",
+      "href": "https://help.webex.com/article/nsioxoi",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article tll322",
+      "href": "https://help.webex.com/article/tll322",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 0zgzwj",
+      "href": "https://help.webex.com/article/0zgzwj",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 8446 TLS 1.3",
+      "href": "https://www.rfc-editor.org/rfc/rfc8446",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 5h5d8ab",
+      "href": "https://help.webex.com/article/5h5d8ab",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article py6u9h",
+      "href": "https://help.webex.com/article/py6u9h",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article tajemk",
+      "href": "https://help.webex.com/article/tajemk",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n1lsqvu",
+      "href": "https://help.webex.com/article/n1lsqvu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article s0qro1",
+      "href": "https://help.webex.com/article/s0qro1",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article nvvv1zb",
+      "href": "https://help.webex.com/article/nvvv1zb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n6gaghu",
+      "href": "https://help.webex.com/article/n6gaghu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n0l9q2z",
+      "href": "https://help.webex.com/article/n0l9q2z",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article d68vi1",
+      "href": "https://help.webex.com/article/d68vi1",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article dgjdi9",
+      "href": "https://help.webex.com/article/dgjdi9",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article w0qmeu",
+      "href": "https://help.webex.com/article/w0qmeu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n0rlwxe",
+      "href": "https://help.webex.com/article/n0rlwxe",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n5zr85e",
+      "href": "https://help.webex.com/article/n5zr85e",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "Product Architecture",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/configuration/guide/ucce_b_serviceability-guide-for-cisco-unified-icm-contact-center-enterprise-release-15-0/product_architecture.html",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    }
+  ]
+}

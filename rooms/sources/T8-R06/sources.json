@@ -1,0 +1,140 @@
+{
+  "id": "T8-R06",
+  "title": "Troubleshooting Methodology",
+  "checked": "2026-10",
+  "items": [
+    {
+      "kind": "wikipedia",
+      "label": "Webex (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Webex",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "Webex Help Center",
+      "href": "https://help.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer documentation",
+      "href": "https://developer.webex.com/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Webex developer getting started",
+      "href": "https://developer.webex.com/docs/getting-started",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "community",
+      "label": "Webex community",
+      "href": "https://help.webex.com/community",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "srnd",
+      "label": "Cisco Collaboration design zone",
+      "href": "https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-collaboration/index.html",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3261 SIP: Session Initiation Protocol",
+      "href": "https://www.rfc-editor.org/rfc/rfc3261",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "IANA service name and port number registry",
+      "href": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "ports",
+      "label": "Port reference for Webex Calling",
+      "href": "https://help.webex.com/article/b2exve",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Call centre (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Call_centre",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Interactive voice response (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Interactive_voice_response",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "release",
+      "label": "What's new for administrators in Webex Contact Center",
+      "href": "https://help.webex.com/article/nv7abhz",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3263 Locating SIP Servers",
+      "href": "https://www.rfc-editor.org/rfc/rfc3263",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "rfc",
+      "label": "RFC 3264 An Offer/Answer Model with SDP",
+      "href": "https://www.rfc-editor.org/rfc/rfc3264",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Session Initiation Protocol (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Session_Initiation_Protocol",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article frj1efb",
+      "href": "https://help.webex.com/article/frj1efb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article n0xb944",
+      "href": "https://help.webex.com/article/n0xb944",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article 2zx7fg",
+      "href": "https://help.webex.com/article/2zx7fg",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendor",
+      "label": "help.webex.com article jr1i3r",
+      "href": "https://help.webex.com/article/jr1i3r",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    }
+  ]
+}

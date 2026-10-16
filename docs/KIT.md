@@ -33,7 +33,7 @@ Contact is the website contact section: https://cyphermonkeylabs.com/#contact
 | `kit/bot/` | Guide, poses, voice, read-along, right-edge dock |
 | `kit/onboarding/` | The six-step tour |
 | `kit/voice/` | Where voice and the sound theme live (inside the bot file) |
-| `kit/course/` | Section export buttons and the learn-in-5 block |
+| `kit/course/` | Section export buttons, Office files, and the sources block |
 
 ## Wire-up
 
@@ -42,6 +42,10 @@ Contact is the website contact section: https://cyphermonkeylabs.com/#contact
 3. Give every page a footer with `data-canon-footer`, the disclaimer, and the three icons. `scripts/polish_html.py` is what this lab uses to stamp that footer.
 4. The bot reads `guide/kb` in this lab. Another lab should point that loader at its own notes. Leave `window.CANON_GUIDE.endpoint` null unless a cloud agent is really configured.
 5. Tour storage key: `canon-tour-done` (`1` finished, `skip` skipped). Greeting key: `cg-greet-done`. Offer keys: `cg-poke-count` (max 3) and `cg-poke-off`.
+
+## Sources and go deeper
+
+Every room keeps `sources.json` (this lab uses `rooms/sources/<room-id>/sources.json`). The same list is rendered at the end of the room, the track chapter (`tracks/<id>/chapter.md`), the cheat sheet (HTML, Markdown, DOCX, PPTX, PDF, SVG, PNG), the flashcard deck, each diagram download page, and each section export (HTML, Markdown, DOCX, PPTX). A row is either a link that was opened, with `last checked YYYY-MM`, or the word confirm and no URL. `node scripts/build-sources.mjs` opens the candidates and rewrites those files. `node scripts/build-sources.mjs --from-log` restamps from `data/source-check-log.json` without opening the network again. Another lab copies `kit/course/sources-render.mjs` and points the script at its own rooms. Do not invent a URL when a page does not open. Other lab sites are separate checkouts; this kit is the copy pattern, not a claim that those sites were edited.
 
 ## Honest limits
 

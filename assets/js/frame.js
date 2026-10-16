@@ -106,6 +106,7 @@
     ["neon", "Neon"],
     ["holographic", "Holographic"],
     ["cyberpunk", "Cyberpunk"],
+    ["futuristic", "Futuristic"],
     ["sunset", "Sunset"],
     ["paper", "Light"],
     ["contrast", "Contrast"]
@@ -241,7 +242,13 @@
   function syncThemeButtons(name) {
     document.querySelectorAll("[data-set-theme]").forEach(function (btn) {
       var on = btn.getAttribute("data-set-theme") === name;
-      btn.setAttribute("aria-checked", on ? "true" : "false");
+      var role = btn.getAttribute("role");
+      if (role === "menuitemradio" || role === "radio" || role === "switch") {
+        btn.setAttribute("aria-checked", on ? "true" : "false");
+      } else {
+        btn.removeAttribute("aria-checked");
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+      }
     });
   }
   function applyTheme(name) {
@@ -296,7 +303,7 @@
       '<p class="a11y-label">Theme</p>' +
       '<div class="a11y-themes" role="group" aria-label="Theme">' +
       THEMES.map(function (item) {
-        return '<button type="button" data-set-theme="' + item[0] + '" aria-checked="' + (theme === item[0] ? "true" : "false") + '">' + item[1] + "</button>";
+        return '<button type="button" data-set-theme="' + item[0] + '" aria-pressed="' + (theme === item[0] ? "true" : "false") + '">' + item[1] + "</button>";
       }).join("") +
       "</div>" +
       '<button type="button" class="a11y-motion" data-motion-toggle aria-pressed="' + (motionOn() ? "true" : "false") + '">Reduce motion</button>' +

@@ -375,6 +375,17 @@ function stampSvg(svg, items) {
   return next.replace("</svg>", '<g id="go-deeper">' + panel + "</g></svg>");
 }
 
+if (process.argv.includes("--diagrams-only")) {
+  const doc = JSON.parse(readFileSync(join(root, "downloads/sources/lab/sources.json"), "utf8"));
+  const dir = join(root, "downloads/diagrams");
+  for (const name of readdirSync(dir).filter((item) => item.endsWith(".svg"))) {
+    const svgPath = join(dir, name);
+    writeFileSync(svgPath, stampSvg(readFileSync(svgPath, "utf8"), doc.items));
+    console.log("diagram svg", name);
+  }
+  process.exit(0);
+}
+
 if (process.argv.includes("--svg-only")) {
   const sheetsDir = join(root, "downloads/sheets");
   for (const name of readdirSync(sheetsDir).filter((item) => item.endsWith(".html"))) {
@@ -531,6 +542,8 @@ const labIds = ["webex", "sip", "rtp", "tls", "cc", "releaseCalling", "releaseWx
 const lab = record("lab", "Webex lab", fromCatalog(labIds));
 writeJson(join(root, "downloads/sources/lab/sources.json"), lab);
 const labBlock = sourcesHtml(lab.items, "../sources/lab/sources.json");
+const downloadsPage = join(root, "downloads.html");
+writeFileSync(downloadsPage, stampBefore(readFileSync(downloadsPage, "utf8"), "</div></main>", sourcesHtml(lab.items, "downloads/sources/lab/sources.json"), false));
 for (const name of readdirSync(join(root, "downloads/diagrams")).filter((item) => item.endsWith(".html"))) {
   const page = join(root, "downloads/diagrams", name);
   writeFileSync(page, stampBefore(readFileSync(page, "utf8"), "<footer", labBlock, true));

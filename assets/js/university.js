@@ -253,12 +253,17 @@
     if ("requestIdleCallback" in window) window.requestIdleCallback(fn, { timeout: 1500 });
     else window.setTimeout(fn, 250);
   }
+  function afterLoad(fn) {
+    function run() { later(fn); }
+    if (document.readyState === "complete") run();
+    else window.addEventListener("load", run, { once: true });
+  }
   function motionReduced() {
     if (root.dataset.motion === "reduce") return true;
     if (root.dataset.motion === "full") return false;
     return reduce;
   }
-  later(function () {
+  afterLoad(function () {
     var confettiScript = document.createElement("script");
     confettiScript.src = fromRoot("vendor/confetti.browser.js");
     confettiScript.async = true;
@@ -269,9 +274,11 @@
     window.confetti({ particleCount: 70, spread: 64, origin: { y: 0.75 } });
   });
 
-  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
-    navigator.serviceWorker.register(fromRoot("sw.js")).catch(function () { /* pages still work */ });
-  }
+  afterLoad(function () {
+    if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+      navigator.serviceWorker.register(fromRoot("sw.js")).catch(function () { /* pages still work */ });
+    }
+  });
 
   if (!document.body.classList.contains("home-world")) {
     document.body.classList.add("canon-world");
@@ -291,7 +298,7 @@
     wowCss.href = rootPrefix + "assets/css/wow.css";
     document.head.appendChild(wowCss);
   }
-  later(function () {
+  afterLoad(function () {
     var i18nJs = document.createElement("script");
     i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
     i18nJs.async = true;
@@ -307,7 +314,7 @@
       document.body.appendChild(iconJs);
     });
   }
-  if (!document.body.classList.contains("home-world") && !motionReduced()) {
+  if (!document.body.classList.contains("home-world") && !motionReduced() && !phone) {
     later(function () {
       var backdropJs = document.createElement("script");
       backdropJs.type = "module";
@@ -336,27 +343,29 @@
   phoneJs.src = rootPrefix + "assets/js/phone-nav.js";
   phoneJs.async = false;
   document.body.appendChild(phoneJs);
-  var wowJs = document.createElement("script");
-  wowJs.src = rootPrefix + "assets/js/wow.js";
-  wowJs.async = false;
-  document.body.appendChild(wowJs);
-  var guideJs = document.createElement("script");
-  guideJs.type = "module";
-  guideJs.src = rootPrefix + "guide/guide.js";
-  document.body.appendChild(guideJs);
+  afterLoad(function () {
+    var wowJs = document.createElement("script");
+    wowJs.src = rootPrefix + "assets/js/wow.js";
+    wowJs.async = true;
+    document.body.appendChild(wowJs);
+    var guideJs = document.createElement("script");
+    guideJs.type = "module";
+    guideJs.src = rootPrefix + "guide/guide.js";
+    document.body.appendChild(guideJs);
+    var onboardJs = document.createElement("script");
+    onboardJs.src = rootPrefix + "assets/js/onboard.js";
+    document.body.appendChild(onboardJs);
+    var studioJs = document.createElement("script");
+    studioJs.type = "module";
+    studioJs.src = rootPrefix + "assets/js/studio.js";
+    document.body.appendChild(studioJs);
+  });
   if (!document.querySelector('link[rel="manifest"]')) {
     var manifestLink = document.createElement("link");
     manifestLink.rel = "manifest";
     manifestLink.href = rootPrefix + "manifest.webmanifest";
     document.head.appendChild(manifestLink);
   }
-  var onboardJs = document.createElement("script");
-  onboardJs.src = rootPrefix + "assets/js/onboard.js";
-  document.body.appendChild(onboardJs);
-  var studioJs = document.createElement("script");
-  studioJs.type = "module";
-  studioJs.src = rootPrefix + "assets/js/studio.js";
-  document.body.appendChild(studioJs);
 
   function motionOff() {
     if (root.dataset.motion === "reduce") return true;
@@ -416,7 +425,7 @@
     });
     if (!motionOff()) frame = window.requestAnimationFrame(draw);
   }
-  mountParticles();
+  if (!phone) mountParticles();
 
   document.dispatchEvent(new CustomEvent("university-ready"));
 })();

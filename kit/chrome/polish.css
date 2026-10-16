@@ -277,21 +277,22 @@ a.glow-ico .menu-ico,
   color: #7c3aed;
 }
 
-/* First-open tour. The dim is the spot's shadow, so the real button stays visible. */
+/* First-open tour. The card does not dim or block the page. Spots only ring the control. */
 .ob-layer { position: fixed; inset: 0; z-index: 80; pointer-events: none; }
 .ob-spot {
   position: fixed; z-index: 80; border-radius: 16px; pointer-events: none;
-  box-shadow: 0 0 0 9999px rgba(12, 6, 32, 0.72), 0 0 0 3px #fde047, 0 0 22px #c4b5fd;
+  box-shadow: 0 0 0 3px #fde047, 0 0 16px #c4b5fd;
 }
 .ob-card {
-  position: fixed; z-index: 82; pointer-events: auto; left: 50%; width: min(440px, calc(100vw - 24px));
-  transform: translateX(-50%); padding: 16px 16px 14px; border-radius: 22px; color: #1b1340;
+  position: fixed; z-index: 82; pointer-events: auto; box-sizing: border-box;
+  left: 8px; width: min(420px, calc(100vw - 16px)); max-height: calc(100dvh - 16px); overflow: auto;
+  transform: none; padding: 16px 16px 14px; border-radius: 22px; color: #1b1340;
   background: #fff; border: 3px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(120deg, #22d3ee, #a78bfa, #f472b6) border-box;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
-.ob-card.is-low { bottom: 24px; }
-.ob-card.is-high { top: 76px; }
+.ob-card.is-low { bottom: calc(var(--dock, 16px) + 8px); }
+.ob-card.is-high { top: 8px; }
 .ob-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #7c3aed; color: #fff; font-weight: 800; }
 .ob-card h2 { margin: 6px 0; font-size: 1.25rem; }
 .ob-card p { margin: 0 0 10px; line-height: 1.45; }
@@ -411,6 +412,11 @@ body.onboard-open .cg-nudge { visibility: hidden; }
 .go-deeper .src-kind { font-weight: 800; margin-right: 6px; }
 .go-deeper .src-checked { color: #134e4a; font-size: 0.92em; }
 .go-deeper .src-confirm { font-weight: 800; color: #9a3412; }
+html.v4-motion .go-deeper.v4-reveal { opacity: 1; transform: none; }
+.go-deeper { padding-right: 228px !important; scroll-margin-bottom: 260px; }
+@media (max-width: 720px) {
+  .go-deeper { padding-right: 84px !important; scroll-margin-bottom: 160px; }
+}
 .mesmer-field {
   position: absolute;
   inset: 0;

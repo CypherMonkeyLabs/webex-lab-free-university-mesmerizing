@@ -20,11 +20,22 @@ body.home-world .world-gl{position:absolute!important;inset:0;width:100%!importa
 body.home-world .world-ui{padding:12px 16px 8px 132px!important}
 body.home-world .topbar{position:relative!important;top:auto!important}
 body.home-world .hud,body.home-world .hud-panel{position:relative!important;inset:auto!important}
-body.home-world .world-title{font-size:2.2rem;line-height:1.05}
+body.home-world{margin:0;background:#f7f4ff;color:#1b1340}
+body.home-world .world-title{font-size:2.2rem;line-height:1.05;color:#1b1340;margin:0}
+body.home-world main>section:not(.world-hero){content-visibility:auto;contain-intrinsic-size:auto 520px}
 body.home-world .hud-sheet{display:block}
 body.home-world .fold-counts{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
 body.home-world .hud-stats{min-height:210px}
 body.home-world .hud-themes,body.home-world .hud-lang,body.home-world .hud-audio,body.home-world .hud-mascot{display:none}
+@media(max-width:960px){
+  body.home-world .v4-app,body.home-world .v4-stage{display:block}
+  body.home-world .v4-sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);transform:translateX(-105%)}
+}
+@media(max-width:720px){
+  body.home-world .world-gl{display:none!important}
+  body.home-world .world-ui,body.home-world .hud{padding:12px 16px 8px!important}
+  body.home-world .v4-stage{padding-left:0!important}
+}
 @media(min-width:721px){
   body.home-world .world-ui{padding:16px 20px 8px 156px!important}
   body.home-world .world-title{font-size:clamp(2.6rem,6vw,5.4rem);line-height:0.92}

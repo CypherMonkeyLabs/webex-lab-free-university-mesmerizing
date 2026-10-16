@@ -754,12 +754,23 @@ html[data-motion="reduce"] .cg-root * {
 .cg-root.is-greeting .cg-nudge button { background: #7c3aed; color: #fff; }
 .cg-root.is-greeting .cg-nudge button:first-of-type { background: #ede9fe; color: #3b0764; }
 
+.cg-root.is-compact,
+.cg-root.is-compact .cg-monkey {
+  width: 56px !important;
+  height: 64px !important;
+}
+
 @media (max-width: 720px) {
   .cg-root.is-greeting {
     width: 100vw !important;
     height: 100vh !important;
   }
   .cg-root, .cg-monkey { width: 156px; height: 184px; }
+  .cg-root.is-compact,
+  .cg-root.is-compact .cg-monkey {
+    width: 56px !important;
+    height: 64px !important;
+  }
   .cg-root.is-greeting .cg-monkey { width: 148px; height: 172px; }
   .cg-root.is-greeting .cg-nudge {
     max-height: 150px;

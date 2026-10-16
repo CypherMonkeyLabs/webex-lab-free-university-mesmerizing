@@ -115,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=21";
+css.href = guideBase + "guide/guide.css?v=22";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -990,6 +990,47 @@ function placeGreeting() {
   host.style.setProperty("--cg-greet-card-width", Math.round(chosen.cardW) + "px");
 }
 
+function visibleBoxes(selector) {
+  var boxes = [];
+  document.querySelectorAll(selector).forEach(function (el) {
+    var rect = onScreen(el);
+    if (rect) boxes.push(rect);
+  });
+  return boxes;
+}
+
+function hitsAny(box, rects) {
+  return rects.some(function (rect) { return overlap(box, rect, 4); });
+}
+
+function settleMonkey(right, bottom, width, height, rows) {
+  function clearAt(nextRight, nextBottom, nextWidth, nextHeight) {
+    var box = boxAt(nextRight, nextBottom, nextWidth, nextHeight);
+    if (box.top < 8 || box.left < 4 || box.right > window.innerWidth - 4) return false;
+    return !hitsAny(box, rows);
+  }
+  if (!rows.length || clearAt(right, bottom, width, height)) {
+    return { right: right, bottom: bottom, width: width, height: height, compact: false };
+  }
+  var sizes = [
+    { width: width, height: height, compact: false },
+    { width: 56, height: 64, compact: true }
+  ];
+  var sizeIndex = 0;
+  var lift = 0;
+  for (sizeIndex = 0; sizeIndex < sizes.length; sizeIndex += 1) {
+    var nextWidth = sizes[sizeIndex].width;
+    var nextHeight = sizes[sizeIndex].height;
+    var limit = window.innerHeight - nextHeight - 8;
+    for (lift = bottom; lift <= limit; lift += 20) {
+      if (clearAt(8, lift, nextWidth, nextHeight)) {
+        return { right: 8, bottom: lift, width: nextWidth, height: nextHeight, compact: sizes[sizeIndex].compact };
+      }
+    }
+  }
+  return { right: 8, bottom: bottom, width: 56, height: 64, compact: true };
+}
+
 function place() {
   syncFont();
   syncMenuHide();
@@ -1015,6 +1056,12 @@ function place() {
       if (lift > bottom) bottom = Math.min(lift, cap);
     }
   }
+  var parked = settleMonkey(right, bottom, width, height, visibleBoxes(".go-deeper li, .go-deeper h2, main h1, h1, .world-title"));
+  right = parked.right;
+  bottom = parked.bottom;
+  width = parked.width;
+  height = parked.height;
+  host.classList.toggle("is-compact", parked.compact);
   var monkeyBox = boxAt(right, bottom, width, height);
   var chosen = { right: right, bottom: bottom, slot: needSlot ? findSlot(monkeyBox, boxes.concat(story)) : null };
   host.style.setProperty("--cg-right", chosen.right + "px");

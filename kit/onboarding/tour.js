@@ -98,23 +98,98 @@
     return found.slice(0, 3);
   }
 
+  function headingBox() {
+    var nodes = document.querySelectorAll("main h1, h1, .world-title");
+    var i;
+    for (i = 0; i < nodes.length; i += 1) {
+      var el = nodes[i];
+      if (el.closest(".ob-card")) continue;
+      var style = getComputedStyle(el);
+      if (style.display === "none" || style.visibility === "hidden") continue;
+      var rect = el.getBoundingClientRect();
+      if (rect.width > 8 && rect.height > 8 && rect.bottom > 0 && rect.top < window.innerHeight) return rect;
+    }
+    return null;
+  }
+
+  function overlaps(a, b) {
+    return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+  }
+
+  function placeCard(card) {
+    var dock = 0;
+    var bar = document.querySelector(".phone-dock");
+    if (bar) {
+      var barStyle = getComputedStyle(bar);
+      var barRect = bar.getBoundingClientRect();
+      if (barStyle.display !== "none" && barRect.height > 20 && barRect.top < window.innerHeight && barRect.bottom > window.innerHeight * 0.5) {
+        dock = Math.ceil(window.innerHeight - barRect.top) + 8;
+      }
+    }
+    var margin = 8;
+    var width = Math.max(160, Math.min(420, window.innerWidth - margin * 2));
+    card.style.boxSizing = "border-box";
+    var left = margin;
+    if (window.innerWidth - width > margin * 2) left = Math.round((window.innerWidth - width) / 2);
+    card.style.left = left + "px";
+    card.style.right = "auto";
+    card.style.width = width + "px";
+    card.style.transform = "none";
+    card.style.maxHeight = Math.max(120, window.innerHeight - dock - margin * 2) + "px";
+    card.style.overflow = "auto";
+    var heading = headingBox();
+    var belowHeading = heading ? Math.ceil(heading.bottom + 10) : margin;
+    var bottom = dock + margin;
+    card.style.top = "auto";
+    card.style.bottom = bottom + "px";
+    var rect = card.getBoundingClientRect();
+    if (rect.top < margin) {
+      card.style.bottom = "auto";
+      card.style.top = margin + "px";
+      card.style.maxHeight = Math.max(120, window.innerHeight - dock - margin * 2) + "px";
+      rect = card.getBoundingClientRect();
+    }
+    if (heading && overlaps(rect, heading)) {
+      var room = window.innerHeight - dock - belowHeading - margin;
+      if (room >= 120) {
+        card.style.top = belowHeading + "px";
+        card.style.bottom = "auto";
+        card.style.maxHeight = room + "px";
+      } else {
+        card.style.top = margin + "px";
+        card.style.bottom = "auto";
+        card.style.maxHeight = Math.max(96, (heading.top > 140 ? heading.top - margin * 2 : window.innerHeight - dock - margin * 2)) + "px";
+      }
+      rect = card.getBoundingClientRect();
+    }
+    if (rect.bottom > window.innerHeight - 4) {
+      card.style.top = "auto";
+      card.style.bottom = margin + "px";
+      card.style.maxHeight = (window.innerHeight - margin * 2) + "px";
+    }
+    if (rect.right > window.innerWidth - 4 || rect.left < 0) {
+      card.style.left = margin + "px";
+      card.style.width = (window.innerWidth - margin * 2) + "px";
+    }
+  }
+
   function paintSpots(nodes) {
     layer.querySelectorAll(".ob-spot").forEach(function (spot) { spot.remove(); });
-    var low = false;
     nodes.forEach(function (el) {
       var rect = el.getBoundingClientRect();
-      if (rect.top > window.innerHeight * 0.55) low = true;
+      var left = Math.max(4, rect.left - 6);
       var spot = document.createElement("div");
       spot.className = "ob-spot";
       spot.style.top = Math.max(4, rect.top - 6) + "px";
-      spot.style.left = Math.max(4, rect.left - 6) + "px";
-      spot.style.width = Math.min(window.innerWidth - 8, rect.width + 12) + "px";
+      spot.style.left = left + "px";
+      spot.style.width = Math.max(12, Math.min(rect.width + 12, window.innerWidth - left - 4)) + "px";
       spot.style.height = rect.height + 12 + "px";
       layer.appendChild(spot);
     });
     var card = layer.querySelector(".ob-card");
-    card.classList.toggle("is-high", low);
-    card.classList.toggle("is-low", !low);
+    card.classList.remove("is-high");
+    card.classList.add("is-low");
+    placeCard(card);
   }
 
   function paint() {
@@ -147,8 +222,7 @@
     document.body.classList.add("onboard-open");
     layer = document.createElement("div");
     layer.className = "ob-layer" + (reduce ? " is-still" : "");
-    layer.setAttribute("role", "dialog");
-    layer.setAttribute("aria-modal", "true");
+    layer.setAttribute("role", "region");
     layer.setAttribute("aria-labelledby", "ob-title");
     layer.innerHTML =
       '<div class="ob-card"><p class="ob-count"><span class="ob-num" data-ob-num>1</span> <span data-ob-count></span></p><h2 id="ob-title"></h2><p class="ob-body"></p>' +

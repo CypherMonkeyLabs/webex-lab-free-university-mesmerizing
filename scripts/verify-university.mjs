@@ -74,6 +74,26 @@ for (const bit of ["Diagrams", "Cheat Codes", "Careers", "CC BY-NC-SA"]) {
   if (!archive.includes(bit)) throw new Error("archive missing " + bit);
 }
 if (cards.some((card) => !card.front || !card.back || !card.source)) throw new Error("empty flashcard");
+function walkArchive(dir, out) {
+  for (const name of readdirSync(dir)) {
+    if (name === "vendor" || name === "node_modules") continue;
+    const path = join(dir, name);
+    const stat = statSync(path);
+    if (stat.isDirectory()) walkArchive(path, out);
+    else if (name.endsWith(".html")) out.push(path);
+  }
+  return out;
+}
+const archiveHtml = walkArchive(join(root, "archive"), []);
+for (const file of archiveHtml) {
+  const text = readFileSync(file, "utf8");
+  if (/https:\/\/x\.com|huggingface\.co|linkedin\.com|github\.com\/cipher0x9|dev\.to/i.test(text)) {
+    throw new Error("archive brand link " + file);
+  }
+}
+for (const bit of ["https://cyphermonkeylabs.com", "https://github.com/CypherMonkeyLabs", "https://linktr.ee/cyphermonkey"]) {
+  if (!archive.includes(bit)) throw new Error("archive missing " + bit);
+}
 
 const uni = readFileSync(join(root, "assets/js/university.js"), "utf8");
 for (const bit of ["cyphermonkeylabs.com", "CC BY-NC-SA", "Report a concern", "guide-mount"]) {
@@ -193,6 +213,12 @@ for (const name of readdirSync(join(root, "downloads/sheets"))) {
 for (const track of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
   const chapter = readFileSync(join(root, "tracks", track, "chapter.md"), "utf8");
   if (!chapter.includes("Sources and go deeper") || !chapter.includes("last checked")) sourceGaps.push(track + " chapter.md");
+}
+if (!readFileSync(join(root, "downloads.html"), "utf8").includes("Sources and go deeper")) sourceGaps.push("downloads.html");
+for (const name of readdirSync(join(root, "downloads/diagrams")).filter((item) => item.endsWith(".svg"))) {
+  const svg = readFileSync(join(root, "downloads/diagrams", name), "utf8");
+  if (!svg.includes("Sources and go deeper") || !svg.includes("last checked")) sourceGaps.push("diagram svg " + name);
+  if (/status="confirm"[^>]*href=|href="https?:[^"]*"[^>]*>[^<]*confirm/.test(svg)) sourceGaps.push("diagram confirm url " + name);
 }
 if (sourceGaps.length) {
   console.error(sourceGaps.slice(0, 20).join("\n"));

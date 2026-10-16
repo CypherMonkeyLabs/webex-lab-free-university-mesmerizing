@@ -524,6 +524,8 @@ button.ghost:hover, a.ghost:hover { border-color: var(--accent); box-shadow: var
   box-shadow: var(--shadow);
   overflow: hidden;
   border-top: 6px solid var(--card, var(--accent));
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
 }
 .track-card.dim { opacity: 0.4; }
 .track-card header { padding: 14px 16px 0; }

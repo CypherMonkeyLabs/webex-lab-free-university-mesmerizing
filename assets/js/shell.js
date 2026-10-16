@@ -1110,7 +1110,7 @@
       }, { passive: true });
     }
     if ("IntersectionObserver" in window) {
-      var revealNodes = document.querySelectorAll("main section:not(.world-hero), .track-tile, .stat, .plan-item, .atlas-card, .chart-card, .career-grid article");
+      var revealNodes = document.querySelectorAll("main section:not(.world-hero):not(.go-deeper), .track-tile, .stat, .plan-item, .atlas-card, .chart-card, .career-grid article");
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;

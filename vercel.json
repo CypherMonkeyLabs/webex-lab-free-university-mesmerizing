@@ -1,1 +1,21 @@
-{"cleanUrls": false, "headers": [{"source": "/cites/(.*)\\.md", "headers": [{"key": "Content-Type", "value": "text/plain; charset=utf-8"}]}]}
+{
+  "cleanUrls": false,
+  "headers": [
+    {
+      "source": "/cites/(.*)\\.md",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/vendor/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/guide/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ]
+}

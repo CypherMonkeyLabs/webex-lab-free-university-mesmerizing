@@ -114,3 +114,35 @@ test("teach me opens a lesson for that room", () => {
   assert.match(out.reply.text, /Local Gateway|T2-R02/);
   assert.match(out.reply.text, /From /);
 });
+
+test("the 1-hour course walks tracks and checkpoints from the notes", () => {
+  const started = guide.route("Start the 1-hour course", blankSession(), { page: "index.html" });
+  assert.equal(started.reply.kind, "course");
+  assert.match(started.reply.text, /1-hour course/);
+  assert.match(started.reply.text, /8 tracks|tracks/);
+  assert.ok(started.reply.follow);
+  assert.match(started.reply.follow.text, /From /);
+  assert.match(started.reply.follow.text, /Track 1 of /);
+  const seen = new Set([started.reply.follow.text]);
+  let session = started.session;
+  let checks = 0;
+  for (let step = 0; step < 12; step += 1) {
+    const beat = guide.route("Next", session, { page: "index.html" });
+    assert.equal(beat.reply.kind, "course");
+    assert.notEqual(beat.reply.text, "");
+    if (beat.reply.chips && beat.reply.chips[0] !== "Next" && beat.reply.chips[0] !== "My progress") {
+      const choice = beat.reply.chips[0];
+      const graded = guide.route(choice, beat.session, { page: "index.html" });
+      assert.match(graded.reply.text, /From /);
+      assert.match(graded.reply.text, /That's the one in the notes|Not this one/);
+      session = graded.session;
+      checks += 1;
+      break;
+    }
+    assert.equal(seen.has(beat.reply.text), false);
+    seen.add(beat.reply.text);
+    session = beat.session;
+  }
+  assert.ok(checks >= 1);
+  assert.ok(seen.size >= 3);
+});

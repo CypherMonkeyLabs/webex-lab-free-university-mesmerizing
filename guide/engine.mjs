@@ -26,7 +26,8 @@ export function blankSession() {
     quiz: null,
     card: null,
     lesson: null,
-    game: null
+    game: null,
+    course: null
   };
 }
 
@@ -124,6 +125,48 @@ export function createGuide(kb, options) {
   const curriculum = kb.curriculum || [];
   const games = kb.games || { ports: [], rooms: [] };
   const intents = kb.intents || [];
+  const quizzesByRoom = new Map();
+  quizzes.forEach((quiz) => {
+    if (quiz && quiz.room && !quizzesByRoom.has(quiz.room)) quizzesByRoom.set(quiz.room, quiz);
+  });
+  const trackIds = [];
+  curriculum.forEach((item) => {
+    if (item && trackIds.indexOf(item.track) === -1) trackIds.push(item.track);
+  });
+  const courseBeats = [];
+  curriculum.forEach((item, roomIndex) => {
+    const lesson = lessons.find((entry) => entry.id === item.room);
+    const reads = ((lesson && lesson.steps) || []).filter((step) => step && step.text && !(step.choices && step.choices.length));
+    const notes = (reads.length ? reads : [{ title: item.title, text: item.title, href: item.href }]).slice(0, 3);
+    notes.forEach((step) => {
+      courseBeats.push({
+        kind: "note",
+        room: item.room,
+        roomTitle: item.title,
+        track: item.track,
+        trackName: item.trackName || item.track,
+        roomIndex: roomIndex,
+        href: step.href || item.href,
+        text: (step.title ? step.title + ". " : "") + step.text
+      });
+    });
+    const quiz = quizzesByRoom.get(item.room);
+    if (quiz && quiz.choices && quiz.choices.length) {
+      courseBeats.push({
+        kind: "check",
+        room: item.room,
+        roomTitle: item.title,
+        track: item.track,
+        trackName: item.trackName || item.track,
+        roomIndex: roomIndex,
+        href: quiz.href || item.href,
+        question: quiz.question,
+        choices: quiz.choices,
+        answer: quiz.answer,
+        why: quiz.why || ""
+      });
+    }
+  });
   const docs = (kb.facts || []).map((fact) => ({
     ...fact,
     keywords: fact.keywords || [],
@@ -162,13 +205,12 @@ export function createGuide(kb, options) {
   }
 
   function defaultChips(session, context) {
-    const chips = [];
-    if (session.lastRoom) chips.push("Tell me more");
-    chips.push("How do I use this?");
+    const chips = ["Start the 1-hour course", "How do I use this?"];
     if (context && context.room) chips.push("Tour this room");
-    else chips.push("Tour this page");
-    chips.push("Quiz me", "Flashcards", "Teach me", "My progress");
-    return chips.slice(0, 6);
+    else chips.push("Quiz me");
+    chips.push("Flashcards", "My progress");
+    if (session.lastRoom) chips.push("Tell me more");
+    return chips;
   }
 
   function pack(session, reply, context) {
@@ -258,7 +300,12 @@ export function createGuide(kb, options) {
   }
 
   function isStop(message) {
-    return /^(stop|cancel|enough|never mind|nevermind|exit|quit|stop quiz|stop cards|stop lesson|stop game)$/.test(norm(message));
+    return /^(stop|cancel|enough|never mind|nevermind|exit|quit|stop quiz|stop cards|stop lesson|stop game|stop course)$/.test(norm(message));
+  }
+
+  function isCourseAsk(message) {
+    const q = norm(message);
+    return q === "start the 1-hour course" || q === "start the course" || q.indexOf("1-hour course") !== -1 || q.indexOf("1 hour course") !== -1 || q.indexOf("one hour course") !== -1;
   }
 
   function choiceIndex(message, choices) {
@@ -676,8 +723,126 @@ export function createGuide(kb, options) {
     return presentGame(session, context, item);
   }
 
+  function courseWhere(beat) {
+    const trackNo = trackIds.indexOf(beat.track) + 1;
+    return "Track " + trackNo + " of " + trackIds.length + ", " + beat.trackName + ". Room " + (beat.roomIndex + 1) + " of " + curriculum.length + ".";
+  }
+
+  function presentCourse(session, context, lead) {
+    const beat = courseBeats[session.course.index];
+    if (!beat) {
+      session.mode = null;
+      session.course = null;
+      return pack(session, {
+        kind: "course",
+        done: true,
+        text: "That's the full course. Every track has a checkpoint behind you.",
+        chips: ["My progress", "Quiz me", "Flashcards"]
+      }, context);
+    }
+    if (beat.room && session.covered.indexOf(beat.room) === -1) session.covered.push(beat.room);
+    session.lastRoom = beat.room || session.lastRoom;
+    const cite = beat.roomTitle + " (" + beat.room + ")";
+    const prefix = (lead ? lead + " " : "") + courseWhere(beat) + " ";
+    if (beat.kind === "check") {
+      session.course.phase = "check";
+      return pack(session, {
+        kind: "course",
+        text: prefix + "Checkpoint. " + beat.question,
+        href: beat.href,
+        links: [{ href: beat.href, title: cite }],
+        chips: beat.choices.slice(),
+        extraChips: ["Stop course"]
+      }, context);
+    }
+    session.course.phase = "read";
+    return pack(session, {
+      kind: "course",
+      text: prefix + beat.text + "\n\nFrom " + cite + ".",
+      href: beat.href,
+      links: [{ href: beat.href, title: cite }],
+      chips: ["Next"],
+      extraChips: ["Stop course"]
+    }, context);
+  }
+
+  function advanceCourse(session, context, lead) {
+    const prev = courseBeats[session.course.index];
+    session.course.index += 1;
+    const next = courseBeats[session.course.index];
+    let extra = lead || "";
+    if (prev && next && prev.room !== next.room && prev.kind === "check") {
+      extra += "Room checkpoint clear for " + prev.roomTitle + ". ";
+    }
+    if (prev && next && prev.track !== next.track) {
+      const done = trackIds.indexOf(next.track);
+      extra += "Track checkpoint. " + prev.trackName + " is complete (" + done + " of " + trackIds.length + " tracks). Next track: " + next.trackName + ". ";
+    }
+    if (prev && !next) {
+      extra += "Track checkpoint. " + prev.trackName + " is complete (" + trackIds.length + " of " + trackIds.length + " tracks). ";
+    }
+    return presentCourse(session, context, extra.trim());
+  }
+
+  function startCourse(session, context) {
+    if (!courseBeats.length) return fallback(session, context, null);
+    session.mode = "course";
+    session.quiz = null;
+    session.card = null;
+    session.lesson = null;
+    session.game = null;
+    session.course = { index: 0, phase: "read" };
+    const shown = presentCourse(session, context, "");
+    const intro = "This is the 1-hour course. " + curriculum.length + " rooms across " + trackIds.length + " tracks. Each room is a note from that room, then a checkpoint, and each track ends with a track checkpoint. Stay with it and there is more than an hour of notes. I only repeat what is written.";
+    shown.reply.follow = {
+      kind: "course",
+      text: shown.reply.text,
+      chips: shown.reply.chips,
+      extraChips: shown.reply.extraChips,
+      links: shown.reply.links,
+      href: shown.reply.href
+    };
+    shown.reply.text = intro;
+    shown.reply.chips = ["Next"];
+    return shown;
+  }
+
   function handleMode(session, context, message) {
     const q = norm(message);
+    if (isCourseAsk(message)) {
+      session.mode = null;
+      session.quiz = null;
+      session.card = null;
+      session.lesson = null;
+      session.game = null;
+      session.course = null;
+      return null;
+    }
+    if (session.mode === "course" && session.course) {
+      const beat = courseBeats[session.course.index];
+      if (session.course.phase === "check" && beat && beat.choices) {
+        const index = choiceIndex(message, beat.choices);
+        if (index !== -1) {
+          const correct = index === beat.answer;
+          if (correct) session.quizCorrect += 1;
+          session.quizAsked += 1;
+          const cite = beat.roomTitle + " (" + beat.room + ")";
+          const note = (correct ? "That's the one in the notes. " : "Not this one. ") + beat.why + "\n\nFrom " + cite + ".";
+          return advanceCourse(session, context, note);
+        }
+        if (!matchIntent(message)) {
+          return pack(session, {
+            kind: "course",
+            text: "Pick one of the choices. " + beat.question,
+            chips: beat.choices.slice(),
+            extraChips: ["Stop course"],
+            href: beat.href
+          }, context);
+        }
+      }
+      if (/^(next|continue|checkpoint|go on|keep going)$/.test(q)) return advanceCourse(session, context, "");
+      if (!matchIntent(message)) return presentCourse(session, context, "Still on this step.");
+    }
     if (session.mode === "quiz" && session.quiz) {
       const index = choiceIndex(message, session.quiz.items[session.quiz.index].choices);
       if (index !== -1) return gradeQuiz(session, context, index);
@@ -797,6 +962,7 @@ export function createGuide(kb, options) {
       const handled = handleMode(session, ctx, text);
       if (handled) return handled;
     }
+    if (isCourseAsk(text)) return startCourse(session, ctx);
     const intent = matchIntent(text);
     if (intent === "identity") {
       return pack(session, {

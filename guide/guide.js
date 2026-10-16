@@ -44,20 +44,27 @@ panel.setAttribute("role", "dialog");
 panel.setAttribute("aria-modal", "true");
 panel.setAttribute("aria-labelledby", "cg-title");
 panel.innerHTML =
-  '<div class="cg-bar"><h2 id="cg-title">Study notes</h2>' +
+  '<header class="cg-bar">' +
+  '<div class="cg-who"><span class="cg-avatar" aria-hidden="true">' + avatarSvg() + '</span>' +
+  '<div class="cg-id"><h2 id="cg-title">Canon</h2><p class="cg-status"><i class="cg-dot" aria-hidden="true"></i> In the notes</p></div></div>' +
+  '<div class="cg-tools">' +
+  '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
+  '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
   '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read</button>' +
-  '<button type="button" class="cg-close" data-close>Close</button></div>' +
+  '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
+  '</div></header>' +
   '<div class="cg-voice" data-voice-row hidden>' +
   '<label>Voice <select data-voice-name aria-label="Speaking voice"></select></label>' +
   '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
   '<option value="0.85">0.85×</option><option value="1" selected>1×</option>' +
   '<option value="1.15">1.15×</option><option value="1.3">1.3×</option></select></label></div>' +
-  '<div class="cg-log"></div>' +
+  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
   '<div class="cg-live" aria-live="polite" aria-atomic="true"></div>' +
   '<div class="cg-chips" role="group" aria-label="Quick replies"></div>' +
   '<form class="cg-form"><button type="button" class="cg-mic" data-mic hidden aria-label="Voice input">Mic</button>' +
   '<input type="text" aria-label="Ask about this page" placeholder="Ask about this page" autocomplete="off">' +
-  '<button type="submit">Send</button></form>';
+  '<button type="submit">Send</button></form>' +
+  '<span class="cg-pointer" aria-hidden="true"></span>';
 
 var tourLayer = document.createElement("div");
 tourLayer.className = "cg-tour";
@@ -93,6 +100,7 @@ var micBtn = panel.querySelector("[data-mic]");
 var tourState = null;
 var targetEl = null;
 var greetedPath = "";
+var fontScale = loadFontScale();
 var voicePref = loadVoice();
 var recognition = null;
 
@@ -130,8 +138,29 @@ function motionReduced() {
   return document.documentElement.dataset.motion === "reduce";
 }
 
+function loadFontScale() {
+  try {
+    var saved = Number(sessionStorage.getItem("cg-font"));
+    if (saved >= 0.85 && saved <= 1.4) return saved;
+  } catch (error) { /* keep the page size */ }
+  return 1;
+}
+
 function syncFont() {
-  host.style.fontSize = getComputedStyle(document.body).fontSize;
+  var base = parseFloat(getComputedStyle(document.body).fontSize) || 16.5;
+  host.style.fontSize = (base * fontScale) + "px";
+}
+
+function stepFont(dir) {
+  var steps = [0.9, 1, 1.12, 1.28];
+  var index = 0;
+  steps.forEach(function (step, at) {
+    if (Math.abs(step - fontScale) < 0.05) index = at;
+  });
+  index = Math.max(0, Math.min(steps.length - 1, index + dir));
+  fontScale = steps[index];
+  try { sessionStorage.setItem("cg-font", String(fontScale)); } catch (error) { /* page size still applies */ }
+  syncFont();
 }
 
 function fileOf(href) {
@@ -398,19 +427,9 @@ function say(text, links, who) {
   typing.innerHTML = "<i></i><i></i><i></i>";
   body.appendChild(typing);
   window.setTimeout(function () {
-    body.textContent = "";
-    var i = 0;
-    var timer = window.setInterval(function () {
-      i += Math.max(2, Math.round(text.length / 40));
-      if (i > text.length) i = text.length;
-      body.textContent = text.slice(0, i);
-      scrollLog();
-      if (i >= text.length) {
-        window.clearInterval(timer);
-        finish();
-      }
-    }, 16);
-  }, 180);
+    body.textContent = text;
+    finish();
+  }, 220);
 }
 
 function setChips(labels, extra) {
@@ -418,7 +437,7 @@ function setChips(labels, extra) {
   (labels || []).concat(extra || []).forEach(function (label) {
     var button = document.createElement("button");
     button.type = "button";
-    button.className = "cg-chip";
+    button.className = "cg-chip" + (label === "Start the 1-hour course" ? " is-course" : "");
     button.textContent = label;
     button.addEventListener("click", function () {
       submitText(label);
@@ -473,14 +492,15 @@ function openPanel() {
     var room = document.body.getAttribute("data-room-title");
     var title = document.title.replace(/\s*[·|].*$/, "");
     var line = room
-      ? "You're in " + room + ". I can walk this room with you. I only repeat the notes."
-      : "You're on " + title + ". Ask how to use this page. I only repeat the notes.";
+      ? "You're in " + room + ". I can walk this room with you. I only repeat the notes. Start the 1-hour course when you want every track, with a checkpoint at the end of each one."
+      : "You're on " + title + ". Ask how to use this page. I only repeat the notes. Start the 1-hour course when you want every track, with a checkpoint at the end of each one.";
     if (session.covered && session.covered.length) {
       line += " So far this session we've touched " + session.covered.length + " room" + (session.covered.length === 1 ? "" : "s") + ".";
     }
     say(line, [], "bot");
-    setChips(["How do I use this?", "Quiz me", "Flashcards", "Teach me", "Daily challenge", "My progress"]);
+    setChips(["Start the 1-hour course", "How do I use this?", "Quiz me", "Flashcards", "My progress"]);
   }
+  host.classList.toggle("is-open", true);
   input.focus();
   place();
 }
@@ -488,8 +508,11 @@ function openPanel() {
 function closePanel() {
   if (panel.hidden) return;
   panel.hidden = true;
+  host.classList.remove("is-open");
+  host.classList.remove("is-sheet");
   monkey.setAttribute("aria-expanded", "false");
   monkey.focus();
+  place();
 }
 
 function boop() {
@@ -620,7 +643,7 @@ function fits(box, boxes) {
 }
 
 function findSlot(monkeyBox, boxes) {
-  var heights = [Math.min(520, Math.round(window.innerHeight * 0.62)), 420, 360, 300, 260, 220, 180, 156];
+  var heights = [480, 440, 420, 380];
   var anchors = [
     { bottom: window.innerHeight - (monkeyBox.top - 18), right: window.innerWidth - monkeyBox.right },
     { bottom: window.innerHeight - monkeyBox.bottom, right: window.innerWidth - (monkeyBox.left - 16) }
@@ -639,16 +662,26 @@ function findSlot(monkeyBox, boxes) {
         var slot = boxAt(right, bottom, width, height);
         if (overlap(slot, monkeyBox, 2)) continue;
         if (!fits(slot, boxes)) continue;
-        return { right: right, bottom: bottom, width: width, height: height };
+        return { right: right, bottom: bottom, width: width, height: height, side: anchorIndex === 0 ? "above" : "beside" };
       }
     }
   }
   return null;
 }
 
+function contentBoxes() {
+  var boxes = [];
+  document.querySelectorAll(".world-title, .world-lede, .world-kicker, .hero-copy, .hero-actions, main h1").forEach(function (el) {
+    var rect = onScreen(el);
+    if (rect) boxes.push(rect);
+  });
+  return boxes;
+}
+
 function place() {
   syncFont();
   var boxes = obstacleBoxes();
+  var story = contentBoxes();
   var width = 104;
   var height = 120;
   var needSlot = !panel.hidden || !nudge.hidden;
@@ -666,7 +699,7 @@ function place() {
         chosen = { right: right, bottom: bottom, slot: null };
         break;
       }
-      var slot = findSlot(monkeyBox, boxes);
+      var slot = findSlot(monkeyBox, boxes.concat(story));
       if (slot) chosen = { right: right, bottom: bottom, slot: slot };
     }
   }
@@ -674,18 +707,40 @@ function place() {
   if (!chosen) chosen = { right: 12, bottom: 12, slot: null };
   host.style.setProperty("--cg-right", chosen.right + "px");
   host.style.setProperty("--cg-bottom", chosen.bottom + "px");
-  if (chosen.slot) {
+  var sheet = window.innerWidth <= 720 && !panel.hidden;
+  host.classList.toggle("is-sheet", sheet);
+  host.classList.toggle("is-open", !panel.hidden);
+  if (sheet) {
+    var panelBottom = chosen.bottom + height + 12;
+    var topLimit = 64;
+    var bar = document.querySelector(".topbar");
+    if (bar) {
+      var barBox = bar.getBoundingClientRect();
+      if (barBox.height > 20 && barBox.bottom > 0 && barBox.top < 160) topLimit = Math.round(barBox.bottom + 8);
+    }
+    var panelMax = Math.max(280, window.innerHeight - panelBottom - topLimit);
+    host.style.setProperty("--cg-panel-right", "0px");
+    host.style.setProperty("--cg-panel-bottom", panelBottom + "px");
+    host.style.setProperty("--cg-panel-width", "100vw");
+    host.style.setProperty("--cg-panel-max", panelMax + "px");
+    panel.classList.add("is-above");
+    panel.classList.remove("is-beside");
+  } else if (chosen.slot) {
     host.style.setProperty("--cg-panel-right", chosen.slot.right + "px");
     host.style.setProperty("--cg-panel-bottom", chosen.slot.bottom + "px");
     host.style.setProperty("--cg-panel-width", chosen.slot.width + "px");
     host.style.setProperty("--cg-panel-max", chosen.slot.height + "px");
     host.style.setProperty("--cg-nudge-right", chosen.slot.right + "px");
     host.style.setProperty("--cg-nudge-bottom", chosen.slot.bottom + "px");
+    panel.classList.toggle("is-above", chosen.slot.side !== "beside");
+    panel.classList.toggle("is-beside", chosen.slot.side === "beside");
   } else {
     host.style.setProperty("--cg-panel-right", chosen.right + "px");
-    host.style.setProperty("--cg-panel-bottom", (chosen.bottom + height + 8) + "px");
+    host.style.setProperty("--cg-panel-bottom", (chosen.bottom + height + 16) + "px");
     host.style.setProperty("--cg-panel-width", Math.min(380, window.innerWidth - chosen.right - 8) + "px");
-    host.style.setProperty("--cg-panel-max", Math.max(180, window.innerHeight - chosen.bottom - height - 24) + "px");
+    host.style.setProperty("--cg-panel-max", Math.max(220, window.innerHeight - chosen.bottom - height - 24) + "px");
+    panel.classList.add("is-above");
+    panel.classList.remove("is-beside");
   }
 }
 
@@ -860,6 +915,8 @@ function bind() {
     });
   });
   panel.querySelector("[data-close]").addEventListener("click", closePanel);
+  panel.querySelector("[data-font-dec]").addEventListener("click", function () { stepFont(-1); });
+  panel.querySelector("[data-font-inc]").addEventListener("click", function () { stepFont(1); });
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     var text = input.value;
@@ -929,12 +986,24 @@ function bind() {
   fontWatch.observe(document.body, { attributes: true, attributeFilter: ["style", "class", "data-font"] });
 }
 
+function avatarSvg() {
+  return '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="18" fill="#f6b73c"/>' +
+    '<circle cx="18" cy="30" r="6" fill="#f6b73c"/><circle cx="46" cy="30" r="6" fill="#f6b73c"/>' +
+    '<ellipse cx="26" cy="33" rx="3" ry="3.4" fill="#fff"/><ellipse cx="38" cy="33" rx="3" ry="3.4" fill="#fff"/>' +
+    '<circle cx="26.6" cy="33.4" r="1.4" fill="#1c1917"/><circle cx="38.6" cy="33.4" r="1.4" fill="#1c1917"/>' +
+    '<path d="M26 40c2.4 3 9.6 3 12 0" fill="none" stroke="#1c1917" stroke-width="1.6" stroke-linecap="round"/>' +
+    '<path d="M16 24c4-8 28-8 32 0" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/></svg>';
+}
+
 function monkeySvg() {
-  return '<span class="cg-glow" aria-hidden="true"></span>' +
+  return '<span class="cg-aura" aria-hidden="true"></span>' +
+    '<span class="cg-glow" aria-hidden="true"></span>' +
     '<span class="cg-spark" style="--a:0deg;--d:0s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:90deg;--d:-1.6s" aria-hidden="true"></span>' +
+    '<span class="cg-spark" style="--a:60deg;--d:-1.1s" aria-hidden="true"></span>' +
+    '<span class="cg-spark" style="--a:120deg;--d:-2.2s" aria-hidden="true"></span>' +
     '<span class="cg-spark" style="--a:180deg;--d:-3.2s" aria-hidden="true"></span>' +
-    '<span class="cg-spark" style="--a:270deg;--d:-4.8s" aria-hidden="true"></span>' +
+    '<span class="cg-spark" style="--a:240deg;--d:-4.3s" aria-hidden="true"></span>' +
+    '<span class="cg-spark" style="--a:300deg;--d:-5.4s" aria-hidden="true"></span>' +
     '<span class="cg-float" aria-hidden="true"><svg viewBox="0 0 120 140" role="img" aria-hidden="true">' +
     '<ellipse cx="60" cy="126" rx="28" ry="8" fill="#020617" opacity=".35"/>' +
     '<path d="M92 96c16 8 18 22 8 28" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +

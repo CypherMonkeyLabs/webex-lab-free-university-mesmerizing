@@ -53,12 +53,22 @@
   outline-offset: 3px;
 }
 
+.cg-aura {
+  position: absolute;
+  inset: -8px -6px 2px;
+  border-radius: 46%;
+  background: conic-gradient(from 40deg, #22d3ee, #6366f1, #f59e0b, #f472b6, #22d3ee);
+  filter: blur(7px);
+  opacity: 0.9;
+  animation: cg-spin 7s linear infinite;
+}
+
 .cg-glow {
   position: absolute;
-  inset: 18px 16px 10px;
+  inset: 10px 8px 4px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.72), rgba(99, 102, 241, 0.15) 58%, transparent 72%);
-  filter: blur(1px);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.85), rgba(99, 102, 241, 0.35) 46%, rgba(245, 158, 11, 0.15) 68%, transparent 74%);
+  filter: blur(2px);
   animation: cg-pulse 2.8s ease-in-out infinite;
 }
 
@@ -66,7 +76,7 @@
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  animation: cg-float 3.4s ease-in-out infinite;
+  animation: cg-float 3.2s ease-in-out infinite;
 }
 
 .cg-monkey svg {
@@ -135,7 +145,9 @@
 .cg-form,
 .cg-voice,
 .cg-callout-actions,
-.cg-bar {
+.cg-bar,
+.cg-tools,
+.cg-who {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -143,10 +155,14 @@
 }
 
 .cg-chips {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: 8px;
   min-height: 0;
-  max-height: 42%;
-  overflow: auto;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 6px;
 }
 
 .cg-panel {
@@ -155,69 +171,168 @@
   right: var(--cg-panel-right, var(--cg-right, 12px));
   bottom: var(--cg-panel-bottom, calc(var(--cg-bottom, 12px) + 128px));
   width: var(--cg-panel-width, min(400px, calc(100vw - 24px)));
+  height: var(--cg-panel-max, 62vh);
   max-height: var(--cg-panel-max, 62vh);
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  border-radius: 20px;
-  border: 1px solid var(--line-strong, rgba(255, 255, 255, 0.28));
-  background: color-mix(in srgb, var(--card-bg, #ffffff) 96%, transparent);
+  border-radius: 22px;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card-bg, #ffffff), var(--card-bg, #ffffff)) padding-box,
+    linear-gradient(120deg, #22d3ee, #6366f1, #f59e0b, #f472b6, #22d3ee) border-box;
+  background-size: auto, 220% 220%;
+  background-position: 0 0, 0% 50%;
   color: var(--ink, #16182b);
-  box-shadow: var(--shadow, 0 18px 48px rgba(0, 0, 0, 0.38));
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.28),
+    0 0 28px rgba(34, 211, 238, 0.28);
   font-size: 1em;
-  overflow: hidden;
+  overflow: visible;
+  animation: cg-border 8s linear infinite;
+}
+
+.cg-pointer {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.35);
+  pointer-events: none;
+}
+
+.cg-panel.is-above .cg-pointer {
+  right: 42px;
+  bottom: -8px;
+  transform: rotate(45deg);
+}
+
+.cg-panel.is-beside .cg-pointer {
+  right: -8px;
+  bottom: 36px;
+  transform: rotate(45deg);
+}
+
+.cg-root.is-sheet .cg-panel {
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 22px 22px 0 0;
+}
+
+.cg-root.is-sheet .cg-pointer {
+  right: calc(var(--cg-right, 12px) + 42px);
+  bottom: -8px;
 }
 
 .cg-bar,
-.cg-form {
+.cg-form,
+.cg-voice {
   flex: 0 0 auto;
 }
 
 .cg-bar {
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.cg-who {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.cg-avatar {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 40% 30%, #fff7d6, #f6b73c 55%, #d97706);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.7), 0 0 16px rgba(99, 102, 241, 0.45);
+}
+
+.cg-avatar svg {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.cg-id {
+  min-width: 0;
 }
 
 .cg-bar h2 {
   margin: 0;
   font-size: 1.05em;
+  line-height: 1.15;
+}
+
+.cg-status {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted, #5c657f);
+  font-size: 0.78em;
   line-height: 1.2;
+}
+
+.cg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+}
+
+.cg-tools {
+  flex-wrap: nowrap;
+  gap: 6px;
 }
 
 .cg-log {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   min-height: 0;
   flex: 1 1 auto;
-  padding: 2px;
+  padding: 4px 2px;
 }
 
 .cg-bubble {
-  max-width: 92%;
+  max-width: min(92%, 36rem);
   margin: 0;
   padding: 10px 12px;
   border-radius: 16px;
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.16));
-  background: var(--bg, #101628);
-  overflow-wrap: anywhere;
+  border: 1px solid var(--line, rgba(22, 24, 43, 0.12));
+  background: var(--bg-3, #eef2ff);
+  color: var(--ink, #16182b);
+  overflow: visible;
 }
 
 .cg-bubble p {
   margin: 0;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cg-bubble.is-user {
   margin-left: auto;
-  background: var(--grad, linear-gradient(140deg, #22d3ee, #6366f1));
-  color: var(--accent-ink, #041018);
+  border-radius: 16px 16px 4px 16px;
+  background: linear-gradient(140deg, #0f9b8e, #4f46e5);
+  color: #f8fafc;
   border-color: transparent;
 }
 
 .cg-bubble.is-bot {
   margin-right: auto;
+  border-radius: 4px 16px 16px 16px;
 }
 
 .cg-links {
@@ -266,10 +381,18 @@
 }
 
 .cg-chip {
-  max-width: 100%;
-  white-space: normal;
-  text-align: left;
-  line-height: 1.35;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
+  border-radius: 999px;
+}
+
+.cg-chip.is-course {
+  max-width: none;
+  background: linear-gradient(140deg, #22d3ee, #6366f1);
+  color: #041018;
+  border-color: transparent;
 }
 
 .cg-chip:hover,
@@ -366,8 +489,18 @@
 }
 
 @keyframes cg-float {
-  0%, 100% { transform: translateY(0) rotateY(-8deg); }
-  50% { transform: translateY(-8px) rotateY(10deg); }
+  0%, 100% { transform: translateY(0) rotateY(-10deg); }
+  50% { transform: translateY(-12px) rotateY(12deg); }
+}
+
+@keyframes cg-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cg-border {
+  0% { background-position: 0 0, 0% 50%; }
+  50% { background-position: 0 0, 100% 50%; }
+  100% { background-position: 0 0, 0% 50%; }
 }
 
 @keyframes cg-pulse {
@@ -412,4 +545,13 @@ html[data-motion="reduce"] .cg-root * {
 
 @media print {
   .cg-root { display: none !important; }
+}
+
+/* The page already draws monkeys in the hero and the corner. This companion
+   is the one to talk to, so those copies stay out of the way. Shell files
+   are left as they are. */
+.monkey,
+.monkey-note,
+.hud-mascot {
+  display: none !important;
 }

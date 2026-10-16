@@ -8,14 +8,39 @@
 <meta property="og:image" content="assets/og-card.svg">
 <title>Webex Lab Free University</title>
 <script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper"&&t!=="holographic"&&t!=="cyberpunk"&&t!=="contrast")t="aurora";document.documentElement.dataset.theme=t;var f=localStorage.getItem("canon-font");if(f==="sm"||f==="md"||f==="lg")document.documentElement.dataset.font=f;var m=localStorage.getItem("canon-motion");if(m==="reduce"||m==="full")document.documentElement.dataset.motion=m;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>
+<style>
+body.home-world .lab-links{display:flex!important;flex-wrap:nowrap;overflow:hidden;max-height:36px;min-height:32px;position:relative!important;top:auto!important}
+body.home-world .canon-banner{display:flex;flex-direction:column;min-height:58px;max-height:70px;overflow:hidden}
+body.home-world .section-rail{display:flex;min-height:40px;max-height:40px;overflow:hidden}
+body.home-world .identity-line{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25;max-height:1.3em}
+body.home-world .bar-inner{display:flex;align-items:center;gap:8px;min-height:48px}
+body.home-world .world-hero,body.home-world .world-ui{min-height:0!important}
+body.home-world .world-gl{position:absolute!important;inset:0;width:100%!important;height:100%!important}
+body.home-world .world-ui{padding:12px 16px 8px 132px!important}
+body.home-world .topbar{position:relative!important;top:auto!important}
+body.home-world .hud,body.home-world .hud-panel{position:relative!important;inset:auto!important}
+body.home-world .world-title{font-size:2.2rem;line-height:1.05}
+body.home-world .hud-sheet{display:block}
+body.home-world .fold-counts{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+body.home-world .hud-stats{min-height:210px}
+body.home-world .hud-themes,body.home-world .hud-lang,body.home-world .hud-audio,body.home-world .hud-mascot{display:none}
+@media(min-width:721px){
+  body.home-world .world-ui{padding:16px 20px 8px 156px!important}
+  body.home-world .world-title{font-size:clamp(2.6rem,6vw,5.4rem);line-height:0.92}
+  body.home-world .hud-themes,body.home-world .hud-lang,body.home-world .hud-audio,body.home-world .hud-mascot{display:block}
+}
+</style>
 <link rel="stylesheet" href="assets/css/canon.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/wow.css">
+<link rel="stylesheet" href="assets/css/frame.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any">
 </head>
 <body class="v4 home-world">
 <a class="skip" href="#main">Skip to content</a>
 <div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<nav class="lab-links" aria-label="CypherMonkey"><a href="https://github.com/cipher0x9">GitHub</a><a href="https://github.com/CypherMonkeyLabs">Labs org</a><a href="https://cyphermonkeylabs.com">Labs home</a><a href="https://x.com/Cypher0x9">X</a><a href="https://huggingface.co/Cypher0x9">Hugging Face</a><a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a><button type="button" data-offline-save>Save for offline</button><a href="downloads/webex-university-offline.zip">Offline bundle</a></nav>
+<div class="canon-banner"><nav class="section-rail" aria-label="Sections"></nav><p class="identity-line">A student's open lab: learning and sharing, free for everyone.</p></div>
 <header class="topbar" data-chrome="v4">
 <div class="bar-inner">
 <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#gem)"/><path d="M18 7l7.2 5.2L18 29 10.8 12.2z" fill="#fff"/></svg><span class="brand-name">Canon<small>63 rooms</small></span></a>
@@ -352,5 +377,5 @@
 <script defer src="assets/js/redesign.js"></script>
 <script defer src="assets/js/study-index.js"></script>
 <script defer src="assets/js/shell.js"></script>
-<script type="module" src="assets/js/hero-scene.js"></script>
+<script type="module" src="assets/js/hero-boot.js"></script>
 </body></html>

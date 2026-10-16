@@ -87,20 +87,20 @@ html[data-drawer="open"] body.home-world .v4-sidebar { transform: none; }
 body.home-world .v4-toc { display: none !important; }
 body.home-world .lab-links,
 body.home-world .topbar {
-  position: absolute;
-  left: 0;
-  right: 0;
+  position: relative;
+  left: auto;
+  right: auto;
   z-index: 6;
   background: linear-gradient(180deg, rgba(4, 8, 20, 0.55), transparent);
 }
-body.home-world .lab-links { top: 0; flex-wrap: nowrap; overflow-x: auto; max-height: 36px; }
-body.home-world .topbar { top: 32px; }
-body.home-world .world-hero { min-height: 100svh; }
+body.home-world .lab-links { top: auto; flex-wrap: nowrap; overflow-x: auto; max-height: 36px; }
+body.home-world .topbar { top: auto; }
+body.home-world .world-hero { min-height: 0; }
 body.home-world .world-ui {
-  min-height: 100svh;
-  padding-top: 108px;
+  min-height: 0;
+  padding: 16px 20px 8px 156px;
   z-index: 4;
-  width: min(38rem, 62%);
+  width: min(46rem, 100%);
   margin-inline-end: auto;
   box-sizing: border-box;
 }
@@ -474,8 +474,6 @@ html[dir="rtl"] .v4-sidebar { text-align: right; }
   html, body { overflow-x: clip; max-width: 100%; }
   .v4-read { display: none; }
   body { padding-bottom: var(--dock); }
-  body.home-world .lab-links,
-  .lab-links,
   .v4-menu,
   .v4-app .nav-search,
   .v4-app [data-theme-toggle],
@@ -513,9 +511,9 @@ html[dir="rtl"] .v4-sidebar { text-align: right; }
     width: auto;
     min-height: 0;
     margin-inline: 0;
-    padding: 12px 16px 8px;
+    padding: 12px 16px 8px 132px;
   }
-  body.home-world .world-hero { min-height: calc(100svh - 56px - var(--dock)); }
+  body.home-world .world-hero { min-height: 0; }
   .world-ui { justify-content: flex-start; }
   .world-title { font-size: 2.2rem; }
   .hud {

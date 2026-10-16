@@ -312,10 +312,12 @@
     }
   }
 
-  var wowCss = document.createElement("link");
-  wowCss.rel = "stylesheet";
-  wowCss.href = rootPrefix + "assets/css/wow.css";
-  document.head.appendChild(wowCss);
+  if (!document.querySelector('link[href*="assets/css/wow.css"]')) {
+    var wowCss = document.createElement("link");
+    wowCss.rel = "stylesheet";
+    wowCss.href = rootPrefix + "assets/css/wow.css";
+    document.head.appendChild(wowCss);
+  }
   later(function () {
     var i18nJs = document.createElement("script");
     i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
@@ -323,7 +325,8 @@
     i18nJs.onload = function () { document.dispatchEvent(new CustomEvent("canon-i18n")); };
     document.body.appendChild(i18nJs);
   });
-  if (!motionReduced()) {
+  var phone = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  if (!motionReduced() && !phone) {
     later(function () {
       var iconJs = document.createElement("script");
       iconJs.type = "module";
@@ -346,10 +349,12 @@
     guideMount.setAttribute("data-guide-mount", "");
     document.body.appendChild(guideMount);
   }
-  var frameCss = document.createElement("link");
-  frameCss.rel = "stylesheet";
-  frameCss.href = rootPrefix + "assets/css/frame.css";
-  document.head.appendChild(frameCss);
+  if (!document.querySelector('link[href*="assets/css/frame.css"]')) {
+    var frameCss = document.createElement("link");
+    frameCss.rel = "stylesheet";
+    frameCss.href = rootPrefix + "assets/css/frame.css";
+    document.head.appendChild(frameCss);
+  }
   var frameJs = document.createElement("script");
   frameJs.src = rootPrefix + "assets/js/frame.js";
   frameJs.async = false;

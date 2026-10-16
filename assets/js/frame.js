@@ -123,7 +123,7 @@
   function brandIcon(id) {
     return BRAND[id] || svg("globe");
   }
-  var GLOBE = '<svg class="badge-globe" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="2.4"/><g class="globe-spin"><ellipse cx="32" cy="32" rx="10" ry="22" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M10 32h44M14 22h36M14 42h36" fill="none" stroke="currentColor" stroke-width="2.2"/></g></svg>';
+  var GLOBE = '<svg class="badge-globe" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.18"/><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><g class="globe-spin"><ellipse cx="32" cy="32" rx="9" ry="20" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M12 32h40M15 22h34M15 42h34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></g><circle cx="24" cy="22" r="4" fill="#fff" opacity="0.85"/></svg>';
 
   document.querySelectorAll(".lab-links a, .phone-menu-extra a, .site-footer a").forEach(function (anchor) {
     var href = anchor.getAttribute("href") || "";
@@ -172,10 +172,6 @@
     });
   }
   function mountBanner() {
-    if (document.querySelector(".canon-banner")) return;
-    var stage = document.querySelector(".v4-stage") || document.body;
-    var banner = document.createElement("div");
-    banner.className = "canon-banner";
     var chips = SECTIONS.map(function (item) {
       var current = isCurrent(item.href);
       return '<a class="section-chip' + (current ? " is-current" : "") + '" href="' + esc(fromRoot(item.href)) + '"' +
@@ -183,11 +179,24 @@
         '<span class="chip-ico" aria-hidden="true">' + svg(item.icon) + "</span>" +
         "<span>" + esc(item.label) + "</span></a>";
     }).join("");
+    var existing = document.querySelector(".canon-banner");
+    if (existing) {
+      var rail = existing.querySelector(".section-rail");
+      if (rail && !rail.querySelector(".section-chip")) rail.innerHTML = chips;
+      if (!existing.querySelector(".identity-line")) {
+        var line = document.createElement("p");
+        line.className = "identity-line";
+        line.textContent = "A student's open lab: learning and sharing, free for everyone.";
+        existing.appendChild(line);
+      }
+      return;
+    }
+    var stage = document.querySelector(".v4-stage") || document.body;
+    var banner = document.createElement("div");
+    banner.className = "canon-banner";
     banner.innerHTML =
       '<nav class="section-rail" aria-label="Sections">' + chips + "</nav>" +
-      "<p class=\"identity-line\">A student's open lab: learning and sharing, free for everyone.</p>" +
-      '<ul class="identity-counts" aria-label="Library size"><li><b data-count-up="63">63</b> rooms</li><li><b data-count-up="483">483</b> prompts</li><li><b data-count-up="842">842</b> cards</li><li><b data-count-up="28">28</b> diagrams</li></ul>' +
-      '<div class="flow-line" aria-hidden="true"><i></i></div>';
+      "<p class=\"identity-line\">A student's open lab: learning and sharing, free for everyone.</p>";
     var topbar = stage.querySelector(".topbar");
     var links = stage.querySelector(".lab-links");
     if (links && links.parentNode) links.parentNode.insertBefore(banner, links.nextSibling);
@@ -235,31 +244,57 @@
     document.dispatchEvent(new CustomEvent("canon-motion", { detail: { reduced: reduce } }));
   }
   function mountA11y() {
-    if (document.querySelector(".a11y-dock")) return;
-    var topbar = document.querySelector(".topbar");
-    var dock = document.createElement("div");
-    dock.className = "a11y-dock";
-    dock.setAttribute("role", "region");
-    dock.setAttribute("aria-label", "Reading preferences");
+    if (document.querySelector(".display-control")) return;
+    var bar = document.querySelector(".topbar .bar-inner") || document.querySelector(".topbar");
     var font = root.dataset.font || "md";
     var theme = root.dataset.theme || "aurora";
     var fonts = [["sm", "A−", "Smaller text"], ["md", "A", "Default text"], ["lg", "A+", "Larger text"]];
+    var dock = document.createElement("div");
+    dock.className = "display-control";
     dock.innerHTML =
-      '<span class="a11y-label">Text</span>' +
+      '<button type="button" class="display-btn" aria-expanded="false" aria-controls="display-panel">Display</button>' +
+      '<div id="display-panel" class="display-panel" role="region" aria-label="Reading preferences" hidden>' +
+      '<p class="a11y-label">Text</p>' +
       '<div class="a11y-font" role="group" aria-label="Font size">' +
       fonts.map(function (item) {
         return '<button type="button" data-font-set="' + item[0] + '" aria-pressed="' + (font === item[0] ? "true" : "false") + '" aria-label="' + item[2] + '">' + item[1] + "</button>";
       }).join("") +
       "</div>" +
-      '<span class="a11y-label">Theme</span>' +
+      '<p class="a11y-label">Theme</p>' +
       '<div class="a11y-themes" role="group" aria-label="Theme">' +
       THEMES.map(function (item) {
         return '<button type="button" data-set-theme="' + item[0] + '" aria-checked="' + (theme === item[0] ? "true" : "false") + '">' + item[1] + "</button>";
       }).join("") +
       "</div>" +
-      '<button type="button" class="a11y-motion" data-motion-toggle aria-pressed="' + (motionOn() ? "true" : "false") + '">Reduce motion</button>';
-    if (topbar) topbar.appendChild(dock);
+      '<button type="button" class="a11y-motion" data-motion-toggle aria-pressed="' + (motionOn() ? "true" : "false") + '">Reduce motion</button>' +
+      '<p class="display-stats">63 rooms · 483 prompts · 842 cards · 28 diagrams</p>' +
+      "</div>";
+    if (bar) bar.appendChild(dock);
     else document.body.insertBefore(dock, document.body.firstChild);
+    var button = dock.querySelector(".display-btn");
+    var panel = dock.querySelector(".display-panel");
+    function setDisplay(open) {
+      panel.hidden = !open;
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        var current = panel.querySelector("[aria-pressed='true'], [aria-checked='true']") || panel.querySelector("button");
+        if (current) current.focus();
+      }
+    }
+    button.addEventListener("click", function (event) {
+      event.stopPropagation();
+      setDisplay(panel.hidden);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !panel.hidden) {
+        setDisplay(false);
+        button.focus();
+      }
+    });
+    document.addEventListener("pointerdown", function (event) {
+      if (panel.hidden || dock.contains(event.target)) return;
+      setDisplay(false);
+    });
     document.querySelectorAll(".theme-switch, .settings-themes").forEach(function (group) {
       if (group.querySelector('[data-set-theme="contrast"]')) return;
       var btn = document.createElement("button");
@@ -286,7 +321,7 @@
       '<button type="button" class="edge-tab" aria-expanded="false" aria-controls="edge-menu">' +
       '<svg class="edge-wheel" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">' +
       '<circle cx="12" cy="12" r="3"/><path d="M12 2.5v2.8M12 18.7v2.8M2.5 12h2.8M18.7 12h2.8M5.1 5.1l2 2M16.9 16.9l2 2M18.9 5.1l-2 2M7.1 16.9l-2 2"/></svg>' +
-      '<span class="sr">Open sections</span></button>' +
+      '<span class="edge-name">Menu</span><span class="sr">Open sections</span></button>' +
       '<button type="button" class="edge-scrim" hidden aria-label="Close sections"></button>' +
       '<nav id="edge-menu" class="edge-menu" hidden aria-label="All sections">' +
       '<div class="edge-menu-bar"><p>Sections</p><button type="button" class="edge-close">Close</button></div>' +
@@ -367,10 +402,10 @@
     }
     if (slot.childElementCount) return;
     slot.innerHTML =
-      '<a class="float-badge" href="https://cyphermonkeylabs.com">' + GLOBE + "<span>CypherMonkey Labs</span></a>" +
-      '<a class="float-badge" href="https://github.com/CypherMonkeyLabs">' + GLOBE + "<span>GitHub organization</span></a>" +
-      '<div class="badge-wrap"><button type="button" class="float-badge" aria-expanded="false" aria-controls="social-panel">' +
-      GLOBE + "<span>Socials</span></button>" +
+      '<a class="float-badge badge-cyan" href="https://cyphermonkeylabs.com"><span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">CypherMonkey Labs</span></a>' +
+      '<a class="float-badge badge-violet" href="https://github.com/CypherMonkeyLabs"><span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">GitHub organization</span></a>' +
+      '<div class="badge-wrap"><button type="button" class="float-badge badge-pink" aria-expanded="false" aria-controls="social-panel">' +
+      '<span class="badge-orb" aria-hidden="true">' + GLOBE + '</span><span class="badge-label">Socials</span></button>' +
       '<div id="social-panel" class="social-panel" hidden></div></div>';
     var panel = slot.querySelector(".social-panel");
     var button = slot.querySelector("button.float-badge");
@@ -480,6 +515,7 @@
 
   function mountOrbit(host) {
     if (!host || host.querySelector(".orbit")) return;
+    if (window.matchMedia("(max-width: 720px), (pointer: coarse)").matches) return;
     var orbit = document.createElement("div");
     orbit.className = "orbit";
     orbit.setAttribute("aria-hidden", "true");

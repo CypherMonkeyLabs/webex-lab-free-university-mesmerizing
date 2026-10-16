@@ -138,19 +138,8 @@
   }, { passive: true });
 
   document.querySelectorAll("[data-count]").forEach(function (el) {
-    var target = Number(el.getAttribute("data-count")) || 0;
-    if (reduce) {
-      el.textContent = String(target);
-      return;
-    }
-    var start = 0;
-    function tick(now) {
-      if (!start) start = now;
-      var t = Math.min(1, (now - start) / 900);
-      el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
+    var target = el.getAttribute("data-count");
+    if (target) el.textContent = target;
   });
 
   if (window.CANON_INDEX) {

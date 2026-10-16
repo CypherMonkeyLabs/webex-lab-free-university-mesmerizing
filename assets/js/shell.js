@@ -1126,8 +1126,8 @@
   }
 
   document.querySelectorAll("[data-count]").forEach(function (el) {
-    if (!reduce && el.textContent === "0") return;
-    if (reduce) el.textContent = el.getAttribute("data-count") || el.textContent;
+    var target = el.getAttribute("data-count");
+    if (target) el.textContent = target;
   });
 
   var uniCss = document.createElement("link");

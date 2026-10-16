@@ -132,7 +132,7 @@
     var opened = progress && progress.rooms ? Object.keys(progress.rooms).length : 0;
     if (opened >= 1) award("first-room");
     if (opened >= 10) award("ten-rooms");
-    if (opened >= 63) award("all-rooms");
+    if (opened >= 78) award("all-rooms");
   } catch (err) { /* ignore */ }
 
   var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];

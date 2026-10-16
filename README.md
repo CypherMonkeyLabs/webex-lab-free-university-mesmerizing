@@ -2,7 +2,7 @@
 
 A static study site for Cisco Webex Control Hub, Webex Calling, Webex Contact Center, Dedicated Instance, devices, meetings-adjacent firewall notes, and migration. It opens from the repository root, uses relative paths, and does not call Webex.
 
-The written curriculum is the CypherWebex Canon: 8 tracks and 63 rooms. The older practice console (dial plan, flow designer, Control Hub walkthrough, 3D topology) is preserved under `archive/webex-lab-v1/campus/`.
+The written curriculum is the CypherWebex Canon: 11 tracks and 78 rooms. The older practice console (dial plan, flow designer, Control Hub walkthrough, 3D topology) is preserved under `archive/webex-lab-v1/campus/`.
 
 ## Run it
 

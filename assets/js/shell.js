@@ -107,7 +107,7 @@
     radio: '<path d="M5 15a7 7 0 0 1 14 0"/><path d="M8 15a4 4 0 0 1 8 0"/><circle cx="12" cy="15" r="1"/>',
     swatch: '<circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/>'
   };
-  var TRACK_ICON = { T1: "hub", T2: "phone", T3: "headset", T4: "building", T5: "lock", T6: "truck", T7: "radio", T8: "spark" };
+  var TRACK_ICON = { T1: "hub", T2: "phone", T3: "headset", T4: "building", T5: "lock", T6: "truck", T7: "radio", T8: "spark", T9: "headset", T10: "spark", T11: "link" };
   var SHORT = {
     T1: "Control Hub",
     T2: "Calling",
@@ -116,7 +116,10 @@
     T5: "Dedicated Instance",
     T6: "Migrations",
     T7: "SIP & Queues",
-    T8: "Flows & Tools"
+    T8: "Flows & Tools",
+    T9: "Workforce & Quality",
+    T10: "AI & Voice",
+    T11: "Bridges"
   };
   var SECTION_ICON = {
     hdr: "home", tldr: "spark", map: "map", core: "book", eco: "globe", flow: "flow",
@@ -173,7 +176,7 @@
   }
 
   var TOOLS = [
-    ["index.html", "home", "Home", "Sixty-three rooms. Read offline. Claims stay cited."],
+    ["index.html", "home", "Home", "Seventy-eight rooms. Read offline. Claims stay cited."],
     ["start.html", "start", "Start Here", "A Canon study plan. Read Control Hub before a dial plan."],
     ["resources.html", "link", "Resources", "Official Webex, Cisco Live, DevNet, cert, and community links that resolved."],
     ["quizzes.html", "check", "Practice Quiz", "483 practice checks. Room quizzes stay on the room pages."],
@@ -236,7 +239,7 @@
       }).join("");
     }
     sidebar.innerHTML =
-      '<div class="v4-side-head"><a class="v4-wordmark" href="' + esc(fromRoot("index.html")) + '">Canon<small>8 tracks</small></a>' +
+      '<div class="v4-side-head"><a class="v4-wordmark" href="' + esc(fromRoot("index.html")) + '">Canon<small>11 tracks</small></a>' +
       '<button type="button" class="icon-btn" data-nav-toggle aria-label="Collapse sidebar">' + icon("collapse") + "</button></div>" +
       '<nav class="v4-side-tools" aria-label="Study tools">' + tools + "</nav>" +
       '<p class="v4-kicker">Tracks</p><div class="v4-tracks">' + tracks + "</div>";

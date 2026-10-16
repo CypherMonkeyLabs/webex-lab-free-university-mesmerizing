@@ -529,7 +529,7 @@ function pageTrailer() {
   });
   var line = names.length
     ? "Ten-minute trailer. The tracks on this page are: " + names.join(". ") + ". Start with Control Hub, then Calling, then a contact-center track. Each room has a diagram, a worked example, and a quiz."
-    : "Ten-minute trailer. This lab has eight written tracks: Control Hub, Webex Calling, multi-tenant contact center, Contact Center Enterprise, Dedicated Instance, migrations, SIP and queues, then flows and troubleshooting. Start at Control Hub. I do not add facts that are not in the rooms.";
+    : "Ten-minute trailer. This lab has eleven written tracks: Control Hub, Webex Calling, multi-tenant contact center, Contact Center Enterprise, Dedicated Instance, migrations, SIP and queues, flows and troubleshooting, then workforce and quality, AI agents and voice, and platform bridges. Start at Control Hub. I do not add facts that are not in the rooms.";
   say(line, [{ href: "start.html", title: "Start here" }, { href: "index.html#rooms", title: "All rooms" }], "bot");
 }
 

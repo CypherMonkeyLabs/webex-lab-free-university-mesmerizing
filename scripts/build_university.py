@@ -494,7 +494,7 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
 <div class="table-wrap"><table>
 <thead><tr><th>Section</th><th>Where</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td>Fundamentals to advanced</td><td><a href="start.html">Start here</a> and tracks T1–T8</td><td>63 written rooms</td></tr>
+<tr><td>Fundamentals to advanced</td><td><a href="start.html">Start here</a> and tracks T1–T11</td><td>78 written rooms</td></tr>
 <tr><td>Architecture</td><td><a href="rooms/T2-R01-calling-architecture.html">Calling</a>, <a href="rooms/T3-R01-wxcc-multitenant-overview.html">WxCC</a>, <a href="rooms/T4-R02-core-components.html">Enterprise</a>, <a href="rooms/T5-R02-di-architecture-peering.html">Dedicated Instance</a></td><td>In the rooms</td></tr>
 <tr><td>Deployment</td><td><a href="rooms/T3-R02-tenant-provisioning-setup.html">WxCC setup</a>, <a href="rooms/T5-R03-connectivity-options.html">DI connectivity</a></td><td>In the rooms</td></tr>
 <tr><td>Migration and cutover</td><td><a href="rooms/T6-R02-cucm-to-webex-calling.html">T6</a> and <a href="downloads/sheets/migration-cutover.html">checklist</a></td><td>Study checklist, not a runbook</td></tr>
@@ -721,7 +721,7 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
   var catalog = [
     ["first-room", "Opened a room"],
     ["ten-rooms", "Ten rooms"],
-    ["all-rooms", "All 63 rooms"],
+    ["all-rooms", "All 78 rooms"],
     ["ports-played", "Played the port set"],
     ["ports-perfect", "Port set, no miss"],
     ["daily", "Daily challenge"],

@@ -1,7 +1,7 @@
 /* One shared WebGL renderer bakes a sprite per track, then every card reuses it. */
 import * as THREE from "../../vendor/three.module.min.js";
 
-var TRACKS = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"];
+var TRACKS = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11"];
 var COLORS = {
   T1: 0x3ecfb2,
   T2: 0x7eb6ff,
@@ -10,7 +10,10 @@ var COLORS = {
   T5: 0xc4b5fd,
   T6: 0xc6e27a,
   T7: 0xffb067,
-  T8: 0xf0a0ff
+  T8: 0xf0a0ff,
+  T9: 0x34d399,
+  T10: 0xa78bfa,
+  T11: 0x38bdf8
 };
 
 function geometry(id) {
@@ -21,6 +24,10 @@ function geometry(id) {
   if (id === "T5") return new THREE.IcosahedronGeometry(0.72, 0);
   if (id === "T6") return new THREE.BoxGeometry(1.3, 0.48, 0.62);
   if (id === "T7") return new THREE.OctahedronGeometry(0.78, 0);
+  if (id === "T8") return new THREE.TetrahedronGeometry(0.86, 0);
+  if (id === "T9") return new THREE.SphereGeometry(0.62, 20, 16);
+  if (id === "T10") return new THREE.ConeGeometry(0.55, 1.15, 18);
+  if (id === "T11") return new THREE.TorusKnotGeometry(0.42, 0.14, 64, 8);
   return new THREE.TetrahedronGeometry(0.86, 0);
 }
 

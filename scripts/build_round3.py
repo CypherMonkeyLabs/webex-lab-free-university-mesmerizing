@@ -269,7 +269,7 @@ def fold_html(diagrams, cards, quizzes):
 </div>
 <div class="fold-side">
 <div class="fold-counts" aria-label="Live counters">
-<span><b data-count="63">0</b> rooms</span>
+<span><b data-count="78">0</b> rooms</span>
 <span><b data-count="{quizzes}">0</b> practice prompts</span>
 <span><b data-count="{cards}">0</b> cheat-code cards</span>
 <span><b data-count="{diagrams}">0</b> diagrams</span>
@@ -381,7 +381,7 @@ p { margin: 0 0 4px; }
             '<span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>'
             '<svg class="spark-icon" data-depth="0.45" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7" fill="#22d3ee"/>'
             '<path d="M24 6v8M24 34v8M6 24h8M34 24h8" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/></svg>'
-            f'<p><b data-count="{rooms}">0</b> <span>rooms on this track</span> · <b data-count="63">0</b> <span>Canon rooms</span></p>'
+            f'<p><b data-count="{rooms}">0</b> <span>rooms on this track</span> · <b data-count="78">0</b> <span>Canon rooms</span></p>'
             "</div></section>\n"
         )
         page_path.write_text(text.replace("<main id=\"main\" class=\"wrap\">", "<main id=\"main\" class=\"wrap\">\n" + spark, 1), encoding="utf-8")
@@ -514,7 +514,7 @@ p { margin: 0 0 4px; }
   </nav>
   <p style="margin:0;padding:6px 12px;background:#07120f;color:#d1fae5;display:flex;gap:12px;align-items:center">
     <span style="width:28px;height:28px;display:inline-block;perspective:200px"><span style="display:inline-block;width:18px;height:18px;background:#34d399;transform:rotateX(18deg) rotateY(24deg)"></span></span>
-    Archived studio. The Canon university is the front door. 63 rooms stay on the Canon. This console keeps the dial plan, flow designer, and topology.
+    Archived studio. The Canon university is the front door. 78 rooms stay on the Canon. This console keeps the dial plan, flow designer, and topology.
   </p>
 """
         text = text.replace('<div class="app">', menu + '  <div class="app">', 1)

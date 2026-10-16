@@ -56,7 +56,7 @@ const PAGE_HELP = {
   "interviews.html": "Each prompt cites a written room. Answer from that room, then open it to check.",
   "mastery.html": "Rows are a path through the lab. Anything the lab will not pretend to know is marked unverified.",
   "drills.html": "Each case has a cited fix. Open the room named on the case before you change a design.",
-  "ecosystem.html": "The mind map is the eight tracks. The concept map is orientation, not a product blueprint.",
+  "ecosystem.html": "The mind map is the eleven tracks. The concept map is orientation, not a product blueprint.",
   "ecosystem-atlas.html": "Drawings here are study drawings. They are not Cisco architecture blueprints.",
   "ports.html": "Port numbers on this page come from the rooms and the ports cheat sheet. Open the cited room before you write an ACL.",
   "careers.html": "This page is career context for the lab. It is not a job offer and not a Cisco certification claim.",
@@ -622,7 +622,7 @@ function main() {
       match: ["index.html", ""],
       title: "Front door",
       steps: [
-        { href: "index.html", selector: ".world-title, h1", text: "Front door of the lab. Eight tracks, read offline." },
+        { href: "index.html", selector: ".world-title, h1", text: "Front door of the lab. Eleven tracks, read offline." },
         { href: "index.html", selector: "a.btn[href='start.html'], a[href='start.html']", text: "Start Here is the sequence: Control Hub before a dial plan." },
         { href: "index.html", selector: "#rooms", text: "The room list and search live here." },
         { href: "index.html", selector: ".track-map", text: "Each tile is one track. Open it for that track's rooms." }

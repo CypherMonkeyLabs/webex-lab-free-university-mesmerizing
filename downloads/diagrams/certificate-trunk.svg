@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" data-layout="stairs-left" role="img" aria-label="Certificate trunk"><title>Certificate Trunk</title>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e3a8a"/><stop offset="0.55" stop-color="#0369a1"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 28; 0 0" dur="15s" repeatCount="indefinite"/>
+<circle cx="288" cy="150" r="110" fill="#7dd3fc" opacity="0.22"/>
+<circle cx="952" cy="240" r="80" fill="#5eead4" opacity="0.2"/>
+<circle cx="640" cy="780" r="130" fill="#fef08a" opacity="0.14"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; -16 10; 0 0" dur="18s" repeatCount="indefinite"/>
+<g opacity="0.3" fill="none" stroke="#bae6fd" stroke-width="3"><path d="M600 180 L980 420 L820 780 L380 780 L220 420 Z"/><path d="M600 260 L860 430 L760 700 L440 700 L340 430 Z"/></g>
+</g>
+<text x="64" y="68" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">Certificate trunk</text>
+<text x="64" y="104" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">Certificate-based trunks use destination TCP 5062. The FQDN must match the certificate.</text>
+<path d="M 960 250 L 720 400 L 480 550 L 260 700" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g class="hop"><rect x="843.0" y="214.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="835.0" y="202.0" width="250" height="96" rx="20" fill="#7dd3fc"/><rect x="835.0" y="202.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="960" y="256.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">CUBE</text><text x="960" y="280.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="603.0" y="364.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="595.0" y="352.0" width="250" height="96" rx="20" fill="#5eead4"/><rect x="595.0" y="352.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="720" y="406.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">mTLS</text><text x="720" y="430.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="363.0" y="514.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="355.0" y="502.0" width="250" height="96" rx="20" fill="#fef08a"/><rect x="355.0" y="502.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="480" y="556.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">TCP 5062</text><text x="480" y="580.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="143.0" y="664.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="135.0" y="652.0" width="250" height="96" rx="20" fill="#2dd4bf"/><rect x="135.0" y="652.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="260" y="706.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Webex Calling</text><text x="260" y="730.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="7.3s" repeatCount="indefinite" path="M 960 250 L 720 400 L 480 550 L 260 700"/>
+<circle r="16" fill="#2dd4bf" opacity="0.55"/>
+<circle r="7" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
+</svg>

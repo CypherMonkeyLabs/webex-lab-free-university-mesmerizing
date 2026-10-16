@@ -39,31 +39,8 @@
   function socialLink(href, label, icon) {
     return '<a class="site-social-link" href="' + href + '" title="' + label + '" aria-label="' + label + '" target="_blank" rel="noopener noreferrer">' + icon + "</a>";
   }
-  function socialLinksHtml() {
-    return socialLink("https://github.com/cipher0x9", "Visit my GitHub", GITHUB_ICON) +
-      socialLink("https://github.com/CypherMonkeyLabs", "Visit the Labs org", GITHUB_ICON) +
-      socialLink("https://cyphermonkeylabs.com", "Visit Cypher Monkey Labs", WEB_ICON) +
-      socialLink("https://x.com/Cypher0x9", "Visit X", X_ICON) +
-      socialLink("https://huggingface.co/Cypher0x9", "Visit Hugging Face", HF_ICON);
-  }
+  function socialLinksHtml() { return ""; }
   window.CANON_SOCIAL_HTML = socialLinksHtml();
-
-  var stage = document.querySelector(".v4-stage");
-  if (stage && !document.querySelector(".lab-links")) {
-    var bar = document.createElement("nav");
-    bar.className = "lab-links";
-    bar.setAttribute("aria-label", "CypherMonkey");
-    bar.innerHTML =
-      '<a href="https://github.com/cipher0x9">GitHub</a>' +
-      '<a href="https://github.com/CypherMonkeyLabs">Labs org</a>' +
-      '<a href="https://cyphermonkeylabs.com">Labs home</a>' +
-      '<a href="https://x.com/Cypher0x9">X</a>' +
-      '<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>' +
-      '<a href="' + REPO + '">Rate, comment, help</a>' +
-      '<button type="button" data-offline-save>Save for offline</button>' +
-      '<a href="' + fromRoot("downloads/webex-university-offline.zip") + '">Offline bundle</a>';
-    stage.insertBefore(bar, stage.firstChild);
-  }
 
   function footerHtml() {
     var labs = LABS.map(function (lab) {
@@ -78,7 +55,9 @@
     );
   }
   var foot = document.querySelector(".site-footer");
-  if (foot) {
+  if (foot && foot.hasAttribute("data-canon-footer")) {
+    /* baked into every page by scripts/polish_html.py */
+  } else if (foot) {
     foot.classList.add("lab-footer");
     foot.innerHTML = footerHtml();
   } else {
@@ -88,17 +67,6 @@
     extra.innerHTML = footerHtml();
     main.appendChild(extra);
   }
-  var topbar = document.querySelector(".topbar .bar-inner");
-  if (topbar && !topbar.querySelector(".site-social")) {
-    var social = document.createElement("nav");
-    social.className = "site-social";
-    social.setAttribute("aria-label", "Cypher Monkey Labs");
-    social.innerHTML = socialLinksHtml();
-    var quick = topbar.querySelector(".nav-quick");
-    if (quick) topbar.insertBefore(social, quick);
-    else topbar.appendChild(social);
-  }
-
   var FACES = [
     { name: "wave", line: "Start in Control Hub, then a dial plan.", mouth: "M28 58 Q40 68 52 58" },
     { name: "think", line: "5062 is the certificate trunk. 8934 is registration.", mouth: "M30 62 H50" },
@@ -192,7 +160,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v12").then(function (cache) {
+    return caches.open("webex-university-v13").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);

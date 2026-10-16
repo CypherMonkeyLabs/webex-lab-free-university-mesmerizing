@@ -50,10 +50,9 @@ for (const name of sheets) {
   if (!existsSync(join(root, "downloads/sheets", stem + ".pdf"))) throw new Error("missing pdf " + stem);
   if (!existsSync(join(root, "downloads/sheets", stem + ".png"))) throw new Error("missing png " + stem);
   const sheet = readFileSync(join(root, "downloads/sheets", name), "utf8");
-  for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA"]) {
+  for (const bit of ["cyphermonkeylabs.com/#contact", "github.com/CypherMonkeyLabs", "x.com/Cypher0x9", "huggingface.co/Cypher0x9", "linkedin.com/in/luckylakshmanucwebex", "CC BY-NC-SA", "data-canon-footer"]) {
     if (!sheet.includes(bit)) throw new Error(name + " missing " + bit);
   }
-  if (/linkedin/i.test(sheet)) throw new Error(name + " linkedin");
 }
 if (cards.length < 200) throw new Error("need 200 flashcards, have " + cards.length);
 const charts = readFileSync(join(root, "charts.html"), "utf8");
@@ -76,11 +75,10 @@ for (const bit of ["Diagrams", "Cheat Codes", "Careers", "CC BY-NC-SA"]) {
 if (cards.some((card) => !card.front || !card.back || !card.source)) throw new Error("empty flashcard");
 
 const uni = readFileSync(join(root, "assets/js/university.js"), "utf8");
-for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA", "Report a concern", "guide-mount"]) {
+for (const bit of ["cyphermonkeylabs.com", "CC BY-NC-SA", "Report a concern", "guide-mount"]) {
   if (!uni.includes(bit)) throw new Error("chrome missing " + bit);
 }
 if (/dev\.to\/cyphermonkey/.test(uni)) throw new Error("dev.to still in chrome");
-if (/linkedin/i.test(uni)) throw new Error("linkedin in chrome");
 const frameJs = readFileSync(join(root, "assets/js/frame.js"), "utf8");
 if (!frameJs.includes("A student's open lab: learning and sharing, free for everyone.")) throw new Error("identity line");
 if (!frameJs.includes("guide-mount")) throw new Error("guide mount");
@@ -102,12 +100,24 @@ function walk(dir, out) {
   return out;
 }
 
-const htmlFiles = walk(root, []);
+const htmlFiles = walk(root, []).filter((f) => !f.includes("/downloads/diagrams/"));
+if (htmlFiles.length < 119) throw new Error("expected 119 pages, found " + htmlFiles.length);
+// The only Linktree URL allowed anywhere is the About icon.
+for (const f of ["assets/js/polish.js", "assets/js/university.js", "assets/js/frame.js", "assets/js/phone-nav.js"]) {
+  const t = readFileSync(join(root, f), "utf8");
+  for (const m of t.match(/linktr\.ee[^"\\\s]*/g) || []) if (m !== "linktr.ee/cyphermonkey") throw new Error("linktree url " + m);
+  if (/dev\.to/.test(t)) throw new Error("dev.to in " + f);
+}
 const broken = [];
 const hrefRe = /(?:href|src)="([^"]+)"/g;
 for (const file of htmlFiles) {
   const text = readFileSync(file, "utf8");
-  if (/linkedin\.com/i.test(text)) broken.push(file + " linkedin");
+  // Round 3 rules: disclaimer + brand icons on every page, red-flag scan.
+  if (!text.includes("data-canon-footer") || !text.includes("learning-only student project") || !text.includes("© 2026 CypherMonkeyLabs 🐒")) broken.push(file + " footer/disclaimer missing");
+  for (const bit of ["brand-web", "brand-gh", "brand-x", "brand-li", "brand-hf", "cyphermonkeylabs.com/#contact"]) if (!text.includes(bit)) broken.push(file + " footer missing " + bit);
+  if (/mailto:|dev\.to|linktr\.ee/i.test(text)) broken.push(file + " red-flag link");
+  if (/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/.test(text.replace(/<script[\s\S]*?<\/script>/g, ""))) broken.push(file + " email-shaped text");
+  if (/class="lab-links"/.test(text)) broken.push(file + " utility strip");
   let match;
   while ((match = hrefRe.exec(text))) {
     const href = match[1];

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" data-layout="constellation" role="img" aria-label="WxCC voice path"><title>Wxcc Path</title>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c4a6e"/><stop offset="0.55" stop-color="#1d4ed8"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 20; 0 0" dur="14s" repeatCount="indefinite"/>
+<circle cx="299" cy="150" r="110" fill="#38bdf8" opacity="0.22"/>
+<circle cx="1041" cy="240" r="80" fill="#818cf8" opacity="0.2"/>
+<circle cx="640" cy="780" r="130" fill="#f0abfc" opacity="0.14"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; -16 10; 0 0" dur="18s" repeatCount="indefinite"/>
+<g opacity="0.28" stroke="#bfdbfe" stroke-width="2"><line x1="600" y1="480" x2="1120" y2="480" />
+<line x1="600" y1="480" x2="1051" y2="648" />
+<line x1="600" y1="480" x2="863" y2="773" />
+<line x1="600" y1="480" x2="605" y2="819" />
+<line x1="600" y1="480" x2="347" y2="776" />
+<line x1="600" y1="480" x2="155" y2="655" />
+<line x1="600" y1="480" x2="81" y2="487" />
+<line x1="600" y1="480" x2="144" y2="318" />
+<line x1="600" y1="480" x2="328" y2="191" />
+<line x1="600" y1="480" x2="584" y2="141" />
+<line x1="600" y1="480" x2="843" y2="180" />
+<line x1="600" y1="480" x2="1039" y2="299" /></g>
+</g>
+<text x="64" y="68" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">WxCC voice path</text>
+<text x="64" y="104" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">Multi-tenant contact center. The flow is not a Unified CM dial plan.</text>
+<path d="M 250 340 L 620 220 L 980 420 L 540 700" fill="none" stroke="#fde68a" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g class="hop"><rect x="133.0" y="304.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="125.0" y="292.0" width="250" height="96" rx="20" fill="#38bdf8"/><rect x="125.0" y="292.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="250" y="346.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Entry point</text><text x="250" y="370.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="503.0" y="184.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="495.0" y="172.0" width="250" height="96" rx="20" fill="#818cf8"/><rect x="495.0" y="172.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="620" y="226.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Flow</text><text x="620" y="250.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="863.0" y="384.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="855.0" y="372.0" width="250" height="96" rx="20" fill="#f0abfc"/><rect x="855.0" y="372.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="980" y="426.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Queue</text><text x="980" y="450.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="423.0" y="664.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="415.0" y="652.0" width="250" height="96" rx="20" fill="#fde68a"/><rect x="415.0" y="652.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="540" y="706.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">Agent</text><text x="540" y="730.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="5.9s" repeatCount="indefinite" path="M 250 340 L 620 220 L 980 420 L 540 700"/>
+<circle r="16" fill="#fde68a" opacity="0.55"/>
+<circle r="7" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
+</svg>

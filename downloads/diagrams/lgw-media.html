@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lgw Media | CypherMonkey Labs</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;gap:16px;padding:24px;font-family:system-ui,sans-serif;color:#f8fafc;
+background:radial-gradient(60vmax 40vmax at 15% 10%,#7c3aed55,transparent),radial-gradient(50vmax 40vmax at 90% 90%,#06b6d455,transparent),radial-gradient(40vmax 30vmax at 80% 10%,#f472b655,transparent),#0b1020}
+h1{margin:0;font-size:clamp(1.2rem,3vw,1.8rem);background:linear-gradient(90deg,#67e8f9,#f0abfc,#fde047);-webkit-background-clip:text;background-clip:text;color:transparent}
+.frame{width:min(1100px,100%);border-radius:22px;padding:6px;background:conic-gradient(from 0deg,#22d3ee,#a78bfa,#f472b6,#fde047,#22d3ee);box-shadow:0 0 40px #a78bfa88,0 0 80px #22d3ee44;animation:float 7s ease-in-out infinite}
+.frame svg{display:block;width:100%;height:auto;border-radius:17px}
+@keyframes float{50%{transform:translateY(-6px)}}
+p{margin:0;max-width:60ch;text-align:center;font-size:.85rem;line-height:1.5;color:#e2e8f0}
+a{color:#fde047}@media(prefers-reduced-motion:reduce){.frame{animation:none}}
+</style></head><body><h1>Lgw Media</h1><div class="frame"><svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" data-layout="spiral" role="img" aria-label="Local Gateway media"><title>Lgw Media</title>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="0.55" stop-color="#1f2937"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g opacity="0.5">
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 16; 0 0" dur="15s" repeatCount="indefinite"/>
+<circle cx="172" cy="150" r="110" fill="#38bdf8" opacity="0.22"/>
+<circle cx="1008" cy="240" r="80" fill="#f472b6" opacity="0.2"/>
+<circle cx="640" cy="780" r="130" fill="#fde68a" opacity="0.14"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; -16 10; 0 0" dur="18s" repeatCount="indefinite"/>
+<g opacity="0.35"><ellipse cx="600" cy="500" rx="80" ry="50" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+<ellipse cx="600" cy="500" rx="150" ry="96" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+<ellipse cx="600" cy="500" rx="220" ry="142" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+<ellipse cx="600" cy="500" rx="290" ry="188" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+<ellipse cx="600" cy="500" rx="360" ry="234" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+<ellipse cx="600" cy="500" rx="430" ry="280" fill="none" stroke="#7dd3fc" stroke-width="2"/></g>
+</g>
+<text x="64" y="68" fill="#f8fafc" font-size="40" font-family="system-ui,sans-serif" font-weight="800">Local Gateway media</text>
+<text x="64" y="104" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">Outbound media from the local gateway. UDP is the production transport. TCP media is</text>
+<text x="64" y="128" fill="#e0f2fe" font-size="18" font-family="system-ui,sans-serif">not supported.</text>
+<path d="M 760 280 L 940 520 L 560 720 L 280 460" fill="none" stroke="#818cf8" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g class="hop"><rect x="643.0" y="244.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="635.0" y="232.0" width="250" height="96" rx="20" fill="#38bdf8"/><rect x="635.0" y="232.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="760" y="286.0" text-anchor="middle" fill="#082f49" font-size="17" font-family="system-ui,sans-serif" font-weight="800">LGW UDP 8000-48199</text><text x="760" y="310.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 1</text></g>
+<g class="hop"><rect x="823.0" y="484.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="815.0" y="472.0" width="250" height="96" rx="20" fill="#f472b6"/><rect x="815.0" y="472.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="940" y="526.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">SRTP</text><text x="940" y="550.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 2</text></g>
+<g class="hop"><rect x="443.0" y="684.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="435.0" y="672.0" width="250" height="96" rx="20" fill="#fde68a"/><rect x="435.0" y="672.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="560" y="726.0" text-anchor="middle" fill="#082f49" font-size="20" font-family="system-ui,sans-serif" font-weight="800">5004 / 9000</text><text x="560" y="750.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 3</text></g>
+<g class="hop"><rect x="163.0" y="424.0" width="250" height="96" rx="18" fill="#020617" opacity="0.42"/><rect x="155.0" y="412.0" width="250" height="96" rx="20" fill="#818cf8"/><rect x="155.0" y="412.0" width="250" height="24" rx="12" fill="#ffffff" opacity="0.28"/><text x="280" y="466.0" text-anchor="middle" fill="#082f49" font-size="17" font-family="system-ui,sans-serif" font-weight="800">8500-8699 / 19560-65535</text><text x="280" y="490.0" text-anchor="middle" fill="#082f49" font-size="13" font-family="system-ui,sans-serif" font-weight="700">Hop 4</text></g>
+<g filter="url(#glow)">
+<animateMotion dur="5.2s" repeatCount="indefinite" path="M 760 280 L 940 520 L 560 720 L 280 460"/>
+<circle r="16" fill="#818cf8" opacity="0.55"/>
+<circle r="7" fill="#ffffff"/>
+</g>
+<text x="64" y="860" fill="#bae6fd" font-size="16" font-family="system-ui,sans-serif">Study drawing. Read the room before you treat a hop as a product limit.</text>
+</svg>
+</div>
+<p>Flow diagram from the CypherMonkey Labs Webex Lab Free University. Independent, free, learning-only student project; trademarks belong to their owners; not affiliated or endorsed. Concerns: <a href="https://cyphermonkeylabs.com/#contact">cyphermonkeylabs.com/#contact</a>. © 2026 CypherMonkeyLabs 🐒</p></body></html>

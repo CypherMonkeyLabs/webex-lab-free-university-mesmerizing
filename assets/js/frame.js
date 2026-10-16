@@ -99,7 +99,8 @@
     { id: "certs", label: "Certifications", href: "certs.html", icon: "check", desc: "Study notes beside certification names." }
   ];
   var THEMES = [
-    ["aurora", "Aurora"],
+    ["bloom", "Bloom"],
+    ["aurora", "Dark (Aurora)"],
     ["neon", "Neon"],
     ["holographic", "Holographic"],
     ["cyberpunk", "Cyberpunk"],
@@ -124,14 +125,6 @@
     return BRAND[id] || svg("globe");
   }
   var GLOBE = '<svg class="badge-globe" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="24" fill="currentColor" opacity="0.18"/><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><g class="globe-spin"><ellipse cx="32" cy="32" rx="9" ry="20" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M12 32h40M15 22h34M15 42h34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></g><circle cx="24" cy="22" r="4" fill="#fff" opacity="0.85"/></svg>';
-
-  document.querySelectorAll(".lab-links a, .phone-menu-extra a, .site-footer a").forEach(function (anchor) {
-    var href = anchor.getAttribute("href") || "";
-    var text = (anchor.textContent || "").toLowerCase();
-    if (/dev\.to|linktr\.ee|linktree/i.test(href) || text.indexOf("dev.to") !== -1 || text.indexOf("linktree") !== -1) {
-      anchor.remove();
-    }
-  });
 
   function fileName() {
     var path = (location.pathname || "").split("/").pop() || "index.html";
@@ -213,7 +206,7 @@
   }
   function applyTheme(name) {
     var allowed = THEMES.some(function (item) { return item[0] === name; });
-    if (!allowed) name = "aurora";
+    if (!allowed) name = "bloom";
     root.dataset.theme = name;
     try { localStorage.setItem("canon-theme", name); } catch (err) { /* storage off */ }
     syncThemeButtons(name);
@@ -247,7 +240,7 @@
     if (document.querySelector(".display-control")) return;
     var bar = document.querySelector(".topbar .bar-inner") || document.querySelector(".topbar");
     var font = root.dataset.font || "md";
-    var theme = root.dataset.theme || "aurora";
+    var theme = root.dataset.theme || "bloom";
     var fonts = [["sm", "A−", "Smaller text"], ["md", "A", "Default text"], ["lg", "A+", "Larger text"]];
     var dock = document.createElement("div");
     dock.className = "display-control";
@@ -391,6 +384,7 @@
     }).join("");
   }
   function mountFooter() {
+    if (document.querySelector(".site-footer[data-canon-footer]")) return;
     var slot = document.querySelector("[data-float-badges]");
     if (!slot) {
       var foot = document.querySelector(".site-footer");
@@ -448,30 +442,38 @@
     if (size >= 1024) return Math.max(1, Math.round(size / 1024)) + " KB";
     return size + " B";
   }
+  function dlButton(file, big) {
+    var name = String(file.href).split("/").pop();
+    return '<a class="dl-btn dl-' + esc(file.kind) + (big ? " dl-big" : "") + '" href="' + esc(fromRoot(file.href)) + '" download="' + esc(name) + '">' +
+      svg("download") + "<span>" + esc(file.kind) + "</span><em>" + formatSize(file.bytes) + "</em></a>";
+  }
   function bonusHtml(data, compact) {
     var groups = (data && data.groups) || [];
     var html = '<section class="bonus" id="downloads-bonus" aria-labelledby="bonus-title">' +
       '<h2 id="bonus-title">Downloads</h2>' +
-      "<p>PDFs, cheat sheets, the card deck, and a zip of this site. Sizes are the files in this repository.</p>";
+      "<p>Everything is free. Each diagram comes as SVG, PNG, and a standalone HTML page that keeps its colors and motion. Sheets come as PDF, cards as PDF, JSON, and HTML.</p>";
+    var total = 0, count = 0;
+    groups.forEach(function (g) { (g.items || []).forEach(function (it) { (it.files || []).forEach(function (f) { count += 1; total += Number(f.bytes) || 0; }); }); });
     groups.forEach(function (group) {
       var items = group.items || [];
-      if (compact && group.id === "sheets") {
-        var total = items.reduce(function (sum, item) { return sum + (Number(item.bytes) || 0); }, 0);
-        html += '<div class="bonus-group"><h3>' + esc(group.title) + "</h3>" +
-          '<a class="bonus-row" href="' + esc(fromRoot("downloads.html#downloads-bonus")) + '">' +
-          '<span class="bonus-kind">PDF</span><span class="bonus-name">' + items.length +
-          ' cheat sheets<small>Open the full list</small></span><span class="bonus-size">' + formatSize(total) + "</span></a></div>";
+      if (group.id === "bundle") {
+        items.forEach(function (item) {
+          html += '<div class="dl-all"><div><h3>' + esc(item.label) + "</h3><p>" + esc(item.blurb || "") + "</p></div>" +
+            (item.files || []).map(function (f) { return dlButton(f, true); }).join("") + "</div>";
+        });
         return;
       }
-      html += '<div class="bonus-group"><h3>' + esc(group.title) + '</h3><div class="bonus-list">';
+      if (compact) return;
+      html += '<div class="bonus-group"><h3>' + esc(group.title) + ' <small>(' + items.length + ')</small></h3><div class="dl-grid">';
       items.forEach(function (item) {
-        html += '<a class="bonus-row" href="' + esc(fromRoot(item.href)) + '">' +
-          '<span class="bonus-kind">' + esc(item.kind || "FILE") + "</span>" +
-          '<span class="bonus-name">' + esc(item.label) + "<small>" + esc(item.blurb || "") + "</small></span>" +
-          '<span class="bonus-size">' + formatSize(item.bytes) + "</span></a>";
+        html += '<div class="dl-card"><strong>' + esc(item.label) + "</strong><small>" + esc(item.blurb || "") + '</small><div class="dl-files">' +
+          (item.files || []).map(function (f) { return dlButton(f, false); }).join("") + "</div></div>";
       });
       html += "</div></div>";
     });
+    if (compact) {
+      html += '<p><a class="dl-btn dl-ZIP" href="' + esc(fromRoot("downloads.html#downloads-bonus")) + '">' + svg("download") + "<span>See all " + count + " files (" + formatSize(total) + ")</span></a></p>";
+    }
     html += "</section>";
     return html;
   }
@@ -497,16 +499,7 @@
     if (footer && footer.parentNode) footer.parentNode.insertBefore(homeNode, footer);
   }
   function loadBonus() {
-    var fallback = {
-      groups: [
-        { id: "bundle", title: "Offline zip", items: [{ label: "Offline bundle", href: "downloads/webex-university-offline.zip", bytes: 11755843, kind: "ZIP", blurb: "The whole site, saved for offline reading." }] },
-        { id: "deck", title: "Card deck", items: [
-          { label: "Flashcard deck", href: "downloads/flashcards-print.pdf", bytes: 1786013, kind: "PDF", blurb: "Printable deck harvested from the rooms." },
-          { label: "Flashcards JSON", href: "downloads/flashcards.json", bytes: 313131, kind: "JSON", blurb: "The same cards as data." }
-        ] },
-        { id: "sheets", title: "Cheat sheet PDFs", items: [] }
-      ]
-    };
+    var fallback = { groups: [{ id: "bundle", title: "Offline zip", items: [{ label: "Download everything", blurb: "The whole site, saved for offline reading.", files: [{ kind: "ZIP", href: "downloads/webex-university-offline.zip", bytes: 12000000 }] }] }] };
     fetch(fromRoot("assets/data/downloads.json")).then(function (response) {
       if (!response.ok) throw new Error("downloads");
       return response.json();
@@ -599,7 +592,7 @@
   }, 120);
   document.addEventListener("university-ready", function () {
     applyFont(root.dataset.font || "md");
-    syncThemeButtons(root.dataset.theme || "aurora");
+    syncThemeButtons(root.dataset.theme || "bloom");
     placeGuide();
   });
 })();

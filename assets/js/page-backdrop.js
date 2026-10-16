@@ -2,6 +2,7 @@
 import * as THREE from "../../vendor/three.module.min.js";
 
 var THEMES = {
+  bloom: [0x7c3aed, 0xec4899, 0x22d3ee, 0xfacc15],
   aurora: [0x22d3ee, 0x818cf8, 0xf472b6, 0xfbbf24],
   neon: [0xe879f9, 0xbef264, 0x22d3ee, 0xfef08a],
   holographic: [0x5eead4, 0x67e8f9, 0xc4b5fd, 0xf0abfc],
@@ -35,7 +36,7 @@ function pageKind() {
 }
 
 function colors() {
-  var name = document.documentElement.dataset.theme || "aurora";
+  var name = document.documentElement.dataset.theme || "bloom";
   return THEMES[name] || THEMES.aurora;
 }
 

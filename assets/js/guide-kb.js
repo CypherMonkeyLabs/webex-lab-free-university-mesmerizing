@@ -1,0 +1,461 @@
+/* Mirror of assets/data/guide-kb.json for file:// pages. */
+window.CANON_GUIDE_KB = {
+  "pages": [
+    {
+      "id": "index",
+      "title": "Learn",
+      "href": "index.html",
+      "summary": "Sixty-three self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, and flows. Read offline. Product claims stay cited.",
+      "keywords": [
+        "home",
+        "learn",
+        "rooms",
+        "canon",
+        "offline",
+        "university"
+      ],
+      "synonyms": [
+        "front door",
+        "home page",
+        "university home"
+      ]
+    },
+    {
+      "id": "start",
+      "title": "Start here",
+      "href": "start.html",
+      "summary": "Read Control Hub before a dial plan, and the contact-center overview before a queue. The 30/60/90 sequence is a Canon study plan. It is not a Cisco learning path and it does not promise an exam result.",
+      "keywords": [
+        "start",
+        "prerequisites",
+        "sequence",
+        "plan"
+      ],
+      "synonyms": [
+        "where do i start",
+        "where to start",
+        "getting started",
+        "start here",
+        "first steps",
+        "30/60/90"
+      ]
+    },
+    {
+      "id": "quizzes",
+      "title": "Quizzes",
+      "href": "quizzes.html",
+      "summary": "483 checks across the written rooms. Room pages keep their own quizzes. Reveals on a room still update that room’s progress. This bank is practice.",
+      "keywords": [
+        "quiz",
+        "quizzes",
+        "checks",
+        "practice"
+      ],
+      "synonyms": [
+        "practice quiz",
+        "question bank",
+        "test me"
+      ]
+    },
+    {
+      "id": "flashcards",
+      "title": "Flashcards",
+      "href": "flashcards.html",
+      "summary": "842 flashcards from the written-room glossaries and the facts those rooms cite. Know and Again stay in localStorage on this machine. Nothing is uploaded.",
+      "keywords": [
+        "flashcards",
+        "cards",
+        "glossary"
+      ],
+      "synonyms": [
+        "know",
+        "again",
+        "842"
+      ]
+    },
+    {
+      "id": "labs",
+      "title": "Labs",
+      "href": "labs.html",
+      "summary": "Five study models in this browser. They cite the sentence they imitate. They are not Unified CM, not a contact-center tenant, and not a calling-search-space trace from a live cluster.",
+      "keywords": [
+        "labs",
+        "models",
+        "practice",
+        "browser"
+      ],
+      "synonyms": [
+        "hands-on",
+        "hands on",
+        "dial plan lab"
+      ]
+    },
+    {
+      "id": "interviews",
+      "title": "Interviews",
+      "href": "interviews.html",
+      "summary": "Questions a Webex Calling, Webex Contact Center, or UCCE-to-WxCC conversation actually asks. Each answer cites a written room.",
+      "keywords": [
+        "interview",
+        "interviews",
+        "questions"
+      ],
+      "synonyms": [
+        "interview prep",
+        "mock interview"
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "href": "glossary.html",
+      "summary": "Every term collected from the written rooms. Open a term to land in the room that defines it.",
+      "keywords": [
+        "glossary",
+        "terms",
+        "definition"
+      ],
+      "synonyms": [
+        "dictionary",
+        "what does it mean",
+        "define"
+      ]
+    },
+    {
+      "id": "ecosystem",
+      "title": "Ecosystem",
+      "href": "ecosystem.html",
+      "summary": "One curriculum mind map for all eight tracks, then a cross-lab concept map. The concept map is orientation only.",
+      "keywords": [
+        "ecosystem",
+        "mind map",
+        "concept map",
+        "tracks"
+      ],
+      "synonyms": [
+        "how products sit",
+        "curriculum map"
+      ]
+    },
+    {
+      "id": "ecosystem-atlas",
+      "title": "Ecosystem Atlas",
+      "href": "ecosystem-atlas.html",
+      "summary": "Calling, Contact Center, Meetings, Devices, Control Hub, workforce management, recording, emergency calling, analytics, and AI agents. Diagrams are study drawings. They are not Cisco architecture blueprints.",
+      "keywords": [
+        "atlas",
+        "drawings",
+        "meetings",
+        "devices"
+      ],
+      "synonyms": [
+        "ecosystem atlas",
+        "study drawings"
+      ]
+    },
+    {
+      "id": "mastery",
+      "title": "Mastery",
+      "href": "mastery.html",
+      "summary": "Fundamentals through the hard edges. Every row has a place to read. Anything this lab will not pretend to know is marked unverified.",
+      "keywords": [
+        "mastery",
+        "path",
+        "unverified"
+      ],
+      "synonyms": [
+        "learning paths",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "ports",
+      "title": "Ports and protocols",
+      "href": "ports.html",
+      "summary": "Taken from the Webex Calling port reference on 2026-10-15. The article's revision history shows the phone source range moving to 5060–5280 on September 07, 2026.",
+      "keywords": [
+        "ports",
+        "protocols",
+        "5060",
+        "sip"
+      ],
+      "synonyms": [
+        "port reference",
+        "phone source range"
+      ]
+    },
+    {
+      "id": "diagrams",
+      "title": "Diagrams",
+      "href": "diagrams.html",
+      "summary": "28 custom SVGs. 28 use animateMotion. 23 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
+      "keywords": [
+        "diagrams",
+        "svg",
+        "animate",
+        "smil"
+      ],
+      "synonyms": [
+        "explain this diagram",
+        "explain the diagram",
+        "this diagram",
+        "picture"
+      ]
+    },
+    {
+      "id": "flows",
+      "title": "Flows",
+      "href": "flows.html",
+      "summary": "23 call, signal, and data flows. Each one is a custom SVG with a moving packet. Architecture diagrams stay on the atlas.",
+      "keywords": [
+        "flows",
+        "packet",
+        "call flow",
+        "signal"
+      ],
+      "synonyms": [
+        "moving packet",
+        "call flows"
+      ]
+    },
+    {
+      "id": "charts",
+      "title": "Charts",
+      "href": "charts.html",
+      "summary": "Counts from this repository. No traffic, no revenue, and no invented adoption numbers.",
+      "keywords": [
+        "charts",
+        "counts",
+        "repository"
+      ],
+      "synonyms": [
+        "statistics",
+        "numbers",
+        "graphs"
+      ]
+    },
+    {
+      "id": "downloads",
+      "title": "Downloads",
+      "href": "downloads.html",
+      "summary": "One-page sheets (26 topics), a 959-card deck harvested from the rooms, and a zip of this site.",
+      "keywords": [
+        "downloads",
+        "sheets",
+        "zip",
+        "deck"
+      ],
+      "synonyms": [
+        "cheat codes",
+        "cheat sheet",
+        "offline zip"
+      ]
+    },
+    {
+      "id": "play",
+      "title": "Play",
+      "href": "play.html",
+      "summary": "A port game, a flow map, a call-flow sandbox, a daily question, badges, and a card you can save. Scores stay in this browser.",
+      "keywords": [
+        "play",
+        "game",
+        "badges",
+        "sandbox"
+      ],
+      "synonyms": [
+        "play lab",
+        "port game"
+      ]
+    },
+    {
+      "id": "careers",
+      "title": "Careers",
+      "href": "careers.html",
+      "summary": "Study paths through this Canon. Job titles here are study labels, not Cisco requisitions. No salaries.",
+      "keywords": [
+        "careers",
+        "jobs",
+        "paths"
+      ],
+      "synonyms": [
+        "salary",
+        "job titles",
+        "requisitions"
+      ]
+    },
+    {
+      "id": "drills",
+      "title": "Troubleshooting cases",
+      "href": "drills.html",
+      "summary": "Each scenario is a decision with a cited consequence. Pick a choice. The note stays on this page. Scores stay in this browser.",
+      "keywords": [
+        "drills",
+        "cases",
+        "troubleshooting",
+        "scenario"
+      ],
+      "synonyms": [
+        "troubleshooting cases",
+        "cited fix"
+      ]
+    },
+    {
+      "id": "regions",
+      "title": "Countries and residency",
+      "href": "regions.html",
+      "summary": "Flags mark regions named in the Canon room. This page does not invent carriers, dial plans, or a PSTN country matrix.",
+      "keywords": [
+        "regions",
+        "countries",
+        "residency",
+        "flags"
+      ],
+      "synonyms": [
+        "data residency",
+        "pstn",
+        "country"
+      ]
+    },
+    {
+      "id": "certs",
+      "title": "Certifications",
+      "href": "certs.html",
+      "summary": "CCNP Collaboration is the core exam plus one concentration. The topic phrases below are the official blurbs retrieved 2026-10-14. This page does not invent domain weights or percentages.",
+      "keywords": [
+        "certs",
+        "certification",
+        "ccnp",
+        "exam"
+      ],
+      "synonyms": [
+        "ccnp collaboration",
+        "domain weights",
+        "percentages"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "plan",
+      "question": "What does the Start page say the 30/60/90 sequence is?",
+      "choices": [
+        "A Cisco learning path",
+        "A Canon study plan",
+        "A promise of an exam result"
+      ],
+      "answer": 1,
+      "why": "The 30/60/90 sequence is a Canon study plan. It is not a Cisco learning path and it does not promise an exam result.",
+      "href": "start.html"
+    },
+    {
+      "id": "bank",
+      "question": "How many checks does the practice quiz bank say it holds?",
+      "choices": [
+        "63 rooms",
+        "483 checks",
+        "842 flashcards"
+      ],
+      "answer": 1,
+      "why": "483 checks across the written rooms. Room pages keep their own quizzes. This bank is practice.",
+      "href": "quizzes.html"
+    },
+    {
+      "id": "models",
+      "question": "What does the Labs page say the five study models are?",
+      "choices": [
+        "A live Unified CM cluster",
+        "Study models in this browser that cite the sentence they imitate",
+        "A contact-center tenant"
+      ],
+      "answer": 1,
+      "why": "Five study models in this browser. They cite the sentence they imitate. They are not Unified CM, not a contact-center tenant, and not a calling-search-space trace from a live cluster.",
+      "href": "labs.html"
+    },
+    {
+      "id": "counts",
+      "question": "What do the Charts count?",
+      "choices": [
+        "Traffic and revenue",
+        "Counts from this repository",
+        "Invented adoption numbers"
+      ],
+      "answer": 1,
+      "why": "Counts from this repository. No traffic, no revenue, and no invented adoption numbers.",
+      "href": "charts.html"
+    },
+    {
+      "id": "svgs",
+      "question": "What does the Diagrams page say about its files?",
+      "choices": [
+        "28 custom SVGs, and 23 are tagged as call, signal, or data flows",
+        "A live packet capture",
+        "Architecture diagrams, which stay on the atlas"
+      ],
+      "answer": 0,
+      "why": "28 custom SVGs. 28 use animateMotion. 23 are tagged as call, signal, or data flows. SMIL runs when the file is embedded as an object.",
+      "href": "diagrams.html"
+    },
+    {
+      "id": "cards",
+      "question": "Where does the flashcards page say Know and Again are stored?",
+      "choices": [
+        "Uploaded to a server",
+        "In localStorage on this machine",
+        "Only in the 959-card download deck"
+      ],
+      "answer": 1,
+      "why": "842 flashcards from the written-room glossaries and the facts those rooms cite. Know and Again stay in localStorage on this machine. Nothing is uploaded.",
+      "href": "flashcards.html"
+    }
+  ],
+  "tours": [
+    {
+      "id": "home",
+      "match": "index.html",
+      "steps": [
+        {
+          "selector": ".topbar",
+          "text": "This bar is the Canon chrome: the mark, search, theme, and the menu."
+        },
+        {
+          "selector": ".world-hero",
+          "text": "The home scene is the front door. Sixty-three rooms. Read offline."
+        },
+        {
+          "selector": "#rooms",
+          "text": "The room map is under this search. Eight tracks open the written rooms."
+        },
+        {
+          "selector": ".phone-dock",
+          "text": "On a phone, Learn, Diagrams, Play, Menu, and Listen sit on this bar."
+        },
+        {
+          "selector": ".guide-launch",
+          "text": "Guide Bot repeats this lab’s own pages. It does not invent a Cisco fact."
+        }
+      ]
+    },
+    {
+      "id": "any",
+      "match": "*",
+      "steps": [
+        {
+          "selector": ".topbar",
+          "text": "This bar is the Canon chrome: the mark, search, theme, and the menu."
+        },
+        {
+          "selector": ".phone-menu-btn",
+          "text": "Menu opens every lab page, with an icon, a label, and one line from that page."
+        },
+        {
+          "selector": "main h1",
+          "text": "The title is the page you are on. Guide Bot will only quote a page it has on file."
+        },
+        {
+          "selector": ".site-footer",
+          "text": "The footer carries the lab links and the copyright line for CypherMonkeyLabs."
+        }
+      ]
+    }
+  ]
+};

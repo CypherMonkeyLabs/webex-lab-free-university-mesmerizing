@@ -1,7 +1,7 @@
 /* University chrome for every Canon page. Relative paths. No network required to read. */
 (function () {
   var root = document.documentElement;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = root.dataset.motion === "reduce" || (root.dataset.motion !== "full" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   function prefix() {
     var nodes = document.querySelectorAll("script[src]");
@@ -32,6 +32,21 @@
   ];
   var CONTACT = "https://cyphermonkeylabs.com/#contact";
   var REPO = "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing";
+  var GITHUB_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>';
+  var WEB_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 12h18M12 3c2.5 2.7 3.8 6.1 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6.1-3.8-9S9.5 5.7 12 3z"/></svg>';
+  var X_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.6 3h3.2l-7 8L19.2 21h-3.3l-5.1-6.2L6.4 21H3.2l7.4-8.5L4.4 3h3.4l4.6 5.7L14.6 3zm-1.1 16.2h1.8L7.6 4.7H5.8l7.7 14.5z"/></svg>';
+  var HF_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFD21F"/><circle cx="8.2" cy="10.2" r="1.35" fill="#1c1917"/><circle cx="15.8" cy="10.2" r="1.35" fill="#1c1917"/><path d="M8 14.7c1.1 1.4 2.4 2.1 4 2.1s2.9-.7 4-2.1" fill="none" stroke="#1c1917" stroke-width="1.4" stroke-linecap="round"/><path d="M4.5 9.3c1.4-1.9 2.5-1.6 3.1.2M19.5 9.3c-1.4-1.9-2.5-1.6-3.1.2" fill="none" stroke="#1c1917" stroke-width="1.3" stroke-linecap="round"/></svg>';
+  function socialLink(href, label, icon) {
+    return '<a class="site-social-link" href="' + href + '" title="' + label + '" aria-label="' + label + '" target="_blank" rel="noopener noreferrer">' + icon + "</a>";
+  }
+  function socialLinksHtml() {
+    return socialLink("https://github.com/cipher0x9", "Visit my GitHub", GITHUB_ICON) +
+      socialLink("https://github.com/CypherMonkeyLabs", "Visit the Labs org", GITHUB_ICON) +
+      socialLink("https://cyphermonkeylabs.com", "Visit Cypher Monkey Labs", WEB_ICON) +
+      socialLink("https://x.com/Cypher0x9", "Visit X", X_ICON) +
+      socialLink("https://huggingface.co/Cypher0x9", "Visit Hugging Face", HF_ICON);
+  }
+  window.CANON_SOCIAL_HTML = socialLinksHtml();
 
   var stage = document.querySelector(".v4-stage");
   if (stage && !document.querySelector(".lab-links")) {
@@ -39,12 +54,13 @@
     bar.className = "lab-links";
     bar.setAttribute("aria-label", "CypherMonkey");
     bar.innerHTML =
+      '<a href="https://github.com/cipher0x9">GitHub</a>' +
+      '<a href="https://github.com/CypherMonkeyLabs">Labs org</a>' +
       '<a href="https://cyphermonkeylabs.com">Labs home</a>' +
-      '<a href="https://linktr.ee/cyphermonkey">Linktree</a>' +
+      '<a href="https://x.com/Cypher0x9">X</a>' +
+      '<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>' +
       '<a href="' + REPO + '">Rate, comment, help</a>' +
       '<a href="https://dev.to/cyphermonkey">dev.to</a>' +
-      '<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>' +
-      '<a href="https://x.com/Cypher0x9">X</a>' +
       '<button type="button" data-offline-save>Save for offline</button>' +
       '<a href="' + fromRoot("downloads/webex-university-offline.zip") + '">Offline bundle</a>';
     stage.insertBefore(bar, stage.firstChild);
@@ -55,6 +71,7 @@
       return '<a href="' + lab[1] + '">' + lab[0] + "<small>Next lab</small></a>";
     }).join("");
     return (
+      '<nav class="site-social" aria-label="Cypher Monkey Labs">' + socialLinksHtml() + "</nav>" +
       '<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>' +
       '<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>' +
       '<p class="lab-actions">' +
@@ -64,7 +81,8 @@
       '<a href="' + fromRoot("downloads.html") + '">Cheat Codes</a>' +
       '<a href="' + fromRoot("play.html") + '">Play Lab</a>' +
       "</p>" +
-      '<nav class="next-labs" aria-label="Other labs">' + labs + "</nav>"
+      '<nav class="next-labs" aria-label="Other labs">' + labs + "</nav>" +
+      '<p class="site-copy">© 2026 CypherMonkeyLabs 🐒</p>'
     );
   }
   var foot = document.querySelector(".site-footer");
@@ -77,6 +95,16 @@
     extra.className = "site-footer lab-footer wrap";
     extra.innerHTML = footerHtml();
     main.appendChild(extra);
+  }
+  var topbar = document.querySelector(".topbar .bar-inner");
+  if (topbar && !topbar.querySelector(".site-social")) {
+    var social = document.createElement("nav");
+    social.className = "site-social";
+    social.setAttribute("aria-label", "Cypher Monkey Labs");
+    social.innerHTML = socialLinksHtml();
+    var quick = topbar.querySelector(".nav-quick");
+    if (quick) topbar.insertBefore(social, quick);
+    else topbar.appendChild(social);
   }
 
   var FACES = [
@@ -172,7 +200,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v8").then(function (cache) {
+    return caches.open("webex-university-v10").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -256,10 +284,21 @@
       });
     }, { passive: true });
   }
-  var confettiScript = document.createElement("script");
-  confettiScript.src = fromRoot("vendor/confetti.browser.js");
-  confettiScript.async = true;
-  document.body.appendChild(confettiScript);
+  function later(fn) {
+    if ("requestIdleCallback" in window) window.requestIdleCallback(fn, { timeout: 1500 });
+    else window.setTimeout(fn, 250);
+  }
+  function motionReduced() {
+    if (root.dataset.motion === "reduce") return true;
+    if (root.dataset.motion === "full") return false;
+    return reduce;
+  }
+  later(function () {
+    var confettiScript = document.createElement("script");
+    confettiScript.src = fromRoot("vendor/confetti.browser.js");
+    confettiScript.async = true;
+    document.body.appendChild(confettiScript);
+  });
   document.addEventListener("canon-badge", function () {
     if (reduce || typeof window.confetti !== "function") return;
     window.confetti({ particleCount: 70, spread: 64, origin: { y: 0.75 } });
@@ -285,19 +324,28 @@
   wowCss.rel = "stylesheet";
   wowCss.href = rootPrefix + "assets/css/wow.css";
   document.head.appendChild(wowCss);
-  var i18nJs = document.createElement("script");
-  i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
-  i18nJs.async = false;
-  document.body.appendChild(i18nJs);
-  var iconJs = document.createElement("script");
-  iconJs.type = "module";
-  iconJs.src = rootPrefix + "assets/js/track-icons.js";
-  document.body.appendChild(iconJs);
-  if (!document.body.classList.contains("home-world")) {
-    var backdropJs = document.createElement("script");
-    backdropJs.type = "module";
-    backdropJs.src = rootPrefix + "assets/js/page-backdrop.js";
-    document.body.appendChild(backdropJs);
+  later(function () {
+    var i18nJs = document.createElement("script");
+    i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
+    i18nJs.async = true;
+    i18nJs.onload = function () { document.dispatchEvent(new CustomEvent("canon-i18n")); };
+    document.body.appendChild(i18nJs);
+  });
+  if (!motionReduced()) {
+    later(function () {
+      var iconJs = document.createElement("script");
+      iconJs.type = "module";
+      iconJs.src = rootPrefix + "assets/js/track-icons.js";
+      document.body.appendChild(iconJs);
+    });
+  }
+  if (!document.body.classList.contains("home-world") && !motionReduced()) {
+    later(function () {
+      var backdropJs = document.createElement("script");
+      backdropJs.type = "module";
+      backdropJs.src = rootPrefix + "assets/js/page-backdrop.js";
+      document.body.appendChild(backdropJs);
+    });
   }
   var phoneJs = document.createElement("script");
   phoneJs.src = rootPrefix + "assets/js/phone-nav.js";
@@ -307,6 +355,14 @@
   wowJs.src = rootPrefix + "assets/js/wow.js";
   wowJs.async = false;
   document.body.appendChild(wowJs);
+  var guideKb = document.createElement("script");
+  guideKb.src = rootPrefix + "assets/js/guide-kb.js";
+  guideKb.async = false;
+  document.body.appendChild(guideKb);
+  var guideJs = document.createElement("script");
+  guideJs.src = rootPrefix + "assets/js/guide-bot.js";
+  guideJs.async = false;
+  document.body.appendChild(guideJs);
 
   document.dispatchEvent(new CustomEvent("university-ready"));
 })();

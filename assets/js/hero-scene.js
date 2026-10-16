@@ -26,6 +26,11 @@ function boot() {
   }
 }
 
+function pixelRatio() {
+  var mobile = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  return Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2);
+}
+
 function motionReduced() {
   try {
     var stored = localStorage.getItem("canon-motion");
@@ -66,7 +71,7 @@ function bootScene() {
     return;
   }
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(pixelRatio());
   renderer.setClearColor(0x000000, 0);
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(48, 1, 0.1, 80);
@@ -178,6 +183,7 @@ function bootScene() {
     if (!width || !height) return;
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    renderer.setPixelRatio(pixelRatio());
     renderer.setSize(width, height, false);
   }
   resize();
@@ -259,6 +265,9 @@ function bootScene() {
   }
   document.addEventListener("visibilitychange", sync);
   document.addEventListener("canon-motion", sync);
+  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.addEventListener) motionQuery.addEventListener("change", sync);
+  else if (motionQuery.addListener) motionQuery.addListener(sync);
   document.documentElement.dataset.hero = "webgl";
   canvas.hidden = false;
   start();

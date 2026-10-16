@@ -164,25 +164,25 @@
   }
 
   var TOOLS = [
-    ["index.html", "home", "Home", ""],
-    ["start.html", "start", "Start Here", ""],
-    ["quizzes.html", "check", "Practice Quiz", ""],
-    ["flashcards.html", "cards", "Flashcards", ""],
-    ["labs.html", "flask", "Hands-on Labs", ""],
-    ["interviews.html", "mic", "Interview Prep", ""],
-    ["glossary.html", "book", "Glossary", ""],
-    ["ecosystem.html", "globe", "Ecosystem Map", ""],
-    ["ecosystem-atlas.html", "globe", "Ecosystem Atlas", ""],
-    ["mastery.html", "map", "Mastery Map", ""],
-    ["ports.html", "radio", "Ports & Protocols", ""],
-    ["diagrams.html", "image", "Diagrams", ""],
-    ["flows.html", "flow", "Flows", ""],
-    ["charts.html", "sliders", "Charts", ""],
-    ["downloads.html", "cards", "Cheat Codes", ""],
-    ["play.html", "spark", "Play Lab", ""],
-    ["careers.html", "mic", "Careers", ""],
-    ["drills.html", "wrench", "Troubleshooting Cases", ""],
-    ["archive/webex-lab-v1/campus/index.html", "flask", "Archive Studio", ""]
+    ["index.html", "home", "Home", "Sixty-three rooms. Read offline. Claims stay cited."],
+    ["start.html", "start", "Start Here", "A Canon study plan. Read Control Hub before a dial plan."],
+    ["quizzes.html", "check", "Practice Quiz", "483 practice checks. Room quizzes stay on the room pages."],
+    ["flashcards.html", "cards", "Flashcards", "842 cards. Know and Again stay in this browser."],
+    ["labs.html", "flask", "Hands-on Labs", "Five study models that cite the sentence they imitate."],
+    ["interviews.html", "mic", "Interview Prep", "Calling, contact center, and migration questions with citations."],
+    ["glossary.html", "book", "Glossary", "Every term from the written rooms."],
+    ["ecosystem.html", "globe", "Ecosystem Map", "A curriculum mind map, then a cross-lab concept map."],
+    ["ecosystem-atlas.html", "globe", "Ecosystem Atlas", "Study drawings of Calling, Contact Center, Meetings, and more."],
+    ["mastery.html", "map", "Mastery Map", "Fundamentals through the hard edges. Unverified stays marked."],
+    ["ports.html", "radio", "Ports & Protocols", "Webex Calling port reference captured 2026-10-15."],
+    ["diagrams.html", "image", "Diagrams", "28 custom SVGs. 23 are call, signal, or data flows."],
+    ["flows.html", "flow", "Flows", "23 call, signal, and data flows with a moving packet."],
+    ["charts.html", "sliders", "Charts", "Counts from this repository. No traffic or revenue."],
+    ["downloads.html", "cards", "Cheat Codes", "One-page sheets, a card deck, and a zip of this site."],
+    ["play.html", "spark", "Play Lab", "A port game, a flow map, a sandbox, and badges in this browser."],
+    ["careers.html", "mic", "Careers", "Study paths. Job titles are labels, not Cisco requisitions."],
+    ["drills.html", "wrench", "Troubleshooting Cases", "A decision with a cited consequence. Scores stay here."],
+    ["archive/webex-lab-v1/campus/index.html", "flask", "Archive Studio", "Earlier campus build. It loads its own catalog."]
   ];
 
   function hereFile() {
@@ -201,7 +201,7 @@
     var file = hereFile();
     var tools = TOOLS.map(function (item) {
       var currentPage = file === item[0] ? ' aria-current="page"' : "";
-      return '<a class="v4-tool" href="' + esc(fromRoot(item[0])) + '"' + currentPage + ">" + icon(item[1]) + '<span class="v4-label">' + esc(item[2]) + "</span></a>";
+      return '<a class="v4-tool" href="' + esc(fromRoot(item[0])) + '"' + currentPage + ">" + icon(item[1]) + '<span class="v4-tool-text"><span class="v4-label">' + esc(item[2]) + '</span><span class="v4-desc">' + esc(item[3]) + "</span></span></a>";
     }).join("");
     var tracks = "";
     if (index && index.tracks) {
@@ -424,7 +424,7 @@
   function catalog() {
     var rows = [];
     TOOLS.forEach(function (item) {
-      rows.push({ kind: "Page", icon: item[1], title: item[2], href: fromRoot(item[0]), hay: item[2].toLowerCase(), note: "" });
+      rows.push({ kind: "Page", icon: item[1], title: item[2], href: fromRoot(item[0]), hay: (item[2] + " " + (item[3] || "")).toLowerCase(), note: item[3] || "" });
     });
     roomList.forEach(function (room) {
       rows.push({ kind: "Room", icon: TRACK_ICON[room.track] || "book", title: room.code + " · " + room.title, href: fromRoot(room.href), hay: (room.code + " " + room.title + " " + room.trackName).toLowerCase(), note: room.trackName });
@@ -772,6 +772,8 @@
     var img = document.createElement("img");
     img.alt = item.alt || item.title || item.caption || "Illustration";
     img.decoding = "async";
+    img.width = 1100;
+    img.height = 380;
     if (src) img.src = src;
     frame.appendChild(img);
     return frame;

@@ -105,7 +105,7 @@ def sheet_footer():
 <p>Independent educational project. Not affiliated with or endorsed by any vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content. Study notes, not a vendor document.</p>
 <p>
 <a href="https://cyphermonkeylabs.com">cyphermonkeylabs.com</a> ·
-<a href="https://linktr.ee/cyphermonkey">linktr.ee/cyphermonkey</a> ·
+<a href="https://github.com/cipher0x9">github.com/cipher0x9</a> · <a href="https://github.com/CypherMonkeyLabs">github.com/CypherMonkeyLabs</a> ·
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">repo</a> ·
 <a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
@@ -154,7 +154,7 @@ footer a {{ color: #0f766e; }}
 </style></head><body>
 <nav aria-label="CypherMonkey">
 <a href="https://cyphermonkeylabs.com">Labs home</a> ·
-<a href="https://linktr.ee/cyphermonkey">Linktree</a> ·
+<a href="https://github.com/cipher0x9">GitHub</a> · <a href="https://github.com/CypherMonkeyLabs">Labs org</a> ·
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Repo</a> ·
 <a href="https://dev.to/cyphermonkey">dev.to</a> ·
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a> ·
@@ -197,7 +197,7 @@ def page(title, body, effects=False):
 <div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
 <nav class="lab-links" aria-label="CypherMonkey">
 <a href="https://cyphermonkeylabs.com">Labs home</a>
-<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9">GitHub</a> · <a href="https://github.com/CypherMonkeyLabs">Labs org</a>
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
 <a href="https://dev.to/cyphermonkey">dev.to</a>
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a>

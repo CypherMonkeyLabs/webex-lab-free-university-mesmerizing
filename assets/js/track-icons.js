@@ -33,7 +33,8 @@ function bake() {
     return urls;
   }
   renderer.setSize(160, 160);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var mobile = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2));
   renderer.setClearColor(0x000000, 0);
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(32, 1, 0.1, 20);
@@ -91,23 +92,23 @@ function trackOf(node) {
 function place(urls) {
   document.querySelectorAll(".tile-art").forEach(function (slot) {
     var id = trackOf(slot);
-    slot.innerHTML = '<img class="gl-sprite" alt="" src="' + urls[id] + '">';
+    slot.innerHTML = '<img class="gl-sprite" alt="" width="84" height="84" src="' + urls[id] + '">';
   });
   document.querySelectorAll(".track-card header > div").forEach(function (slot) {
     if (slot.querySelector(".gl-sprite")) return;
     var id = trackOf(slot);
-    slot.insertAdjacentHTML("afterbegin", '<img class="gl-sprite" alt="" src="' + urls[id] + '">');
+    slot.insertAdjacentHTML("afterbegin", '<img class="gl-sprite" alt="" width="84" height="84" src="' + urls[id] + '">');
   });
   document.querySelectorAll(".room-row").forEach(function (row) {
     var code = row.querySelector(".room-code");
     if (!code || code.querySelector(".gl-sprite")) return;
     var id = (row.getAttribute("data-code") || "T1").slice(0, 2);
-    code.insertAdjacentHTML("afterbegin", '<img class="gl-sprite" alt="" src="' + (urls[id] || urls.T1) + '">');
+    code.insertAdjacentHTML("afterbegin", '<img class="gl-sprite" alt="" width="36" height="36" src="' + (urls[id] || urls.T1) + '">');
   });
   var banner = document.querySelector(".stage-banner");
   if (banner && !banner.querySelector(".gl-sprite")) {
     var id = document.body.getAttribute("data-track") || "T1";
-    if (urls[id]) banner.insertAdjacentHTML("beforeend", '<img class="gl-sprite" alt="" src="' + urls[id] + '">');
+    if (urls[id]) banner.insertAdjacentHTML("beforeend", '<img class="gl-sprite" alt="" width="96" height="96" src="' + urls[id] + '">');
   }
 }
 

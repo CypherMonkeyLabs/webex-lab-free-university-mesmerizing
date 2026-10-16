@@ -16,6 +16,52 @@
   function href(path) {
     return rootPrefix + path;
   }
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+  var ICONS = {
+    home: '<path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/>',
+    rocket: '<path d="M12 19c-4 0-7-3-7-7 4-1 7-4 8-8 4 1 7 4 8 8-4 1-6 4-9 7z"/><path d="M9 15l-2 4 4-2"/><circle cx="14" cy="10" r="1.2"/>',
+    rooms: '<path d="M4 6h7v12H4zM13 6h7v5h-7zM13 13h7v5h-7z"/>',
+    image: '<rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.4"/><path d="M7 16l3.2-3.2L13 15l2-2 2 3"/>',
+    flow: '<path d="M4 7h6M14 7h6M4 12h16M4 17h6M14 17h6"/><circle cx="12" cy="7" r="2"/><circle cx="12" cy="17" r="2"/>',
+    sliders: '<path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="17" r="2"/>',
+    cards: '<rect x="3" y="6" width="12" height="14" rx="2"/><rect x="9" y="4" width="12" height="14" rx="2"/>',
+    spark: '<path d="M12 3l1.6 5.2L19 10l-5.4 1.8L12 17l-1.6-5.2L5 10l5.4-1.8z"/>',
+    globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.4 2.4 3.6 5 3.6 8s-1.2 5.6-3.6 8c-2.4-2.4-3.6-5-3.6-8s1.2-5.6 3.6-8z"/>',
+    download: '<path d="M12 4v10M8 10l4 4 4-4M5 19h14"/>',
+    mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/>',
+    check: '<circle cx="12" cy="12" r="8"/><path d="M8.5 12.2l2.3 2.3 4.7-5"/>',
+    book: '<path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H20v16H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 5.5V21"/>',
+    flask: '<path d="M9 3h6M10 3v6L5.5 18A3 3 0 0 0 8 22h8a3 3 0 0 0 2.5-4L14 9V3"/>',
+    wrench: '<path d="M14.5 6.2a4 4 0 0 0-5.6 5.1L4 16.2 7.8 20l4.9-4.9a4 4 0 0 0 5.1-5.6L15 12l-3-3z"/>',
+    flag: '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
+    map: '<path d="M9 4l-5 2v14l5-2 6 2 5-2V4l-5 2zM9 4v14M15 6v14"/>',
+    gear: '<circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M4.8 7.2l1.9 1.1M17.3 15.7l1.9 1.1M4.8 16.8l1.9-1.1M17.3 8.3l1.9-1.1"/>',
+    list: '<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="5" cy="6" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="5" cy="18" r="1"/>',
+    headphones: '<path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="7" rx="1.5"/><rect x="17" y="13" width="4" height="7" rx="1.5"/>',
+    link: '<path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1-.1l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1"/>',
+    github: '<path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.2a2.8 2.8 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6A4.6 4.6 0 0 0 18 6.3 4.3 4.3 0 0 0 17.9 3S16.7 2.7 14 4.5a12 12 0 0 0-6 0C5.3 2.7 4.1 3 4.1 3A4.3 4.3 0 0 0 4 6.3a4.6 4.6 0 0 0-1.3 3.2c0 4.6 2.8 5.6 5.5 6A2.8 2.8 0 0 0 9 18.8V21"/>',
+    edit: '<path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/>',
+    menu: '<path d="M4 7h16M4 12h16M4 17h16"/>'
+  };
+  function svg(name) {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[name] || ICONS.spark) + "</svg>";
+  }
+  function menuItem(item) {
+    var text = (item.label + " " + item.desc).toLowerCase();
+    var open = item.button ? "<button" : "<a";
+    var close = item.button ? "</button>" : "</a>";
+    var attrs = item.button
+      ? ' type="button"' + (item.attr || "")
+      : ' href="' + esc(item.abs ? item.href : href(item.href)) + '"';
+    return open + ' class="menu-item"' + attrs + ' data-menu-text="' + esc(text) + '">' +
+      '<span class="menu-ico" aria-hidden="true">' + svg(item.icon) + "</span>" +
+      '<span class="menu-copy"><span class="menu-label"' + (item.key ? ' data-i18n="' + item.key + '"' : "") + ">" + esc(item.label) + "</span>" +
+      '<span class="menu-desc">' + esc(item.desc) + "</span></span>" + close;
+  }
   function motionReduced() {
     if (root.dataset.motion === "reduce") return true;
     if (root.dataset.motion === "full") return false;
@@ -39,25 +85,25 @@
   }
 
   var SECTIONS = [
-    ["learn", "Learn", "index.html"],
-    ["start", "Start here", "start.html"],
-    ["rooms", "Rooms", "index.html#rooms"],
-    ["diagrams", "Diagrams", "diagrams.html"],
-    ["flows", "Flows", "flows.html"],
-    ["charts", "Charts", "charts.html"],
-    ["cheat", "Cheat Codes", "downloads.html"],
-    ["play", "Play", "play.html"],
-    ["ecosystem", "Ecosystem", "ecosystem.html"],
-    ["downloads", "Downloads", "downloads.html"],
-    ["careers", "Careers", "careers.html"],
-    ["quizzes", "Quizzes", "quizzes.html"],
-    ["cards", "Flashcards", "flashcards.html"],
-    ["glossary", "Glossary", "glossary.html"],
-    ["labs", "Labs", "labs.html"],
-    ["cases", "Cases", "drills.html"],
-    ["interviews", "Interviews", "interviews.html"],
-    ["regions", "Countries and residency", "regions.html"],
-    ["mastery", "Mastery", "mastery.html"]
+    { key: "learn", label: "Learn", href: "index.html", icon: "home", desc: "Sixty-three rooms. Read offline. Product claims stay cited." },
+    { key: "start", label: "Start here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
+    { key: "rooms", label: "Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
+    { key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "28 custom SVGs. 23 are call, signal, or data flows." },
+    { key: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "23 call, signal, and data flows with a moving packet." },
+    { key: "charts", label: "Charts", href: "charts.html", icon: "sliders", desc: "Counts from this repository. No traffic or revenue." },
+    { key: "cheat", label: "Cheat Codes", href: "downloads.html", icon: "cards", desc: "One-page sheets, a card deck, and a zip of this site." },
+    { key: "play", label: "Play", href: "play.html", icon: "spark", desc: "A port game, a flow map, a sandbox, and badges in this browser." },
+    { key: "ecosystem", label: "Ecosystem", href: "ecosystem.html", icon: "globe", desc: "A curriculum mind map, then a cross-lab concept map." },
+    { key: "downloads", label: "Downloads", href: "downloads.html", icon: "download", desc: "Sheets, a 959-card deck, and a zip of this site." },
+    { key: "careers", label: "Careers", href: "careers.html", icon: "mic", desc: "Study paths. Job titles are labels, not Cisco requisitions." },
+    { key: "quizzes", label: "Quizzes", href: "quizzes.html", icon: "check", desc: "483 practice checks. Room quizzes stay on the room pages." },
+    { key: "cards", label: "Flashcards", href: "flashcards.html", icon: "cards", desc: "842 cards. Know and Again stay in this browser." },
+    { key: "glossary", label: "Glossary", href: "glossary.html", icon: "book", desc: "Every term from the written rooms." },
+    { key: "labs", label: "Labs", href: "labs.html", icon: "flask", desc: "Five study models. They cite the sentence they imitate." },
+    { key: "cases", label: "Cases", href: "drills.html", icon: "wrench", desc: "A decision with a cited consequence. Scores stay here." },
+    { key: "interviews", label: "Interviews", href: "interviews.html", icon: "mic", desc: "Calling, contact center, and migration questions with citations." },
+    { key: "regions", label: "Countries and residency", href: "regions.html", icon: "flag", desc: "Flags mark regions named in the Canon. No invented dial plans." },
+    { key: "mastery", label: "Mastery", href: "mastery.html", icon: "map", desc: "Fundamentals through the hard edges. Unverified stays marked." }
   ];
 
   var bar = document.querySelector(".topbar .bar-inner");
@@ -79,25 +125,32 @@
   menu.setAttribute("role", "dialog");
   menu.setAttribute("aria-modal", "true");
   menu.setAttribute("aria-labelledby", "phone-menu-title");
-  var sectionLinks = SECTIONS.map(function (item) {
-    return '<a href="' + href(item[2]) + '" data-i18n="' + item[0] + '">' + item[1] + "</a>";
-  }).join("");
+  var sectionLinks = SECTIONS.map(menuItem).join("");
+  var actionLinks = [
+    menuItem({ key: "settings", label: "Settings", icon: "gear", desc: "Theme, language, sound, and motion.", button: true, attr: " data-open-settings" }),
+    menuItem({ key: "browse", label: "Browse rooms", icon: "list", desc: "Open the track list.", button: true, attr: " data-open-rooms" })
+  ].join("");
+  var extraLinks = [
+    menuItem({ label: "GitHub", href: "https://github.com/cipher0x9", icon: "github", desc: "Visit my GitHub.", abs: true }),
+    menuItem({ label: "Labs org", href: "https://github.com/CypherMonkeyLabs", icon: "github", desc: "Visit the Labs org.", abs: true }),
+    menuItem({ label: "Labs home", href: "https://cyphermonkeylabs.com", icon: "globe", desc: "Visit Cypher Monkey Labs.", abs: true }),
+    menuItem({ label: "X", href: "https://x.com/Cypher0x9", icon: "spark", desc: "Visit X.", abs: true }),
+    menuItem({ label: "Hugging Face", href: "https://huggingface.co/Cypher0x9", icon: "spark", desc: "Visit Hugging Face.", abs: true }),
+    menuItem({ label: "Rate, comment, help", href: "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true }),
+    menuItem({ label: "dev.to", href: "https://dev.to/cyphermonkey", icon: "edit", desc: "Profile at dev.to/cyphermonkey.", abs: true })
+  ].join("");
   menu.innerHTML =
     '<div class="phone-menu-bar">' +
     '<p id="phone-menu-title" data-i18n="menu">Menu</p>' +
     '<button type="button" class="phone-menu-close" data-i18n="close">Close</button>' +
     "</div>" +
-    '<nav class="phone-menu-list" aria-label="University">' + sectionLinks +
-    '<button type="button" data-open-settings data-i18n="settings">Settings</button>' +
-    '<button type="button" data-open-rooms data-i18n="browse">Browse rooms</button>' +
-    "</nav>" +
-    '<nav class="phone-menu-extra" aria-label="CypherMonkey">' +
-    '<a href="https://cyphermonkeylabs.com">Labs home</a>' +
-    '<a href="https://linktr.ee/cyphermonkey">Linktree</a>' +
-    '<a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>' +
-    '<a href="https://dev.to/cyphermonkey">dev.to</a>' +
-    '<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>' +
-    '<a href="https://x.com/Cypher0x9">X</a>' +
+    '<label class="menu-search"><span class="sr">Search the menu</span>' +
+    '<input type="search" data-menu-filter placeholder="Search the menu" aria-label="Search the menu" autocomplete="off">' +
+    "</label>" +
+    '<p class="menu-empty" hidden>No menu pages match.</p>' +
+    '<nav class="phone-menu-list" aria-label="University">' + sectionLinks + actionLinks + "</nav>" +
+    '<nav class="phone-menu-extra" aria-label="CypherMonkey">' + extraLinks +
+    '<div class="site-social" aria-label="Cypher Monkey Labs">' + (window.CANON_SOCIAL_HTML || "") + "</div>" +
     "</nav>";
   document.body.appendChild(menu);
 
@@ -107,20 +160,40 @@
     button.type = "button";
     button.className = "uni-settings";
     button.setAttribute("data-open-settings", "");
-    button.setAttribute("data-i18n", "settings");
     button.textContent = "Settings";
     nav.appendChild(button);
+  });
+  document.querySelectorAll(".uni-menu a[data-i18n]").forEach(function (anchor) {
+    var key = anchor.getAttribute("data-i18n");
+    var section = null;
+    SECTIONS.forEach(function (item) { if (item.key === key) section = item; });
+    if (!section) return;
+    var label = anchor.textContent;
+    anchor.removeAttribute("data-i18n");
+    anchor.classList.add("menu-pill");
+    anchor.innerHTML = '<span class="menu-ico" aria-hidden="true">' + svg(section.icon) + '</span><span class="menu-copy"><span class="menu-label" data-i18n="' + key + '">' + esc(label) + '</span><span class="menu-desc">' + esc(section.desc) + "</span></span>";
+  });
+  document.querySelectorAll(".uni-menu .uni-settings").forEach(function (button) {
+    button.removeAttribute("data-i18n");
+    button.classList.add("menu-pill");
+    button.innerHTML = '<span class="menu-ico" aria-hidden="true">' + svg("gear") + '</span><span class="menu-copy"><span class="menu-label" data-i18n="settings">Settings</span><span class="menu-desc">Theme, language, sound, and motion.</span></span>';
   });
 
   var dock = document.createElement("nav");
   dock.className = "phone-dock";
   dock.setAttribute("aria-label", "Quick");
+  function dockItem(item) {
+    var open = item.button ? "<button" : "<a";
+    var close = item.button ? "</button>" : "</a>";
+    var attrs = item.button ? ' type="button"' + (item.attr || "") : ' href="' + esc(href(item.href)) + '"';
+    return open + ' class="dock-item"' + attrs + '><span class="menu-ico" aria-hidden="true">' + svg(item.icon) + '</span><span class="dock-label" data-i18n="' + item.key + '">' + esc(item.label) + "</span>" + close;
+  }
   dock.innerHTML =
-    '<a href="' + href("index.html") + '" data-i18n="learn">Learn</a>' +
-    '<a href="' + href("diagrams.html") + '" data-i18n="diagrams">Diagrams</a>' +
-    '<a href="' + href("play.html") + '" data-i18n="play">Play</a>' +
-    '<button type="button" data-open-menu data-i18n="menu">Menu</button>' +
-    '<button type="button" data-listen data-i18n="listen">Listen</button>';
+    dockItem({ key: "learn", label: "Learn", href: "index.html", icon: "home" }) +
+    dockItem({ key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image" }) +
+    dockItem({ key: "play", label: "Play", href: "play.html", icon: "spark" }) +
+    dockItem({ key: "menu", label: "Menu", icon: "menu", button: true, attr: " data-open-menu" }) +
+    dockItem({ key: "listen", label: "Listen", icon: "headphones", button: true, attr: " data-listen" });
   document.body.appendChild(dock);
 
   var settings = document.createElement("div");
@@ -338,6 +411,22 @@
       document.dispatchEvent(new CustomEvent("canon-theme", { detail: { theme: theme } }));
     });
   });
+
+  var menuFilter = menu.querySelector("[data-menu-filter]");
+  var menuEmpty = menu.querySelector(".menu-empty");
+  if (menuFilter) {
+    menuFilter.addEventListener("input", function () {
+      var query = menuFilter.value.trim().toLowerCase();
+      var shown = 0;
+      menu.querySelectorAll(".menu-item").forEach(function (item) {
+        var hay = item.getAttribute("data-menu-text") || "";
+        var match = !query || hay.indexOf(query) !== -1;
+        item.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (menuEmpty) menuEmpty.hidden = shown !== 0;
+    });
+  }
 
   markCurrent();
   window.addEventListener("hashchange", markCurrent);

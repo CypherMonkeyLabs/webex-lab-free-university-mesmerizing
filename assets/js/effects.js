@@ -3,13 +3,23 @@ import { animate, createMotionPath } from "../../vendor/anime.esm.min.js";
 import * as THREE from "../../vendor/three.module.min.js";
 import rough from "../../vendor/rough.esm.js";
 
-var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function motionReduced() {
+  var root = document.documentElement;
+  if (root.dataset.motion === "reduce") return true;
+  if (root.dataset.motion === "full") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function pixelRatio() {
+  var mobile = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  return Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2);
+}
 
 function threeCube() {
   var host = document.querySelector("[data-three]");
-  if (!host || reduce) return;
+  if (!host || motionReduced()) return;
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(pixelRatio());
   renderer.setSize(72, 72);
   host.appendChild(renderer.domElement);
   var scene = new THREE.Scene();
@@ -19,19 +29,25 @@ function threeCube() {
   scene.add(mesh);
   var edge = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry), new THREE.LineBasicMaterial({ color: 0xfde68a }));
   mesh.add(edge);
+  var alive = true;
   function frame() {
+    if (!alive || motionReduced()) return;
     mesh.rotation.x += 0.012;
     mesh.rotation.y += 0.018;
     renderer.render(scene, camera);
     requestAnimationFrame(frame);
   }
   frame();
+  function stop() { alive = false; }
+  document.addEventListener("canon-motion", function () { if (motionReduced()) stop(); });
+  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.addEventListener) motionQuery.addEventListener("change", function () { if (motionReduced()) stop(); });
 }
 
 function motion() {
   var lane = document.querySelector("#fold-lane");
   var dot = document.querySelector("[data-anime-dot]");
-  if (!lane || !dot || reduce || typeof createMotionPath !== "function") return;
+  if (!lane || !dot || motionReduced() || typeof createMotionPath !== "function") return;
   try {
     var path = createMotionPath(lane);
     animate(dot, { ...path, duration: 2800, loop: true, ease: "linear" });
@@ -118,13 +134,17 @@ function boot() {
   var data = chartData();
   drawCanvas(data);
   drawRough();
-  if (window.d3) drawD3(data);
-  else {
+  if (!document.querySelector("[data-d3]")) return;
+  function loadD3() {
+    if (window.d3) { drawD3(data); return; }
     var tag = document.createElement("script");
     tag.src = new URL("../../vendor/d3.min.js", import.meta.url).href;
+    tag.async = true;
     tag.onload = function () { drawD3(data); };
     document.head.appendChild(tag);
   }
+  if ("requestIdleCallback" in window) requestIdleCallback(loadD3, { timeout: 1500 });
+  else setTimeout(loadD3, 250);
 }
 
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

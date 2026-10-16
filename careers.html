@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="assets/css/canon.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/university.css">
-<link rel="icon" href="assets/mark.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any">
 </head>
 <body class="v4" data-effects="1">
 <a class="skip" href="#main">Skip to content</a>
 <div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
 <nav class="lab-links" aria-label="CypherMonkey">
 <a href="https://cyphermonkeylabs.com">Labs home</a>
-<a href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://github.com/cipher0x9">GitHub</a> · <a href="https://github.com/CypherMonkeyLabs">Labs org</a>
 <a href="https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing">Rate, comment, help</a>
 <a href="https://dev.to/cyphermonkey">dev.to</a>
 <a href="https://huggingface.co/Cypher0x9">Hugging Face</a>
@@ -48,23 +48,26 @@
 <article><h2>Certifications</h2><p>certs.html prints CCNP Collaboration as 350-801 CLCOR plus one of 300-815 CLACC, 300-820 CLHCT, or 300-830 CLCCE. It prints CLACCM and CLCEI as retired February 2, 2026. Minutes and dollar amounts on that page were not re-fetched for this pass.</p><p><a href="certs.html">Certifications</a> · <a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/clcor.html">Cisco CLCOR page</a></p></article>
 <article><h2>Interview practice</h2><p>The interview set is scenarios from the rooms. It is not a leaked exam and not a promise of a role.</p><p><a href="interviews.html">Interview prep</a> · <a href="downloads/sheets/careers-certs.html">Careers sheet</a></p></article>
 </div>
-<script src="vendor/d3.min.js"></script>
-<script src="vendor/markmap-view.js"></script>
+<script defer src="vendor/d3.min.js"></script>
+<script defer src="vendor/markmap-view.js"></script>
 <script>
 (function () {
-  var node = document.getElementById("mindmap-data");
-  var svg = document.getElementById("mindmap");
-  if (!node || !svg || !window.markmap || !window.d3) return;
-  window.markmap.Markmap.create(svg, null, JSON.parse(node.textContent));
+  function boot() {
+    var node = document.getElementById("mindmap-data");
+    var svg = document.getElementById("mindmap");
+    if (!node || !svg || !window.markmap || !window.d3) return;
+    window.markmap.Markmap.create(svg, null, JSON.parse(node.textContent));
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
 </script>
 </div></main>
 <footer class="site-footer lab-footer wrap"><p>CypherMonkey · Webex Lab Free University</p></footer>
 <aside class="v4-toc" id="v4-toc" aria-label="On this page"></aside></div></div>
-<script src="assets/js/search-index.js"></script>
-<script src="assets/js/canon.js"></script>
-<script src="assets/js/redesign.js"></script>
-<script src="assets/js/study-index.js"></script>
-<script src="assets/js/shell.js"></script>
-<script type="module" src="assets/js/effects.js"></script>
+<script defer src="assets/js/search-index.js"></script>
+<script defer src="assets/js/canon.js"></script>
+<script defer src="assets/js/redesign.js"></script>
+<script defer src="assets/js/study-index.js"></script>
+<script defer src="assets/js/shell.js"></script>
 </body></html>

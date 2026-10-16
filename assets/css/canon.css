@@ -247,8 +247,10 @@ p, li, td, dd, figcaption { overflow-wrap: anywhere; }
   align-items: center;
   text-decoration: none;
   color: var(--ink);
+  min-height: 44px;
   padding: 8px 10px;
   border-radius: 12px;
+  border: 1px solid transparent;
 }
 .nav-panel a:hover, .nav-panel a[aria-current="page"] {
   background: color-mix(in srgb, var(--accent) 14%, transparent);
@@ -905,7 +907,7 @@ details[open] > summary ~ * { animation: rise 0.35s ease; }
 .sim-node { border: 1px solid var(--accent); border-radius: 12px; padding: 8px 10px; margin: 0 0 8px; background: color-mix(in srgb, var(--accent) 10%, var(--card-bg)); }
 .sim-out { font-family: var(--mono); font-size: 0.86rem; white-space: pre-wrap; overflow: auto; }
 .mindmap-figure { margin: 0 0 18px; }
-.mindmap { width: 100%; background: var(--illu-bg); }
+.mindmap { width: 100%; height: auto; aspect-ratio: 960 / 560; background: var(--illu-bg); }
 .prompt { font-style: italic; color: var(--ink-dim); }
 .cite-list { padding-left: 1.2rem; }
 .cite-list li { margin: 0 0 10px; }
@@ -1123,8 +1125,8 @@ h2 { font-size: clamp(1.65rem, 3.1vw, 2.55rem); font-weight: 800; }
 .brand { flex: none; }
 .nav-quick { display: flex; align-items: center; gap: 2px; flex: none; }
 .nav-icon {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 12px;
@@ -1149,7 +1151,7 @@ h2 { font-size: clamp(1.65rem, 3.1vw, 2.55rem); font-weight: 800; }
   background-position: center;
 }
 .nav-q::placeholder { color: transparent; }
-.icon-btn, .nav-toggle { width: 34px; height: 34px; border-radius: 12px; font-size: 1rem; }
+.icon-btn, .nav-toggle { width: 44px; height: 44px; border-radius: 12px; font-size: 1rem; }
 .nav-more {
   width: min(280px, calc(100vw - 24px));
   max-height: 70vh;

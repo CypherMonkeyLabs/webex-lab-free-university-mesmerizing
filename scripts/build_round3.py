@@ -36,6 +36,7 @@ NEW_SHEETS = [
 COLORS = {
     "T1": "#3ecfb2", "T2": "#7eb6ff", "T3": "#f0b429", "T4": "#ff8b9a",
     "T5": "#c4b5fd", "T6": "#c6e27a", "T7": "#ffb067", "T8": "#f0a0ff",
+    "T9": "#34d399", "T10": "#a78bfa", "T11": "#38bdf8",
 }
 
 
@@ -241,6 +242,7 @@ def bar_svg(title, rows, label_key, value_key):
 
 
 def fold_html(diagrams, cards, quizzes):
+    canon_rooms = len(list(ROOMS.glob("*.html")))
     return f"""<section class="uni-fold" id="uni-fold" aria-label="University front door">
 <nav class="uni-menu" aria-label="University">
 <a href="diagrams.html">Diagrams</a>
@@ -269,10 +271,10 @@ def fold_html(diagrams, cards, quizzes):
 </div>
 <div class="fold-side">
 <div class="fold-counts" aria-label="Live counters">
-<span><b data-count="78">0</b> rooms</span>
-<span><b data-count="{quizzes}">0</b> practice prompts</span>
-<span><b data-count="{cards}">0</b> cheat-code cards</span>
-<span><b data-count="{diagrams}">0</b> diagrams</span>
+<span><b data-count="{canon_rooms}">{canon_rooms}</b> rooms</span>
+<span><b data-count="{quizzes}">{quizzes}</b> practice prompts</span>
+<span><b data-count="{cards}">{cards}</b> cheat-code cards</span>
+<span><b data-count="{diagrams}">{diagrams}</b> diagrams</span>
 <span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
 <span data-three aria-hidden="true"></span>
 </div>
@@ -369,6 +371,7 @@ p { margin: 0 0 4px; }
         write_sheet(slug, title, rows[:7])
 
     tracks = []
+    canon_rooms = len(list(ROOMS.glob("*.html")))
     for track_id, color in COLORS.items():
         page_path = ROOT / "tracks" / track_id / "index.html"
         text = page_path.read_text(encoding="utf-8")
@@ -381,7 +384,7 @@ p { margin: 0 0 4px; }
             '<span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>'
             '<svg class="spark-icon" data-depth="0.45" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7" fill="#22d3ee"/>'
             '<path d="M24 6v8M24 34v8M6 24h8M34 24h8" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/></svg>'
-            f'<p><b data-count="{rooms}">0</b> <span>rooms on this track</span> · <b data-count="78">0</b> <span>Canon rooms</span></p>'
+            f'<p><b data-count="{rooms}">{rooms}</b> <span>rooms on this track</span> · <b data-count="{canon_rooms}">{canon_rooms}</b> <span>Canon rooms</span></p>'
             "</div></section>\n"
         )
         page_path.write_text(text.replace("<main id=\"main\" class=\"wrap\">", "<main id=\"main\" class=\"wrap\">\n" + spark, 1), encoding="utf-8")

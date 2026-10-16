@@ -1415,7 +1415,7 @@ def track_page(track, num, emoji, name, lede, note, color, rooms):
 <div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
 {header('../../', track)}
 <main id="main" class="wrap">
-<section class="track-spark" aria-label="Track counters"><div class="spark-row"><span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span><svg class="spark-icon" data-depth="0.45" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7" fill="#22d3ee"/><path d="M24 6v8M24 34v8M6 24h8M34 24h8" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/></svg><p><b data-count="{n}">0</b> <span>rooms on this track</span> · <b data-count="78">0</b> <span>Canon rooms</span></p></div></section>
+<section class="track-spark" aria-label="Track counters"><div class="spark-row"><span class="cube-scene" aria-hidden="true"><span class="cube-3d"><i></i><i></i><i></i><i></i><i></i><i></i></span></span><svg class="spark-icon" data-depth="0.45" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7" fill="#22d3ee"/><path d="M24 6v8M24 34v8M6 24h8M34 24h8" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/></svg><p><b data-count="{n}">{n}</b> <span>rooms on this track</span> · <b data-count="78">78</b> <span>Canon rooms</span></p></div></section>
 <p class="crumbs"><a href="../../index.html">Home</a> / {track}</p>
 <section class="track-hero">
 <div class="track-banner">

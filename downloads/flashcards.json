@@ -1010,7 +1010,7 @@
       "room": "T2-R03-dial-plans-pstn-routing.html"
     },
     {
-      "front": "Does *.example.com match alice@example.com?",
+      "front": "Does *.example.com match example.com?",
       "back": "No. It matches hosts that are subdomains, such as eu.example.com. [cite:2]",
       "source": "Canon room T2-R03-dial-plans-pstn-routing.html ladder. Citations stay in that room.",
       "room": "T2-R03-dial-plans-pstn-routing.html"

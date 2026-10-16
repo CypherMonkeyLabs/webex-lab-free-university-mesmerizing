@@ -367,13 +367,9 @@
   wowJs.src = rootPrefix + "assets/js/wow.js";
   wowJs.async = false;
   document.body.appendChild(wowJs);
-  var guideKb = document.createElement("script");
-  guideKb.src = rootPrefix + "assets/js/guide-kb.js";
-  guideKb.async = false;
-  document.body.appendChild(guideKb);
   var guideJs = document.createElement("script");
-  guideJs.src = rootPrefix + "assets/js/guide-bot.js";
-  guideJs.async = false;
+  guideJs.type = "module";
+  guideJs.src = rootPrefix + "guide/guide.js";
   document.body.appendChild(guideJs);
 
   document.dispatchEvent(new CustomEvent("university-ready"));

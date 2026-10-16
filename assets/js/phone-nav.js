@@ -208,6 +208,7 @@
     '<button type="button" data-set-theme="neon">Neon</button>' +
     '<button type="button" data-set-theme="holographic">Holographic</button>' +
     '<button type="button" data-set-theme="cyberpunk">Cyberpunk</button>' +
+    '<button type="button" data-set-theme="futuristic">Futuristic</button>' +
     '<button type="button" data-set-theme="sunset">Sunset</button>' +
     '<button type="button" data-set-theme="paper">Light</button>' +
     '<button type="button" data-set-theme="contrast">Contrast</button>' +

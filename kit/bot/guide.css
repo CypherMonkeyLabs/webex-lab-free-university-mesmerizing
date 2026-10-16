@@ -159,7 +159,7 @@
   bottom: var(--cg-panel-bottom, calc(var(--cg-bottom, 12px) + 128px));
   width: var(--cg-panel-width, min(400px, calc(100vw - 24px)));
   height: auto;
-  max-height: var(--cg-panel-max, min(520px, 62vh));
+  max-height: var(--cg-panel-max, min(680px, 74vh));
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -176,7 +176,7 @@
     0 22px 50px rgba(15, 23, 42, 0.28),
     0 0 28px rgba(34, 211, 238, 0.28);
   font-size: 1em;
-  overflow: hidden;
+  overflow: auto;
   animation: cg-border 8s linear infinite;
 }
 
@@ -712,31 +712,35 @@ html[data-motion="reduce"] .cg-root * {
   height: 100vh !important;
   max-width: none !important;
   z-index: 78;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 24px 16px calc(var(--dock, 0px) + 16px);
-  background: rgba(27, 19, 64, 0.55);
-  pointer-events: auto;
+  display: block;
+  padding: 0;
+  background: transparent;
+  pointer-events: none;
 }
 
 .cg-root.is-greeting .cg-monkey {
-  order: -1;
-  width: 220px;
-  height: 258px;
+  position: fixed !important;
+  left: var(--cg-greet-left, 16px) !important;
+  top: var(--cg-greet-top, 16px) !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 200px;
+  height: 236px;
+  pointer-events: auto;
 }
 
 .cg-root.is-greeting .cg-nudge {
-  position: relative !important;
+  position: fixed !important;
+  left: var(--cg-greet-card-left, 16px) !important;
+  top: var(--cg-greet-card-top, 260px) !important;
   right: auto !important;
   bottom: auto !important;
-  width: min(440px, calc(100vw - 32px));
+  width: var(--cg-greet-card-width, min(420px, calc(100vw - 24px))) !important;
   max-height: none;
   overflow: visible;
   text-align: center;
   color: #1b1340;
+  pointer-events: auto;
   background:
     linear-gradient(#fff, #fff) padding-box,
     linear-gradient(120deg, #22d3ee, #7c3aed, #f472b6, #fbbf24) border-box;
@@ -751,8 +755,7 @@ html[data-motion="reduce"] .cg-root * {
 @media (max-width: 720px) {
   .cg-root.is-greeting {
     width: 100vw !important;
-    height: calc(100vh - var(--dock, 84px)) !important;
-    padding-bottom: 12px;
+    height: 100vh !important;
   }
   .cg-root, .cg-monkey { width: 156px; height: 184px; }
   .cg-root.is-greeting .cg-monkey { width: 168px; height: 198px; }
@@ -814,6 +817,22 @@ html[data-motion="reduce"] .cg-root * {
   50% { transform: rotate(7deg); }
 }
 
+.cg-readbar {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #f5f3ff;
+  border: 2px solid #c4b5fd;
+}
+
+.cg-voice-live {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .cg-along,
 .cg-outline {
   display: flex;
@@ -853,8 +872,11 @@ html[data-motion="reduce"] .cg-root * {
 
 .is-read-along {
   border-radius: 16px;
-  box-shadow: 0 0 0 3px #fde047, 0 0 28px rgba(167, 139, 250, 0.85);
-  scroll-margin: 120px;
+  outline: 3px solid #fde047;
+  outline-offset: 4px;
+  background: color-mix(in srgb, #fde68a 35%, transparent);
+  box-shadow: 0 0 0 6px rgba(253, 224, 71, 0.55), 0 0 36px #a78bfa;
+  scroll-margin: 140px;
 }
 
 .toc a.is-reading {

@@ -106,6 +106,7 @@
     ["neon", "Neon"],
     ["holographic", "Holographic"],
     ["cyberpunk", "Cyberpunk"],
+    ["futuristic", "Futuristic"],
     ["sunset", "Sunset"],
     ["paper", "Light"],
     ["contrast", "Contrast"]

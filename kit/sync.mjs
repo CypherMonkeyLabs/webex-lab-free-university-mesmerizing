@@ -16,7 +16,8 @@ const files = [
   ["guide/engine.mjs", "kit/bot/engine.mjs"],
   ["assets/js/onboard.js", "kit/onboarding/tour.js"],
   ["assets/js/studio.js", "kit/course/studio.js"],
-  ["assets/js/export-doc.mjs", "kit/course/export-doc.mjs"]
+  ["assets/js/export-doc.mjs", "kit/course/export-doc.mjs"],
+  ["assets/js/office-parts.mjs", "kit/course/office-parts.mjs"]
 ];
 
 for (const [from, to] of files) {

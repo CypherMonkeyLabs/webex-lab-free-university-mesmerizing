@@ -53,30 +53,31 @@ panel.innerHTML =
   '<div class="cg-id"><h2 id="cg-title">Canon</h2><p class="cg-status"><i class="cg-dot" aria-hidden="true"></i> In the notes</p></div></div>' +
   '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
   '</header>' +
-  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
-  '<div class="cg-offers" data-offers></div>' +
-  '<details class="cg-more"><summary>Sound, voice, and type size</summary>' +
-  '<div class="cg-tools">' +
-  '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
-  '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
-  '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read</button>' +
-  '</div>' +
-  '<div class="cg-voice" data-voice-row hidden>' +
-  '<label>Voice <select data-voice-name aria-label="Speaking voice"></select></label>' +
-  '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
-  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
-  '<option value="1.08">1.08×</option></select></label>' +
-  '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
-  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
-  '<div class="cg-transport" role="group" aria-label="Playback">' +
-  '<button type="button" data-voice-pause>Pause</button>' +
-  '<button type="button" data-voice-resume>Resume</button>' +
-  '<button type="button" data-voice-stop>Stop</button></div></div>' +
+  '<div class="cg-readbar">' +
   '<div class="cg-along" role="group" aria-label="Read along">' +
   '<button type="button" data-along-start>Read along</button>' +
   '<button type="button" data-along-pause>Pause</button>' +
   '<button type="button" data-along-resume>Resume</button>' +
   '<button type="button" data-along-next>Next section</button></div>' +
+  '<div class="cg-voice cg-voice-live" data-voice-row>' +
+  '<label>Voice <select data-voice-name aria-label="Speaking voice"><option value="">Browser default</option></select></label>' +
+  '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
+  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
+  '<option value="1.08">1.08×</option></select></label>' +
+  '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
+  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
+  '</div></div>' +
+  '<div class="cg-offers" data-offers></div>' +
+  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
+  '<details class="cg-more"><summary>Sound and type size</summary>' +
+  '<div class="cg-tools">' +
+  '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
+  '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
+  '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read chat</button>' +
+  '<button type="button" data-voice-pause>Pause</button>' +
+  '<button type="button" data-voice-resume>Resume</button>' +
+  '<button type="button" data-voice-stop>Stop</button>' +
+  '</div>' +
   '<label class="cg-amb">Sound theme <select data-ambience aria-label="Sound theme">' +
   '<option value="" selected>Off</option><option value="pad">Soft pad</option><option value="rain">Soft rain</option></select></label>' +
   '</details>' +
@@ -114,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=15";
+css.href = guideBase + "guide/guide.css?v=16";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -652,9 +653,9 @@ function applyVoice(on) {
   voicePref.on = !!on;
   saveVoice();
   voiceBtn.setAttribute("aria-pressed", voicePref.on ? "true" : "false");
-  voiceRow.hidden = !voicePref.on;
-  if (!voicePref.on && window.speechSynthesis) window.speechSynthesis.cancel();
-  if (voicePref.on) fillVoices();
+  if (voiceRow) voiceRow.hidden = false;
+  if (!voicePref.on && window.speechSynthesis && !along.active) window.speechSynthesis.cancel();
+  fillVoices();
 }
 
 function voiceRank(voice) {
@@ -672,9 +673,17 @@ function voiceRank(voice) {
 }
 
 function fillVoices() {
-  if (!window.speechSynthesis) return;
+  if (!window.speechSynthesis || !voiceName) return;
   var voices = window.speechSynthesis.getVoices().slice().sort(function (a, b) { return voiceRank(b) - voiceRank(a); });
-  if (!voices.length) return;
+  if (!voices.length) {
+    if (!voiceName.options.length) {
+      var fallback = document.createElement("option");
+      fallback.value = "";
+      fallback.textContent = "Browser default";
+      voiceName.appendChild(fallback);
+    }
+    return;
+  }
   var current = voiceName.value || voicePref.uri;
   voiceName.innerHTML = "";
   voices.forEach(function (voice) {
@@ -905,13 +914,68 @@ function syncMenuHide() {
   host.classList.toggle("is-menu-away", away);
 }
 
+function intersects(a, b, pad) {
+  return a.left < b.right + pad && a.right > b.left - pad && a.top < b.bottom + pad && a.bottom > b.top - pad;
+}
+
+function placeGreeting() {
+  var phone = window.matchMedia("(max-width: 720px)").matches;
+  var monkeyW = phone ? 168 : 200;
+  var monkeyH = phone ? 198 : 236;
+  var cardW = Math.min(420, window.innerWidth - 24);
+  var cardH = Math.max(120, Math.round(nudge.getBoundingClientRect().height) || 150);
+  var blockW = Math.max(cardW, monkeyW);
+  var blockH = monkeyH + 8 + cardH;
+  var dock = phoneDockHeight();
+  var obstacles = [];
+  document.querySelectorAll(".track-tile, .hud-panel, .hero-actions a, .stat, .world-title, .canon-banner, .topbar, .phone-dock, .tile-art").forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.width < 8 || rect.height < 8) return;
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    obstacles.push(rect);
+  });
+  var cols = [12, Math.round((window.innerWidth - blockW) / 2), Math.round(window.innerWidth - blockW - 12)];
+  var rows = [];
+  var y = window.innerHeight - dock - blockH - 12;
+  while (y > 64) {
+    rows.push(y);
+    y -= 36;
+  }
+  var chosen = null;
+  var r;
+  var c;
+  for (r = 0; r < rows.length && !chosen; r += 1) {
+    for (c = 0; c < cols.length && !chosen; c += 1) {
+      var left = Math.max(8, Math.min(cols[c], window.innerWidth - blockW - 8));
+      var top = rows[r];
+      var box = { left: left, top: top, right: left + blockW, bottom: top + blockH };
+      var hit = obstacles.some(function (ob) { return intersects(box, ob, 8); });
+      if (!hit) chosen = { left: left, top: top };
+    }
+  }
+  if (!chosen) {
+    chosen = {
+      left: Math.max(8, Math.round((window.innerWidth - blockW) / 2)),
+      top: Math.max(64, window.innerHeight - dock - blockH - 8)
+    };
+  }
+  host.style.setProperty("--cg-greet-left", Math.round(chosen.left + (blockW - monkeyW) / 2) + "px");
+  host.style.setProperty("--cg-greet-top", Math.round(chosen.top) + "px");
+  host.style.setProperty("--cg-greet-card-left", Math.round(chosen.left + (blockW - cardW) / 2) + "px");
+  host.style.setProperty("--cg-greet-card-top", Math.round(chosen.top + monkeyH + 8) + "px");
+  host.style.setProperty("--cg-greet-card-width", Math.round(cardW) + "px");
+}
+
 function place() {
   syncFont();
   syncMenuHide();
   if (host.dataset.dragging === "1") return;
+  if (host.classList.contains("is-greeting")) {
+    placeGreeting();
+    return;
+  }
   var boxes = obstacleBoxes();
   var story = contentBoxes();
-  if (host.classList.contains("is-greeting")) return;
   var size = monkeySize();
   var width = size.width;
   var height = size.height;
@@ -1070,6 +1134,7 @@ function beginGreet() {
   nudge.appendChild(actions);
   nudge.hidden = false;
   place();
+  window.requestAnimationFrame(function () { place(); });
   window.setTimeout(finish, 8000);
 }
 

@@ -4,7 +4,7 @@
       "id": "index",
       "title": "Learn",
       "href": "index.html",
-      "summary": "Sixty-three self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, and flows. Read offline. Product claims stay cited.",
+      "summary": "Seventy-eight self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, flows, workforce and quality, AI agents, and platform bridges. Read offline. Product claims stay cited.",
       "keywords": ["home", "learn", "rooms", "canon", "offline", "university"],
       "synonyms": ["front door", "home page", "university home"]
     },
@@ -60,7 +60,7 @@
       "id": "ecosystem",
       "title": "Ecosystem",
       "href": "ecosystem.html",
-      "summary": "One curriculum mind map for all eight tracks, then a cross-lab concept map. The concept map is orientation only.",
+      "summary": "One curriculum mind map for all eleven tracks, then a cross-lab concept map. The concept map is orientation only.",
       "keywords": ["ecosystem", "mind map", "concept map", "tracks"],
       "synonyms": ["how products sit", "curriculum map"]
     },
@@ -173,7 +173,7 @@
     {
       "id": "bank",
       "question": "How many checks does the practice quiz bank say it holds?",
-      "choices": ["63 rooms", "483 checks", "842 flashcards"],
+      "choices": ["78 rooms", "483 checks", "842 flashcards"],
       "answer": 1,
       "why": "483 checks across the written rooms. Room pages keep their own quizzes. This bank is practice.",
       "href": "quizzes.html"
@@ -217,8 +217,8 @@
       "match": "index.html",
       "steps": [
         { "selector": ".topbar", "text": "This bar is the Canon chrome: the mark, search, theme, and the menu." },
-        { "selector": ".world-hero", "text": "The home scene is the front door. Sixty-three rooms. Read offline." },
-        { "selector": "#rooms", "text": "The room map is under this search. Eight tracks open the written rooms." },
+        { "selector": ".world-hero", "text": "The home scene is the front door. Seventy-eight rooms. Read offline." },
+        { "selector": "#rooms", "text": "The room map is under this search. Eleven tracks open the written rooms." },
         { "selector": ".phone-dock", "text": "On a phone, Learn, Diagrams, Play, Menu, and Listen sit on this bar." },
         { "selector": ".guide-launch", "text": "Guide Bot repeats this lab’s own pages. It does not invent a Cisco fact." }
       ]

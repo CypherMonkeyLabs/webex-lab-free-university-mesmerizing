@@ -87,16 +87,19 @@
   }
 
   var SECTIONS = [
-    { key: "learn", label: "Learn", href: "index.html", icon: "home", desc: "Sixty-three rooms. Read offline. Product claims stay cited." },
+    { key: "learn", label: "Learn", href: "index.html", icon: "home", desc: "Seventy-eight rooms. Read offline. Product claims stay cited." },
     { key: "start", label: "Start here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
     { key: "resources", label: "Resources", href: "resources.html", icon: "link", desc: "Official Webex, Cisco Live, DevNet, cert, and community links that resolved." },
-    { key: "rooms", label: "Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
+    { key: "rooms", label: "Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eleven tracks. Open a written room from the map." },
     { key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "60 custom SVGs. 39 are call, signal, or data flows." },
     { key: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "39 call, signal, and data flows with a moving packet." },
     { key: "charts", label: "Charts", href: "charts.html", icon: "sliders", desc: "Counts from this repository. No traffic or revenue." },
     { key: "cheat", label: "Cheat Codes", href: "downloads.html", icon: "cards", desc: "One-page sheets, a card deck, and a zip of this site." },
     { key: "play", label: "Play", href: "play.html", icon: "spark", desc: "A port game, a flow map, a sandbox, and badges in this browser." },
     { key: "ecosystem", label: "Ecosystem", href: "ecosystem.html", icon: "globe", desc: "A curriculum mind map, then a cross-lab concept map." },
+    { key: "t9", label: "Workforce & Quality", href: "tracks/T9/index.html", icon: "headset", desc: "Forecasts, schedules, and quality reviews on the public Webex pages." },
+    { key: "t10", label: "AI Agents & Voice", href: "tracks/T10/index.html", icon: "spark", desc: "Studio agents, Virtual Agent V2, and the six digital channels." },
+    { key: "t11", label: "Platform Bridges", href: "tracks/T11/index.html", icon: "link", desc: "Unified CM, Dedicated Instance, UCCX, and where other platforms stop." },
     { key: "downloads", label: "Downloads", href: "downloads.html", icon: "download", desc: "Sheets, a 959-card deck, and a zip of this site." },
     { key: "careers", label: "Careers", href: "careers.html", icon: "mic", desc: "Study paths. Job titles are labels, not Cisco requisitions." },
     { key: "quizzes", label: "Quizzes", href: "quizzes.html", icon: "check", desc: "483 practice checks. Room quizzes stay on the room pages." },

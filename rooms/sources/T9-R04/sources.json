@@ -1,0 +1,235 @@
+{
+  "id": "T9-R04",
+  "title": "AI Quality Management in Control Hub",
+  "checked": "2026-10",
+  "items": [
+    {
+      "kind": "wikipedia",
+      "label": "Workforce management (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Workforce_management",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "wikipedia",
+      "label": "Call centre (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/Call_centre",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Basic WFM and QM on Webex WFO (nmzg380)",
+      "href": "https://help.webex.com/article/nmzg380",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Webex WFO feature-specific SKUs (py6u9h)",
+      "href": "https://help.webex.com/article/py6u9h",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Enable AI Quality Management (6m6r3fb)",
+      "href": "https://help.webex.com/article/6m6r3fb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Get started with AI Quality Management (nvtdfxk)",
+      "href": "https://help.webex.com/article/nvtdfxk",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Analyzer reports for AI Quality Management (n4jc67x)",
+      "href": "https://help.webex.com/article/n4jc67x",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Sentiment analysis in AI Quality Management (voh2oeb)",
+      "href": "https://help.webex.com/article/voh2oeb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Coaching insights (i8lp6i)",
+      "href": "https://help.webex.com/article/i8lp6i",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Cisco AI Assistant (nvvv1zb)",
+      "href": "https://help.webex.com/article/nvvv1zb",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Use AI agents for customer interactions (s0qro1)",
+      "href": "https://help.webex.com/article/s0qro1",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "AI Agent Studio administration guide (ncs9r37)",
+      "href": "https://help.webex.com/article/ncs9r37",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Configure Virtual Agent-Voice (n6gaghu)",
+      "href": "https://help.webex.com/article/n6gaghu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Unified CM to Webex Calling introduction (nbedetf)",
+      "href": "https://help.webex.com/article/nbedetf",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Dedicated Instance contact center integration (nmhk7ve)",
+      "href": "https://help.webex.com/article/nmhk7ve",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Migrate Unified CCX to Webex Contact Center (0hd75db)",
+      "href": "https://help.webex.com/article/0hd75db",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Webex CCE tenant data migration tool (n2puc5z)",
+      "href": "https://help.webex.com/article/n2puc5z",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Webex Contact Center architecture (utqcm7)",
+      "href": "https://help.webex.com/article/utqcm7",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "vendordoc",
+      "label": "Get started with Local Gateway (t9xctu)",
+      "href": "https://help.webex.com/article/t9xctu",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "devdocs",
+      "label": "Bring your own virtual agent",
+      "href": "https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "UC Lab",
+      "href": "https://cyphermonkeylabs.com/uc-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "AI Lab",
+      "href": "https://cyphermonkeylabs.com/ai-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "Amazon Connect Lab",
+      "href": "https://cyphermonkeylabs.com/amazon-connect-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "Microsoft Voice Lab",
+      "href": "https://cyphermonkeylabs.com/microsoft-voice-cc-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "Five9 Lab",
+      "href": "https://cyphermonkeylabs.com/five9-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "Genesys Cloud Lab",
+      "href": "https://cyphermonkeylabs.com/genesys-cloud-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "NICE CXone Lab",
+      "href": "https://cyphermonkeylabs.com/nice-cxone-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "siblinglab",
+      "label": "SIP Universe",
+      "href": "https://cyphermonkeylabs.com/sip-universe-lab-free-university-mesmerizing/",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "brand",
+      "label": "CypherMonkey Labs on GitHub",
+      "href": "https://github.com/CypherMonkeyLabs",
+      "status": "checked",
+      "lastChecked": "2026-10"
+    },
+    {
+      "kind": "confirm",
+      "label": "Wikipedia title Cisco Unified Communications Manager (the request returned 404)",
+      "status": "confirm"
+    },
+    {
+      "kind": "confirm",
+      "label": "wfohelp.com pages named by article nmzg380",
+      "status": "confirm"
+    },
+    {
+      "kind": "confirm",
+      "label": "Collaboration ordering guides page named by article nmzg380",
+      "status": "confirm"
+    },
+    {
+      "kind": "confirm",
+      "label": "Supported languages and voices article named by article s0qro1",
+      "status": "confirm"
+    },
+    {
+      "kind": "confirm",
+      "label": "Webex WFO user-guide PDF for New WFM",
+      "status": "confirm"
+    }
+  ]
+}

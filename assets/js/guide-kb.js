@@ -5,7 +5,7 @@ window.CANON_GUIDE_KB = {
       "id": "index",
       "title": "Learn",
       "href": "index.html",
-      "summary": "Sixty-three self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, and flows. Read offline. Product claims stay cited.",
+      "summary": "Seventy-eight self-contained rooms for Control Hub, Webex Calling, both contact-center products, Dedicated Instance, migrations, SIP, flows, workforce and quality, AI agents, and platform bridges. Read offline. Product claims stay cited.",
       "keywords": [
         "home",
         "learn",
@@ -125,7 +125,7 @@ window.CANON_GUIDE_KB = {
       "id": "ecosystem",
       "title": "Ecosystem",
       "href": "ecosystem.html",
-      "summary": "One curriculum mind map for all eight tracks, then a cross-lab concept map. The concept map is orientation only.",
+      "summary": "One curriculum mind map for all eleven tracks, then a cross-lab concept map. The concept map is orientation only.",
       "keywords": [
         "ecosystem",
         "mind map",
@@ -351,7 +351,7 @@ window.CANON_GUIDE_KB = {
       "id": "bank",
       "question": "How many checks does the practice quiz bank say it holds?",
       "choices": [
-        "63 rooms",
+        "78 rooms",
         "483 checks",
         "842 flashcards"
       ],
@@ -419,11 +419,11 @@ window.CANON_GUIDE_KB = {
         },
         {
           "selector": ".world-hero",
-          "text": "The home scene is the front door. Sixty-three rooms. Read offline."
+          "text": "The home scene is the front door. Seventy-eight rooms. Read offline."
         },
         {
           "selector": "#rooms",
-          "text": "The room map is under this search. Eight tracks open the written rooms."
+          "text": "The room map is under this search. Eleven tracks open the written rooms."
         },
         {
           "selector": ".phone-dock",

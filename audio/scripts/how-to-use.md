@@ -8,6 +8,6 @@ Two voices. About ninety seconds when read aloud. Drop an mp3 at `audio/how-to-u
 
 **A:** Cheat Codes is the one-page sheets, the card deck, and the offline zip. Play is the ports game and the daily challenge. Ecosystem is how Calling, Contact Center, Meetings, devices, and Control Hub sit together. Downloads is the same bundle. Careers is the cert map, and it does not invent salaries.
 
-**B:** Themes recolor the orbit. The language menu changes the labels on this desk, not the sixty-three rooms. Arabic flips the reading direction.
+**B:** Themes recolor the orbit. The language menu changes the labels on this desk, not the seventy-eight rooms. Arabic flips the reading direction.
 
 **A:** Read a room, then come back. Product claims stay in the room that cites them.

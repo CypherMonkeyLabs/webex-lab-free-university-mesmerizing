@@ -74,16 +74,19 @@
   var GEMS = ["server", "phone", "headset", "cloud", "node", "building", "diamond", "script"];
 
   var SECTIONS = [
-    { id: "home", label: "Home", href: "index.html", icon: "home", desc: "Sixty-three rooms. Read offline. Claims stay cited." },
+    { id: "home", label: "Home", href: "index.html", icon: "home", desc: "Seventy-eight rooms. Read offline. Claims stay cited." },
     { id: "start", label: "Start Here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
     { id: "resources", label: "Resources", href: "resources.html", icon: "link", desc: "Official Webex, Cisco Live, DevNet, cert, and community links that resolved." },
-    { id: "rooms", label: "All Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
+    { id: "rooms", label: "All Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eleven tracks. Open a written room from the map." },
     { id: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "60 custom SVGs. 39 are call, signal, or data flows." },
     { id: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "39 call, signal, and data flows with a moving packet." },
     { id: "charts", label: "Charts", href: "charts.html", icon: "sliders", desc: "Counts from this repository. No traffic or revenue." },
     { id: "cheat", label: "Cheat Codes", href: "downloads.html", icon: "cards", desc: "One-page sheets, a card deck, and a zip of this site." },
     { id: "play", label: "Play", href: "play.html", icon: "spark", desc: "A port game, a flow map, a sandbox, and badges in this browser." },
     { id: "ecosystem", label: "Ecosystem", href: "ecosystem.html", icon: "globe", desc: "A curriculum mind map, then a cross-lab concept map." },
+    { id: "t9", label: "Workforce & Quality", href: "tracks/T9/index.html", icon: "headset", desc: "Forecasts, schedules, and quality reviews on the public Webex pages." },
+    { id: "t10", label: "AI Agents & Voice", href: "tracks/T10/index.html", icon: "spark", desc: "Studio agents, Virtual Agent V2, and the six digital channels." },
+    { id: "t11", label: "Platform Bridges", href: "tracks/T11/index.html", icon: "link", desc: "Unified CM, Dedicated Instance, UCCX, and where other platforms stop." },
     { id: "atlas", label: "Atlas", href: "ecosystem-atlas.html", icon: "globe", desc: "Study drawings of Calling, Contact Center, and Meetings." },
     { id: "downloads", label: "Downloads", href: "downloads.html#downloads-bonus", icon: "download", desc: "PDFs, cheat sheets, the card deck, and the offline zip." },
     { id: "careers", label: "Careers", href: "careers.html", icon: "mic", desc: "Study paths. Job titles are labels, not vendor requisitions." },
@@ -307,7 +310,7 @@
       }).join("") +
       "</div>" +
       '<button type="button" class="a11y-motion" data-motion-toggle aria-pressed="' + (motionOn() ? "true" : "false") + '">Reduce motion</button>' +
-      '<p class="display-stats">63 rooms · 483 prompts · 842 cards · 60 diagrams</p>' +
+      '<p class="display-stats">78 rooms · 483 prompts · 842 cards · 60 diagrams</p>' +
       "</div>";
     if (bar) bar.appendChild(dock);
     else document.body.insertBefore(dock, document.body.firstChild);
@@ -353,6 +356,7 @@
     var groups = [
       ["Start here", ["home", "start", "resources"]],
       ["Study", ["rooms", "diagrams", "flows", "charts", "ecosystem", "atlas"]],
+      ["Chapters", ["t9", "t10", "t11"]],
       ["Practice", ["play", "quizzes", "cards", "labs", "cases", "interviews"]],
       ["Reference", ["cheat", "downloads", "glossary", "ports", "certs", "careers", "regions", "mastery", "help", "legal"]]
     ];

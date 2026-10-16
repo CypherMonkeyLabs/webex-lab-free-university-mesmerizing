@@ -63,7 +63,7 @@ const home = readFileSync(join(root, "index.html"), "utf8");
 for (const bit of ["Diagrams", "Flows", "Charts", "Cheat Codes", "Play", "Ecosystem", "Downloads", "Careers", "data-count", "data-set-theme", "mascot-row", "uni-fold"]) {
   if (!home.includes(bit)) throw new Error("home missing " + bit);
 }
-for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
+for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11"]) {
   const track = readFileSync(join(root, "tracks", id, "index.html"), "utf8");
   if (!track.includes("track-spark") || !track.includes("cube-3d") || !track.includes("data-count")) {
     throw new Error(id + " missing counters");
@@ -71,7 +71,7 @@ for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
 }
 const roomFiles = readdirSync(join(root, "rooms")).filter((name) => name.endsWith(".html"));
 const roomCount = roomFiles.length;
-const spelled = { 63: "Sixty-three" };
+const spelled = { 63: "Sixty-three", 78: "Seventy-eight" };
 const words = spelled[roomCount];
 if (!words) throw new Error("spell the room count " + roomCount + " in the hero, meta, and README");
 const canon = JSON.parse(readFileSync(join(root, "assets/js/search-index.js"), "utf8").replace(/^window\.CANON_INDEX\s*=\s*/, "").replace(/;\s*$/, ""));
@@ -79,7 +79,7 @@ const indexed = canon.tracks.reduce((sum, track) => sum + track.rooms.length, 0)
 if (indexed !== roomCount) throw new Error("search index has " + indexed + " rooms, files have " + roomCount);
 const listed = (home.match(/data-code="/g) || []).length;
 if (listed !== roomCount) throw new Error("home lists " + listed + " rooms, files have " + roomCount);
-const tileSum = [...home.matchAll(/<p>(\d+) rooms<\/p>/g)].reduce((sum, match) => sum + Number(match[1]), 0);
+const tileSum = [...home.matchAll(/<p>(\d+) rooms/g)].reduce((sum, match) => sum + Number(match[1]), 0);
 if (tileSum !== roomCount) throw new Error("track tiles sum to " + tileSum + ", files have " + roomCount);
 for (const bit of [words + " rooms", 'data-count="' + roomCount + '">' + roomCount + "</b> rooms", "written rooms of " + roomCount]) {
   if (!home.includes(bit)) throw new Error("home missing " + bit);
@@ -105,7 +105,7 @@ for (const file of ["assets/js/wow.js", "assets/js/frame.js", "assets/js/phone-n
   if (!text.includes(String(roomCount)) && !text.toLowerCase().includes(words.toLowerCase())) throw new Error(file + " room count");
 }
 if (!readFileSync(join(root, "assets/js/university.js"), "utf8").includes("opened >= " + roomCount)) throw new Error("all-rooms badge threshold");
-for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
+for (const id of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11"]) {
   const track = readFileSync(join(root, "tracks", id, "index.html"), "utf8");
   const local = canon.tracks.find((item) => item.id === id).rooms.length;
   if (!track.includes('data-count="' + roomCount + '">' + roomCount + "</b>")) throw new Error(id + " Canon room counter");
@@ -253,7 +253,7 @@ for (const name of readdirSync(join(root, "downloads/sheets"))) {
   if (!/\.(html|svg|md)$/.test(name)) continue;
   if (!readFileSync(join(root, "downloads/sheets", name), "utf8").includes("Sources and go deeper")) sourceGaps.push("sheet " + name);
 }
-for (const track of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]) {
+for (const track of ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11"]) {
   const chapter = readFileSync(join(root, "tracks", track, "chapter.md"), "utf8");
   if (!chapter.includes("Sources and go deeper") || !chapter.includes("last checked")) sourceGaps.push(track + " chapter.md");
 }

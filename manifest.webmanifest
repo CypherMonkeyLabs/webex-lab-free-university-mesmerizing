@@ -1,7 +1,7 @@
 {
   "name": "CypherWebex Canon",
   "short_name": "Webex Lab",
-  "description": "An independent, free, learning-only student project. Sixty-three rooms of Webex study notes.",
+  "description": "An independent, free, learning-only student project. Seventy-eight rooms of Webex study notes.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

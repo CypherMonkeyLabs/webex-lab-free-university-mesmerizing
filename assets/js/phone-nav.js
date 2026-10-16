@@ -131,9 +131,12 @@
     menuItem({ key: "browse", label: "Browse rooms", icon: "list", desc: "Open the track list.", button: true, attr: " data-open-rooms" })
   ].join("");
   var extraLinks = [
+    menuItem({ label: "GitHub", href: "https://github.com/cipher0x9", icon: "github", desc: "Visit my GitHub.", abs: true }),
+    menuItem({ label: "Labs org", href: "https://github.com/CypherMonkeyLabs", icon: "github", desc: "Visit the Labs org.", abs: true }),
     menuItem({ label: "Labs home", href: "https://cyphermonkeylabs.com", icon: "globe", desc: "Visit Cypher Monkey Labs.", abs: true }),
-    menuItem({ label: "Linktree", href: "https://linktr.ee/cyphermonkey", icon: "link", desc: "Links at linktr.ee/cyphermonkey.", abs: true }),
-    menuItem({ label: "Rate, comment, help", href: "https://github.com/cipher0x9/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true }),
+    menuItem({ label: "X", href: "https://x.com/Cypher0x9", icon: "spark", desc: "Visit X.", abs: true }),
+    menuItem({ label: "Hugging Face", href: "https://huggingface.co/Cypher0x9", icon: "spark", desc: "Visit Hugging Face.", abs: true }),
+    menuItem({ label: "Rate, comment, help", href: "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true }),
     menuItem({ label: "dev.to", href: "https://dev.to/cyphermonkey", icon: "edit", desc: "Profile at dev.to/cyphermonkey.", abs: true })
   ].join("");
   menu.innerHTML =

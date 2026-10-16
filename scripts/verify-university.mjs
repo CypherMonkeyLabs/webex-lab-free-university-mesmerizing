@@ -50,7 +50,7 @@ for (const name of sheets) {
   if (!existsSync(join(root, "downloads/sheets", stem + ".pdf"))) throw new Error("missing pdf " + stem);
   if (!existsSync(join(root, "downloads/sheets", stem + ".png"))) throw new Error("missing png " + stem);
   const sheet = readFileSync(join(root, "downloads/sheets", name), "utf8");
-  for (const bit of ["cyphermonkeylabs.com", "linktr.ee/cyphermonkey", "github.com/cipher0x9/webex-lab-free-university-mesmerizing", "CC BY-NC-SA"]) {
+  for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA"]) {
     if (!sheet.includes(bit)) throw new Error(name + " missing " + bit);
   }
   if (/linkedin/i.test(sheet)) throw new Error(name + " linkedin");
@@ -76,7 +76,7 @@ for (const bit of ["Diagrams", "Cheat Codes", "Careers", "CC BY-NC-SA"]) {
 if (cards.some((card) => !card.front || !card.back || !card.source)) throw new Error("empty flashcard");
 
 const uni = readFileSync(join(root, "assets/js/university.js"), "utf8");
-for (const bit of ["cyphermonkeylabs.com", "linktr.ee/cyphermonkey", "dev.to/cyphermonkey", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA", "Report a concern"]) {
+for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "dev.to/cyphermonkey", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA", "Report a concern"]) {
   if (!uni.includes(bit)) throw new Error("chrome missing " + bit);
 }
 if (/linkedin/i.test(uni)) throw new Error("linkedin in chrome");

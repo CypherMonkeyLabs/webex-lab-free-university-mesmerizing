@@ -152,6 +152,32 @@ html[data-theme="paper"] {
   --grad: linear-gradient(120deg, #0f766e, #c2410c, #b45309, #0f766e);
 }
 
+html[data-theme="contrast"] {
+  color-scheme: dark;
+  --bg: #000;
+  --bg-2: #000;
+  --bg-3: #111;
+  --ink: #fff;
+  --ink-dim: #fff;
+  --muted: #f5f5f5;
+  --line: #fff;
+  --line-strong: #ffe600;
+  --gold: #ffe600;
+  --gold-2: #fff;
+  --paper: #000;
+  --shadow: none;
+  --glow: none;
+  --accent: #ffe600;
+  --accent-2: #00e5ff;
+  --accent-ink: #000;
+  --glass: #000;
+  --card-bg: #000;
+  --field: #000;
+  --illu-bg: #000;
+  --hero-ink: #fff;
+  --sidebar: #000;
+  --grad: #ffe600;
+}
 html[data-sidebar="collapsed"] { --side: 78px; }
 
 body.v4 {

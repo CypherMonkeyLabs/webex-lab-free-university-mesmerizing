@@ -60,7 +60,6 @@
       '<a href="https://x.com/Cypher0x9">X</a>' +
       '<a href="https://huggingface.co/Cypher0x9">Hugging Face</a>' +
       '<a href="' + REPO + '">Rate, comment, help</a>' +
-      '<a href="https://dev.to/cyphermonkey">dev.to</a>' +
       '<button type="button" data-offline-save>Save for offline</button>' +
       '<a href="' + fromRoot("downloads/webex-university-offline.zip") + '">Offline bundle</a>';
     stage.insertBefore(bar, stage.firstChild);
@@ -71,18 +70,11 @@
       return '<a href="' + lab[1] + '">' + lab[0] + "<small>Next lab</small></a>";
     }).join("");
     return (
-      '<nav class="site-social" aria-label="Cypher Monkey Labs">' + socialLinksHtml() + "</nav>" +
-      '<p class="lab-sign">CypherMonkey · Webex Lab Free University</p>' +
-      '<p>Independent educational project. Not affiliated with or endorsed by Cisco or any other vendor. Trademarks belong to their owners. MIT code. CC BY-NC-SA content.</p>' +
-      '<p class="lab-actions">' +
-      '<a href="' + REPO + '">Rate, comment, help</a>' +
-      '<a href="' + CONTACT + '">Report a concern / takedown</a>' +
-      '<a href="' + CONTACT + '">Work with us</a>' +
-      '<a href="' + fromRoot("downloads.html") + '">Cheat Codes</a>' +
-      '<a href="' + fromRoot("play.html") + '">Play Lab</a>' +
-      "</p>" +
-      '<nav class="next-labs" aria-label="Other labs">' + labs + "</nav>" +
-      '<p class="site-copy">© 2026 CypherMonkeyLabs 🐒</p>'
+      '<p class="footer-disclaimer">This is an independent, free, learning-only project by a student. It respects every company and vendor. Trademarks belong to their owners. It is not affiliated or endorsed. If anyone has a concern, content will be removed or corrected promptly via the contact form at <a href="' + CONTACT + '">' + CONTACT + '</a>. Nothing here is sold, and there are no ads. Happy to volunteer for any organization.</p>' +
+      '<p>MIT code. CC BY-NC-SA content. <a href="' + CONTACT + '">Report a concern</a>.</p>' +
+      '<p class="site-copy">© 2026 CypherMonkeyLabs 🐒</p>' +
+      '<div class="float-badges" data-float-badges></div>' +
+      '<nav class="next-labs" aria-label="Other labs">' + labs + "</nav>"
     );
   }
   var foot = document.querySelector(".site-footer");
@@ -200,7 +192,7 @@
 
   function cacheUrls(urls) {
     if (!("caches" in window)) return Promise.reject(new Error("Cache Storage is unavailable"));
-    return caches.open("webex-university-v10").then(function (cache) {
+    return caches.open("webex-university-v12").then(function (cache) {
       return Promise.all(urls.map(function (url) {
         return fetch(url).then(function (response) {
           if (response && response.ok) return cache.put(url, response);
@@ -320,10 +312,12 @@
     }
   }
 
-  var wowCss = document.createElement("link");
-  wowCss.rel = "stylesheet";
-  wowCss.href = rootPrefix + "assets/css/wow.css";
-  document.head.appendChild(wowCss);
+  if (!document.querySelector('link[href*="assets/css/wow.css"]')) {
+    var wowCss = document.createElement("link");
+    wowCss.rel = "stylesheet";
+    wowCss.href = rootPrefix + "assets/css/wow.css";
+    document.head.appendChild(wowCss);
+  }
   later(function () {
     var i18nJs = document.createElement("script");
     i18nJs.src = rootPrefix + "assets/js/room-i18n.js";
@@ -331,7 +325,8 @@
     i18nJs.onload = function () { document.dispatchEvent(new CustomEvent("canon-i18n")); };
     document.body.appendChild(i18nJs);
   });
-  if (!motionReduced()) {
+  var phone = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  if (!motionReduced() && !phone) {
     later(function () {
       var iconJs = document.createElement("script");
       iconJs.type = "module";
@@ -347,6 +342,23 @@
       document.body.appendChild(backdropJs);
     });
   }
+  if (!document.getElementById("guide-mount")) {
+    var guideMount = document.createElement("div");
+    guideMount.id = "guide-mount";
+    guideMount.className = "guide-mount";
+    guideMount.setAttribute("data-guide-mount", "");
+    document.body.appendChild(guideMount);
+  }
+  if (!document.querySelector('link[href*="assets/css/frame.css"]')) {
+    var frameCss = document.createElement("link");
+    frameCss.rel = "stylesheet";
+    frameCss.href = rootPrefix + "assets/css/frame.css";
+    document.head.appendChild(frameCss);
+  }
+  var frameJs = document.createElement("script");
+  frameJs.src = rootPrefix + "assets/js/frame.js";
+  frameJs.async = false;
+  document.body.appendChild(frameJs);
   var phoneJs = document.createElement("script");
   phoneJs.src = rootPrefix + "assets/js/phone-nav.js";
   phoneJs.async = false;

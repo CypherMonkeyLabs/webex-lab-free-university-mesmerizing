@@ -35,6 +35,7 @@
     mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/>',
     check: '<circle cx="12" cy="12" r="8"/><path d="M8.5 12.2l2.3 2.3 4.7-5"/>',
     book: '<path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H20v16H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 5.5V21"/>',
+    link: '<path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1-.1l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1"/>',
     flask: '<path d="M9 3h6M10 3v6L5.5 18A3 3 0 0 0 8 22h8a3 3 0 0 0 2.5-4L14 9V3"/>',
     wrench: '<path d="M14.5 6.2a4 4 0 0 0-5.6 5.1L4 16.2 7.8 20l4.9-4.9a4 4 0 0 0 5.1-5.6L15 12l-3-3z"/>',
     flag: '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
@@ -87,6 +88,7 @@
   var SECTIONS = [
     { key: "learn", label: "Learn", href: "index.html", icon: "home", desc: "Sixty-three rooms. Read offline. Product claims stay cited." },
     { key: "start", label: "Start here", href: "start.html", icon: "rocket", desc: "A Canon study plan. Read Control Hub before a dial plan." },
+    { key: "resources", label: "Resources", href: "resources.html", icon: "link", desc: "Official Webex, Cisco Live, DevNet, cert, and community links that resolved." },
     { key: "rooms", label: "Rooms", href: "index.html#rooms", icon: "rooms", desc: "Eight tracks. Open a written room from the map." },
     { key: "diagrams", label: "Diagrams", href: "diagrams.html", icon: "image", desc: "28 custom SVGs. 23 are call, signal, or data flows." },
     { key: "flows", label: "Flows", href: "flows.html", icon: "flow", desc: "23 call, signal, and data flows with a moving packet." },
@@ -136,8 +138,7 @@
     menuItem({ label: "Labs home", href: "https://cyphermonkeylabs.com", icon: "globe", desc: "Visit Cypher Monkey Labs.", abs: true }),
     menuItem({ label: "X", href: "https://x.com/Cypher0x9", icon: "spark", desc: "Visit X.", abs: true }),
     menuItem({ label: "Hugging Face", href: "https://huggingface.co/Cypher0x9", icon: "spark", desc: "Visit Hugging Face.", abs: true }),
-    menuItem({ label: "Rate, comment, help", href: "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true }),
-    menuItem({ label: "dev.to", href: "https://dev.to/cyphermonkey", icon: "edit", desc: "Profile at dev.to/cyphermonkey.", abs: true })
+    menuItem({ label: "Rate, comment, help", href: "https://github.com/CypherMonkeyLabs/webex-lab-free-university-mesmerizing", icon: "github", desc: "The lab repository on GitHub.", abs: true })
   ].join("");
   menu.innerHTML =
     '<div class="phone-menu-bar">' +
@@ -213,7 +214,13 @@
     '<button type="button" data-set-theme="cyberpunk">Cyberpunk</button>' +
     '<button type="button" data-set-theme="sunset">Sunset</button>' +
     '<button type="button" data-set-theme="paper">Light</button>' +
+    '<button type="button" data-set-theme="contrast">Contrast</button>' +
     "</fieldset>" +
+    '<div class="a11y-font" role="group" aria-label="Font size">' +
+    '<button type="button" data-font-set="sm" aria-label="Smaller text">A−</button>' +
+    '<button type="button" data-font-set="md" aria-label="Default text">A</button>' +
+    '<button type="button" data-font-set="lg" aria-label="Larger text">A+</button>' +
+    "</div>" +
     '<label class="settings-lang"><span data-i18n="langName">Language</span> <select data-lang aria-label="Language"></select></label>' +
     '<fieldset data-settings-sound><legend data-i18n="sound">Sound</legend>' +
     '<button type="button" data-listen data-i18n="listen">Listen</button>' +

@@ -21,7 +21,8 @@
     ["sunset", "Sunset", "Night"],
     ["futuristic", "Futuristic", "Night"],
     ["gaming", "Gaming", "Night"],
-    ["paper", "Light", "Paper"]
+    ["paper", "Light", "Paper"],
+    ["contrast", "Contrast", "High"]
   ];
   var THEME_NAMES = THEMES.map(function (item) { return item[0]; });
 
@@ -166,6 +167,7 @@
   var TOOLS = [
     ["index.html", "home", "Home", "Sixty-three rooms. Read offline. Claims stay cited."],
     ["start.html", "start", "Start Here", "A Canon study plan. Read Control Hub before a dial plan."],
+    ["resources.html", "link", "Resources", "Official Webex, Cisco Live, DevNet, cert, and community links that resolved."],
     ["quizzes.html", "check", "Practice Quiz", "483 practice checks. Room quizzes stay on the room pages."],
     ["flashcards.html", "cards", "Flashcards", "842 cards. Know and Again stay in this browser."],
     ["labs.html", "flask", "Hands-on Labs", "Five study models that cite the sentence they imitate."],

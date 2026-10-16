@@ -76,10 +76,19 @@ for (const bit of ["Diagrams", "Cheat Codes", "Careers", "CC BY-NC-SA"]) {
 if (cards.some((card) => !card.front || !card.back || !card.source)) throw new Error("empty flashcard");
 
 const uni = readFileSync(join(root, "assets/js/university.js"), "utf8");
-for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "dev.to/cyphermonkey", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA", "Report a concern"]) {
+for (const bit of ["cyphermonkeylabs.com", "github.com/cipher0x9", "github.com/CypherMonkeyLabs", "huggingface.co/Cypher0x9", "x.com/Cypher0x9", "CC BY-NC-SA", "Report a concern", "guide-mount"]) {
   if (!uni.includes(bit)) throw new Error("chrome missing " + bit);
 }
+if (/dev\.to\/cyphermonkey/.test(uni)) throw new Error("dev.to still in chrome");
 if (/linkedin/i.test(uni)) throw new Error("linkedin in chrome");
+const frameJs = readFileSync(join(root, "assets/js/frame.js"), "utf8");
+if (!frameJs.includes("A student's open lab: learning and sharing, free for everyone.")) throw new Error("identity line");
+if (!frameJs.includes("guide-mount")) throw new Error("guide mount");
+if (!readFileSync(join(root, "assets/css/shell.css"), "utf8").includes('data-theme="contrast"')) throw new Error("contrast theme");
+const socials = readFileSync(join(root, "assets/data/socials.json"), "utf8");
+for (const bit of ["github.com/cipher0x9", "x.com/Cypher0x9", "huggingface.co/Cypher0x9", "linkedin.com/in/luckylakshmanucwebex"]) {
+  if (!socials.includes(bit)) throw new Error("socials missing " + bit);
+}
 if (/@/.test(uni.match(/mailto:[^"']+/) || "")) throw new Error("email in chrome");
 
 function walk(dir, out) {

@@ -1,0 +1,24 @@
+{
+  "networks": [
+    {
+      "id": "github",
+      "label": "GitHub profile",
+      "href": "https://github.com/cipher0x9"
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "href": "https://x.com/Cypher0x9"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/luckylakshmanucwebex"
+    },
+    {
+      "id": "huggingface",
+      "label": "Hugging Face",
+      "href": "https://huggingface.co/Cypher0x9"
+    }
+  ]
+}

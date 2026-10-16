@@ -800,3 +800,13 @@ mark.recheck,
   .v4-sidebar, .v4-toc, .v4-read, .v4-subbar, .topbar, div.v4-cursor, div.v4-trail, .v4-palette, .v4-help, .theme-pop { display: none !important; }
   .v4-app, .v4-stage { display: block; }
 }
+
+/* Mermaid drawings stay inside the column. The shell paints them dark. */
+details, .mermaid, pre.mermaid { max-width: 100%; min-width: 0; }
+.mermaid, pre.mermaid {
+  overflow-x: auto;
+  border-radius: 16px;
+  background: #0e1324;
+  color: #e8eefc;
+}
+.mermaid svg { max-width: 100%; height: auto; }

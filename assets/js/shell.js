@@ -53,15 +53,91 @@
 
   function prefix() {
     var nodes = document.querySelectorAll("script[src]");
-    var mark = "assets/js/search-index.js";
-    for (var i = 0; i < nodes.length; i++) {
-      var src = nodes[i].getAttribute("src") || "";
-      var at = src.indexOf(mark);
-      if (at !== -1) return src.slice(0, at);
+    var marks = ["assets/js/shell.js", "assets/js/search-index.js"];
+    var markIndex, i, src, at;
+    for (markIndex = 0; markIndex < marks.length; markIndex++) {
+      for (i = 0; i < nodes.length; i++) {
+        src = nodes[i].getAttribute("src") || "";
+        at = src.indexOf(marks[markIndex]);
+        if (at !== -1) return src.slice(0, at);
+      }
     }
     return "";
   }
   var rootPrefix = prefix();
+
+  function ensureGuide() {
+    if (document.querySelector("script[src*='guide/guide.js']")) return;
+    if (!document.querySelector("link[href*='guide/guide.css']")) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = rootPrefix + "guide/guide.css";
+      document.head.appendChild(css);
+    }
+    var guideJs = document.createElement("script");
+    guideJs.type = "module";
+    guideJs.src = rootPrefix + "guide/guide.js";
+    document.head.appendChild(guideJs);
+  }
+  ensureGuide();
+
+  function bootMermaid() {
+    var blocks = document.querySelectorAll("pre.mermaid");
+    if (!blocks.length || document.documentElement.dataset.mermaidBoot === "1") return;
+    document.documentElement.dataset.mermaidBoot = "1";
+    blocks.forEach(function (node) {
+      var details = node.closest("details");
+      if (!details) return;
+      details.open = true;
+      var summary = details.querySelector("summary");
+      if (summary && /not rendered|no engine/i.test(summary.textContent || "")) summary.textContent = "Diagram";
+    });
+    var script = document.createElement("script");
+    script.src = rootPrefix + "assets/vendor/mermaid.min.js";
+    script.onload = function () {
+      var api = window.mermaid;
+      if (!api || typeof api.initialize !== "function") return;
+      api.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        logLevel: "fatal",
+        theme: "dark",
+        fontFamily: "system-ui, sans-serif",
+        flowchart: { htmlLabels: false, curve: "basis" },
+        themeVariables: {
+          darkMode: true,
+          background: "#0e1324",
+          primaryColor: "#312e81",
+          primaryTextColor: "#f8fafc",
+          primaryBorderColor: "#22d3ee",
+          secondaryColor: "#1e1b4b",
+          secondaryTextColor: "#eef4ff",
+          tertiaryColor: "#0f172a",
+          tertiaryTextColor: "#e8eefc",
+          lineColor: "#c4b5fd",
+          textColor: "#e8eefc",
+          mainBkg: "#1e1b4b",
+          nodeBorder: "#22d3ee",
+          clusterBkg: "#111827",
+          titleColor: "#fde68a",
+          edgeLabelBackground: "#0e1324",
+          nodeTextColor: "#f8fafc"
+        }
+      });
+      var nodes = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+      var chain = Promise.resolve();
+      nodes.forEach(function (node) {
+        chain = chain.then(function () {
+          if (!node.isConnected) return null;
+          if (typeof api.run === "function") return api.run({ nodes: [node], suppressErrors: true });
+          if (typeof api.init === "function") return api.init(undefined, node);
+          return null;
+        }).catch(function () { return null; });
+      });
+    };
+    document.head.appendChild(script);
+  }
+  bootMermaid();
 
   function esc(value) {
     return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {

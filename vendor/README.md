@@ -8,4 +8,4 @@ markmap-view 0.18.12 — MIT — https://markmap.js.org
 three.js r170 (copy of archive/webex-lab-v1/campus/vendor/three) — MIT
 
 GSAP was not vendored. Its standard license is not MIT.
-Mermaid is used only if a build-time render is committed as SVG. The runtime is not shipped.
+mermaid 12.2.0 — MIT — assets/vendor/mermaid.min.js (same pin as the UC lab flagship vendor bundle). The shell renders every pre.mermaid block.

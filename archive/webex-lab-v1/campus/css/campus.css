@@ -389,3 +389,12 @@ html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-mo
   animation: none !important;
   transition: none !important;
 }
+
+html, body { max-width: 100%; overflow-x: clip; }
+.lab-links, .uni-menu, .top, .app, .main, .search, .bottom-nav, .rail {
+  max-width: 100%;
+  min-width: 0;
+}
+.uni-menu, .lab-links { flex-wrap: wrap; }
+.top { flex-wrap: wrap; }
+.search { width: 100%; min-width: 0; }

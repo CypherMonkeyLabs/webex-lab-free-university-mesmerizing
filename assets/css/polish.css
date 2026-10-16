@@ -388,6 +388,9 @@ body.onboard-open .cg-nudge { visibility: hidden; }
   }
   body.home-world .world-hero { padding-bottom: 210px; }
   .hero-live .hero-copy { padding-right: 168px; box-sizing: border-box; }
+}
+@media (max-width: 420px) {
+  .hero-live .hero-copy { padding-right: 72px; }
   .hero-live h1,
   .hero-live .lede,
   .hero-live .hero-actions { max-width: 100%; }

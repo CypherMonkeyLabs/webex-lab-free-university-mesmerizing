@@ -792,6 +792,17 @@ html[data-motion="reduce"] .cg-root * {
   }
 }
 
+@media (max-width: 420px) {
+  .cg-root,
+  .cg-monkey,
+  .cg-root.is-greeting .cg-monkey,
+  .cg-root.is-compact,
+  .cg-root.is-compact .cg-monkey {
+    width: 56px !important;
+    height: 64px !important;
+  }
+}
+
 .cg-root.is-menu-away {
   transform: translateX(140%);
 }

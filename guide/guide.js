@@ -898,8 +898,61 @@ function dockBottom() {
 }
 
 function monkeySize() {
+  if (window.matchMedia("(max-width: 420px)").matches) return { width: 56, height: 64 };
   if (window.matchMedia("(max-width: 720px)").matches) return { width: 156, height: 184 };
   return { width: 200, height: 236 };
+}
+
+function onScreenLedes() {
+  var rects = [];
+  document.querySelectorAll(".lede, .world-lede").forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.width < 8 || rect.height < 8) return;
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    rects.push(rect);
+  });
+  return rects;
+}
+
+function boxFromRightBottom(right, bottom, width, height) {
+  return {
+    left: window.innerWidth - right - width,
+    top: window.innerHeight - bottom - height,
+    right: window.innerWidth - right,
+    bottom: window.innerHeight - bottom
+  };
+}
+
+function hitsLede(box, rects) {
+  return rects.some(function (rect) { return intersects(box, rect, 2); });
+}
+
+function parkOffLede(right, bottom, width, height) {
+  var leads = onScreenLedes();
+  var narrow = window.matchMedia("(max-width: 420px)").matches;
+  if (narrow) {
+    width = 56;
+    height = 64;
+  }
+  if (!leads.length || !hitsLede(boxFromRightBottom(right, bottom, width, height), leads)) {
+    return { right: right, bottom: bottom, width: width, height: height, compact: narrow || width <= 56 };
+  }
+  width = 56;
+  height = 64;
+  var dock = phoneDockHeight();
+  var rights = [8, Math.max(8, window.innerWidth - width - 8)];
+  var step;
+  for (step = dock + 8; step < window.innerHeight - height; step += 20) {
+    var rIndex;
+    for (rIndex = 0; rIndex < rights.length; rIndex += 1) {
+      var candidate = boxFromRightBottom(rights[rIndex], step, width, height);
+      if (candidate.top < 8) continue;
+      if (!hitsLede(candidate, leads)) {
+        return { right: rights[rIndex], bottom: step, width: width, height: height, compact: true };
+      }
+    }
+  }
+  return { right: 8, bottom: dock + 8, width: width, height: height, compact: true };
 }
 
 function phoneDockHeight() {
@@ -920,27 +973,49 @@ function intersects(a, b, pad) {
 
 function placeGreeting() {
   var phone = window.matchMedia("(max-width: 720px)").matches;
-  var monkeyW = phone ? 148 : 200;
-  var monkeyH = phone ? 172 : 236;
+  var narrow = window.matchMedia("(max-width: 420px)").matches;
+  var monkeyW = narrow ? 56 : (phone ? 148 : 200);
+  var monkeyH = narrow ? 64 : (phone ? 172 : 236);
+  host.classList.toggle("is-compact", narrow);
   var cardW = Math.min(phone ? 230 : 420, window.innerWidth - monkeyW - 28);
   if (!phone) cardW = Math.min(420, window.innerWidth - 24);
   var cardH = Math.max(112, Math.round(nudge.getBoundingClientRect().height) || 140);
   var dock = phoneDockHeight();
   if (phone && dock < 64) dock = 76;
   if (phone) {
-    var cardFixed = 150;
+    var cardFixed = narrow ? 112 : 150;
     var cardTop = window.innerHeight - dock - cardFixed - 8;
     var cardWidth = Math.max(168, window.innerWidth - monkeyW - 22);
+    var monkeyLeft = window.innerWidth - monkeyW - 8;
+    var monkeyTop = cardTop + cardFixed - monkeyH - 14;
+    var leads = onScreenLedes();
+    function cardBox(top) {
+      return { left: 10, top: top, right: 10 + cardWidth, bottom: top + cardFixed };
+    }
+    function greetMonkey(top, left) {
+      return { left: left, top: top, right: left + monkeyW, bottom: top + monkeyH };
+    }
+    var lift = 0;
+    while (lift < 16 && leads.length && (hitsLede(cardBox(cardTop), leads) || hitsLede(greetMonkey(monkeyTop, monkeyLeft), leads))) {
+      cardTop -= 24;
+      monkeyTop -= 24;
+      lift += 1;
+      if (cardTop < 72) break;
+    }
+    if (leads.length && hitsLede(greetMonkey(monkeyTop, monkeyLeft), leads)) {
+      monkeyLeft = 8;
+      monkeyTop = window.innerHeight - dock - monkeyH - 8;
+    }
     host.dataset.greetLayout = "overlay";
     host.style.setProperty("--cg-greet-card-left", "10px");
     host.style.setProperty("--cg-greet-card-top", Math.round(cardTop) + "px");
     host.style.setProperty("--cg-greet-card-width", Math.round(cardWidth) + "px");
-    host.style.setProperty("--cg-greet-left", Math.round(window.innerWidth - monkeyW - 8) + "px");
-    host.style.setProperty("--cg-greet-top", Math.round(cardTop + cardFixed - monkeyH - 14) + "px");
+    host.style.setProperty("--cg-greet-left", Math.round(monkeyLeft) + "px");
+    host.style.setProperty("--cg-greet-top", Math.round(monkeyTop) + "px");
     return;
   }
   var obstacles = [];
-  document.querySelectorAll(".track-tile, .hud-panel, .hud-stats, .uni-menu a, .hero-actions a, .stat, .world-title, .world-lede, .canon-banner, .topbar, .phone-dock, .hero-live h1").forEach(function (el) {
+  document.querySelectorAll(".track-tile, .hud-panel, .hud-stats, .uni-menu a, .hero-actions a, .stat, .world-title, .world-lede, .lede, .canon-banner, .topbar, .phone-dock, .hero-live h1").forEach(function (el) {
     var rect = el.getBoundingClientRect();
     if (rect.width < 8 || rect.height < 8) return;
     if (rect.bottom < 0 || rect.top > window.innerHeight) return;
@@ -1056,12 +1131,13 @@ function place() {
       if (lift > bottom) bottom = Math.min(lift, cap);
     }
   }
-  var parked = settleMonkey(right, bottom, width, height, visibleBoxes(".go-deeper li, .go-deeper h2, main h1, h1, .world-title"));
-  right = parked.right;
-  bottom = parked.bottom;
-  width = parked.width;
-  height = parked.height;
-  host.classList.toggle("is-compact", parked.compact);
+  var parked = settleMonkey(right, bottom, width, height, visibleBoxes(".go-deeper li, .go-deeper h2, main h1, h1, .world-title, .lede, .world-lede"));
+  var clear = parkOffLede(parked.right, parked.bottom, parked.width, parked.height);
+  right = clear.right;
+  bottom = clear.bottom;
+  width = clear.width;
+  height = clear.height;
+  host.classList.toggle("is-compact", parked.compact || clear.compact);
   var monkeyBox = boxAt(right, bottom, width, height);
   var chosen = { right: right, bottom: bottom, slot: needSlot ? findSlot(monkeyBox, boxes.concat(story)) : null };
   host.style.setProperty("--cg-right", chosen.right + "px");

@@ -283,8 +283,9 @@ html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
   color: var(--ink);
   text-decoration: none;
   border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  padding: 6px 12px;
+  border-radius: 16px;
+  min-height: 44px;
+  padding: 8px 12px;
   background: color-mix(in srgb, var(--accent) 10%, transparent);
   font-weight: 700;
 }
@@ -342,7 +343,35 @@ html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
   background: color-mix(in srgb, var(--paper, var(--bg-2)) 86%, transparent);
 }
 .atlas-card object, .atlas-card img, .chart-card svg, .chart-card canvas { width: 100%; height: auto; }
-.lab-chart { width: 100%; height: auto; }
+.lab-chart { width: 100%; height: auto; aspect-ratio: 640 / 220; }
+[data-d3] { display: block; width: 100%; min-height: 220px; }
+.site-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.site-social a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--card-bg) 82%, transparent);
+  text-decoration: none;
+}
+.site-social a:hover,
+.site-social a:focus-visible {
+  color: var(--accent-ink);
+  background: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.site-social svg { width: 16px; height: 16px; display: block; }
+.site-copy { margin: 4px 0 0; color: var(--ink); font-weight: 700; }
+.lab-footer.site-footer { flex-direction: column; align-items: flex-start; }
 [data-three] { width: 72px; height: 72px; }
 [data-three] canvas { width: 72px; height: 72px; display: block; }
 #mindmap { width: 100%; height: 420px; border: 1px solid var(--line); border-radius: 16px; }
@@ -352,7 +381,7 @@ html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
   .fold-grid { grid-template-columns: 1fr; }
   .fold-hero svg { max-height: 72px; }
   .uni-fold { padding: 4px 10px 8px; }
-  .uni-menu a { padding: 4px 8px; font-size: 0.82rem; }
+  .uni-menu a { padding: 8px 12px; font-size: 0.92rem; min-height: 44px; }
   .lab-links { flex-wrap: nowrap; overflow-x: auto; }
   .mascot-row svg { width: 34px; height: 40px; }
   [data-three] { display: none; }

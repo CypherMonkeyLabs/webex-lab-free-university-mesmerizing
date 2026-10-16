@@ -109,6 +109,11 @@
     var stored = "en";
     try { stored = localStorage.getItem("canon-lang") || "en"; } catch (err) { stored = "en"; }
     applyLang(stored);
+    document.addEventListener("canon-i18n", function () {
+      var live = "en";
+      try { live = localStorage.getItem("canon-lang") || "en"; } catch (err) { live = "en"; }
+      applyLang(live);
+    });
     document.addEventListener("canon-rooms-ready", function () {
       var live = document.querySelector("[data-lang]");
       applyRooms(live && live.value ? live.value : stored);

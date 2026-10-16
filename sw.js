@@ -1,5 +1,5 @@
 /* Offline shell for the Webex university. Same-origin GET only. */
-var CACHE = "webex-university-v8";
+var CACHE = "webex-university-v10";
 var SHELL = [
   "./",
   "./index.html",
@@ -30,8 +30,13 @@ var SHELL = [
   "./assets/js/canon.js",
   "./assets/js/university.js",
   "./assets/js/phone-nav.js",
+  "./assets/js/guide-kb.js",
+  "./assets/js/guide-bot.js",
+  "./assets/data/guide-kb.json",
   "./assets/js/search-index.js",
-  "./assets/js/study-index.js"
+  "./assets/js/study-index.js",
+  "./favicon.svg",
+  "./favicon.ico"
 ];
 
 self.addEventListener("install", function (event) {

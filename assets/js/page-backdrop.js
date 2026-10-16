@@ -203,6 +203,11 @@ function frame(rig, time) {
   }
 }
 
+function pixelRatio() {
+  var mobile = window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+  return Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2);
+}
+
 function motionReduced() {
   try {
     var stored = localStorage.getItem("canon-motion");
@@ -220,6 +225,8 @@ function boot() {
   if (!banner) return;
   var canvas = document.createElement("canvas");
   canvas.className = "page-gl";
+  canvas.width = 1280;
+  canvas.height = 240;
   canvas.setAttribute("data-page-gl", kind);
   canvas.setAttribute("aria-hidden", "true");
   banner.prepend(canvas);
@@ -241,7 +248,7 @@ function boot() {
     document.body.classList.remove("has-page-gl");
     return;
   }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(pixelRatio());
   var sky = {
     diagrams: 0x0b1c3a,
     flows: 0x07281f,
@@ -273,6 +280,7 @@ function boot() {
   function resize() {
     var w = Math.max(banner.clientWidth, 1);
     var h = Math.max(banner.clientHeight, 1);
+    renderer.setPixelRatio(pixelRatio());
     renderer.setSize(w, h, false);
     camera.aspect = w / Math.max(h, 1);
     camera.updateProjectionMatrix();
@@ -299,6 +307,9 @@ function boot() {
   kick();
   document.addEventListener("visibilitychange", kick);
   document.addEventListener("canon-motion", kick);
+  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.addEventListener) motionQuery.addEventListener("change", kick);
+  else if (motionQuery.addListener) motionQuery.addListener(kick);
   if (window.IntersectionObserver) {
     new IntersectionObserver(function (entries) {
       onScreen = entries.some(function (entry) { return entry.isIntersecting; });

@@ -11,7 +11,7 @@
       {
        "kind": "ZIP",
        "href": "downloads/webex-university-offline.zip",
-       "bytes": 23415193
+       "bytes": 38109317
       }
      ]
     }
@@ -38,7 +38,7 @@
       {
        "kind": "HTML",
        "href": "downloads/flashcards-print.html",
-       "bytes": 276109
+       "bytes": 275997
       }
      ]
     }
@@ -60,7 +60,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/ai-agents.html",
-       "bytes": 10924
+       "bytes": 10812
       },
       {
        "kind": "PNG",
@@ -86,7 +86,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/analyzer-reports.html",
-       "bytes": 11633
+       "bytes": 11521
       },
       {
        "kind": "PNG",
@@ -112,7 +112,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/call-flows.html",
-       "bytes": 10719
+       "bytes": 10607
       },
       {
        "kind": "PNG",
@@ -138,7 +138,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/careers-certs.html",
-       "bytes": 11569
+       "bytes": 11457
       },
       {
        "kind": "PNG",
@@ -164,7 +164,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/config-checklist.html",
-       "bytes": 10857
+       "bytes": 10745
       },
       {
        "kind": "PNG",
@@ -190,7 +190,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/control-hub-roles.html",
-       "bytes": 12504
+       "bytes": 12392
       },
       {
        "kind": "PNG",
@@ -216,7 +216,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/crm-apis.html",
-       "bytes": 10933
+       "bytes": 10821
       },
       {
        "kind": "PNG",
@@ -242,7 +242,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/dedicated-instance.html",
-       "bytes": 11933
+       "bytes": 11821
       },
       {
        "kind": "PNG",
@@ -268,7 +268,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/devices-provisioning.html",
-       "bytes": 11515
+       "bytes": 11403
       },
       {
        "kind": "PNG",
@@ -294,7 +294,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/dial-plan.html",
-       "bytes": 11627
+       "bytes": 11515
       },
       {
        "kind": "PNG",
@@ -320,7 +320,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/e911.html",
-       "bytes": 10821
+       "bytes": 10709
       },
       {
        "kind": "PNG",
@@ -346,7 +346,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/flow-designer.html",
-       "bytes": 11560
+       "bytes": 11448
       },
       {
        "kind": "PNG",
@@ -372,7 +372,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/glossary.html",
-       "bytes": 10719
+       "bytes": 10607
       },
       {
        "kind": "PNG",
@@ -398,7 +398,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/identity-sync.html",
-       "bytes": 11755
+       "bytes": 11643
       },
       {
        "kind": "PNG",
@@ -424,7 +424,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/licensing-certs.html",
-       "bytes": 10865
+       "bytes": 10753
       },
       {
        "kind": "PNG",
@@ -450,7 +450,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/media-nat.html",
-       "bytes": 11481
+       "bytes": 11369
       },
       {
        "kind": "PNG",
@@ -476,7 +476,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/migration-cutover.html",
-       "bytes": 10873
+       "bytes": 10761
       },
       {
        "kind": "PNG",
@@ -502,7 +502,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/number-porting.html",
-       "bytes": 11716
+       "bytes": 11604
       },
       {
        "kind": "PNG",
@@ -528,7 +528,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/ports-protocols.html",
-       "bytes": 11008
+       "bytes": 10896
       },
       {
        "kind": "PNG",
@@ -554,7 +554,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/pstn-byoc.html",
-       "bytes": 10847
+       "bytes": 10735
       },
       {
        "kind": "PNG",
@@ -580,7 +580,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/recording-qm.html",
-       "bytes": 10801
+       "bytes": 10689
       },
       {
        "kind": "PNG",
@@ -606,7 +606,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/security.html",
-       "bytes": 10785
+       "bytes": 10673
       },
       {
        "kind": "PNG",
@@ -632,7 +632,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/survivability.html",
-       "bytes": 11636
+       "bytes": 11524
       },
       {
        "kind": "PNG",
@@ -658,7 +658,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/troubleshooting.html",
-       "bytes": 10834
+       "bytes": 10722
       },
       {
        "kind": "PNG",
@@ -684,7 +684,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/wfm.html",
-       "bytes": 10825
+       "bytes": 10713
       },
       {
        "kind": "PNG",
@@ -710,7 +710,7 @@
       {
        "kind": "HTML",
        "href": "downloads/sheets/wxcc-routing.html",
-       "bytes": 12085
+       "bytes": 11973
       },
       {
        "kind": "PNG",
@@ -731,6 +731,27 @@
    "title": "Flow diagrams (SVG, PNG, standalone HTML)",
    "items": [
     {
+     "label": "Agent State",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/agent-state.svg",
+       "bytes": 3636
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/agent-state.png",
+       "bytes": 452563
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/agent-state.html",
+       "bytes": 5527
+      }
+     ]
+    },
+    {
      "label": "Ai Handoff",
      "blurb": "Flow diagram with its colors and motion kept inside the file.",
      "files": [
@@ -747,7 +768,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/ai-handoff.html",
-       "bytes": 6457
+       "bytes": 6746
+      }
+     ]
+    },
+    {
+     "label": "Analytics Loop",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/analytics-loop.svg",
+       "bytes": 3595
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/analytics-loop.png",
+       "bytes": 479473
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/analytics-loop.html",
+       "bytes": 5492
       }
      ]
     },
@@ -768,7 +810,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/analyzer.html",
-       "bytes": 8875
+       "bytes": 9164
       }
      ]
     },
@@ -789,7 +831,91 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/app-media.html",
-       "bytes": 6379
+       "bytes": 6668
+      }
+     ]
+    },
+    {
+     "label": "Barge Path",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/barge-path.svg",
+       "bytes": 3593
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/barge-path.png",
+       "bytes": 482490
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/barge-path.html",
+       "bytes": 5482
+      }
+     ]
+    },
+    {
+     "label": "Call Queue",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/call-queue.svg",
+       "bytes": 3557
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/call-queue.png",
+       "bytes": 475700
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/call-queue.html",
+       "bytes": 5446
+      }
+     ]
+    },
+    {
+     "label": "Callback Offer",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/callback-offer.svg",
+       "bytes": 3577
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/callback-offer.png",
+       "bytes": 451645
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/callback-offer.html",
+       "bytes": 5474
+      }
+     ]
+    },
+    {
+     "label": "Calling Plan",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/calling-plan.svg",
+       "bytes": 3557
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/calling-plan.png",
+       "bytes": 438304
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/calling-plan.html",
+       "bytes": 5450
       }
      ]
     },
@@ -810,7 +936,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/calling-registration.html",
-       "bytes": 6314
+       "bytes": 6603
+      }
+     ]
+    },
+    {
+     "label": "Cert Study Path",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/cert-study-path.svg",
+       "bytes": 3588
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/cert-study-path.png",
+       "bytes": 442677
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/cert-study-path.html",
+       "bytes": 5487
       }
      ]
     },
@@ -831,7 +978,70 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/certificate-trunk.html",
-       "bytes": 5989
+       "bytes": 6278
+      }
+     ]
+    },
+    {
+     "label": "Consult Transfer",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/consult-transfer.svg",
+       "bytes": 3623
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/consult-transfer.png",
+       "bytes": 455591
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/consult-transfer.html",
+       "bytes": 5524
+      }
+     ]
+    },
+    {
+     "label": "Contact Center Stack",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/contact-center-stack.svg",
+       "bytes": 3652
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/contact-center-stack.png",
+       "bytes": 447706
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/contact-center-stack.html",
+       "bytes": 5561
+      }
+     ]
+    },
+    {
+     "label": "Contact Entry",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/contact-entry.svg",
+       "bytes": 3579
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/contact-entry.png",
+       "bytes": 439715
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/contact-entry.html",
+       "bytes": 5474
       }
      ]
     },
@@ -852,7 +1062,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/control-hub.html",
-       "bytes": 6223
+       "bytes": 6512
       }
      ]
     },
@@ -873,7 +1083,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/crm-pop.html",
-       "bytes": 6531
+       "bytes": 6820
       }
      ]
     },
@@ -894,7 +1104,49 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/cscan.html",
-       "bytes": 6432
+       "bytes": 6721
+      }
+     ]
+    },
+    {
+     "label": "Cucm Bridge",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/cucm-bridge.svg",
+       "bytes": 3602
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/cucm-bridge.png",
+       "bytes": 458517
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/cucm-bridge.html",
+       "bytes": 5493
+      }
+     ]
+    },
+    {
+     "label": "Dedicated Instance Map",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/dedicated-instance-map.svg",
+       "bytes": 3648
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/dedicated-instance-map.png",
+       "bytes": 480926
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/dedicated-instance-map.html",
+       "bytes": 5561
       }
      ]
     },
@@ -915,7 +1167,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/device-claim.html",
-       "bytes": 8871
+       "bytes": 9160
       }
      ]
     },
@@ -936,7 +1188,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/device-media.html",
-       "bytes": 6494
+       "bytes": 6783
+      }
+     ]
+    },
+    {
+     "label": "Devices Board",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/devices-board.svg",
+       "bytes": 3596
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/devices-board.png",
+       "bytes": 454513
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/devices-board.html",
+       "bytes": 5491
       }
      ]
     },
@@ -957,7 +1230,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/di-peering.html",
-       "bytes": 6302
+       "bytes": 6591
+      }
+     ]
+    },
+    {
+     "label": "Dial Plan",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/dial-plan.svg",
+       "bytes": 3566
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/dial-plan.png",
+       "bytes": 440844
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/dial-plan.html",
+       "bytes": 5453
       }
      ]
     },
@@ -978,7 +1272,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/e2ee-path.html",
-       "bytes": 6066
+       "bytes": 6355
       }
      ]
     },
@@ -999,7 +1293,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/e911-held.html",
-       "bytes": 6358
+       "bytes": 6647
       }
      ]
     },
@@ -1020,7 +1314,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/firewall-lanes.html",
-       "bytes": 6524
+       "bytes": 6813
       }
      ]
     },
@@ -1041,7 +1335,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/flow-designer.html",
-       "bytes": 6481
+       "bytes": 6770
+      }
+     ]
+    },
+    {
+     "label": "Hunt Group",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/hunt-group.svg",
+       "bytes": 3561
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/hunt-group.png",
+       "bytes": 441244
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/hunt-group.html",
+       "bytes": 5450
       }
      ]
     },
@@ -1062,7 +1377,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/identity-sync.html",
-       "bytes": 8722
+       "bytes": 9011
       }
      ]
     },
@@ -1083,7 +1398,49 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/lgw-media.html",
-       "bytes": 6490
+       "bytes": 6779
+      }
+     ]
+    },
+    {
+     "label": "Location Gateway",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/location-gateway.svg",
+       "bytes": 3591
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/location-gateway.png",
+       "bytes": 477077
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/location-gateway.html",
+       "bytes": 5492
+      }
+     ]
+    },
+    {
+     "label": "Meetings Media",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/meetings-media.svg",
+       "bytes": 3613
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/meetings-media.png",
+       "bytes": 446095
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/meetings-media.html",
+       "bytes": 5510
       }
      ]
     },
@@ -1104,7 +1461,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/meetings-split.html",
-       "bytes": 6460
+       "bytes": 6749
+      }
+     ]
+    },
+    {
+     "label": "Messaging Space",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/messaging-space.svg",
+       "bytes": 3577
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/messaging-space.png",
+       "bytes": 476070
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/messaging-space.html",
+       "bytes": 5476
       }
      ]
     },
@@ -1125,7 +1503,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/migration.html",
-       "bytes": 6070
+       "bytes": 6359
       }
      ]
     },
@@ -1146,7 +1524,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/nat-sip.html",
-       "bytes": 6354
+       "bytes": 6643
+      }
+     ]
+    },
+    {
+     "label": "Number Inventory",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/number-inventory.svg",
+       "bytes": 3604
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/number-inventory.png",
+       "bytes": 478697
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/number-inventory.html",
+       "bytes": 5505
       }
      ]
     },
@@ -1167,7 +1566,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/number-port.html",
-       "bytes": 6475
+       "bytes": 6764
       }
      ]
     },
@@ -1188,7 +1587,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/pstn-choices.html",
-       "bytes": 6485
+       "bytes": 6774
+      }
+     ]
+    },
+    {
+     "label": "Pstn Gateway",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/pstn-gateway.svg",
+       "bytes": 3615
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/pstn-gateway.png",
+       "bytes": 449229
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/pstn-gateway.html",
+       "bytes": 5508
       }
      ]
     },
@@ -1209,7 +1629,28 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/qos.html",
-       "bytes": 8838
+       "bytes": 9127
+      }
+     ]
+    },
+    {
+     "label": "Queue Routing",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/queue-routing.svg",
+       "bytes": 3600
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/queue-routing.png",
+       "bytes": 454668
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/queue-routing.html",
+       "bytes": 5495
       }
      ]
     },
@@ -1230,7 +1671,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/recording-path.html",
-       "bytes": 6481
+       "bytes": 6770
       }
      ]
     },
@@ -1251,7 +1692,49 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/registration-trunk.html",
-       "bytes": 6411
+       "bytes": 6700
+      }
+     ]
+    },
+    {
+     "label": "Room Os",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/room-os.svg",
+       "bytes": 3550
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/room-os.png",
+       "bytes": 478675
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/room-os.html",
+       "bytes": 5433
+      }
+     ]
+    },
+    {
+     "label": "Security Baseline",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/security-baseline.svg",
+       "bytes": 3599
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/security-baseline.png",
+       "bytes": 452728
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/security-baseline.html",
+       "bytes": 5502
       }
      ]
     },
@@ -1272,7 +1755,91 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/survivability.html",
-       "bytes": 5966
+       "bytes": 6255
+      }
+     ]
+    },
+    {
+     "label": "Troubleshooting Ladder",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/troubleshooting-ladder.svg",
+       "bytes": 3630
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/troubleshooting-ladder.png",
+       "bytes": 453564
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/troubleshooting-ladder.html",
+       "bytes": 5543
+      }
+     ]
+    },
+    {
+     "label": "User License",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/user-license.svg",
+       "bytes": 3593
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/user-license.png",
+       "bytes": 454862
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/user-license.html",
+       "bytes": 5486
+      }
+     ]
+    },
+    {
+     "label": "Voicemail Path",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/voicemail-path.svg",
+       "bytes": 3602
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/voicemail-path.png",
+       "bytes": 455348
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/voicemail-path.html",
+       "bytes": 5499
+      }
+     ]
+    },
+    {
+     "label": "Webex App Stack",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/webex-app-stack.svg",
+       "bytes": 3604
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/webex-app-stack.png",
+       "bytes": 457568
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/webex-app-stack.html",
+       "bytes": 5503
       }
      ]
     },
@@ -1293,7 +1860,70 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/wfm-loop.html",
-       "bytes": 6350
+       "bytes": 6639
+      }
+     ]
+    },
+    {
+     "label": "Workspace Device",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/workspace-device.svg",
+       "bytes": 3582
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/workspace-device.png",
+       "bytes": 442741
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/workspace-device.html",
+       "bytes": 5483
+      }
+     ]
+    },
+    {
+     "label": "Wxcc Callback",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/wxcc-callback.svg",
+       "bytes": 3604
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/wxcc-callback.png",
+       "bytes": 479864
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/wxcc-callback.html",
+       "bytes": 5499
+      }
+     ]
+    },
+    {
+     "label": "Wxcc Ivr",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/wxcc-ivr.svg",
+       "bytes": 3553
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/wxcc-ivr.png",
+       "bytes": 451477
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/wxcc-ivr.html",
+       "bytes": 5438
       }
      ]
     },
@@ -1314,7 +1944,49 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/wxcc-path.html",
-       "bytes": 6355
+       "bytes": 6644
+      }
+     ]
+    },
+    {
+     "label": "Wxcc Recording",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/wxcc-recording.svg",
+       "bytes": 3599
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/wxcc-recording.png",
+       "bytes": 444764
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/wxcc-recording.html",
+       "bytes": 5496
+      }
+     ]
+    },
+    {
+     "label": "Wxcce Bridge",
+     "blurb": "Flow diagram with its colors and motion kept inside the file.",
+     "files": [
+      {
+       "kind": "SVG",
+       "href": "downloads/diagrams/wxcce-bridge.svg",
+       "bytes": 3598
+      },
+      {
+       "kind": "PNG",
+       "href": "downloads/diagrams/wxcce-bridge.png",
+       "bytes": 480833
+      },
+      {
+       "kind": "HTML",
+       "href": "downloads/diagrams/wxcce-bridge.html",
+       "bytes": 5491
       }
      ]
     }
@@ -1341,7 +2013,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T1-mindmap.html",
-       "bytes": 4850
+       "bytes": 5139
       }
      ]
     },
@@ -1362,7 +2034,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T2-mindmap.html",
-       "bytes": 4895
+       "bytes": 5184
       }
      ]
     },
@@ -1383,7 +2055,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T3-mindmap.html",
-       "bytes": 4892
+       "bytes": 5181
       }
      ]
     },
@@ -1404,7 +2076,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T4-mindmap.html",
-       "bytes": 4911
+       "bytes": 5200
       }
      ]
     },
@@ -1425,7 +2097,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T5-mindmap.html",
-       "bytes": 4910
+       "bytes": 5199
       }
      ]
     },
@@ -1446,7 +2118,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T6-mindmap.html",
-       "bytes": 4892
+       "bytes": 5181
       }
      ]
     },
@@ -1467,7 +2139,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T7-mindmap.html",
-       "bytes": 4872
+       "bytes": 5161
       }
      ]
     },
@@ -1488,7 +2160,7 @@
       {
        "kind": "HTML",
        "href": "downloads/diagrams/T8-mindmap.html",
-       "bytes": 4884
+       "bytes": 5173
       }
      ]
     }

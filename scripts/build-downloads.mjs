@@ -42,7 +42,7 @@ h1{margin:0;font-size:clamp(1.2rem,3vw,1.8rem);background:linear-gradient(90deg,
 p{margin:0;max-width:60ch;text-align:center;font-size:.85rem;line-height:1.5;color:#e2e8f0}
 a{color:#fde047}@media(prefers-reduced-motion:reduce){.frame{animation:none}}
 </style></head><body><h1>${d.title}</h1><div class="frame">${inner}</div>
-<p>${d.kind} from the CypherMonkey Labs Webex Lab Free University. Independent, free, learning-only student project; trademarks belong to their owners; not affiliated or endorsed. Concerns: <a href="https://cyphermonkeylabs.com/#contact">cyphermonkeylabs.com/#contact</a>. © 2026 CypherMonkeyLabs 🐒</p></body></html>`;
+<footer data-canon-footer><p>${d.kind} from the CypherMonkey Labs Webex Lab Free University. This is an independent, free, learning-only student project. It is not affiliated with or endorsed by any vendor. Trademarks belong to their owners. Concerns: <a href="https://cyphermonkeylabs.com/#contact">https://cyphermonkeylabs.com/#contact</a>. CypherMonkey Labs. © 2026 CypherMonkeyLabs 🐒 <a href="https://cyphermonkeylabs.com">CypherMonkey Labs</a> · <a href="https://github.com/CypherMonkeyLabs">GitHub organization</a> · <a href="https://linktr.ee/cyphermonkey">Linktree</a></p></footer></body></html>`;
 }
 
 const made = [];

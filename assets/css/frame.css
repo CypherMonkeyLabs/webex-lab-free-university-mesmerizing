@@ -6,7 +6,8 @@
   grid-column: 1 / -1;
   min-width: 0;
   max-width: 100%;
-  position: relative;
+  position: relative !important;
+  top: auto !important;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -435,7 +436,16 @@ html.v4-motion .edge-wheel { animation: edge-spin 7s linear infinite; }
   pointer-events: none;
 }
 html.v4-motion .site-footer.lab-footer::before { animation: frame-shine 8s linear infinite; }
-.site-footer.lab-footer a:not(.float-badge) { color: #fde68a; }
+.site-footer.lab-footer a:not(.float-badge):not(.brand-icon):not(.lab-card) { color: #fde68a; }
+.site-footer.lab-footer .disclaimer-panel a {
+  color: #082f49 !important;
+  background: #fffbeb;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  padding: 0 3px;
+  border-radius: 4px;
+}
 .footer-disclaimer {
   max-width: 78ch;
   margin: 0 0 12px;

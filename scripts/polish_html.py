@@ -30,18 +30,18 @@ def monkey(k):
 GITHUB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.22 3.38 9.65 8.07 11.22.59.12.8-.26.8-.57v-2.02c-3.28.73-3.97-1.42-3.97-1.42-.53-1.38-1.3-1.75-1.3-1.75-1.07-.75.08-.73.08-.73 1.18.08 1.8 1.24 1.8 1.24 1.05 1.84 2.76 1.31 3.43.99.1-.78.41-1.31.75-1.61-2.62-.31-5.37-1.34-5.37-5.98 0-1.32.46-2.4 1.22-3.25-.12-.3-.53-1.53.12-3.18 0 0 1-.33 3.3 1.25a11.3 11.3 0 0 1 6 0c2.3-1.58 3.3-1.25 3.3-1.25.65 1.65.24 2.88.12 3.18.76.85 1.22 1.93 1.22 3.25 0 4.65-2.76 5.66-5.39 5.96.42.38.8 1.12.8 2.26v3.35c0 .31.21.7.81.57A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>'
 
 def linktree(k):
-    # Raised green tile with a light edge and a dropped mark. Drawn here, not a trademark file.
+    # Asterisk on a raised green disc. Drawn here, not a trademark file.
+    petals = "".join(
+        f'<rect x="26.6" y="11" width="8.8" height="19" rx="4.4" fill="#ffffff" transform="rotate({i * 45} 31 30)"/>'
+        for i in range(8)
+    )
     return f'''<svg viewBox="0 0 64 64" aria-hidden="true" class="lt-3d"><defs>
-<linearGradient id="ltb{k}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e7ffe9"/><stop offset=".42" stop-color="#43e660"/><stop offset="1" stop-color="#067a32"/></linearGradient>
-<linearGradient id="lth{k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".72"/><stop offset=".5" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
-<ellipse cx="32" cy="58" rx="16" ry="3.4" fill="#064e1c" opacity=".35"/>
-<rect x="13" y="16" width="40" height="36" rx="12" fill="#064e1c"/>
-<rect x="9" y="8" width="40" height="36" rx="12" fill="url(#ltb{k})" stroke="#d9ffe8" stroke-width="1.2"/>
-<rect x="9" y="8" width="40" height="16" rx="12" fill="url(#lth{k})"/>
-<g transform="translate(17 15) scale(1.2)">
-<path fill="#064e1c" transform="translate(.7 1.1)" d="M13.2 2.5h-2.4v5.1L7 3.9 5.3 5.6l3.9 3.9H3.6v2.4h5.7L5.3 15.9l1.7 1.7 4-4v7.9h2.4v-7.9l4 4 1.7-1.7-4-4h5.7V9.5h-5.6l3.9-3.9L17 3.9l-3.8 3.7z"/>
-<path fill="#ffffff" d="M13.2 2.5h-2.4v5.1L7 3.9 5.3 5.6l3.9 3.9H3.6v2.4h5.7L5.3 15.9l1.7 1.7 4-4v7.9h2.4v-7.9l4 4 1.7-1.7-4-4h5.7V9.5h-5.6l3.9-3.9L17 3.9l-3.8 3.7z"/>
-</g></svg>'''
+<radialGradient id="ltb{k}" cx="34%" cy="30%" r="75%"><stop offset="0" stop-color="#d9ffb0"/><stop offset=".4" stop-color="#3dce55"/><stop offset="1" stop-color="#067a32"/></radialGradient></defs>
+<ellipse cx="34" cy="56" rx="16" ry="4" fill="#064e1c" opacity=".4"/>
+<circle cx="34" cy="34" r="23" fill="#075c28"/>
+<circle cx="31" cy="30" r="23" fill="url(#ltb{k})" stroke="#f4fff6" stroke-width="1.5"/>
+<g>{petals}</g>
+<circle cx="31" cy="30" r="4.4" fill="#ffffff"/></svg>'''
 
 def brand_js():
     # Brand chrome is the website, the GitHub organization, and Linktree. No other social icons.

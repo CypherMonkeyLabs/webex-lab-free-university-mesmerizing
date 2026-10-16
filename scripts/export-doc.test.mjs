@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { standaloneDocument, markdownDocument } from "../assets/js/export-doc.mjs";
+import { standaloneDocument, markdownDocument, docxDocument, pptxDocument } from "../assets/js/export-doc.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const need = [
@@ -28,6 +28,21 @@ test("markdown export names the contact page", () => {
   assert.match(md, /cyphermonkeylabs.com\/#contact/);
   assert.match(md, /github.com\/CypherMonkeyLabs/);
   assert.match(md, /linktr.ee\/cyphermonkey/);
+});
+
+test("docx and pptx section exports keep the disclaimer in the package", () => {
+  const docx = Buffer.from(docxDocument("Queue notes", "Study note from the room."));
+  const pptx = Buffer.from(pptxDocument("Queue notes", "Study note from the room."));
+  const docxText = docx.toString("utf8");
+  const pptxText = pptx.toString("utf8");
+  assert.match(docxText, /word\/document\.xml/);
+  assert.match(docxText, /learning-only student project/);
+  assert.match(docxText, /cyphermonkeylabs.com\/#contact/);
+  assert.match(docxText, /linktr.ee\/cyphermonkey/);
+  assert.match(pptxText, /ppt\/slides\/slide1\.xml/);
+  assert.match(pptxText, /learning-only student project/);
+  assert.equal(docxText.includes("mailto:"), false);
+  assert.equal(pptxText.includes("mailto:"), false);
 });
 
 test("new study drawings animate and their standalone pages keep the footer", () => {

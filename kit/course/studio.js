@@ -1,7 +1,7 @@
-import { standaloneDocument, markdownDocument } from "./export-doc.mjs";
+import { standaloneDocument, markdownDocument, docxDocument, pptxDocument } from "./export-doc.mjs";
 
 function download(name, text, type) {
-  var blob = new Blob([text], { type: type });
+  var blob = text instanceof Uint8Array ? new Blob([text], { type: type }) : new Blob([text], { type: type });
   var url = URL.createObjectURL(blob);
   var link = document.createElement("a");
   link.href = url;
@@ -49,6 +49,12 @@ function barFor(section) {
   });
   button("MD", "md", function () {
     download(slug(title) + ".md", markdownDocument(title, plain(section)), "text/markdown");
+  });
+  button("DOCX", "docx", function () {
+    download(slug(title) + ".docx", docxDocument(title, plain(section)), "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+  });
+  button("PPTX", "pptx", function () {
+    download(slug(title) + ".pptx", pptxDocument(title, plain(section)), "application/vnd.openxmlformats-officedocument.presentationml.presentation");
   });
   if (section.id === "quiz" || section.querySelector(".qcard, [data-quiz]")) {
     button("JSON", "json", function () {

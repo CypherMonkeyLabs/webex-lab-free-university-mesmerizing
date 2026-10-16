@@ -47,26 +47,39 @@ panel.setAttribute("role", "dialog");
 panel.setAttribute("aria-modal", "true");
 panel.setAttribute("aria-labelledby", "cg-title");
 panel.innerHTML =
+  '<button type="button" class="cg-handle" data-sheet-handle aria-label="Drag to resize the guide"></button>' +
   '<header class="cg-bar">' +
   '<div class="cg-who"><span class="cg-avatar" aria-hidden="true">' + avatarSvg() + '</span>' +
   '<div class="cg-id"><h2 id="cg-title">Canon</h2><p class="cg-status"><i class="cg-dot" aria-hidden="true"></i> In the notes</p></div></div>' +
+  '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
+  '</header>' +
+  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
+  '<div class="cg-offers" data-offers></div>' +
+  '<details class="cg-more"><summary>Sound, voice, and type size</summary>' +
   '<div class="cg-tools">' +
   '<button type="button" data-font-dec aria-label="Smaller text">A−</button>' +
   '<button type="button" data-font-inc aria-label="Larger text">A+</button>' +
   '<button type="button" data-voice aria-pressed="false" aria-label="Read answers aloud">Read</button>' +
-  '<button type="button" class="cg-close" data-close aria-label="Close">Close</button>' +
-  '</div></header>' +
+  '</div>' +
   '<div class="cg-voice" data-voice-row hidden>' +
   '<label>Voice <select data-voice-name aria-label="Speaking voice"></select></label>' +
   '<label>Speed <select data-voice-rate aria-label="Speaking speed">' +
-  '<option value="0.85">0.85×</option><option value="0.92">0.92×</option><option value="1">1×</option>' +
+  '<option value="0.85">0.85×</option><option value="0.92" selected>0.92×</option><option value="1">1×</option>' +
   '<option value="1.08">1.08×</option></select></label>' +
   '<label>Pitch <select data-voice-pitch aria-label="Speaking pitch">' +
-  '<option value="0.9">Lower</option><option value="0.95">Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
+  '<option value="0.9">Lower</option><option value="0.95" selected>Calm</option><option value="1">Even</option><option value="1.05">Brighter</option></select></label>' +
   '<div class="cg-transport" role="group" aria-label="Playback">' +
   '<button type="button" data-voice-pause>Pause</button>' +
   '<button type="button" data-voice-resume>Resume</button>' +
   '<button type="button" data-voice-stop>Stop</button></div></div>' +
+  '<div class="cg-along" role="group" aria-label="Read along">' +
+  '<button type="button" data-along-start>Read along</button>' +
+  '<button type="button" data-along-pause>Pause</button>' +
+  '<button type="button" data-along-resume>Resume</button>' +
+  '<button type="button" data-along-next>Next section</button></div>' +
+  '<label class="cg-amb">Sound theme <select data-ambience aria-label="Sound theme">' +
+  '<option value="" selected>Off</option><option value="pad">Soft pad</option><option value="rain">Soft rain</option></select></label>' +
+  '</details>' +
   '<section class="cg-talk" data-talk hidden>' +
   '<p class="cg-talk-status" data-talk-status>Voice input is ready when this browser supports it.</p>' +
   '<p class="cg-transcript" data-transcript aria-live="polite"></p>' +
@@ -75,15 +88,7 @@ panel.innerHTML =
   '<button type="button" data-talk-send>Send what I said</button>' +
   '<button type="button" data-talk-close>Close voice input</button></div>' +
   '<p class="cg-talk-fallback" data-talk-fallback hidden>This browser has no speech recognition. Type in the box. Read-aloud still uses the speech voices this browser offers.</p></section>' +
-  '<div class="cg-along" role="group" aria-label="Read along">' +
-  '<button type="button" data-along-start>Read along</button>' +
-  '<button type="button" data-along-pause>Pause</button>' +
-  '<button type="button" data-along-resume>Resume</button>' +
-  '<button type="button" data-along-next>Next section</button></div>' +
-  '<label class="cg-amb">Sound theme <select data-ambience aria-label="Sound theme">' +
-  '<option value="">Off</option><option value="pad">Soft pad</option><option value="rain">Soft rain</option></select></label>' +
   '<ol class="cg-outline" data-outline hidden></ol>' +
-  '<div class="cg-log" role="log" aria-label="Messages"></div>' +
   '<div class="cg-live" aria-live="polite" aria-atomic="true"></div>' +
   '<div class="cg-chips" role="group" aria-label="Quick replies"></div>' +
   '<form class="cg-form"><button type="button" class="cg-mic" data-mic hidden aria-label="Voice input">Mic</button>' +
@@ -109,7 +114,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css";
+css.href = guideBase + "guide/guide.css?v=15";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -584,24 +589,24 @@ function openPanel() {
     setPose("greet");
     say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.", [], "bot");
     var choices = [
-      ["1-minute clip", "Give me the 1-minute clip"],
-      ["10-minute trailer", "Play the 10-minute trailer"],
-      ["1-hour guided walk", "Start the 1-hour guided walk"],
-      ["Cheat codes", "Open cheat codes"],
-      ["Quiz me", "Quiz me"],
-      ["Teach me this room", "Teach me this room"],
-      ["Interview practice", "Interview practice"],
-      ["Games", "Play a game"],
-      ["Read this page", "Read this page"],
-      ["Mute me and just read", "Mute me and just read"]
+      ["1-minute clip", "Give me the 1-minute clip", "clip"],
+      ["10-minute trailer", "Play the 10-minute trailer", "film"],
+      ["1-hour guided walk", "Start the 1-hour guided walk", "clock"],
+      ["Cheat codes", "Open cheat codes", "spark"],
+      ["Quiz me", "Quiz me", "quiz"],
+      ["Teach me this room", "Teach me this room", "book"],
+      ["Interview practice", "Interview practice", "mic"],
+      ["Games", "Play a game", "game"],
+      ["Read this page", "Read this page", "read"],
+      ["Mute me and just read", "Mute me and just read", "mute"]
     ];
     var row = document.createElement("div");
     row.className = "cg-choices";
     choices.forEach(function (choice) {
       var button = document.createElement("button");
       button.type = "button";
-      button.className = "cg-choice";
-      button.textContent = choice[0];
+      button.className = "cg-choice cg-choice-" + choice[2];
+      button.innerHTML = choiceIcon(choice[2]) + "<span>" + choice[0] + "</span>";
       button.addEventListener("click", function () {
         if (choice[0] === "Cheat codes") {
           location.href = abs("downloads.html");
@@ -619,7 +624,7 @@ function openPanel() {
       });
       row.appendChild(button);
     });
-    log.appendChild(row);
+    panel.querySelector("[data-offers]").appendChild(row);
     scrollLog();
   }
   host.classList.toggle("is-open", true);
@@ -878,9 +883,21 @@ function dockBottom() {
   }
   var bottom = saved == null ? dock + 28 : saved;
   if (bottom < dock + 12) bottom = dock + 12;
-  var max = Math.max(dock + 12, window.innerHeight - 132);
+  var max = Math.max(dock + 12, window.innerHeight - monkeySize().height - 8);
   if (bottom > max) bottom = max;
   return bottom;
+}
+
+function monkeySize() {
+  if (window.matchMedia("(max-width: 720px)").matches) return { width: 156, height: 184 };
+  return { width: 200, height: 236 };
+}
+
+function phoneDockHeight() {
+  if (!window.matchMedia("(max-width: 720px)").matches) return 0;
+  var bar = document.querySelector(".phone-dock");
+  if (!bar || getComputedStyle(bar).display === "none") return 0;
+  return Math.round(bar.getBoundingClientRect().height) || 84;
 }
 
 function syncMenuHide() {
@@ -894,25 +911,10 @@ function place() {
   if (host.dataset.dragging === "1") return;
   var boxes = obstacleBoxes();
   var story = contentBoxes();
-  if (host.classList.contains("is-greeting")) {
-    var greetW = 168;
-    var greetH = 196;
-    var greetRight = Math.max(8, Math.round((window.innerWidth - greetW) / 2));
-    var greetBottom = Math.max(24, Math.round(window.innerHeight * 0.16));
-    var heading = document.querySelector(".world-title, main h1, h1");
-    if (heading) {
-      var headingBox = heading.getBoundingClientRect();
-      var monkeyTop = window.innerHeight - greetBottom - greetH;
-      if (monkeyTop < headingBox.bottom + 8) greetBottom = Math.max(16, Math.round(window.innerHeight - headingBox.bottom - greetH - 20));
-    }
-    host.style.setProperty("--cg-right", greetRight + "px");
-    host.style.setProperty("--cg-bottom", greetBottom + "px");
-    host.style.setProperty("--cg-nudge-right", (greetRight + greetW + 16) + "px");
-    host.style.setProperty("--cg-nudge-bottom", (greetBottom + 36) + "px");
-    return;
-  }
-  var width = 132;
-  var height = 156;
+  if (host.classList.contains("is-greeting")) return;
+  var size = monkeySize();
+  var width = size.width;
+  var height = size.height;
   var needSlot = !panel.hidden || !nudge.hidden;
   var right = 8;
   var bottom = dockBottom();
@@ -929,22 +931,17 @@ function place() {
   var chosen = { right: right, bottom: bottom, slot: needSlot ? findSlot(monkeyBox, boxes.concat(story)) : null };
   host.style.setProperty("--cg-right", chosen.right + "px");
   host.style.setProperty("--cg-bottom", chosen.bottom + "px");
+  host.style.setProperty("--cg-nudge-right", (chosen.right + 4) + "px");
+  host.style.setProperty("--cg-nudge-bottom", (chosen.bottom + height + 10) + "px");
   var sheet = window.innerWidth <= 720 && !panel.hidden;
   host.classList.toggle("is-sheet", sheet);
   host.classList.toggle("is-open", !panel.hidden);
   if (sheet) {
-    var panelBottom = chosen.bottom + height + 12;
-    var topLimit = 64;
-    var bar = document.querySelector(".topbar");
-    if (bar) {
-      var barBox = bar.getBoundingClientRect();
-      if (barBox.height > 20 && barBox.bottom > 0 && barBox.top < 160) topLimit = Math.round(barBox.bottom + 8);
-    }
-    var panelMax = Math.max(280, window.innerHeight - panelBottom - topLimit);
-    host.style.setProperty("--cg-panel-right", "0px");
-    host.style.setProperty("--cg-panel-bottom", panelBottom + "px");
-    host.style.setProperty("--cg-panel-width", "100vw");
-    host.style.setProperty("--cg-panel-max", panelMax + "px");
+    var dockH = phoneDockHeight();
+    host.style.setProperty("--cg-panel-right", "8px");
+    host.style.setProperty("--cg-panel-bottom", (dockH + 8) + "px");
+    host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
+    host.style.setProperty("--cg-panel-max", "min(58vh, calc(100dvh - " + (dockH + 16) + "px))");
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {
@@ -1030,6 +1027,7 @@ function beginGreet() {
   var closed = false;
   host.classList.add("is-greeting");
   setPose("greet");
+  host._finishGreet = finish;
   nudge.innerHTML = "";
   nudge.className = "cg-nudge cg-greet";
   var copy = document.createElement("p");
@@ -1058,6 +1056,7 @@ function beginGreet() {
   function finish() {
     if (closed) return;
     closed = true;
+    host._finishGreet = null;
     if (window.speechSynthesis) window.speechSynthesis.cancel();
     host.classList.remove("is-greeting");
     hideNudge();
@@ -1435,7 +1434,7 @@ function bind() {
     host.dataset.dragging = "1";
     var next = drag.bottom + (drag.y - event.clientY);
     var floor = window.matchMedia("(max-width: 720px)").matches ? 96 : 12;
-    var max = window.innerHeight - 132;
+    var max = window.innerHeight - monkeySize().height - 8;
     if (next < floor) next = floor;
     if (next > max) next = max;
     host.style.setProperty("--cg-right", "8px");
@@ -1451,6 +1450,37 @@ function bind() {
   }
   monkey.addEventListener("pointerup", endDrag);
   monkey.addEventListener("pointercancel", endDrag);
+  host.addEventListener("click", function (event) {
+    if (!host.classList.contains("is-greeting") || typeof host._finishGreet !== "function") return;
+    if (event.target.closest(".cg-monkey, .cg-nudge")) return;
+    host._finishGreet();
+  });
+  var sheetDrag = { id: null, y: 0, h: 0 };
+  var handle = panel.querySelector("[data-sheet-handle]");
+  handle.addEventListener("pointerdown", function (event) {
+    if (!host.classList.contains("is-sheet")) return;
+    sheetDrag.id = event.pointerId;
+    sheetDrag.y = event.clientY;
+    sheetDrag.h = panel.getBoundingClientRect().height;
+    try { handle.setPointerCapture(event.pointerId); } catch (error) { /* optional */ }
+  });
+  handle.addEventListener("pointermove", function (event) {
+    if (sheetDrag.id !== event.pointerId) return;
+    var dockH = phoneDockHeight();
+    var max = Math.round(window.innerHeight * 0.6);
+    var room = window.innerHeight - dockH - 16;
+    if (max > room) max = room;
+    var min = Math.round(window.innerHeight * 0.34);
+    var next = sheetDrag.h + (sheetDrag.y - event.clientY);
+    if (next < min) next = min;
+    if (next > max) next = max;
+    host.style.setProperty("--cg-sheet-h", Math.round(next) + "px");
+  });
+  handle.addEventListener("pointerup", function (event) {
+    if (sheetDrag.id !== event.pointerId) return;
+    sheetDrag.id = null;
+  });
+  handle.addEventListener("pointercancel", function () { sheetDrag.id = null; });
   monkey.addEventListener("click", function (event) {
     if (drag.moved) {
       drag.moved = false;
@@ -1625,38 +1655,76 @@ function bind() {
 }
 
 function avatarSvg() {
-  return '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="18" fill="#f6b73c"/>' +
-    '<circle cx="18" cy="30" r="6" fill="#f6b73c"/><circle cx="46" cy="30" r="6" fill="#f6b73c"/>' +
-    '<ellipse cx="26" cy="33" rx="3" ry="3.4" fill="#fff"/><ellipse cx="38" cy="33" rx="3" ry="3.4" fill="#fff"/>' +
-    '<circle cx="26.6" cy="33.4" r="1.4" fill="#1c1917"/><circle cx="38.6" cy="33.4" r="1.4" fill="#1c1917"/>' +
-    '<path d="M26 40c2.4 3 9.6 3 12 0" fill="none" stroke="#1c1917" stroke-width="1.6" stroke-linecap="round"/>' +
-    '<path d="M16 24c4-8 28-8 32 0" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/></svg>';
+  return '<svg viewBox="0 0 64 64" aria-hidden="true">' +
+    '<circle cx="14" cy="30" r="9" fill="#f5a524"/><circle cx="14" cy="30" r="4.5" fill="#fb7185"/>' +
+    '<circle cx="50" cy="30" r="9" fill="#f5a524"/><circle cx="50" cy="30" r="4.5" fill="#fb7185"/>' +
+    '<circle cx="32" cy="34" r="18" fill="#f5a524"/>' +
+    '<ellipse cx="32" cy="40" rx="10" ry="8" fill="#ffe7b0"/>' +
+    '<ellipse cx="25" cy="33" rx="4" ry="4.6" fill="#fff"/><ellipse cx="39" cy="33" rx="4" ry="4.6" fill="#fff"/>' +
+    '<circle cx="26.2" cy="33.6" r="2" fill="#1c1917"/><circle cx="40.2" cy="33.6" r="2" fill="#1c1917"/>' +
+    '<circle cx="25" cy="33" r="6.2" fill="none" stroke="#7c3aed" stroke-width="1.7"/>' +
+    '<circle cx="39" cy="33" r="6.2" fill="none" stroke="#22d3ee" stroke-width="1.7"/>' +
+    '<path d="M31 33h2" stroke="#7c3aed" stroke-width="1.6"/>' +
+    '<path d="M26 44c2.2 2.4 9.6 2.4 12 0" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"/>' +
+    '</svg>';
+}
+
+function choiceIcon(kind) {
+  var paths = {
+    clip: '<path d="M7 4.5v11l9-5.5z"/>',
+    film: '<rect x="3" y="5" width="14" height="10" rx="1.5"/><path d="M3 8.5h14M3 12h14"/>',
+    clock: '<circle cx="10" cy="10" r="6.5"/><path d="M10 7v3.5l2.4 1.6"/>',
+    spark: '<path d="M10 2.5l1.3 4.2h4.4l-3.5 2.6 1.3 4.2L10 11.2 6.5 13.5l1.3-4.2L4.3 6.7h4.4z"/>',
+    quiz: '<circle cx="10" cy="10" r="6.5"/><path d="M8 8.2a2 2 0 1 1 2.6 1.9c-.7.4-.9.8-.9 1.6M10 14.2h.01"/>',
+    book: '<path d="M4 4.5h5.2v11H4zM10.8 4.5H16v11h-5.2z"/>',
+    mic: '<rect x="8" y="3" width="4" height="8" rx="2"/><path d="M6.5 9.2a3.5 3.5 0 0 0 7 0M10 12.8V16"/>',
+    game: '<rect x="3" y="7" width="14" height="7.5" rx="3"/><path d="M7 10.8h2.2M8.1 9.7v2.2M13 10h.01M15 11.6h.01"/>',
+    read: '<path d="M3.5 5h6v10.5h-6zM10.5 5h6v10.5h-6z"/>',
+    mute: '<path d="M4 8h2.8l3.4-2.6v9.2L6.8 12H4zM14 8.2l3.6 3.6M17.6 8.2 14 11.8"/>'
+  };
+  return '<svg class="cg-choice-ico" viewBox="0 0 20 20" aria-hidden="true">' + (paths[kind] || paths.spark) + "</svg>";
 }
 
 function monkeySvg() {
-  return '<span class="cg-aura" aria-hidden="true"></span>' +
-    '<span class="cg-glow" aria-hidden="true"></span>' +
-    '<span class="cg-float" aria-hidden="true"><svg viewBox="0 0 120 140" role="img" aria-hidden="true">' +
-    '<defs><radialGradient id="cgfur" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffe7a3"/><stop offset=".55" stop-color="#f6b73c"/><stop offset="1" stop-color="#b45309"/></radialGradient></defs>' +
-    '<ellipse cx="60" cy="128" rx="28" ry="7" fill="#020617" opacity=".28"/>'
-    '<g class="cg-wave"><path d="M96 78c18-6 22 10 12 22" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +
-    '<circle cx="108" cy="62" r="8" fill="#f6b73c"/></g>' +
-    '<path d="M28 84c-16 8-14 22-2 26" fill="none" stroke="#e8a317" stroke-width="8" stroke-linecap="round"/>' +
-    '<path d="M88 104c14 10 10 22-2 24" fill="none" stroke="#c2410c" stroke-width="7" stroke-linecap="round"/>' +
-    '<rect x="40" y="78" width="40" height="36" rx="16" fill="#f6b73c"/>' +
-    '<circle class="cg-ear" cx="26" cy="58" r="11" fill="#f6b73c"/><circle cx="26" cy="58" r="5" fill="#7c4a12"/>' +
-    '<circle class="cg-ear" cx="94" cy="58" r="11" fill="#f6b73c"/><circle cx="94" cy="58" r="5" fill="#7c4a12"/>' +
-    '<circle cx="60" cy="56" r="30" fill="url(#cgfur)"/>' +
-    '<ellipse cx="60" cy="66" rx="16" ry="12" fill="#ffe7a3"/>' +
-    '<g class="cg-eye"><ellipse cx="50" cy="54" rx="5" ry="6" fill="#fff"/><circle cx="51" cy="55" r="2.3" fill="#1c1917"/></g>' +
-    '<g class="cg-eye"><ellipse cx="70" cy="54" rx="5" ry="6" fill="#fff"/><circle cx="71" cy="55" r="2.3" fill="#1c1917"/></g>' +
-    '<circle cx="50" cy="54" r="7.2" fill="none" stroke="#fde047" stroke-width="1.7"/>' +
-    '<circle cx="70" cy="54" r="7.2" fill="none" stroke="#fde047" stroke-width="1.7"/>' +
-    '<path d="M46 50h28" fill="none" stroke="#fde047" stroke-width="1.7"/>' +
-    '<path class="cg-mouth" d="M50 70c4 5 16 5 20 0" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round"/>' +
-    '</svg></span><span class="cg-dock-name">Guide</span>';
+  return '<span class="cg-float" aria-hidden="true"><svg viewBox="0 0 220 260" role="img" aria-hidden="true">' +
+    "<defs>" +
+    '<radialGradient id="cgfur" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#ffe08a"/><stop offset=".48" stop-color="#f5a524"/><stop offset="1" stop-color="#c2410c"/></radialGradient>' +
+    '<radialGradient id="cgmuz" cx="50%" cy="28%" r="80%"><stop offset="0" stop-color="#fff7dc"/><stop offset="1" stop-color="#f0c27a"/></radialGradient>' +
+    '<radialGradient id="cgear" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fecdd3"/><stop offset="1" stop-color="#e11d48"/></radialGradient>' +
+    '<linearGradient id="cgglass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#f472b6"/></linearGradient>' +
+    '<linearGradient id="cgscarf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset=".34" stop-color="#a78bfa"/><stop offset=".67" stop-color="#f472b6"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>' +
+    "</defs>" +
+    '<ellipse cx="110" cy="248" rx="58" ry="8" fill="#1e1b4b" opacity=".2"/>' +
+    '<path class="cg-tail" d="M172 200c26 6 34 26 16 38-16 10-30-4-24-16" fill="none" stroke="#ea580c" stroke-width="12" stroke-linecap="round"/>' +
+    '<path d="M74 168c6 22 22 48 36 52s32-16 38-40c2 22-10 52-40 56s-46-20-34-68z" fill="url(#cgfur)"/>' +
+    '<path class="cg-scarf" d="M80 162h62c-2 16-16 24-32 24s-28-8-30-24z" fill="url(#cgscarf)"/>' +
+    '<g class="cg-head">' +
+    '<circle class="cg-ear" cx="46" cy="92" r="30" fill="url(#cgfur)"/><circle cx="46" cy="92" r="16" fill="url(#cgear)"/>' +
+    '<circle class="cg-ear" cx="174" cy="92" r="30" fill="url(#cgfur)"/><circle cx="174" cy="92" r="16" fill="url(#cgear)"/>' +
+    '<circle cx="110" cy="102" r="64" fill="url(#cgfur)"/>' +
+    '<ellipse cx="110" cy="122" rx="38" ry="30" fill="url(#cgmuz)"/>' +
+    '<ellipse cx="76" cy="116" rx="11" ry="7" fill="#fb7185" opacity=".7"/>' +
+    '<ellipse cx="144" cy="116" rx="11" ry="7" fill="#fb7185" opacity=".7"/>' +
+    '<g class="cg-eye"><ellipse cx="86" cy="96" rx="14" ry="16" fill="#fff"/><circle cx="90" cy="98" r="7" fill="#1c1917"/><circle cx="93" cy="95" r="2.6" fill="#fff"/></g>' +
+    '<g class="cg-eye"><ellipse cx="134" cy="96" rx="14" ry="16" fill="#fff"/><circle cx="138" cy="98" r="7" fill="#1c1917"/><circle cx="141" cy="95" r="2.6" fill="#fff"/></g>' +
+    '<g class="cg-glasses" fill="none" stroke="url(#cgglass)" stroke-width="5" stroke-linecap="round">' +
+    '<circle cx="86" cy="96" r="20"/><circle cx="134" cy="96" r="20"/><path d="M106 96h12"/>' +
+    '<path d="M66 92c-10-2-16 4-16 10M154 92c10-2 16 4 16 10"/>' +
+    "</g>" +
+    '<ellipse cx="110" cy="120" rx="8" ry="5.5" fill="#9a3412"/>' +
+    '<path class="cg-mouth" d="M90 136c8 12 32 12 40 0" fill="none" stroke="#7c2d12" stroke-width="4" stroke-linecap="round"/>' +
+    "</g>" +
+    '<g class="cg-arm cg-arm-left"><path d="M76 172v40" fill="none" stroke="#ea580c" stroke-width="16" stroke-linecap="round"/>' +
+    '<circle cx="76" cy="218" r="14" fill="url(#cgfur)"/><circle cx="76" cy="218" r="7" fill="url(#cgmuz)"/></g>' +
+    '<g class="cg-arm cg-arm-right"><path d="M146 172v40" fill="none" stroke="#ea580c" stroke-width="16" stroke-linecap="round"/>' +
+    '<circle cx="146" cy="218" r="14" fill="url(#cgfur)"/><circle cx="146" cy="218" r="7" fill="url(#cgmuz)"/></g>' +
+    '<g class="cg-pop" aria-hidden="true"><path d="M186 36l2.2 6.2 6.4.2-5 4 1.8 6.2-5.4-3.6-5.4 3.6 1.8-6.2-5-4 6.4-.2z" fill="#fde047"/>' +
+    '<path d="M34 40l1.6 4.4 4.6.2-3.6 2.8 1.3 4.4-3.9-2.6-3.9 2.6 1.3-4.4-3.6-2.8 4.6-.2z" fill="#22d3ee"/></g>' +
+    '</svg></span>';
 }
 
 function setPose(name) {
+  if (name === "yes") name = "celebrate";
+  if (name === "no") name = "encourage";
   host.dataset.pose = name || "idle";
 }

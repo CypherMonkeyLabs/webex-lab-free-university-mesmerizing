@@ -1779,7 +1779,7 @@
     },
     {
       "front": "Where do short-call threshold digits live?",
-      "back": "Not in the extract used here. TODO-verify. [cite:2]",
+      "back": "Not in the extract used here. Unconfirmed: check the official Cisco page before relying on any digits. [cite:2]",
       "source": "Canon room T3-R05-voice-options.html ladder. Citations stay in that room.",
       "room": "T3-R05-voice-options.html"
     },
@@ -2031,7 +2031,7 @@
     },
     {
       "front": "Why are Enterprise WFO SKUs unmarked as fact?",
-      "back": "py6u9h was not re-fetched. TODO-verify. [cite:3]",
+      "back": "Article py6u9h was not re-fetched, so its SKU names are not stated as fact. Confirm them on the official Cisco page. [cite:3]",
       "source": "Canon room T3-R09-wfo-ai-features.html ladder. Citations stay in that room.",
       "room": "T3-R09-wfo-ai-features.html"
     },
@@ -2253,7 +2253,7 @@
     },
     {
       "front": "Where is Finesse in this chapter?",
-      "back": "It is not named. TODO-verify. [cite:1]",
+      "back": "It is not named in this chapter. Confirm Finesse's role in the official Cisco documentation. [cite:1]",
       "source": "Canon room T4-R02-core-components.html ladder. Citations stay in that room.",
       "room": "T4-R02-core-components.html"
     },
@@ -3039,7 +3039,7 @@
     },
     {
       "front": "What would you need before you write a session-by-session map?",
-      "back": "The classroom pack in the repository, cited in the source map’s internal style, beside the Cisco chapter. Until then the map is TODO-verify.",
+      "back": "The classroom pack in the repository, cited in the source map’s internal style, beside the Cisco chapter. Until then the map is unconfirmed and is not published here.",
       "source": "Canon room T4-R09-classroom-index.html ladder. Citations stay in that room.",
       "room": "T4-R09-classroom-index.html"
     },
@@ -3081,7 +3081,7 @@
     },
     {
       "front": "You want a session-by-session classroom map. What is the status of that map in this room?",
-      "back": "TODO-verify. Use the official chapter.",
+      "back": "Unconfirmed. Use the official chapter.",
       "source": "Canon room T4-R09-classroom-index.html quiz. Citations stay in that room.",
       "room": "T4-R09-classroom-index.html"
     },
@@ -3183,7 +3183,7 @@
     },
     {
       "front": "What would you need before you draw SBC peering hop by hop?",
-      "back": "The partner technical guide section the what’s-new page names. Until that section is read, the drawing is TODO-verify. [cite:1]",
+      "back": "The partner technical guide section the what’s-new page names. Until that section is read, the drawing is unconfirmed. [cite:1]",
       "source": "Canon room T4-R10-hybrid-cloud-connected.html ladder. Citations stay in that room.",
       "room": "T4-R10-hybrid-cloud-connected.html"
     },
@@ -3819,7 +3819,7 @@
     },
     {
       "front": "What would you refuse to add to the test list?",
-      "back": "A recorder cutover step these articles do not print. That stays TODO-verify . [cite:1]",
+      "back": "A recorder cutover step these articles do not print. That stays unconfirmed. [cite:1]",
       "source": "Canon room T5-R06-di-migration-path.html ladder. Citations stay in that room.",
       "room": "T5-R06-di-migration-path.html"
     },
@@ -4101,7 +4101,7 @@
     },
     {
       "front": "What will you not claim about a third-party PBX?",
-      "back": "That these tar tools ingest it. That crosswalk is TODO-verify and lives in T6-R05. [cite:2]",
+      "back": "That these tar tools ingest it. That crosswalk is unconfirmed and lives in T6-R05. [cite:2]",
       "source": "Canon room T6-R03-migration-tools.html ladder. Citations stay in that room.",
       "room": "T6-R03-migration-tools.html"
     },
@@ -4245,7 +4245,7 @@
     },
     {
       "front": "Why will you not draw an Avaya station-to-Webex user table?",
-      "back": "No cited page prints it. The cell stays TODO-verify. [cite:1]",
+      "back": "No cited page prints it. The cell stays unconfirmed. [cite:1]",
       "source": "Canon room T6-R05-third-party-pbx-cc.html ladder. Citations stay in that room.",
       "room": "T6-R05-third-party-pbx-cc.html"
     },
@@ -4616,7 +4616,7 @@
       "room": "T7-R02-cube-deep-dive.html"
     },
     {
-      "front": "What stays TODO-verify?",
+      "front": "What stays unconfirmed?",
       "back": "Translation syntax on a non-Cisco SBC.",
       "source": "Canon room T7-R02-cube-deep-dive.html ladder. Citations stay in that room.",
       "room": "T7-R02-cube-deep-dive.html"
@@ -4689,7 +4689,7 @@
     },
     {
       "front": "What will you not teach?",
-      "back": "A Teams media-bypass equivalent. TODO-verify .",
+      "back": "A Teams media-bypass equivalent. That is unconfirmed.",
       "source": "Canon room T7-R03-codecs-media-nat.html ladder. Citations stay in that room.",
       "room": "T7-R03-codecs-media-nat.html"
     },
@@ -4754,7 +4754,7 @@
       "room": "T7-R04-sip-trunk-design.html"
     },
     {
-      "front": "What is still TODO-verify?",
+      "front": "What is still unconfirmed?",
       "back": "Peer SBC priority syntax.",
       "source": "Canon room T7-R04-sip-trunk-design.html ladder. Citations stay in that room.",
       "room": "T7-R04-sip-trunk-design.html"
@@ -5642,7 +5642,7 @@
       "room": "T8-R07-logs-and-tools.html"
     },
     {
-      "front": "What is re-check or TODO-verify?",
+      "front": "What needs a re-check or is unconfirmed?",
       "back": "The July 01, 2025 PRT page. App client log retention. status.xml counts were omitted.",
       "source": "Canon room T8-R07-logs-and-tools.html ladder. Citations stay in that room.",
       "room": "T8-R07-logs-and-tools.html"

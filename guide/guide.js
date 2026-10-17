@@ -111,11 +111,19 @@ host.appendChild(nudge);
 host.appendChild(monkey);
 host.appendChild(panel);
 host.appendChild(tourLayer);
-document.body.appendChild(host);
+var mountEl = document.getElementById("guide-mount");
+if (!mountEl) {
+  mountEl = document.createElement("div");
+  mountEl.id = "guide-mount";
+  mountEl.className = "guide-mount";
+  mountEl.setAttribute("data-guide-mount", "");
+  document.body.appendChild(mountEl);
+}
+mountEl.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=23";
+css.href = guideBase + "guide/guide.css?v=24";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -297,7 +305,7 @@ function streakDays() {
 }
 
 function loadVoice() {
-  var pref = { on: false, rate: "0.92", pitch: "0.95", uri: "" };
+  var pref = { on: true, rate: "0.92", pitch: "0.95", uri: "" };
   try {
     var saved = JSON.parse(localStorage.getItem("cg-voice") || "null");
     if (saved && typeof saved === "object") {
@@ -1230,6 +1238,46 @@ function showPoke() {
   place();
 }
 
+function pageLine() {
+  var h1 = document.querySelector("main h1, h1");
+  var name = h1 ? (h1.textContent || "").replace(/\s+/g, " ").trim().replace(/[.!?\s]+$/, "") : "";
+  var line = name ? "You are on " + name + ". Tap me to read it along, or ask me anything." : "Tap me to read this page along, or ask me anything.";
+  if (line.length > 150) line = line.slice(0, 147) + "...";
+  return line;
+}
+
+function sayPageLine() {
+  if (!panel.hidden || !tourLayer.hidden || document.body.classList.contains("onboard-open") || host.classList.contains("is-greeting") || host.classList.contains("is-menu-away") || !nudge.hidden) return false;
+  var line = pageLine();
+  nudge.innerHTML = "";
+  nudge.className = "cg-nudge cg-line";
+  var copy = document.createElement("p");
+  copy.textContent = line;
+  nudge.appendChild(copy);
+  nudge.hidden = false;
+  setPose("talk");
+  place();
+  speak(line);
+  window.setTimeout(function () {
+    if (nudge.classList.contains("cg-line")) {
+      hideNudge();
+      setPose("idle");
+      place();
+    }
+  }, 9000);
+  return true;
+}
+
+function schedulePageLine() {
+  var tries = 0;
+  function attempt() {
+    tries += 1;
+    if (sayPageLine() || tries >= 4) return;
+    window.setTimeout(attempt, 6000);
+  }
+  window.setTimeout(attempt, 1600);
+}
+
 function scheduleNudge() {
   if (pokeStopped() || pokeCount() >= 3) return;
   window.setTimeout(showPoke, 150000);
@@ -1866,6 +1914,8 @@ function bind() {
     startAlong(id);
   });
   document.addEventListener("canon-tour-finished", function () { beginGreet(); });
+  voiceBtn.setAttribute("aria-pressed", voicePref.on ? "true" : "false");
+  schedulePageLine();
   window.setTimeout(function () {
     var tour = "";
     try { tour = localStorage.getItem("canon-tour-done") || ""; } catch (error) { tour = ""; }

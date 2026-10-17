@@ -958,3 +958,7 @@ html[data-motion="reduce"] .cg-root * {
   30% { transform: translateX(-6px); }
   60% { transform: translateX(6px); }
 }
+
+/* The bot lives inside #guide-mount and says one line on every page. */
+.cg-nudge.cg-line { width: min(300px, calc(100vw - 24px)); pointer-events: auto; }
+.cg-nudge.cg-line p { margin: 0; }

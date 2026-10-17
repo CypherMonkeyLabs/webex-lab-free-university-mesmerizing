@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="CypherWebex Canon preview card">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="CypherWebex Canon preview card">
 <rect width="1200" height="630" fill="#0b0e14"/>
 <rect x="36" y="36" width="1128" height="558" rx="28" fill="#14110c" stroke="#e0b07a" stroke-width="3"/>
 <rect x="72" y="84" width="64" height="64" rx="14" fill="#14110c" stroke="#e0b07a"/>
 <path d="M88 100h12v32H88z" fill="#e0b07a"/>
 <path d="M108 100h28v6h-28zm0 12h28v6h-28zm0 12h20v6h-20z" fill="#efe7d6"/>
 <text x="156" y="112" fill="#e0b07a" font-family="Georgia, serif" font-size="28">Study notes</text>
-<text x="156" y="142" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="18">noindex · offline · not for publication</text>
+<text x="156" y="142" fill="#8d8476" font-family="Segoe UI, sans-serif" font-size="18">noindex Â· offline Â· not for publication</text>
 <text x="72" y="250" fill="#efe7d6" font-family="Georgia, serif" font-size="72">CypherWebex Canon</text>
 <text x="72" y="320" fill="#b7ad9c" font-family="Segoe UI, sans-serif" font-size="28">Control Hub, Webex Calling, and both contact centers.</text>
 <g font-family="Segoe UI, sans-serif" font-size="20">

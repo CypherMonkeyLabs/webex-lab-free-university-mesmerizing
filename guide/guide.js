@@ -115,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=22";
+css.href = guideBase + "guide/guide.css?v=23";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -1875,6 +1875,8 @@ function bind() {
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });
   window.addEventListener("resize", queuePlace);
+  window.addEventListener("load", queuePlace);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queuePlace);
   window.setTimeout(queuePlace, 400);
   window.setTimeout(queuePlace, 1200);
   var fontWatch = new MutationObserver(syncFont);

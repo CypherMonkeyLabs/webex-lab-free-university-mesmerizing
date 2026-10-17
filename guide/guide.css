@@ -4,7 +4,7 @@
 
 .cg-root {
   position: fixed;
-  transition: right 0.55s ease, bottom 0.55s ease;
+  /* Place instantly. A slide from the corner crosses the title on a phone. */
   /* Above the page mascot (70) and the bar (40). Under the phone menu,
      settings, and help layers (80+), so those stay clickable. */
   z-index: 71;

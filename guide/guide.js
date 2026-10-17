@@ -115,7 +115,7 @@ document.body.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=22";
+css.href = guideBase + "guide/guide.css?v=23";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -905,7 +905,10 @@ function monkeySize() {
 
 function onScreenLedes() {
   var rects = [];
-  document.querySelectorAll(".lede, .world-lede").forEach(function (el) {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll("h1, .world-title, .lede, .world-lede, .world-kicker"));
+  var first = document.querySelector(".room-main > p, .world-hero p, main > .wrap > p, #main > p");
+  if (first) nodes.push(first);
+  nodes.forEach(function (el) {
     var rect = el.getBoundingClientRect();
     if (rect.width < 8 || rect.height < 8) return;
     if (rect.bottom < 0 || rect.top > window.innerHeight) return;
@@ -924,7 +927,7 @@ function boxFromRightBottom(right, bottom, width, height) {
 }
 
 function hitsLede(box, rects) {
-  return rects.some(function (rect) { return intersects(box, rect, 2); });
+  return rects.some(function (rect) { return intersects(box, rect, 12); });
 }
 
 function parkOffLede(right, bottom, width, height) {
@@ -1075,7 +1078,7 @@ function visibleBoxes(selector) {
 }
 
 function hitsAny(box, rects) {
-  return rects.some(function (rect) { return overlap(box, rect, 4); });
+  return rects.some(function (rect) { return overlap(box, rect, 12); });
 }
 
 function settleMonkey(right, bottom, width, height, rows) {
@@ -1131,7 +1134,7 @@ function place() {
       if (lift > bottom) bottom = Math.min(lift, cap);
     }
   }
-  var parked = settleMonkey(right, bottom, width, height, visibleBoxes(".go-deeper li, .go-deeper h2, main h1, h1, .world-title, .lede, .world-lede"));
+  var parked = settleMonkey(right, bottom, width, height, visibleBoxes("h1, .world-title, .world-kicker, .lede, .world-lede, .room-main > p, main > .wrap > p, #main > p, .go-deeper h2"));
   var clear = parkOffLede(parked.right, parked.bottom, parked.width, parked.height);
   right = clear.right;
   bottom = clear.bottom;
@@ -1872,6 +1875,8 @@ function bind() {
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });
   window.addEventListener("resize", queuePlace);
+  window.addEventListener("load", queuePlace);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queuePlace);
   window.setTimeout(queuePlace, 400);
   window.setTimeout(queuePlace, 1200);
   var fontWatch = new MutationObserver(syncFont);

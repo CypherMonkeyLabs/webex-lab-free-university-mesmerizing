@@ -348,10 +348,6 @@
     wowJs.src = rootPrefix + "assets/js/wow.js";
     wowJs.async = true;
     document.body.appendChild(wowJs);
-    var guideJs = document.createElement("script");
-    guideJs.type = "module";
-    guideJs.src = rootPrefix + "guide/guide.js";
-    document.body.appendChild(guideJs);
     var onboardJs = document.createElement("script");
     onboardJs.src = rootPrefix + "assets/js/onboard.js";
     document.body.appendChild(onboardJs);

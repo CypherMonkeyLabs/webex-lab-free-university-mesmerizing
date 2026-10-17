@@ -470,9 +470,9 @@
       "error": ""
     },
     {
-      "url": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html",
-      "ok": false,
-      "status": 404,
+      "url": "https://www.cisco.com/en/US/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html",
+      "ok": true,
+      "status": 200,
       "error": ""
     },
     {

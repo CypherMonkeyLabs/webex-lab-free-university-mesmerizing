@@ -1,5 +1,5 @@
 /* Offline shell for the Webex university. Same-origin GET only. */
-var CACHE = "webex-university-v29";
+var CACHE = "webex-university-v30";
 var SHELL = [
   "./",
   "./index.html",
@@ -73,17 +73,23 @@ self.addEventListener("fetch", function (event) {
   var url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
   event.respondWith(caches.match(request).then(function (hit) {
-    var network = fetch(request).then(function (response) {
-      if (response && response.ok && response.type === "basic") {
-        var copy = response.clone();
-        caches.open(CACHE).then(function (cache) { cache.put(request, copy); });
-      }
-      return response;
-    }).catch(function () {
-      if (hit) return hit;
-      if (request.mode === "navigate") return caches.match("./offline.html");
-      return Promise.reject(new Error("offline"));
+    if (hit) return hit;
+    // A version query is a different cache key. Fall back to the precached
+    // guide file so an old ?v= URL cannot replay a stale HTTP-cache body.
+    var versionedGuide = /\/guide\/guide\.(?:js|css)$/.test(url.pathname);
+    var loose = versionedGuide ? caches.match(request, { ignoreSearch: true }) : Promise.resolve(undefined);
+    return loose.then(function (cached) {
+      if (cached) return cached;
+      return fetch(request).then(function (response) {
+        if (response && response.ok && response.type === "basic") {
+          var copy = response.clone();
+          caches.open(CACHE).then(function (cache) { cache.put(request, copy); });
+        }
+        return response;
+      }).catch(function () {
+        if (request.mode === "navigate") return caches.match("./offline.html");
+        return Promise.reject(new Error("offline"));
+      });
     });
-    return hit || network;
   }));
 });

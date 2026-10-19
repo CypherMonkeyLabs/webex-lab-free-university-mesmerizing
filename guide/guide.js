@@ -600,6 +600,12 @@ function submitText(text) {
 function openPanel() {
   panel.hidden = false;
   monkey.setAttribute("aria-expanded", "true");
+  if (window.innerWidth <= 720) {
+    if (typeof host._finishGreet === "function") host._finishGreet();
+    pinSheet();
+    host.classList.add("is-sheet");
+    host.classList.add("is-open");
+  }
   hideNudge(false);
   if (greetedPath !== location.pathname) {
     greetedPath = location.pathname;
@@ -1161,6 +1167,13 @@ function place() {
   syncMenuHide();
   if (host.dataset.dragging === "1") return;
   if (host.classList.contains("is-greeting")) {
+    if (window.innerWidth <= 720 && !panel.hidden) {
+      pinSheet();
+      host.classList.add("is-sheet");
+      host.classList.add("is-open");
+      nudge.hidden = true;
+      return;
+    }
     releaseSheet();
     placeGreeting();
     return;
@@ -1337,6 +1350,7 @@ function scheduleNudge() {
 }
 
 function beginGreet() {
+  if (window.innerWidth <= 720 && !panel.hidden) return;
   try {
     if (localStorage.getItem("cg-greet-done") === "1") return;
     localStorage.setItem("cg-greet-done", "1");

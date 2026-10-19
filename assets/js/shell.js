@@ -76,7 +76,7 @@
     }
     var guideJs = document.createElement("script");
     guideJs.type = "module";
-    guideJs.src = rootPrefix + "guide/guide.js?v=efe84a13bc3d";
+    guideJs.src = rootPrefix + "guide/guide.js?v=e4b5a85ecfe4";
     document.head.appendChild(guideJs);
   }
   ensureGuide();

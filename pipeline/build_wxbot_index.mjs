@@ -194,6 +194,50 @@ const seeds = docs.filter((doc) => doc.k === "lesson").map((doc) => {
   };
 }).filter((seed) => seed.any.length);
 
+const CITED = [
+  { file: "rooms/T1-R04-locations-sites.html", roomId: "T1-R04", all: ["location", "webex", "calling"], allow: ["location", "webex", "calling", "site"] },
+  { file: "rooms/T1-R05-admin-roles-partner.html", roomId: "T1-R05", all: ["location", "administrator", "control", "hub"], allow: ["location", "administrator", "control", "hub", "admin", "role"] },
+  { file: "rooms/T1-R06-analytics-troubleshooting.html", roomId: "T1-R06", all: ["troubleshoot", "calling"], allow: ["look", "webex", "calling", "troubleshoot", "control", "hub", "analyt"] },
+  { file: "rooms/T2-R02-local-gateway-pstn.html", roomId: "T2-R02", all: ["local", "gateway"], allow: ["local", "gateway", "webex", "calling", "pstn", "trunk"] },
+  { file: "rooms/T2-R05-call-features.html", roomId: "T2-R05", all: ["hunt", "group"], allow: ["hunt", "group", "webex", "calling", "queue", "feature"] },
+  { file: "rooms/T3-R03-entry-points-queues-routing.html", roomId: "T3-R03", all: ["queue", "contact", "center"], allow: ["queue", "webex", "contact", "center", "entry", "rout"] },
+  { file: "rooms/T3-R04-agent-desktop-supervisor.html", roomId: "T3-R04", all: ["agent", "desktop"], allow: ["agent", "desktop", "webex", "contact", "center", "supervisor"] },
+  { file: "rooms/T3-R07-analyzer-reporting.html", roomId: "T3-R07", all: ["analyzer", "contact", "center"], allow: ["analyzer", "webex", "contact", "center", "report"] },
+  { file: "rooms/T4-R04-scripting-icm-routing.html", roomId: "T4-R04", all: ["icm", "script"], allow: ["icm", "script", "scripting", "enterprise", "wxcce", "rout"] },
+  { file: "rooms/T4-R06-finesse-desktop-gadgets.html", roomId: "T4-R06", all: ["finesse"], allow: ["finesse", "enterprise", "wxcce", "desktop", "gadget"] },
+  { file: "rooms/T5-R01-what-dedicated-instance-is.html", roomId: "T5-R01", all: ["dedicated", "instance"], allow: ["dedicated", "instance", "dedicat"] },
+  { file: "rooms/T5-R02-di-architecture-peering.html", roomId: "T5-R02", all: ["dedicated", "instance", "peer"], allow: ["dedicated", "instance", "peer", "peering", "dedicat"] },
+  { file: "rooms/T6-R02-cucm-to-webex-calling.html", roomId: "T6-R02", all: ["migrate", "cucm", "calling"], allow: ["migrate", "cucm", "user", "toward", "webex", "calling", "unified"] },
+  { file: "rooms/T7-R01-sip-fundamentals-webex.html", roomId: "T7-R01", all: ["sip", "idea", "trunk"], allow: ["sip", "idea", "matter", "webex", "calling", "trunk"] },
+];
+
+function citedExcerpt(file, roomId) {
+  const html = readFileSync(join(root, file), "utf8");
+  const title = h1(html) || roomId;
+  const tldr = plain(section(html, "tldr"));
+  const source = [tldr, plain(section(html, "core"))].filter(Boolean).join(" ");
+  return { title, ex: decorate(`${title}. ${clip(tldr || title, 280)}`, roomId, source) };
+}
+
+for (const spec of CITED) {
+  const cited = citedExcerpt(spec.file, spec.roomId);
+  seeds.push({
+    i: `cited:${spec.roomId}:${spec.all.join("-")}`,
+    h: `${spec.file}#tldr`,
+    ti: cited.title,
+    k: "lesson",
+    ex: cited.ex,
+    eg: "",
+    topic: spec.all[0],
+    all: spec.all,
+    any: spec.all,
+    allow: [...new Set([...spec.all, ...spec.allow])],
+    how: false,
+    loose: false,
+    rank: 120,
+  });
+}
+
 const index = { v: 2, syn: SYN, seeds, docs };
 mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, `${JSON.stringify(index)}\n`);

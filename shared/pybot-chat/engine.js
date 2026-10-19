@@ -355,34 +355,62 @@ function typoKind(word, domain, syn, pool, freq) {
   return kind;
 }
 
-function hasDomainTerm(text, domain, syn, pool, freq) {
-  const parts = normalize(text).split(" ").filter((word) => word && word.length >= 2 && !STOP.has(word) && !FILLER.has(word));
-  if (!parts.length) return false;
-  let strong = 0;
-  let weak = 0;
+const INTENT_WORDS = new Set("what how where why when which who explain define describe show tell start help mean means meaning compare list find open about work works difference versus vs walk use used does do can is are ask".split(" "));
+const WEBEX_SPECIFIC = new Set("webex wxcc wxcce cucm ucce pcce uccx finesse cuic cube jabber expressway roomos broadworks redsky controlhub dedicatedinstance localgateway flowdesigner mpp e911 byoc icm cvp vxml scim saml pstn srtp lgw sgw analyzer cuic".split(" "));
+const PHRASE_WORDS = ["control", "hub", "dedicated", "instance", "local", "gateway", "contact", "center", "flow", "designer", "survivability", "unified", "virtual", "agent"];
+const SPECIFIC_PHRASES = [
+  ["control", "hub"],
+  ["dedicated", "instance"],
+  ["local", "gateway"],
+  ["contact", "center"],
+  ["flow", "designer"],
+  ["survivability", "gateway"],
+  ["unified", "cm"],
+  ["virtual", "agent"],
+];
+const FOREIGN_BLOCK = new Set("slido thousandeyes genesys amazon five9 cxone zoom meraki twilio avaya salesforce servicenow slack spotify webinar ribbon teams salary playlist".split(" "));
+const COMMON_TERMS = new Set("webex calling contact center control hub cisco user call room page lab service cloud".split(" "));
+
+function gateTokens(text) {
+  const raw = normalize(text).split(" ").filter(Boolean);
+  const specificPool = [...WEBEX_SPECIFIC, ...PHRASE_WORDS];
+  return raw.map((word) => {
+    if (STOP.has(word) || FILLER.has(word) || INTENT_WORDS.has(word) || FOREIGN_BLOCK.has(word) || GENERIC_ENGLISH.has(word) || WEBEX_SPECIFIC.has(word)) return word;
+    if (word.length >= 3) {
+      const intentFix = fuzzy(word, [...INTENT_WORDS], 1);
+      if (intentFix) return intentFix;
+    }
+    if (word.length >= 5) {
+      const specFix = fuzzy(word, specificPool, word.length >= 8 ? 2 : 1);
+      if (specFix && sharedPrefix(word, specFix) >= 2) return specFix;
+    }
+    return word;
+  });
+}
+
+function domainDecision(text) {
+  const tokens = gateTokens(text);
   let foreign = 0;
-  let typoStrong = 0;
-  for (const word of parts) {
-    const rawKind = domainKind(word, domain, syn);
-    if (rawKind === "strong") {
-      strong += 1;
-      continue;
-    }
-    if (rawKind === "weak") {
-      weak += 1;
-      continue;
-    }
-    const kind = typoKind(word, domain, syn, pool, freq);
-    if (kind === "stop") continue;
-    if (kind === "strong") typoStrong += 1;
-    else if (kind === "weak") weak += 1;
-    else if (word.length <= 3 || STOP.has(stem(word))) continue;
-    else foreign += 1;
+  let specific = false;
+  let intent = false;
+  for (let i = 0; i < tokens.length - 1; i += 1) {
+    if (SPECIFIC_PHRASES.some((phrase) => phrase[0] === tokens[i] && phrase[1] === tokens[i + 1])) specific = true;
   }
-  if (strong >= 1) return true;
-  if (typoStrong >= 1 && foreign === 0) return true;
-  if (weak >= 2 && foreign === 0) return true;
-  return weak >= 1 && foreign === 0;
+  for (const word of tokens) {
+    if (INTENT_WORDS.has(word)) intent = true;
+    if (FOREIGN_BLOCK.has(word) || GENERIC_ENGLISH.has(word)) {
+      foreign += 1;
+      continue;
+    }
+    if (WEBEX_SPECIFIC.has(word) || WEBEX_SPECIFIC.has(stem(word))) specific = true;
+  }
+  return { foreign, specific, intent };
+}
+
+function hasDomainTerm(text) {
+  const decision = domainDecision(text);
+  if (decision.foreign > 0) return false;
+  return decision.specific && decision.intent;
 }
 
 const GREET_FILL = new Set("there friend canon everyone folks all buddy pal anyone home up whats ya bot again today please just so hi hello".split(" "));
@@ -907,6 +935,26 @@ export function createRetriever(index) {
         followQ: "Where do I start?",
       });
     }
+    if (/\b(ports and protocols|ports page)\b/.test(q) || /\b(show|open|where|take)\b.{0,24}\bports\b/.test(q)) {
+      const doc = docBy((item) => item.i === "page:ports");
+      const text = doc ? `“${doc.ti}”. ${clip(doc.ex, 240)}` : "The ports page is the lab note for the calling port reference.";
+      return intentAnswer("ports", doc, text, { href: "ports.html", link: "Open ports", raw, follow: "Where do I start?", followQ: "Where do I start?" });
+    }
+    if (/\bglossary\b/.test(q)) {
+      const doc = docBy((item) => item.i === "page:glossary");
+      const text = doc ? `“${doc.ti}”. ${clip(doc.ex, 240)}` : "The glossary lists terms from the rooms.";
+      return intentAnswer("glossary", doc, text, { href: "glossary.html", link: "Open the glossary", raw, follow: "Where do I start?", followQ: "Where do I start?" });
+    }
+    if (/\bhands-on labs\b/.test(q) || /\blabs page\b/.test(q)) {
+      const doc = docBy((item) => item.i === "page:labs");
+      const text = doc ? `“${doc.ti}”. ${clip(doc.ex, 240)}` : "The labs page is a browser simulation. It does not call a live tenant.";
+      return intentAnswer("labs", doc, text, { href: "labs.html", link: "Open labs", raw, follow: "Where do I start?", followQ: "Where do I start?" });
+    }
+    if (/\banimated flows\b/.test(q) || (/\bflows\b/.test(q) && /\b(open|show|where|animated)\b/.test(q))) {
+      const doc = docBy((item) => item.i === "page:flows");
+      const text = doc ? `“${doc.ti}”. ${clip(doc.ex, 240)}` : "Animated flows are study drawings on this site.";
+      return intentAnswer("flows", doc, text, { href: "flows.html", link: "Open flows", raw, follow: "Where do I start?", followQ: "Where do I start?" });
+    }
     if (/\b(downloads?|downloadable|cheat sheets?|cheatsheets?)\b/.test(q)) {
       const rows = docs.filter((doc) => doc.k === "download");
       const text = rows.length
@@ -1008,7 +1056,9 @@ export function createRetriever(index) {
     const limited = String(raw || "").slice(0, 400);
     const routed = route(limited, host || {});
     if (!routed.searchText) return routed;
-    if (!hasDomainTerm(routed.searchText, domain, syn, pool, freq)) return fallbackAnswer([], routed.followMode, true);
+    const decision = domainDecision(routed.searchText);
+    if (decision.foreign > 0) return fallbackAnswer([], routed.followMode, true);
+    if (!routed.followMode && !(decision.specific && decision.intent)) return fallbackAnswer([], routed.followMode, true);
     const seed = matchSeed(routed.searchText);
     if (seed) return fromSeed(seed, limited);
     const qTerms = queryTokens(routed.searchText, syn, pool, knownSet, seedPool, freq);
@@ -1023,6 +1073,9 @@ export function createRetriever(index) {
     const topDoc = top ? docs.find((doc) => doc.i === top.id) : null;
     const nq = normalize(routed.searchText);
     if (!isConfident(top, second, qTerms, topDoc, nq)) return fallbackAnswer(hits, routed.followMode);
+    const distinctive = qTerms.filter((term) => term.length >= 4 && !COMMON_TERMS.has(term) && !AMBIGUOUS.has(term) && !FILLER.has(term));
+    const inDoc = (doc, term) => doc && (doc.tf.has(term) || doc.ttf.has(term) || doc.tf.has(stem(term)) || doc.ttf.has(stem(term)));
+    if (distinctive.length && !distinctive.every((term) => inDoc(topDoc, term))) return fallbackAnswer(hits, routed.followMode);
     const follow = topDoc.eg
       ? "Show an example"
       : (second && second.href !== top.href ? `What about ${second.title}?` : (topDoc.fu || "Where do I start?"));

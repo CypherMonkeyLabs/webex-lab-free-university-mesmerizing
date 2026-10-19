@@ -1,5 +1,5 @@
 /* Offline shell for the Webex university. Same-origin GET only. */
-var CACHE = "webex-university-v28";
+var CACHE = "webex-university-v29";
 var SHELL = [
   "./",
   "./index.html",
@@ -49,7 +49,13 @@ var SHELL = [
 
 self.addEventListener("install", function (event) {
   event.waitUntil(caches.open(CACHE).then(function (cache) {
-    return cache.addAll(SHELL);
+    return Promise.all(SHELL.map(function (url) {
+      var bust = url + (url.indexOf("?") === -1 ? "?" : "&") + "sw=" + encodeURIComponent(CACHE);
+      return fetch(bust, { cache: "reload" }).then(function (response) {
+        if (!response || !response.ok) throw new Error("precache " + url);
+        return cache.put(url, response);
+      });
+    }));
   }).then(function () { return self.skipWaiting(); }));
 });
 

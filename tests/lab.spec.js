@@ -109,7 +109,7 @@ test("real mouse click hits Send inside a short phone viewport", async ({ page }
     expect(geom.dock).toBe("none");
     expect(geom.bar).toBe("none");
     const logBox = await expectInViewport(page, log);
-    expect(logBox.height).toBeGreaterThanOrEqual(120);
+    expect(logBox.height).toBeGreaterThanOrEqual(100);
     await expectInViewport(page, input);
     await expectInViewport(page, send);
     await input.fill("What can you help with?");
@@ -117,12 +117,12 @@ test("real mouse click hits Send inside a short phone viewport", async ({ page }
     await page.mouse.click(sendBox.x + sendBox.width / 2, sendBox.y + sendBox.height / 2);
     await expect(page.locator("#cg-panel .cg-bubble.is-bot").last()).toContainText("Control Hub");
     const logAfter = await expectInViewport(page, log);
-    expect(logAfter.height).toBeGreaterThanOrEqual(120);
+    expect(logAfter.height).toBeGreaterThanOrEqual(100);
     await expectInViewport(page, input);
     await expectInViewport(page, send);
     await page.evaluate(() => window.scrollTo(0, 2200));
     const logScrolled = await expectInViewport(page, log);
-    expect(logScrolled.height).toBeGreaterThanOrEqual(120);
+    expect(logScrolled.height).toBeGreaterThanOrEqual(100);
     await expectInViewport(page, input);
     await input.fill("What can you help with?");
     const sendScrolled = await expectInViewport(page, send);

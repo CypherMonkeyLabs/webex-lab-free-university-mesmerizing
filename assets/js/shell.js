@@ -71,12 +71,12 @@
     if (!document.querySelector("link[href*='guide/guide.css']")) {
       var css = document.createElement("link");
       css.rel = "stylesheet";
-      css.href = rootPrefix + "guide/guide.css";
+      css.href = rootPrefix + "guide/guide.css?v=b8979fe6cabf";
       document.head.appendChild(css);
     }
     var guideJs = document.createElement("script");
     guideJs.type = "module";
-    guideJs.src = rootPrefix + "guide/guide.js";
+    guideJs.src = rootPrefix + "guide/guide.js?v=efe84a13bc3d";
     document.head.appendChild(guideJs);
   }
   ensureGuide();

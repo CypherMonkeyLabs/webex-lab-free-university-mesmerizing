@@ -124,7 +124,7 @@ mountEl.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=26";
+css.href = guideBase + "guide/guide.css?v=b8979fe6cabf";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -1126,15 +1126,7 @@ function settleMonkey(right, bottom, width, height, rows) {
   return { right: 8, bottom: bottom, width: 56, height: 64, compact: true };
 }
 
-function sheetVisibleHeight() {
-  var height = window.innerHeight || document.documentElement.clientHeight || 0;
-  var viewport = window.visualViewport;
-  if (viewport && viewport.height) height = Math.min(height, viewport.height);
-  return Math.max(160, Math.round(height));
-}
-
 function fitSheet() {
-  var height = sheetVisibleHeight();
   panel.style.setProperty("position", "fixed", "important");
   panel.style.setProperty("left", "0", "important");
   panel.style.setProperty("right", "0", "important");
@@ -1142,15 +1134,8 @@ function fitSheet() {
   panel.style.setProperty("top", "auto", "important");
   panel.style.setProperty("width", "100%", "important");
   panel.style.setProperty("margin", "0", "important");
-  panel.style.setProperty("height", height + "px", "important");
-  panel.style.setProperty("max-height", height + "px", "important");
-  var formBox = form.getBoundingClientRect();
-  var limit = window.innerHeight || height;
-  if (formBox.bottom > limit + 0.5) {
-    height = Math.max(160, Math.round(height - (formBox.bottom - limit)));
-    panel.style.setProperty("height", height + "px", "important");
-    panel.style.setProperty("max-height", height + "px", "important");
-  }
+  panel.style.removeProperty("height");
+  panel.style.removeProperty("max-height");
 }
 
 function clearSheetFit() {

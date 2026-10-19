@@ -331,11 +331,20 @@ html.guide-sheet #cg-panel {
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  top: 0 !important;
+  top: auto !important;
   width: 100% !important;
   max-width: none !important;
+  /* Size to the viewport. 100svh is the fallback; 100dvh wins where it
+     is understood. 100% caps a dvh that is taller than the layout viewport
+     so the form cannot sit below the fold. top stays auto. */
+  height: 100vh !important;
+  height: 100svh !important;
   height: 100dvh !important;
+  height: 100% !important;
+  max-height: 100vh !important;
+  max-height: 100svh !important;
   max-height: 100dvh !important;
+  max-height: 100% !important;
   margin: 0 !important;
   z-index: 90 !important;
   overflow: hidden !important;
@@ -356,7 +365,7 @@ html.guide-sheet #cg-panel .cg-handle {
 
 html.guide-sheet #cg-panel .cg-log {
   flex: 1 1 auto;
-  min-height: 0;
+  min-height: 120px;
   max-height: none;
   overflow: auto;
 }

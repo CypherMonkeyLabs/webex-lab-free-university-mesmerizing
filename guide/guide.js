@@ -124,7 +124,7 @@ mountEl.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=25";
+css.href = guideBase + "guide/guide.css?v=26";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -1126,14 +1126,49 @@ function settleMonkey(right, bottom, width, height, rows) {
   return { right: 8, bottom: bottom, width: 56, height: 64, compact: true };
 }
 
+function sheetVisibleHeight() {
+  var height = window.innerHeight || document.documentElement.clientHeight || 0;
+  var viewport = window.visualViewport;
+  if (viewport && viewport.height) height = Math.min(height, viewport.height);
+  return Math.max(160, Math.round(height));
+}
+
+function fitSheet() {
+  var height = sheetVisibleHeight();
+  panel.style.setProperty("position", "fixed", "important");
+  panel.style.setProperty("left", "0", "important");
+  panel.style.setProperty("right", "0", "important");
+  panel.style.setProperty("bottom", "0", "important");
+  panel.style.setProperty("top", "auto", "important");
+  panel.style.setProperty("width", "100%", "important");
+  panel.style.setProperty("margin", "0", "important");
+  panel.style.setProperty("height", height + "px", "important");
+  panel.style.setProperty("max-height", height + "px", "important");
+  var formBox = form.getBoundingClientRect();
+  var limit = window.innerHeight || height;
+  if (formBox.bottom > limit + 0.5) {
+    height = Math.max(160, Math.round(height - (formBox.bottom - limit)));
+    panel.style.setProperty("height", height + "px", "important");
+    panel.style.setProperty("max-height", height + "px", "important");
+  }
+}
+
+function clearSheetFit() {
+  ["position", "left", "right", "bottom", "top", "width", "height", "max-height", "margin"].forEach(function (prop) {
+    panel.style.removeProperty(prop);
+  });
+}
+
 function releaseSheet() {
   document.documentElement.classList.remove("guide-sheet");
+  clearSheetFit();
   if (panel.parentElement !== host) host.insertBefore(panel, tourLayer);
 }
 
 function pinSheet() {
   document.documentElement.classList.add("guide-sheet");
   if (panel.parentElement !== document.body) document.body.appendChild(panel);
+  fitSheet();
 }
 
 function place() {
@@ -1190,6 +1225,7 @@ function place() {
   if (!sheet && mountEl) mountEl.style.zIndex = "";
   if (sheet) {
     pinSheet();
+    fitSheet();
     host.style.setProperty("--cg-panel-right", "0px");
     host.style.setProperty("--cg-panel-bottom", "0px");
     host.style.setProperty("--cg-panel-width", "100vw");
@@ -1926,6 +1962,10 @@ function bind() {
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });
   window.addEventListener("resize", queuePlace);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", queuePlace);
+    window.visualViewport.addEventListener("scroll", queuePlace);
+  }
   window.addEventListener("load", queuePlace);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(queuePlace);
   window.setTimeout(queuePlace, 400);

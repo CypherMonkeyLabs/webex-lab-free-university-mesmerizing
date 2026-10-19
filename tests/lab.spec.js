@@ -58,23 +58,24 @@ test("offline reload still opens a room and answers", async ({ page, context }) 
   await page.screenshot({ path: path.join(shot, "offline-lesson-1440.png") });
 });
 
-async function expectClickable(page, locator) {
-  const box = await locator.boundingBox();
-  expect(box).toBeTruthy();
+async function boxOf(locator) {
+  return locator.evaluate((el) => {
+    const rect = el.getBoundingClientRect();
+    return { x: rect.x, y: rect.y, width: rect.width, height: rect.height, bottom: rect.bottom, right: rect.right };
+  });
+}
+
+async function expectInViewport(page, locator) {
+  const box = await boxOf(locator);
   const view = page.viewportSize();
   expect(box.y).toBeGreaterThanOrEqual(0);
   expect(box.x).toBeGreaterThanOrEqual(0);
-  expect(box.y + box.height).toBeLessThanOrEqual(view.height + 0.5);
-  expect(box.x + box.width).toBeLessThanOrEqual(view.width + 0.5);
-  const hit = await page.evaluate(({ x, y }) => {
-    const el = document.elementFromPoint(x, y);
-    return el ? el.tagName + (el.getAttribute("type") ? ":" + el.getAttribute("type") : "") : "";
-  }, { x: box.x + box.width / 2, y: box.y + box.height / 2 });
-  const tag = await locator.evaluate((el) => el.tagName + (el.getAttribute("type") ? ":" + el.getAttribute("type") : ""));
-  expect(hit).toBe(tag);
+  expect(box.bottom).toBeLessThanOrEqual(view.height + 0.5);
+  expect(box.right).toBeLessThanOrEqual(view.width + 0.5);
+  return box;
 }
 
-test("chat input and Send stay clickable on a short phone", async ({ page }) => {
+test("real mouse click hits Send inside a short phone viewport", async ({ page }) => {
   for (const height of [430, 844]) {
     await page.setViewportSize({ width: 390, height });
     await page.addInitScript(() => {
@@ -87,28 +88,48 @@ test("chat input and Send stay clickable on a short phone", async ({ page }) => 
     await expect(page.locator("#cg-panel")).toBeVisible();
     const input = page.locator("#cg-panel input");
     const send = page.locator("#cg-panel button[type=submit]");
+    const log = page.locator("#cg-panel .cg-log");
     const geom = await page.evaluate(() => {
-      const panel = document.querySelector("#cg-panel").getBoundingClientRect();
+      const panel = document.querySelector("#cg-panel");
+      const rect = panel.getBoundingClientRect();
+      const style = getComputedStyle(panel);
       const dock = document.querySelector(".phone-dock");
       const bar = document.querySelector(".topbar");
       return {
-        top: panel.top,
-        bottom: panel.bottom,
+        top: rect.top,
+        bottom: rect.bottom,
+        position: style.position,
         dock: dock ? getComputedStyle(dock).display : "missing",
         bar: bar ? getComputedStyle(bar).display : "missing",
       };
     });
+    expect(geom.position).toBe("fixed");
     expect(geom.top).toBeGreaterThanOrEqual(-1);
     expect(geom.bottom).toBeLessThanOrEqual(height + 1);
     expect(geom.dock).toBe("none");
     expect(geom.bar).toBe("none");
-    await expectClickable(page, input);
-    await expectClickable(page, send);
+    const logBox = await expectInViewport(page, log);
+    expect(logBox.height).toBeGreaterThanOrEqual(120);
+    await expectInViewport(page, input);
+    await expectInViewport(page, send);
     await input.fill("What can you help with?");
-    await send.click();
+    const sendBox = await expectInViewport(page, send);
+    await page.mouse.click(sendBox.x + sendBox.width / 2, sendBox.y + sendBox.height / 2);
     await expect(page.locator("#cg-panel .cg-bubble.is-bot").last()).toContainText("Control Hub");
-    await expectClickable(page, input);
-    await expectClickable(page, send);
+    const logAfter = await expectInViewport(page, log);
+    expect(logAfter.height).toBeGreaterThanOrEqual(120);
+    await expectInViewport(page, input);
+    await expectInViewport(page, send);
+    await page.evaluate(() => window.scrollTo(0, 2200));
+    const logScrolled = await expectInViewport(page, log);
+    expect(logScrolled.height).toBeGreaterThanOrEqual(120);
+    await expectInViewport(page, input);
+    await input.fill("What can you help with?");
+    const sendScrolled = await expectInViewport(page, send);
+    await page.mouse.click(sendScrolled.x + sendScrolled.width / 2, sendScrolled.y + sendScrolled.height / 2);
+    await expect(page.locator("#cg-panel .cg-bubble.is-bot").last()).toContainText("Control Hub");
+    const inputAfterScroll = await expectInViewport(page, input);
+    expect(inputAfterScroll.bottom).toBeLessThanOrEqual(height + 0.5);
   }
 });
 

@@ -102,10 +102,10 @@ test("how do I use this follows the open room and section", () => {
 });
 
 test("the page mounts this guide and not the old bot", () => {
-  const uni = readFileSync(join(dir, "..", "assets", "js", "university.js"), "utf8");
-  assert.match(uni, /guide\/guide\.js/);
-  assert.equal(uni.includes("guide-bot.js"), false);
-  assert.equal(uni.includes("guide-kb.js"), false);
+  const shell = readFileSync(join(dir, "..", "assets", "js", "shell.js"), "utf8");
+  assert.match(shell, /guide\/guide\.js/);
+  assert.equal(shell.includes("guide-bot.js"), false);
+  assert.equal(shell.includes("guide-kb.js"), false);
 });
 
 test("teach me opens a lesson for that room", () => {

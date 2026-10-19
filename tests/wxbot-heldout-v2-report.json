@@ -2,11 +2,11 @@
   "questions": 102,
   "beginner": {
     "total": 40,
-    "relevant": 9,
-    "relevantPct": 22.5,
-    "confidentWrong": 10,
-    "fallback": 17,
-    "fallbackPct": 42.5
+    "relevant": 14,
+    "relevantPct": 35,
+    "confidentWrong": 7,
+    "fallback": 15,
+    "fallbackPct": 37.5
   },
   "typo": {
     "total": 15,
@@ -42,8 +42,8 @@
   },
   "followTurns": {
     "total": 12,
-    "relevant": 5,
-    "relevantPct": 41.7,
+    "relevant": 6,
+    "relevantPct": 50,
     "confidentWrong": 3,
     "fallback": 2,
     "fallbackPct": 16.7
@@ -58,34 +58,16 @@
   },
   "confidentWrongInDomain": [
     {
-      "id": "b02",
-      "q": "how does a Webex Calling location differ from a site",
-      "href": "rooms/T6-R02-cucm-to-webex-calling.html#tldr",
-      "text": "The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. [cite:1] Choose flash-cut or phased."
-    },
-    {
       "id": "b03",
       "q": "where does Webex Calling keep call detail records",
       "href": "rooms/T2-R01-calling-architecture.html#tldr",
       "text": "Before the move, phones and Jabber register to Unified CM. Expressway-C and Expressway-E pairs serve MRA and business-to-business. CMS, CMM, and TMS are optional. Unity Connection "
     },
     {
-      "id": "b04",
-      "q": "how is a Webex Contact Center tenant provisioned",
-      "href": "rooms/T6-R04-ucce-pcce-to-wxcc.html#tldr",
-      "text": "Unified CCX has a discovery tool. The article says to download discovery tool v3.5, and the printed command runs uccx-to-webexcc-v3.4.jar . It writes WebexCC_Bulk_Upload.xlsx and a"
-    },
-    {
       "id": "b06",
       "q": "what does a supervisor see in Webex Contact Center",
       "href": "rooms/T3-R04-agent-desktop-supervisor.html#tldr",
       "text": "Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or"
-    },
-    {
-      "id": "b08",
-      "q": "how does a WxCCE call flow move a contact",
-      "href": "rooms/T4-R01-wxcc-enterprise-overview.html#tldr",
-      "text": "Dedicated Instance’s contact-center article calls Webex Contact Center Enterprise “a Cloud contact center for large enterprises” and points at a data sheet for details. [cite:1] Th"
     },
     {
       "id": "b09",
@@ -144,18 +126,6 @@
   ],
   "misses": [
     {
-      "id": "b02",
-      "group": "beginner",
-      "q": "how does a Webex Calling location differ from a site",
-      "relevant": false,
-      "confidentWrong": true,
-      "clean": false,
-      "href": "rooms/T6-R02-cucm-to-webex-calling.html#tldr",
-      "mode": "answer",
-      "intent": "",
-      "text": "The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. [cite:1] Choose flash-cut or phased."
-    },
-    {
       "id": "b03",
       "group": "beginner",
       "q": "where does Webex Calling keep call detail records",
@@ -168,30 +138,6 @@
       "text": "Before the move, phones and Jabber register to Unified CM. Expressway-C and Expressway-E pairs serve MRA and business-to-business. CMS, CMM, and TMS are optional. Unity Connection "
     },
     {
-      "id": "b04",
-      "group": "beginner",
-      "q": "how is a Webex Contact Center tenant provisioned",
-      "relevant": false,
-      "confidentWrong": true,
-      "clean": false,
-      "href": "rooms/T6-R04-ucce-pcce-to-wxcc.html#tldr",
-      "mode": "answer",
-      "intent": "",
-      "text": "Unified CCX has a discovery tool. The article says to download discovery tool v3.5, and the printed command runs uccx-to-webexcc-v3.4.jar . It writes WebexCC_Bulk_Upload.xlsx and a"
-    },
-    {
-      "id": "b05",
-      "group": "beginner",
-      "q": "what voice options does Webex Contact Center describe",
-      "relevant": false,
-      "confidentWrong": false,
-      "clean": false,
-      "href": "",
-      "mode": "fallback",
-      "intent": "fallback",
-      "text": "I don't have that yet. Closest pages: Voice Options; Third-party PBX & CC to Webex. I only answer from this lab's rooms. You can also use Search."
-    },
-    {
       "id": "b06",
       "group": "beginner",
       "q": "what does a supervisor see in Webex Contact Center",
@@ -202,30 +148,6 @@
       "mode": "answer",
       "intent": "",
       "text": "Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or"
-    },
-    {
-      "id": "b07",
-      "group": "beginner",
-      "q": "what is Webex Contact Center Enterprise at a glance",
-      "relevant": false,
-      "confidentWrong": false,
-      "clean": false,
-      "href": "",
-      "mode": "fallback",
-      "intent": "fallback",
-      "text": "I don't have that yet. Closest pages: AI in Webex Contact Center; UCCX discovery into Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
-    },
-    {
-      "id": "b08",
-      "group": "beginner",
-      "q": "how does a WxCCE call flow move a contact",
-      "relevant": false,
-      "confidentWrong": true,
-      "clean": false,
-      "href": "rooms/T4-R01-wxcc-enterprise-overview.html#tldr",
-      "mode": "answer",
-      "intent": "",
-      "text": "Dedicated Instance’s contact-center article calls Webex Contact Center Enterprise “a Cloud contact center for large enterprises” and points at a data sheet for details. [cite:1] Th"
     },
     {
       "id": "b09",
@@ -429,7 +351,7 @@
       "href": "",
       "mode": "fallback",
       "intent": "fallback",
-      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+      "text": "I don't have that yet. Closest pages: AI Quality Management in Control Hub; Basic quality management and recording. I only answer from this lab's rooms. You can also use Search."
     },
     {
       "id": "b29",
@@ -732,19 +654,6 @@
       "mode": "answer",
       "intent": "",
       "text": "AI Assistant is a paid desktop add-on with an icon. Header on nvvv1zb: October 06, 2026. [cite:1] Scripted and autonomous agents are built in AI Agent Studio and attached with Virt"
-    },
-    {
-      "id": "f02.2",
-      "group": "follow",
-      "pair": "f02",
-      "q": "and the voice options",
-      "relevant": false,
-      "confidentWrong": false,
-      "clean": false,
-      "href": "rooms/T3-R05-voice-options.html#tldr",
-      "mode": "answer",
-      "intent": "seed",
-      "text": "Cloud PSTN options in the article: Webex Contact Center PSTN, Cloud Connected PSTN, and Cisco Calling Plan for trials and supported service-number regions. [cite:1] On-premises PST"
     },
     {
       "id": "f03.2",

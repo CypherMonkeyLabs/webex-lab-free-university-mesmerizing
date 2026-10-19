@@ -314,6 +314,58 @@
   flex: 0 0 auto;
 }
 
+/* Phone sheet: hide the page header and the dock, and pin the guide to the viewport. */
+html.guide-sheet .topbar,
+html.guide-sheet .phone-dock,
+html.guide-sheet .canon-banner,
+html.guide-sheet .a11y-dock,
+html.guide-sheet .to-top,
+html.guide-sheet .phone-menu,
+html.guide-sheet .edge-rail,
+html.guide-sheet .hud-panel {
+  display: none !important;
+}
+
+html.guide-sheet #cg-panel {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  margin: 0 !important;
+  z-index: 90 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+}
+
+html.guide-sheet #cg-panel .cg-readbar,
+html.guide-sheet #cg-panel .cg-offers,
+html.guide-sheet #cg-panel .cg-chips,
+html.guide-sheet #cg-panel .cg-more,
+html.guide-sheet #cg-panel .cg-pointer,
+html.guide-sheet #cg-panel .cg-handle {
+  display: none !important;
+}
+
+html.guide-sheet #cg-panel .cg-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow: auto;
+}
+
+html.guide-sheet #cg-panel .cg-form {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
 .cg-bubble {
   max-width: min(92%, 36rem);
   margin: 0;

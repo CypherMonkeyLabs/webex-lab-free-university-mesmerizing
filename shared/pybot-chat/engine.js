@@ -367,7 +367,21 @@ const SPECIFIC_PHRASES = [
   ["survivability", "gateway"],
   ["unified", "cm"],
   ["virtual", "agent"],
+  ["hunt", "group"],
+  ["directory", "sync"],
+  ["data", "residency"],
+  ["entry", "point"],
+  ["agent", "desktop"],
+  ["quality", "management"],
+  ["call", "flow"],
+  ["sip", "trunk"],
 ];
+/* Distinctive lesson terms. A question with none of these falls back.
+   Common English stays off this list so an off-topic sentence cannot sneak in. */
+const ALLOWLIST = new Set([
+  ...WEBEX_SPECIFIC,
+  ..."subscription location analytics residency registration dial cdr tenant provision provisioning supervisor survivability queue peering peer sip trunk recording directory hunt gateway gadget voicemail codec webhook migration header 933".split(" "),
+]);
 const FOREIGN_BLOCK = new Set("slido thousandeyes genesys amazon five9 cxone zoom meraki twilio avaya salesforce servicenow slack webinar ribbon teams playlist".split(" "));
 [[115, 97, 108, 97, 114, 121], [115, 112, 111, 116, 105, 102, 121]].forEach((codes) => {
   const word = String.fromCharCode.apply(null, codes);
@@ -386,7 +400,7 @@ function gateTokens(text) {
       if (intentFix) return intentFix;
     }
     if (word.length >= 5) {
-      const specFix = fuzzy(word, specificPool, word.length >= 8 ? 2 : 1);
+      const specFix = fuzzy(word, [...specificPool, ...ALLOWLIST], word.length >= 8 ? 2 : 1);
       if (specFix && sharedPrefix(word, specFix) >= 2) return specFix;
     }
     return word;
@@ -407,7 +421,7 @@ function domainDecision(text) {
       foreign += 1;
       continue;
     }
-    if (WEBEX_SPECIFIC.has(word) || WEBEX_SPECIFIC.has(stem(word))) specific = true;
+    if (ALLOWLIST.has(word) || ALLOWLIST.has(stem(word)) || WEBEX_SPECIFIC.has(word) || WEBEX_SPECIFIC.has(stem(word))) specific = true;
   }
   return { foreign, specific, intent };
 }

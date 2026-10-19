@@ -75,6 +75,6 @@ if (!/var SHELL = \[[\s\S]*?\];/.test(sw)) {
   process.exit(1);
 }
 sw = sw.replace(/var SHELL = \[[\s\S]*?\];/, `var SHELL = [\n${body}\n];`);
-sw = sw.replace(/webex-university-v\d+/, "webex-university-v26");
+sw = sw.replace(/webex-university-v\d+/, "webex-university-v27");
 fs.writeFileSync(swPath, sw);
 console.log(`precache ${chosen.length + 1} files, ${total} bytes, budget ${budget}`);

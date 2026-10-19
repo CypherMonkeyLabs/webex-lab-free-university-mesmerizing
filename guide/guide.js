@@ -124,7 +124,7 @@ mountEl.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=24";
+css.href = guideBase + "guide/guide.css?v=25";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -646,7 +646,7 @@ function openPanel() {
     scrollLog();
   }
   host.classList.toggle("is-open", true);
-  input.focus();
+  input.focus({ preventScroll: true });
   place();
 }
 
@@ -1126,16 +1126,28 @@ function settleMonkey(right, bottom, width, height, rows) {
   return { right: 8, bottom: bottom, width: 56, height: 64, compact: true };
 }
 
+function releaseSheet() {
+  document.documentElement.classList.remove("guide-sheet");
+  if (panel.parentElement !== host) host.insertBefore(panel, tourLayer);
+}
+
+function pinSheet() {
+  document.documentElement.classList.add("guide-sheet");
+  if (panel.parentElement !== document.body) document.body.appendChild(panel);
+}
+
 function place() {
   syncFont();
   syncMenuHide();
   if (host.dataset.dragging === "1") return;
   if (host.classList.contains("is-greeting")) {
+    releaseSheet();
     placeGreeting();
     return;
   }
   var sheetNow = window.innerWidth <= 720 && !panel.hidden;
   if (host.classList.contains("is-moved") && !sheetNow) {
+    releaseSheet();
     // The reader parked the guide. dragbot.js owns the position and the panel slot.
     host.classList.toggle("is-compact", window.matchMedia("(max-width: 420px)").matches);
     host.classList.toggle("is-sheet", false);
@@ -1177,28 +1189,17 @@ function place() {
   host.classList.toggle("is-open", !panel.hidden);
   if (!sheet && mountEl) mountEl.style.zIndex = "";
   if (sheet) {
-    var dockBar = document.querySelector(".phone-dock");
-    var dockTop = window.innerHeight;
-    if (dockBar && getComputedStyle(dockBar).display !== "none") {
-      dockTop = dockBar.getBoundingClientRect().top;
-    } else {
-      var dockH = phoneDockHeight();
-      if (dockH < 64) dockH = 76;
-      dockTop = window.innerHeight - dockH - 8;
-    }
-    var sheetGap = 12;
-    var topGap = 8;
-    var bottom = Math.max(84, Math.round(window.innerHeight - dockTop) + sheetGap);
-    var available = Math.max(160, Math.round(dockTop - sheetGap - topGap));
-    host.style.setProperty("--cg-panel-right", "8px");
-    host.style.setProperty("--cg-panel-bottom", bottom + "px");
-    host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
-    host.style.setProperty("--cg-panel-max", available + "px");
-    host.style.setProperty("--cg-sheet-h", available + "px");
+    pinSheet();
+    host.style.setProperty("--cg-panel-right", "0px");
+    host.style.setProperty("--cg-panel-bottom", "0px");
+    host.style.setProperty("--cg-panel-width", "100vw");
+    host.style.setProperty("--cg-panel-max", "100dvh");
+    host.style.setProperty("--cg-sheet-h", "100dvh");
     if (mountEl) mountEl.style.zIndex = "80";
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {
+    releaseSheet();
     host.style.setProperty("--cg-panel-right", chosen.slot.right + "px");
     host.style.setProperty("--cg-panel-bottom", chosen.slot.bottom + "px");
     host.style.setProperty("--cg-panel-width", chosen.slot.width + "px");
@@ -1208,6 +1209,7 @@ function place() {
     panel.classList.toggle("is-above", chosen.slot.side !== "beside");
     panel.classList.toggle("is-beside", chosen.slot.side === "beside");
   } else {
+    releaseSheet();
     host.style.setProperty("--cg-panel-right", chosen.right + "px");
     host.style.setProperty("--cg-panel-bottom", (chosen.bottom + height + 16) + "px");
     host.style.setProperty("--cg-panel-width", Math.min(380, window.innerWidth - chosen.right - 8) + "px");

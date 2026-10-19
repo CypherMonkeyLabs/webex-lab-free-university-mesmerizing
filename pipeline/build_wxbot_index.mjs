@@ -238,7 +238,72 @@ for (const spec of CITED) {
   });
 }
 
-const index = { v: 2, syn: SYN, seeds, docs };
+/* Curated from lesson titles and TL;DR text. Loose so a natural extra word
+   still lands on the room. Rank stays under the tighter cited seeds. */
+const GLOSSARY = [
+  { file: "rooms/T1-R02-identity-directory-sync.html", roomId: "T1-R02", all: ["directory", "sync"], rank: 70 },
+  { file: "rooms/T1-R03-licensing-subscriptions.html", roomId: "T1-R03", all: ["subscription"], rank: 70 },
+  { file: "rooms/T1-R04-locations-sites.html", roomId: "T1-R04", all: ["location"], rank: 36, block: ["administrator", "subscription", "license", "licens"] },
+  { file: "rooms/T1-R05-admin-roles-partner.html", roomId: "T1-R05", all: ["location", "administrator"], rank: 90 },
+  { file: "rooms/T1-R06-analytics-troubleshooting.html", roomId: "T1-R06", all: ["analytics"], rank: 70, block: ["cdr"] },
+  { file: "rooms/T1-R07-data-residency-security.html", roomId: "T1-R07", all: ["residency"], rank: 70 },
+  { file: "rooms/T2-R01-calling-architecture.html", roomId: "T2-R01", all: ["registration", "pbx"], rank: 70 },
+  { file: "rooms/T2-R03-dial-plans-pstn-routing.html", roomId: "T2-R03", all: ["dial"], rank: 60, block: ["peer", "peering"] },
+  { file: "rooms/T2-R04-devices-provisioning.html", roomId: "T2-R04", all: ["mpp"], rank: 80 },
+  { file: "rooms/T2-R05-call-features.html", roomId: "T2-R05", all: ["hunt", "group"], rank: 70 },
+  { file: "rooms/T2-R06-calling-security-compliance.html", roomId: "T2-R06", all: ["933"], rank: 80 },
+  { file: "rooms/T2-R07-survivability-gateway.html", roomId: "T2-R07", all: ["survivability"], rank: 70 },
+  { file: "rooms/T2-R08-calling-analytics-cdr.html", roomId: "T2-R08", all: ["cdr"], rank: 80 },
+  { file: "rooms/T3-R01-wxcc-multitenant-overview.html", roomId: "T3-R01", all: ["multi", "tenant"], rank: 80 },
+  { file: "rooms/T3-R02-tenant-provisioning-setup.html", roomId: "T3-R02", all: ["tenant", "provision"], rank: 85 },
+  { file: "rooms/T3-R03-entry-points-queues-routing.html", roomId: "T3-R03", all: ["entry", "queue"], rank: 80 },
+  { file: "rooms/T3-R04-agent-desktop-supervisor.html", roomId: "T3-R04", all: ["agent", "desktop"], rank: 100 },
+  { file: "rooms/T3-R05-voice-options.html", roomId: "T3-R05", all: ["voice", "option"], rank: 70 },
+  { file: "rooms/T3-R06-digital-channels.html", roomId: "T3-R06", all: ["digital", "channel"], rank: 70, block: ["ai"] },
+  { file: "rooms/T3-R07-analyzer-reporting.html", roomId: "T3-R07", all: ["analyzer", "report"], rank: 90 },
+  { file: "rooms/T3-R08-supervisor-experience.html", roomId: "T3-R08", all: ["supervisor", "desktop"], rank: 80 },
+  { file: "rooms/T4-R01-wxcc-enterprise-overview.html", roomId: "T4-R01", all: ["contact", "center", "enterprise"], rank: 40, block: ["component", "vxml", "cvp", "hybrid", "flow", "icm"] },
+  { file: "rooms/T4-R02-core-components.html", roomId: "T4-R02", all: ["component", "enterprise"], rank: 110 },
+  { file: "rooms/T4-R03-call-flow-wxcce.html", roomId: "T4-R03", all: ["enterprise", "flow"], rank: 100 },
+  { file: "rooms/T4-R04-scripting-icm-routing.html", roomId: "T4-R04", all: ["icm"], rank: 160 },
+  { file: "rooms/T4-R05-cvp-vxml-ivr.html", roomId: "T4-R05", all: ["vxml"], rank: 160 },
+  { file: "rooms/T4-R06-finesse-desktop-gadgets.html", roomId: "T4-R06", all: ["finesse"], rank: 160 },
+  { file: "rooms/T4-R07-reporting-cuic.html", roomId: "T4-R07", all: ["cuic"], rank: 160 },
+  { file: "rooms/T5-R02-di-architecture-peering.html", roomId: "T5-R02", all: ["peering"], rank: 70 },
+  { file: "rooms/T6-R02-cucm-to-webex-calling.html", roomId: "T6-R02", all: ["cucm", "move"], rank: 80 },
+  { file: "rooms/T7-R01-sip-fundamentals-webex.html", roomId: "T7-R01", all: ["sip", "header"], rank: 80 },
+  { file: "rooms/T8-R01-flow-designer-essentials.html", roomId: "T8-R01", all: ["flow", "designer"], rank: 80 },
+  { file: "rooms/T9-R03-basic-qm.html", roomId: "T9-R03", all: ["quality", "recording"], rank: 80 },
+];
+
+const glossary = [];
+for (const spec of GLOSSARY) {
+  const cited = citedExcerpt(spec.file, spec.roomId);
+  glossary.push({
+    term: spec.all.join(" "),
+    h: `${spec.file}#tldr`,
+    ti: cited.title,
+    ex: cited.ex,
+  });
+  seeds.push({
+    i: `glossary:${spec.roomId}:${spec.all.join("-")}`,
+    h: `${spec.file}#tldr`,
+    ti: cited.title,
+    k: "glossary",
+    ex: cited.ex,
+    eg: "",
+    topic: spec.all[0],
+    all: spec.all,
+    any: spec.all,
+    allow: spec.all,
+    block: spec.block || [],
+    how: false,
+    loose: true,
+    rank: spec.rank,
+  });
+}
+
+const index = { v: 3, syn: SYN, seeds, docs, glossary };
 mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, `${JSON.stringify(index)}\n`);
 const bytes = Buffer.byteLength(JSON.stringify(index));

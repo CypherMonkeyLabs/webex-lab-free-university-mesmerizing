@@ -77,9 +77,31 @@ async function expectClickable(page, locator) {
 test("chat input and Send stay clickable on a short phone", async ({ page }) => {
   for (const height of [430, 844]) {
     await page.setViewportSize({ width: 390, height });
-    await openGuide(page);
+    await page.addInitScript(() => {
+      localStorage.setItem("canon-tour-done", "skip");
+      localStorage.setItem("cg-greet-done", "1");
+    });
+    await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 1400));
+    await page.locator("button.cg-monkey").click();
+    await expect(page.locator("#cg-panel")).toBeVisible();
     const input = page.locator("#cg-panel input");
     const send = page.locator("#cg-panel button[type=submit]");
+    const geom = await page.evaluate(() => {
+      const panel = document.querySelector("#cg-panel").getBoundingClientRect();
+      const dock = document.querySelector(".phone-dock");
+      const bar = document.querySelector(".topbar");
+      return {
+        top: panel.top,
+        bottom: panel.bottom,
+        dock: dock ? getComputedStyle(dock).display : "missing",
+        bar: bar ? getComputedStyle(bar).display : "missing",
+      };
+    });
+    expect(geom.top).toBeGreaterThanOrEqual(-1);
+    expect(geom.bottom).toBeLessThanOrEqual(height + 1);
+    expect(geom.dock).toBe("none");
+    expect(geom.bar).toBe("none");
     await expectClickable(page, input);
     await expectClickable(page, send);
     await input.fill("What can you help with?");

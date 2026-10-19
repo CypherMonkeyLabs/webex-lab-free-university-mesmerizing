@@ -1,0 +1,110 @@
+{
+  "questions": 56,
+  "beginner": {
+    "total": 35,
+    "relevant": 35,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 0,
+    "fallbackPct": 0
+  },
+  "typo": {
+    "total": 4,
+    "relevant": 0,
+    "relevantPct": 0,
+    "confidentWrong": 0,
+    "fallback": 4,
+    "fallbackPct": 100
+  },
+  "offtopic": {
+    "total": 6,
+    "relevant": 6,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 6,
+    "fallbackPct": 100
+  },
+  "nav": {
+    "total": 4,
+    "relevant": 4,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 0,
+    "fallbackPct": 0
+  },
+  "inject": {
+    "total": 5,
+    "relevant": 5,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 5,
+    "fallbackPct": 100
+  },
+  "followTurns": {
+    "total": 2,
+    "relevant": 2,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 0,
+    "fallbackPct": 0
+  },
+  "followPairs": {
+    "ok": 1,
+    "total": 1
+  },
+  "target": {
+    "offtopicConfidentWrong": 0,
+    "injectConfidentWrong": 0
+  },
+  "confidentWrongInDomain": [],
+  "misses": [
+    {
+      "id": "t01",
+      "group": "typo",
+      "q": "waht is a hnt group",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t02",
+      "group": "typo",
+      "q": "analizer reports for contact center",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t03",
+      "group": "typo",
+      "q": "dedicted instnce peering",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t04",
+      "group": "typo",
+      "q": "locl gatewy pstn",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    }
+  ]
+}

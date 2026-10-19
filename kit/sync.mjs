@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,6 +12,7 @@ const files = [
   ["assets/js/brand.js", "kit/chrome/brand.js"],
   ["assets/js/polish.js", "kit/chrome/polish.js"],
   ["guide/guide.js", "kit/bot/guide.js"],
+  ["guide/wxbot.js", "kit/bot/wxbot.js"],
   ["guide/guide.css", "kit/bot/guide.css"],
   ["guide/engine.mjs", "kit/bot/engine.mjs"],
   ["assets/js/onboard.js", "kit/onboarding/tour.js"],
@@ -25,5 +26,11 @@ for (const [from, to] of files) {
   const target = join(root, to);
   mkdirSync(dirname(target), { recursive: true });
   copyFileSync(join(root, from), target);
+  if (to === "kit/bot/wxbot.js") {
+    const text = readFileSync(target, "utf8")
+      .replaceAll("../shared/pybot-chat/engine.js", "../../shared/pybot-chat/engine.js")
+      .replaceAll("../assets/data/wxbot-index.json", "../../assets/data/wxbot-index.json");
+    writeFileSync(target, text);
+  }
   console.log(to);
 }

@@ -2,12 +2,18 @@
   "name": "webex-lab",
   "private": true,
   "type": "module",
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  },
   "scripts": {
     "build:university": "python3 scripts/build_university.py",
     "build:round3": "python3 scripts/build_round3.py",
     "build:guide": "node guide/build-kb.mjs",
     "test:guide": "node --test guide/engine.test.mjs",
     "verify": "node scripts/verify-university.mjs",
-    "start": "python3 -m http.server 8741"
+    "start": "python3 -m http.server 8741",
+    "index:bot": "node pipeline/build_wxbot_index.mjs",
+    "eval:bot": "node tests/wxbot-eval.mjs",
+    "test": "playwright test"
   }
 }

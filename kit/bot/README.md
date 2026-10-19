@@ -6,7 +6,8 @@ The guide that docks on the right.
 | --- | --- |
 | `guide.js` | Monkey, poses, voice, read-along, greeting, quiet offers |
 | `guide.css` | Size, glow, poses, sentence highlight |
-| `engine.mjs` | Answers from the local notes only |
+| `engine.mjs` | Study-mode answers from the local notes only |
+| `wxbot.js` | Factual lookup. This kit copy points at `../../shared/pybot-chat/engine.js`. The live page uses `guide/wxbot.js`. |
 
 After the tour, `beginGreet` centers the monkey once (`cg-greet-done`), then it returns to the right edge. Offers wait 2.5 minutes, stop after three, and honor “Not now” and “Stop offering” (`cg-poke-off`).
 

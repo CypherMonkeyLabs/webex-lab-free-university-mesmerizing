@@ -1,0 +1,13 @@
+{
+  "$comment": "Front matter for Webex Canon rooms. Checked by scripts/validate_lessons.mjs. Level is a study band from 0 to 10, not a lock.",
+  "required": ["key", "title", "level", "outcomes", "sources", "has_exercise", "last_verified"],
+  "properties": {
+    "key": "string, '<track>/<room id>', must match a rooms/*.html file",
+    "title": "string, must equal the room h1",
+    "level": "integer 0-10",
+    "outcomes": "array of at least one phrase, each at least 8 characters",
+    "sources": "array of at least one id that exists in data/sources-catalog.json",
+    "has_exercise": "boolean, true when the room has a quiz or lab section",
+    "last_verified": "null or YYYY-MM-DD from the room citation ledger"
+  }
+}

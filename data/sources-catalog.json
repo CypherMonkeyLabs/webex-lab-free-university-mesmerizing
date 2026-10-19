@@ -1,0 +1,2392 @@
+{
+  "sources": [
+    {
+      "id": "T1-R01-1",
+      "room": "T1-R01",
+      "label": "Get started with Control Hub — help.webex — article nkhozs6",
+      "href": "https://help.webex.com/article/nkhozs6/Get-Started-with-Control-Hub"
+    },
+    {
+      "id": "T1-R01-2",
+      "room": "T1-R01",
+      "label": "Assign organization account roles in Control Hub — help.webex — article fs78p5 / qrdsz8 (same article body)",
+      "href": "https://help.webex.com/en-us/article/fs78p5/Assign-organization-account-roles-in-Control-Hub"
+    },
+    {
+      "id": "T1-R01-3",
+      "room": "T1-R01",
+      "label": "Locations in Control Hub — help.webex — article ajh6iy",
+      "href": "https://help.webex.com/en-us/article/ajh6iy"
+    },
+    {
+      "id": "T1-R01-4",
+      "room": "T1-R01",
+      "label": "Configure Webex Calling for your organization — help.webex — article njvdjf2",
+      "href": "https://help.webex.com/en-us/article/njvdjf2/Configure-Webex-Calling-for-your-organization"
+    },
+    {
+      "id": "T1-R01-5",
+      "room": "T1-R01",
+      "label": "Control Hub — help.webex — article nuylwki",
+      "href": "https://help.webex.com/en-us/article/nuylwki/Control-Hub"
+    },
+    {
+      "id": "T1-R01-6",
+      "room": "T1-R01",
+      "label": "Devices page in Control Hub — help.webex — article z3elky",
+      "href": "https://help.webex.com/article/z3elky/Devices-page-in-Control-Hub"
+    },
+    {
+      "id": "T1-R01-7",
+      "room": "T1-R01",
+      "label": "Workspace locations API — developer.webex — referenced from cite 3 as https://developer.webex.com/docs/api/v1/workspace-locations — page body not re-read in this pass. re-check the",
+      "href": "https://developer.webex.com/docs/api/v1/workspace-locations"
+    },
+    {
+      "id": "T1-R01-8",
+      "room": "T1-R01",
+      "label": "Custom roles in Control Hub — help.webex — article x7l1qbb",
+      "href": "https://help.webex.com/en-us/article/x7l1qbb/Customized-roles-in-Control-Hub"
+    },
+    {
+      "id": "T1-R01-9",
+      "room": "T1-R01",
+      "label": "Deployment Guide for Directory Connector — help.webex — article zqvufbb",
+      "href": "https://help.webex.com/article/zqvufbb"
+    },
+    {
+      "id": "T1-R01-10",
+      "room": "T1-R01",
+      "label": "Single Sign-On Integration in Control Hub — help.webex — article lfu88u",
+      "href": "https://help.webex.com/article/lfu88u"
+    },
+    {
+      "id": "T1-R01-11",
+      "room": "T1-R01",
+      "label": "SCIM 2.0 provisioning with a custom Webex app in Entra ID — help.webex — article 3211gv",
+      "href": "https://help.webex.com/article/3211gv"
+    },
+    {
+      "id": "T1-R01-12",
+      "room": "T1-R01",
+      "label": "Analytics for Your Cloud Collaboration Portfolio — help.webex — article n0rlwxe",
+      "href": "https://help.webex.com/article/n0rlwxe"
+    },
+    {
+      "id": "T1-R01-13",
+      "room": "T1-R01",
+      "label": "Configure single sign-on in Control Hub with Active Directory Federation Services (ADFS) — help.webex — article nyx7kubb",
+      "href": "https://help.webex.com/article/nyx7kubb"
+    },
+    {
+      "id": "T1-R01-14",
+      "room": "T1-R01",
+      "label": "Assign administrator and external administrator roles in Partner Hub — help.webex — article 16gmxfb",
+      "href": "https://help.webex.com/article/16gmxfb"
+    },
+    {
+      "id": "T1-R01-15",
+      "room": "T1-R01",
+      "label": "Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf",
+      "href": "https://help.webex.com/article/nbedetf"
+    },
+    {
+      "id": "T1-R01-16",
+      "room": "T1-R01",
+      "label": "Migration from BroadWorks and BroadCloud to Webex Calling — help.webex — article n1ku0vfb",
+      "href": "https://help.webex.com/article/n1ku0vfb"
+    },
+    {
+      "id": "T1-R01-17",
+      "room": "T1-R01",
+      "label": "Delegate location administration — help.webex — article 760wbi",
+      "href": "https://help.webex.com/article/760wbi"
+    },
+    {
+      "id": "T1-R02-1",
+      "room": "T1-R02",
+      "label": "Deployment Guide for Directory Connector — help.webex — article zqvufbb — help.webex.com article zqvufbb — header September 15, 2026 — retrieved 2026-10-14. One connector per domai",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-2",
+      "room": "T1-R02",
+      "label": "Single Sign-On Integration in Control Hub — help.webex — article lfu88u — help.webex.com article lfu88u — retrieved 2026-10-14. SAML 2.0. NameID transient. Organization claim uid. ",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-3",
+      "room": "T1-R02",
+      "label": "SCIM 2.0 provisioning with a custom Webex app in Entra ID — help.webex — article 3211gv — help.webex.com article 3211gv — retrieved 2026-10-14. Tenant URLs. 365-day manual token. S",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-4",
+      "room": "T1-R02",
+      "label": "SSO with multiple IdPs in Webex — help.webex — article ngp4sr8 — help.webex.com article ngp4sr8 — header April 17, 2026 — retrieved 2026-10-14. SAML, OpenID Connect, and Webex Iden",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-5",
+      "room": "T1-R02",
+      "label": "Data residency in Webex — help.webex — article oybc4fb — help.webex.com article oybc4fb — header September 24, 2026 — retrieved 2026-10-14. Identities and keys stay in the organiza",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-6",
+      "room": "T1-R02",
+      "label": "Set up automatic license assignments in Control Hub — help.webex — article n3ijtao — help.webex.com article n3ijtao — header September 08, 2026 — retrieved 2026-10-14. Services are",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-7",
+      "room": "T1-R02",
+      "label": "Configure Webex Calling for your organization — help.webex — article njvdjf2 — help.webex.com article njvdjf2 — cited from the T2-R03 ledger for the Directory Connector prefix rule",
+      "href": ""
+    },
+    {
+      "id": "T1-R02-8",
+      "room": "T1-R02",
+      "label": "Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — help.webex.com article nbedetf — header January 14, 2026 — retrieved 2026-10-14. Entra ID Wizard ",
+      "href": ""
+    },
+    {
+      "id": "T1-R03-1",
+      "room": "T1-R03",
+      "label": "Set up automatic license assignments in Control Hub — help.webex — article n3ijtao — help.webex.com article n3ijtao — header September 08, 2026 — retrieved 2026-10-14. Future and e",
+      "href": ""
+    },
+    {
+      "id": "T1-R03-2",
+      "room": "T1-R03",
+      "label": "Edit service licenses in Control Hub for individual users — help.webex — article 9dmqgv — help.webex.com article 9dmqgv — header April 11, 2026 — retrieved 2026-10-14. Calling stan",
+      "href": ""
+    },
+    {
+      "id": "T1-R03-3",
+      "room": "T1-R03",
+      "label": "Upgrade a Webex Calling license for a workspace and user — help.webex — article nvzzj7k — help.webex.com article nvzzj7k — header December 19, 2025 — retrieved 2026-10-14. No downg",
+      "href": ""
+    },
+    {
+      "id": "T1-R03-4",
+      "room": "T1-R03",
+      "label": "Set up automatic license assignment templates for Webex Calling users — help.webex — article n8iptxg — help.webex.com article n8iptxg — header June 10, 2025 — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T1-R03-5",
+      "room": "T1-R03",
+      "label": "Analytics for Your Cloud Collaboration Portfolio — help.webex — article n0rlwxe — help.webex.com article n0rlwxe — used only to point the analytics window at T1-R06. Standard 3 mon",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-1",
+      "room": "T1-R04",
+      "label": "Locations in Control Hub — help.webex — article ajh6iy — help.webex.com article ajh6iy — header June 05, 2026 — retrieved 2026-10-14. Create fields, Location ID, one user, one work",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-2",
+      "room": "T1-R04",
+      "label": "Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — help.webex.com article n0xb944 — retrieved 2026-10-14. PSTN assigned on the locati",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-3",
+      "room": "T1-R04",
+      "label": "Configure Webex Calling for your organization — help.webex — article njvdjf2 — help.webex.com article njvdjf2 — routing prefix length 1–7, unique per location. Detail lives in T2-R",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-4",
+      "room": "T1-R04",
+      "label": "Delegate location administration — help.webex — article 760wbi — help.webex.com article 760wbi — header August 05, 2026 — a Webex Calling administrator can administer up to 250 ass",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-5",
+      "room": "T1-R04",
+      "label": "Site survivability for Webex Calling — help.webex — article d68vi1 — help.webex.com article d68vi1 — header July 06, 2026 — each site that deploys Site Survivability requires a Sur",
+      "href": ""
+    },
+    {
+      "id": "T1-R04-6",
+      "room": "T1-R04",
+      "label": "Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — help.webex.com article nbedetf — header January 14, 2026 — plan phase collects location details i",
+      "href": ""
+    },
+    {
+      "id": "T1-R05-1",
+      "room": "T1-R05",
+      "label": "Assign organization account roles in Control Hub — help.webex — article fs78p5 — help.webex.com article fs78p5 — retrieved 2026-10-14. re-check header date; the retrieved body did ",
+      "href": ""
+    },
+    {
+      "id": "T1-R05-2",
+      "room": "T1-R05",
+      "label": "Delegate location administration — help.webex — article 760wbi — help.webex.com article 760wbi — header August 05, 2026 — retrieved 2026-10-14. Exclusive location role. Restricted ",
+      "href": ""
+    },
+    {
+      "id": "T1-R06-1",
+      "room": "T1-R06",
+      "label": "frj1efb — Troubleshoot Webex Calling calls in Control Hub",
+      "href": ""
+    },
+    {
+      "id": "T1-R06-2",
+      "room": "T1-R06",
+      "label": "n0rlwxe — Analytics for Your Cloud Collaboration Portfolio",
+      "href": ""
+    },
+    {
+      "id": "T1-R06-3",
+      "room": "T1-R06",
+      "label": "z84p2bb — Collect Webex App logs",
+      "href": ""
+    },
+    {
+      "id": "T1-R07-1",
+      "room": "T1-R07",
+      "label": "Data residency in Webex — help.webex — article oybc4fb — help.webex.com article oybc4fb — header September 24, 2026 — retrieved 2026-10-14. Country Selector, permanent GEO, service",
+      "href": ""
+    },
+    {
+      "id": "T1-R07-2",
+      "room": "T1-R07",
+      "label": "Find the Data Residency Region That Maps to a Country — help.webex — article wej14b — help.webex.com article wej14b — header April 14, 2026 — retrieved 2026-10-14. CountryCodeGEOMa",
+      "href": ""
+    },
+    {
+      "id": "T1-R07-3",
+      "room": "T1-R07",
+      "label": "Data center migration plans for your organization’s data in Control Hub — help.webex — article s0lk5g — help.webex.com article s0lk5g — header August 29, 2025 — retrieved 2026-10-1",
+      "href": ""
+    },
+    {
+      "id": "T1-R07-4",
+      "room": "T1-R07",
+      "label": "Where are the Webex Data Centers and iPOP Locations? — help.webex — article WBX28754 — help.webex.com article WBX28754 — header February 13, 2026 — retrieved 2026-10-14. Meetings d",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-6",
+      "room": "T10-R01",
+      "label": "Get Started with AI Quality Management, help.webex article nvtdfxk, header July 24, 2026. Paid add-on. English only in the FAQ on that page. Auto CSAT and real-time transcriptions ",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-10",
+      "room": "T10-R01",
+      "label": "Cisco AI Assistant for Webex Contact Center, help.webex article nvvv1zb, header October 06, 2026. Summaries, wellness breaks, real-time transcripts, Auto CSAT, Topic Analytics, Rea",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-11",
+      "room": "T10-R01",
+      "label": "Use AI agents for customer interactions, help.webex article s0qro1, header August 25, 2026. Virtual Agent V2 outcomes Handled, Escalated, and Errored. Autonomous voice is limited t",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-12",
+      "room": "T10-R01",
+      "label": "Webex AI Agent Studio Administration guide, help.webex article ncs9r37, opened 2026-10. The page is the Studio administration guide. This chapter does not copy limits that were not",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-13",
+      "room": "T10-R01",
+      "label": "Configure Virtual Agent-Voice, help.webex article n6gaghu, header July 17, 2026. The page says Virtual Agent–Voice integrates the IVR with cloud-based AI services from third-party ",
+      "href": ""
+    },
+    {
+      "id": "T10-R01-20",
+      "room": "T10-R01",
+      "label": "Bring your own virtual agent, developer.webex.com, opened 2026-10. This chapter does not quote a payload from that page.",
+      "href": ""
+    },
+    {
+      "id": "T10-R02-11",
+      "room": "T10-R02",
+      "label": "Use AI agents for customer interactions, help.webex article s0qro1, header August 25, 2026. Virtual Agent V2 outcomes Handled, Escalated, and Errored. Autonomous voice is limited t",
+      "href": ""
+    },
+    {
+      "id": "T10-R02-12",
+      "room": "T10-R02",
+      "label": "Webex AI Agent Studio Administration guide, help.webex article ncs9r37, opened 2026-10. The page is the Studio administration guide. This chapter does not copy limits that were not",
+      "href": ""
+    },
+    {
+      "id": "T10-R03-11",
+      "room": "T10-R03",
+      "label": "Use AI agents for customer interactions, help.webex article s0qro1, header August 25, 2026. Virtual Agent V2 outcomes Handled, Escalated, and Errored. Autonomous voice is limited t",
+      "href": ""
+    },
+    {
+      "id": "T10-R04-11",
+      "room": "T10-R04",
+      "label": "Use AI agents for customer interactions, help.webex article s0qro1, header August 25, 2026. Virtual Agent V2 outcomes Handled, Escalated, and Errored. Autonomous voice is limited t",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-6",
+      "room": "T10-R05",
+      "label": "Get Started with AI Quality Management, help.webex article nvtdfxk, header July 24, 2026. Paid add-on. English only in the FAQ on that page. Auto CSAT and real-time transcriptions ",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-11",
+      "room": "T10-R05",
+      "label": "Use AI agents for customer interactions, help.webex article s0qro1, header August 25, 2026. Virtual Agent V2 outcomes Handled, Escalated, and Errored. Autonomous voice is limited t",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-12",
+      "room": "T10-R05",
+      "label": "Webex AI Agent Studio Administration guide, help.webex article ncs9r37, opened 2026-10. The page is the Studio administration guide. This chapter does not copy limits that were not",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-13",
+      "room": "T10-R05",
+      "label": "Configure Virtual Agent-Voice, help.webex article n6gaghu, header July 17, 2026. The page says Virtual Agent–Voice integrates the IVR with cloud-based AI services from third-party ",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-20",
+      "room": "T10-R05",
+      "label": "Bring your own virtual agent, developer.webex.com, opened 2026-10. This chapter does not quote a payload from that page.",
+      "href": ""
+    },
+    {
+      "id": "T10-R05-21",
+      "room": "T10-R05",
+      "label": "Sibling labs opened 2026-10 at cyphermonkeylabs.com. UC Lab, AI Lab, Amazon Connect, Microsoft Voice, Five9, Genesys Cloud, NICE CXone, and SIP Universe.",
+      "href": ""
+    },
+    {
+      "id": "T11-R01-14",
+      "room": "T11-R01",
+      "label": "Introduction, Unified CM to Webex Calling, help.webex article nbedetf, header January 14, 2026. The guide is Unified CM to Webex Calling multi-tenant only. Local Gateway is describ",
+      "href": ""
+    },
+    {
+      "id": "T11-R02-14",
+      "room": "T11-R02",
+      "label": "Introduction, Unified CM to Webex Calling, help.webex article nbedetf, header January 14, 2026. The guide is Unified CM to Webex Calling multi-tenant only. Local Gateway is describ",
+      "href": ""
+    },
+    {
+      "id": "T11-R02-19",
+      "room": "T11-R02",
+      "label": "Get started with Local Gateway, help.webex article t9xctu, header September 10, 2026. The opened page is the administrator guide for Local Gateway trunking models, supported sessio",
+      "href": ""
+    },
+    {
+      "id": "T11-R02-21",
+      "room": "T11-R02",
+      "label": "Sibling labs opened 2026-10 at cyphermonkeylabs.com. UC Lab, AI Lab, Amazon Connect, Microsoft Voice, Five9, Genesys Cloud, NICE CXone, and SIP Universe.",
+      "href": ""
+    },
+    {
+      "id": "T11-R03-15",
+      "room": "T11-R03",
+      "label": "Webex Dedicated Instance Contact Center integration, help.webex article nmhk7ve, header June 27, 2025. UCCX, CCE, Webex CCE, and WxCC models. UCCX to Unified CM RTT less than 60 ms",
+      "href": ""
+    },
+    {
+      "id": "T11-R04-16",
+      "room": "T11-R04",
+      "label": "Migrate Cisco Unified Contact Center Express to Webex Contact Center, help.webex article 0hd75db, header June 27, 2025. Discovery tool, Java 8 or above, bulk CSV import order, and ",
+      "href": ""
+    },
+    {
+      "id": "T11-R04-17",
+      "room": "T11-R04",
+      "label": "Webex CCE Tenant Data Migration Tool Guide, help.webex article n2puc5z, header August 26, 2026. The tool transfers Webex Contact Center Enterprise Administration Portal data betwee",
+      "href": ""
+    },
+    {
+      "id": "T11-R05-14",
+      "room": "T11-R05",
+      "label": "Introduction, Unified CM to Webex Calling, help.webex article nbedetf, header January 14, 2026. The guide is Unified CM to Webex Calling multi-tenant only. Local Gateway is describ",
+      "href": ""
+    },
+    {
+      "id": "T11-R05-16",
+      "room": "T11-R05",
+      "label": "Migrate Cisco Unified Contact Center Express to Webex Contact Center, help.webex article 0hd75db, header June 27, 2025. Discovery tool, Java 8 or above, bulk CSV import order, and ",
+      "href": ""
+    },
+    {
+      "id": "T11-R05-17",
+      "room": "T11-R05",
+      "label": "Webex CCE Tenant Data Migration Tool Guide, help.webex article n2puc5z, header August 26, 2026. The tool transfers Webex Contact Center Enterprise Administration Portal data betwee",
+      "href": ""
+    },
+    {
+      "id": "T11-R05-21",
+      "room": "T11-R05",
+      "label": "Sibling labs opened 2026-10 at cyphermonkeylabs.com. UC Lab, AI Lab, Amazon Connect, Microsoft Voice, Five9, Genesys Cloud, NICE CXone, and SIP Universe.",
+      "href": ""
+    },
+    {
+      "id": "T2-R01-1",
+      "room": "T2-R01",
+      "label": "Migrate Unified CM to Webex Calling, introduction — help.webex — article nbedetf — help.webex.com article nbedetf — header January 14, 2026 — retrieved 2026-10-14. Multi-tenant mea",
+      "href": ""
+    },
+    {
+      "id": "T2-R01-2",
+      "room": "T2-R01",
+      "label": "Webex Calling Configuration Workflow — help.webex — article 0xvuwab — help.webex.com article 0xvuwab — header March 20, 2025 — retrieved 2026-10-14. re-check. admin.webex.com, firs",
+      "href": ""
+    },
+    {
+      "id": "T2-R01-3",
+      "room": "T2-R01",
+      "label": "Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — help.webex.com article n0xb944 — retrieved 2026-10-14. Header date not restated in",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-1",
+      "room": "T2-R02",
+      "label": "Configure Webex Calling for your organization — help.webex — article njvdjf2 — help.webex.com article njvdjf2 — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-2",
+      "room": "T2-R02",
+      "label": "Configure trunks, route groups, and dial plans for Webex Calling — help.webex — article n0xb944 — help.webex.com article n0xb944 — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-3",
+      "room": "T2-R02",
+      "label": "Get started with Local Gateway — help.webex — article t9xctu — help.webex.com article t9xctu — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-4",
+      "room": "T2-R02",
+      "label": "Configure Local Gateway on Cisco IOS XE for Webex Calling — help.webex — article jr1i3r — help.webex.com article jr1i3r — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-5",
+      "room": "T2-R02",
+      "label": "BRKCOL-2312 — Local Gateway and Survivability Gateway material (deck text: endpoint registration is not proxied; trunk types; SGW) — Cisco Live 2025 — ciscolive.com global-event 20",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-6",
+      "room": "T2-R02",
+      "label": "Get Started with the Cisco Calling Plans — help.webex — article nousk9ab — help.webex.com article nousk9ab — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-7",
+      "room": "T2-R02",
+      "label": "Webex Calling PSTN options at-a-glance — Cisco/Webex PDF cm-5770 — webex.com content dam … cm-5770.pdf — retrieved 2026-10-14. Market counts need re-check.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-8",
+      "room": "T2-R02",
+      "label": "Configuring a Partner Hosted Gateway — help.webex — article noei0ug — help.webex.com article noei0ug — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-9",
+      "room": "T2-R02",
+      "label": "BRKCOL-2812 — Webex Calling PSTN architecture, registration and certificate trunks, firewall note — Cisco Live 2024 — ciscolive.com global-event 2024 PDF. re-check Ports in the dec",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-10",
+      "room": "T2-R02",
+      "label": "Security requirements for Webex Calling (certificate FQDN, CA bundle, EKU) — help.webex — article jwkbt2 — help.webex.com article jwkbt2 — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-11",
+      "room": "T2-R02",
+      "label": "Prepare your environment for Webex Calling — help.webex — article n4cprps — help.webex.com article n4cprps — retrieved 2026-10-14. Points at the ordering guide and CA bundle steps.",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-12",
+      "room": "T2-R02",
+      "label": "Webex Contact Center Architecture — help.webex — article utqcm7 — used only for the cross-track sentence on contact-center PSTN. Full treatment is T3-R01. help.webex.com article ut",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-13",
+      "room": "T2-R02",
+      "label": "Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — certificate trunks required for DI to multi-tenant contact-center support; registration-based t",
+      "href": ""
+    },
+    {
+      "id": "T2-R02-14",
+      "room": "T2-R02",
+      "label": "Enhanced emergency calling for Webex Calling — help.webex — article av6oo3",
+      "href": "https://help.webex.com/article/av6oo3"
+    },
+    {
+      "id": "T2-R02-15",
+      "room": "T2-R02",
+      "label": "Configure emergency call notifications in Control Hub — help.webex — article nj0abhbb",
+      "href": "https://help.webex.com/article/nj0abhbb"
+    },
+    {
+      "id": "T2-R02-16",
+      "room": "T2-R02",
+      "label": "Manage call recording for Webex Calling — help.webex — article nhvl4hw",
+      "href": "https://help.webex.com/article/nhvl4hw"
+    },
+    {
+      "id": "T2-R02-17",
+      "room": "T2-R02",
+      "label": "Emergency Services Settings — developer.webex",
+      "href": "https://developer.webex.com/calling/docs/api/v1/emergency-services-settings"
+    },
+    {
+      "id": "T2-R03-1",
+      "room": "T2-R03",
+      "label": "Configure Webex Calling for your organization — help.webex — njvdjf2",
+      "href": "https://help.webex.com/article/njvdjf2"
+    },
+    {
+      "id": "T2-R03-2",
+      "room": "T2-R03",
+      "label": "Configure trunks, route groups, and dial plans — help.webex — n0xb944",
+      "href": "https://help.webex.com/article/n0xb944"
+    },
+    {
+      "id": "T2-R03-3",
+      "room": "T2-R03",
+      "label": "CUCM 4.0(1) Partitions and Calling Search Spaces — cited only to keep closest-match in T6-R02",
+      "href": "https://www.cisco.com/en/US/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a03ptcss.html"
+    },
+    {
+      "id": "T2-R04-1",
+      "room": "T2-R04",
+      "label": "Add a device — help.webex — article n9r1aac — help.webex.com article n9r1aac — header September 01, 2026 — retrieved 2026-10-14. MAC or activation code, model subset, RoomOS codes,",
+      "href": ""
+    },
+    {
+      "id": "T2-R04-2",
+      "room": "T2-R04",
+      "label": "Generate an activation code for a device — help.webex — article ndb7w0db — help.webex.com article ndb7w0db — header January 12, 2026 — retrieved 2026-10-14. 16 digits, 30 days for ",
+      "href": ""
+    },
+    {
+      "id": "T2-R04-3",
+      "room": "T2-R04",
+      "label": "Add shared devices and services to a workspace — help.webex — article 1mqb9cb — help.webex.com article 1mqb9cb — header April 21, 2026 — retrieved 2026-10-14. Five devices on a pro",
+      "href": ""
+    },
+    {
+      "id": "T2-R05-1",
+      "room": "T2-R05",
+      "label": "Manage hunt groups in Control Hub — help.webex — article o6rfjeb — help.webex.com article o6rfjeb — header July 23, 2026 — retrieved 2026-10-14. Routing caps, advance when busy, di",
+      "href": ""
+    },
+    {
+      "id": "T2-R05-2",
+      "room": "T2-R05",
+      "label": "Configure Call Queue — help.webex — article nzkg083 — help.webex.com article nzkg083 — retrieved 2026-10-14. Header date was not in the retrieved body. re-check. Professional licen",
+      "href": ""
+    },
+    {
+      "id": "T2-R05-3",
+      "room": "T2-R05",
+      "label": "Manage auto attendants — help.webex — article nsioxoi — help.webex.com article nsioxoi — header December 12, 2025 — retrieved 2026-10-14. Menu to a person, hunt group, or voicemail",
+      "href": ""
+    },
+    {
+      "id": "T2-R05-4",
+      "room": "T2-R05",
+      "label": "Configure call pickup group — help.webex — article tll322 — help.webex.com article tll322 — header July 23, 2026 — retrieved 2026-10-14. One group per user, same location, notifica",
+      "href": ""
+    },
+    {
+      "id": "T2-R05-5",
+      "room": "T2-R05",
+      "label": "Feature access codes for Webex Calling — help.webex — article 0zgzwj — help.webex.com article 0zgzwj — header July 15, 2026 — retrieved 2026-10-14. *68, *88, *98, *97, *33, #58 and",
+      "href": ""
+    },
+    {
+      "id": "T2-R06-ledger",
+      "room": "T2-R06",
+      "label": "Calling security & compliance citation ledger",
+      "href": ""
+    },
+    {
+      "id": "T2-R07-1",
+      "room": "T2-R07",
+      "label": "Site survivability for Webex Calling — help.webex — article d68vi1 — help.webex.com article d68vi1 — header July 06, 2026 — retrieved 2026-10-14. Active and survivability modes, 30",
+      "href": ""
+    },
+    {
+      "id": "T2-R07-2",
+      "room": "T2-R07",
+      "label": "Webex App | Site survivability — help.webex — article dgjdi9 — help.webex.com article dgjdi9 — header April 11, 2026 — retrieved 2026-10-14. Banner, supported call list, messaging ",
+      "href": ""
+    },
+    {
+      "id": "T2-R07-3",
+      "room": "T2-R07",
+      "label": "Colocation of Local Gateway and Site Survivability on Cisco IOS Managed Gateways — help.webex — article w0qmeu — help.webex.com article w0qmeu — header November 20, 2024 — retrieve",
+      "href": ""
+    },
+    {
+      "id": "T2-R08-1",
+      "room": "T2-R08",
+      "label": "Analytics for Your Cloud Collaboration Portfolio — help.webex — article n0rlwxe — help.webex.com article n0rlwxe — header September 29, 2026, retrieved 2026-10-14. Calling history ",
+      "href": ""
+    },
+    {
+      "id": "T2-R08-2",
+      "room": "T2-R08",
+      "label": "Detailed call records webhook for Webex Calling in Partner Hub — help.webex — article n5zr85e — help.webex.com article n5zr85e — retrieved 2026-10-14 from the article extract. Mult",
+      "href": ""
+    },
+    {
+      "id": "T2-R08-3",
+      "room": "T2-R08",
+      "label": "Cisco Webex Contact Center Analyzer User Guide — help.webex — article tajemk — help.webex.com article tajemk — boundary only. Analyzer is not Calling analytics. Clocks are taught i",
+      "href": ""
+    },
+    {
+      "id": "T2-R08-4",
+      "room": "T2-R08",
+      "label": "Serviceability Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), Product Architecture — cisco.com — Product Architecture — updated April 30, 2025. CUIC standard d",
+      "href": ""
+    },
+    {
+      "id": "T2-R08-5",
+      "room": "T2-R08",
+      "label": "Manage call recording for Webex Calling — help.webex — article nhvl4hw — help.webex.com article nhvl4hw — boundary. Recording retention is not an analytics window. Taught in T2-R06",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-1",
+      "room": "T3-R01",
+      "label": "Webex Contact Center Architecture — help.webex — article utqcm7 — help.webex.com article utqcm7 — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-2",
+      "room": "T3-R01",
+      "label": "PSOCCT-1014 — portfolio framing: multi-tenant cloud with Webex Contact Center, and dedicated-instance cloud with Webex Contact Center Enterprise — Cisco Live 2024 — ciscolive.com g",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-3",
+      "room": "T3-R01",
+      "label": "BRKCCT-2031 — portfolio slide text pairing Webex Contact Center (Multi-tenant Cloud) with Webex Contact Center Enterprise (Dedicated Instance Cloud); Express/Enterprise agent bands",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-4",
+      "room": "T3-R01",
+      "label": "Webex Contact Center Setup and Administration Guide — help.webex — article n5595zd — help.webex.com article n5595zd — retrieved 2026-10-14. The guide states it is no longer updated",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-5",
+      "room": "T3-R01",
+      "label": "Assign organization account roles in Control Hub, Webex Contact Center administrator section — help.webex — article fs78p5 — help.webex.com article fs78p5 — retrieved 2026-10-14. S",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-6",
+      "room": "T3-R01",
+      "label": "Understand Routing and Queueing in Webex Contact Center — help.webex — article np2fdx — help.webex.com article np2fdx — retrieved 2026-10-14.",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-7",
+      "room": "T3-R01",
+      "label": "Webex Contact Center developer overview — developer.webex — developer.webex.com/webex-contact-center/docs/webex-contact-center — retrieved 2026-10-14. Also the platform overview at",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-8",
+      "room": "T3-R01",
+      "label": "Create queues and configure routing patterns — help.webex — article ubg5qd — help.webex.com article ubg5qd — retrieved 2026-10-14. Path used: Contact Center → Customer experience →",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-9",
+      "room": "T3-R01",
+      "label": "Webex Contact Center Search API — developer.webex — developer.webex.com …/api/v1/search/search — retrieved 2026-10-14. 36-month and 365-day windows, scopes, roles. Example URL in t",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-10",
+      "room": "T3-R01",
+      "label": "Webex Contact Center API errors — developer.webex — developer.webex.com/webex-contact-center/docs/api/ — retrieved 2026-10-14. Bearer token, 401, and tracking id.",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-11",
+      "room": "T3-R01",
+      "label": "Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — help.webex.com article nmhk7ve — retrieved 2026-10-14. Used for the DI contrast only.",
+      "href": ""
+    },
+    {
+      "id": "T3-R01-12",
+      "room": "T3-R01",
+      "label": "Integrate Webex Contact Center with Salesforce (Version 2-New) — help.webex — article dyidod",
+      "href": "https://help.webex.com/article/dyidod"
+    },
+    {
+      "id": "T3-R01-13",
+      "room": "T3-R01",
+      "label": "Integrate Webex Contact Center CRM Connector for Microsoft Dynamics 365 (Version 2-New) — help.webex — article n1lsqvu",
+      "href": "https://help.webex.com/article/n1lsqvu"
+    },
+    {
+      "id": "T3-R01-14",
+      "room": "T3-R01",
+      "label": "Integrate Webex Contact Center with ServiceNow (Version 2-New) — help.webex — article ny83tx0",
+      "href": "https://help.webex.com/article/ny83tx0"
+    },
+    {
+      "id": "T3-R01-15",
+      "room": "T3-R01",
+      "label": "Configure Virtual Agent-Voice in Webex Contact Center — help.webex — article n6gaghu",
+      "href": "https://help.webex.com/article/n6gaghu"
+    },
+    {
+      "id": "T3-R01-16",
+      "room": "T3-R01",
+      "label": "Enable AI Assistant features in Control Hub for Webex Contact Center — help.webex — article n9lk3t6",
+      "href": "https://help.webex.com/article/n9lk3t6"
+    },
+    {
+      "id": "T3-R01-17",
+      "room": "T3-R01",
+      "label": "What’s new for agents in Webex Contact Center — help.webex — article n3v7ldh",
+      "href": "https://help.webex.com/article/n3v7ldh"
+    },
+    {
+      "id": "T3-R01-18",
+      "room": "T3-R01",
+      "label": "Webex WFO: Feature Specific SKUs — help.webex — article py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T3-R01-19",
+      "room": "T3-R01",
+      "label": "Bring your own virtual agent — developer.webex",
+      "href": "https://developer.webex.com/webex-contact-center/docs/bring-your-own-virtual-agent"
+    },
+    {
+      "id": "T3-R01-20",
+      "room": "T3-R01",
+      "label": "Enhanced emergency calling for Webex Calling — help.webex — article av6oo3",
+      "href": "https://help.webex.com/article/av6oo3"
+    },
+    {
+      "id": "T3-R01-21",
+      "room": "T3-R01",
+      "label": "Configure emergency call notifications in Control Hub — help.webex — article nj0abhbb",
+      "href": "https://help.webex.com/article/nj0abhbb"
+    },
+    {
+      "id": "T3-R01-22",
+      "room": "T3-R01",
+      "label": "Single Sign-On Integration in Control Hub — help.webex — article lfu88u",
+      "href": "https://help.webex.com/article/lfu88u"
+    },
+    {
+      "id": "T3-R01-23",
+      "room": "T3-R01",
+      "label": "Deployment Guide for Directory Connector — help.webex — article zqvufbb",
+      "href": "https://help.webex.com/article/zqvufbb"
+    },
+    {
+      "id": "T3-R01-24",
+      "room": "T3-R01",
+      "label": "Manage call recording for Webex Calling — help.webex — article nhvl4hw",
+      "href": "https://help.webex.com/article/nhvl4hw"
+    },
+    {
+      "id": "T3-R01-25",
+      "room": "T3-R01",
+      "label": "Configure single sign-on in Control Hub with ADFS — help.webex — article nyx7kubb",
+      "href": "https://help.webex.com/article/nyx7kubb"
+    },
+    {
+      "id": "T3-R02-1",
+      "room": "T3-R02",
+      "label": "Get started with Webex Contact Center — help.webex — article nee1mb6 — help.webex.com article nee1mb6 — header February 28, 2025, retrieved 2026-10-14. Same wizard for trial and su",
+      "href": ""
+    },
+    {
+      "id": "T3-R02-2",
+      "room": "T3-R02",
+      "label": "Enhanced emergency calling for Webex Calling — help.webex — article av6oo3 — help.webex.com article av6oo3 — boundary. Emergency calling is not a step in nee1mb6. Taught with T2-R0",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-1",
+      "room": "T3-R03",
+      "label": "utqcm7 — Webex Contact Center architecture",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-2",
+      "room": "T3-R03",
+      "label": "np2fdx — Understand routing and queueing",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-3",
+      "room": "T3-R03",
+      "label": "ubg5qd — Create queues and configure routing patterns",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-4",
+      "room": "T3-R03",
+      "label": "nfrs2adb — Routing strategies",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-5",
+      "room": "T3-R03",
+      "label": "nhovcy4 — Get Queue Info and variable queues",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-6",
+      "room": "T3-R03",
+      "label": "nbedetf — migration orientation, not a queue spec",
+      "href": ""
+    },
+    {
+      "id": "T3-R03-7",
+      "room": "T3-R03",
+      "label": "ewuay1 — outdial entry point, strategy versus flow",
+      "href": ""
+    },
+    {
+      "id": "T3-R04-1",
+      "room": "T3-R04",
+      "label": "Sign in to Agent Desktop — help.webex — n6lmci8",
+      "href": "https://help.webex.com/article/n6lmci8"
+    },
+    {
+      "id": "T3-R04-2",
+      "room": "T3-R04",
+      "label": "Manage teams — help.webex — mqf72s",
+      "href": "https://help.webex.com/article/mqf72s"
+    },
+    {
+      "id": "T3-R04-3",
+      "room": "T3-R04",
+      "label": "Manage and Monitor Interactions — help.webex — xceh0k",
+      "href": "https://help.webex.com/article/xceh0k"
+    },
+    {
+      "id": "T3-R04-4",
+      "room": "T3-R04",
+      "label": "Salesforce connector — help.webex — dyidod",
+      "href": "https://help.webex.com/article/dyidod"
+    },
+    {
+      "id": "T3-R05-1",
+      "room": "T3-R05",
+      "label": "Set up voice channels for Webex Contact Center — help.webex — article 2dputx — help.webex.com article 2dputx — header June 25, 2026, retrieved 2026-10-14. PSTN options, agent metho",
+      "href": ""
+    },
+    {
+      "id": "T3-R05-2",
+      "room": "T3-R05",
+      "label": "Set up voice settings for Webex Contact Center — help.webex — article gsmsaeb — help.webex.com article gsmsaeb — retrieved 2026-10-14 from the article extract. Tenant Settings, Voi",
+      "href": ""
+    },
+    {
+      "id": "T3-R05-3",
+      "room": "T3-R05",
+      "label": "Emergency calling boundary — help.webex — articles nvfbjts and av6oo3 — WebRTC and Calling emergency paths are not steps in 2dputx. Taught in T2-R06.",
+      "href": ""
+    },
+    {
+      "id": "T3-R06-1",
+      "room": "T3-R06",
+      "label": "Set up digital channels in Webex Contact Center — help.webex — article n954r0k — help.webex.com article n954r0k — header August 19, 2026, retrieved 2026-10-14. Six channels, contro",
+      "href": ""
+    },
+    {
+      "id": "T3-R06-2",
+      "room": "T3-R06",
+      "label": "Configure an email asset — help.webex — article nrelvg3 — help.webex.com article nrelvg3 — retrieved 2026-10-14 from the article extract. Gmail and Microsoft 365 for the Contact Ce",
+      "href": ""
+    },
+    {
+      "id": "T3-R06-3",
+      "room": "T3-R06",
+      "label": "Configure a Chat asset — help.webex — article 11dtv5 — help.webex.com article 11dtv5 — retrieved 2026-10-14 from the article extract. Channel cannot change after create. Assign to ",
+      "href": ""
+    },
+    {
+      "id": "T3-R07-ledger",
+      "room": "T3-R07",
+      "label": "Analyzer & Reporting citation ledger",
+      "href": ""
+    },
+    {
+      "id": "T3-R08-1",
+      "room": "T3-R08",
+      "label": "Get started with Supervisor Desktop — help.webex — article okxzd1 — help.webex.com article okxzd1 — retrieved 2026-10-14. header August 13, 2026. Personas, matrix, both landing sen",
+      "href": ""
+    },
+    {
+      "id": "T3-R08-2",
+      "room": "T3-R08",
+      "label": "Manage and Monitor Interactions — help.webex — article xceh0k — help.webex.com article xceh0k — retrieved 2026-10-14 from the article extract. header September 01, 2026. One agent,",
+      "href": ""
+    },
+    {
+      "id": "T3-R08-3",
+      "room": "T3-R08",
+      "label": "Schedule call monitoring — help.webex — article 5k9gxcb — help.webex.com article 5k9gxcb — retrieved 2026-10-14 from the article extract. header July 30, 2026. Maximum 500 specific",
+      "href": ""
+    },
+    {
+      "id": "T3-R08-4",
+      "room": "T3-R08",
+      "label": "Analyzer boundary — help.webex — article tajemk — Analyzer clocks are T3-R07, not this listen path.",
+      "href": ""
+    },
+    {
+      "id": "T3-R08-5",
+      "room": "T3-R08",
+      "label": "Emergency boundary — help.webex — articles nvfbjts and av6oo3 — barge is not an emergency test.",
+      "href": ""
+    },
+    {
+      "id": "T3-R09-1",
+      "room": "T3-R09",
+      "label": "Enable AI Quality Management Features in Control Hub for Webex Contact Center — help.webex — article 6m6r3fb — help.webex.com article 6m6r3fb — retrieved 2026-10-14. SKUs, scopes, ",
+      "href": ""
+    },
+    {
+      "id": "T3-R09-2",
+      "room": "T3-R09",
+      "label": "Basic WFM and QM Offerings on Webex WFO (Webex Contact Center) — help.webex — article nmzg380 — help.webex.com article nmzg380 — header August 13, 2025, retrieved 2026-10-14. Basic",
+      "href": ""
+    },
+    {
+      "id": "T3-R09-3",
+      "room": "T3-R09",
+      "label": "Webex WFO feature-specific SKUs — help.webex — article py6u9h — help.webex.com article py6u9h — not re-fetched in this slice. Enterprise, CCE, and CCX scope was established in earl",
+      "href": ""
+    },
+    {
+      "id": "T3-R09-4",
+      "room": "T3-R09",
+      "label": "Analyzer User Guide — help.webex — article tajemk — boundary for report clocks. Not an AI enablement step.",
+      "href": ""
+    },
+    {
+      "id": "T3-R09-5",
+      "room": "T3-R09",
+      "label": "Manage call recording for Webex Calling — help.webex — article nhvl4hw — boundary. Calling retention is not WxCC QM storage.",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-1",
+      "room": "T4-R01",
+      "label": "nmhk7ve",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-2",
+      "room": "T4-R01",
+      "label": "nyosarq",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-3",
+      "room": "T4-R01",
+      "label": "ny65x1bb",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-4",
+      "room": "T4-R01",
+      "label": "utqcm7 (contrast)",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-5",
+      "room": "T4-R01",
+      "label": "PSOCCT-1014 re-check",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-6",
+      "room": "T4-R01",
+      "label": "BRKCCT-2031 re-check",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-7",
+      "room": "T4-R01",
+      "label": "py6u9h",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-8",
+      "room": "T4-R01",
+      "label": "nhovcy4 (boundary)",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-9",
+      "room": "T4-R01",
+      "label": "nbedetf",
+      "href": ""
+    },
+    {
+      "id": "T4-R01-10",
+      "room": "T4-R01",
+      "label": "n1ku0vfb",
+      "href": ""
+    },
+    {
+      "id": "T4-R02-1",
+      "room": "T4-R02",
+      "label": "Serviceability Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), Product Architecture — cisco.com — Product Architecture — updated April 30, 2025, retrieved 2026-",
+      "href": ""
+    },
+    {
+      "id": "T4-R02-2",
+      "room": "T4-R02",
+      "label": "Webex Dedicated Instance for Webex Contact Center integration context — help.webex — article nmhk7ve, as used by T4-R01 — boundary. This room does not move Unified CCE process name",
+      "href": ""
+    },
+    {
+      "id": "T4-R02-3",
+      "room": "T4-R02",
+      "label": "Webex Contact Center architecture — help.webex — article utqcm7 — contrast only. Multi-tenant components are not this chapter.",
+      "href": ""
+    },
+    {
+      "id": "T4-R03-1",
+      "room": "T4-R03",
+      "label": "Configuration Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), Routing a Call — cisco.com — Routing a Call — updated April 30, 2025, retrieved 2026-10-14. re-che",
+      "href": ""
+    },
+    {
+      "id": "T4-R03-2",
+      "room": "T4-R03",
+      "label": "Configuration Guide for Cisco Unified Customer Voice Portal, Release 15.0(1), Unified CVP Call Flow Models — cisco.com — CVP Call Flow Models — updated December 12, 2025, retrieved",
+      "href": ""
+    },
+    {
+      "id": "T4-R03-3",
+      "room": "T4-R03",
+      "label": "Unified CCE Product Architecture — cisco.com — CUIC and components are T4-R02. Not a step in the route request.",
+      "href": ""
+    },
+    {
+      "id": "T4-R03-4",
+      "room": "T4-R03",
+      "label": "Webex Contact Center architecture — help.webex — article utqcm7 — contrast. Multi-tenant entry points are not ICM call types.",
+      "href": ""
+    },
+    {
+      "id": "T4-R04-1",
+      "room": "T4-R04",
+      "label": "Scripting and Media Routing Guide for Cisco Unified Contact Center Enterprise, Release 15.0(1), Common Tasks — cisco.com — Common Tasks — Release 15.0(1), retrieved 2026-10-14. Fil",
+      "href": ""
+    },
+    {
+      "id": "T4-R04-2",
+      "room": "T4-R04",
+      "label": "Same guide, Network VRUs — cisco.com — Network VRUs — updated April 30, 2025, retrieved 2026-10-14. Type 10, Queue, Run External Script, Call.VRUStatus, 20 seconds, 30-second sampl",
+      "href": ""
+    },
+    {
+      "id": "T4-R04-3",
+      "room": "T4-R04",
+      "label": "Unified CCE Product Architecture — cisco.com — Script Editor is named on the Administration and Data Server. T4-R02.",
+      "href": ""
+    },
+    {
+      "id": "T4-R04-4",
+      "room": "T4-R04",
+      "label": "Flow Designer essentials boundary — help.webex — Webex Contact Center Flow Designer is a different tool. T8-R01.",
+      "href": ""
+    },
+    {
+      "id": "T4-R04-5",
+      "room": "T4-R04",
+      "label": "Set up digital channels — help.webex — article n954r0k — QueueTask is a Connect node, not this Queue node.",
+      "href": ""
+    },
+    {
+      "id": "T4-R05-1",
+      "room": "T4-R05",
+      "label": "CVP 15 call flow models — cisco.com — updated December 12, 2025. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/config",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html"
+    },
+    {
+      "id": "T4-R05-2",
+      "room": "T4-R05",
+      "label": "VXML Server configuration — cisco.com. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/vxml_server_configuration.html"
+    },
+    {
+      "id": "T4-R05-3",
+      "room": "T4-R05",
+      "label": "UCCE 15 non-reference designs — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_non-reference-designs_15_0.html"
+    },
+    {
+      "id": "T4-R05-4",
+      "room": "T4-R05",
+      "label": "VXML Server user guide, global_config.xml — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/user/guide/ccvp_b",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/user/guide/ccvp_b_1501_user-guide-for-unified-cvp-vxml-server-and-unified-cvp-call-studio-release/vxml_server_configuration.html"
+    },
+    {
+      "id": "T4-R05-5",
+      "room": "T4-R05",
+      "label": "nhy3hvdb — re-check dated sections. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R05-6",
+      "room": "T4-R05",
+      "label": "nhovcy4 Flow Designer boundary. https://help.webex.com/article/nhovcy4",
+      "href": "https://help.webex.com/article/nhovcy4"
+    },
+    {
+      "id": "T4-R05-7",
+      "room": "T4-R05",
+      "label": "py6u9h WFO SKUs. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R06-1",
+      "room": "T4-R06",
+      "label": "Finesse 15 Manage Desktop Layout — updated December 12, 2025. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-desktop-layout.html"
+    },
+    {
+      "id": "T4-R06-2",
+      "room": "T4-R06",
+      "label": "LayoutConfig — developer.cisco.com. https://developer.cisco.com/docs/finesse/layoutconfig/",
+      "href": "https://developer.cisco.com/docs/finesse/layoutconfig/"
+    },
+    {
+      "id": "T4-R06-3",
+      "room": "T4-R06",
+      "label": "Manage Third-Party Gadgets. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-third-party-gadgets.html"
+    },
+    {
+      "id": "T4-R06-4",
+      "room": "T4-R06",
+      "label": "Failover mechanisms — updated December 12, 2025. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-f",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_cisco-finesse-failover-mechanisms.html"
+    },
+    {
+      "id": "T4-R06-5",
+      "room": "T4-R06",
+      "label": "CTI Server Settings. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide/cfin_m_150_manage-system-settings.html"
+    },
+    {
+      "id": "T4-R06-6",
+      "room": "T4-R06",
+      "label": "UCCE 15 HA — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/uc",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html"
+    },
+    {
+      "id": "T4-R06-7",
+      "room": "T4-R06",
+      "label": "nhy3hvdb — re-check. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R06-8",
+      "room": "T4-R06",
+      "label": "utqcm7 multi-tenant boundary. https://help.webex.com/article/utqcm7",
+      "href": "https://help.webex.com/article/utqcm7"
+    },
+    {
+      "id": "T4-R06-9",
+      "room": "T4-R06",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R06-10",
+      "room": "T4-R06",
+      "label": "CUIC reporting chapter — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_cisco-unif",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_cisco-unified-contact-center-enterprise-reporting-user-guide-release1501/ucce_b_cisco-unified-contact-center-enterprise-1261_chapter_01.html"
+    },
+    {
+      "id": "T4-R07-1",
+      "room": "T4-R07",
+      "label": "UCCE 15 reporting user guide, CUIC chapter — updated April 30, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_e",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/user/guide/ucce_b_cisco-unified-contact-center-enterprise-reporting-user-guide-release1501/ucce_b_cisco-unified-contact-center-enterprise-1261_chapter_01.html"
+    },
+    {
+      "id": "T4-R07-2",
+      "room": "T4-R07",
+      "label": "CUIC 15 user guide, Reports — updated April 30, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/intelligence_suite/intelligence_sui",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/intelligence_suite/intelligence_suite_150/user/guide/cuic_b_1501_user-guide/cuic_m_1501_reports.html"
+    },
+    {
+      "id": "T4-R07-3",
+      "room": "T4-R07",
+      "label": "utqcm7. https://help.webex.com/article/utqcm7",
+      "href": "https://help.webex.com/article/utqcm7"
+    },
+    {
+      "id": "T4-R07-4",
+      "room": "T4-R07",
+      "label": "Stock CUIC report version note 214983 — CUIC 11.6 — re-check. https://www.cisco.com/c/en/us/support/docs/contact-center/unified-intelligence-center/214983-how-to-verify-version-of-",
+      "href": "https://www.cisco.com/c/en/us/support/docs/contact-center/unified-intelligence-center/214983-how-to-verify-version-of-stock-cuic-repo.html"
+    },
+    {
+      "id": "T4-R07-5",
+      "room": "T4-R07",
+      "label": "nhy3hvdb — re-check. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R07-6",
+      "room": "T4-R07",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R07-7",
+      "room": "T4-R07",
+      "label": "CVP call flow models. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-gui",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html"
+    },
+    {
+      "id": "T4-R07-8",
+      "room": "T4-R07",
+      "label": "Finesse administration guide contents. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-adm",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/finesse/finesse_1501/admin/guide/cfin_b_150_cisco-finesse-administration-guide.html"
+    },
+    {
+      "id": "T4-R08-1",
+      "room": "T4-R08",
+      "label": "UCCE 15 high availability and network design — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html"
+    },
+    {
+      "id": "T4-R08-2",
+      "room": "T4-R08",
+      "label": "nhy3hvdb January 2025 48,000 agents and 300 CPS — re-check. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R08-3",
+      "room": "T4-R08",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R09-1",
+      "room": "T4-R09",
+      "label": "UCCE 15 serviceability guide, Product Architecture — updated April 30, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterpri",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/configuration/guide/ucce_b_serviceability-guide-for-cisco-unified-icm-contact-center-enterprise-release-15-0/product_architecture.html"
+    },
+    {
+      "id": "T4-R09-2",
+      "room": "T4-R09",
+      "label": "CVP 15 call flow models, SendToVRU — updated December 12, 2025. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configu",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/15-0-1/configuration/guide/ccvp_b_1501-configuration-guide-for-cisco-customer-voice-portal-release/unified_cvp_call_flow_models.html"
+    },
+    {
+      "id": "T4-R09-3",
+      "room": "T4-R09",
+      "label": "UCCE 15 high availability — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html"
+    },
+    {
+      "id": "T4-R09-4",
+      "room": "T4-R09",
+      "label": "nmhk7ve. https://help.webex.com/article/nmhk7ve",
+      "href": "https://help.webex.com/article/nmhk7ve"
+    },
+    {
+      "id": "T4-R09-5",
+      "room": "T4-R09",
+      "label": "nyosarq. https://help.webex.com/article/nyosarq",
+      "href": "https://help.webex.com/article/nyosarq"
+    },
+    {
+      "id": "T4-R09-6",
+      "room": "T4-R09",
+      "label": "UCCE 15 non-reference designs — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_non-reference-designs_15_0.html"
+    },
+    {
+      "id": "T4-R09-7",
+      "room": "T4-R09",
+      "label": "nhy3hvdb — re-check. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R09-8",
+      "room": "T4-R09",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R09-9",
+      "room": "T4-R09",
+      "label": "nhovcy4. https://help.webex.com/article/nhovcy4",
+      "href": "https://help.webex.com/article/nhovcy4"
+    },
+    {
+      "id": "T4-R10-1",
+      "room": "T4-R10",
+      "label": "nhy3hvdb dated sections — re-check. https://help.webex.com/article/nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T4-R10-2",
+      "room": "T4-R10",
+      "label": "n68tcpb Edge Connect — header September 17, 2026. https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect",
+      "href": "https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect"
+    },
+    {
+      "id": "T4-R10-3",
+      "room": "T4-R10",
+      "label": "UCCE 15 high availability, Finesse 2,000 — updated March 15, 2025 — re-check. https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_ent",
+      "href": "https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/design/guide/ucce_b_ucce_soldg-for-unified-cce-1501/rcct_m_high-availability-and-network-design_15_0.html"
+    },
+    {
+      "id": "T4-R10-4",
+      "room": "T4-R10",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T4-R10-5",
+      "room": "T4-R10",
+      "label": "nhovcy4. https://help.webex.com/article/nhovcy4",
+      "href": "https://help.webex.com/article/nhovcy4"
+    },
+    {
+      "id": "T5-R01-1",
+      "room": "T5-R01",
+      "label": "dk3o5r Introduction to Dedicated Instance — header September 23, 2026. https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance",
+      "href": "https://help.webex.com/en-us/article/dk3o5r/Introduction-to-Dedicated-Instance"
+    },
+    {
+      "id": "T5-R01-2",
+      "room": "T5-R01",
+      "label": "2vpf1 base configuration — header May 27, 2025 — re-check. https://help.webex.com/en-us/article/2vpf1/Dedicated-Instance-for-Webex-Calling-Base-Configuration",
+      "href": "https://help.webex.com/en-us/article/2vpf1/Dedicated-Instance-for-Webex-Calling-Base-Configuration"
+    },
+    {
+      "id": "T5-R01-3",
+      "room": "T5-R01",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T5-R02-1",
+      "room": "T5-R02",
+      "label": "nefkee9 — Activate Dedicated Instance",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-2",
+      "room": "T5-R02",
+      "label": "n2hzeox — Access Dedicated Instance applications",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-3",
+      "room": "T5-R02",
+      "label": "n68tcpb — Webex Edge Connect",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-4",
+      "room": "T5-R02",
+      "label": "tf6kpq — Dedicated Instance link practice",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-5",
+      "room": "T5-R02",
+      "label": "ny65x1bb — customer story, one peer, media after transfer",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-6",
+      "room": "T5-R02",
+      "label": "nx91ljh — region pairs and printed prefixes",
+      "href": ""
+    },
+    {
+      "id": "T5-R02-7",
+      "room": "T5-R02",
+      "label": "0ppivs — CM groups and the publisher",
+      "href": ""
+    },
+    {
+      "id": "T5-R03-1",
+      "room": "T5-R03",
+      "label": "74f47cb Partner Connect — header June 27, 2025 — re-check. https://help.webex.com/en-us/article/74f47cb/Dedicated-Instance-Partner-Connect",
+      "href": "https://help.webex.com/en-us/article/74f47cb/Dedicated-Instance-Partner-Connect"
+    },
+    {
+      "id": "T5-R03-2",
+      "room": "T5-R03",
+      "label": "v8jhcv Virtual Connect — header September 22, 2025 — re-check. https://help.webex.com/en-us/article/v8jhcv/Dedicated-Instance-Virtual-Connect",
+      "href": "https://help.webex.com/en-us/article/v8jhcv/Dedicated-Instance-Virtual-Connect"
+    },
+    {
+      "id": "T5-R03-3",
+      "room": "T5-R03",
+      "label": "n68tcpb Edge Connect — header September 17, 2026. https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect",
+      "href": "https://help.webex.com/en-us/article/n68tcpb/Webex-Edge-Connect"
+    },
+    {
+      "id": "T5-R03-4",
+      "room": "T5-R03",
+      "label": "ny65x1bb customer deployment models — header August 4, 2025 — re-check. https://help.webex.com/article/ny65x1bb",
+      "href": "https://help.webex.com/article/ny65x1bb"
+    },
+    {
+      "id": "T5-R03-5",
+      "room": "T5-R03",
+      "label": "py6u9h. https://help.webex.com/article/py6u9h",
+      "href": "https://help.webex.com/article/py6u9h"
+    },
+    {
+      "id": "T5-R04-1",
+      "room": "T5-R04",
+      "label": "Responsibility assignment matrix — help.webex — article nlh9lde — help.webex.com article nlh9lde — header October 09, 2026, retrieved 2026-10-14. RACI letters. Customer assumes the",
+      "href": ""
+    },
+    {
+      "id": "T5-R04-2",
+      "room": "T5-R04",
+      "label": "Partner operations guide — help.webex — article ntqlhe1 — help.webex.com article ntqlhe1 — retrieved 2026-10-14. The retrieved markdown did not print a header date. Ten calendar da",
+      "href": ""
+    },
+    {
+      "id": "T5-R04-3",
+      "room": "T5-R04",
+      "label": "How to raise a service request — help.webex — article nvfve88 — help.webex.com article nvfve88 — retrieved 2026-10-14. Path Calling → Dedicated Instance → Service Request. Day-0 an",
+      "href": ""
+    },
+    {
+      "id": "T5-R04-4",
+      "room": "T5-R04",
+      "label": "Dedicated Instance Tier 1 support — help.webex — article nuk5o63 — help.webex.com article nuk5o63 — header November 17, 2025, retrieved 2026-10-14. Basic support 24/7 English, 60 m",
+      "href": ""
+    },
+    {
+      "id": "T5-R05-1",
+      "room": "T5-R05",
+      "label": "Activate inter-op SIP trunk to Webex Calling multi-tenant — help.webex — article ofrt6u — help.webex.com article ofrt6u — header September 03, 2024, retrieved 2026-10-14. re-check ",
+      "href": ""
+    },
+    {
+      "id": "T5-R05-2",
+      "room": "T5-R05",
+      "label": "Dedicated Instance for Webex Calling - base configuration — help.webex — article 2vpf1 — help.webex.com article 2vpf1 — header May 27, 2025, retrieved 2026-10-14. re-check Location",
+      "href": ""
+    },
+    {
+      "id": "T5-R05-3",
+      "room": "T5-R05",
+      "label": "Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — help.webex.com article ny65x1bb — retrieved 2026-10-14. The retrieved markdown did not print a hea",
+      "href": ""
+    },
+    {
+      "id": "T5-R05-4",
+      "room": "T5-R05",
+      "label": "Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — help.webex.com article nmhk7ve — header June 27, 2025, retrieved 2026-10-14. re-check Certifica",
+      "href": ""
+    },
+    {
+      "id": "T5-R05-5",
+      "room": "T5-R05",
+      "label": "How to raise a service request — help.webex — article nvfve88 — help.webex.com article nvfve88 — retrieved 2026-10-14. A DI–MT inter-op SIP trunks request changes the location in t",
+      "href": ""
+    },
+    {
+      "id": "T5-R06-1",
+      "room": "T5-R06",
+      "label": "Best practices in preparation and migration process to Webex Calling - Dedicated Instance — help.webex — article tf6kpq — help.webex.com article tf6kpq — retrieved 2026-10-14. The ",
+      "href": ""
+    },
+    {
+      "id": "T5-R06-2",
+      "room": "T5-R06",
+      "label": "Pre-migration assistant for Dedicated Instance using Setup Assist — help.webex — article r1ueuw — help.webex.com article r1ueuw — header October 22, 2025, retrieved 2026-10-14. The",
+      "href": ""
+    },
+    {
+      "id": "T5-R06-3",
+      "room": "T5-R06",
+      "label": "Generate Assessment reports for Dedicated Instance migrations — help.webex — article 9jw4mab — help.webex.com article 9jw4mab — retrieved 2026-10-14. Source readiness, DI readiness",
+      "href": ""
+    },
+    {
+      "id": "T5-R06-4",
+      "room": "T5-R06",
+      "label": "Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — help.webex.com article ny65x1bb — retrieved 2026-10-14. Customers may migrate to Dedicated Instanc",
+      "href": ""
+    },
+    {
+      "id": "T6-R01-ledger",
+      "room": "T6-R01",
+      "label": "2,000-seat cutover citation ledger",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-1",
+      "room": "T6-R02",
+      "label": "nbedetf",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-2",
+      "room": "T6-R02",
+      "label": "4yz2zd",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-3",
+      "room": "T6-R02",
+      "label": "nw9po3o",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-4",
+      "room": "T6-R02",
+      "label": "q0pgpb",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-5",
+      "room": "T6-R02",
+      "label": "x974bd",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-6",
+      "room": "T6-R02",
+      "label": "d2lemv",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-7",
+      "room": "T6-R02",
+      "label": "n19c71",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-8",
+      "room": "T6-R02",
+      "label": "32gfts",
+      "href": ""
+    },
+    {
+      "id": "T6-R02-9",
+      "room": "T6-R02",
+      "label": "n1ku0vfb",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-1",
+      "room": "T6-R03",
+      "label": "Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf — retrieved 2026-10-",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-2",
+      "room": "T6-R03",
+      "label": "Migrate Unified CM data to Webex Calling — help.webex — article x974bd — help.webex.com article x974bd — retrieved 2026-10-14. Header date not in the retrieved markdown. re-check 1",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-3",
+      "room": "T6-R03",
+      "label": "Migrate devices and features from Unified CM to Webex Calling — help.webex — article d2lemv — help.webex.com article d2lemv — retrieved 2026-10-14. Header date not in the retrieved",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-4",
+      "room": "T6-R03",
+      "label": "Migrate enterprise phone to Webex Calling phone firmware — help.webex — article n19c71 — help.webex.com article n19c71 — header May 06, 2026, retrieved 2026-10-14. Steps apply to D",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-5",
+      "room": "T6-R03",
+      "label": "Pre-migration assistant for Dedicated Instance using Setup Assist — help.webex — article r1ueuw — help.webex.com article r1ueuw — header October 22, 2025, retrieved 2026-10-14. The",
+      "href": ""
+    },
+    {
+      "id": "T6-R03-6",
+      "room": "T6-R03",
+      "label": "Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — help.webex.com article q0pgpb — retrieved 2026-10-14. Names “Migrate your phone to Webex Ca",
+      "href": ""
+    },
+    {
+      "id": "T6-R04-1",
+      "room": "T6-R04",
+      "label": "Migrate Cisco Unified Contact Center Express to Webex Contact Center — help.webex — 0hd75db",
+      "href": "https://help.webex.com/article/0hd75db"
+    },
+    {
+      "id": "T6-R04-2",
+      "room": "T6-R04",
+      "label": "Upgrade from Webex Contact Center 1.0 to Webex Contact Center — help.webex — nb2ve0e",
+      "href": "https://help.webex.com/article/nb2ve0e"
+    },
+    {
+      "id": "T6-R04-3",
+      "room": "T6-R04",
+      "label": "Webex CCE Tenant Data Migration Tool Guide — help.webex — n2puc5z",
+      "href": "https://help.webex.com/article/n2puc5z"
+    },
+    {
+      "id": "T6-R04-4",
+      "room": "T6-R04",
+      "label": "Webex CCE administration what’s new — help.webex — nhy3hvdb",
+      "href": "https://help.webex.com/article/nhy3hvdb"
+    },
+    {
+      "id": "T6-R04-5",
+      "room": "T6-R04",
+      "label": "Webex Contact Center architecture — help.webex — utqcm7",
+      "href": "https://help.webex.com/article/utqcm7"
+    },
+    {
+      "id": "T6-R04-6",
+      "room": "T6-R04",
+      "label": "Migrate Unified CM to Webex Calling — help.webex — nbedetf",
+      "href": "https://help.webex.com/article/nbedetf"
+    },
+    {
+      "id": "T6-R05-1",
+      "room": "T6-R05",
+      "label": "Best practices in preparation and migration process to Webex Calling - Dedicated Instance — help.webex — article tf6kpq — help.webex.com article tf6kpq — retrieved 2026-10-14. The ",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-2",
+      "room": "T6-R05",
+      "label": "Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf — retrieved 2026-10-",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-3",
+      "room": "T6-R05",
+      "label": "Set up voice channels for Webex Contact Center — help.webex — article 2dputx — help.webex.com article 2dputx — retrieved 2026-10-14. The retrieved markdown did not print a header d",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-4",
+      "room": "T6-R05",
+      "label": "Webex Dedicated Instance Contact Center integration — help.webex — article nmhk7ve — help.webex.com article nmhk7ve — header June 27, 2025, retrieved 2026-10-14. re-check UCCX plac",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-5",
+      "room": "T6-R05",
+      "label": "Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — help.webex.com article q0pgpb — retrieved 2026-10-14. Third-party devices and phones: work ",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-6",
+      "room": "T6-R05",
+      "label": "Dedicated Instance – customer deployment models — help.webex — article ny65x1bb — help.webex.com article ny65x1bb — retrieved 2026-10-14. The retrieved markdown did not print a hea",
+      "href": ""
+    },
+    {
+      "id": "T6-R05-7",
+      "room": "T6-R05",
+      "label": "Design to migrate from Unified CM to Webex Calling — help.webex — article nqojzwt — help.webex.com article nqojzwt — retrieved 2026-10-14. Basic emergency calling wants at least on",
+      "href": ""
+    },
+    {
+      "id": "T6-R06-1",
+      "room": "T6-R06",
+      "label": "Cisco Calling Plan number porting guidelines and policies — help.webex — article 01sijg — help.webex.com article 01sijg — header May 21, 2025, retrieved 2026-10-14. re-check Losing",
+      "href": ""
+    },
+    {
+      "id": "T6-R06-2",
+      "room": "T6-R06",
+      "label": "Porting out a PSTN number — help.webex — article wsk3m9 — help.webex.com article wsk3m9 — header October 23, 2025, retrieved 2026-10-14. PSTN &amp; Routing → PSTN Orders. Auto-acce",
+      "href": ""
+    },
+    {
+      "id": "T6-R06-3",
+      "room": "T6-R06",
+      "label": "Get Started with the Cisco Calling Plans — help.webex — article nousk9ab — help.webex.com article nousk9ab — header August 05, 2026, retrieved 2026-10-14. Enable the plan before po",
+      "href": ""
+    },
+    {
+      "id": "T6-R06-4",
+      "room": "T6-R06",
+      "label": "Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf — retrieved 2026-10-",
+      "href": ""
+    },
+    {
+      "id": "T6-R06-5",
+      "room": "T6-R06",
+      "label": "Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — help.webex.com article q0pgpb — retrieved 2026-10-14. For Cloud Connect or premises PSTN, a",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-1",
+      "room": "T6-R07",
+      "label": "nw9po3o — Plan to migrate from Unified CM to Webex Calling",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-2",
+      "room": "T6-R07",
+      "label": "nqojzwt — Design to migrate from Unified CM to Webex Calling. Also the folded slice-4 facts from this article: two DIDs (main and voicemail portal), best match while the +E.164 dir",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-3",
+      "room": "T6-R07",
+      "label": "q0pgpb — Implement the migration from Unified CM to Webex Calling. Also the folded slice-4 facts: unsplittable set (BLF, hunt or queue, shared line, pickup, park, intercom, executi",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-4",
+      "room": "T6-R07",
+      "label": "2vpf1 — Dedicated Instance base configuration",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-5",
+      "room": "T6-R07",
+      "label": "ny65x1bb — Dedicated Instance customer deployment models",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-6",
+      "room": "T6-R07",
+      "label": "n0xb944 — Trunks, route groups, and dial plans",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-7",
+      "room": "T6-R07",
+      "label": "ofrt6u — Activate inter-op SIP trunk to Webex Calling multi-tenant",
+      "href": ""
+    },
+    {
+      "id": "T6-R07-8",
+      "room": "T6-R07",
+      "label": "TODO-verify count in this room: peer PBX parity only.",
+      "href": ""
+    },
+    {
+      "id": "T6-R08-1",
+      "room": "T6-R08",
+      "label": "Implement the migration from Unified CM to Webex Calling — help.webex — article q0pgpb — help.webex.com article q0pgpb — retrieved 2026-10-14. The retrieved markdown did not print ",
+      "href": ""
+    },
+    {
+      "id": "T6-R08-2",
+      "room": "T6-R08",
+      "label": "Calling: Transitioning from Unified CM to Webex Calling — Cisco deployment guide — December 2025 — cisco.com DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf — retrieved 2026-10-",
+      "href": ""
+    },
+    {
+      "id": "T6-R08-3",
+      "room": "T6-R08",
+      "label": "n0xb944 — Configure trunks, route groups, and dial plans for Webex Calling. Verify Call Routing. Folded from the slice-5 draft.",
+      "href": ""
+    },
+    {
+      "id": "T6-R08-4",
+      "room": "T6-R08",
+      "label": "frj1efb — Troubleshoot Webex Calling calls in Control Hub. 21-day window, three admin roles, CSV of 100, JSON report. Folded from the slice-5 draft.",
+      "href": ""
+    },
+    {
+      "id": "T7-R01-1",
+      "room": "T7-R01",
+      "label": "jr1i3r — Configure Local Gateway on Cisco IOS XE for Webex Calling",
+      "href": ""
+    },
+    {
+      "id": "T7-R01-2",
+      "room": "T7-R01",
+      "label": "t9xctu — Get started with Local Gateway",
+      "href": ""
+    },
+    {
+      "id": "T7-R01-3",
+      "room": "T7-R01",
+      "label": "Cisco IOS dial-peer matching, document 211306",
+      "href": ""
+    },
+    {
+      "id": "T7-R01-4",
+      "room": "T7-R01",
+      "label": "2zx7fg — Config Validation, registration trunks only",
+      "href": ""
+    },
+    {
+      "id": "T7-R02-1",
+      "room": "T7-R02",
+      "label": "jr1i3r — codec class, stun-usage, DS 64224",
+      "href": ""
+    },
+    {
+      "id": "T7-R02-2",
+      "room": "T7-R02",
+      "label": "64020 — translation profiles and test voice translation-rule",
+      "href": ""
+    },
+    {
+      "id": "T7-R02-3",
+      "room": "T7-R02",
+      "label": "CUBE dial-peer chapter and document 211306 — inbound order, not merged",
+      "href": ""
+    },
+    {
+      "id": "T7-R02-4",
+      "room": "T7-R02",
+      "label": "Lumen PDF — carrier example, patterns not copied",
+      "href": ""
+    },
+    {
+      "id": "T7-R02-5",
+      "room": "T7-R02",
+      "label": "TODO-verify: non-Cisco SBC translation syntax.",
+      "href": ""
+    },
+    {
+      "id": "T7-R03-1",
+      "room": "T7-R03",
+      "label": "nt6eyxb — ICE phases and exclusions",
+      "href": ""
+    },
+    {
+      "id": "T7-R03-2",
+      "room": "T7-R03",
+      "label": "jr1i3r and w0qmeu — G.711 and SRTP sample",
+      "href": ""
+    },
+    {
+      "id": "T7-R03-3",
+      "room": "T7-R03",
+      "label": "b2exve — ports, ALG, NAT pool",
+      "href": ""
+    },
+    {
+      "id": "T7-R03-4",
+      "room": "T7-R03",
+      "label": "njwkamr — device codec orders are a different list",
+      "href": ""
+    },
+    {
+      "id": "T7-R03-5",
+      "room": "T7-R03",
+      "label": "TODO-verify: peer media bypass. re-check: SIP ALG January 21, 2025.",
+      "href": ""
+    },
+    {
+      "id": "T7-R04-1",
+      "room": "T7-R04",
+      "label": "n0xb944 — route groups and trunk status",
+      "href": ""
+    },
+    {
+      "id": "T7-R04-2",
+      "room": "T7-R04",
+      "label": "jwkbt2 — FQDN and EKU",
+      "href": ""
+    },
+    {
+      "id": "T7-R04-3",
+      "room": "T7-R04",
+      "label": "t9xctu — wildcard, PoPs, 250",
+      "href": ""
+    },
+    {
+      "id": "T7-R04-4",
+      "room": "T7-R04",
+      "label": "ofrt6u — DI interop activation",
+      "href": ""
+    },
+    {
+      "id": "T7-R04-5",
+      "room": "T7-R04",
+      "label": "TODO-verify: peer SBC priority syntax.",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-1",
+      "room": "T7-R05",
+      "label": "np2fdx — WxCC patterns",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-2",
+      "room": "T7-R05",
+      "label": "o6rfjeb — hunt group caps",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-3",
+      "room": "T7-R05",
+      "label": "ubg5qd — team default Longest available; agent-assignment default Circular, maximum 1,000 agents. Page header October 08, 2026.",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-4",
+      "room": "T7-R05",
+      "label": "nv7abhz — AutoCSAT and October 29, 2026",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-5",
+      "room": "T7-R05",
+      "label": "upg0eu — auto attendant as IVR",
+      "href": ""
+    },
+    {
+      "id": "T7-R05-6",
+      "room": "T7-R05",
+      "label": "TODO-verify: EWT number, ICM order, QM retention, peer parity.",
+      "href": ""
+    },
+    {
+      "id": "T7-R06-1",
+      "room": "T7-R06",
+      "label": "upg0eu — Calling comparison, re-check",
+      "href": ""
+    },
+    {
+      "id": "T7-R06-2",
+      "room": "T7-R06",
+      "label": "o6rfjeb — hunt caps",
+      "href": ""
+    },
+    {
+      "id": "T7-R06-3",
+      "room": "T7-R06",
+      "label": "ubg5qd — two defaults",
+      "href": ""
+    },
+    {
+      "id": "T7-R06-4",
+      "room": "T7-R06",
+      "label": "nv7abhz — AutoCSAT and October 29, 2026",
+      "href": ""
+    },
+    {
+      "id": "T7-R06-5",
+      "room": "T7-R06",
+      "label": "TODO-verify: ICM order, CRM, identity, peer parity.",
+      "href": ""
+    },
+    {
+      "id": "T7-R07-1",
+      "room": "T7-R07",
+      "label": "n0xb944 — Trunks, route groups, and dial plans. Cloud PSTN only for Webex Calling users. Premises-originated calls cannot use it. Dial plans are global. Verify Call Routing. Unknow",
+      "href": ""
+    },
+    {
+      "id": "T7-R07-2",
+      "room": "T7-R07",
+      "label": "2dputx — Voice channels for Webex Contact Center. CCP in over 65 countries. Numbers saved as +E.164. Dedicated PSTN location. Premises outbound dial plan.",
+      "href": ""
+    },
+    {
+      "id": "T7-R07-3",
+      "room": "T7-R07",
+      "label": "frj1efb — Troubleshoot Webex Calling calls. Monitoring → Troubleshooting. Past 21 days. CCPP versus Local Gateway. PSTN metrics not transmitted. Refusal and failure codes.",
+      "href": ""
+    },
+    {
+      "id": "T7-R07-4",
+      "room": "T7-R07",
+      "label": "nvfbjts — WebRTC emergency. Header September 08, 2024. re-check. Not the dial-plan tool.",
+      "href": ""
+    },
+    {
+      "id": "T7-R07-5",
+      "room": "T7-R07",
+      "label": "nhvl4hw — Calling recording retention. Not the hop view.",
+      "href": ""
+    },
+    {
+      "id": "T8-R01-1",
+      "room": "T8-R01",
+      "label": "nhovcy4",
+      "href": ""
+    },
+    {
+      "id": "T8-R01-2",
+      "room": "T8-R01",
+      "label": "nve6qddb",
+      "href": ""
+    },
+    {
+      "id": "T8-R01-3",
+      "room": "T8-R01",
+      "label": "utqcm7",
+      "href": ""
+    },
+    {
+      "id": "T8-R01-4",
+      "room": "T8-R01",
+      "label": "n6gaghu",
+      "href": ""
+    },
+    {
+      "id": "T8-R01-5",
+      "room": "T8-R01",
+      "label": "nbedetf",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-1",
+      "room": "T8-R02",
+      "label": "nhovcy4 — Build and manage flows with Flow Designer. Callback after Queue Contact or Queue To Agent. Priority P1–P9, default 10. Business Hours branches.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-2",
+      "room": "T8-R02",
+      "label": "np2fdx — Understand Routing and Queueing. Header October 01, 2026. Same-queue versus different-queue callback. Schedule Callback. Callback Default Entry Point is the prerequisite. ",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-3",
+      "room": "T8-R02",
+      "label": "nfrs2adb — Set up routing strategies. Move toward Business Hours. Existing strategies remain.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-4",
+      "room": "T8-R02",
+      "label": "py6u9h — WFO SKUs for Enterprise, CCE, and CCX. Header June 09, 2026.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-5",
+      "room": "T8-R02",
+      "label": "nhvl4hw — Calling recording retention. Not a callback setting.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-6",
+      "room": "T8-R02",
+      "label": "nvfbjts — WebRTC emergency. Header September 08, 2024. re-check. Not a callback activity.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-7",
+      "room": "T8-R02",
+      "label": "mmcf7p — Agent Desktop callbacks. Header date missing from the extract. re-check.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-8",
+      "room": "T8-R02",
+      "label": "n6gaghu — Virtual Agent-Voice / Google CCAI connector. Not the Callback activity.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-9",
+      "room": "T8-R02",
+      "label": "s0qro1 — AI agents. Header August 25, 2026. Virtual Agent V2.",
+      "href": ""
+    },
+    {
+      "id": "T8-R02-10",
+      "room": "T8-R02",
+      "label": "a1gx3h — What’s new for administrators. Header October 08, 2026. Existing customers can keep using Routing Strategy until it is decommissioned. Outbound-campaign scheduled callback",
+      "href": ""
+    },
+    {
+      "id": "T8-R03-1",
+      "room": "T8-R03",
+      "label": "Webex Connect (CPaaS) — developer.webex",
+      "href": "https://developer.webex.com/webex-connect/docs/webex-connect"
+    },
+    {
+      "id": "T8-R03-2",
+      "room": "T8-R03",
+      "label": "Tasks Call Control — developer.webex",
+      "href": "https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control"
+    },
+    {
+      "id": "T8-R03-3",
+      "room": "T8-R03",
+      "label": "Call Control recording webhooks — developer.webex",
+      "href": "https://developer.webex.com/calling/docs/call-control"
+    },
+    {
+      "id": "T8-R03-4",
+      "room": "T8-R03",
+      "label": "Salesforce connector — help.webex — dyidod",
+      "href": "https://help.webex.com/article/dyidod"
+    },
+    {
+      "id": "T8-R03-5",
+      "room": "T8-R03",
+      "label": "Webex Contact Center architecture — help.webex — utqcm7",
+      "href": "https://help.webex.com/article/utqcm7"
+    },
+    {
+      "id": "T8-R04-1",
+      "room": "T8-R04",
+      "label": "dyidod — Integrate Webex Contact Center with Salesforce (Version 2-New). Header date was not in the extract. The page’s release line is May 05, 2026. Lightning only. Development, E",
+      "href": ""
+    },
+    {
+      "id": "T8-R04-2",
+      "room": "T8-R04",
+      "label": "n1lsqvu — Integrate Webex Contact Center CRM Connector for Microsoft Dynamics 365 (Version 2-New). Header September 15, 2026. CIF 1 single-session. CIF 2 multi-session. On-premises",
+      "href": ""
+    },
+    {
+      "id": "T8-R04-3",
+      "room": "T8-R04",
+      "label": "ny83tx0 — Integrate Webex Contact Center with ServiceNow (Version 2-New). Header date was not in the extract. The page’s release line is May 05, 2026. Launch Desktop from within Se",
+      "href": ""
+    },
+    {
+      "id": "T8-R05-ledger",
+      "room": "T8-R05",
+      "label": "AI in Webex Contact Center citation ledger",
+      "href": ""
+    },
+    {
+      "id": "T8-R06-1",
+      "room": "T8-R06",
+      "label": "frj1efb — call view",
+      "href": ""
+    },
+    {
+      "id": "T8-R06-2",
+      "room": "T8-R06",
+      "label": "n0xb944 — trunk status",
+      "href": ""
+    },
+    {
+      "id": "T8-R06-3",
+      "room": "T8-R06",
+      "label": "2zx7fg — registration validation",
+      "href": ""
+    },
+    {
+      "id": "T8-R06-4",
+      "room": "T8-R06",
+      "label": "jr1i3r — DS 64224",
+      "href": ""
+    },
+    {
+      "id": "T8-R06-5",
+      "room": "T8-R06",
+      "label": "TODO-verify: QM retention, unopened client-log article, peer screens.",
+      "href": ""
+    },
+    {
+      "id": "T8-R07-1",
+      "room": "T8-R07",
+      "label": "frj1efb — 100 and JSON",
+      "href": ""
+    },
+    {
+      "id": "T8-R07-2",
+      "room": "T8-R07",
+      "label": "n4hssfr — PRT, re-check",
+      "href": ""
+    },
+    {
+      "id": "T8-R07-3",
+      "room": "T8-R07",
+      "label": "278bz2 — DECT Debug",
+      "href": ""
+    },
+    {
+      "id": "T8-R07-4",
+      "room": "T8-R07",
+      "label": "jr1i3r — DS 64224",
+      "href": ""
+    },
+    {
+      "id": "T8-R07-5",
+      "room": "T8-R07",
+      "label": "TODO-verify: app client logs. Omitted: undated status.xml counts.",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-1",
+      "room": "T8-R08",
+      "label": "278bz2 — Calling dates",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-2",
+      "room": "T8-R08",
+      "label": "g1gtsdb — toll-free limits",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-3",
+      "room": "T8-R08",
+      "label": "nv7abhz — admin CC",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-4",
+      "room": "T8-R08",
+      "label": "n3v7ldh — agent states",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-5",
+      "room": "T8-R08",
+      "label": "o6f77s — supervisor adherence",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-6",
+      "room": "T8-R08",
+      "label": "2oxxgm — W70",
+      "href": ""
+    },
+    {
+      "id": "T8-R08-7",
+      "room": "T8-R08",
+      "label": "TODO-verify: CRM asset behavior, peer comparisons.",
+      "href": ""
+    },
+    {
+      "id": "T9-R01-1",
+      "room": "T9-R01",
+      "label": "Workforce management (Wikipedia), opened 2026-10. WFM is an institutional process that aims to optimize productivity, competency, and engagement. The page says it typically include",
+      "href": ""
+    },
+    {
+      "id": "T9-R01-2",
+      "room": "T9-R01",
+      "label": "Call centre (Wikipedia), opened 2026-10. The page describes a call centre as an office dealing with a large volume of enquiries by telephone.",
+      "href": ""
+    },
+    {
+      "id": "T9-R01-3",
+      "room": "T9-R01",
+      "label": "Basic WFM and QM Offerings on Webex WFO, help.webex article nmzg380, header August 13, 2025. Basic WFM and Basic QM. Forecasting across voice, digital, and back-office. MyTime, shi",
+      "href": ""
+    },
+    {
+      "id": "T9-R01-18",
+      "room": "T9-R01",
+      "label": "Webex Contact Center Architecture, help.webex article utqcm7, header September 03, 2026. The contents list Workforce Optimization among the functional areas.",
+      "href": ""
+    },
+    {
+      "id": "T9-R02-3",
+      "room": "T9-R02",
+      "label": "Basic WFM and QM Offerings on Webex WFO, help.webex article nmzg380, header August 13, 2025. Basic WFM and Basic QM. Forecasting across voice, digital, and back-office. MyTime, shi",
+      "href": ""
+    },
+    {
+      "id": "T9-R02-4",
+      "room": "T9-R02",
+      "label": "Webex WFO: Feature Specific SKUs, help.webex article py6u9h, header June 09, 2026. The article says it covers minimum required SKUs for Webex Contact Center Enterprise, Contact Cen",
+      "href": ""
+    },
+    {
+      "id": "T9-R03-3",
+      "room": "T9-R03",
+      "label": "Basic WFM and QM Offerings on Webex WFO, help.webex article nmzg380, header August 13, 2025. Basic WFM and Basic QM. Forecasting across voice, digital, and back-office. MyTime, shi",
+      "href": ""
+    },
+    {
+      "id": "T9-R03-4",
+      "room": "T9-R03",
+      "label": "Webex WFO: Feature Specific SKUs, help.webex article py6u9h, header June 09, 2026. The article says it covers minimum required SKUs for Webex Contact Center Enterprise, Contact Cen",
+      "href": ""
+    },
+    {
+      "id": "T9-R03-6",
+      "room": "T9-R03",
+      "label": "Get Started with AI Quality Management, help.webex article nvtdfxk, header July 24, 2026. Paid add-on. English only in the FAQ on that page. Auto CSAT and real-time transcriptions ",
+      "href": ""
+    },
+    {
+      "id": "T9-R04-3",
+      "room": "T9-R04",
+      "label": "Basic WFM and QM Offerings on Webex WFO, help.webex article nmzg380, header August 13, 2025. Basic WFM and Basic QM. Forecasting across voice, digital, and back-office. MyTime, shi",
+      "href": ""
+    },
+    {
+      "id": "T9-R04-5",
+      "room": "T9-R04",
+      "label": "Enable AI Quality Management Features in Control Hub, help.webex article 6m6r3fb, header July 24, 2026. Path: Services, Contact Center, AI Features under Desktop Experience. Org, q",
+      "href": ""
+    },
+    {
+      "id": "T9-R04-6",
+      "room": "T9-R04",
+      "label": "Get Started with AI Quality Management, help.webex article nvtdfxk, header July 24, 2026. Paid add-on. English only in the FAQ on that page. Auto CSAT and real-time transcriptions ",
+      "href": ""
+    },
+    {
+      "id": "T9-R04-9",
+      "room": "T9-R04",
+      "label": "Use Coaching Insights, help.webex article i8lp6i, header March 26, 2026. Insights come from historical interaction data, quality results, and performance metrics.",
+      "href": ""
+    },
+    {
+      "id": "T9-R04-10",
+      "room": "T9-R04",
+      "label": "Cisco AI Assistant for Webex Contact Center, help.webex article nvvv1zb, header October 06, 2026. Summaries, wellness breaks, real-time transcripts, Auto CSAT, Topic Analytics, Rea",
+      "href": ""
+    },
+    {
+      "id": "T9-R05-5",
+      "room": "T9-R05",
+      "label": "Enable AI Quality Management Features in Control Hub, help.webex article 6m6r3fb, header July 24, 2026. Path: Services, Contact Center, AI Features under Desktop Experience. Org, q",
+      "href": ""
+    },
+    {
+      "id": "T9-R05-7",
+      "room": "T9-R05",
+      "label": "Use Analyzer Reports for Webex AI Quality Management, help.webex article n4jc67x, header March 26, 2026. CSR and ASR. Sentiment score from -100 to +100. Greater than +45 positive, ",
+      "href": ""
+    },
+    {
+      "id": "T9-R05-8",
+      "room": "T9-R05",
+      "label": "Understand Sentiment Analysis, help.webex article voh2oeb, header March 26, 2026. The opened page lists scoring, Control Hub enablement, Supervisor Desktop, and filtering.",
+      "href": ""
+    }
+  ]
+}

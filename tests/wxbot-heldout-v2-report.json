@@ -1,0 +1,711 @@
+{
+  "questions": 102,
+  "beginner": {
+    "total": 40,
+    "relevant": 14,
+    "relevantPct": 35,
+    "confidentWrong": 7,
+    "fallback": 15,
+    "fallbackPct": 37.5
+  },
+  "typo": {
+    "total": 15,
+    "relevant": 0,
+    "relevantPct": 0,
+    "confidentWrong": 1,
+    "fallback": 14,
+    "fallbackPct": 93.3
+  },
+  "offtopic": {
+    "total": 15,
+    "relevant": 15,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 15,
+    "fallbackPct": 100
+  },
+  "nav": {
+    "total": 10,
+    "relevant": 9,
+    "relevantPct": 90,
+    "confidentWrong": 0,
+    "fallback": 1,
+    "fallbackPct": 10
+  },
+  "inject": {
+    "total": 10,
+    "relevant": 10,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 10,
+    "fallbackPct": 100
+  },
+  "followTurns": {
+    "total": 12,
+    "relevant": 6,
+    "relevantPct": 50,
+    "confidentWrong": 3,
+    "fallback": 2,
+    "fallbackPct": 16.7
+  },
+  "followPairs": {
+    "ok": 0,
+    "total": 6
+  },
+  "target": {
+    "offtopicConfidentWrong": 0,
+    "injectConfidentWrong": 0
+  },
+  "confidentWrongInDomain": [
+    {
+      "id": "b03",
+      "q": "where does Webex Calling keep call detail records",
+      "href": "rooms/T2-R01-calling-architecture.html#tldr",
+      "text": "Before the move, phones and Jabber register to Unified CM. Expressway-C and Expressway-E pairs serve MRA and business-to-business. CMS, CMM, and TMS are optional. Unity Connection "
+    },
+    {
+      "id": "b06",
+      "q": "what does a supervisor see in Webex Contact Center",
+      "href": "rooms/T3-R04-agent-desktop-supervisor.html#tldr",
+      "text": "Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or"
+    },
+    {
+      "id": "b09",
+      "q": "what does sizing and high availability mean for WxCCE",
+      "href": "rooms/T4-R09-classroom-index.html#tldr",
+      "text": "Use the written Canon rooms for CVP, Finesse, CUIC, and sizing. Use this index to point the unwritten component, call-flow, and scripting topics at the chapter that already states "
+    },
+    {
+      "id": "b23",
+      "q": "how do CRM integrations attach to Webex Contact Center",
+      "href": "rooms/T8-R03-apis-webhooks-connect.html#tldr",
+      "text": "Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control."
+    },
+    {
+      "id": "b27",
+      "q": "what is basic quality management in Webex WFO",
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "b30",
+      "q": "which language and voice events does a Webex virtual agent use",
+      "href": "rooms/T8-R05-ai-wxcc.html#tldr",
+      "text": "AI Assistant is a paid desktop add-on with an icon. Header on nvvv1zb: October 06, 2026. [cite:1] Scripted and autonomous agents are built in AI Agent Studio and attached with Virt"
+    },
+    {
+      "id": "b32",
+      "q": "what limits does this lab state for Webex voice AI",
+      "href": "rooms/T8-R03-apis-webhooks-connect.html#tldr",
+      "text": "Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control."
+    },
+    {
+      "id": "t11",
+      "q": "qualty managment wfo webex",
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "f02.1",
+      "q": "how is a Webex Contact Center tenant set up",
+      "href": "rooms/T8-R05-ai-wxcc.html#tldr",
+      "text": "AI Assistant is a paid desktop add-on with an icon. Header on nvvv1zb: October 06, 2026. [cite:1] Scripted and autonomous agents are built in AI Agent Studio and attached with Virt"
+    },
+    {
+      "id": "f04.1",
+      "q": "what is quality management in Webex WFO",
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "f06.1",
+      "q": "how are Webex Calling phones provisioned",
+      "href": "rooms/T6-R02-cucm-to-webex-calling.html#tldr",
+      "text": "The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. [cite:1] Choose flash-cut or phased."
+    }
+  ],
+  "misses": [
+    {
+      "id": "b03",
+      "group": "beginner",
+      "q": "where does Webex Calling keep call detail records",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T2-R01-calling-architecture.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Before the move, phones and Jabber register to Unified CM. Expressway-C and Expressway-E pairs serve MRA and business-to-business. CMS, CMM, and TMS are optional. Unity Connection "
+    },
+    {
+      "id": "b06",
+      "group": "beginner",
+      "q": "what does a supervisor see in Webex Contact Center",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T3-R04-agent-desktop-supervisor.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Display larger than 500×500. Browser zoom 100%. One browser, one tab. Sign out from Idle, with no active conversation and no monitoring task. Desktop without browser permission, or"
+    },
+    {
+      "id": "b09",
+      "group": "beginner",
+      "q": "what does sizing and high availability mean for WxCCE",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T4-R09-classroom-index.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Use the written Canon rooms for CVP, Finesse, CUIC, and sizing. Use this index to point the unwritten component, call-flow, and scripting topics at the chapter that already states "
+    },
+    {
+      "id": "b10",
+      "group": "beginner",
+      "q": "what is hybrid cloud connected for Webex Contact Center Enterprise",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T4-R10-hybrid-cloud-connected.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Equinix connectivity in the March 2022 note is a WAN to the Business Partner Network through ECX, in the U.S. and EMEA, with bandwidth from 200 MB to 10 GB."
+    },
+    {
+      "id": "b11",
+      "group": "beginner",
+      "q": "how do Dedicated Instance admins operate the instance",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: What Dedicated Instance Is; Dedicated Instance and contact-center bridges. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b12",
+      "group": "beginner",
+      "q": "how can Dedicated Instance coexist with Webex Calling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: What Dedicated Instance Is; Dedicated Instance and contact-center bridges. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b14",
+      "group": "beginner",
+      "q": "what is the enterprise cutover capstone in this lab",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b15",
+      "group": "beginner",
+      "q": "which migration tools does this lab mention for CUCM",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Migration Tools; CUCM to Webex Calling. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b17",
+      "group": "beginner",
+      "q": "what does coexistence and interop mean during a Webex move",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T6-R07-coexistence-interop.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "A phased move splits users across Unified CM and Webex Calling. Each batch needs dial-plan updates on both platforms and on the Local Gateway. [cite:1] Put Webex Calling +E.164 pat"
+    },
+    {
+      "id": "b18",
+      "group": "beginner",
+      "q": "how do you validate Webex Calling after a migration",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Post-migration Validation; DI Migration Path. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b20",
+      "group": "beginner",
+      "q": "what queue theory ideas does this lab apply to contact center",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Queue theory for contact center; AI in Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b21",
+      "group": "beginner",
+      "q": "how are routing strategies compared for a contact center",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T7-R06-routing-strategies-compared.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "upg0eu, dated August 30, 2024, compares Auto Attendant, Call Queue, Hunt Group, and Shared Line Group. Only the call queue adds callers to a queue. Only the auto attendant provides"
+    },
+    {
+      "id": "b22",
+      "group": "beginner",
+      "q": "what flow design patterns does Webex Contact Center use",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T8-R02-flow-design-patterns.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Courtesy callback creates a queue task. Keep the original queue if the contact should hold its place. Move it only when you accept the end of the new queue, no skills, and default "
+    },
+    {
+      "id": "b23",
+      "group": "beginner",
+      "q": "how do CRM integrations attach to Webex Contact Center",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T8-R03-apis-webhooks-connect.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control."
+    },
+    {
+      "id": "b24",
+      "group": "beginner",
+      "q": "where does this lab put AI inside Webex Contact Center",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: AI in Webex Contact Center; Three AI names in Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b25",
+      "group": "beginner",
+      "q": "what troubleshooting method does the Webex Contact Center track teach",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: AI in Webex Contact Center; UCCE and PCCE to Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b26",
+      "group": "beginner",
+      "q": "which logs and tools does Webex Contact Center troubleshooting name",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Logs and tools; Three AI names in Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b27",
+      "group": "beginner",
+      "q": "what is basic quality management in Webex WFO",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "b28",
+      "group": "beginner",
+      "q": "how does AI quality management differ in this lab",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: AI Quality Management in Control Hub; Basic quality management and recording. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b29",
+      "group": "beginner",
+      "q": "what is QM Analyzer in Webex workforce tools",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Workforce and quality, in plain words; Basic workforce management on Webex WFO. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b30",
+      "group": "beginner",
+      "q": "which language and voice events does a Webex virtual agent use",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T8-R05-ai-wxcc.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "AI Assistant is a paid desktop add-on with an icon. Header on nvvv1zb: October 06, 2026. [cite:1] Scripted and autonomous agents are built in AI Agent Studio and attached with Virt"
+    },
+    {
+      "id": "b31",
+      "group": "beginner",
+      "q": "what digital AI channels does Webex Contact Center describe",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: AI in Webex Contact Center; Three AI names in Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b32",
+      "group": "beginner",
+      "q": "what limits does this lab state for Webex voice AI",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T8-R03-apis-webhooks-connect.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Connect’s own page lists six areas: channel provisioning, integration setup, flow orchestration, multichannel messaging, NLP/NLU/AI, and enterprise control."
+    },
+    {
+      "id": "b33",
+      "group": "beginner",
+      "q": "why is a bridge not the same as a Webex cutover",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: A bridge is not a cutover; 2,000-seat cutover. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b35",
+      "group": "beginner",
+      "q": "what does moving UCCX toward WxCC involve",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: UCCE and PCCE to Webex Contact Center; UCCX discovery into Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b36",
+      "group": "beginner",
+      "q": "what other platforms does the Webex bridge track mention",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Other platforms, without a fake bridge; Local Gateway as the calling bridge. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t01",
+      "group": "typo",
+      "q": "contorl hub partnr admin rol",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t02",
+      "group": "typo",
+      "q": "webex caling cdr analytcs",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t03",
+      "group": "typo",
+      "q": "survivabilty gatewy webex",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t04",
+      "group": "typo",
+      "q": "wxcc tenent provisoning",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t05",
+      "group": "typo",
+      "q": "wxcce callflw rout",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t06",
+      "group": "typo",
+      "q": "dedicatd instnace coexistance",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t07",
+      "group": "typo",
+      "q": "number portng cutovr webex",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t08",
+      "group": "typo",
+      "q": "sip trunck desgn webex",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t09",
+      "group": "typo",
+      "q": "flow desiner paterns wxcc",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t10",
+      "group": "typo",
+      "q": "crm integraton webex contact centr",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t11",
+      "group": "typo",
+      "q": "qualty managment wfo webex",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "t12",
+      "group": "typo",
+      "q": "virtul agnt languag events",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t13",
+      "group": "typo",
+      "q": "uccx migrashun to wxcc",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t14",
+      "group": "typo",
+      "q": "di conectivty optons",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t15",
+      "group": "typo",
+      "q": "post migraton validashun calling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "n08",
+      "group": "nav",
+      "q": "show the hands-on labs",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "f01.2",
+      "group": "follow",
+      "pair": "f01",
+      "q": "and what happens when the cloud is unreachable",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I was still on “Survivability Gateway”, and that follow-up is not in these pages. Closest pages: Hybrid & Cloud-connected Features; SIP Trace Reading Lab. I "
+    },
+    {
+      "id": "f02.1",
+      "group": "follow",
+      "pair": "f02",
+      "q": "how is a Webex Contact Center tenant set up",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T8-R05-ai-wxcc.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "AI Assistant is a paid desktop add-on with an icon. Header on nvvv1zb: October 06, 2026. [cite:1] Scripted and autonomous agents are built in AI Agent Studio and attached with Virt"
+    },
+    {
+      "id": "f03.2",
+      "group": "follow",
+      "pair": "f03",
+      "q": "and the codecs",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T7-R03-codecs-media-nat.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Media optimization uses ICE. Desk phones except DECT and ATA, the Webex App, and Local Gateway are the supported set. It is on by default for desk phones and the Webex App. [cite:1"
+    },
+    {
+      "id": "f04.1",
+      "group": "follow",
+      "pair": "f04",
+      "q": "what is quality management in Webex WFO",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T9-R02-basic-wfm.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "Basic WFM forecasts voice, digital, and back-office demand. [cite:3] Agents use MyTime on web and mobile, and they can bid for shifts under pre-defined rules. [cite:3] Supervisors "
+    },
+    {
+      "id": "f05.2",
+      "group": "follow",
+      "pair": "f05",
+      "q": "and is that a bridge",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I was still on “UCCX discovery into Webex Contact Center”, and that follow-up is not in these pages. Closest pages: UCCX discovery into Webex Contact Center;"
+    },
+    {
+      "id": "f06.1",
+      "group": "follow",
+      "pair": "f06",
+      "q": "how are Webex Calling phones provisioned",
+      "relevant": false,
+      "confidentWrong": true,
+      "clean": false,
+      "href": "rooms/T6-R02-cucm-to-webex-calling.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "The introduction says not to lift-and-shift Unified CM. Redefine requirements. The method is PPDIO: Prepare, Plan, Design, Implement, Optimize. [cite:1] Choose flash-cut or phased."
+    }
+  ]
+}

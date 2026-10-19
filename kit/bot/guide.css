@@ -4,7 +4,7 @@
 
 .cg-root {
   position: fixed;
-  transition: right 0.55s ease, bottom 0.55s ease;
+  /* Place instantly. A slide from the corner crosses the title on a phone. */
   /* Above the page mascot (70) and the bar (40). Under the phone menu,
      settings, and help layers (80+), so those stay clickable. */
   z-index: 71;
@@ -205,8 +205,9 @@
   left: 8px;
   right: 8px;
   width: auto;
-  height: var(--cg-sheet-h, auto);
-  max-height: min(62vh, var(--cg-panel-max, 62vh));
+  height: auto;
+  max-height: min(var(--cg-sheet-h, 62vh), var(--cg-panel-max, 62vh), calc(100dvh - var(--cg-panel-bottom, 96px) - 8px));
+  overflow: hidden;
   border-radius: 22px;
   padding-bottom: 10px;
 }
@@ -293,13 +294,81 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-height: 0;
+  min-height: 0 !important;
   flex: 0 1 auto;
   max-height: 180px;
   padding: 4px 2px;
 }
 
-.cg-root.is-sheet .cg-log { max-height: 96px; }
+.cg-root.is-sheet .cg-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+}
+
+.cg-root.is-sheet .cg-chips {
+  max-height: 44px;
+}
+
+.cg-root.is-sheet .cg-form {
+  flex: 0 0 auto;
+}
+
+/* Phone sheet: hide the page header and the dock, and pin the guide to the viewport. */
+html.guide-sheet .topbar,
+html.guide-sheet .phone-dock,
+html.guide-sheet .canon-banner,
+html.guide-sheet .a11y-dock,
+html.guide-sheet .to-top,
+html.guide-sheet .phone-menu,
+html.guide-sheet .edge-rail,
+html.guide-sheet .hud-panel {
+  display: none !important;
+}
+
+html.guide-sheet #cg-panel {
+  position: fixed !important;
+  inset: auto 0 0 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  margin: 0 !important;
+  z-index: 90 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+}
+
+@supports not (height: 100dvh) {
+  html.guide-sheet #cg-panel {
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+}
+
+html.guide-sheet #cg-panel .cg-readbar,
+html.guide-sheet #cg-panel .cg-offers,
+html.guide-sheet #cg-panel .cg-chips,
+html.guide-sheet #cg-panel .cg-more,
+html.guide-sheet #cg-panel .cg-pointer,
+html.guide-sheet #cg-panel .cg-handle {
+  display: none !important;
+}
+
+html.guide-sheet #cg-panel .cg-log {
+  flex: 1 1 auto;
+  min-height: 0 !important;
+  max-height: none;
+  overflow: auto;
+}
+
+html.guide-sheet #cg-panel .cg-form {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
 
 .cg-bubble {
   max-width: min(92%, 36rem);
@@ -958,3 +1027,24 @@ html[data-motion="reduce"] .cg-root * {
   30% { transform: translateX(-6px); }
   60% { transform: translateX(6px); }
 }
+
+/* The bot lives inside #guide-mount and says one line on every page. */
+.cg-nudge.cg-line { width: min(300px, calc(100vw - 24px)); pointer-events: auto; }
+.cg-nudge.cg-line p { margin: 0; }
+
+/* Draggable bot: bounce snap, lift, reset button, hidden under the full-screen menu. */
+.cg-root.is-snapping { transition: left .5s cubic-bezier(.34,1.56,.64,1), top .5s cubic-bezier(.34,1.56,.64,1) !important; }
+.bot-reset {
+  position: fixed; z-index: 2147483000; width: 32px; height: 32px; min-height: 32px; padding: 0; border-radius: 50%;
+  border: 2px solid #22d3ee; background: #fff; color: #1b1340; font: 800 16px/1 system-ui, sans-serif; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+.bot-reset[hidden] { display: none; }
+.bot-reset:focus-visible { outline: 3px solid #082f49; outline-offset: 2px; }
+@media (max-width: 800px) { .bot-reset { width: 36px; height: 36px; min-height: 36px; } }
+@media (prefers-reduced-motion: reduce) { .cg-root.is-snapping { transition: none !important; } }
+html[data-motion="reduce"] .cg-root.is-snapping { transition: none !important; }
+body.edge-open .bot-reset, body.phone-menu-open .bot-reset { visibility: hidden; }
+.cg-monkey { touch-action: none; user-select: none; -webkit-user-select: none; }
+.cg-root.is-snapping { transition: right .5s cubic-bezier(.34,1.56,.64,1), bottom .5s cubic-bezier(.34,1.56,.64,1) !important; }
+@media (prefers-reduced-motion: reduce) { .cg-root.is-snapping { transition: none !important; } }

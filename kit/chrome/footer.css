@@ -32,3 +32,8 @@
 .footer-license{margin:18px 0 0;font-size:.85rem;opacity:.85}
 @media(max-width:560px){.disclaimer-panel{flex-direction:column;padding:16px}.brand-icon{width:62px;height:62px}}
 @media print{.brand-icons,.next-labs{display:none}.disclaimer-panel{box-shadow:none}}
+.go-deeper{max-width:100%;min-width:0;box-sizing:border-box}
+.go-deeper li,.go-deeper p,.go-deeper a{overflow-wrap:anywhere}
+body:has(footer.standalone-footer){max-width:100%;overflow-x:clip}
+body:has(footer.standalone-footer) table{width:100%;max-width:100%;table-layout:fixed}
+body:has(footer.standalone-footer) td,body:has(footer.standalone-footer) th{overflow-wrap:anywhere}

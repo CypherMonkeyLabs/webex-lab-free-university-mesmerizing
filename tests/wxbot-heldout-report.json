@@ -1,0 +1,338 @@
+{
+  "questions": 102,
+  "beginner": {
+    "total": 40,
+    "relevant": 30,
+    "relevantPct": 75,
+    "confidentWrong": 0,
+    "fallback": 8,
+    "fallbackPct": 20
+  },
+  "typo": {
+    "total": 15,
+    "relevant": 2,
+    "relevantPct": 13.3,
+    "confidentWrong": 0,
+    "fallback": 13,
+    "fallbackPct": 86.7
+  },
+  "offtopic": {
+    "total": 15,
+    "relevant": 15,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 15,
+    "fallbackPct": 100
+  },
+  "nav": {
+    "total": 10,
+    "relevant": 10,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 0,
+    "fallbackPct": 0
+  },
+  "inject": {
+    "total": 10,
+    "relevant": 10,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 10,
+    "fallbackPct": 100
+  },
+  "followTurns": {
+    "total": 12,
+    "relevant": 12,
+    "relevantPct": 100,
+    "confidentWrong": 0,
+    "fallback": 0,
+    "fallbackPct": 0
+  },
+  "followPairs": {
+    "ok": 6,
+    "total": 6
+  },
+  "target": {
+    "offtopicConfidentWrong": 0,
+    "injectConfidentWrong": 0
+  },
+  "confidentWrongInDomain": [],
+  "misses": [
+    {
+      "id": "b03",
+      "group": "beginner",
+      "q": "why would a Webex Calling license stay off for a user",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Locations & Sites; Licensing & Subscriptions. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b13",
+      "group": "beginner",
+      "q": "what is 933 used for in Webex Calling emergency tests",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T2-R06-calling-security-compliance.html#tldr",
+      "mode": "answer",
+      "intent": "seed",
+      "text": "Calling security & compliance. Secure SIP is TLS 1.2 or 1.3. Media suite in that article is AES_CM_128_HMAC_SHA1_80. [cite:1] Calling E2EE is off until you enable it, and recording"
+    },
+    {
+      "id": "b17",
+      "group": "beginner",
+      "q": "what is an entry point in Webex Contact Center",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: AI in Webex Contact Center; UCCE and PCCE to Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b26",
+      "group": "beginner",
+      "q": "what is Dedicated Instance compared with Webex Calling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: What Dedicated Instance Is; DI Migration Path. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b28",
+      "group": "beginner",
+      "q": "what connectivity options does Dedicated Instance document",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Connectivity Options; DI Migration Path. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b30",
+      "group": "beginner",
+      "q": "what is involved moving UCCE or PCCE toward WxCC",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: UCCE and PCCE to Webex Contact Center; WxCC Enterprise Overview. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b33",
+      "group": "beginner",
+      "q": "what is CUBE doing as a Webex local gateway",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Local Gateway & PSTN Options; Local Gateway as the calling bridge. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b34",
+      "group": "beginner",
+      "q": "which codecs and NAT issues show up on Webex media",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Codecs, media, and NAT; SIP Fundamentals for Webex. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "b35",
+      "group": "beginner",
+      "q": "how do I read a SIP trace for a Webex call",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "rooms/T7-R07-sip-trace-reading-lab.html#tldr",
+      "mode": "answer",
+      "intent": "",
+      "text": "A dial plan is global for the enterprise. It chooses a trunk or a route group for matching patterns, for every user, regardless of location. [cite:1] If the caller is still a premi"
+    },
+    {
+      "id": "b39",
+      "group": "beginner",
+      "q": "what AI agent names does Webex Contact Center use",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. Closest pages: Three AI names in Webex Contact Center; AI in Webex Contact Center. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t02",
+      "group": "typo",
+      "q": "locl gatewy for webex caling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t03",
+      "group": "typo",
+      "q": "dialplan pstn routng",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t05",
+      "group": "typo",
+      "q": "dedicted instnce peering",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t06",
+      "group": "typo",
+      "q": "finesse gadgt desktop",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t07",
+      "group": "typo",
+      "q": "sip trnk design cube",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t08",
+      "group": "typo",
+      "q": "wxcc queu routng entry pont",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t09",
+      "group": "typo",
+      "q": "scim direcotry sync webx",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t10",
+      "group": "typo",
+      "q": "redsky e911 emergncy caling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t11",
+      "group": "typo",
+      "q": "cucm migraton to webex caling",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t12",
+      "group": "typo",
+      "q": "flow desginer esentials wxcc",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t13",
+      "group": "typo",
+      "q": "virtul agent v2 voic",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t14",
+      "group": "typo",
+      "q": "cuic reproting wxcce",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    },
+    {
+      "id": "t15",
+      "group": "typo",
+      "q": "codec nat srtp webex media",
+      "relevant": false,
+      "confidentWrong": false,
+      "clean": false,
+      "href": "",
+      "mode": "fallback",
+      "intent": "fallback",
+      "text": "I don't have that yet. I only answer from this lab's rooms. You can also use Search."
+    }
+  ]
+}

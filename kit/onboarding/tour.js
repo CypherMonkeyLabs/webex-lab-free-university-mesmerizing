@@ -127,10 +127,11 @@
       }
     }
     var margin = 8;
-    var width = Math.max(160, Math.min(420, window.innerWidth - margin * 2));
+    var botCol = window.innerWidth <= 600 && document.querySelector(".cg-root") ? 72 : 0; /* keep the guide monkey's column free */
+    var width = Math.max(160, Math.min(420, window.innerWidth - margin * 2 - botCol));
     card.style.boxSizing = "border-box";
     var left = margin;
-    if (window.innerWidth - width > margin * 2) left = Math.round((window.innerWidth - width) / 2);
+    if (!botCol && window.innerWidth - width > margin * 2) left = Math.round((window.innerWidth - width) / 2);
     card.style.left = left + "px";
     card.style.right = "auto";
     card.style.width = width + "px";

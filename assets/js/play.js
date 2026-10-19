@@ -1,0 +1,162 @@
+
+(function () {
+  var bank = [{"q": "Certificate trunk destination", "a": "TCP 5062 toward Webex Calling.", "s": "help.webex.com article b2exve, retrieved 2026-10-15"}, {"q": "Registration trunk destination", "a": "TCP 8934 toward Webex Calling.", "s": "b2exve, retrieved 2026-10-15"}, {"q": "Phone SIP source ports", "a": "5060\u20135280. Expanded from 5060\u20135080 on September 07, 2026.", "s": "b2exve revision history"}, {"q": "Local gateway media source", "a": "UDP 8000\u201348199 toward 5004, 9000, 8500\u20138699, and 19560\u201365535.", "s": "b2exve"}, {"q": "Optimized Webex App media", "a": "Audio UDP 8500\u20138599. Video UDP 8600\u20138699, when ICE succeeds.", "s": "b2exve"}, {"q": "Optimized device media", "a": "UDP 19560\u201319661 between devices when ICE succeeds.", "s": "b2exve"}, {"q": "Room Series media", "a": "Audio UDP 52050\u201352099. Video UDP 52200\u201352299.", "s": "b2exve"}, {"q": "VG400 ATA media", "a": "UDP 19560\u201319849.", "s": "b2exve"}, {"q": "RedSky hosts", "a": "api.wxc.e911cloud.com and wxc.e911cloud.com, port 443.", "s": "b2exve and the emergency calling article av6oo3"}, {"q": "933", "a": "US and Canada test number. It does not alert public safety.", "s": "Canon room T2-R06, citing the emergency articles"}, {"q": "SIP ALG", "a": "Turn it off for Webex Calling.", "s": "b2exve"}, {"q": "Calling media transport", "a": "UDP with SRTP. TCP and TLS media are not supported in production.", "s": "b2exve"}, {"q": "DNS and NTP", "a": "DNS UDP and TCP 53. Device NTP UDP 123 to the Calling subnets. App NTP UDP 123.", "s": "b2exve"}, {"q": "App configuration ports", "a": "TCP 443 and 8443. 8443 is for the Webex App on a Unified CM setup that also uses Calling.", "s": "b2exve"}, {"q": "Device firmware ports", "a": "TCP 443, 6970, and 80. Port 80 is called out for older MPP MIC renewal on sudirenewal.cisco.com.", "s": "b2exve"}, {"q": "CScan", "a": "TCP 8934 and 443, plus UDP 19569\u201319760.", "s": "b2exve"}, {"q": "QoS audio", "a": "Webex App audio DSCP EF 46 on 8500\u20138599.", "s": "b2exve"}, {"q": "QoS video", "a": "Webex App video DSCP AF41 34 on 8600\u20138699.", "s": "b2exve"}, {"q": "Three PSTN choices", "a": "Cisco Calling Plan, Cloud Connected PSTN, or premises PSTN on a Local Gateway. Per location.", "s": "help.webex.com article t9xctu, as used in the Canon"}, {"q": "Endpoints and the gateway", "a": "Phones do not register through the Local Gateway.", "s": "Canon T2-R02, citing the local-gateway getting-started article"}, {"q": "Calling E2EE", "a": "Opportunistic and off by default. Recording disables it.", "s": "help.webex.com article 5h5d8ab, as used in T2-R06"}, {"q": "SRTP suite named for Calling", "a": "AES_CM_128_HMAC_SHA1_80 in the SIP security article.", "s": "help.webex.com article jwkbt2"}, {"q": "Webex recording retention", "a": "One year and 100 GB per organization in the Calling recording article.", "s": "help.webex.com article nhvl4hw"}, {"q": "Dubber Go", "a": "30 days, user access in the Dubber portal.", "s": "nhvl4hw"}, {"q": "Edge SRV versus trunk", "a": "The security article's SRV example uses 5061 for endpoint discovery. That is not trunk 5062 or 8934.", "s": "jwkbt2 and b2exve"}, {"q": "Org SSO claim", "a": "Map an attribute to uid, matching one of the user's emails.", "s": "help.webex.com article lfu88u"}, {"q": "Partner SSO claim", "a": "Uses mail, not uid.", "s": "lfu88u, as recorded in the Canon"}, {"q": "New Control Hub user", "a": "Starts with no administrative privileges.", "s": "Control Hub article nuylwki, as recorded in T1-R01"}, {"q": "BYO virtual agent", "a": "Escalate with AGENT_TRANSFER.", "s": "developer.webex.com bring-your-own-virtual-agent"}, {"q": "Salesforce connector", "a": "Lightning only. Chat and email are not supported on that connector.", "s": "help.webex.com article dyidod"}, {"q": "Dynamics connector", "a": "CIF 1 single-session, CIF 2 multi-session. On-premises Dynamics is unsupported.", "s": "help.webex.com article n1lsqvu"}, {"q": "WFO SKU scope", "a": "Article py6u9h is scoped to Webex Contact Center Enterprise, Contact Center Enterprise, and Contact Center Express. Multi-tenant use is unverified.", "s": "help.webex.com article py6u9h"}, {"q": "Troubleshooting history", "a": "The Canon records 21 days for the Calling troubleshooting view.", "s": "Room T1-R06. Re-check the live article before you quote a retention number in a design."}, {"q": "Start Flow", "a": "Cannot be removed. Validation starts off.", "s": "Flow Designer article nhovcy4, as taught in the labs"}, {"q": "MTU", "a": "Keep the default 1500 bytes.", "s": "b2exve"}, {"q": "IP filtering alone", "a": "Not supported for Calling, because some pools change. Do not filter by region.", "s": "b2exve"}];
+  var quiz = bank.slice(0, 8);
+  var score = 0;
+  var qAt = 0;
+  var qEl = document.querySelector("[data-port-q]");
+  var cEl = document.querySelector("[data-port-choices]");
+  var sEl = document.querySelector("[data-port-score]");
+  function award(id) {
+    if (window.CANON_UNIVERSITY) window.CANON_UNIVERSITY.award(id);
+  }
+  function ask() {
+    var item = quiz[qAt];
+    qEl.textContent = item.q;
+    var options = [item.a, "UDP 5060 only", "TCP 80 to the PSAP", "A Control Hub theme"].sort(function () { return Math.random() - 0.5; });
+    cEl.innerHTML = "";
+    options.forEach(function (label) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.addEventListener("click", function () {
+        var ok = label === item.a;
+        b.classList.add(ok ? "is-right" : "is-wrong");
+        if (ok) {
+          Array.prototype.forEach.call(cEl.querySelectorAll("button"), function (btn) { btn.disabled = true; });
+          score += 1;
+          sEl.textContent = score + " / " + quiz.length;
+          qAt += 1;
+          if (qAt >= quiz.length) {
+            qEl.textContent = "Set complete. Source: " + item.s;
+            cEl.innerHTML = "";
+            if (score === quiz.length) award("ports-perfect");
+            award("ports-played");
+            paintBadges();
+          } else setTimeout(ask, 400);
+        }
+      });
+      cEl.appendChild(b);
+    });
+  }
+  ask();
+  var day = Math.floor(Date.now() / 86400000);
+  var daily = bank[day % bank.length];
+  document.querySelector("[data-daily-q]").textContent = daily.q;
+  var wrongs = ["Not in the article", "A browser bookmark", "Port 0"];
+  var choices = [daily.a].concat(wrongs);
+  var seed = day;
+  function rand() { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }
+  for (var i = choices.length - 1; i > 0; i--) {
+    var j = Math.floor(rand() * (i + 1));
+    var tmp = choices[i];
+    choices[i] = choices[j];
+    choices[j] = tmp;
+  }
+  var dEl = document.querySelector("[data-daily-choices]");
+  choices.forEach(function (label) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = label;
+    b.addEventListener("click", function () {
+      var ok = label === daily.a;
+      document.querySelector("[data-daily-result]").textContent = ok ? "Correct. " + daily.s : "Answer: " + daily.a + " (" + daily.s + ")";
+      if (ok) award("daily");
+      paintBadges();
+    });
+    dEl.appendChild(b);
+  });
+  var nodes = [
+    ["Phone", "Registers to Webex Calling. It does not register through the Local Gateway."],
+    ["Control Hub", "Where the location, number, and trunk exist."],
+    ["Local Gateway", "Premises PSTN edge. Certificate TCP 5062 or registration TCP 8934."],
+    ["PSTN", "Cisco Calling Plan, Cloud Connected PSTN, or your carrier."],
+    ["RedSky", "TCP 443 to the two emergency hosts. 933 is the test."]
+  ];
+  var map = document.getElementById("flow-map");
+  var note = document.querySelector("[data-map-note]");
+  var svg = '<svg viewBox="0 0 980 220" role="img" aria-label="Clickable calling map">';
+  svg += '<rect width="980" height="220" rx="16" fill="#0b1020"/>';
+  nodes.forEach(function (node, i) {
+    var x = 30 + i * 190;
+    svg += '<a href="#flow-map" data-i="' + i + '"><rect x="' + x + '" y="70" width="170" height="64" rx="14" fill="#22d3ee"/><text x="' + (x + 85) + '" y="108" text-anchor="middle" fill="#082f49" font-size="16" font-family="system-ui,sans-serif">' + node[0] + '</text></a>';
+  });
+  svg += "</svg>";
+  map.innerHTML = svg;
+  map.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function (event) {
+      event.preventDefault();
+      note.textContent = nodes[Number(a.getAttribute("data-i"))][1];
+      award("map");
+      paintBadges();
+    });
+  });
+  var flow = ["Start Flow"];
+  var lane = document.querySelector("[data-flow-lane]");
+  function paintFlow() {
+    lane.innerHTML = flow.map(function (name) { return '<span class="flow-node">' + name + '</span>'; }).join("");
+  }
+  paintFlow();
+  document.querySelectorAll("[data-add]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      flow.push(btn.getAttribute("data-add"));
+      paintFlow();
+    });
+  });
+  document.querySelector("[data-flow-reset]").addEventListener("click", function () {
+    flow = ["Start Flow"];
+    paintFlow();
+    document.querySelector("[data-flow-result]").textContent = "";
+  });
+  document.querySelector("[data-flow-check]").addEventListener("click", function () {
+    var end = flow[flow.length - 1];
+    var menuAt = flow.indexOf("Menu");
+    var ok = flow[0] === "Start Flow" && (end === "Queue Contact" || end === "Disconnect") && (menuAt === -1 || menuAt < flow.length - 1);
+    document.querySelector("[data-flow-result]").textContent = ok ? "The sandbox accepts this trace. It is still not a published Flow Designer flow." : "Keep Start Flow first, put something after a Menu, and end on Queue Contact or Disconnect.";
+    if (ok) { award("flow"); paintBadges(); }
+  });
+  var catalog = [
+    ["first-room", "Opened a room"],
+    ["ten-rooms", "Ten rooms"],
+    ["all-rooms", "All 78 rooms"],
+    ["ports-played", "Played the port set"],
+    ["ports-perfect", "Port set, no miss"],
+    ["daily", "Daily challenge"],
+    ["map", "Used the flow map"],
+    ["flow", "Built a valid sandbox flow"],
+    ["offline", "Saved pages offline"],
+    ["konami", "Banana trunk"]
+  ];
+  function paintBadges() {
+    var bag = {};
+    try { bag = JSON.parse(localStorage.getItem("canon-badges") || "{}"); } catch (e) {}
+    document.querySelector("[data-badges]").innerHTML = catalog.map(function (item) {
+      var on = bag[item[0]] ? " is-on" : "";
+      return '<article class="badge' + on + '"><strong>' + item[1] + '</strong><small>' + (bag[item[0]] ? "Earned" : "Locked") + '</small></article>';
+    }).join("");
+  }
+  paintBadges();
+  document.addEventListener("canon-badge", paintBadges);
+  document.querySelector("[data-share]").addEventListener("click", function () {
+    var canvas = document.getElementById("share-card");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#07111f";
+    ctx.fillRect(0, 0, 1200, 630);
+    ctx.fillStyle = "#22d3ee";
+    ctx.fillRect(0, 0, 16, 630);
+    ctx.fillStyle = "#e8f4ff";
+    ctx.font = "700 64px system-ui,sans-serif";
+    ctx.fillText("Webex Lab", 64, 180);
+    ctx.font = "36px system-ui,sans-serif";
+    ctx.fillStyle = "#94a3b8";
+    ctx.fillText("Port score " + score + " / " + quiz.length, 64, 280);
+    ctx.fillText("cyphermonkeylabs.com", 64, 420);
+    ctx.fillText("Independent study lab. Not a Cisco product.", 64, 480);
+    var link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = "webex-lab-result.png";
+    link.click();
+    award("share");
+    paintBadges();
+  });
+})();

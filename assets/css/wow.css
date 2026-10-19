@@ -396,7 +396,7 @@ html.v4-motion .mascot-row .mascot { animation: mascot-bob 2.6s ease-in-out infi
 }
 
 .atlas-grid { grid-template-columns: 1fr; }
-.atlas-card object {
+.atlas-card object, .atlas-card iframe { border: 0;
   width: min(100%, 960px);
   aspect-ratio: 4 / 3;
   height: auto;
@@ -448,7 +448,7 @@ html.v4-motion .lab-chart rect:not(:first-of-type) {
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
   padding: 16px;
 }
-.atlas-dialog object { width: 100%; min-height: min(68vh, 640px); background: #0b1020; }
+.atlas-dialog object, .atlas-dialog iframe { width: 100%; min-height: min(68vh, 640px); background: #0b1020; border: 0; }
 .atlas-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0; font-size: 0.85rem; }
 .atlas-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 99px; margin-right: 6px; }
 .atlas-why { margin: 0 0 8px; }
@@ -613,7 +613,7 @@ body.canon-world .region-grid article {
 }
 body.canon-world h1 { text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 45%, transparent); }
 .atlas-dialog { width: min(1200px, 100%); }
-.atlas-dialog object { width: 100%; aspect-ratio: 4 / 3; height: auto; min-height: 0; background: transparent; }
+.atlas-dialog object, .atlas-dialog iframe { width: 100%; aspect-ratio: 4 / 3; height: auto; min-height: 0; background: transparent; border: 0; }
 @media (prefers-reduced-motion: reduce) {
   .world-hero::before, .mascot-row svg, .mascot-row .eye, .mascot-row .wave, .lab-chart rect { animation: none !important; }
 }

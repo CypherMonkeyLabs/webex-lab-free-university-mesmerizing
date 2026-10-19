@@ -14,6 +14,9 @@ SRC = io.open(ROOT + "/tracks/T1/index.html", encoding="utf-8").read()
 head_src = SRC[SRC.index("<head>") + 6:SRC.index("</head>")]
 head_src = re.sub(r"<meta property=\"og:(title|description)\"[^>]*>\n?", "", head_src)
 head_src = re.sub(r"<title>.*?</title>\n?", "", head_src, flags=re.S)
+head_src = re.sub(r'<meta charset[^>]*>\n?', "", head_src, flags=re.I)
+head_src = re.sub(r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?', "", head_src)
+head_src = re.sub(r'<script src="[^"]*theme-boot(?:-lite)?\.js"></script>\n?', "", head_src)
 header = SRC[SRC.index('<header class="topbar"'):SRC.index("</header>") + len("</header>")]
 footer = SRC[SRC.index('<footer class="site-footer'):SRC.index("</footer>") + len("</footer>")]
 scripts = "".join(re.findall(r'<script defer src="\.\./\.\./assets/js/[^"]+"></script>\n', SRC))
@@ -40,6 +43,8 @@ def convert(html):
     own_scripts = "".join(re.findall(r"<script(?![^>]*src)[^>]*>.*?</script>", html, re.S))
     return (
         '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' data: blob:; media-src \'self\' blob: data:; font-src \'self\' data:; connect-src \'self\'; worker-src \'self\' blob:; object-src \'none\'; base-uri \'self\'; form-action \'self\'">\n'
+        '<script src="../../assets/js/theme-boot.js"></script>\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         '<meta property="og:title" content="%s">\n<meta property="og:image" content="../../assets/og-card.svg">\n'
         "<title>%s</title>%s\n%s\n</head>\n"

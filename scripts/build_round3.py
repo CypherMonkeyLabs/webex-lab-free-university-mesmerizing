@@ -136,7 +136,7 @@ def write_sheet(slug, title, rows):
             + html.escape(front[:72]) + "</text>"
         )
     page = f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <style>
 body {{ font-family: system-ui, sans-serif; margin: 24px; color: #142033; }}
@@ -174,8 +174,9 @@ def page(title, body, effects=False):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<script>try{{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;}}catch(e){{document.documentElement.dataset.theme="aurora";}}</script>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<script src="assets/js/theme-boot.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · Webex Lab</title>
 <link rel="stylesheet" href="assets/css/canon.css">
@@ -313,7 +314,7 @@ def atlas_cards(kind):
         cards.append(
             f'<article class="atlas-card" data-animated="{1 if animated else 0}" data-flow="{1 if is_flow else 0}">'
             f"<h2>{html.escape(slug.replace('-', ' '))}</h2><p>{label}</p>"
-            f'<object type="image/svg+xml" data="assets/diagrams/university/{slug}.svg" aria-label="{html.escape(slug)}"></object>'
+            f'<iframe src="assets/diagrams/university/{slug}.svg" title="{html.escape(slug)}" width="640" height="480"></iframe>'
             f'<p><a href="assets/diagrams/university/{slug}.svg">SVG file</a></p></article>'
         )
     return "\n".join(cards)
@@ -334,7 +335,7 @@ def main():
             + html.escape(card["back"]) + "</p><p class=\"src\">" + html.escape(card["source"]) + "</p></article>"
         )
     (ROOT / "downloads" / "flashcards-print.html").write_text(
-        """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Webex flashcards</title>
+        """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"><title>Webex flashcards</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 16px; color: #142033; }
 .card { break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 10px; padding: 8px 10px; margin: 0 0 8px; }
@@ -455,14 +456,7 @@ p { margin: 0 0 4px; }
 </div>
 <script src="vendor/d3.min.js"></script>
 <script src="vendor/markmap-view.js"></script>
-<script>
-(function () {
-  var node = document.getElementById("mindmap-data");
-  var svg = document.getElementById("mindmap");
-  if (!node || !svg || !window.markmap || !window.d3) return;
-  window.markmap.Markmap.create(svg, null, JSON.parse(node.textContent));
-})();
-</script>""",
+<script src="assets/js/careers-mindmap.js"></script>""",
         effects=True,
     ), encoding="utf-8")
 

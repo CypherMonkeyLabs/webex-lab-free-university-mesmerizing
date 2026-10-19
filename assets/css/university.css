@@ -210,7 +210,7 @@ html.v4-motion .monkey.is-live { animation: monkey-bob 3.6s ease-in-out infinite
 }
 html.v4-motion .atlas-card { transition: transform 0.25s ease; }
 html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
-.atlas-card object, .diagram object { width: 100%; height: auto; min-height: 180px; background: #0b1020; border-radius: 12px; }
+.atlas-card object, .atlas-card iframe, .diagram object, .diagram iframe { width: 100%; height: auto; min-height: 180px; background: #0b1020; border-radius: 12px; border: 0; }
 .mark-unverified, mark.unverified {
   background: #fde68a;
   color: #422006;
@@ -342,7 +342,7 @@ html.v4-motion .atlas-card:hover { transform: translateY(-4px) rotateX(2deg); }
   padding: 10px;
   background: color-mix(in srgb, var(--paper, var(--bg-2)) 86%, transparent);
 }
-.atlas-card object, .atlas-card img, .chart-card svg, .chart-card canvas { width: 100%; height: auto; }
+.atlas-card object, .atlas-card iframe, .atlas-card img, .chart-card svg, .chart-card canvas { width: 100%; height: auto; }
 .lab-chart { width: 100%; height: auto; aspect-ratio: 640 / 220; }
 [data-d3] { display: block; width: 100%; min-height: 220px; }
 .site-social {

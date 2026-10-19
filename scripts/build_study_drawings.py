@@ -92,12 +92,12 @@ def drawing(stem, title, hops, caption, palette):
 
 def page(stem, title, svg_rel):
     return f'''<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>{title}</title>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"><title>{title}</title>
 <style>body{{font:18px/1.5 system-ui,sans-serif;margin:24px;background:#f8f5ff;color:#1b1340}}svg,object{{width:min(100%,960px);height:auto}}footer{{margin-top:24px;padding:16px;border:2px solid #0f766e;border-radius:16px;background:#ecfdf5}}</style>
 </head><body>
 <h1>{title}</h1>
 <p>Study drawing. Not a vendor limit.</p>
-<object type="image/svg+xml" data="{svg_rel}" aria-label="{title}"></object>
+<iframe src="{svg_rel}" title="{title}"></iframe>
 <footer data-canon-footer>
 <p>This is an <strong>independent, free, learning-only student project</strong>. It respects every company and vendor, and every trademark belongs to its owner. It is <strong>not affiliated with or endorsed by</strong> any of them.</p>
 <p>If anyone has a concern, the content will be removed or corrected promptly: please write via <a href="https://cyphermonkeylabs.com/#contact">https://cyphermonkeylabs.com/#contact</a>.</p>
@@ -149,7 +149,7 @@ def rebuild_atlas():
             bits.append(
                 f'<article class="atlas-card" data-animated="1" data-flow="{1 if is_flow else 0}">'
                 f"<h2>{stem.replace('-', ' ')}</h2><p>{kind}</p>"
-                f'<object type="image/svg+xml" data="assets/diagrams/university/{stem}.svg" width="640" height="480" aria-label="{stem}"></object>'
+                f'<iframe src="assets/diagrams/university/{stem}.svg" width="640" height="480" title="{stem}"></iframe>'
                 f'<p><a href="assets/diagrams/university/{stem}.svg">SVG file</a> · '
                 f'<a href="downloads/diagrams/{stem}.html">Standalone HTML</a></p></article>'
             )

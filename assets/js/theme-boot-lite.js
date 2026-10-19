@@ -1,0 +1,1 @@
+try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(["bloom","aurora","futuristic","gaming","neon","sunset","paper","holographic","cyberpunk","contrast"].indexOf(t)<0)t="bloom";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="bloom";}

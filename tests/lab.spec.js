@@ -58,6 +58,38 @@ test("offline reload still opens a room and answers", async ({ page, context }) 
   await page.screenshot({ path: path.join(shot, "offline-lesson-1440.png") });
 });
 
+async function expectClickable(page, locator) {
+  const box = await locator.boundingBox();
+  expect(box).toBeTruthy();
+  const view = page.viewportSize();
+  expect(box.y).toBeGreaterThanOrEqual(0);
+  expect(box.x).toBeGreaterThanOrEqual(0);
+  expect(box.y + box.height).toBeLessThanOrEqual(view.height + 0.5);
+  expect(box.x + box.width).toBeLessThanOrEqual(view.width + 0.5);
+  const hit = await page.evaluate(({ x, y }) => {
+    const el = document.elementFromPoint(x, y);
+    return el ? el.tagName + (el.getAttribute("type") ? ":" + el.getAttribute("type") : "") : "";
+  }, { x: box.x + box.width / 2, y: box.y + box.height / 2 });
+  const tag = await locator.evaluate((el) => el.tagName + (el.getAttribute("type") ? ":" + el.getAttribute("type") : ""));
+  expect(hit).toBe(tag);
+}
+
+test("chat input and Send stay clickable on a short phone", async ({ page }) => {
+  for (const height of [430, 844]) {
+    await page.setViewportSize({ width: 390, height });
+    await openGuide(page);
+    const input = page.locator("#cg-panel input");
+    const send = page.locator("#cg-panel button[type=submit]");
+    await expectClickable(page, input);
+    await expectClickable(page, send);
+    await input.fill("What can you help with?");
+    await send.click();
+    await expect(page.locator("#cg-panel .cg-bubble.is-bot").last()).toContainText("Control Hub");
+    await expectClickable(page, input);
+    await expectClickable(page, send);
+  }
+});
+
 test("SIP ladder builds a simulated message and labels it", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/sip-sim.html");

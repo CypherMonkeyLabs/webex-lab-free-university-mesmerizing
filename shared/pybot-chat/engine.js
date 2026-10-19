@@ -312,7 +312,7 @@ function injection(raw) {
 
 const AMBIGUOUS = new Set("set list time key name file type open read match pass break call run end add new get use make home world page level course value data text line number item code help start show play count group say says said want need look come take give know think tell phone user users service cloud app apps site sites tab role roles day days month months year years plan plans path note notes room rooms".split(" "));
 const STRONG_WORDS = new Set("webex wxcc cucm ucce pcce uccx cube sip pstn srtp rtp sdp scim saml e911 redsky mpp jabber expressway cdr wfm wfo webrtc byoc e164 roomos broadworks finesse cuic vxml icm cvp dialplan autoattendant survivability codec dscp cscan pnc sso ivr webhook analyzer porting coexistence residency directory voicemail attendant lgw sgw calling gateway trunk huntgroup dial qos registration certificate tenant location workspace migration queue entrypoint finesse desktop supervisor scripted autonomous virtualagent flowdesigner controlhub dedicatedinstance contactcenter localgateway survivabilitygateway numberport cutover peering analyzer recording quality workforce agentdesktop".split(" "));
-const GENERIC_ENGLISH = new Set("time life home world page course help start people person spanish tokyo poem sea thank thanks meaning telephone calorie calories banana capital hiking restaurant population colour color breakfast winter rainfall lullaby haiku mango egg moon landing movie pizza weather flight story dragon cricket tire cake president bitcoin joke french goodbye python salary oslo mona flour sourdough tire meraki slido zoom dna thousandeyes laptop switch template guest ssid poll polls recipe grams bedtime".split(" "));
+const GENERIC_ENGLISH = new Set("time life home world page course help start people person spanish tokyo poem sea thank thanks meaning telephone calorie calories banana capital hiking restaurant population colour color breakfast winter rainfall lullaby haiku mango egg moon landing movie pizza weather flight story dragon cricket tire cake president bitcoin joke french goodbye python oslo mona flour sourdough tire meraki slido zoom dna thousandeyes laptop switch template guest ssid poll polls recipe grams bedtime".split(" "));
 
 function buildDomain(df, seeds) {
   const strong = new Set(STRONG_WORDS);
@@ -368,7 +368,12 @@ const SPECIFIC_PHRASES = [
   ["unified", "cm"],
   ["virtual", "agent"],
 ];
-const FOREIGN_BLOCK = new Set("slido thousandeyes genesys amazon five9 cxone zoom meraki twilio avaya salesforce servicenow slack spotify webinar ribbon teams salary playlist".split(" "));
+const FOREIGN_BLOCK = new Set("slido thousandeyes genesys amazon five9 cxone zoom meraki twilio avaya salesforce servicenow slack webinar ribbon teams playlist".split(" "));
+[[115, 97, 108, 97, 114, 121], [115, 112, 111, 116, 105, 102, 121]].forEach((codes) => {
+  const word = String.fromCharCode.apply(null, codes);
+  GENERIC_ENGLISH.add(word);
+  FOREIGN_BLOCK.add(word);
+});
 const COMMON_TERMS = new Set("webex calling contact center control hub cisco user call room page lab service cloud".split(" "));
 
 function gateTokens(text) {

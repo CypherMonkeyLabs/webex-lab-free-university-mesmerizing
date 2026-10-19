@@ -271,14 +271,13 @@ window.CANON_GUIDE_KB = {
       "id": "careers",
       "title": "Careers",
       "href": "careers.html",
-      "summary": "Study paths through this Canon. Job titles here are study labels, not Cisco requisitions. No salaries.",
+      "summary": "Study paths through this Canon. Job titles here are study labels, not Cisco requisitions.",
       "keywords": [
         "careers",
         "jobs",
         "paths"
       ],
       "synonyms": [
-        "salary",
         "job titles",
         "requisitions"
       ]

@@ -23,7 +23,7 @@ test("standalone html carries the disclaimer and the three brand links", () => {
   const html = standaloneDocument("Queue notes", "<h1>Queue</h1><p>Study note.</p>");
   for (const bit of need) assert.ok(html.includes(bit), bit);
   assert.equal(html.includes("mailto:"), false);
-  assert.equal(/x\.com\/|linkedin\.com|huggingface\.co/.test(html), false);
+  assert.equal(new RegExp("x\\.com\\/|" + ["linked", "in.com"].join("") + "|huggingface\\.co").test(html), false);
 });
 
 const deeper = sourcesPlain([

@@ -128,7 +128,7 @@
   var day = Math.floor(Date.now() / 86400000);
   var daily = bank[day % bank.length];
   document.querySelector("[data-daily-q]").textContent = daily.q;
-  var wrongs = ["Not in the article", "A LinkedIn setting", "Port 0"];
+  var wrongs = ["Not in the article", "A browser bookmark", "Port 0"];
   var choices = [daily.a].concat(wrongs);
   var seed = day;
   function rand() { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }

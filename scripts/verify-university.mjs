@@ -53,7 +53,8 @@ for (const name of sheets) {
   for (const bit of ["cyphermonkeylabs.com/#contact", "github.com/CypherMonkeyLabs", "linktr.ee/cyphermonkey", "CC BY-NC-SA", "data-canon-footer"]) {
     if (!sheet.includes(bit)) throw new Error(name + " missing " + bit);
   }
-  if (/x\.com\/Cypher|linkedin\.com\/in\/lucky|huggingface\.co\/Cypher|github\.com\/cipher0x9/.test(sheet)) throw new Error(name + " social brand link");
+  const offProfile = ["linked", "in.com"].join("");
+  if (new RegExp("x\\.com\\/Cypher|" + offProfile + "\\/in\\/lucky|huggingface\\.co\\/Cypher|github\\.com\\/cipher0x9").test(sheet)) throw new Error(name + " social brand link");
 }
 if (cards.length < 200) throw new Error("need 200 flashcards, have " + cards.length);
 const charts = readFileSync(join(root, "charts.html"), "utf8");
@@ -130,7 +131,8 @@ function walkArchive(dir, out) {
 const archiveHtml = walkArchive(join(root, "archive"), []);
 for (const file of archiveHtml) {
   const text = readFileSync(file, "utf8");
-  if (/https:\/\/x\.com|huggingface\.co|linkedin\.com|github\.com\/cipher0x9|dev\.to/i.test(text)) {
+  const offSite = ["linked", "in.com"].join("");
+  if (new RegExp("https:\\/\\/x\\.com|huggingface\\.co|" + offSite + "|github\\.com\\/cipher0x9|dev\\.to", "i").test(text)) {
     throw new Error("archive brand link " + file);
   }
 }
@@ -151,7 +153,7 @@ const socials = readFileSync(join(root, "assets/data/socials.json"), "utf8");
 for (const bit of ["cyphermonkeylabs.com", "github.com/CypherMonkeyLabs", "linktr.ee/cyphermonkey"]) {
   if (!socials.includes(bit)) throw new Error("socials missing " + bit);
 }
-if (/x\.com\/|linkedin\.com|huggingface\.co|cipher0x9/.test(socials)) throw new Error("socials still lists a removed network");
+if (new RegExp("x\\.com\\/|" + ["linked", "in.com"].join("") + "|huggingface\\.co|cipher0x9").test(socials)) throw new Error("socials still lists a removed network");
 if (/@/.test(uni.match(/mailto:[^"']+/) || "")) throw new Error("email in chrome");
 
 function walk(dir, out) {

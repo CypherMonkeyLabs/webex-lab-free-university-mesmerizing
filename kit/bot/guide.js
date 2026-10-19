@@ -1175,14 +1175,27 @@ function place() {
   var sheet = window.innerWidth <= 720 && !panel.hidden;
   host.classList.toggle("is-sheet", sheet);
   host.classList.toggle("is-open", !panel.hidden);
+  if (!sheet && mountEl) mountEl.style.zIndex = "";
   if (sheet) {
-    var dockH = phoneDockHeight();
-    host.style.setProperty("--cg-panel-right", "8px");
-    if (dockH < 64) dockH = 76;
+    var dockBar = document.querySelector(".phone-dock");
+    var dockTop = window.innerHeight;
+    if (dockBar && getComputedStyle(dockBar).display !== "none") {
+      dockTop = dockBar.getBoundingClientRect().top;
+    } else {
+      var dockH = phoneDockHeight();
+      if (dockH < 64) dockH = 76;
+      dockTop = window.innerHeight - dockH - 8;
+    }
     var sheetGap = 12;
-    host.style.setProperty("--cg-panel-bottom", (dockH + sheetGap) + "px");
+    var topGap = 8;
+    var bottom = Math.max(84, Math.round(window.innerHeight - dockTop) + sheetGap);
+    var available = Math.max(160, Math.round(dockTop - sheetGap - topGap));
+    host.style.setProperty("--cg-panel-right", "8px");
+    host.style.setProperty("--cg-panel-bottom", bottom + "px");
     host.style.setProperty("--cg-panel-width", "calc(100vw - 16px)");
-    host.style.setProperty("--cg-panel-max", "min(62vh, calc(100dvh - " + (dockH + sheetGap) + "px))");
+    host.style.setProperty("--cg-panel-max", available + "px");
+    host.style.setProperty("--cg-sheet-h", available + "px");
+    if (mountEl) mountEl.style.zIndex = "80";
     panel.classList.add("is-above");
     panel.classList.remove("is-beside");
   } else if (chosen.slot) {

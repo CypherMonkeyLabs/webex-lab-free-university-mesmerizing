@@ -205,8 +205,9 @@
   left: 8px;
   right: 8px;
   width: auto;
-  height: var(--cg-sheet-h, auto);
-  max-height: min(62vh, var(--cg-panel-max, 62vh));
+  height: auto;
+  max-height: min(var(--cg-sheet-h, 62vh), var(--cg-panel-max, 62vh), calc(100dvh - var(--cg-panel-bottom, 96px) - 8px));
+  overflow: hidden;
   border-radius: 22px;
   padding-bottom: 10px;
 }
@@ -299,7 +300,19 @@
   padding: 4px 2px;
 }
 
-.cg-root.is-sheet .cg-log { max-height: 96px; }
+.cg-root.is-sheet .cg-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+}
+
+.cg-root.is-sheet .cg-chips {
+  max-height: 44px;
+}
+
+.cg-root.is-sheet .cg-form {
+  flex: 0 0 auto;
+}
 
 .cg-bubble {
   max-width: min(92%, 36rem);

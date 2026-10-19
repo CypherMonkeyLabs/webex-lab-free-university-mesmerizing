@@ -58,6 +58,18 @@ async function clickMonkey(page) {
   const monkey = page.locator("button.cg-monkey");
   await monkey.waitFor({ state: "visible", timeout: 15000 });
   const box = await monkey.boundingBox();
+  const spots = [[0.5, 0.5], [0.5, 0.2], [0.2, 0.5], [0.8, 0.5], [0.5, 0.8]];
+  for (const [px, py] of spots) {
+    const x = box.x + box.width * px;
+    const y = box.y + box.height * py;
+    const hit = await page.evaluate(({ x, y }) => {
+      const el = document.elementFromPoint(x, y);
+      return !!(el && el.closest("button.cg-monkey"));
+    }, { x, y });
+    if (!hit) continue;
+    await page.mouse.click(x, y);
+    return;
+  }
   await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
 }
 
@@ -69,6 +81,8 @@ async function runPass(page, height, tour) {
       const root = document.querySelector(".cg-root");
       return root && root.classList.contains("is-greeting");
     }, null, { timeout: 8000 });
+  } else {
+    await page.waitForFunction(() => !!document.querySelector(".ob-layer"), null, { timeout: 8000 });
   }
   await clickMonkey(page);
   const samples = {};
@@ -163,9 +177,11 @@ try {
   for (const tour of ["skipped", "shown"]) {
     for (const height of [430, 844]) {
       const page = await upgrade.newPage();
-      if (tour === "skipped") {
-        await page.addInitScript(() => localStorage.setItem("canon-tour-done", "skip"));
-      }
+      await page.addInitScript((mode) => {
+        localStorage.removeItem("cg-greet-done");
+        if (mode === "skipped") localStorage.setItem("canon-tour-done", "skip");
+        else localStorage.removeItem("canon-tour-done");
+      }, tour);
       const key = "upgrade-" + tour + "-" + height;
       try {
         report[key] = await runPass(page, height, tour);
@@ -173,7 +189,7 @@ try {
         const guide = report[key].samples[100] && report[key].samples[100].guide;
         if (!String(guide).includes(guideJs)) errors.push(key + " loaded " + guide);
       } catch (error) {
-        errors.push(String(error && error.message || error));
+        errors.push(key + " " + String(error && error.message || error));
       }
       await page.close();
     }
@@ -184,9 +200,11 @@ try {
   for (const tour of ["skipped", "shown"]) {
     for (const height of [430, 844]) {
       const page = await fresh.newPage();
-      if (tour === "skipped") {
-        await page.addInitScript(() => localStorage.setItem("canon-tour-done", "skip"));
-      }
+      await page.addInitScript((mode) => {
+        localStorage.removeItem("cg-greet-done");
+        if (mode === "skipped") localStorage.setItem("canon-tour-done", "skip");
+        else localStorage.removeItem("canon-tour-done");
+      }, tour);
       const key = "fresh-" + tour + "-" + height;
       try {
         report[key] = await runPass(page, height, tour);
@@ -194,7 +212,7 @@ try {
         const guide = report[key].samples[100] && report[key].samples[100].guide;
         if (!String(guide).includes(guideJs)) errors.push(key + " loaded " + guide);
       } catch (error) {
-        errors.push(String(error && error.message || error));
+        errors.push(key + " " + String(error && error.message || error));
       }
       await page.close();
     }

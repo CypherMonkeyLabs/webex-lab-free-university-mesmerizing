@@ -1,0 +1,138 @@
+{
+  "components": [
+    {
+      "name": "three.js",
+      "version": "r170",
+      "licence": "MIT",
+      "url": "https://github.com/mrdoob/three.js",
+      "licence_file": "archive/webex-lab-v1/campus/vendor/three/LICENSE",
+      "files": [
+        {
+          "path": "vendor/three.module.min.js",
+          "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7"
+        }
+      ]
+    },
+    {
+      "name": "anime.js",
+      "version": "4.5.0",
+      "licence": "MIT",
+      "url": "https://github.com/juliangarnier/anime",
+      "licence_file": "licenses/MIT.txt",
+      "files": [
+        {
+          "path": "vendor/anime.esm.min.js",
+          "sha256": "a19015a1a92d52025a2fb6703b6d67eadd1cc2aeaf880770e96e04cf6aa07be1"
+        }
+      ]
+    },
+    {
+      "name": "rough.js",
+      "version": "4.6.6",
+      "licence": "MIT",
+      "url": "https://github.com/rough-stuff/rough",
+      "licence_file": "licenses/MIT.txt",
+      "files": [
+        {
+          "path": "vendor/rough.esm.js",
+          "sha256": "e921535f216ebc93d422489d614da955b5286812220b3149fc70978f4cb5bd45"
+        }
+      ]
+    },
+    {
+      "name": "markmap-view",
+      "version": "0.18.12",
+      "licence": "MIT",
+      "url": "https://github.com/markmap/markmap",
+      "licence_file": "licenses/MIT.txt",
+      "files": [
+        {
+          "path": "vendor/markmap-view.js",
+          "sha256": "861eb6d20af18aaa300878d46d695722a73625c58b40f49236af027f18b74e07"
+        }
+      ]
+    },
+    {
+      "name": "mermaid",
+      "version": "12.2.0",
+      "licence": "MIT",
+      "url": "https://github.com/mermaid-js/mermaid",
+      "licence_file": "assets/vendor/mermaid-MIT.txt",
+      "files": [
+        {
+          "path": "assets/vendor/mermaid.min.js",
+          "sha256": "a8a6a6f805b074a8261a2825c86f99c8054acb3b35f50bb7e24a4f9f2c3c3b9f"
+        },
+        {
+          "path": "assets/vendor/mermaid-MIT.txt",
+          "sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80"
+        }
+      ]
+    },
+    {
+      "name": "D3",
+      "version": "7.9.0",
+      "licence": "ISC",
+      "url": "https://github.com/d3/d3",
+      "licence_file": "licenses/ISC.txt",
+      "files": [
+        {
+          "path": "vendor/d3.min.js",
+          "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+        }
+      ]
+    },
+    {
+      "name": "canvas-confetti",
+      "version": "1.9.3",
+      "licence": "ISC",
+      "url": "https://github.com/catdad/canvas-confetti",
+      "licence_file": "licenses/ISC.txt",
+      "files": [
+        {
+          "path": "vendor/confetti.browser.js",
+          "sha256": "e103ab02784339d56c93ca3debe2c5a299372cafc5215148d55283de046e86d1"
+        }
+      ]
+    },
+    {
+      "name": "Outfit Latin",
+      "version": "unconfirmed",
+      "licence": "unconfirmed",
+      "url": "unconfirmed",
+      "licence_file": "(unconfirmed \u2014 no licence file shipped beside the woff2)",
+      "files": [
+        {
+          "path": "assets/fonts/outfit-latin.woff2",
+          "sha256": "6c18d579fd87c3776be068b762cbc83fde3acb543d49eabd3ade842eb987e887"
+        }
+      ]
+    },
+    {
+      "name": "Space Grotesk Latin",
+      "version": "unconfirmed",
+      "licence": "unconfirmed",
+      "url": "unconfirmed",
+      "licence_file": "(unconfirmed \u2014 no licence file shipped beside the woff2)",
+      "files": [
+        {
+          "path": "assets/fonts/space-grotesk-latin.woff2",
+          "sha256": "22f9fe0df47741897991d459bcd18c03edefacafd00ad20f2d25e1d75d3be77e"
+        }
+      ]
+    },
+    {
+      "name": "Vendor folder notes",
+      "version": "lab",
+      "licence": "CC BY-NC-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "licence_file": "LICENSE",
+      "files": [
+        {
+          "path": "vendor/README.md",
+          "sha256": "cbdb845b089e1f40d3e21fe8da1db8b814db356a91cb97a8be27daaf5b20c50c"
+        }
+      ]
+    }
+  ]
+}

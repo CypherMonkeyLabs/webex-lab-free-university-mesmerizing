@@ -1,10 +1,21 @@
 /* Offline shell for the Webex university. Same-origin GET only. */
-var CACHE = "webex-university-v24";
+var CACHE = "webex-university-v26";
 var SHELL = [
   "./",
   "./index.html",
+  "./offline.html",
   "./start.html",
+  "./help.html",
+  "./play.html",
+  "./labs.html",
+  "./sip-sim.html",
+  "./ports.html",
   "./downloads.html",
+  "./glossary.html",
+  "./manifest.webmanifest",
+  "./favicon.svg",
+  "./favicon.ico",
+  "./rooms/T1-R01-control-hub-foundations.html",
   "./assets/css/canon.css",
   "./assets/css/shell.css",
   "./assets/css/frame.css",
@@ -16,11 +27,24 @@ var SHELL = [
   "./assets/js/shell.js",
   "./assets/js/canon.js",
   "./assets/js/university.js",
+  "./assets/js/search-index.js",
+  "./assets/js/redesign.js",
+  "./assets/js/study-index.js",
+  "./assets/js/hero-boot.js",
   "./assets/js/phone-nav.js",
   "./assets/js/onboard.js",
-  "./manifest.webmanifest",
-  "./favicon.svg",
-  "./favicon.ico"
+  "./guide/guide.js",
+  "./guide/guide.css",
+  "./guide/engine.mjs",
+  "./guide/wxbot.js",
+  "./guide/dragbot.js",
+  "./shared/pybot-chat/engine.js",
+  "./shared/pybot-chat/ui.js",
+  "./shared/pybot-chat/chat.css",
+  "./assets/data/wxbot-index.json",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
+  "./assets/icons/icon-maskable-512.png",
 ];
 
 self.addEventListener("install", function (event) {
@@ -49,7 +73,11 @@ self.addEventListener("fetch", function (event) {
         caches.open(CACHE).then(function (cache) { cache.put(request, copy); });
       }
       return response;
-    }).catch(function () { return hit; });
+    }).catch(function () {
+      if (hit) return hit;
+      if (request.mode === "navigate") return caches.match("./offline.html");
+      return Promise.reject(new Error("offline"));
+    });
     return hit || network;
   }));
 });

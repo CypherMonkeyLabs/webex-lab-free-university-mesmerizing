@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(["bloom","aurora","futuristic","gaming","neon","sunset","paper","holographic","cyberpunk","contrast"].indexOf(t)<0)t="bloom";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="bloom";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIP ladder simulation · CypherWebex Canon</title>
+<link rel="stylesheet" href="assets/css/canon.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/polish.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<style>
+  .sim-banner{border:2px solid var(--accent,#7c3aed);border-radius:16px;padding:12px 14px;margin:12px 0 18px}
+  .sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+  .sim-node{appearance:none;text-align:left;border:2px solid #312e81;border-radius:14px;background:#f8fafc;color:#1e1b4b;padding:12px;cursor:pointer;min-height:88px}
+  .sim-node[aria-pressed="true"]{outline:3px solid #7c3aed;background:#ede9fe}
+  .sim-form{display:grid;gap:8px;max-width:640px}
+  .sim-form label{display:grid;gap:4px;font-weight:700}
+  .sim-form input,.sim-form select{font:inherit;padding:8px;border-radius:10px;border:1px solid #94a3b8}
+  .sim-out{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;border-radius:14px;padding:14px;overflow:auto}
+  .sim-stage{perspective:900px;margin:16px 0}
+  .sim-card{transform:rotateX(8deg) rotateY(-8deg);transform-style:preserve-3d;border-radius:18px;padding:8px;background:linear-gradient(160deg,#312e81,#0f172a);color:#fff}
+  @media (max-width:700px){.sim-grid{grid-template-columns:1fr}}
+  @media (prefers-reduced-motion:reduce){.sim-card{transform:none}}
+  .sim-node:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7c3aed;outline-offset:2px}
+</style>
+</head>
+<body class="v4">
+<a class="skip" href="#main">Skip to content</a>
+<div class="v4-app"><aside class="v4-sidebar" id="v4-sidebar" data-sidebar></aside><div class="v4-stage">
+<header class="topbar" data-chrome="v4"><div class="bar-inner">
+<a class="brand" href="index.html"><span class="brand-name">Canon<small>SIM</small></span></a>
+<nav class="nav-quick" aria-label="Primary"><a href="labs.html">Hands-on Labs</a> <a href="rooms/T7-R01-sip-fundamentals-webex.html">SIP room</a></nav>
+</div></header>
+<main id="main" class="wrap room-shell"><article class="room-main">
+<p class="crumbs"><a href="index.html">Home</a> / <a href="labs.html">Hands-on Labs</a> / SIP ladder</p>
+<h1>SIP ladder simulation</h1>
+<p class="lede">A browser-only ladder for an INVITE, REGISTER, or BYE. Cypher Monkey, a lifelong student and AI builder, made this as a study control. It does not open a socket and it does not call Webex, CUBE, or any carrier.</p>
+<div class="sim-banner" role="note"><strong>Simulation.</strong> The message below is built on this page from the fields you type. It is not a packet capture and it is not a vendor response.</div>
+<div class="sim-stage" aria-hidden="true"><div class="sim-card">Study drawing of a call leg. Click a node to read the label. Nothing is sent.</div></div>
+<div class="sim-grid" role="group" aria-label="Call leg nodes">
+  <button type="button" class="sim-node" data-node="phone" aria-pressed="false">Phone or Webex App<span>Chooses a method and a request URI. This button does not register a device.</span></button>
+  <button type="button" class="sim-node" data-node="gateway" aria-pressed="false">Local gateway<span>In the lab, a premises bridge. This button does not configure IOS-XE.</span></button>
+  <button type="button" class="sim-node" data-node="cloud" aria-pressed="false">Calling service<span>The lab's name for the cloud call service. This button does not reach it.</span></button>
+</div>
+<p id="node-note" aria-live="polite">Select a node, then build a simulated message.</p>
+<form class="sim-form" id="sip-form">
+  <label>Method
+    <select name="method" aria-label="SIP method">
+      <option>INVITE</option>
+      <option>REGISTER</option>
+      <option>BYE</option>
+    </select>
+  </label>
+  <label>Request URI <input name="uri" value="sip:lab-number.example.invalid" autocomplete="off" maxlength="120"></label>
+  <label>From <input name="from" value="sip:alice.example.invalid" autocomplete="off" maxlength="120"></label>
+  <label>To <input name="to" value="sip:lab-number.example.invalid" autocomplete="off" maxlength="120"></label>
+  <button type="submit">Build the simulated message</button>
+</form>
+<h2>Result</h2>
+<pre class="sim-out" id="sip-out">Nothing built yet.</pre>
+<p>Read the cited room before you treat a hop as a product limit: <a href="rooms/T7-R01-sip-fundamentals-webex.html">SIP fundamentals</a>, <a href="rooms/T7-R02-cube-deep-dive.html">CUBE</a>, <a href="rooms/T2-R02-local-gateway-pstn.html">Local gateway</a>.</p>
+</article>
+<footer class="site-footer lab-footer wrap" data-canon-footer>
+<p>This is an independent, free, learning-only student project. It is not a Cisco product. © 2026 CypherMonkeyLabs 🐒</p>
+<nav aria-label="Brand">
+<a class="brand-web" href="https://cyphermonkeylabs.com">CypherMonkey Labs</a>
+<a class="brand-gh" href="https://github.com/CypherMonkeyLabs">GitHub</a>
+<a class="brand-lt" href="https://linktr.ee/cyphermonkey">Linktree</a>
+<a href="https://cyphermonkeylabs.com/#contact">Contact</a>
+</nav>
+</footer>
+</div></div>
+<script>
+(function () {
+  var note = document.getElementById("node-note");
+  var labels = {
+    phone: "Simulation label: the phone or app is where you imagine the request starts. No device was contacted.",
+    gateway: "Simulation label: the local gateway is the premises bridge in the lab notes. No router was configured.",
+    cloud: "Simulation label: the calling service is the cloud side of the drawing. No tenant was queried."
+  };
+  document.querySelectorAll("[data-node]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      document.querySelectorAll("[data-node]").forEach(function (other) { other.setAttribute("aria-pressed", "false"); });
+      button.setAttribute("aria-pressed", "true");
+      note.textContent = labels[button.getAttribute("data-node")] || "";
+    });
+  });
+  document.getElementById("sip-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var method = String(data.get("method") || "INVITE");
+    var uri = String(data.get("uri") || "").replace(/[\r\n]/g, "");
+    var from = String(data.get("from") || "").replace(/[\r\n]/g, "");
+    var to = String(data.get("to") || "").replace(/[\r\n]/g, "");
+    var callId = "sim-" + Math.random().toString(16).slice(2, 10) + "@example.invalid";
+    var text = [
+      "SIMULATION — not sent",
+      method + " " + uri + " SIP/2.0",
+      "Via: SIP/2.0/TLS sim.example.invalid;branch=z9hG4bK-sim",
+      "From: <" + from + ">;tag=simfrom",
+      "To: <" + to + ">",
+      "Call-ID: " + callId,
+      "CSeq: 1 " + method,
+      "Max-Forwards: 70",
+      "Content-Length: 0",
+      "",
+      "This text was assembled in the browser. example.invalid is a reserved practice name. No SIP stack ran."
+    ].join("\n");
+    document.getElementById("sip-out").textContent = text;
+  });
+})();
+</script>
+<script defer src="assets/js/shell.js"></script>
+<script defer src="assets/js/brand.js"></script>
+<script defer src="assets/js/polish.js"></script>
+</body>
+</html>

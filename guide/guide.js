@@ -12,6 +12,7 @@
  *   Leave it null and every answer stays in this browser.
  */
 import { createGuide, mergeKb, blankSession } from "./engine.mjs";
+import { askWx, topicChips } from "./wxbot.js";
 
 var guideBase = baseUrl();
 var session = loadSession();
@@ -379,8 +380,15 @@ function installApi() {
   window.CANON_GUIDE = api;
 }
 
+function studyMode(message) {
+  if (session && (session.quiz || session.card || session.lesson || session.game || session.course)) return true;
+  var q = String(message || "").toLowerCase().replace(/[^a-z0-9+' ]/g, " ").replace(/\s+/g, " ").trim();
+  return /^(quiz me|test me|practice questions|ask me a question|flashcards|flash cards|flashcard|drill cards|teach me|lesson on|walk me through|daily challenge|daily quiz|today s question|todays question|play a game|port game|room game|easy mode|medium mode|hard mode|start the 1 hour|give me the 1 minute|play the 10 minute|interview practice|mute me|my progress|what have we covered|my score|suggested next|what s next|whats next|badges|my streak|show answer|know|again|next)\b/.test(q);
+}
+
 function ask(message) {
   var ctx = context();
+  if (!studyMode(message)) return askWx(message);
   return ensureKb().then(function (ready) {
     var local = ready.route(message, session, ctx);
     session = local.session;
@@ -596,7 +604,8 @@ function openPanel() {
   if (greetedPath !== location.pathname) {
     greetedPath = location.pathname;
     setPose("greet");
-    say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.", [], "bot");
+    say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab. Cypher Monkey is a lifelong student and AI builder.", [], "bot");
+    setChips(topicChips());
     var choices = [
       ["1-minute clip", "Give me the 1-minute clip", "clip"],
       ["10-minute trailer", "Play the 10-minute trailer", "film"],

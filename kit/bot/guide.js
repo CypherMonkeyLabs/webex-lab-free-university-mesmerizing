@@ -12,6 +12,7 @@
  *   Leave it null and every answer stays in this browser.
  */
 import { createGuide, mergeKb, blankSession } from "./engine.mjs";
+import { askWx, topicChips } from "./wxbot.js";
 
 var guideBase = baseUrl();
 var session = loadSession();
@@ -111,11 +112,19 @@ host.appendChild(nudge);
 host.appendChild(monkey);
 host.appendChild(panel);
 host.appendChild(tourLayer);
-document.body.appendChild(host);
+var mountEl = document.getElementById("guide-mount");
+if (!mountEl) {
+  mountEl = document.createElement("div");
+  mountEl.id = "guide-mount";
+  mountEl.className = "guide-mount";
+  mountEl.setAttribute("data-guide-mount", "");
+  document.body.appendChild(mountEl);
+}
+mountEl.appendChild(host);
 
 var css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = guideBase + "guide/guide.css?v=22";
+css.href = guideBase + "guide/guide.css?v=24";
 document.head.appendChild(css);
 
 var log = panel.querySelector(".cg-log");
@@ -297,7 +306,7 @@ function streakDays() {
 }
 
 function loadVoice() {
-  var pref = { on: false, rate: "0.92", pitch: "0.95", uri: "" };
+  var pref = { on: true, rate: "0.92", pitch: "0.95", uri: "" };
   try {
     var saved = JSON.parse(localStorage.getItem("cg-voice") || "null");
     if (saved && typeof saved === "object") {
@@ -371,8 +380,15 @@ function installApi() {
   window.CANON_GUIDE = api;
 }
 
+function studyMode(message) {
+  if (session && (session.quiz || session.card || session.lesson || session.game || session.course)) return true;
+  var q = String(message || "").toLowerCase().replace(/[^a-z0-9+' ]/g, " ").replace(/\s+/g, " ").trim();
+  return /^(quiz me|test me|practice questions|ask me a question|flashcards|flash cards|flashcard|drill cards|teach me|lesson on|walk me through|daily challenge|daily quiz|today s question|todays question|play a game|port game|room game|easy mode|medium mode|hard mode|start the 1 hour|give me the 1 minute|play the 10 minute|interview practice|mute me|my progress|what have we covered|my score|suggested next|what s next|whats next|badges|my streak|show answer|know|again|next)\b/.test(q);
+}
+
 function ask(message) {
   var ctx = context();
+  if (!studyMode(message)) return askWx(message);
   return ensureKb().then(function (ready) {
     var local = ready.route(message, session, ctx);
     session = local.session;
@@ -588,7 +604,8 @@ function openPanel() {
   if (greetedPath !== location.pathname) {
     greetedPath = location.pathname;
     setPose("greet");
-    say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab.", [], "bot");
+    say("Welcome to CypherMonkey Labs, I'm your Webex guide. I only repeat the notes in this lab. Cypher Monkey is a lifelong student and AI builder.", [], "bot");
+    setChips(topicChips());
     var choices = [
       ["1-minute clip", "Give me the 1-minute clip", "clip"],
       ["10-minute trailer", "Play the 10-minute trailer", "film"],
@@ -883,7 +900,7 @@ function dockBottom() {
   var saved = null;
   try {
     var data = JSON.parse(localStorage.getItem("cg-dock") || "null");
-    if (data && typeof data.bottom === "number") saved = data.bottom;
+    /* The old vertical-only spot is ignored. dragbot.js saves the new one. */
   } catch (error) { saved = null; }
   var dock = 0;
   if (window.matchMedia("(max-width: 720px)").matches) {
@@ -905,7 +922,10 @@ function monkeySize() {
 
 function onScreenLedes() {
   var rects = [];
-  document.querySelectorAll(".lede, .world-lede").forEach(function (el) {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll("h1, .world-title, .lede, .world-lede, .world-kicker"));
+  var first = document.querySelector(".room-main > p, .world-hero p, main > .wrap > p, #main > p");
+  if (first) nodes.push(first);
+  nodes.forEach(function (el) {
     var rect = el.getBoundingClientRect();
     if (rect.width < 8 || rect.height < 8) return;
     if (rect.bottom < 0 || rect.top > window.innerHeight) return;
@@ -924,7 +944,7 @@ function boxFromRightBottom(right, bottom, width, height) {
 }
 
 function hitsLede(box, rects) {
-  return rects.some(function (rect) { return intersects(box, rect, 2); });
+  return rects.some(function (rect) { return intersects(box, rect, 12); });
 }
 
 function parkOffLede(right, bottom, width, height) {
@@ -1075,7 +1095,7 @@ function visibleBoxes(selector) {
 }
 
 function hitsAny(box, rects) {
-  return rects.some(function (rect) { return overlap(box, rect, 4); });
+  return rects.some(function (rect) { return overlap(box, rect, 12); });
 }
 
 function settleMonkey(right, bottom, width, height, rows) {
@@ -1114,6 +1134,14 @@ function place() {
     placeGreeting();
     return;
   }
+  var sheetNow = window.innerWidth <= 720 && !panel.hidden;
+  if (host.classList.contains("is-moved") && !sheetNow) {
+    // The reader parked the guide. dragbot.js owns the position and the panel slot.
+    host.classList.toggle("is-compact", window.matchMedia("(max-width: 420px)").matches);
+    host.classList.toggle("is-sheet", false);
+    host.classList.toggle("is-open", !panel.hidden);
+    return;
+  }
   var boxes = obstacleBoxes();
   var story = contentBoxes();
   var size = monkeySize();
@@ -1131,7 +1159,7 @@ function place() {
       if (lift > bottom) bottom = Math.min(lift, cap);
     }
   }
-  var parked = settleMonkey(right, bottom, width, height, visibleBoxes(".go-deeper li, .go-deeper h2, main h1, h1, .world-title, .lede, .world-lede"));
+  var parked = settleMonkey(right, bottom, width, height, visibleBoxes("h1, .world-title, .world-kicker, .lede, .world-lede, .room-main > p, main > .wrap > p, #main > p, .go-deeper h2"));
   var clear = parkOffLede(parked.right, parked.bottom, parked.width, parked.height);
   right = clear.right;
   bottom = clear.bottom;
@@ -1225,6 +1253,46 @@ function showPoke() {
   nudge.appendChild(actions);
   nudge.hidden = false;
   place();
+}
+
+function pageLine() {
+  var h1 = document.querySelector("main h1, h1");
+  var name = h1 ? (h1.textContent || "").replace(/\s+/g, " ").trim().replace(/[.!?\s]+$/, "") : "";
+  var line = name ? "You are on " + name + ". Tap me to read it along, or ask me anything." : "Tap me to read this page along, or ask me anything.";
+  if (line.length > 150) line = line.slice(0, 147) + "...";
+  return line;
+}
+
+function sayPageLine() {
+  if (!panel.hidden || !tourLayer.hidden || document.body.classList.contains("onboard-open") || host.classList.contains("is-greeting") || host.classList.contains("is-menu-away") || !nudge.hidden) return false;
+  var line = pageLine();
+  nudge.innerHTML = "";
+  nudge.className = "cg-nudge cg-line";
+  var copy = document.createElement("p");
+  copy.textContent = line;
+  nudge.appendChild(copy);
+  nudge.hidden = false;
+  setPose("talk");
+  place();
+  speak(line);
+  window.setTimeout(function () {
+    if (nudge.classList.contains("cg-line")) {
+      hideNudge();
+      setPose("idle");
+      place();
+    }
+  }, 9000);
+  return true;
+}
+
+function schedulePageLine() {
+  var tries = 0;
+  function attempt() {
+    tries += 1;
+    if (sayPageLine() || tries >= 4) return;
+    window.setTimeout(attempt, 6000);
+  }
+  window.setTimeout(attempt, 1600);
 }
 
 function scheduleNudge() {
@@ -1638,38 +1706,13 @@ function startAmbience(name) {
 }
 
 function bind() {
-  var drag = { id: null, moved: false, y: 0, bottom: 0 };
-  monkey.addEventListener("pointerdown", function (event) {
-    if (event.button != null && event.button !== 0) return;
-    drag.id = event.pointerId;
-    drag.moved = false;
-    drag.y = event.clientY;
-    drag.bottom = parseFloat(host.style.getPropertyValue("--cg-bottom")) || dockBottom();
-    try { monkey.setPointerCapture(event.pointerId); } catch (error) { /* pointer capture is optional */ }
-  });
-  monkey.addEventListener("pointermove", function (event) {
-    if (drag.id !== event.pointerId) return;
-    if (!drag.moved && Math.abs(event.clientY - drag.y) < 8) return;
-    drag.moved = true;
-    host.dataset.dragging = "1";
-    var next = drag.bottom + (drag.y - event.clientY);
-    var floor = window.matchMedia("(max-width: 720px)").matches ? 96 : 12;
-    var max = window.innerHeight - monkeySize().height - 8;
-    if (next < floor) next = floor;
-    if (next > max) next = max;
-    host.style.setProperty("--cg-right", "8px");
-    host.style.setProperty("--cg-bottom", Math.round(next) + "px");
-  });
-  function endDrag(event) {
-    if (drag.id !== event.pointerId) return;
-    drag.id = null;
-    host.dataset.dragging = "0";
-    if (!drag.moved) return;
-    var bottom = parseFloat(host.style.getPropertyValue("--cg-bottom")) || dockBottom();
-    try { localStorage.setItem("cg-dock", JSON.stringify({ bottom: bottom })); } catch (error) { /* storage off */ }
-  }
-  monkey.addEventListener("pointerup", endDrag);
-  monkey.addEventListener("pointercancel", endDrag);
+  // Drag, edge snap, tilt and reset live in guide/dragbot.js. It drives the --cg-right and --cg-bottom
+  // variables and calls place() again when the spot is reset.
+  window.CG_PLACE = place;
+  var botTag = document.querySelector("script[src*='guide/guide.js']");
+  var botScript = document.createElement("script");
+  botScript.src = botTag ? botTag.src.replace(/guide\.js(\?.*)?$/, "dragbot.js") : "guide/dragbot.js";
+  document.body.appendChild(botScript);
   host.addEventListener("click", function (event) {
     if (!host.classList.contains("is-greeting") || typeof host._finishGreet !== "function") return;
     if (event.target.closest(".cg-monkey, .cg-nudge")) return;
@@ -1702,12 +1745,6 @@ function bind() {
   });
   handle.addEventListener("pointercancel", function () { sheetDrag.id = null; });
   monkey.addEventListener("click", function (event) {
-    if (drag.moved) {
-      drag.moved = false;
-      event.preventDefault();
-      event.stopPropagation();
-      return;
-    }
     boop();
     if (panel.hidden) {
       openPanel();
@@ -1863,6 +1900,8 @@ function bind() {
     startAlong(id);
   });
   document.addEventListener("canon-tour-finished", function () { beginGreet(); });
+  voiceBtn.setAttribute("aria-pressed", voicePref.on ? "true" : "false");
+  schedulePageLine();
   window.setTimeout(function () {
     var tour = "";
     try { tour = localStorage.getItem("canon-tour-done") || ""; } catch (error) { tour = ""; }
@@ -1872,6 +1911,8 @@ function bind() {
   menuWatch.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   window.addEventListener("scroll", queuePlace, { passive: true });
   window.addEventListener("resize", queuePlace);
+  window.addEventListener("load", queuePlace);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queuePlace);
   window.setTimeout(queuePlace, 400);
   window.setTimeout(queuePlace, 1200);
   var fontWatch = new MutationObserver(syncFont);

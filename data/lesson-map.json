@@ -1,0 +1,1373 @@
+{
+  "lessons": [
+    {
+      "key": "T1/T1-R01",
+      "title": "Control Hub Foundations",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Control Hub Foundations"
+      ],
+      "sources": [
+        "T1-R01-1",
+        "T1-R01-2",
+        "T1-R01-3",
+        "T1-R01-4",
+        "T1-R01-5",
+        "T1-R01-6",
+        "T1-R01-7",
+        "T1-R01-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R01-control-hub-foundations.html"
+    },
+    {
+      "key": "T1/T1-R02",
+      "title": "Identity & Directory Sync",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Identity & Directory Sync"
+      ],
+      "sources": [
+        "T1-R02-1",
+        "T1-R02-2",
+        "T1-R02-3",
+        "T1-R02-4",
+        "T1-R02-5",
+        "T1-R02-6",
+        "T1-R02-7",
+        "T1-R02-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R02-identity-directory-sync.html"
+    },
+    {
+      "key": "T1/T1-R03",
+      "title": "Licensing & Subscriptions",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Licensing & Subscriptions"
+      ],
+      "sources": [
+        "T1-R03-1",
+        "T1-R03-2",
+        "T1-R03-3",
+        "T1-R03-4",
+        "T1-R03-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R03-licensing-subscriptions.html"
+    },
+    {
+      "key": "T1/T1-R04",
+      "title": "Locations & Sites",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Locations & Sites"
+      ],
+      "sources": [
+        "T1-R04-1",
+        "T1-R04-2",
+        "T1-R04-3",
+        "T1-R04-4",
+        "T1-R04-5",
+        "T1-R04-6"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R04-locations-sites.html"
+    },
+    {
+      "key": "T1/T1-R05",
+      "title": "Admin Roles & Partner Admin",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Admin Roles & Partner Admin"
+      ],
+      "sources": [
+        "T1-R05-1",
+        "T1-R05-2"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R05-admin-roles-partner.html"
+    },
+    {
+      "key": "T1/T1-R06",
+      "title": "Analytics & Troubleshooting Views",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Analytics & Troubleshooting Views"
+      ],
+      "sources": [
+        "T1-R06-1",
+        "T1-R06-2",
+        "T1-R06-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R06-analytics-troubleshooting.html"
+    },
+    {
+      "key": "T1/T1-R07",
+      "title": "Data Residency & Security Basics",
+      "level": 1,
+      "outcomes": [
+        "Explain what this room covers: Data Residency & Security Basics"
+      ],
+      "sources": [
+        "T1-R07-1",
+        "T1-R07-2",
+        "T1-R07-3",
+        "T1-R07-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T1-R07-data-residency-security.html"
+    },
+    {
+      "key": "T10/T10-R01",
+      "title": "Three AI names in Webex Contact Center",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Three AI names in Webex Contact Center"
+      ],
+      "sources": [
+        "T10-R01-6",
+        "T10-R01-10",
+        "T10-R01-11",
+        "T10-R01-12",
+        "T10-R01-13",
+        "T10-R01-20"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T10-R01-three-ai-names.html"
+    },
+    {
+      "key": "T10/T10-R02",
+      "title": "Voice path: Virtual Agent V2",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Voice path: Virtual Agent V2"
+      ],
+      "sources": [
+        "T10-R02-11",
+        "T10-R02-12"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T10-R02-virtual-agent-v2.html"
+    },
+    {
+      "key": "T10/T10-R03",
+      "title": "Language, voice, and custom events",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Language, voice, and custom events"
+      ],
+      "sources": [
+        "T10-R03-11"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T10-R03-language-voice-events.html"
+    },
+    {
+      "key": "T10/T10-R04",
+      "title": "Digital AI agents and the six channels",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Digital AI agents and the six channels"
+      ],
+      "sources": [
+        "T10-R04-11"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T10-R04-digital-ai-channels.html"
+    },
+    {
+      "key": "T10/T10-R05",
+      "title": "What the public AI pages will not support",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: What the public AI pages will not support"
+      ],
+      "sources": [
+        "T10-R05-6",
+        "T10-R05-11",
+        "T10-R05-12",
+        "T10-R05-13",
+        "T10-R05-20",
+        "T10-R05-21"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T10-R05-voice-ai-limits.html"
+    },
+    {
+      "key": "T11/T11-R01",
+      "title": "A bridge is not a cutover",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: A bridge is not a cutover"
+      ],
+      "sources": [
+        "T11-R01-14"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T11-R01-bridge-is-not-a-cutover.html"
+    },
+    {
+      "key": "T11/T11-R02",
+      "title": "Local Gateway as the calling bridge",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Local Gateway as the calling bridge"
+      ],
+      "sources": [
+        "T11-R02-14",
+        "T11-R02-19",
+        "T11-R02-21"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T11-R02-local-gateway-bridge.html"
+    },
+    {
+      "key": "T11/T11-R03",
+      "title": "Dedicated Instance and contact-center bridges",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Dedicated Instance and contact-center bridges"
+      ],
+      "sources": [
+        "T11-R03-15"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T11-R03-di-contact-center.html"
+    },
+    {
+      "key": "T11/T11-R04",
+      "title": "UCCX discovery into Webex Contact Center",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: UCCX discovery into Webex Contact Center"
+      ],
+      "sources": [
+        "T11-R04-16",
+        "T11-R04-17"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T11-R04-uccx-to-wxcc.html"
+    },
+    {
+      "key": "T11/T11-R05",
+      "title": "Other platforms, without a fake bridge",
+      "level": 10,
+      "outcomes": [
+        "Explain what this room covers: Other platforms, without a fake bridge"
+      ],
+      "sources": [
+        "T11-R05-14",
+        "T11-R05-16",
+        "T11-R05-17",
+        "T11-R05-21"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T11-R05-other-platforms.html"
+    },
+    {
+      "key": "T2/T2-R01",
+      "title": "Calling Architecture Overview",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Calling Architecture Overview"
+      ],
+      "sources": [
+        "T2-R01-1",
+        "T2-R01-2",
+        "T2-R01-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R01-calling-architecture.html"
+    },
+    {
+      "key": "T2/T2-R02",
+      "title": "Local Gateway & PSTN Options",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Local Gateway & PSTN Options"
+      ],
+      "sources": [
+        "T2-R02-1",
+        "T2-R02-2",
+        "T2-R02-3",
+        "T2-R02-4",
+        "T2-R02-5",
+        "T2-R02-6",
+        "T2-R02-7",
+        "T2-R02-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R02-local-gateway-pstn.html"
+    },
+    {
+      "key": "T2/T2-R03",
+      "title": "Dial Plans, PSTN & Routing",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Dial Plans, PSTN & Routing"
+      ],
+      "sources": [
+        "T2-R03-1",
+        "T2-R03-2",
+        "T2-R03-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R03-dial-plans-pstn-routing.html"
+    },
+    {
+      "key": "T2/T2-R04",
+      "title": "Devices & Provisioning",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Devices & Provisioning"
+      ],
+      "sources": [
+        "T2-R04-1",
+        "T2-R04-2",
+        "T2-R04-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R04-devices-provisioning.html"
+    },
+    {
+      "key": "T2/T2-R05",
+      "title": "Call Features",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Call Features"
+      ],
+      "sources": [
+        "T2-R05-1",
+        "T2-R05-2",
+        "T2-R05-3",
+        "T2-R05-4",
+        "T2-R05-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R05-call-features.html"
+    },
+    {
+      "key": "T2/T2-R06",
+      "title": "Calling security & compliance",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Calling security & compliance"
+      ],
+      "sources": [
+        "T2-R06-ledger"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R06-calling-security-compliance.html"
+    },
+    {
+      "key": "T2/T2-R07",
+      "title": "Survivability Gateway",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Survivability Gateway"
+      ],
+      "sources": [
+        "T2-R07-1",
+        "T2-R07-2",
+        "T2-R07-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R07-survivability-gateway.html"
+    },
+    {
+      "key": "T2/T2-R08",
+      "title": "Calling Analytics & CDR",
+      "level": 2,
+      "outcomes": [
+        "Explain what this room covers: Calling Analytics & CDR"
+      ],
+      "sources": [
+        "T2-R08-1",
+        "T2-R08-2",
+        "T2-R08-3",
+        "T2-R08-4",
+        "T2-R08-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T2-R08-calling-analytics-cdr.html"
+    },
+    {
+      "key": "T3/T3-R01",
+      "title": "WxCC Multi-tenant Overview",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: WxCC Multi-tenant Overview"
+      ],
+      "sources": [
+        "T3-R01-1",
+        "T3-R01-2",
+        "T3-R01-3",
+        "T3-R01-4",
+        "T3-R01-5",
+        "T3-R01-6",
+        "T3-R01-7",
+        "T3-R01-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R01-wxcc-multitenant-overview.html"
+    },
+    {
+      "key": "T3/T3-R02",
+      "title": "Tenant Provisioning & Setup",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Tenant Provisioning & Setup"
+      ],
+      "sources": [
+        "T3-R02-1",
+        "T3-R02-2"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R02-tenant-provisioning-setup.html"
+    },
+    {
+      "key": "T3/T3-R03",
+      "title": "Entry Points, Queues & Routing Strategies",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Entry Points, Queues & Routing Strategies"
+      ],
+      "sources": [
+        "T3-R03-1",
+        "T3-R03-2",
+        "T3-R03-3",
+        "T3-R03-4",
+        "T3-R03-5",
+        "T3-R03-6",
+        "T3-R03-7"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R03-entry-points-queues-routing.html"
+    },
+    {
+      "key": "T3/T3-R04",
+      "title": "Agent Desktop & Supervisor",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Agent Desktop & Supervisor"
+      ],
+      "sources": [
+        "T3-R04-1",
+        "T3-R04-2",
+        "T3-R04-3",
+        "T3-R04-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R04-agent-desktop-supervisor.html"
+    },
+    {
+      "key": "T3/T3-R05",
+      "title": "Voice Options",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Voice Options"
+      ],
+      "sources": [
+        "T3-R05-1",
+        "T3-R05-2",
+        "T3-R05-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R05-voice-options.html"
+    },
+    {
+      "key": "T3/T3-R06",
+      "title": "Digital Channels",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Digital Channels"
+      ],
+      "sources": [
+        "T3-R06-1",
+        "T3-R06-2",
+        "T3-R06-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R06-digital-channels.html"
+    },
+    {
+      "key": "T3/T3-R07",
+      "title": "Analyzer & Reporting",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Analyzer & Reporting"
+      ],
+      "sources": [
+        "T3-R07-ledger"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R07-analyzer-reporting.html"
+    },
+    {
+      "key": "T3/T3-R08",
+      "title": "Supervisor Experience",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: Supervisor Experience"
+      ],
+      "sources": [
+        "T3-R08-1",
+        "T3-R08-2",
+        "T3-R08-3",
+        "T3-R08-4",
+        "T3-R08-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R08-supervisor-experience.html"
+    },
+    {
+      "key": "T3/T3-R09",
+      "title": "WFO & AI Features",
+      "level": 3,
+      "outcomes": [
+        "Explain what this room covers: WFO & AI Features"
+      ],
+      "sources": [
+        "T3-R09-1",
+        "T3-R09-2",
+        "T3-R09-3",
+        "T3-R09-4",
+        "T3-R09-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T3-R09-wfo-ai-features.html"
+    },
+    {
+      "key": "T4/T4-R01",
+      "title": "WxCC Enterprise Overview",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: WxCC Enterprise Overview"
+      ],
+      "sources": [
+        "T4-R01-1",
+        "T4-R01-2",
+        "T4-R01-3",
+        "T4-R01-4",
+        "T4-R01-5",
+        "T4-R01-6",
+        "T4-R01-7",
+        "T4-R01-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R01-wxcc-enterprise-overview.html"
+    },
+    {
+      "key": "T4/T4-R02",
+      "title": "Core Components",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Core Components"
+      ],
+      "sources": [
+        "T4-R02-1",
+        "T4-R02-2",
+        "T4-R02-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R02-core-components.html"
+    },
+    {
+      "key": "T4/T4-R03",
+      "title": "Call Flow Through WxCCE",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Call Flow Through WxCCE"
+      ],
+      "sources": [
+        "T4-R03-1",
+        "T4-R03-2",
+        "T4-R03-3",
+        "T4-R03-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R03-call-flow-wxcce.html"
+    },
+    {
+      "key": "T4/T4-R04",
+      "title": "Scripting & ICM Routing",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Scripting & ICM Routing"
+      ],
+      "sources": [
+        "T4-R04-1",
+        "T4-R04-2",
+        "T4-R04-3",
+        "T4-R04-4",
+        "T4-R04-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R04-scripting-icm-routing.html"
+    },
+    {
+      "key": "T4/T4-R05",
+      "title": "CVP & VXML IVR",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: CVP & VXML IVR"
+      ],
+      "sources": [
+        "T4-R05-1",
+        "T4-R05-2",
+        "T4-R05-3",
+        "T4-R05-4",
+        "T4-R05-5",
+        "T4-R05-6",
+        "T4-R05-7"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R05-cvp-vxml-ivr.html"
+    },
+    {
+      "key": "T4/T4-R06",
+      "title": "Finesse Desktop & Gadgets",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Finesse Desktop & Gadgets"
+      ],
+      "sources": [
+        "T4-R06-1",
+        "T4-R06-2",
+        "T4-R06-3",
+        "T4-R06-4",
+        "T4-R06-5",
+        "T4-R06-6",
+        "T4-R06-7",
+        "T4-R06-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R06-finesse-desktop-gadgets.html"
+    },
+    {
+      "key": "T4/T4-R07",
+      "title": "Reporting with CUIC",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Reporting with CUIC"
+      ],
+      "sources": [
+        "T4-R07-1",
+        "T4-R07-2",
+        "T4-R07-3",
+        "T4-R07-4",
+        "T4-R07-5",
+        "T4-R07-6",
+        "T4-R07-7",
+        "T4-R07-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R07-reporting-cuic.html"
+    },
+    {
+      "key": "T4/T4-R08",
+      "title": "Sizing & HA",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Sizing & HA"
+      ],
+      "sources": [
+        "T4-R08-1",
+        "T4-R08-2",
+        "T4-R08-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R08-sizing-ha.html"
+    },
+    {
+      "key": "T4/T4-R09",
+      "title": "Classroom Index",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Classroom Index"
+      ],
+      "sources": [
+        "T4-R09-1",
+        "T4-R09-2",
+        "T4-R09-3",
+        "T4-R09-4",
+        "T4-R09-5",
+        "T4-R09-6",
+        "T4-R09-7",
+        "T4-R09-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R09-classroom-index.html"
+    },
+    {
+      "key": "T4/T4-R10",
+      "title": "Hybrid & Cloud-connected Features",
+      "level": 4,
+      "outcomes": [
+        "Explain what this room covers: Hybrid & Cloud-connected Features"
+      ],
+      "sources": [
+        "T4-R10-1",
+        "T4-R10-2",
+        "T4-R10-3",
+        "T4-R10-4",
+        "T4-R10-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T4-R10-hybrid-cloud-connected.html"
+    },
+    {
+      "key": "T5/T5-R01",
+      "title": "What Dedicated Instance Is",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: What Dedicated Instance Is"
+      ],
+      "sources": [
+        "T5-R01-1",
+        "T5-R01-2",
+        "T5-R01-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R01-what-dedicated-instance-is.html"
+    },
+    {
+      "key": "T5/T5-R02",
+      "title": "DI Architecture & Peering",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: DI Architecture & Peering"
+      ],
+      "sources": [
+        "T5-R02-1",
+        "T5-R02-2",
+        "T5-R02-3",
+        "T5-R02-4",
+        "T5-R02-5",
+        "T5-R02-6",
+        "T5-R02-7"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R02-di-architecture-peering.html"
+    },
+    {
+      "key": "T5/T5-R03",
+      "title": "Connectivity Options",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: Connectivity Options"
+      ],
+      "sources": [
+        "T5-R03-1",
+        "T5-R03-2",
+        "T5-R03-3",
+        "T5-R03-4",
+        "T5-R03-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R03-connectivity-options.html"
+    },
+    {
+      "key": "T5/T5-R04",
+      "title": "DI Admin & Operations",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: DI Admin & Operations"
+      ],
+      "sources": [
+        "T5-R04-1",
+        "T5-R04-2",
+        "T5-R04-3",
+        "T5-R04-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R04-di-admin-operations.html"
+    },
+    {
+      "key": "T5/T5-R05",
+      "title": "DI + Webex Calling Coexistence",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: DI + Webex Calling Coexistence"
+      ],
+      "sources": [
+        "T5-R05-1",
+        "T5-R05-2",
+        "T5-R05-3",
+        "T5-R05-4",
+        "T5-R05-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R05-di-webex-calling-coexistence.html"
+    },
+    {
+      "key": "T5/T5-R06",
+      "title": "DI Migration Path",
+      "level": 5,
+      "outcomes": [
+        "Explain what this room covers: DI Migration Path"
+      ],
+      "sources": [
+        "T5-R06-1",
+        "T5-R06-2",
+        "T5-R06-3",
+        "T5-R06-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T5-R06-di-migration-path.html"
+    },
+    {
+      "key": "T6/T6-R01",
+      "title": "2,000-seat cutover",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: 2,000-seat cutover"
+      ],
+      "sources": [
+        "T6-R01-ledger"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R01-enterprise-cutover-capstone.html"
+    },
+    {
+      "key": "T6/T6-R02",
+      "title": "CUCM to Webex Calling",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: CUCM to Webex Calling"
+      ],
+      "sources": [
+        "T6-R02-1",
+        "T6-R02-2",
+        "T6-R02-3",
+        "T6-R02-4",
+        "T6-R02-5",
+        "T6-R02-6",
+        "T6-R02-7",
+        "T6-R02-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R02-cucm-to-webex-calling.html"
+    },
+    {
+      "key": "T6/T6-R03",
+      "title": "Migration Tools",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: Migration Tools"
+      ],
+      "sources": [
+        "T6-R03-1",
+        "T6-R03-2",
+        "T6-R03-3",
+        "T6-R03-4",
+        "T6-R03-5",
+        "T6-R03-6"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R03-migration-tools.html"
+    },
+    {
+      "key": "T6/T6-R04",
+      "title": "UCCE and PCCE to Webex Contact Center",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: UCCE and PCCE to Webex Contact Center"
+      ],
+      "sources": [
+        "T6-R04-1",
+        "T6-R04-2",
+        "T6-R04-3",
+        "T6-R04-4",
+        "T6-R04-5",
+        "T6-R04-6"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R04-ucce-pcce-to-wxcc.html"
+    },
+    {
+      "key": "T6/T6-R05",
+      "title": "Third-party PBX & CC to Webex",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: Third-party PBX & CC to Webex"
+      ],
+      "sources": [
+        "T6-R05-1",
+        "T6-R05-2",
+        "T6-R05-3",
+        "T6-R05-4",
+        "T6-R05-5",
+        "T6-R05-6",
+        "T6-R05-7"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R05-third-party-pbx-cc.html"
+    },
+    {
+      "key": "T6/T6-R06",
+      "title": "Number Porting & Cutover",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: Number Porting & Cutover"
+      ],
+      "sources": [
+        "T6-R06-1",
+        "T6-R06-2",
+        "T6-R06-3",
+        "T6-R06-4",
+        "T6-R06-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R06-number-porting-cutover.html"
+    },
+    {
+      "key": "T6/T6-R07",
+      "title": "Coexistence and interop",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: Coexistence and interop"
+      ],
+      "sources": [
+        "T6-R07-1",
+        "T6-R07-2",
+        "T6-R07-3",
+        "T6-R07-4",
+        "T6-R07-5",
+        "T6-R07-6",
+        "T6-R07-7",
+        "T6-R07-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R07-coexistence-interop.html"
+    },
+    {
+      "key": "T6/T6-R08",
+      "title": "Post-migration Validation",
+      "level": 6,
+      "outcomes": [
+        "Explain what this room covers: Post-migration Validation"
+      ],
+      "sources": [
+        "T6-R08-1",
+        "T6-R08-2",
+        "T6-R08-3",
+        "T6-R08-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T6-R08-post-migration-validation.html"
+    },
+    {
+      "key": "T7/T7-R01",
+      "title": "SIP Fundamentals for Webex",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: SIP Fundamentals for Webex"
+      ],
+      "sources": [
+        "T7-R01-1",
+        "T7-R01-2",
+        "T7-R01-3",
+        "T7-R01-4"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R01-sip-fundamentals-webex.html"
+    },
+    {
+      "key": "T7/T7-R02",
+      "title": "CUBE deep dive",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: CUBE deep dive"
+      ],
+      "sources": [
+        "T7-R02-1",
+        "T7-R02-2",
+        "T7-R02-3",
+        "T7-R02-4",
+        "T7-R02-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R02-cube-deep-dive.html"
+    },
+    {
+      "key": "T7/T7-R03",
+      "title": "Codecs, media, and NAT",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: Codecs, media, and NAT"
+      ],
+      "sources": [
+        "T7-R03-1",
+        "T7-R03-2",
+        "T7-R03-3",
+        "T7-R03-4",
+        "T7-R03-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R03-codecs-media-nat.html"
+    },
+    {
+      "key": "T7/T7-R04",
+      "title": "SIP trunk design",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: SIP trunk design"
+      ],
+      "sources": [
+        "T7-R04-1",
+        "T7-R04-2",
+        "T7-R04-3",
+        "T7-R04-4",
+        "T7-R04-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R04-sip-trunk-design.html"
+    },
+    {
+      "key": "T7/T7-R05",
+      "title": "Queue theory for contact center",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: Queue theory for contact center"
+      ],
+      "sources": [
+        "T7-R05-1",
+        "T7-R05-2",
+        "T7-R05-3",
+        "T7-R05-4",
+        "T7-R05-5",
+        "T7-R05-6"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R05-queue-theory-contact-center.html"
+    },
+    {
+      "key": "T7/T7-R06",
+      "title": "Routing strategies compared",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: Routing strategies compared"
+      ],
+      "sources": [
+        "T7-R06-1",
+        "T7-R06-2",
+        "T7-R06-3",
+        "T7-R06-4",
+        "T7-R06-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R06-routing-strategies-compared.html"
+    },
+    {
+      "key": "T7/T7-R07",
+      "title": "SIP Trace Reading Lab",
+      "level": 7,
+      "outcomes": [
+        "Explain what this room covers: SIP Trace Reading Lab"
+      ],
+      "sources": [
+        "T7-R07-1",
+        "T7-R07-2",
+        "T7-R07-3",
+        "T7-R07-4",
+        "T7-R07-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T7-R07-sip-trace-reading-lab.html"
+    },
+    {
+      "key": "T8/T8-R01",
+      "title": "Flow Designer Essentials",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: Flow Designer Essentials"
+      ],
+      "sources": [
+        "T8-R01-1",
+        "T8-R01-2",
+        "T8-R01-3",
+        "T8-R01-4",
+        "T8-R01-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R01-flow-designer-essentials.html"
+    },
+    {
+      "key": "T8/T8-R02",
+      "title": "Flow Design Patterns",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: Flow Design Patterns"
+      ],
+      "sources": [
+        "T8-R02-1",
+        "T8-R02-2",
+        "T8-R02-3",
+        "T8-R02-4",
+        "T8-R02-5",
+        "T8-R02-6",
+        "T8-R02-7",
+        "T8-R02-8"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R02-flow-design-patterns.html"
+    },
+    {
+      "key": "T8/T8-R03",
+      "title": "APIs, Webhooks & Webex Connect",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: APIs, Webhooks & Webex Connect"
+      ],
+      "sources": [
+        "T8-R03-1",
+        "T8-R03-2",
+        "T8-R03-3",
+        "T8-R03-4",
+        "T8-R03-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R03-apis-webhooks-connect.html"
+    },
+    {
+      "key": "T8/T8-R04",
+      "title": "CRM Integrations",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: CRM Integrations"
+      ],
+      "sources": [
+        "T8-R04-1",
+        "T8-R04-2",
+        "T8-R04-3"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R04-crm-integrations.html"
+    },
+    {
+      "key": "T8/T8-R05",
+      "title": "AI in Webex Contact Center",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: AI in Webex Contact Center"
+      ],
+      "sources": [
+        "T8-R05-ledger"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R05-ai-wxcc.html"
+    },
+    {
+      "key": "T8/T8-R06",
+      "title": "Troubleshooting methodology",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: Troubleshooting methodology"
+      ],
+      "sources": [
+        "T8-R06-1",
+        "T8-R06-2",
+        "T8-R06-3",
+        "T8-R06-4",
+        "T8-R06-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R06-troubleshooting-methodology.html"
+    },
+    {
+      "key": "T8/T8-R07",
+      "title": "Logs and tools",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: Logs and tools"
+      ],
+      "sources": [
+        "T8-R07-1",
+        "T8-R07-2",
+        "T8-R07-3",
+        "T8-R07-4",
+        "T8-R07-5"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R07-logs-and-tools.html"
+    },
+    {
+      "key": "T8/T8-R08",
+      "title": "Latest features radar",
+      "level": 8,
+      "outcomes": [
+        "Explain what this room covers: Latest features radar"
+      ],
+      "sources": [
+        "T8-R08-1",
+        "T8-R08-2",
+        "T8-R08-3",
+        "T8-R08-4",
+        "T8-R08-5",
+        "T8-R08-6",
+        "T8-R08-7"
+      ],
+      "has_exercise": true,
+      "last_verified": "2026-10-14",
+      "href": "rooms/T8-R08-latest-features-radar.html"
+    },
+    {
+      "key": "T9/T9-R01",
+      "title": "Workforce and quality, in plain words",
+      "level": 9,
+      "outcomes": [
+        "Explain what this room covers: Workforce and quality, in plain words"
+      ],
+      "sources": [
+        "T9-R01-1",
+        "T9-R01-2",
+        "T9-R01-3",
+        "T9-R01-18"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T9-R01-wfm-qm-foundations.html"
+    },
+    {
+      "key": "T9/T9-R02",
+      "title": "Basic workforce management on Webex WFO",
+      "level": 9,
+      "outcomes": [
+        "Explain what this room covers: Basic workforce management on Webex WFO"
+      ],
+      "sources": [
+        "T9-R02-3",
+        "T9-R02-4"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T9-R02-basic-wfm.html"
+    },
+    {
+      "key": "T9/T9-R03",
+      "title": "Basic quality management and recording",
+      "level": 9,
+      "outcomes": [
+        "Explain what this room covers: Basic quality management and recording"
+      ],
+      "sources": [
+        "T9-R03-3",
+        "T9-R03-4",
+        "T9-R03-6"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T9-R03-basic-qm.html"
+    },
+    {
+      "key": "T9/T9-R04",
+      "title": "AI Quality Management in Control Hub",
+      "level": 9,
+      "outcomes": [
+        "Explain what this room covers: AI Quality Management in Control Hub"
+      ],
+      "sources": [
+        "T9-R04-3",
+        "T9-R04-5",
+        "T9-R04-6",
+        "T9-R04-9",
+        "T9-R04-10"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T9-R04-ai-quality-management.html"
+    },
+    {
+      "key": "T9/T9-R05",
+      "title": "Quality reports in Analyzer",
+      "level": 9,
+      "outcomes": [
+        "Explain what this room covers: Quality reports in Analyzer"
+      ],
+      "sources": [
+        "T9-R05-5",
+        "T9-R05-7",
+        "T9-R05-8"
+      ],
+      "has_exercise": true,
+      "last_verified": null,
+      "href": "rooms/T9-R05-qm-analyzer.html"
+    }
+  ]
+}

@@ -99,13 +99,14 @@ def footer_html(meta=""):
         f'</footer>')
 
 THEME_RE = re.compile(r'<script>try\{var t=localStorage\.getItem\("canon-theme"\).*?</script>', re.S)
-NEW_THEME = ('<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";'
-  'if(["bloom","aurora","futuristic","gaming","neon","sunset","paper","holographic","cyberpunk","contrast"].indexOf(t)<0)t="bloom";'
-  'document.documentElement.dataset.theme=t;var f=localStorage.getItem("canon-font");if(f==="sm"||f==="md"||f==="lg")document.documentElement.dataset.font=f;'
-  'var m=localStorage.getItem("canon-motion");if(m==="reduce"||m==="full")document.documentElement.dataset.motion=m;'
-  'var ink=localStorage.getItem("canon-ink");if(ink&&/^#[0-9a-f]{6}$/i.test(ink))document.documentElement.style.setProperty("--ink",ink);'
-  'var ac=localStorage.getItem("canon-accent");if(ac&&/^#[0-9a-f]{6}$/i.test(ac))document.documentElement.style.setProperty("--accent",ac);'
-  'if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="bloom";}</script>')
+CSP_META = ('<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\'; '
+  'style-src \'self\' \'unsafe-inline\'; img-src \'self\' data: blob:; media-src \'self\' blob: data:; '
+  'font-src \'self\' data:; connect-src \'self\'; worker-src \'self\' blob:; object-src \'none\'; '
+  'base-uri \'self\'; form-action \'self\'">')
+
+def theme_src(pre, body):
+    name = "theme-boot.js" if "dataset.font" in body else "theme-boot-lite.js"
+    return f'<script src="{pre}assets/js/{name}"></script>'
 
 def process(path):
     s = path.read_text()
@@ -114,7 +115,15 @@ def process(path):
     depth = len(rel.parts) - 1
     pre = "../" * depth
     s = re.sub(r'<nav class="lab-links".*?</nav>\n?', '', s, flags=re.S)
-    s = THEME_RE.sub(lambda m: NEW_THEME, s)
+    s = THEME_RE.sub(lambda m: theme_src(pre, m.group(0)), s)
+    if "Content-Security-Policy" not in s:
+        s = re.sub(
+            r'(<meta\s+charset\s*=\s*["\']?utf-8["\']?\s*/?>)',
+            lambda m: m.group(1) + "\n" + CSP_META,
+            s,
+            count=1,
+            flags=re.I,
+        )
     is_site = 'assets/css/canon.css' in s
     if is_site:
         if 'footer.css' not in s:

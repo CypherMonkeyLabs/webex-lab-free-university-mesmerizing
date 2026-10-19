@@ -2,20 +2,15 @@
 <html lang="en" data-theme="orbit">
 <head>
   <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<script src="js/theme-boot.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Webex Lab</title>
   <meta name="description" content="Free practice lab for Cisco Webex Control Hub, Webex Calling, Dedicated Instance, Webex Contact Center, devices, APIs, and migration from Unified CM, UCCX, and UCCE.">
   <link rel="icon" href="../../../favicon.svg" type="image/svg+xml"><link rel="icon" href="../../../favicon.ico" sizes="any">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/campus.css">
-  <script>
-    try {
-      var saved = JSON.parse(localStorage.getItem("webexlab.settings") || "{}");
-      if (saved.theme) document.documentElement.dataset.theme = saved.theme;
-      if (saved.motion) document.documentElement.dataset.motion = saved.motion;
-      if (saved.font) document.documentElement.style.setProperty("--cc-font", saved.font + "px");
-    } catch (error) { /* keep the default theme */ }
-  </script>
+  
 </head>
 <body>
   <a class="skip" href="#view-title">Skip to content</a>

@@ -178,23 +178,31 @@
     var layer = document.createElement("div");
     layer.className = "atlas-lightbox";
     layer.hidden = true;
-    layer.innerHTML = '<div class="atlas-dialog" role="dialog" aria-modal="true" aria-labelledby="atlas-title"><p><button type="button" data-close>Close</button> <button type="button" data-play>Play</button> <button type="button" data-pause>Pause</button> <button type="button" data-step>Step</button></p><h2 id="atlas-title"></h2><div class="atlas-legend"><span><i style="background:#22d3ee"></i>Start node</span><span><i style="background:#fde68a"></i>Moving packet</span><span><i style="background:#a5b4fc"></i>Control point</span></div><p class="atlas-why"></p><object type="image/svg+xml" data=""></object><p><a data-file href="">Open the SVG file</a></p></div>';
+    layer.innerHTML = '<div class="atlas-dialog" role="dialog" aria-modal="true" aria-labelledby="atlas-title"><p><button type="button" data-close>Close</button> <button type="button" data-play>Play</button> <button type="button" data-pause>Pause</button> <button type="button" data-step>Step</button></p><h2 id="atlas-title"></h2><div class="atlas-legend"><span><i style="background:#22d3ee"></i>Start node</span><span><i style="background:#fde68a"></i>Moving packet</span><span><i style="background:#a5b4fc"></i>Control point</span></div><p class="atlas-why"></p><p><a data-file href="">Open the SVG file</a></p></div>';
     document.body.appendChild(layer);
     var dialog = layer.querySelector(".atlas-dialog");
-    var object = layer.querySelector("object");
+    var object = null;
     var title = layer.querySelector("#atlas-title");
     var why = layer.querySelector(".atlas-why");
     var file = layer.querySelector("[data-file]");
     var last = null;
 
+    function frameFor(href, label) {
+      if (object) object.remove();
+      object = document.createElement("iframe");
+      object.title = label || "Diagram";
+      object.src = href;
+      file.parentNode.insertBefore(object, file);
+      return object;
+    }
     function open(card) {
-      var source = card.querySelector("object");
+      var source = card.querySelector("iframe, object");
       if (!source) return;
-      var href = source.getAttribute("data") || "";
+      var href = source.getAttribute("src") || source.getAttribute("data") || "";
       title.textContent = (card.querySelector("h2") || {}).textContent || "Diagram";
       var slug = href.split("/").pop().replace(".svg", "");
       why.textContent = WHY[slug] || "This is a study drawing from the Canon rooms. Read the caption in the SVG and the linked room before you treat a box as a product limit.";
-      object.setAttribute("data", href);
+      frameFor(href, title.textContent);
       file.setAttribute("href", href);
       layer.hidden = false;
       last = document.activeElement;
@@ -202,11 +210,14 @@
     }
     function close() {
       layer.hidden = true;
-      object.setAttribute("data", "");
+      if (object) {
+        object.remove();
+        object = null;
+      }
       if (last && last.focus) last.focus();
     }
     function withSvg(fn) {
-      var svg = svgRoot(object);
+      var svg = object ? svgRoot(object) : null;
       if (!svg || !svg.pauseAnimations) {
         why.textContent += " Controls talk to the embedded SVG. If they stay quiet, open the SVG file.";
         return;

@@ -30,7 +30,7 @@ function standaloneSvg(src, title) {
 }
 function standaloneHtml(d, svg) {
   const inner = svg.replace(/^<\?xml[^>]*\?>\s*/, "").replace(/ width="\d+" height="\d+"/, ' class="art"');
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${d.title} | CypherMonkey Labs</title>
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${d.title} | CypherMonkey Labs</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:grid;place-items:center;gap:16px;padding:24px;font-family:system-ui,sans-serif;color:#f8fafc;

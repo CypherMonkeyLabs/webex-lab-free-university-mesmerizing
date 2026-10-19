@@ -18,7 +18,7 @@ FOOTER = """
 </footer>
 """
 
-HEAD_BOOT = """<script>try{var t=localStorage.getItem("canon-theme");if(t==="dark")t="aurora";if(t==="light")t="paper";if(t!=="aurora"&&t!=="futuristic"&&t!=="gaming"&&t!=="neon"&&t!=="sunset"&&t!=="paper")t="aurora";document.documentElement.dataset.theme=t;if(localStorage.getItem("canon-sidebar")==="collapsed"&&window.matchMedia("(min-width:961px)").matches)document.documentElement.dataset.sidebar="collapsed";}catch(e){document.documentElement.dataset.theme="aurora";}</script>"""
+CSP_META = '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' data: blob:; media-src \'self\' blob: data:; font-src \'self\' data:; connect-src \'self\'; worker-src \'self\' blob:; object-src \'none\'; base-uri \'self\'; form-action \'self\'">'
 
 
 def page(title, body, depth=""):
@@ -28,8 +28,9 @@ def page(title, body, depth=""):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{HEAD_BOOT}
 <meta charset="utf-8">
+{CSP_META}
+<script src="{p}assets/js/theme-boot.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · Webex Lab</title>
 <link rel="stylesheet" href="{p}assets/css/canon.css">
@@ -188,7 +189,7 @@ def sheet(title, paragraphs, table_rows, back="../../"):
     body += f"<table><thead><tr><th>Item</th><th>What to remember</th><th>Source</th></tr></thead><tbody>{rows}</tbody></table>"
     body += f'<p><a href="{back}index.html">Back to the lab</a></p>'
     return f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8">{CSP_META}<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <style>
 body {{ font-family: system-ui, sans-serif; margin: 24px; color: #142033; }}
@@ -412,7 +413,7 @@ def main():
         for a, b, c in CARDS
     )
     (ROOT / "downloads" / "flashcards-print.html").write_text(
-        """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Webex flashcards</title>
+        """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">""" + CSP_META + """<title>Webex flashcards</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 16px; }
 .card { break-inside: avoid; border: 1px solid #94a3b8; border-radius: 12px; padding: 12px; margin: 0 0 12px; }
@@ -425,7 +426,7 @@ body { font-family: system-ui, sans-serif; margin: 16px; }
     )
     # The split above is clumsy if sheet() changes. Write a clean print file instead.
     (ROOT / "downloads" / "flashcards-print.html").write_text(
-        f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+        f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">{CSP_META}<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Webex flashcards</title>
 <style>
 body {{ font-family: system-ui, sans-serif; margin: 16px; color: #142033; }}
@@ -445,7 +446,7 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
     )
 
     objects = "\n".join(
-        f'<figure class="atlas-card"><object type="image/svg+xml" data="assets/diagrams/university/{slug}.svg" aria-label="{html.escape(title)}">{html.escape(title)}</object><figcaption>{html.escape(caption)}</figcaption></figure>'
+        f'<figure class="atlas-card"><iframe src="assets/diagrams/university/{slug}.svg" title="{html.escape(title)}"></iframe><figcaption>{html.escape(caption)}</figcaption></figure>'
         for slug, title, nodes, caption in DIAGRAMS
     )
     atlas = f"""
@@ -523,7 +524,7 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
 <p class="crumbs"><a href="index.html">Lab</a> / Ports</p>
 <h1>Ports and protocols</h1>
 <p class="lede">Taken from the Webex Calling port reference on 2026-10-15. The article's revision history shows the phone source range moving to 5060–5280 on September 07, 2026. IP subnets are intentionally not copied. They change, and the article says filtering by region can hurt the service.</p>
-<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/firewall-lanes.svg" aria-label="Firewall lanes"></object></div>
+<div class="diagram"><iframe src="assets/diagrams/university/firewall-lanes.svg" title="Firewall lanes"></iframe></div>
 <h2>Signaling</h2>
 <div class="table-wrap"><table>
 <thead><tr><th>Purpose</th><th>Source ports</th><th>Protocol</th><th>Destination ports</th></tr></thead>
@@ -551,8 +552,8 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
 <li>App configuration: TCP 443 and 8443. Device configuration and firmware: TCP 443, 6970, and 80.</li>
 </ul>
 <h2>Ladder</h2>
-<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/calling-registration.svg" aria-label="Registration ladder"></object></div>
-<div class="diagram"><object type="image/svg+xml" data="assets/diagrams/university/e911-held.svg" aria-label="Emergency ladder"></object></div>
+<div class="diagram"><iframe src="assets/diagrams/university/calling-registration.svg" title="Registration ladder"></iframe></div>
+<div class="diagram"><iframe src="assets/diagrams/university/e911-held.svg" title="Emergency ladder"></iframe></div>
 <p>SIP ALG off. NAT must translate overlapping phone source ports in 5060–5280. Default MTU 1500. <a href="play.html">Practice the ports</a>. <a href="https://help.webex.com/article/b2exve">Open the live article</a>.</p>
 """
     (ROOT / "ports.html").write_text(page("Ports and protocols", ports_body), encoding="utf-8")
@@ -763,8 +764,10 @@ footer {{ margin-top: 16px; font-size: 0.8rem; }}
     paintBadges();
   }});
 }})();
-</script>
 """
+    play_html, play_js = play.split("<script>\n", 1)
+    (ROOT / "assets/js/play.js").write_text(play_js, encoding="utf-8")
+    play = play_html + '<script src="assets/js/play.js"></script>\n'
     (ROOT / "play.html").write_text(page("Play lab", play), encoding="utf-8")
 
     sheet_links = "".join(

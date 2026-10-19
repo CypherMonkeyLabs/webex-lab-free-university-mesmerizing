@@ -34,6 +34,10 @@ const required = [
   "assets/js/redesign.js",
   "assets/js/study-index.js",
   "assets/js/hero-boot.js",
+  "assets/js/theme-boot.js",
+  "assets/js/theme-boot-lite.js",
+  "assets/js/play.js",
+  "assets/js/sip-sim.js",
   "assets/js/phone-nav.js",
   "assets/js/onboard.js",
   "guide/guide.js",
@@ -75,6 +79,6 @@ if (!/var SHELL = \[[\s\S]*?\];/.test(sw)) {
   process.exit(1);
 }
 sw = sw.replace(/var SHELL = \[[\s\S]*?\];/, `var SHELL = [\n${body}\n];`);
-sw = sw.replace(/webex-university-v\d+/, "webex-university-v30");
+sw = sw.replace(/webex-university-v\d+/, "webex-university-v31");
 fs.writeFileSync(swPath, sw);
 console.log(`precache ${chosen.length + 1} files, ${total} bytes, budget ${budget}`);
